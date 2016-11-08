@@ -1,11 +1,13 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Jekyll and git resources"
 date:   2016-11-07 21:52:37 -0800
 categories: jekyll update
 ---
 
-test lambda.
+1. how to set up jekyll: http://droidcat.bitbucket.org/2015/05/26/blog-or-wiki.html
+1. how to set up latex: http://stackoverflow.com/questions/26275645/how-to-supported-latex-in-github-pages
+1. how to use git commands: http://marklodato.github.io/visual-git-guide/index-zh-cn.html
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 

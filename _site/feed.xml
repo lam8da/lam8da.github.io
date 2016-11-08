@@ -6,13 +6,17 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 07 Nov 2016 22:38:41 -0800</pubDate>
-    <lastBuildDate>Mon, 07 Nov 2016 22:38:41 -0800</lastBuildDate>
+    <pubDate>Mon, 07 Nov 2016 22:45:54 -0800</pubDate>
+    <lastBuildDate>Mon, 07 Nov 2016 22:45:54 -0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;test lambda.&lt;/p&gt;
+        <title>Jekyll and git resources</title>
+        <description>&lt;ol&gt;
+  &lt;li&gt;how to set up jekyll: http://droidcat.bitbucket.org/2015/05/26/blog-or-wiki.html&lt;/li&gt;
+  &lt;li&gt;how to set up latex: http://stackoverflow.com/questions/26275645/how-to-supported-latex-in-github-pages&lt;/li&gt;
+  &lt;li&gt;how to use git commands: http://marklodato.github.io/visual-git-guide/index-zh-cn.html&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
