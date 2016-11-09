@@ -3,15 +3,20 @@ layout: post
 title:  "Jekyll and git resources"
 date:   2016-11-07 21:52:37 -0800
 categories:
-- jekyll update
+    - jekyll update
 ---
 
-1. how to set up jekyll:
-http://droidcat.bitbucket.org/2015/05/26/blog-or-wiki.html
-1. how to set up latex:
-http://stackoverflow.com/questions/26275645/how-to-supported-latex-in-github-pages
 1. how to use git commands:
 http://marklodato.github.io/visual-git-guide/index-zh-cn.html
+
+$$a^2 + b^2 = c^2$$
+
+\\[ \mathbf{X} = \mathbf{Z} \mathbf{P^\mathsf{T}} \\]
+
+If you want to use subscripts you **don\'t** need to scape the
+underscores with a backslash like:
+
+$$ \mathbf{X}_{n,p} = \mathbf{A}_{n,k} \mathbf{B}\_{k,p} $$
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and
 re-build the site to see your changes. You can rebuild the site in many

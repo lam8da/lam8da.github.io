@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/media/css/style.css">
     <link rel="stylesheet" href="/media/css/highlight.css">
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </head>
   <body>
     <div id="container">
@@ -27,13 +28,18 @@
         <article class="content">
         <section class="post">
 <ol>
-  <li>how to set up jekyll:
-http://droidcat.bitbucket.org/2015/05/26/blog-or-wiki.html</li>
-  <li>how to set up latex:
-http://stackoverflow.com/questions/26275645/how-to-supported-latex-in-github-pages</li>
   <li>how to use git commands:
 http://marklodato.github.io/visual-git-guide/index-zh-cn.html</li>
 </ol>
+
+<script type="math/tex; mode=display">a^2 + b^2 = c^2</script>
+
+<p>\[ \mathbf{X} = \mathbf{Z} \mathbf{P^\mathsf{T}} \]</p>
+
+<p>If you want to use subscripts you <strong>don't</strong> need to scape the
+underscores with a backslash like:</p>
+
+<script type="math/tex; mode=display">\mathbf{X}_{n,p} = \mathbf{A}_{n,k} \mathbf{B}\_{k,p}</script>
 
 <p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and
 re-build the site to see your changes. You can rebuild the site in many
@@ -100,25 +106,24 @@ Talk</a>.</p>
 
 
 <script type="text/javascript">
-$(function(){
-  $(document).keydown(function(e) {
-    if (e.target.nodeName.toUpperCase() != 'BODY') return;
-    var url = false;
+$(function() {
+    $(document).keydown(
+      function(e) {
+        if (e.target.nodeName.toUpperCase() != 'BODY') return;
+        var url = false;
         if (e.which == 37 || e.which == 74) {  // Left arrow and J
-            
-        url = 'http://localhost:4000/2005/08/ride-to-tianjin-in-16-hours/';
-        
-        }
-        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
-            
+          
+            url = 'http://localhost:4000/2005/08/ride-to-tianjin-in-16-hours/';
+          
+        } else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+          
         }
         if (url) {
-            window.location = url;
+          window.location = url;
         }
-  });
+      });
 })
 </script>
-
 
         </article>
       </div>
@@ -128,9 +133,12 @@ $(function(){
       _gaq.push(['_setAccount', 'UA-1988641-2']);
       _gaq.push(['_trackPageview']);
       (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
       })();
     </script>
   </body>

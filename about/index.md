@@ -12,12 +12,6 @@ comments: yes
 
 开这个博客，是为了将平时学习、生活的点滴记录下来，以免以后遗忘；同时也可以跟大家交流，增长见识。
 
-# 联系方式
-
-Email：lambda2fei#at#gmail#dot#com
-
-主页：<http://lam8da.github.io>
-
 # 研究兴趣
 
 数学；物理；分布式计算，体系结构，操作系统，网络，算法，人工智能
@@ -25,6 +19,12 @@ Email：lambda2fei#at#gmail#dot#com
 # 本站架构
 
 本站目前采用Jekyll作为后台系统，我希望这是我的最后一站。博客模板是在[Yihui Xie](http://yihui.name/)那里扒过来的，我很喜欢这个简洁的设计，希望原博主不要介意。
+
+# 联系方式
+
+Email：lambda2fei#at#gmail#dot#com
+
+主页：<http://lam8da.github.io>
 
 <!--
 # 我佩服的人

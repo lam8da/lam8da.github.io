@@ -1,11 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-11-09T00:13:12-08:00</updated><id>http://localhost:4000//</id><author><name>lambda</name></author><entry><title type="html">Jekyll and git resources</title><link href="http://localhost:4000/2016/11/welcome-to-jekyll/" rel="alternate" type="text/html" title="Jekyll and git resources" /><published>2016-11-07T21:52:37-08:00</published><updated>2016-11-07T21:52:37-08:00</updated><id>http://localhost:4000/2016/11/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2016/11/welcome-to-jekyll/">&lt;ol&gt;
-  &lt;li&gt;how to set up jekyll:
-http://droidcat.bitbucket.org/2015/05/26/blog-or-wiki.html&lt;/li&gt;
-  &lt;li&gt;how to set up latex:
-http://stackoverflow.com/questions/26275645/how-to-supported-latex-in-github-pages&lt;/li&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-11-09T14:26:14-08:00</updated><id>http://localhost:4000//</id><author><name>lambda</name></author><entry><title type="html">Jekyll and git resources</title><link href="http://localhost:4000/2016/11/welcome-to-jekyll/" rel="alternate" type="text/html" title="Jekyll and git resources" /><published>2016-11-07T21:52:37-08:00</published><updated>2016-11-07T21:52:37-08:00</updated><id>http://localhost:4000/2016/11/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2016/11/welcome-to-jekyll/">&lt;ol&gt;
   &lt;li&gt;how to use git commands:
 http://marklodato.github.io/visual-git-guide/index-zh-cn.html&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a^2 + b^2 = c^2&lt;/script&gt;
+
+&lt;p&gt;\[ \mathbf{X} = \mathbf{Z} \mathbf{P^\mathsf{T}} \]&lt;/p&gt;
+
+&lt;p&gt;If you want to use subscripts you &lt;strong&gt;don't&lt;/strong&gt; need to scape the
+underscores with a backslash like:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\mathbf{X}_{n,p} = \mathbf{A}_{n,k} \mathbf{B}\_{k,p}&lt;/script&gt;
 
 &lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and
 re-build the site to see your changes. You can rebuild the site in many
@@ -28,9 +33,5 @@ works.&lt;/p&gt;
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most
 out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub
 repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll
-Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name>lambda</name></author><summary type="html">how to set up jekyll:
-http://droidcat.bitbucket.org/2015/05/26/blog-or-wiki.html
-  how to set up latex:
-http://stackoverflow.com/questions/26275645/how-to-supported-latex-in-github-pages
-  how to use git commands:
+Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name>lambda</name></author><summary type="html">how to use git commands:
 http://marklodato.github.io/visual-git-guide/index-zh-cn.html</summary></entry><entry><title type="html">test1</title><link href="http://localhost:4000/2005/08/ride-to-tianjin-in-16-hours/" rel="alternate" type="text/html" title="test1" /><published>2005-08-17T00:00:00-07:00</published><updated>2005-08-17T00:00:00-07:00</updated><id>http://localhost:4000/2005/08/ride-to-tianjin-in-16-hours</id><content type="html" xml:base="http://localhost:4000/2005/08/ride-to-tianjin-in-16-hours/"></content><author><name>lambda</name></author><category term="tag1" /><category term="tag2" /><summary type="html"></summary></entry></feed>

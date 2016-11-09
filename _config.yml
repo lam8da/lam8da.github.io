@@ -3,3 +3,4 @@ permalink: /:year/:month/:title/
 url: http://lam8da.github.io
 author: lambda
 highlighter: rouge
+# paginate: 5
