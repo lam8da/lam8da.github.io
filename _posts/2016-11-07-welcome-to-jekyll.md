@@ -9,6 +9,12 @@ categories:
 1. how to use git commands:
 http://marklodato.github.io/visual-git-guide/index-zh-cn.html
 
+# 1. how to 1
+## 2. how to 2
+### 3. how to 3
+
+![My helpful screenshot]({{ site.url }}/assets/head-first-design-pattern-notes2.strategy.png)
+
 $$a^2 + b^2 = c^2$$
 
 \\[ \mathbf{X} = \mathbf{Z} \mathbf{P^\mathsf{T}} \\]

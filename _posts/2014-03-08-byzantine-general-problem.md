@@ -30,7 +30,7 @@ tags:
 
 为了让自己有更深的理解，我用C++实现了一个模拟器，输入general的个数，指定commander是否loyal，模拟算法运行，打印出每条消息以及消息路径，最后得出每个忠诚的lieutenant遵守的命令。目测+用小数据测试没有发现错误，也贴在这里供以后回顾使用。
 
-{% highlight C++ %}
+{% highlight c++ linenos %}
 #include <cstdlib>
 #include <cstdio>
 #include <iostream>
