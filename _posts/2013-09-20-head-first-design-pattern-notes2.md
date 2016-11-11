@@ -5,6 +5,7 @@ categories:
     - 程序&设计
 tags:
     - 设计模式
+    - 读书笔记
 ---
 
 1. TOC

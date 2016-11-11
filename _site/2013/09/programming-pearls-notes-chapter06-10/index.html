@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="lambda" />
+    <title>《编程珠玑》读书笔记（第6-10章） | lambda</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="http://localhost:4000/feed/" rel="alternate" title="lambda" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>《编程珠玑》读书笔记（第6-10章）</h1>
+        </header>
+        <nav>
+        <span><a title="home page" class="" href="http://localhost:4000/">首页</a></span>
+        <span><a title="categories" class="" href="http://localhost:4000/categories/">分类</a></span>
+        <span><a title="tags" class="" href="http://localhost:4000/tags/">标签</a></span>
+        <span><a title="links" class="" href="http://localhost:4000/links/">链接</a></span>
+        <span><a title="about" class="" href="http://localhost:4000/about/">关于</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://localhost:4000/feed/">订阅</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<ol id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">第7章 粗略估算</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">第8章 算法设计技术</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">第9章 代码调优</a></li>
+  <li><a href="#section-3" id="markdown-toc-section-3">第10章 节省空间</a></li>
+</ol>
+
+<h2 id="section">第7章 粗略估算</h2>
+
+<ol>
+  <li>
+    <p>72法则：假设以年利率r%投资一笔钱y年，金融版本的72法则指出，如果ry=72，那么你的投资差不多会翻倍。</p>
+  </li>
+  <li>
+    <p>pi秒就是一个纳世纪：1纳世纪=10^(-9)*100年=10^(-7)年</p>
+  </li>
+  <li>
+    <p>Little定律：系统中物体的平均数量等于物体离开系统的平均速率和每个物体在系统中停留的平均时间的乘积。</p>
+  </li>
+</ol>
+
+<h2 id="section-1">第8章 算法设计技术</h2>
+
+<ol>
+  <li>
+    <p>习题4：一个数组长n，每个元素都是从区间[-1, 1]中均匀选出的随机实数，那么最大子向量的期望值是多少？（经网上搜索无解。只能用蒙特卡罗方法模拟？）</p>
+  </li>
+  <li>
+    <p>使用分治法求解最大连续子段和，要求时间复杂度O(n)。
+解：像线段树那样，每个线段保存如下状态：
+a. 当前段包含左端点的和最大的子段及其右端点
+b. 当前段包含右端点的和最大的子段及其左端点
+c. 当前段最大连续子段和及其左右端点
+然后自底向上更新一次，共O(n)条线段。故。</p>
+  </li>
+  <li>
+    <p>习题10：
+I．查找总和最接近0的子向量。
+解：保存累加和，则问题等价于找到累加和数组中两个元素，使差值最小。最简单的方法是排序后遍历一遍。有不使用排序的O(n)算法吗？
+II．查找总和最接近某一给定实数t的子向量。
+解：对累加和数组S排序后遍历，维护俩指针p1和p2使得S[p2]-S[p1]&lt;=t而S[p2+1]-S[p1]&gt;t即可。</p>
+  </li>
+  <li>
+    <p>习题12：将数组x[0,…,n-1]初始化全0后执行类似于以下的操作n次：
+for i=[l, u] do x[i] += v
+其中l，u，v为每次运算的参数，求一个更快的算法达到同样效果。
+解：初始化y[0,…,n-1]为全0，对每个操作令y[l]+=v和y[u+1]-=v。则结束时x[i]=sigma{k=0 to i}(y[k])。正确性：只需证明每一次执行完操作之后该性质保持不变即可。</p>
+  </li>
+  <li>
+    <p>书籍：Dr.Dobb’s Essential Books on Algorithms and Data Structuers</p>
+  </li>
+</ol>
+
+<h2 id="section-2">第9章 代码调优</h2>
+
+<ol>
+  <li>
+    <p>如果对内存的访问占用了大量运行时间，或程序的运行时间主要消耗在输入输出上，那么对程序中的计算进行加速是毫无意义的。</p>
+  </li>
+  <li>
+    <p>对现代计算机来说，将循环展开有助于避免管道阻塞、减少分支、增加指令级的并行性</p>
+  </li>
+  <li>
+    <p>性能监视（profiling）可以帮我们找到程序中的关键区域，对于其他区域，我们遵循有名的格言：没有坏的话就不要修。</p>
+  </li>
+  <li>
+    <p>进行“改进”之后要用具有代表性的输入来度量程序的效果。</p>
+  </li>
+  <li>
+    <p>常用法则：利用等价的代数表达式、使用内联甚至宏、使用哨兵来合并测试条件、修改数据结构、展开循环。</p>
+  </li>
+</ol>
+
+<h2 id="section-3">第10章 节省空间</h2>
+
+<ol>
+  <li>
+    <p>每次使用new来分配一个新对象所用空间会比存储该对象所需的空间大很多。因此一次性分配一个对象数组（像vector底层那样）能节省不少空间，时间也更快。</p>
+  </li>
+  <li>
+    <p>节省数据空间的技术
+a. 重新计算：不保存之前的计算结果
+b. 使用稀疏结构
+c. 信息论：压缩
+d. 简单性：最重要的原则</p>
+  </li>
+  <li>
+    <p>节省代码空间的技术
+a. 函数定义：重用
+b. 使用解释程序
+c. 翻译成紧凑的机器语言</p>
+  </li>
+</ol>
+
+</section>
+<section class="meta">
+<span class="author">
+  <a href="http://lam8da.github.io">lambda</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2013-09-18">2013-09-18</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="http://localhost:4000/categories/#算法&数学" title="算法&数学">算法&数学</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="http://localhost:4000/tags/#算法" title="算法">算法</a>&nbsp;
+  
+  <a href="http://localhost:4000/tags/#读书笔记" title="读书笔记">读书笔记</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="comment">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'lambda'; // required: replace example with your forum shortname
+    var disqus_url = 'http://localhost:4000/2013/09/programming-pearls-notes-chapter06-10/';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+<script type="text/javascript">
+$(function() {
+    $(document).keydown(
+      function(e) {
+        if (e.target.nodeName.toUpperCase() != 'BODY') return;
+        var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+          
+            url = 'http://localhost:4000/2013/09/programming-pearls-notes-chapter01-05/';
+          
+        } else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+          
+            url = 'http://localhost:4000/2013/09/programming-pearls-notes-chapter11-15/';
+          
+        }
+        if (url) {
+          window.location = url;
+        }
+      });
+})
+</script>
+
+        </article>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1988641-2']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

@@ -7,7 +7,7 @@
     <title>lambda</title>
     <atom:link href="http://localhost:4000/feed/" rel="self" type="application/rss+xml" />
     <link>http://lam8da.github.io</link>
-    <lastBuildDate>2016-11-10T15:32:09-08:00</lastBuildDate>
+    <lastBuildDate>2016-11-10T16:23:14-08:00</lastBuildDate>
     <webMaster>lambda2fei@gmail.com</webMaster>
     
     <item>
@@ -850,6 +850,1143 @@ OM(c, l, m) = majority(
   <li>内聚（cohesion）：用来度量一个类或模块紧密地达到单一目的或责任</li>
   <li>高内聚：一个模块/类被设计成只支持一组相关功能</li>
 </ul>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>《C++ Primer》读书笔记（第17-18章完）</title>
+      <link>http://localhost:4000/2013/09/c++-primer-notes-chapter17to18/</link>
+      <pubDate>2013-09-20T00:00:00-07:00</pubDate>
+      <author>lambda</author>
+      <guid>http://localhost:4000/2013/09/c++-primer-notes-chapter17to18</guid>
+      <content:encoded><![CDATA[<ol id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">第17章 用于大型程序的工具</a></li>
+</ol>
+
+<h2 id="section">第17章 用于大型程序的工具</h2>
+
+<ol>
+  <li>
+    <p>承诺不抛出任何异常的方法：void func() throw() {}</p>
+  </li>
+  <li>
+    <p>命名空间别名（像定义变量一样）：namespace n1 = n2;  // n2是一个已定义的命名空间</p>
+  </li>
+  <li>
+    <p>屏蔽命名空间名字规则的一个重要例外：接受类类型形参（或类类型指针及引用形参）的函数（包括重载操作符），以及与类本身定义在同一命名空间中的函数（包括重载操作符），在用类类型对象（或类类型的引用及指针）作为实参的时候是可见的。如：
+std::string s;
+getline(std::cin, s);  // ok
+当compiler看到getline(std::cin, s);时，它在当前作用域、包含调用的作用域以及定义cin和string的命名空间中查找匹配的函数。</p>
+  </li>
+  <li>
+    <p>在最底层派生类的构造函数中，c++会首先初始化虚基类；在初始化中间层派生类时，忽略它们对虚基类的初始化。</p>
+  </li>
+</ol>
+
+<p>第18章 特殊工具与技术</p>
+
+<ol>
+  <li>
+    <p>c++提供以下两种方法分配和释放未构造的原始内存：allocator类；标准库中的operator new和operator delete。</p>
+  </li>
+  <li>
+    <p>c++还提供不同的方法在原始内存中构造和撤销对象：
+a. allocator类的construct和destroy成员
+b. 定位new表达式（placement new expression）接受指向未构造内存的指针，并在该空间中初始化一个对象或一个数组
+c. 可直接调用对象的析构函数来撤销对象。运行析构函数并不释放所在内存
+d. uninitialized_fill和uninitiated_copy</p>
+  </li>
+  <li>
+    <p>operator new/delete接口（只分配/释放空间，不构造/析构）：
+void <em>operator new(size_t);
+void *operator new<a href="size_t"></a>;
+void operator delete(void</em>);
+void operator delete<a href="void*"></a>;</p>
+  </li>
+  <li>
+    <p>定位new表达式（在已分配但未构造的内存中初始化对象）：
+new (place_address) type
+new (place_address) type (initializer_list)
+其中place_address是指针，initializer_list是初始化列表。
+例如：
+allocator<T> alloc;
+alloc.construct(ptr, t);  // 复制构造
+可以改为：
+new (ptr) T(t);</T></p>
+  </li>
+  <li>
+    <p>allocator的construct只能使用复制构造，但定位new表达式可以使用任何构造函数</p>
+  </li>
+  <li>
+    <p>allocator的方法和低级操作的对应关系：
+allocate       &lt;==&gt; operator new
+deallocate  &lt;==&gt; operator delete
+construct   &lt;==&gt; 定位new表达式
+destroy       &lt;==&gt; 直接调用析构函数如：ptr-&gt;~T();</p>
+  </li>
+  <li>
+    <p>对于语句string *sp = new string(“initialized”);实际上发生三件事：
+a. 调用operator new分配内存。如果operator new没被重载，就调用标准库中的operator new。
+b. 运行该类型的一个构造函数，在a分配的内存中初始化之
+c. 返回该对象的指针
+而delete sp;实际上发生两件事：
+a. 对sp指向的对象运行适当的析构函数
+b. 调用名为operator delete的标准库函数释放内存</p>
+  </li>
+  <li>
+    <p>我们可以为一个类C定义它特定的operator new/delete（称为“成员operator new/delete”）或operator new[]/delete[]函数，改变new表达式的行为：
+a. C *obj = new C(); delete obj;  // 调用自定义版本
+b. C *obj1 = ::new C(); ::delete obj1;  // 调用标准库版本</p>
+  </li>
+  <li>
+    <p>成员operator delete有两种定义：
+void C::operator delete(void <em>p);
+void C::operator delete(void *p, size_t sz);
+其中void</em>形参由delete表达式用被delete的指针初始化，size_t由编译器用第一个形参所指对象的字节大小自动初始化。size_t一般用于继承层次，根据virtual ptr指向的对象的大小确定。
+类似地，成员operator delete[]也有两种定义。</p>
+  </li>
+  <li>
+    <p>成员operator new/delete函数隐式地为静态函数，不必显式地将它们声明为static，虽然这样做是合法的。</p>
+  </li>
+  <li>
+    <p>运行时类型识别（RTTI）：
+I. typeid操作符：返回动态类型信息（当类型有虚函数时）或静态的、编译时的类型信息（以type_info对象的形式返回）
+II. dynamic_cast操作符的用法：
+a. 作用于指针</p>
+  </li>
+</ol>
+
+<p>if (Derived <em>dptr = dynamic_cast&lt;Derived</em>&gt;(base_ptr)) {
+  …
+} else {
+  …
+}</p>
+
+<p>b. 作用于引用</p>
+
+<p>try {
+  Derived &amp;d = dynamic_cast&lt;Derived&amp;&gt;(b);
+  …
+} catch (std::bad_cast) {
+  …
+}</p>
+
+<ol>
+  <li>成员指针（pointer to member）：</li>
+</ol>
+
+<p>a. 数据成员的指针：Type C::<em>ptr = &amp;C::obj;
+b. 成员函数的指针：Type (C::</em>ptr)(arg_type_list) = &amp;C::func;
+c. 类的static成员不需要特殊语法来指向，其指针就是普通指针
+成员指针的使用（.<em>和-&gt;</em>操作符）：
+C cobj, <em>cptr;
+(cobj.</em>ptr)(arg_list);
+(cptr-&gt;*ptr)(arg_list);</p>
+
+<ol>
+  <li>
+    <p>关于嵌套类：
+a. 嵌套在类模板内部的类是模板
+b. 在外围类外部定义嵌套类的方法：
+class Outer { class Inner;  /* forward declaration <em>/ };
+class Outer::Inter { /</em> definition */ };</p>
+  </li>
+  <li>
+    <p>固有的不可移植的特性包括：位域、volatile限定符、链接指示（如extern “C”等）。</p>
+  </li>
+</ol>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>《C++ Primer》读书笔记（第16章）</title>
+      <link>http://localhost:4000/2013/09/c++-primer-notes-chapter16/</link>
+      <pubDate>2013-09-20T00:00:00-07:00</pubDate>
+      <author>lambda</author>
+      <guid>http://localhost:4000/2013/09/c++-primer-notes-chapter16</guid>
+      <content:encoded><![CDATA[<ol id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">第16章 模板与泛型编程</a></li>
+</ol>
+
+<h2 id="section">第16章 模板与泛型编程</h2>
+
+<ol>
+  <li>
+    <p>模板形参可以是表示类型的类型形参（type parameter，表示未知类型），也可以是表示常量表达式的非类型形参（nontype parameter，表示未知值）</p>
+  </li>
+  <li>
+    <p>函数模板也可以声明为inline。此时inline关键字放在模板形参表之后、返回类型之前，不能放在关键字template之前：
+template <typename T=""> inline T min(const T&amp;, const T&amp;);</typename></p>
+  </li>
+  <li>
+    <p>模板形参遵循常规名字屏蔽规则：与全局作用域中声明的对象、函数或类型同名的模板形参会屏蔽全局名字</p>
+  </li>
+  <li>
+    <p>用作模板形参的名字不能在模板内部重用</p>
+  </li>
+  <li>
+    <p>模板也可以只声明而不定义</p>
+  </li>
+  <li>
+    <p>若模板定义中使用了模板形参中的类型的一个内部定义的类型，必须用typename显式指明该名字是一个类型，否则编译器会假定该名字指定的是一个数据成员</p>
+  </li>
+  <li>
+    <p>当一个模板类型用作（同一函数的）一个以上函数形参类型时，对应的实参的类型必须完全一致（当通过“&lt;&gt;”提供显式实参时，或者属于下列情况时，例外），因为一般而言不会转换实参以匹配已有的实例化，相反，会产生新的实例。例外的情况为：
+a. const转换：非const对象的引用或指针-&gt;const引用或指针；const或非const对象-&gt;非引用类型（忽略const）
+b. 数组或函数到指针的转换。当模板形参不是引用类型时：数组/函数-&gt;指针。
+例：</p>
+  </li>
+</ol>
+
+<p>template<typename T=""> T fobj(T, T);
+template<typename T=""> T fref(const T&amp;, const T&amp;);
+string s1;
+const string s2;
+fobj(s1, s2);  // fobj(string, string); const is ignored
+fref(s1, s2);  // non const -&gt; const reference
+int a[10], b[42];
+fobj(a, b);  // fobj(int*, int*);
+// fref(a, b);  // error!</typename></typename></p>
+
+<ol>
+  <li>
+    <p>可以使用函数模板对函数指针进行初始化或赋值：
+template<typename T=""> int compare(const T&amp;, const T&amp;);
+int (*pf)(const int&amp;, const int&amp;) = compare;  // 实例化
+如果不能从函数指针类型确定模板实参，就会出错</typename></p>
+  </li>
+  <li>
+    <p>某些情况下不可能推断出模板实参的类型。当函数的返回类型必须与形参表中所用的所有类型都不同时，最常出现这一问题。可以采用“增加一个模板形参以表示返回类型，调用时显示指定该类型”的方法解决</p>
+  </li>
+  <li>
+    <p>显式提供模板实参时可以像函数的默认实参机制那样省略右边的模板实参（由编译器推断）</p>
+  </li>
+  <li>
+    <p>模板要进行实例化时，编译器必须能够访问定义模板的源代码。如果采用分别编译模型（separate compilation model），在模板定义时需要使用export关键字。</p>
+  </li>
+  <li>
+    <p>类模板的成员函数只有为程序所用才进行实例化，如果某函数从未使用，则不会实例化该成员函数。一个典型例子是，若某类型没有定义默认的构造函数，也可以用std::vector存放它，但vector初始化时不能使用vector的只有一个size成员的构造函数。</p>
+  </li>
+  <li>
+    <p>类模板中的友元声明：</p>
+  </li>
+</ol>
+
+<p>template<class T=""> class A;
+template<class T=""> class B {
+ public:
+  friend class A<T>;  // ok: A is known to be a template
+  friend class C;  // ok: C must be an ordinary, non-template class
+  template<class S=""> friend class D;  // ok: D is a template
+  friend class E<T>;  // error: E wasn’t declare as a template
+  friend class F<int>;  // error: F wasn’t declare as a template
+};</int></T></class></T></class></class></p>
+
+<ol>
+  <li>
+    <p>在类特化的外部定义该特化类的成员时，成员之前不能加template&lt;&gt;标记</p>
+  </li>
+  <li>
+    <p>可以只特化成员而不是特化整个类</p>
+  </li>
+  <li>
+    <p>类模板的部分特化：特化某些模板形参而非全部。当声明了部分特化时，编译器将为实例化选择最特化的模板定义</p>
+  </li>
+  <li>
+    <p>函数匹配与函数模板：若重载函数中既有普通函数又有函数模板，确定函数调用的步骤如下：
+(1). 建立候选函数集，包括
+a. 与被调函数名字相同的任意普通函数
+b. 任意函数模板实例化（模板实参推断发现了与调用中所用函数实参相匹配的模板实参）
+(2). 确定哪些普通函数是可行的（见本笔记7.22或原书7.8节关于如何选择可行函数的讨论）。候选集中每个模板实例都是可行的，因为模板实参推断保证了这点。
+(3). 若需要转换来进行调用，根据转换的种类排列可行函数（注意模板函数的实例所允许的转换是有限的）
+a. 如果只有一个函数可选，就调用之
+b. 如果调用有二义性，从可行函数集合中去掉所有函数模板实例
+(4). 重新排列去掉函数模板实例的可行函数。如果只有一个函数可选，调用之；否则有二义性。</p>
+  </li>
+</ol>
+
+<p>例一：
+I. template<typename T=""> int compare(const T&amp;, const T&amp;);
+II. int compare(const char*, const char*);
+调用1：
+const char const_arr1[] = “world”, const_arr2[] = “hi”;
+compare(const_arr1, const_arr2);
+将调用普通函数II。将T绑定到const char*的I也是可行函数，但是根据(3)b，它将被去掉。
+注：实际上是比较以下俩可行函数：
+从I实例化的：int compare(const char* const&amp;, const char* const&amp;);
+II的：int compare(const char*, const char*);
+调用2：
+char ch_arr1[] = “world”, ch_arr2[] = “hi”;
+compare(ch_arr1, ch_arr2);
+同样也调用普通函数II。I的实例将T绑定到char*。</typename></p>
+
+<p>例二：
+如果I是这样：template<typename T=""> int compare(T, T);则：
+compare(ch_arr1,ch_arr2);将调用I，T绑定到char*。
+compare(const_arr2, const_arr2);将调用II。
+const char *cp1 = const_arr1, *cp2 = const_arr2; compare(cp1, cp2);将调用2。</typename></p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>《C++ Primer》读书笔记（第14-15章）</title>
+      <link>http://localhost:4000/2013/09/c++-primer-notes-chapter14to15/</link>
+      <pubDate>2013-09-20T00:00:00-07:00</pubDate>
+      <author>lambda</author>
+      <guid>http://localhost:4000/2013/09/c++-primer-notes-chapter14to15</guid>
+      <content:encoded><![CDATA[<ol id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">第14章 重载操作符与转换</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">第15章 面向对象编程</a></li>
+</ol>
+
+<h2 id="section">第14章 重载操作符与转换</h2>
+
+<ol>
+  <li>
+    <p>不能重载的操作符包括：::、*（取值）和三元运算符?:。</p>
+  </li>
+  <li>
+    <p>不能通过连接其他合法操作符来创建任何新操作符</p>
+  </li>
+  <li>
+    <p>重载操作符必须具有至少一个类类型或枚举类型的操作数，因此内置类型的操作符含义不能改变，也不能为任何内置类型定义额外的新的操作符。</p>
+  </li>
+  <li>
+    <p>操作符的优先级、结合性或操作数数目不能改变。除了函数调用操作符()外，重载操作符时使用默认实参是非法的。</p>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>重载操作符并不保证操作数的求值顺序（尤其是&amp;&amp;、</td>
+          <td> </td>
+          <td>和逗号操作符）。在&amp;&amp;和</td>
+          <td> </td>
+          <td>的重载版本中，两个操作数都要进行求值。</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>一般将算术和关系操作符定义为非成员函数，而将赋值操作符定义为成员。</p>
+  </li>
+  <li>
+    <p>也可以像调用普通函数那样调用重载操作符如：
+a. 非类成员：operator+(item1, item2);
+b. 类成员：item1.operator+=(item2);</p>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>不应重载具有内置含义的操作符：=、&amp;、,、&amp;&amp;、</td>
+          <td> </td>
+          <td>。</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>赋值（=）、下标（[]）、调用（()）和成员访问箭头（-&gt;）必须定义为成员函数。</p>
+  </li>
+  <li>箭头操作符虽然表现得像二元操作符，但重载时不接受显式形参：Type operator-&gt;() {…}。</li>
+</ol>
+
+<p>当这样编写时：pointer-&gt;action();，由于优先级规则，它等价于(pointer-&gt;action)();。求值过程为：
+I. 若pointer是一个指针，指向具有名为action的成员的类对象，则编译器将代码编译为调用该对象的action成员；
+II. 否则，若pointer是定义了operator-&gt;操作符的一个对象，则pointer-&gt;action与pointer.operator-&gt;()-&gt;action相同，即执行pointer的operator-&gt;()，然后调用该结果重复这两步；
+III. 否则，代码出错。
+因此，重载箭头操作符必须返回指向类类型的指针，或返回定义了自己箭头操作符的类类型对象。</p>
+
+<ol>
+  <li>
+    <p>两种自增操作符的重载：
+前自增：Type &amp;operator++() {…}
+后缀式自增：Type operator++(int) {…}
+未解决前/后缀形式的形参数目和类型相同的问题，后缀式操作符接受一个额外的（无用的）int型形参。使用时编译器提供0作为其实参。该形参不用命名，因为不应被使用到。显式调用的方法为：
+obj.operator++(0);  // postfix
+obj.operator++();  // prefix</p>
+  </li>
+  <li>
+    <p>一般为表示操作的类重载调用操作符，其对象称为函数对象。</p>
+  </li>
+  <li>
+    <p>转换操作符（conversion operator）是一种特殊的类成员函数，它定义将类类型值转变为其他类型值的转换；它在类定义体内声明，在保留字operator之后跟着转换的目标类型：
+operator Type2() const {…}  // 无返回类型，形参表为空
+对任何可作为函数返回类型的类型（void除外），都可以定义转换函数（故数组和函数类型不行）。虽然不能指定返回类型，但必须显式返回一个指定类型的值。</p>
+  </li>
+  <li>
+    <p>只要定义了转换，编译器将在可以使用内置转换的地方自动调用它，包括显式类型转换static_cast。</p>
+  </li>
+  <li>
+    <p>使用转换函数时，被转换的类型不必与所需类型完全匹配，必要时可在类类型转换之后跟上标准转换（如int-&gt;double这种）以获得想要的类型，但不能再跟另一个类类型转换！</p>
+  </li>
+  <li>
+    <p>标准转换可放在类类型转换之前，例如使用构造函数执行的隐式转换：double-&gt;int-&gt;Type，其中Type类型有一个带单int参数的构造函数。</p>
+  </li>
+  <li>
+    <p>如果两个转换操作符都可用于同一个调用中，而且转换之后存在标准转换，则根据该标准转换的类别使用最佳匹配</p>
+  </li>
+  <li>
+    <p>当两个构造函数定义的转换都可以使用时，如果存在构造函数实参所需的标准转换，就用该标准转换的类别选择最佳匹配。</p>
+  </li>
+  <li>
+    <p>当两个类定义了转换时的二义性：</p>
+  </li>
+</ol>
+
+<p>/<em>I. */ class A { public: A(B); };                // B-&gt;A
+/</em>II.*/ class B { public: operator A() const; };  // B-&gt;A
+void func(A);
+func(B());  // ambiguous</p>
+
+<p>但若将I改为A(const B&amp;);则不再存在二义性，这是因为使用I将需要一个引用绑定到B的对象，而使用II则避免了这个额外步骤。</p>
+
+<ol>
+  <li>
+    <p>转换与函数重载确定的关系：如果重载集里面的两个函数可以用同一转换函数匹配，则使用在转换之后或之前的标准转换序列的等级来确定最佳匹配；否则，如果可以使用不同的转换操作，则认为这两个转换是一样好的匹配，不管可能需要或不需要的标准转换等级如何。</p>
+  </li>
+  <li>
+    <p>操作符的重载确定遵循常见的三步过程，而操作符的候选函数可能包括成员和非成员函数。</p>
+  </li>
+</ol>
+
+<h2 id="section-1">第15章 面向对象编程</h2>
+
+<ol>
+  <li>
+    <p>派生类对其基类类型的对象的protected成员没有特殊访问权限。</p>
+  </li>
+  <li>
+    <p>派生类的虚函数的声明必须与基类完全匹配，但有个例外：派生类中的虚函数可以返回基类函数所返回类型（必须是引用或指针）的派生类的引用（或指针）</p>
+  </li>
+  <li>
+    <p>一旦函数在基类中声明为虚函数，它就一直是虚函数，不管派生类中用不用virtual</p>
+  </li>
+  <li>
+    <p>用作基类的类必须是已定义的，只声明不行（否则就可以从自身派生出一个类了）</p>
+  </li>
+  <li>
+    <p>可以使用作用域操作符覆盖虚函数机制并强制函数调用使用虚函数的特定版本</p>
+  </li>
+  <li>
+    <p>虚函数的默认实参不受动态绑定影响：通过类A的引用或指针调用虚函数时，默认实参是在A中定义的值，不管该引用或指针绑定的是A的对象还是其派生类对象。另外，基类中虚函数如果指定了默认实参，派生类可以指定也可以不指定；反之亦然。</p>
+  </li>
+  <li>
+    <p>派生类不能访问基类的private成员</p>
+  </li>
+  <li>
+    <p>使用using，派生类可以恢复继承成员的访问级别，但不能使访问级别比基类中原来指定的更严格或更宽松（但g++ 4.6.1上却可以任意指定新的访问级别）</p>
+  </li>
+  <li>
+    <p>友元关系不能继承：
+a. 基类的友元对派生类没有特殊访问权限
+b. 如果基类被授予友元关系，则只有基类具有特殊访问权限，该基类的派生类不能访问授予友元关系给基类的类</p>
+  </li>
+  <li>
+    <p>若基类定义了static成员，则整个继承层次中只有一个这样的成员，每个static成员只有一个实例。</p>
+  </li>
+  <li>
+    <p>派生类可以将基类的非纯虚的虚函数变为纯虚函数</p>
+  </li>
+  <li>
+    <p>派生类到基类转换的可访问性：
+a. 如果是public继承，则用户代码和后代类都可以访问（使用）派生类到基类的转换
+b. 如果是protected或private继承，则用户代码不能将派生类型对象转换为基类对象
+c. 如果是private继承，则从private继承类派生出来的类（即孙子层）不能转换为基类（不管是用户代码还是在下层派生类中）
+d. 如果是protected继承，则后续派生类的成员可以转换为基类类型
+e. 派生类本身的成员和友元总是可以访问派生类到基类的转换（其实只要能访问到基类的public成员即可，不管派生了多少层）</p>
+  </li>
+  <li>
+    <p>合成的默认ctor、copy ctor和=以及析构函数将对对象的基类部分连同派生部分的成员一起进行初始化、复制、赋值和撤销；自定义的copy ctor和=需要显式调用基类的copy ctor和=或自己另行实现才能复制、赋值基类部分</p>
+  </li>
+  <li>
+    <p>如果在构造函数或析构函数中调用虚函数（不论直接还是间接），则运行的是为构造函数或析构函数自身类型定义的版本。</p>
+  </li>
+  <li>
+    <p>由于派生类的作用域嵌套在基类作用域中，在基类和派生类中使用同一名字的成员函数时，就像一般的在局部声明的函数和在全局声明的函数一样：在派生类作用域中派生类成员将屏蔽基类成员，即使函数原型不同。</p>
+  </li>
+  <li>
+    <p>局部作用域中声明的函数不会重载外围作用域中定义的函数，而是会屏蔽！因此，若派生类定义了重载成员，则通过派生类（的对象、指针或引用）只能访问派生类中重定义的那些成员，不管基类中的成员是否为virtual的！（可以通过using声明解决这个问题）</p>
+  </li>
+  <li>
+    <p>通过基类可以调用被屏蔽的虚函数：</p>
+  </li>
+</ol>
+
+<p>struct Base { virtual int fcn(); }
+struct D1 : Base { int fcn(int);  /* 屏蔽了Base的fcn <em>/ }
+struct D2 : D1 { int fcn(int);  /</em> 屏蔽了D1的fcn */  int fcn();}</p>
+
+<p>Base b;
+D1 d1;
+D2 d2;
+Base *bp1 = &amp;b, *bp2 = &amp;d1, *bp3 = &amp;d2;</p>
+
+<p>bp1-&gt;fcn();  // Base::fcn
+bp2-&gt;fcn();  // Base::fcn，注意不能用D1的对象、引用或指针调用fcn()，因为它被fcn(int)屏蔽了！
+bp3-&gt;fcn();  // D2::fcn</p>
+
+<ol>
+  <li>（名字查找与继承的关系）确定函数调用遵循以下四个步骤
+I. 首先确定进行函数调用的对象、引用或指针的静态类型
+II. 在该类中查找函数（名字），若找不到则从直接基类开始往上找，若最终找不到则出错
+III. 一旦找到了该名字，就进行常规类型检查，看调用是否合法
+IV. 若合法，编译器就生成代码。若函数为虚且通过引用或指针调用，则编译器生成代码以确定根据对象的动态类型运行哪个函数版本，否则，编译器生成代码直接调用函数。</li>
+</ol>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>《C++ Primer》读书笔记（第9-13章）</title>
+      <link>http://localhost:4000/2013/09/c++-primer-notes-chapter09to13/</link>
+      <pubDate>2013-09-20T00:00:00-07:00</pubDate>
+      <author>lambda</author>
+      <guid>http://localhost:4000/2013/09/c++-primer-notes-chapter09to13</guid>
+      <content:encoded><![CDATA[<ol id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">第9章 顺序容器</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">第13章 复制控制</a></li>
+</ol>
+
+<h2 id="section">第9章 顺序容器</h2>
+
+<ol>
+  <li>
+    <p>指定容器大小的类型应该使用该容器的size_type类型</p>
+  </li>
+  <li>
+    <p>允许通过使用内置数组中的一对指针初始化容器</p>
+  </li>
+  <li>
+    <p>容器元素类型必须满足以下两个约束：
+a. 元素类型必须支持赋值运算（故不能是引用）
+b. 元素类型的对象必须可以复制（用于初始化和push_back等）</p>
+  </li>
+</ol>
+
+<p>第11章 泛型算法</p>
+
+<ol>
+  <li>为了以降序排列vector，只需向sort传递一对反向迭代器sort(vec.rbegin(), vec.rend());</li>
+</ol>
+
+<p>第12章 类</p>
+
+<ol>
+  <li>
+    <p>声明一个类而不定义它（即前向声明）时，该类是一个不完全类型，只能以有限方式使用：
+a. 不知道包含哪些成员
+b. 只能用于定义指向该类型的指针及引用，或用于声明（而不是定义）使用该类型作为形参类型或返回类型的函数
+c. 不能用于定义数据成员或该类的对象（故类不能具有自身类型的数据成员）</p>
+  </li>
+  <li>
+    <p>在一个源文件中一个类只能被定义一次，如果在多个文件中定义一个类，那么每个文件中的定义必须是完全相同的</p>
+  </li>
+  <li>
+    <p>在普通的非const成员函数中，this的类型是一个指向类类型的const指针</p>
+  </li>
+  <li>
+    <p>当我们希望类的数据成员（甚至在const成员函数内）可以被修改时，可将它们声明为mutable。mutable数据成员永远都不会且不能为const。</p>
+  </li>
+  <li>
+    <p>如果函数在类定义体之外定义，则用于返回类型的名字在类作用域之外（否则在之内）。</p>
+  </li>
+  <li>
+    <p>在类定义体外定义的成员函数的返回类型如果使用由该类定义的类型，则必须使用完全限定名，这是因为在函数名被处理前，代码不在类作用域内。</p>
+  </li>
+  <li>
+    <p>类定义实际上是在两个阶段中处理：
+a. 首先编译成员声明
+b. 只有在所有成员出现之后，才编译它们的定义本身（因此成员函数可以使用类作用域中所有名字）</p>
+  </li>
+  <li>
+    <p>必须在类中先定义类型名字，才能将它们用作数据成员的类型，或者成员函数的返回类型或形参类型</p>
+  </li>
+  <li>
+    <p>一旦一个名字被用作类型名，该名字就不能被重复定义。（但若一个名字在类外作用域中首先被定义为类型名，类中可以先重新定义它再用作类型名）。</p>
+  </li>
+  <li>
+    <p>构造函数不能声明为const</p>
+  </li>
+  <li>
+    <p>对非类类型的数据成员进行赋值或使用初始化式在结果和性能上都是等价的</p>
+  </li>
+  <li>
+    <p>成员被初始化的次序就是定义成员的次序，不管它们在初始化列表中顺序如何。因此以下程序非法：</p>
+  </li>
+</ol>
+
+<p>class X {
+  int i;
+  int j;
+ public:
+  X(int val): j(val), i(j) {}
+};</p>
+
+<ol>
+  <li>
+    <p>当没有在初始化列表中指出或使用合成的默认构造函数时，对于内置和复合类型的成员（如指针和数组），只对定义在全局作用域中的对象才初始化。</p>
+  </li>
+  <li>
+    <p>对于一个没有定义默认构造函数（显式或隐式地）的类：
+a. 不能用作动态分配数组的元素类型
+b. 其静态分配数组必须为每个元素提供一个显式的初始化式</p>
+  </li>
+  <li>
+    <p>可以用单个实参来调用的非explicit构造函数定义了从形参类型到该类类型的一个隐式转换。</p>
+  </li>
+  <li>
+    <p>友元可以是普通的非成员函数，或前面定义的其他类的成员函数，或整个类。</p>
+  </li>
+  <li>
+    <p>友元不是授予友元关系的那个类的成员，故它们不受其声明出现部分的访问控制影响。</p>
+  </li>
+  <li>
+    <p>必须先定义包含成员函数的类，才能将成员函数设为友元。另一方面，不必预先声明类和非成员函数来将它们设为友元。</p>
+  </li>
+  <li>
+    <p>友元声明将已命名的类或非成员函数引入到外围作用域中。此外，友元函数可以在类的内部定义，该函数的作用域扩展到包围该类定义的作用域。用友元引入的类名和函数（定义或声明），可以像预先声明的一样使用。</p>
+  </li>
+  <li>
+    <p>const static数据成员在类的定义体中初始化时，该数据成员仍必须在类的定义体之外进行定义，但此时不必再指定初始值。</p>
+  </li>
+  <li>
+    <p>static数据成员的类型可以是该成员所属的类类型，并可用作默认实参。</p>
+  </li>
+  <li>
+    <p>在构造函数初始化列表中除了默认的方式（如x()）外，无法用其他方式（如传递一个数组）来初始化一个数组类型的成员变量。</p>
+  </li>
+  <li>
+    <p>typedef在类中必须出现在使用其定义的类型别名的声明之前。</p>
+  </li>
+</ol>
+
+<h2 id="section-1">第13章 复制控制</h2>
+
+<ol>
+  <li>
+    <p>复制构造函数、赋值构造函数和析构函数总称为复制控制（copy control），编译器自动实现这些操作，但类也可以定义自己的版本。</p>
+  </li>
+  <li>
+    <p>对于语句string str = “hello”;，在创建str时，编译器首先调用接受一个c风格字符串形参的string构造函数，创建一个临时对象，然后编译器使用string复制构造函数将str初始化为那个临时对象的副本。</p>
+  </li>
+  <li>
+    <p>对于语句C ci = string(“hello”);，ci的初始化是否正确取决于两点：
+a. 类C的带一个string形参的ctor是否为explicit（如果是explicit则失败）
+b. 类C的copy ctor对当前作用域是否可见</p>
+  </li>
+  <li>
+    <p>若使用元素初始化列表初始化数组元素，则首先根据指定值创建数组元素类型的元素，然后用复制构造函数将该值复制到相应元素：</p>
+  </li>
+</ol>
+
+<p>View Code CPP
+1
+2
+3
+4
+C ci[] = {
+  string(“hello”),  // 单参数ctor + copy ctor
+  C()           // 默认ctor + copy ctor
+};</p>
+<ol>
+  <li>
+    <p>合成的复制构造函数将复制数组类型成员的每一个元素，合成的复制操作符也会给数组的每个元素赋值。</p>
+  </li>
+  <li>
+    <p>当copy ctor定义为explicit时，就不能用于向函数传递对象和从函数返回对象。</p>
+  </li>
+  <li>
+    <p>容器（不管是标准库容器还是内置数组）中的元素总是按逆序撤销</p>
+  </li>
+  <li>
+    <p>合成析构函数按对象创建时的逆序撤销每个非static成员（即按类中成员声明次序的逆序）</p>
+  </li>
+  <li>
+    <p>因为不能指定任何形参，所以不能重载析构函数</p>
+  </li>
+  <li>
+    <p>即使我们编写了自己的析构函数，合成的析构函数仍然运行。</p>
+  </li>
+  <li>
+    <p>自定义的copy ctor必须是引用传递形参（而不是传值），否则会导致无限递归。</p>
+  </li>
+</ol>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>《C++ Primer》读书笔记（第5-8章）</title>
+      <link>http://localhost:4000/2013/09/c++-primer-notes-chapter05to08/</link>
+      <pubDate>2013-09-20T00:00:00-07:00</pubDate>
+      <author>lambda</author>
+      <guid>http://localhost:4000/2013/09/c++-primer-notes-chapter05to08</guid>
+      <content:encoded><![CDATA[<ol id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">第5章 表达式</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">第6章 语句</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">第7章 函数</a></li>
+  <li><a href="#io" id="markdown-toc-io">第8章 标准I/O库</a></li>
+</ol>
+
+<h2 id="section">第5章 表达式</h2>
+
+<ol>
+  <li>
+    <p>若两个操作数都是负数则求模结果为负。</p>
+  </li>
+  <li>
+    <p>逻辑非：若操作数非零值则结果为false。</p>
+  </li>
+  <li>
+    <p>如果val不是bool类型，不要这样比较：if (val == true)</p>
+  </li>
+  <li>
+    <p>如果操作数为负数，则位操作符如何处理其操作数的符号位依赖于机器，不可移植</p>
+  </li>
+  <li>
+    <p>移位操作的右操作数不可为负且必须严格小于左操作数位数值，否则结果未定义</p>
+  </li>
+  <li>
+    <p>sizeof是一个操作符，其结果是编译时常量。三种用法：</p>
+  </li>
+</ol>
+
+<p>sizeof (type name)
+sizeof (expr)
+sizeof expr
+将sizeof用于expr时，并没有计算expr的值</p>
+
+<ol>
+  <li>
+    <p>逗号表达式从左向右计算，结果是其最右边表达式的值。如果最右边的操作数的左值，则逗号表达式的值也是左值。</p>
+  </li>
+  <li>
+    <p>值初始化的“()”语法必须置于类型名后面，而不是变量后。如：
+int x();
+上式声明了一个名为x、没有参数而返回int值的函数，而不是定义一个变量。</p>
+  </li>
+  <li>
+    <p>c++保证：删除0值的指针是安全的，但这样做没有任何意义。</p>
+  </li>
+  <li>
+    <p>删除指针后，该指针编程悬垂指针，不再有效。</p>
+  </li>
+  <li>
+    <p>动态创建const对象的例子：const int *pci = new cons tint(10);</p>
+  </li>
+  <li>
+    <p>删除动态分配的内存失败称为“内存泄露”</p>
+  </li>
+  <li>
+    <p>类类型可以定义由编译器自动执行的类型转换，如：while (cin » s) …</p>
+  </li>
+  <li>
+    <p>显式转换也称为强制类型转换（cast），包括：dynamic_cast，const_cast，static_cast，reinterpret_cast。</p>
+  </li>
+  <li>
+    <p>char *p = “hello”;在编译时会出现警告，改成const char *就没问题。</p>
+  </li>
+  <li>
+    <p>sizeof (func ());的结果是func函数的返回类型的size，且不执行func。注意，不能这样用：sizeof (func);。因为func是函数类型，而sizeof不支持函数类型，func()才是数据类型。</p>
+  </li>
+  <li>
+    <p>string str();的作用是声明一个函数而不是定义一个变量（如果想定义一个使用默认构造函数的对象，正确写法是string str;）。但如果是string str(“abc”);则相反，因为编译器看到了”abc”是一个量而不是一个变量声明。另外可以这么干：string str = string();。</p>
+  </li>
+  <li>
+    <p>for (;;);是一个死循环；for语句只要中间不写东西就是，这是合法的。省略循环条件等效于其永远为true。</p>
+  </li>
+  <li>
+    <p>char *p = “hello”; p[0] = ‘x’;会导致segment fault。</p>
+  </li>
+  <li>
+    <p>大多数操作符没有定义左右操作数的求值顺序，故不能依赖它来编写程序。</p>
+  </li>
+</ol>
+
+<h2 id="section-1">第6章 语句</h2>
+
+<ol>
+  <li>
+    <p>空语句，如：while (expr);；又如：a = b + c;;。后者由两条语句组成：一条表达式语句和一条空语句。</p>
+  </li>
+  <li>
+    <p>在条件表达式中定义的变量必须初始化，该条件检验的就是初始化对象的值。如：
+if (int x = val) …;
+switch (int x = func ()) …;</p>
+  </li>
+  <li>
+    <p>switch语句的每个case的标号必须是整型常量表达式，浮点数也不行！任两个case标号不能有相同的值，否则compile error。</p>
+  </li>
+  <li>
+    <p>switch结构中，除非使用块语句，否则只能在它的最后一个case或default标号后才能定义变量。</p>
+  </li>
+  <li>
+    <p>do…while中的continue会继续求解循环条件（和while一样）</p>
+  </li>
+  <li>
+    <p>使用预处理器进行调试：
+$ cc –DNDEBUG main.c
+这等效于在main.c的开头提供#define NDEBUG预处理命令。</p>
+  </li>
+</ol>
+
+<h2 id="section-2">第7章 函数</h2>
+
+<ol>
+  <li>
+    <p>函数由函数名以及一组操作数类型唯一地表示</p>
+  </li>
+  <li>
+    <p>在c语言中具有const形参或非const形参的函数并无区别（引用和指针除外），故：
+void fcn (const int i) { … }
+void fcn (int i) { … }
+会产生编译错误：重定义。c++为了兼容也保持这点。</p>
+  </li>
+  <li>
+    <p>由于数组不能复制，所以无法编写使用数组类型形参的函数，而函数也不允许返回一个数组！</p>
+  </li>
+  <li>
+    <p>由于使用数组名字时，数组会被自动转化为指针，所以处理数组的函数通常通过操纵指向数组中的元素的指针来处理数组。</p>
+  </li>
+  <li>
+    <p>虽然不能直接传递数组，但形参可以写成数组形式，下面三种定义是等价的，形参类型都是int *：
+void func (int *) {…}
+void func (int []) {…}
+void func (int [10]) {…}
+编译器只会检查实参是不是指针、指针类型是否匹配，而不会检查数组的长度。故对于以上第三种定义可以传个int[2]进去。</p>
+  </li>
+  <li>
+    <p>一般用法：传非引用指针：
+void func (const int *) {…}
+也可通过引用传递，此时编译器将检查数组实参的大小与形参大小是否匹配：
+void func (int (&amp;arr)[10]) {…}</p>
+  </li>
+  <li>
+    <p>多维数组的传递：c++中没有多维数组，所谓多维数组实际上是一个一维数组，其元素是由数组组成。因此，除了第一维以外的所有维的长度都是元素类型的一部分，必须明确指定：
+void f (int (m*)[10]) {…}
+void f (int m[][10]) {…}
+void f (int m[100][10]) {…}
+上述三种定义是等价的。100，类似地，将会被忽略。</p>
+  </li>
+  <li>
+    <p>关于可变形参：对于c++程序，只能将简单数据类型传递给含有省略符形参，实际上，当需要传递给省略符形参时，大多数类类型对象都不能正确地复制</p>
+  </li>
+  <li>
+    <p>返回类型为void的函数可以return另一个返回类型同样是void的函数的调用结果</p>
+  </li>
+  <li>
+    <p>函数的返回值用于初始化在调用函数处创建的临时对象。当返回引用类型时，没有复制返回值，而是返回对象本身。</p>
+  </li>
+  <li>
+    <p>函数声明时需提供：返回类型、函数名、形参列表（不必对形参命名）。这三个元素成为函数原型。</p>
+  </li>
+  <li>
+    <p>默认实参可以是任何适当类型的表达式（包括函数调用）。</p>
+  </li>
+  <li>
+    <p>可在函数声明也可在函数定义中指定默认实参，但在一个文件中只能为一个形参指定默认实参一次（因此h和cc只能有一个这么干，因为cc包含了h）。如果在函数定义中指定默认实参，那么只有在包含该函数定义的源文件中调用该函数时（被指定的默认实参）才有效。在声明时指定默认实参可以类似于这么干：int f (int = 0);</p>
+  </li>
+  <li>
+    <p>只有当定义它的函数被调用时才存在的对象成为自动对象。</p>
+  </li>
+  <li>
+    <p>内联函数应该在头文件中定义，这一点不同于其他函数。这是因为，内联函数的定义对编译器而言必须是可见的，以便编译器能够在调用点内联展开该函数的代码。</p>
+  </li>
+  <li>
+    <p>由编译器自动生成的默认构造函数对内置类型成员的初始化规则：
+a. 若该类的对象被定义于全局作用域或定义为局部静态对象，这些成员被初始化为0
+b. 否则没有初始化
+另可参考《深度探索c++对象模型》</p>
+  </li>
+  <li>
+    <p>重载函数：出现于相同作用域中（当作用域不同时会发生名字屏蔽而不是重载），名字相同而形参表不同（默认实参不改变形参表）。注意，重载函数可以有不同的返回类型。</p>
+  </li>
+  <li>
+    <p>在c++中，名字查找发生在类型检查之前。</p>
+  </li>
+  <li>
+    <p>形参与const形参的等价性仅适用于非引用形参，有const引用的形参与有非const引用形参的函数是不同的，对于const指针和非const指针也是不同的。（即：仅当形参是引用或指针时，形参是否为const才有影响）</p>
+  </li>
+  <li>
+    <p>局部声明的名字会屏蔽全局声明的同名名字（包括函数名，此时，只要同名就会屏蔽，不管形参如何）</p>
+  </li>
+  <li>
+    <p>重载确定的寻找最佳匹配方法：若仅有一个函数满足以下条件则ok，否则编译错误：</p>
+  </li>
+</ol>
+
+<p>其每个实参的匹配都不劣于其他可行函数需要的匹配
+至少有一个实参的匹配优于其他可行函数提供的匹配</p>
+<ol>
+  <li>重载确定（overload resolution）的三个步骤：</li>
+</ol>
+
+<p>确定候选函数（candidate function）集：与被调函数同名的函数的集合（声明要在调用点可见；如果调用的是类的成员函数则不考虑访问控制符如public、private等，而是将该类的所有同名函数都取出拿来用）
+选择可行函数（viable function），两个条件：
+函数的形参个数与该调用的实参个数相同
+每一个实参的类型必须与对应形参的类型匹配，或者可被隐式转换为对应的形参类型
+寻找最佳匹配：先为每个实参划分等级，再按照第23点的方法做。</p>
+<ol>
+  <li>为了确定最佳匹配，编译器将实参到形参的类型转换划分等级：</li>
+</ol>
+
+<p>精确匹配
+通过类型提升（promotion）实现的匹配，包括整形提升：char、signed char、unsigned char、short和unsigned short提升为int，其次是提升为unsigned int。如，对于func (‘a’);来说，void func (int);要优于void func (short);。
+通过标准转换实现的匹配
+数组-&gt;指针，指针-&gt;void*，0-&gt;指针
+算术值和指针-&gt;bool
+算术值&lt;-&gt;bool
+enum-&gt;int或更高
+非const-&gt;const引用；非const指针-&gt;const指针
+由标准库类型定义的转换
+通过类类型转换实现的匹配</p>
+<ol>
+  <li>
+    <p>不能通过基于指针本身是否为const来实现函数重载（这符合第19点）：
+void f (int *);
+void f (int *const);  // 错误，重声明</p>
+  </li>
+  <li>
+    <p>函数指针：在引用函数名但又没有调用该函数时，函数名将被自动解释为指向函数的指针，故以下两句赋值含义相同：
+funcptr p1 = func;
+funcpty p2 = &amp;func;
+故调用时也相同：
+p1 (params);等价于(*p1) (params);</p>
+  </li>
+  <li>
+    <p>指向不同函数类型（包含返回类型的定义）的指针指针之间不存在转换。</p>
+  </li>
+  <li>
+    <p>函数指针作为形参时，以下两种形式等价：
+void f (bool (int <em>));
+void f (bool (</em>)(int *));</p>
+  </li>
+  <li>
+    <p>返回类型中的函数指针的例子：int (<em>ff (int)) (int *, int);。其中，ff (int)是一个函数，它返回一个函数指针，其类型为int (</em>)(int *, int);。</p>
+  </li>
+  <li>
+    <p>函数的返回类型不能是一个函数，最多只能是一个函数指针！！</p>
+  </li>
+  <li>
+    <p>若类A有个带一个int参数的ctor，则以下函数定义是合法的：A func() { return 10; }</p>
+  </li>
+  <li>
+    <p>如果一个类定义了一个非const函数以及对应的const函数，是合法的，C++将其看成重载，不会引起编译错误。对于这点，我的理解是，C++会将成员函数重写为包含指向对象本身的隐含this指针的函数，这样，const成员函数就会变成const对象指针，根据第19点这是可以被重载的。</p>
+  </li>
+</ol>
+
+<h2 id="io">第8章 标准I/O库</h2>
+
+<ol>
+  <li>
+    <p>IO对象不可复制或赋值，这表示着：
+a. 不能存储在容器中
+b. 函数的形参或返回类型不能是非指针或引用的流类型</p>
+  </li>
+  <li>
+    <p>刷新输出缓冲区的方法：
+cout « “hi” « flush;  // 不增加任何数据
+cout « “hi” « ends;  // 增加null字符
+cout « “hi” « endl;</p>
+  </li>
+  <li>
+    <p>如果一个流调用tie函数将其本身绑在传递给tie的ostream实参对象上，则该流上任何IO操作都会刷新实参所关联的缓冲区。</p>
+  </li>
+</ol>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>《C++ Primer》读书笔记（第1-4章）</title>
+      <link>http://localhost:4000/2013/09/c++-primer-notes-chapter01to04/</link>
+      <pubDate>2013-09-20T00:00:00-07:00</pubDate>
+      <author>lambda</author>
+      <guid>http://localhost:4000/2013/09/c++-primer-notes-chapter01to04</guid>
+      <content:encoded><![CDATA[<ol id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">第1章 快速入门</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">第2章 变量和基本类型</a></li>
+</ol>
+
+<h2 id="section">第1章 快速入门</h2>
+
+<ol>
+  <li>
+    <p>Windows下查看程序返回值：echo %ERRORLEVEL%</p>
+  </li>
+  <li>
+    <p>endl是一个特殊值，称为操纵符（manipulator），将其写入输出流时将会输出换行效果并刷新与设备相关联的缓冲区</p>
+  </li>
+  <li>
+    <p>“A”表示包含字母A和空字符两个字符的字符串</p>
+  </li>
+  <li>
+    <p>宽字符：wchat_t ch=L’a’;</p>
+  </li>
+  <li>
+    <p>宽字符串：L”hello”（包含了最后的宽空字符）</p>
+  </li>
+</ol>
+
+<h2 id="section-1">第2章 变量和基本类型</h2>
+
+<ol>
+  <li>
+    <p>变量名不能包含两个连续的下划线，也不能以下划线开头后面紧跟一个大写字母</p>
+  </li>
+  <li>
+    <p>定义和声明的区别：</p>
+  </li>
+</ol>
+
+<p>定义：为变量分配存储空间，还可以为变量指定初值
+声明：用于向程序表明变量的类型和名字</p>
+<ol>
+  <li>
+    <p>定义也是声明：当定义变量时我们声明了它的类型和名字</p>
+  </li>
+  <li>
+    <p>如果声明有初始化式，那么它可被当作是定义，即使被标记为extern。如：extern int x = 10;</p>
+  </li>
+  <li>
+    <p>只有当extern声明位于函数外部时，才可以含有初始化式（此时被当成定义）</p>
+  </li>
+  <li>
+    <p>与一般的变量不同，在全局作用域声明的const变量是定义该对象的文件的局部变量。此变量只存在于那个文件中，不能被其他文件访问。除非定义时加上extern。</p>
+  </li>
+  <li>
+    <p>引用是一种复合类型（是指用其他类型定义的类型）</p>
+  </li>
+  <li>
+    <p>const引用可以初始化为不同类型的对象或者初始化为右值，如字面值常量：
+int i = 42;
+const int &amp;r = 42;
+const int &amp;r2 = r + i;
+const int &amp;r3 = i;
+但同样的初始化对于非const引用都是不合法的，因为对于：
+double dval = 3.14;
+const int &amp;ri = dval;
+编译器会将其变成：
+int temp = dval;
+const int &amp;ri = temp;
+如果ri不是const，则可对其赋值，但不会修改dval，矛盾。</p>
+  </li>
+  <li>
+    <p>非const的引用只能绑定到与该引用同类型的对象；const引用则可以绑定到不同但类型相关的对象或右值。</p>
+  </li>
+  <li>
+    <p>枚举成员的值可以不唯一，如：enum { a = 2, b, c = 3, d };其中b和c都是3。</p>
+  </li>
+  <li>
+    <p>不能把int等类型赋值给枚举类型的对象</p>
+  </li>
+  <li>
+    <p>用于初始化的值必需是一个常量表达式，即在编译时就可以计算出值的表达式</p>
+  </li>
+  <li>
+    <p>头文件一般包含：类的定义、extern变量的声明和函数的声明</p>
+  </li>
+  <li>
+    <p>对于“头文件不应含有定义”这一规则，有三个例外：头文件可以定义类、值在编译时就已知的const对象和inline函数。这些实体可在多个源文件中定义，只要在每个源文件中的定义是相同的。p68</p>
+  </li>
+  <li>
+    <p>当在头文件中定义了const变量后，每个包含该头文件的源文件都有了自己的const变量，其名称和值都一样；定义在头文件中的const变量应该是常量表达式。</p>
+  </li>
+  <li>
+    <p>若const变量不是用常量表达式初始化，就不应在头文件中定义，而应在源文件中定义并初始化，并添加extern使其被多个文件共享。</p>
+  </li>
+  <li>
+    <p>若在头文件中定义extern的const变量，多个cc文件都include了这个头文件且其obj会被链接到一起时，会出错：重定义。原因：这些cc文件引用头文件后相当于在文件中定义了这个const变量，但由于加了extern，使其全局可见。</p>
+  </li>
+  <li>
+    <p>可以声明引用，例如在a.cc中定义：
+const int a = 100;
+const int &amp;ra = a;
+则可以在a.h中声明：extern const int &amp;ra;</p>
+  </li>
+  <li>
+    <p>逗号表达式与定义，以下是合法的：
+const int i = 0, *p = i;
+const int j = 0, *q = &amp;i;</p>
+  </li>
+</ol>
+
+<p>第3章 标准库类型</p>
+
+<ol>
+  <li>
+    <p>getline(cin, line)：getline遇到第一个换行符就中止，几时cin的第一个字符就是</p>
+  </li>
+  <li>
+    <p>string的“+”操作符左右两边必须至少有一个是string类型</p>
+  </li>
+  <li>
+    <p>string对象的下标变量应为string::size_type</p>
+  </li>
+  <li>
+    <p>注意区分const_iterator和const的iterator</p>
+  </li>
+  <li>
+    <p>任何改变vector长度的操作都会使已存在的迭代器失效。</p>
+  </li>
+</ol>
+
+<p>第4章 数组和指针</p>
+
+<ol>
+  <li>
+    <p>数组元素的类型不能是引用</p>
+  </li>
+  <li>
+    <p>如果没有显式提供元素初值，数组元素会像普通变量一样初始化（2.3.4节）：</p>
+  </li>
+</ol>
+
+<p>在函数体外定义的内置数组，元素均初始化为0
+在函数体内定义的内置数组，元素无初始化
+不管数组在哪定义，若其元素为类类型，则用default constructor来初始化；若该类没有default constructor，则必须显式初始化。</p>
+<ol>
+  <li>字符数组：字符串的字面值包含一个额外的null字符</li>
+</ol>
+
+<p>char ca1[] = { ‘c’, ‘+’, ‘+’ };  //长度为3
+char ca2[] = “c++”;  //长度为4
+char ca3[3] = “c++”;  //编译错误</p>
+<ol>
+  <li>对指针进行初始化和赋值只能使用：</li>
+</ol>
+
+<p>0值常量表达式
+类型匹配的对象地址
+另一对象之后的下一地址
+同类型的另一个有效指针</p>
+<ol>
+  <li>
+    <p>void<em>指针可以保存任何类型对象的地址，不允许使用void</em>指针操纵它指向的对象</p>
+  </li>
+  <li>
+    <p>两个指针减法操作的结果是标准库类型ptrdiff_t的数据。</p>
+  </li>
+  <li>
+    <p>与任何const量一样，const指针也必须在定义时初始化。</p>
+  </li>
+  <li>
+    <p>考虑如下代码：
+typedef string *pstring;
+const pstring cstr;
+这里const修饰的是pstring类型，这是一个指针。因此上述定义等价于string * const cstr;</p>
+  </li>
+  <li>
+    <p>可以在数组长度后加“()”来对数组元素做值初始化：
+int *p = new int<a href="">10</a>;  // 初始化为0
+若不加“()”对于内置类型是不初始化的，也不能用初始化列表。</p>
+  </li>
+  <li>
+    <p>const对象的动态数组对于内置类型一定要加“()”。</p>
+  </li>
+  <li>
+    <p>c++允许动态分配空数组</p>
+  </li>
+</ol>
 ]]></content:encoded>
     </item>
     
