@@ -3,19 +3,25 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="lambda" />
-    <title>Jekyll and git resources | lambda</title>
+    <title>Blogging Resources | lambda</title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link href="http://localhost:4000/feed/" rel="alternate" title="lambda" type="application/atom+xml" />
     <link rel="stylesheet" href="/media/css/style.css">
     <link rel="stylesheet" href="/media/css/highlight.css">
+    <link rel="stylesheet" href="/media/css/highlighter-rouge.css">
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        "HTML-CSS": { scale: 80 }
+      });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </head>
   <body>
     <div id="container">
       <div id="main" role="main">
         <header>
-        <h1>Jekyll and git resources</h1>
+        <h1>Blogging Resources</h1>
         </header>
         <nav>
         <span><a title="home page" class="" href="http://localhost:4000/">首页</a></span>
@@ -27,48 +33,85 @@
         </nav>
         <article class="content">
         <section class="post">
+<ul id="markdown-toc">
+  <li><a href="#resources" id="markdown-toc-resources">Resources</a></li>
+  <li><a href="#code-block-highlighting" id="markdown-toc-code-block-highlighting">Code block highlighting</a>    <ul>
+      <li><a href="#how-to-use-highlighter" id="markdown-toc-how-to-use-highlighter">How to use highlighter</a></li>
+      <li><a href="#how-to-highlight-inlined-code-blocks" id="markdown-toc-how-to-highlight-inlined-code-blocks">How to highlight inlined code blocks</a></li>
+    </ul>
+  </li>
+  <li><a href="#block-inline-attribute-lists-ial" id="markdown-toc-block-inline-attribute-lists-ial">Block inline attribute lists (IAL)</a></li>
+</ul>
+
+<h2 id="resources">Resources</h2>
 <ol>
-  <li>how to use git commands:
-http://marklodato.github.io/visual-git-guide/index-zh-cn.html</li>
+  <li>git commands manual: <a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">http://marklodato.github.io/visual-git-guide/index-zh-cn.html</a></li>
+  <li>markdown manual: <a href="http://www.appinn.com/markdown/">http://www.appinn.com/markdown/</a></li>
+  <li>kramdown
+    <ul>
+      <li>quickref/examples: <a href="http://kramdown.gettalong.org/quickref.html">http://kramdown.gettalong.org/quickref.html</a></li>
+      <li>syntax/manual: <a href="http://kramdown.gettalong.org/syntax.html">http://kramdown.gettalong.org/syntax.html</a></li>
+    </ul>
+  </li>
+  <li>rouge options: <a href="https://github.com/jneen/rouge#full-options">https://github.com/jneen/rouge#full-options</a></li>
+  <li>latex cheat sheet: <a href="https://wch.github.io/latexsheet/">https://wch.github.io/latexsheet/</a></li>
+  <li><a href="http://jekyllrb.com/docs/home">Jekyll docs</a></li>
 </ol>
 
-<h1 id="how-to-1">1. how to 1</h1>
-<h2 id="how-to-2">2. how to 2</h2>
-<h3 id="how-to-3">3. how to 3</h3>
+<h2 id="code-block-highlighting">Code block highlighting</h2>
 
-<p><img src="http://localhost:4000/assets/head-first-design-pattern-notes2.strategy.png" alt="My helpful screenshot" /></p>
+<h3 id="how-to-use-highlighter">How to use highlighter</h3>
+<!-- Overwrite the setting to not show line_numbers in fenced code blocks -->
 
-<script type="math/tex; mode=display">a^2 + b^2 = c^2</script>
+<p>Code block using kramdown (<strong>may not be compactible if not using kramdown</strong>):</p>
 
-<p>\[ \mathbf{X} = \mathbf{Z} \mathbf{P^\mathsf{T}} \]</p>
-
-<p>If you want to use subscripts you <strong>don't</strong> need to scape the
-underscores with a backslash like:</p>
-
-<script type="math/tex; mode=display">\mathbf{X}_{n,p} = \mathbf{A}_{n,k} \mathbf{B}\_{k,p}</script>
-
-<p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and
-re-build the site to see your changes. You can rebuild the site in many
-different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches
-a web server and auto-regenerates your site when a file is updated.</p>
-
-<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the
-convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front
-matter. Take a look at the source for this post to get an idea about how it
-works.</p>
-
-<p>Jekyll also offers powerful support for code snippets:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
   <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
 <span class="k">end</span>
 <span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span>
+</code></pre>
+</div>
 
-<p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most
-out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub
-repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll
-Talk</a>.</p>
+<p>Code block using Pygments or Rouge by using the <code class="language-ruby highlighter-rouge"><span class="n">highlight</span></code> Liquid tag
+(<strong>putting it inside a list will work incorrectly</strong>):</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h3 id="how-to-highlight-inlined-code-blocks">How to highlight inlined code blocks</h3>
+
+<p>I discovered in 11/12/2016 that all (inlined) code blocks generated by rouge are
+wrapped by a
+<code class="language-nothing">&lt;code&gt;</code>
+tag with css class set to
+<code class="language-nothing">language-some_language highlighter-rouge</code>
+. So we can copy the highlight.css
+to highlighter-rouge.css and make same css rules applicable to
+<code class="language-nothing">highlighter-rouge span_css_class</code>
+(e.g.
+<code class="language-nothing">highlighter-rouge cp</code>
+).</p>
+
+<h2 id="block-inline-attribute-lists-ial">Block inline attribute lists (IAL)</h2>
+
+<p id="para-one">A simple paragraph with an ID attribute.</p>
+
+<blockquote title="The blockquote title" id="myid">
+  <p>A blockquote with a title</p>
+</blockquote>
+
+<div class="language-ruby ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Some</span> <span class="n">code</span> <span class="n">here</span>
+</code></pre>
+</div>
 
 
 </section>
@@ -88,7 +131,7 @@ Talk</a>.</p>
 <span class="categories">
   in categories
   
-  <a href="http://localhost:4000/categories/#jekyll update" title="jekyll update">jekyll update</a>&nbsp;
+  <a href="http://localhost:4000/categories/#未分类" title="未分类">未分类</a>&nbsp;
   
 </span>
 

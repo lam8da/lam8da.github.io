@@ -8,8 +8,14 @@
     <link href="http://localhost:4000/feed/" rel="alternate" title="lambda" type="application/atom+xml" />
     <link rel="stylesheet" href="/media/css/style.css">
     <link rel="stylesheet" href="/media/css/highlight.css">
+    <link rel="stylesheet" href="/media/css/highlighter-rouge.css">
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        "HTML-CSS": { scale: 80 }
+      });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </head>
   <body>
     <div id="container">
@@ -27,178 +33,131 @@
         </nav>
         <article class="content">
         <section class="post">
-<ol id="markdown-toc">
+<ul id="markdown-toc">
   <li><a href="#section" id="markdown-toc-section">第3章 统计语言模型</a></li>
   <li><a href="#section-1" id="markdown-toc-section-1">第4章 谈谈中文分词</a></li>
-  <li><a href="#section-2" id="markdown-toc-section-2">第12章 地图和本地搜索的最基本技术——有限状态机和动态规划</a></li>
-  <li><a href="#section-3" id="markdown-toc-section-3">第18章 搜索引擎反作弊问题</a></li>
-  <li><a href="#section-4" id="markdown-toc-section-4">第20章 谈谈最大熵模型</a></li>
-  <li><a href="#section-5" id="markdown-toc-section-5">第25章 条件随机场和句法分析</a></li>
-</ol>
+  <li><a href="#section-2" id="markdown-toc-section-2">第6章 信息的度量和作用</a></li>
+  <li><a href="#section-3" id="markdown-toc-section-3">第9章 图论和网络爬虫</a></li>
+  <li><a href="#section-4" id="markdown-toc-section-4">第12章 地图和本地搜索的最基本技术 - 有限状态机和动态规划</a></li>
+  <li><a href="#google-ak-47---" id="markdown-toc-google-ak-47---">第13章 Google AK-47的设计者 - 阿米特·辛格博士</a></li>
+  <li><a href="#section-5" id="markdown-toc-section-5">第14章 余弦定理和新闻的分类</a></li>
+  <li><a href="#section-6" id="markdown-toc-section-6">第16章 信息指纹及其应用</a></li>
+  <li><a href="#section-7" id="markdown-toc-section-7">第18章 搜索引擎反作弊问题</a></li>
+  <li><a href="#section-8" id="markdown-toc-section-8">第19章 谈谈数学模型的重要性</a></li>
+  <li><a href="#section-9" id="markdown-toc-section-9">第20章 谈谈最大熵模型</a></li>
+  <li><a href="#section-10" id="markdown-toc-section-10">第25章 条件随机场和句法分析</a></li>
+</ul>
 
 <h2 id="section">第3章 统计语言模型</h2>
 
 <ol>
-  <li>
-    <p>在自然语言中，上下文之间的相关性可能跨度非常大。例如从一个段落跨到另一个段落，因此即使模型的阶数再提高也无可奈何。这就是马尔科夫假设的局限性，需要采用一些长程的依赖性（Long Distance Dependency）来解决</p>
-  </li>
-  <li>
-    <p>用于平滑先验概率的Good-Turing Estimate</p>
-  </li>
-  <li>
-    <p>Katz backoff</p>
-  </li>
+  <li>在自然语言中，上下文之间的相关性可能跨度非常大。例如从一个段落跨到另一个段落，因此即使模型的阶数再提高也无可奈何。这就是马尔科夫假设的局限性，需要采用一些长程的依赖性（Long Distance Dependency）来解决</li>
+  <li>用于平滑先验概率的Good-Turing Estimate</li>
+  <li>Katz backoff</li>
 </ol>
 
 <h2 id="section-1">第4章 谈谈中文分词</h2>
 
 <ol>
-  <li>
-    <p>机器翻译：分词颗粒度大较好</p>
-  </li>
-  <li>
-    <p>网页搜索：粒度小较好</p>
-  </li>
+  <li>机器翻译：分词颗粒度大较好</li>
+  <li>网页搜索：粒度小较好</li>
 </ol>
 
-<p>第6章 信息的度量和作用</p>
+<h2 id="section-2">第6章 信息的度量和作用</h2>
 
 <ol>
-  <li>
-    <p>吴军&amp;王作英：汉语信息熵和语言模型的复杂度</p>
-  </li>
-  <li>
-    <p>传奇间谍：佐尔格</p>
-  </li>
-  <li>
-    <p>合理利用信息，而不是玩弄什么公式和机器学习算法，是做好搜索的关键</p>
-  </li>
-  <li>
-    <p>互信息可以用于NLP中消岐</p>
-  </li>
-  <li>
-    <p>李开复的Sphinx语音识别系统</p>
-  </li>
-  <li>
-    <p>Thomas Cover: Elements of Information Theory</p>
-  </li>
+  <li>吴军&amp;王作英：汉语信息熵和语言模型的复杂度</li>
+  <li>传奇间谍：佐尔格</li>
+  <li>合理利用信息，而不是玩弄什么公式和机器学习算法，是做好搜索的关键</li>
+  <li>互信息可以用于NLP中消岐</li>
+  <li>李开复的Sphinx语音识别系统</li>
+  <li>Thomas Cover: Elements of Information Theory</li>
 </ol>
 
-<p>第9章 图论和网络爬虫</p>
+<h2 id="section-3">第9章 图论和网络爬虫</h2>
 
 <ol>
-  <li>
-    <p>对于一个url，先将域名提出并哈希，该url就由该哈希对应的机器负责下载</p>
-  </li>
-  <li>
-    <p>爬虫节点之间的通信可通过batch方式实现</p>
-  </li>
+  <li>对于一个url，先将域名提出并哈希，该url就由该哈希对应的机器负责下载</li>
+  <li>爬虫节点之间的通信可通过batch方式实现</li>
 </ol>
 
-<h2 id="section-2">第12章 地图和本地搜索的最基本技术——有限状态机和动态规划</h2>
+<h2 id="section-4">第12章 地图和本地搜索的最基本技术 - 有限状态机和动态规划</h2>
 
 <ol>
-  <li>
-    <p>对地址格式建立有限状态机模型，用于分析网页，找到网页中的地址部分，建立local search的database</p>
-  </li>
-  <li>
-    <p>基于概率的有限状态机可用于解决地址的模糊匹配问题</p>
-  </li>
-  <li>
-    <p>Mehryar Mohri, Fernando Pereira, Michael Riley的通用概率有限状态机c语言库：http://www.cs.nyu.edu/~mohri</p>
-  </li>
-  <li>
-    <p>Weighted Finite State Transducer, WFST</p>
-  </li>
+  <li>对地址格式建立有限状态机模型，用于分析网页，找到网页中的地址部分，建立local search的database</li>
+  <li>基于概率的有限状态机可用于解决地址的模糊匹配问题</li>
+  <li>Mehryar Mohri, Fernando Pereira, Michael Riley的通用概率有限状态机c语言库：http://www.cs.nyu.edu/~mohri</li>
+  <li>Weighted Finite State Transducer, WFST</li>
 </ol>
 
-<p>第13章 Google AK-47的设计者——阿米特·辛格博士</p>
+<h2 id="google-ak-47---">第13章 Google AK-47的设计者 - 阿米特·辛格博士</h2>
 
 <ol>
   <li>Amit Singhal院士：Google的排序算法Ascorer</li>
 </ol>
 
-<p>第14章 余弦定理和新闻的分类</p>
+<h2 id="section-5">第14章 余弦定理和新闻的分类</h2>
 
 <ol>
   <li>自底向上不断合并：按照新闻之间两两的余弦相似性，根据某个阈值合成一小类，再用小类的特征向量向上合成大类，不断做下去</li>
 </ol>
 
-<p>第16章 信息指纹及其应用</p>
+<h2 id="section-6">第16章 信息指纹及其应用</h2>
 
 <ol>
-  <li>
-    <p>把每个网址映射成一个128bit的数用于爬虫的哈希表（由于冲突的概率极小故不用存储原来的网址）</p>
+  <li>把每个网址映射成一个128bit的数用于爬虫的哈希表（由于冲突的概率极小故不用存储原来的网址）</li>
+  <li>信息指纹还可用于判断集合基本相同：
+    <ul>
+      <li>用于判断垃圾邮件账号</li>
+      <li>网页去重（找出IDF最大的词作为特征）</li>
+      <li>YouTube反盗版：视频关键帧作为集合元素</li>
+    </ul>
   </li>
-  <li>
-    <p>信息指纹还可用于判断集合基本相同：</p>
+  <li>相似性哈希：
+    <ul>
+      <li>Moses Charikar, Similarity Estimation Techniques from Rounding Algorithms</li>
+      <li>Gurmeet Singh Manku, Arvind Jain and Anish Das Sarma, Detecting Near-Duplicates for Web Crawling</li>
+    </ul>
+
+    <p>原理：一组词t1, t2, …, tk及其权重w1, w2, …, wk，分别算出每个词的哈希值hi（设一共有B位），然后：</p>
+    <ol>
+      <li>把hi扩展成B个数并让对应的数累加。对hi的第k位，若为1则加上wi，为0则减</li>
+      <li>把B个数收缩为一个B位的二进制数，第k个数若&gt;0则第k位为1否则为0。</li>
+    </ol>
   </li>
 </ol>
 
-<p>用于判断垃圾邮件账号
-网页去重（找出IDF最大的词作为特征）
-YouTube反盗版：视频关键帧作为集合元素</p>
-<ol>
-  <li>相似性哈希：</li>
-</ol>
-
-<p>Moses Charikar, Similarity Estimation Techniques from Rounding Algorithms
-Gurmeet Singh Manku, Arvind Jain and Anish Das Sarma, Detecting Near-Duplicates for Web Crawling
-原理：一组词t1, t2, …, tk及其权重w1, w2, …, wk，分别算出每个词的哈希值hi（设一共有B位），然后：</p>
-
-<p>把hi扩展成B个数并让对应的数累加。对hi的第k位，若为1则加上wi，为0则减
-把B个数收缩为一个B位的二进制数，第k个数若&gt;0则第k位为1否则为0。</p>
-<h2 id="section-3">第18章 搜索引擎反作弊问题</h2>
+<h2 id="section-7">第18章 搜索引擎反作弊问题</h2>
 
 <ol>
-  <li>
-    <p>作弊的本质是在网页排名信号中加入了噪音，因此反作弊的关键是去噪音（根据通信原理、通信模型和信号处理的原理）</p>
+  <li>作弊的本质是在网页排名信号中加入了噪音，因此反作弊的关键是去噪音（根据通信原理、通信模型和信号处理的原理）</li>
+  <li>解决方法：
+    <ul>
+      <li>针对商业性的搜索，采用一套“抗干扰”强的搜索算法</li>
+      <li>对信息类的搜索，采用“敏感”的算法</li>
+    </ul>
   </li>
-  <li>
-    <p>解决方法：</p>
-  </li>
+  <li>每个网站到其他网站的出链数目作为一个向量，计算两个网站的出链向量的余弦值可以找出那些专门卖链接的网站。（余弦几乎为1）</li>
+  <li>图论：用于发现clique</li>
 </ol>
 
-<p>针对商业性的搜索，采用一套“抗干扰”强的搜索算法
-对信息类的搜索，采用“敏感”的算法</p>
-<ol>
-  <li>
-    <p>每个网站到其他网站的出链数目作为一个向量，计算两个网站的出链向量的余弦值可以找出那些专门卖链接的网站。（余弦几乎为1）</p>
-  </li>
-  <li>
-    <p>图论：用于发现clique</p>
-  </li>
-</ol>
-
-<p>第19章 谈谈数学模型的重要性</p>
+<h2 id="section-8">第19章 谈谈数学模型的重要性</h2>
 
 <ol>
-  <li>
-    <p>一个正确的数学模型应当在形式上是简单的</p>
-  </li>
-  <li>
-    <p>一个正确的模型一开始可能不如一个精雕细琢过的错误模型来得准确，但若是对的就应坚持</p>
-  </li>
-  <li>
-    <p>大量准确的数据对研发很重要</p>
-  </li>
-  <li>
-    <p>正确的模型可能受噪音干扰而不准确，正确做法是找到噪音根源，这可能通往重大发现</p>
-  </li>
+  <li>一个正确的数学模型应当在形式上是简单的</li>
+  <li>一个正确的模型一开始可能不如一个精雕细琢过的错误模型来得准确，但若是对的就应坚持</li>
+  <li>大量准确的数据对研发很重要</li>
+  <li>正确的模型可能受噪音干扰而不准确，正确做法是找到噪音根源，这可能通往重大发现</li>
 </ol>
 
-<h2 id="section-4">第20章 谈谈最大熵模型</h2>
+<h2 id="section-9">第20章 谈谈最大熵模型</h2>
 
 <ol>
-  <li>
-    <p>GIS (Generalized Iterative Scaling)算法</p>
-  </li>
-  <li>
-    <p>IIS (Improved Iterative Scaling)算法（达拉皮垂）</p>
-  </li>
+  <li>GIS (Generalized Iterative Scaling)算法</li>
+  <li>IIS (Improved Iterative Scaling)算法（达拉皮垂）</li>
 </ol>
 
-<h2 id="section-5">第25章 条件随机场和句法分析</h2>
+<h2 id="section-10">第25章 条件随机场和句法分析</h2>
 
 <ol>
   <li>浅层分析、GParser</li>

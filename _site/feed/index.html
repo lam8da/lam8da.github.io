@@ -7,57 +7,94 @@
     <title>lambda</title>
     <atom:link href="http://localhost:4000/feed/" rel="self" type="application/rss+xml" />
     <link>http://lam8da.github.io</link>
-    <lastBuildDate>2016-11-10T16:23:14-08:00</lastBuildDate>
+    <lastBuildDate>2016-11-12T00:37:14-08:00</lastBuildDate>
     <webMaster>lambda2fei@gmail.com</webMaster>
     
     <item>
-      <title>Jekyll and git resources</title>
+      <title>Blogging Resources</title>
       <link>http://localhost:4000/2016/11/welcome-to-jekyll/</link>
-      <pubDate>2016-11-07T21:52:37-08:00</pubDate>
+      <pubDate>2016-11-07T00:00:00-08:00</pubDate>
       <author>lambda</author>
       <guid>http://localhost:4000/2016/11/welcome-to-jekyll</guid>
-      <content:encoded><![CDATA[<ol>
-  <li>how to use git commands:
-http://marklodato.github.io/visual-git-guide/index-zh-cn.html</li>
+      <content:encoded><![CDATA[<ul id="markdown-toc">
+  <li><a href="#resources" id="markdown-toc-resources">Resources</a></li>
+  <li><a href="#code-block-highlighting" id="markdown-toc-code-block-highlighting">Code block highlighting</a>    <ul>
+      <li><a href="#how-to-use-highlighter" id="markdown-toc-how-to-use-highlighter">How to use highlighter</a></li>
+      <li><a href="#how-to-highlight-inlined-code-blocks" id="markdown-toc-how-to-highlight-inlined-code-blocks">How to highlight inlined code blocks</a></li>
+    </ul>
+  </li>
+  <li><a href="#block-inline-attribute-lists-ial" id="markdown-toc-block-inline-attribute-lists-ial">Block inline attribute lists (IAL)</a></li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+<ol>
+  <li>git commands manual: <a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">http://marklodato.github.io/visual-git-guide/index-zh-cn.html</a></li>
+  <li>markdown manual: <a href="http://www.appinn.com/markdown/">http://www.appinn.com/markdown/</a></li>
+  <li>kramdown
+    <ul>
+      <li>quickref/examples: <a href="http://kramdown.gettalong.org/quickref.html">http://kramdown.gettalong.org/quickref.html</a></li>
+      <li>syntax/manual: <a href="http://kramdown.gettalong.org/syntax.html">http://kramdown.gettalong.org/syntax.html</a></li>
+    </ul>
+  </li>
+  <li>rouge options: <a href="https://github.com/jneen/rouge#full-options">https://github.com/jneen/rouge#full-options</a></li>
+  <li>latex cheat sheet: <a href="https://wch.github.io/latexsheet/">https://wch.github.io/latexsheet/</a></li>
+  <li><a href="http://jekyllrb.com/docs/home">Jekyll docs</a></li>
 </ol>
 
-<h1 id="how-to-1">1. how to 1</h1>
-<h2 id="how-to-2">2. how to 2</h2>
-<h3 id="how-to-3">3. how to 3</h3>
+<h2 id="code-block-highlighting">Code block highlighting</h2>
 
-<p><img src="http://localhost:4000/assets/head-first-design-pattern-notes2.strategy.png" alt="My helpful screenshot" /></p>
+<h3 id="how-to-use-highlighter">How to use highlighter</h3>
+<!-- Overwrite the setting to not show line_numbers in fenced code blocks -->
 
-<script type="math/tex; mode=display">a^2 + b^2 = c^2</script>
+<p>Code block using kramdown (<strong>may not be compactible if not using kramdown</strong>):</p>
 
-<p>\[ \mathbf{X} = \mathbf{Z} \mathbf{P^\mathsf{T}} \]</p>
-
-<p>If you want to use subscripts you <strong>don't</strong> need to scape the
-underscores with a backslash like:</p>
-
-<script type="math/tex; mode=display">\mathbf{X}_{n,p} = \mathbf{A}_{n,k} \mathbf{B}\_{k,p}</script>
-
-<p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and
-re-build the site to see your changes. You can rebuild the site in many
-different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches
-a web server and auto-regenerates your site when a file is updated.</p>
-
-<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the
-convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front
-matter. Take a look at the source for this post to get an idea about how it
-works.</p>
-
-<p>Jekyll also offers powerful support for code snippets:</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
   <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
 <span class="k">end</span>
 <span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span>
+</code></pre>
+</div>
 
-<p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most
-out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub
-repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll
-Talk</a>.</p>
+<p>Code block using Pygments or Rouge by using the <code class="language-ruby highlighter-rouge"><span class="n">highlight</span></code> Liquid tag
+(<strong>putting it inside a list will work incorrectly</strong>):</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<h3 id="how-to-highlight-inlined-code-blocks">How to highlight inlined code blocks</h3>
+
+<p>I discovered in 11/12/2016 that all (inlined) code blocks generated by rouge are
+wrapped by a
+<code class="language-nothing">&lt;code&gt;</code>
+tag with css class set to
+<code class="language-nothing">language-some_language highlighter-rouge</code>
+. So we can copy the highlight.css
+to highlighter-rouge.css and make same css rules applicable to
+<code class="language-nothing">highlighter-rouge span_css_class</code>
+(e.g.
+<code class="language-nothing">highlighter-rouge cp</code>
+).</p>
+
+<h2 id="block-inline-attribute-lists-ial">Block inline attribute lists (IAL)</h2>
+
+<p id="para-one">A simple paragraph with an ID attribute.</p>
+
+<blockquote title="The blockquote title" id="myid">
+  <p>A blockquote with a title</p>
+</blockquote>
+
+<div class="language-ruby ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Some</span> <span class="n">code</span> <span class="n">here</span>
+</code></pre>
+</div>
 
 ]]></content:encoded>
     </item>
@@ -72,20 +109,33 @@ Talk</a>.</p>
 
 <p>个人觉得最难懂的就是OM算法，我将它理解成一个动态规划：</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>// @c is the commander id;
+<div class="language-c++ highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre></td><td class="code"><pre><span class="c1">// @c is the commander id;
 // @l is one of the lieutenant id, which belongs to the current lieutenant set;
 // @m is the parameter m mentioned in the paper;
 // OM(c, l, m) means the final value lieutenant @l obeys from commander @c.
+</span>
+<span class="o">-</span> <span class="k">if</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span><span class="o">:</span>
+<span class="n">OM</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="o">=</span> <span class="n">msg</span><span class="p">(</span><span class="n">c</span><span class="o">-&gt;</span><span class="n">l</span><span class="p">),</span> <span class="n">where</span> <span class="n">l</span> <span class="n">in</span> <span class="n">set</span><span class="p">{</span><span class="n">lieutenant</span><span class="p">};</span>
 
-- if m = 0:
-OM(c, l, m) = msg(c-&gt;l), where l in set{lieutenant};
-
-- if m &gt; 0:
-OM(c, l, m) = majority(
-  msg(c-&gt;l),
-  the list of OM(l', l, m-1) where l' in (set{lieutenant} - {l})
-).  // majority
-</code></pre>
+<span class="o">-</span> <span class="k">if</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">:</span>
+<span class="n">OM</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span> <span class="o">=</span> <span class="n">majority</span><span class="p">(</span>
+  <span class="n">msg</span><span class="p">(</span><span class="n">c</span><span class="o">-&gt;</span><span class="n">l</span><span class="p">),</span>
+  <span class="n">the</span> <span class="n">list</span> <span class="n">of</span> <span class="n">OM</span><span class="p">(</span><span class="n">l</span><span class="err">'</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="n">where</span> <span class="n">l</span><span class="err">'</span> <span class="n">in</span> <span class="p">(</span><span class="n">set</span><span class="p">{</span><span class="n">lieutenant</span><span class="p">}</span> <span class="o">-</span> <span class="p">{</span><span class="n">l</span><span class="p">})</span>
+<span class="p">).</span>  <span class="c1">// majority
+</span></pre></td></tr></tbody></table>
+</div>
 </div>
 
 <p>实际上，准确来说上面的状态表示是不完全的，OM的第一个参数应该是一个commander的id列表，表示从算法开始的第一个commander通过发消息沿途产生的所有commander。这样说起来还是很抽象，具体还是看下文代码吧。</p>
@@ -1797,116 +1847,85 @@ cout « “hi” « endl;</p>
     </item>
     
     <item>
-      <title>《C++ Primer》读书笔记（第1-4章）</title>
+      <title>《C++ Primer》读书笔记（第01-04章）</title>
       <link>http://localhost:4000/2013/09/c++-primer-notes-chapter01to04/</link>
       <pubDate>2013-09-20T00:00:00-07:00</pubDate>
       <author>lambda</author>
       <guid>http://localhost:4000/2013/09/c++-primer-notes-chapter01to04</guid>
-      <content:encoded><![CDATA[<ol id="markdown-toc">
+      <content:encoded><![CDATA[<ul id="markdown-toc">
   <li><a href="#section" id="markdown-toc-section">第1章 快速入门</a></li>
   <li><a href="#section-1" id="markdown-toc-section-1">第2章 变量和基本类型</a></li>
-</ol>
+</ul>
+
+<p><!--  Not show line_numbers  -->
+</p>
 
 <h2 id="section">第1章 快速入门</h2>
 
 <ol>
-  <li>
-    <p>Windows下查看程序返回值：echo %ERRORLEVEL%</p>
-  </li>
-  <li>
-    <p>endl是一个特殊值，称为操纵符（manipulator），将其写入输出流时将会输出换行效果并刷新与设备相关联的缓冲区</p>
-  </li>
-  <li>
-    <p>“A”表示包含字母A和空字符两个字符的字符串</p>
-  </li>
-  <li>
-    <p>宽字符：wchat_t ch=L’a’;</p>
-  </li>
-  <li>
-    <p>宽字符串：L”hello”（包含了最后的宽空字符）</p>
-  </li>
+  <li>Windows下查看程序返回值：<code class="language-c++ highlighter-rouge"><span class="nb">echo</span> %ERRORLEVEL%</code></li>
+  <li>endl是一个特殊值，称为操纵符（manipulator），将其写入输出流时将会输出换行效果并刷新与设备相关联的缓冲区</li>
+  <li><code class="language-c++ highlighter-rouge"><span class="s">"A"</span></code>表示包含字母A和空字符两个字符的字符串</li>
+  <li>宽字符：<code class="language-c++ highlighter-rouge"><span class="n">wchat_t</span> <span class="n">ch</span><span class="o">=</span><span class="sc">L'a'</span><span class="p">;</span></code></li>
+  <li>宽字符串：<code class="language-c++ highlighter-rouge"><span class="s">L"hello"</span></code>（包含了最后的宽空字符）</li>
 </ol>
 
 <h2 id="section-1">第2章 变量和基本类型</h2>
 
 <ol>
-  <li>
-    <p>变量名不能包含两个连续的下划线，也不能以下划线开头后面紧跟一个大写字母</p>
+  <li>变量名不能包含两个连续的下划线，也不能以下划线开头后面紧跟一个大写字母</li>
+  <li>定义和声明的区别：
+    <ul>
+      <li>定义：为变量分配存储空间，还可以为变量指定初值</li>
+      <li>声明：用于向程序表明变量的类型和名字</li>
+    </ul>
   </li>
-  <li>
-    <p>定义和声明的区别：</p>
+  <li>定义也是声明：当定义变量时我们声明了它的类型和名字</li>
+  <li>如果声明有初始化式，那么它可被当作是定义，即使被标记为<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>。如：
+<code class="language-c++ highlighter-rouge"><span class="k">extern</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span></code></li>
+  <li>只有当<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>声明位于函数外部时，才可以含有初始化式（此时被当成定义）</li>
+  <li>与一般的变量不同，在全局作用域声明的<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>变量是定义该对象的文件的局部变量。此变量只存在于那个文件中，不能被其他文件访问。除非定义时加上<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>。</li>
+  <li>引用是一种复合类型（是指用其他类型定义的类型）</li>
+  <li><code class="language-c++ highlighter-rouge"><span class="k">const</span></code>引用可以初始化为不同类型的对象或者初始化为右值，如字面值常量：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">r</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">r2</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="n">i</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">r3</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+</code></pre>
+    </div>
+    <p>但同样的初始化对于非const引用都是不合法的，因为对于：</p>
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">double</span> <span class="n">dval</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri</span> <span class="o">=</span> <span class="n">dval</span><span class="p">;</span>
+</code></pre>
+    </div>
+    <p>编译器会将其变成：</p>
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">dval</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+</code></pre>
+    </div>
+    <p>如果ri不是const，则可对其赋值，但不会修改dval，矛盾。</p>
   </li>
-</ol>
-
-<p>定义：为变量分配存储空间，还可以为变量指定初值
-声明：用于向程序表明变量的类型和名字</p>
-<ol>
-  <li>
-    <p>定义也是声明：当定义变量时我们声明了它的类型和名字</p>
+  <li>非const的引用只能绑定到与该引用同类型的对象；const引用则可以绑定到不同但类型相关的对象或右值。</li>
+  <li>枚举成员的值可以不唯一，如：enum { a = 2, b, c = 3, d };其中b和c都是3。</li>
+  <li>不能把int等类型赋值给枚举类型的对象</li>
+  <li>用于初始化的值必需是一个常量表达式，即在编译时就可以计算出值的表达式</li>
+  <li>头文件一般包含：类的定义、extern变量的声明和函数的声明</li>
+  <li>对于“头文件不应含有定义”这一规则，有三个例外：头文件可以定义类、值在编译时就已知的const对象和inline函数。这些实体可在多个源文件中定义，只要在每个源文件中的定义是相同的。p68</li>
+  <li>当在头文件中定义了const变量后，每个包含该头文件的源文件都有了自己的const变量，其名称和值都一样；定义在头文件中的const变量应该是常量表达式。</li>
+  <li>若const变量不是用常量表达式初始化，就不应在头文件中定义，而应在源文件中定义并初始化，并添加extern使其被多个文件共享。</li>
+  <li>若在头文件中定义extern的const变量，多个cc文件都include了这个头文件且其obj会被链接到一起时，会出错：重定义。原因：这些cc文件引用头文件后相当于在文件中定义了这个const变量，但由于加了extern，使其全局可见。</li>
+  <li>可以声明引用，例如在a.cc中定义：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">const</span> <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ra</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+</code></pre>
+    </div>
+    <p>则可以在a.h中声明：extern const int &amp;ra;</p>
   </li>
-  <li>
-    <p>如果声明有初始化式，那么它可被当作是定义，即使被标记为extern。如：extern int x = 10;</p>
-  </li>
-  <li>
-    <p>只有当extern声明位于函数外部时，才可以含有初始化式（此时被当成定义）</p>
-  </li>
-  <li>
-    <p>与一般的变量不同，在全局作用域声明的const变量是定义该对象的文件的局部变量。此变量只存在于那个文件中，不能被其他文件访问。除非定义时加上extern。</p>
-  </li>
-  <li>
-    <p>引用是一种复合类型（是指用其他类型定义的类型）</p>
-  </li>
-  <li>
-    <p>const引用可以初始化为不同类型的对象或者初始化为右值，如字面值常量：
-int i = 42;
-const int &amp;r = 42;
-const int &amp;r2 = r + i;
-const int &amp;r3 = i;
-但同样的初始化对于非const引用都是不合法的，因为对于：
-double dval = 3.14;
-const int &amp;ri = dval;
-编译器会将其变成：
-int temp = dval;
-const int &amp;ri = temp;
-如果ri不是const，则可对其赋值，但不会修改dval，矛盾。</p>
-  </li>
-  <li>
-    <p>非const的引用只能绑定到与该引用同类型的对象；const引用则可以绑定到不同但类型相关的对象或右值。</p>
-  </li>
-  <li>
-    <p>枚举成员的值可以不唯一，如：enum { a = 2, b, c = 3, d };其中b和c都是3。</p>
-  </li>
-  <li>
-    <p>不能把int等类型赋值给枚举类型的对象</p>
-  </li>
-  <li>
-    <p>用于初始化的值必需是一个常量表达式，即在编译时就可以计算出值的表达式</p>
-  </li>
-  <li>
-    <p>头文件一般包含：类的定义、extern变量的声明和函数的声明</p>
-  </li>
-  <li>
-    <p>对于“头文件不应含有定义”这一规则，有三个例外：头文件可以定义类、值在编译时就已知的const对象和inline函数。这些实体可在多个源文件中定义，只要在每个源文件中的定义是相同的。p68</p>
-  </li>
-  <li>
-    <p>当在头文件中定义了const变量后，每个包含该头文件的源文件都有了自己的const变量，其名称和值都一样；定义在头文件中的const变量应该是常量表达式。</p>
-  </li>
-  <li>
-    <p>若const变量不是用常量表达式初始化，就不应在头文件中定义，而应在源文件中定义并初始化，并添加extern使其被多个文件共享。</p>
-  </li>
-  <li>
-    <p>若在头文件中定义extern的const变量，多个cc文件都include了这个头文件且其obj会被链接到一起时，会出错：重定义。原因：这些cc文件引用头文件后相当于在文件中定义了这个const变量，但由于加了extern，使其全局可见。</p>
-  </li>
-  <li>
-    <p>可以声明引用，例如在a.cc中定义：
-const int a = 100;
-const int &amp;ra = a;
-则可以在a.h中声明：extern const int &amp;ra;</p>
-  </li>
-  <li>
-    <p>逗号表达式与定义，以下是合法的：
-const int i = 0, *p = i;
-const int j = 0, *q = &amp;i;</p>
+  <li>逗号表达式与定义，以下是合法的：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="n">q</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>
+</code></pre>
+    </div>
   </li>
 </ol>
 

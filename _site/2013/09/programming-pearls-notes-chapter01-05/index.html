@@ -8,8 +8,14 @@
     <link href="http://localhost:4000/feed/" rel="alternate" title="lambda" type="application/atom+xml" />
     <link rel="stylesheet" href="/media/css/style.css">
     <link rel="stylesheet" href="/media/css/highlight.css">
+    <link rel="stylesheet" href="/media/css/highlighter-rouge.css">
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        "HTML-CSS": { scale: 80 }
+      });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </head>
   <body>
     <div id="container">
@@ -48,19 +54,23 @@
 <ol>
   <li>给定一个最多含40亿个32位整数的文件，找出一个不在文件中的32位整数。
     <ul>
-      <li>解：可以通过写新文件做到O(n)，因为每次只需处理少的那一半。</li>
+      <li>解：可以通过写新文件做到<code class="language-c++ highlighter-rouge"><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></code>，因为每次只需处理少的那一半。</li>
     </ul>
   </li>
   <li>扩展：给定的是一个内存中的数组而不是文件。
     <ul>
-      <li>解：用快排的partition思想，设当前数组最大值为max，最小值为min，则用(max-min)/2作为pivot来分割。</li>
+      <li>解：用快排的partition思想，设当前数组最大值为max，最小值为<code class="language-c++ highlighter-rouge"><span class="n">min</span></code>，则用<code class="language-c++ highlighter-rouge"><span class="p">(</span><span class="n">max</span><span class="o">-</span><span class="n">min</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span></code>作为pivot来分割。</li>
     </ul>
   </li>
   <li>给定包含43亿个32位整数的顺序文件，找到一个至少出现2次的整数。
     <ul>
-      <li>如果刚开始时文件（数组）中的数的个数多于max-min+1（本题这个假设为真因为2^32&lt;4,300,000,000），那么可以这么做：用partition思想，每次把当前区间一分为二，每次找数多的那一半递归。设数多的那一半最大值为max，最小值为min，则只需取max-min+2个数进行递归即可。</li>
-      <li>否则，如果题目保证至少有一个数重复，平均情况下可以用桶：共n个桶（n为数的个数），把数t放进桶(t-min)n/(max-min+1)中，然后继续做：如果数最多那个桶满足上述条件就用上述解法，否则继续分桶。</li>
-      <li>问：极端情况下，譬如数组1，2，3，…，9999，10000，1000000000，怎么做？哈希？有确定性O(n)算法吗？</li>
+      <li>解：
+        <ul>
+          <li>如果刚开始时文件（数组）中的数的个数多于<code class="language-c++ highlighter-rouge"><span class="n">max</span><span class="o">-</span><span class="n">min</span><span class="o">+</span><span class="mi">1</span></code>（本题这个假设为真因为<code class="language-c++ highlighter-rouge"><span class="mi">2</span><span class="o">^</span><span class="mi">32</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mo">000</span><span class="p">,</span><span class="mo">000</span></code>），那么可以这么做：用partition思想，每次把当前区间一分为二，每次找数多的那一半递归。设数多的那一半最大值为<code class="language-c++ highlighter-rouge"><span class="n">max</span></code>，最小值为<code class="language-c++ highlighter-rouge"><span class="n">min</span></code>，则只需取<code class="language-c++ highlighter-rouge"><span class="n">max</span><span class="o">-</span><span class="n">min</span><span class="o">+</span><span class="mi">2</span></code>个数进行递归即可。</li>
+          <li>否则，如果题目保证至少有一个数重复，平均情况下可以用桶：共<code class="language-c++ highlighter-rouge"><span class="n">n</span></code>个桶（<code class="language-c++ highlighter-rouge"><span class="n">n</span></code>为数的个数），把数<code class="language-c++ highlighter-rouge"><span class="n">t</span></code>放进桶<code class="language-c++ highlighter-rouge"><span class="n">n</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">min</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">max</span><span class="o">-</span><span class="n">min</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span></code>中，然后继续做：如果数最多那个桶满足上述条件就用上述解法，否则继续分桶。</li>
+        </ul>
+      </li>
+      <li>问：极端情况下，譬如数组<code class="language-c++ highlighter-rouge"><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">...,</span> <span class="mi">9999</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">1000000000</span></code>，怎么做？哈希？有确定性<code class="language-c++ highlighter-rouge"><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></code>算法吗？</li>
     </ul>
   </li>
 </ol>
@@ -78,7 +88,7 @@
   </li>
   <li>书籍：
     <ul>
-      <li>rapid development；</li>
+      <li>rapid development</li>
       <li>software project survived guide</li>
     </ul>
   </li>

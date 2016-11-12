@@ -1,6 +1,43 @@
-markdown: kramdown
+# Note: each time this file is changed we need to reload the jekyll http server
+# in order to make it take effect.
 permalink: /:year/:month/:title/
 url: http://lam8da.github.io
 author: lambda
-highlighter: rouge
 # paginate: 5
+markdown: kramdown
+highlighter: rouge
+
+# The following settings for syntax_highlighter_opts in kramdown has same effect
+# as putting these inlined options in specific post (which can be overwritten):
+#
+# {::options syntax_highlighter="rouge" /}
+# {::options
+#   syntax_highlighter_opts="{
+#     default_lang: c++,
+#     css_class: highlight,
+#     span: {
+#       line_numbers: false
+#     \},
+#     block: {
+#       line_numbers: true,
+#       start_line: 1
+#     \}
+#   \}"
+# /}
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  # The syntax_highlighter_opts here can contain settings applicable to the
+  # selected highlighter (rouge), and also other more general settings?
+  syntax_highlighter_opts:
+    default_lang: c++
+    css_class: highlight
+    # Setting line_numbers here is an bad idea, spans don't need linenos and
+    # would inherit this option
+    # line_numbers: true
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1

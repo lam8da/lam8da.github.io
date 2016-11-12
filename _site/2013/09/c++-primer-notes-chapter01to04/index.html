@@ -3,19 +3,25 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="lambda" />
-    <title>《C++ Primer》读书笔记（第1-4章） | lambda</title>
+    <title>《C++ Primer》读书笔记（第01-04章） | lambda</title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link href="http://localhost:4000/feed/" rel="alternate" title="lambda" type="application/atom+xml" />
     <link rel="stylesheet" href="/media/css/style.css">
     <link rel="stylesheet" href="/media/css/highlight.css">
+    <link rel="stylesheet" href="/media/css/highlighter-rouge.css">
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        "HTML-CSS": { scale: 80 }
+      });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </head>
   <body>
     <div id="container">
       <div id="main" role="main">
         <header>
-        <h1>《C++ Primer》读书笔记（第1-4章）</h1>
+        <h1>《C++ Primer》读书笔记（第01-04章）</h1>
         </header>
         <nav>
         <span><a title="home page" class="" href="http://localhost:4000/">首页</a></span>
@@ -27,111 +33,80 @@
         </nav>
         <article class="content">
         <section class="post">
-<ol id="markdown-toc">
+<ul id="markdown-toc">
   <li><a href="#section" id="markdown-toc-section">第1章 快速入门</a></li>
   <li><a href="#section-1" id="markdown-toc-section-1">第2章 变量和基本类型</a></li>
-</ol>
+</ul>
+
+<p><!--  Not show line_numbers  -->
+</p>
 
 <h2 id="section">第1章 快速入门</h2>
 
 <ol>
-  <li>
-    <p>Windows下查看程序返回值：echo %ERRORLEVEL%</p>
-  </li>
-  <li>
-    <p>endl是一个特殊值，称为操纵符（manipulator），将其写入输出流时将会输出换行效果并刷新与设备相关联的缓冲区</p>
-  </li>
-  <li>
-    <p>“A”表示包含字母A和空字符两个字符的字符串</p>
-  </li>
-  <li>
-    <p>宽字符：wchat_t ch=L’a’;</p>
-  </li>
-  <li>
-    <p>宽字符串：L”hello”（包含了最后的宽空字符）</p>
-  </li>
+  <li>Windows下查看程序返回值：<code class="language-c++ highlighter-rouge"><span class="nb">echo</span> %ERRORLEVEL%</code></li>
+  <li>endl是一个特殊值，称为操纵符（manipulator），将其写入输出流时将会输出换行效果并刷新与设备相关联的缓冲区</li>
+  <li><code class="language-c++ highlighter-rouge"><span class="s">"A"</span></code>表示包含字母A和空字符两个字符的字符串</li>
+  <li>宽字符：<code class="language-c++ highlighter-rouge"><span class="n">wchat_t</span> <span class="n">ch</span><span class="o">=</span><span class="sc">L'a'</span><span class="p">;</span></code></li>
+  <li>宽字符串：<code class="language-c++ highlighter-rouge"><span class="s">L"hello"</span></code>（包含了最后的宽空字符）</li>
 </ol>
 
 <h2 id="section-1">第2章 变量和基本类型</h2>
 
 <ol>
-  <li>
-    <p>变量名不能包含两个连续的下划线，也不能以下划线开头后面紧跟一个大写字母</p>
+  <li>变量名不能包含两个连续的下划线，也不能以下划线开头后面紧跟一个大写字母</li>
+  <li>定义和声明的区别：
+    <ul>
+      <li>定义：为变量分配存储空间，还可以为变量指定初值</li>
+      <li>声明：用于向程序表明变量的类型和名字</li>
+    </ul>
   </li>
-  <li>
-    <p>定义和声明的区别：</p>
+  <li>定义也是声明：当定义变量时我们声明了它的类型和名字</li>
+  <li>如果声明有初始化式，那么它可被当作是定义，即使被标记为<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>。如：
+<code class="language-c++ highlighter-rouge"><span class="k">extern</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span></code></li>
+  <li>只有当<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>声明位于函数外部时，才可以含有初始化式（此时被当成定义）</li>
+  <li>与一般的变量不同，在全局作用域声明的<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>变量是定义该对象的文件的局部变量。此变量只存在于那个文件中，不能被其他文件访问。除非定义时加上<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>。</li>
+  <li>引用是一种复合类型（是指用其他类型定义的类型）</li>
+  <li><code class="language-c++ highlighter-rouge"><span class="k">const</span></code>引用可以初始化为不同类型的对象或者初始化为右值，如字面值常量：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">r</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">r2</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="n">i</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">r3</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+</code></pre>
+    </div>
+    <p>但同样的初始化对于非const引用都是不合法的，因为对于：</p>
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">double</span> <span class="n">dval</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri</span> <span class="o">=</span> <span class="n">dval</span><span class="p">;</span>
+</code></pre>
+    </div>
+    <p>编译器会将其变成：</p>
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">dval</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+</code></pre>
+    </div>
+    <p>如果ri不是const，则可对其赋值，但不会修改dval，矛盾。</p>
   </li>
-</ol>
-
-<p>定义：为变量分配存储空间，还可以为变量指定初值
-声明：用于向程序表明变量的类型和名字</p>
-<ol>
-  <li>
-    <p>定义也是声明：当定义变量时我们声明了它的类型和名字</p>
+  <li>非const的引用只能绑定到与该引用同类型的对象；const引用则可以绑定到不同但类型相关的对象或右值。</li>
+  <li>枚举成员的值可以不唯一，如：enum { a = 2, b, c = 3, d };其中b和c都是3。</li>
+  <li>不能把int等类型赋值给枚举类型的对象</li>
+  <li>用于初始化的值必需是一个常量表达式，即在编译时就可以计算出值的表达式</li>
+  <li>头文件一般包含：类的定义、extern变量的声明和函数的声明</li>
+  <li>对于“头文件不应含有定义”这一规则，有三个例外：头文件可以定义类、值在编译时就已知的const对象和inline函数。这些实体可在多个源文件中定义，只要在每个源文件中的定义是相同的。p68</li>
+  <li>当在头文件中定义了const变量后，每个包含该头文件的源文件都有了自己的const变量，其名称和值都一样；定义在头文件中的const变量应该是常量表达式。</li>
+  <li>若const变量不是用常量表达式初始化，就不应在头文件中定义，而应在源文件中定义并初始化，并添加extern使其被多个文件共享。</li>
+  <li>若在头文件中定义extern的const变量，多个cc文件都include了这个头文件且其obj会被链接到一起时，会出错：重定义。原因：这些cc文件引用头文件后相当于在文件中定义了这个const变量，但由于加了extern，使其全局可见。</li>
+  <li>可以声明引用，例如在a.cc中定义：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">const</span> <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ra</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+</code></pre>
+    </div>
+    <p>则可以在a.h中声明：extern const int &amp;ra;</p>
   </li>
-  <li>
-    <p>如果声明有初始化式，那么它可被当作是定义，即使被标记为extern。如：extern int x = 10;</p>
-  </li>
-  <li>
-    <p>只有当extern声明位于函数外部时，才可以含有初始化式（此时被当成定义）</p>
-  </li>
-  <li>
-    <p>与一般的变量不同，在全局作用域声明的const变量是定义该对象的文件的局部变量。此变量只存在于那个文件中，不能被其他文件访问。除非定义时加上extern。</p>
-  </li>
-  <li>
-    <p>引用是一种复合类型（是指用其他类型定义的类型）</p>
-  </li>
-  <li>
-    <p>const引用可以初始化为不同类型的对象或者初始化为右值，如字面值常量：
-int i = 42;
-const int &amp;r = 42;
-const int &amp;r2 = r + i;
-const int &amp;r3 = i;
-但同样的初始化对于非const引用都是不合法的，因为对于：
-double dval = 3.14;
-const int &amp;ri = dval;
-编译器会将其变成：
-int temp = dval;
-const int &amp;ri = temp;
-如果ri不是const，则可对其赋值，但不会修改dval，矛盾。</p>
-  </li>
-  <li>
-    <p>非const的引用只能绑定到与该引用同类型的对象；const引用则可以绑定到不同但类型相关的对象或右值。</p>
-  </li>
-  <li>
-    <p>枚举成员的值可以不唯一，如：enum { a = 2, b, c = 3, d };其中b和c都是3。</p>
-  </li>
-  <li>
-    <p>不能把int等类型赋值给枚举类型的对象</p>
-  </li>
-  <li>
-    <p>用于初始化的值必需是一个常量表达式，即在编译时就可以计算出值的表达式</p>
-  </li>
-  <li>
-    <p>头文件一般包含：类的定义、extern变量的声明和函数的声明</p>
-  </li>
-  <li>
-    <p>对于“头文件不应含有定义”这一规则，有三个例外：头文件可以定义类、值在编译时就已知的const对象和inline函数。这些实体可在多个源文件中定义，只要在每个源文件中的定义是相同的。p68</p>
-  </li>
-  <li>
-    <p>当在头文件中定义了const变量后，每个包含该头文件的源文件都有了自己的const变量，其名称和值都一样；定义在头文件中的const变量应该是常量表达式。</p>
-  </li>
-  <li>
-    <p>若const变量不是用常量表达式初始化，就不应在头文件中定义，而应在源文件中定义并初始化，并添加extern使其被多个文件共享。</p>
-  </li>
-  <li>
-    <p>若在头文件中定义extern的const变量，多个cc文件都include了这个头文件且其obj会被链接到一起时，会出错：重定义。原因：这些cc文件引用头文件后相当于在文件中定义了这个const变量，但由于加了extern，使其全局可见。</p>
-  </li>
-  <li>
-    <p>可以声明引用，例如在a.cc中定义：
-const int a = 100;
-const int &amp;ra = a;
-则可以在a.h中声明：extern const int &amp;ra;</p>
-  </li>
-  <li>
-    <p>逗号表达式与定义，以下是合法的：
-const int i = 0, *p = i;
-const int j = 0, *q = &amp;i;</p>
+  <li>逗号表达式与定义，以下是合法的：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="n">q</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>
+</code></pre>
+    </div>
   </li>
 </ol>
 

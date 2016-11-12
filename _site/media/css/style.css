@@ -8,20 +8,30 @@ a:hover{color:#333333;text-decoration:underline;}
 hr{margin:.7em 0;border-top:1px dashed #d0d0d0;border-bottom:1px dashed #f9f9f9;}
 p{padding:0em 0;}
 ol,ul{padding-left:1.5em;}
+li p{margin:0;}
 /*
  * li{padding:.2em 0;}
  * ol,ul{list-style-position:inside;}
  * ol ul, ul ol, ul ul, ol ol {margin-left:1em;}
  */
-pre code{margin-left:1em;font-size:13px;line-height:1.6;display:block;overflow:auto;}
+pre code{margin-left:0.2em;font-size:13px;line-height:1.6;display:block;overflow:auto;}
 pre,code{margin:0;font-family:Menlo,"Andale Mono",Consolas,"Courier New",Monaco,monospace;font-size:13px;}
 .lineno{
-  margin-right:1em;
+  margin-right: .2em;
   border-right-color: gray;
   /* border-right: 1px; */
   border-right-style: dotted;
   border-right-width: thin;
   padding-right: .2em;
+}
+/* Problematic: https://github.com/mathjax/MathJax/issues/925
+ * .MathJax {
+ *   font-size: .8em !important;
+ * }
+ */
+.lambda_question {
+  color: red;
+  font-weight: bold;
 }
 blockquote{display:block;text-align:justify;border-left:4px solid #eeeeee;}
 blockquote{margin:1em 0em;padding-left:1.5em;}

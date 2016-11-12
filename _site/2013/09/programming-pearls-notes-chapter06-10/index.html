@@ -3,19 +3,25 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="lambda" />
-    <title>《编程珠玑》读书笔记（第6-10章） | lambda</title>
+    <title>《编程珠玑》读书笔记（第06-10章） | lambda</title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link href="http://localhost:4000/feed/" rel="alternate" title="lambda" type="application/atom+xml" />
     <link rel="stylesheet" href="/media/css/style.css">
     <link rel="stylesheet" href="/media/css/highlight.css">
+    <link rel="stylesheet" href="/media/css/highlighter-rouge.css">
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        "HTML-CSS": { scale: 80 }
+      });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </head>
   <body>
     <div id="container">
       <div id="main" role="main">
         <header>
-        <h1>《编程珠玑》读书笔记（第6-10章）</h1>
+        <h1>《编程珠玑》读书笔记（第06-10章）</h1>
         </header>
         <nav>
         <span><a title="home page" class="" href="http://localhost:4000/">首页</a></span>
@@ -27,97 +33,96 @@
         </nav>
         <article class="content">
         <section class="post">
-<ol id="markdown-toc">
+<ul id="markdown-toc">
   <li><a href="#section" id="markdown-toc-section">第7章 粗略估算</a></li>
   <li><a href="#section-1" id="markdown-toc-section-1">第8章 算法设计技术</a></li>
   <li><a href="#section-2" id="markdown-toc-section-2">第9章 代码调优</a></li>
   <li><a href="#section-3" id="markdown-toc-section-3">第10章 节省空间</a></li>
-</ol>
+</ul>
 
 <h2 id="section">第7章 粗略估算</h2>
 
 <ol>
-  <li>
-    <p>72法则：假设以年利率r%投资一笔钱y年，金融版本的72法则指出，如果ry=72，那么你的投资差不多会翻倍。</p>
-  </li>
-  <li>
-    <p>pi秒就是一个纳世纪：1纳世纪=10^(-9)*100年=10^(-7)年</p>
-  </li>
-  <li>
-    <p>Little定律：系统中物体的平均数量等于物体离开系统的平均速率和每个物体在系统中停留的平均时间的乘积。</p>
-  </li>
+  <li>72法则：假设以年利率<code class="language-c++ highlighter-rouge"><span class="n">r</span><span class="o">%</span></code>投资一笔钱y年，金融版本的72法则指出，如果<code class="language-c++ highlighter-rouge"><span class="n">ry</span><span class="o">=</span><span class="mi">72</span></code>，那么你的投资差不多会翻倍。</li>
+  <li>pi秒就是一个纳世纪：1纳世纪=<code class="language-c++ highlighter-rouge"><span class="mi">10</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">9</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span></code>年=<code class="language-c++ highlighter-rouge"><span class="mi">10</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">)</span></code>年</li>
+  <li>Little定律：系统中物体的平均数量等于物体离开系统的平均速率和每个物体在系统中停留的平均时间的乘积。</li>
 </ol>
 
 <h2 id="section-1">第8章 算法设计技术</h2>
 
 <ol>
-  <li>
-    <p>习题4：一个数组长n，每个元素都是从区间[-1, 1]中均匀选出的随机实数，那么最大子向量的期望值是多少？（经网上搜索无解。只能用蒙特卡罗方法模拟？）</p>
+  <li>习题4：一个数组长<code class="language-c++ highlighter-rouge"><span class="n">n</span></code>，每个元素都是从区间<code class="language-c++ highlighter-rouge"><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span></code>中均匀选出的随机实数，那么最大子向量的期望值是多少？
+    <ul>
+      <li>经网上搜索无解。只能用蒙特卡罗方法模拟？</li>
+    </ul>
+  </li>
+  <li>使用分治法求解最大连续子段和，要求时间复杂度<code class="language-c++ highlighter-rouge"><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></code>。
+    <ul>
+      <li>解：像线段树那样，每个线段保存如下状态：
+        <ul>
+          <li>当前段包含左端点的和最大的子段及其右端点</li>
+          <li>当前段包含右端点的和最大的子段及其左端点</li>
+          <li>当前段最大连续子段和及其左右端点</li>
+        </ul>
+
+        <p>然后自底向上更新一次，共<code class="language-c++ highlighter-rouge"><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></code>条线段。故。</p>
+      </li>
+    </ul>
+  </li>
+  <li>习题10a：查找总和最接近0的子向量。
+    <ul>
+      <li>解：保存累加和，则问题等价于找到累加和数组中两个元素，使差值最小。最简单的方法是排序后遍历一遍。有不使用排序的<code class="language-c++ highlighter-rouge"><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></code>算法吗？</li>
+    </ul>
+  </li>
+  <li>习题10b：查找总和最接近某一给定实数<code class="language-c++ highlighter-rouge"><span class="n">t</span></code>的子向量。
+    <ul>
+      <li>解：对累加和数组S排序后遍历，维护俩指针<code class="language-c++ highlighter-rouge"><span class="n">p1</span></code>和<code class="language-c++ highlighter-rouge"><span class="n">p2</span></code>使得<code class="language-c++ highlighter-rouge"><span class="n">S</span><span class="p">[</span><span class="n">p2</span><span class="p">]</span><span class="o">-</span><span class="n">S</span><span class="p">[</span><span class="n">p1</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">t</span></code>而<code class="language-c++ highlighter-rouge"><span class="n">S</span><span class="p">[</span><span class="n">p2</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">S</span><span class="p">[</span><span class="n">p1</span><span class="p">]</span><span class="o">&gt;</span><span class="n">t</span></code>即可。</li>
+    </ul>
   </li>
   <li>
-    <p>使用分治法求解最大连续子段和，要求时间复杂度O(n)。
-解：像线段树那样，每个线段保存如下状态：
-a. 当前段包含左端点的和最大的子段及其右端点
-b. 当前段包含右端点的和最大的子段及其左端点
-c. 当前段最大连续子段和及其左右端点
-然后自底向上更新一次，共O(n)条线段。故。</p>
+    <p>习题12：将数组<code class="language-c++ highlighter-rouge"><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">,...,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></code>初始化全0后执行类似于以下的操作<code class="language-c++ highlighter-rouge"><span class="n">n</span></code>次：</p>
+
+    <div class="language-c++ highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="k">for</span> <span class="n">i</span><span class="o">=</span><span class="p">[</span><span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">]</span> <span class="k">do</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">v</span><span class="err">，</span>
+</pre></td></tr></tbody></table>
+</div>
+    </div>
+
+    <p>其中<code class="language-c++ highlighter-rouge"><span class="n">l</span></code>，<code class="language-c++ highlighter-rouge"><span class="n">u</span></code>，<code class="language-c++ highlighter-rouge"><span class="n">v</span></code>为每次运算的参数，求一个更快的算法达到同样效果。</p>
+    <ul>
+      <li>解：初始化<code class="language-c++ highlighter-rouge"><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">,...,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></code>为全0，对每个操作令<code class="language-c++ highlighter-rouge"><span class="n">y</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">+=</span><span class="n">v</span></code>和<code class="language-c++ highlighter-rouge"><span class="n">y</span><span class="p">[</span><span class="n">u</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-=</span><span class="n">v</span></code>。则结束时<code class="language-c++ highlighter-rouge"><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">sigma</span><span class="p">{</span><span class="n">k</span><span class="o">=</span><span class="mi">0</span> <span class="n">to</span> <span class="n">i</span><span class="p">}(</span><span class="n">y</span><span class="p">[</span><span class="n">k</span><span class="p">])</span></code>。正确性：只需证明每一次执行完操作之后该性质保持不变即可。</li>
+    </ul>
   </li>
-  <li>
-    <p>习题10：
-I．查找总和最接近0的子向量。
-解：保存累加和，则问题等价于找到累加和数组中两个元素，使差值最小。最简单的方法是排序后遍历一遍。有不使用排序的O(n)算法吗？
-II．查找总和最接近某一给定实数t的子向量。
-解：对累加和数组S排序后遍历，维护俩指针p1和p2使得S[p2]-S[p1]&lt;=t而S[p2+1]-S[p1]&gt;t即可。</p>
-  </li>
-  <li>
-    <p>习题12：将数组x[0,…,n-1]初始化全0后执行类似于以下的操作n次：
-for i=[l, u] do x[i] += v
-其中l，u，v为每次运算的参数，求一个更快的算法达到同样效果。
-解：初始化y[0,…,n-1]为全0，对每个操作令y[l]+=v和y[u+1]-=v。则结束时x[i]=sigma{k=0 to i}(y[k])。正确性：只需证明每一次执行完操作之后该性质保持不变即可。</p>
-  </li>
-  <li>
-    <p>书籍：Dr.Dobb’s Essential Books on Algorithms and Data Structuers</p>
-  </li>
+  <li>书籍：Dr.Dobb’s Essential Books on Algorithms and Data Structuers</li>
 </ol>
 
 <h2 id="section-2">第9章 代码调优</h2>
 
 <ol>
-  <li>
-    <p>如果对内存的访问占用了大量运行时间，或程序的运行时间主要消耗在输入输出上，那么对程序中的计算进行加速是毫无意义的。</p>
-  </li>
-  <li>
-    <p>对现代计算机来说，将循环展开有助于避免管道阻塞、减少分支、增加指令级的并行性</p>
-  </li>
-  <li>
-    <p>性能监视（profiling）可以帮我们找到程序中的关键区域，对于其他区域，我们遵循有名的格言：没有坏的话就不要修。</p>
-  </li>
-  <li>
-    <p>进行“改进”之后要用具有代表性的输入来度量程序的效果。</p>
-  </li>
-  <li>
-    <p>常用法则：利用等价的代数表达式、使用内联甚至宏、使用哨兵来合并测试条件、修改数据结构、展开循环。</p>
-  </li>
+  <li>如果对内存的访问占用了大量运行时间，或程序的运行时间主要消耗在输入输出上，那么对程序中的计算进行加速是毫无意义的。</li>
+  <li>对现代计算机来说，将循环展开有助于避免管道阻塞、减少分支、增加指令级的并行性</li>
+  <li>性能监视（profiling）可以帮我们找到程序中的关键区域，对于其他区域，我们遵循有名的格言：没有坏的话就不要修。</li>
+  <li>进行“改进”之后要用具有代表性的输入来度量程序的效果。</li>
+  <li>常用法则：利用等价的代数表达式、使用内联甚至宏、使用哨兵来合并测试条件、修改数据结构、展开循环。</li>
 </ol>
 
 <h2 id="section-3">第10章 节省空间</h2>
 
 <ol>
-  <li>
-    <p>每次使用new来分配一个新对象所用空间会比存储该对象所需的空间大很多。因此一次性分配一个对象数组（像vector底层那样）能节省不少空间，时间也更快。</p>
+  <li>每次使用new来分配一个新对象所用空间会比存储该对象所需的空间大很多。因此一次性分配一个对象数组（像vector底层那样）能节省不少空间，时间也更快。</li>
+  <li>节省数据空间的技术
+    <ul>
+      <li>重新计算：不保存之前的计算结果</li>
+      <li>使用稀疏结构</li>
+      <li>信息论：压缩</li>
+      <li>简单性：最重要的原则</li>
+    </ul>
   </li>
-  <li>
-    <p>节省数据空间的技术
-a. 重新计算：不保存之前的计算结果
-b. 使用稀疏结构
-c. 信息论：压缩
-d. 简单性：最重要的原则</p>
-  </li>
-  <li>
-    <p>节省代码空间的技术
-a. 函数定义：重用
-b. 使用解释程序
-c. 翻译成紧凑的机器语言</p>
+  <li>节省代码空间的技术
+    <ul>
+      <li>函数定义：重用</li>
+      <li>使用解释程序</li>
+      <li>翻译成紧凑的机器语言</li>
+    </ul>
   </li>
 </ol>
 
