@@ -70,8 +70,11 @@
           <li>否则，如果题目保证至少有一个数重复，平均情况下可以用桶：共<code class="language-c++ highlighter-rouge"><span class="n">n</span></code>个桶（<code class="language-c++ highlighter-rouge"><span class="n">n</span></code>为数的个数），把数<code class="language-c++ highlighter-rouge"><span class="n">t</span></code>放进桶<code class="language-c++ highlighter-rouge"><span class="n">n</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">min</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">max</span><span class="o">-</span><span class="n">min</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span></code>中，然后继续做：如果数最多那个桶满足上述条件就用上述解法，否则继续分桶。</li>
         </ul>
       </li>
-      <li>问：极端情况下，譬如数组<code class="language-c++ highlighter-rouge"><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">...,</span> <span class="mi">9999</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">1000000000</span></code>，怎么做？哈希？有确定性<code class="language-c++ highlighter-rouge"><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></code>算法吗？</li>
     </ul>
+
+    <blockquote class="lambda_question">
+      <p>问：极端情况下，譬如数组<code class="language-c++ highlighter-rouge"><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">...,</span> <span class="mi">9999</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">1000000000</span></code>，怎么做？哈希？有确定性<code class="language-c++ highlighter-rouge"><span class="n">O</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></code>算法吗？</p>
+    </blockquote>
   </li>
 </ol>
 

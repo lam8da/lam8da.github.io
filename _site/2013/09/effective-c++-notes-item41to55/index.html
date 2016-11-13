@@ -130,7 +130,11 @@
 
 <ol>
   <li>如果operator new接受的参数除了一定会有的那个size_t之外还有其他，这边是所谓的placement new。众多placement new版本中特别有用的一个是“接受一个指针指向对象该被构造之处”的那个。</li>
-  <li>类似于new的placement版本，operator delete如果接受额外参数便成为placement deletes。placement delete只有在“伴随placement new调用而触发的构造函数”出现异常时才会被调用。对一个指针施行delete绝不会导致调用placement delete。（所以那个有个size_t参数的delete不是placement的？）</li>
+  <li>类似于new的placement版本，operator delete如果接受额外参数便成为placement deletes。placement delete只有在“伴随placement new调用而触发的构造函数”出现异常时才会被调用。对一个指针施行delete绝不会导致调用placement delete。
+    <blockquote class="lambda_question">
+      <p>所以那个有个size_t参数的delete不是placement的？</p>
+    </blockquote>
+  </li>
   <li>当你自己写一个placement operator new，请确定也写出了对应的接受相同额外参数的placement operator delete。否则编译器在当构造函数发生异常的地方不知道调用哪个delete，从而会什么也不做而导致内存泄露。</li>
   <li>缺省情况下C++在global作用域内提供了3个operator new（一个最normal的，一个特别版placement的，一个nothrow的）。如果你在class内声明任何operator news，它会遮掩这些标准形式。除非你的意思就是要这么干，否则请确保它们在你所生成的任何定制型operator new之外还可用。</li>
 </ol>

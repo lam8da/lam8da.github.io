@@ -7,7 +7,7 @@
     <title>lambda</title>
     <atom:link href="http://localhost:4000/feed/" rel="self" type="application/rss+xml" />
     <link>http://lam8da.github.io</link>
-    <lastBuildDate>2016-11-13T00:12:57-08:00</lastBuildDate>
+    <lastBuildDate>2016-11-13T00:24:17-08:00</lastBuildDate>
     <webMaster>lambda2fei@gmail.com</webMaster>
     
     <item>
@@ -1366,11 +1366,14 @@ colorful html representations. E.g.</p>
 </span></code></pre>
     </div>
   </li>
-  <li>（名字查找与继承的关系）确定函数调用遵循以下四个步骤</li>
-  <li>首先确定进行函数调用的对象、引用或指针的静态类型</li>
-  <li>在该类中查找函数（名字），若找不到则从直接基类开始往上找，若最终找不到则出错</li>
-  <li>一旦找到了该名字，就进行常规类型检查，看调用是否合法</li>
-  <li>若合法，编译器就生成代码。若函数为虚且通过引用或指针调用，则编译器生成代码以确定根据对象的动态类型运行哪个函数版本，否则，编译器生成代码直接调用函数。</li>
+  <li>（名字查找与继承的关系）确定函数调用遵循以下四个步骤
+    <ol>
+      <li>首先确定进行函数调用的对象、引用或指针的静态类型</li>
+      <li>在该类中查找函数（名字），若找不到则从直接基类开始往上找，若最终找不到则出错</li>
+      <li>一旦找到了该名字，就进行常规类型检查，看调用是否合法</li>
+      <li>若合法，编译器就生成代码。若函数为虚且通过引用或指针调用，则编译器生成代码以确定根据对象的动态类型运行哪个函数版本，否则，编译器生成代码直接调用函数。</li>
+    </ol>
+  </li>
 </ol>
 ]]></content:encoded>
     </item>

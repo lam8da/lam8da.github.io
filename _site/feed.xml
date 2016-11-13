@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-11-13T00:12:57-08:00</updated><id>http://localhost:4000//</id><author><name>lambda</name></author><entry><title type="html">Blogging Resources</title><link href="http://localhost:4000/2016/11/welcome-to-jekyll/" rel="alternate" type="text/html" title="Blogging Resources" /><published>2016-11-07T00:00:00-08:00</published><updated>2016-11-07T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2016/11/welcome-to-jekyll/">&lt;ul id=&quot;markdown-toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-11-13T00:24:17-08:00</updated><id>http://localhost:4000//</id><author><name>lambda</name></author><entry><title type="html">Blogging Resources</title><link href="http://localhost:4000/2016/11/welcome-to-jekyll/" rel="alternate" type="text/html" title="Blogging Resources" /><published>2016-11-07T00:00:00-08:00</published><updated>2016-11-07T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2016/11/welcome-to-jekyll/">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#code-block-highlighting&quot; id=&quot;markdown-toc-code-block-highlighting&quot;&gt;Code block highlighting&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#how-to-use-highlighter&quot; id=&quot;markdown-toc-how-to-use-highlighter&quot;&gt;How to use highlighter&lt;/a&gt;&lt;/li&gt;
@@ -1286,11 +1286,14 @@ colorful html representations. E.g.&lt;/p&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
     &lt;/div&gt;
   &lt;/li&gt;
-  &lt;li&gt;（名字查找与继承的关系）确定函数调用遵循以下四个步骤&lt;/li&gt;
-  &lt;li&gt;首先确定进行函数调用的对象、引用或指针的静态类型&lt;/li&gt;
-  &lt;li&gt;在该类中查找函数（名字），若找不到则从直接基类开始往上找，若最终找不到则出错&lt;/li&gt;
-  &lt;li&gt;一旦找到了该名字，就进行常规类型检查，看调用是否合法&lt;/li&gt;
-  &lt;li&gt;若合法，编译器就生成代码。若函数为虚且通过引用或指针调用，则编译器生成代码以确定根据对象的动态类型运行哪个函数版本，否则，编译器生成代码直接调用函数。&lt;/li&gt;
+  &lt;li&gt;（名字查找与继承的关系）确定函数调用遵循以下四个步骤
+    &lt;ol&gt;
+      &lt;li&gt;首先确定进行函数调用的对象、引用或指针的静态类型&lt;/li&gt;
+      &lt;li&gt;在该类中查找函数（名字），若找不到则从直接基类开始往上找，若最终找不到则出错&lt;/li&gt;
+      &lt;li&gt;一旦找到了该名字，就进行常规类型检查，看调用是否合法&lt;/li&gt;
+      &lt;li&gt;若合法，编译器就生成代码。若函数为虚且通过引用或指针调用，则编译器生成代码以确定根据对象的动态类型运行哪个函数版本，否则，编译器生成代码直接调用函数。&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;</content><author><name>lambda</name></author><category term="c++" /><category term="读书笔记" /><summary type="html"></summary></entry><entry><title type="html">《C++ Primer》读书笔记（第09-13章）</title><link href="http://localhost:4000/2013/09/c++-primer-notes-chapter09to13/" rel="alternate" type="text/html" title="《C++ Primer》读书笔记（第09-13章）" /><published>2013-09-20T00:00:00-07:00</published><updated>2013-09-20T00:00:00-07:00</updated><id>http://localhost:4000/2013/09/c++-primer-notes-chapter09to13</id><content type="html" xml:base="http://localhost:4000/2013/09/c++-primer-notes-chapter09to13/">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;第9章 顺序容器&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;第11章 泛型算法&lt;/a&gt;&lt;/li&gt;
