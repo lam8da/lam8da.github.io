@@ -42,7 +42,7 @@ tags:
 
 1. 对地址格式建立有限状态机模型，用于分析网页，找到网页中的地址部分，建立local search的database
 2. 基于概率的有限状态机可用于解决地址的模糊匹配问题
-3. Mehryar Mohri, Fernando Pereira, Michael Riley的通用概率有限状态机c语言库：http://www.cs.nyu.edu/~mohri
+3. Mehryar Mohri, Fernando Pereira, Michael Riley的通用概率有限状态机c语言库：<http://www.cs.nyu.edu/~mohri>
 4. Weighted Finite State Transducer, WFST
 
 ## 第13章 Google AK-47的设计者 - 阿米特·辛格博士
