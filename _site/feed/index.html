@@ -7,7 +7,7 @@
     <title>lambda</title>
     <atom:link href="http://localhost:4000/feed/" rel="self" type="application/rss+xml" />
     <link>http://lam8da.github.io</link>
-    <lastBuildDate>2016-11-12T23:54:03-08:00</lastBuildDate>
+    <lastBuildDate>2016-11-12T23:54:21-08:00</lastBuildDate>
     <webMaster>lambda2fei@gmail.com</webMaster>
     
     <item>
@@ -1716,7 +1716,9 @@ colorful html representations. E.g.</p>
   <li>只有当<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>声明位于函数外部时，才可以含有初始化式（此时被当成定义）</li>
   <li>与一般的变量不同，在全局作用域声明的<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>变量是定义该对象的文件的局部变量。此变量只存在于那个文件中，不能被其他文件访问。除非定义时加上<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>。</li>
   <li>引用是一种复合类型（是指用其他类型定义的类型）</li>
-  <li><code class="language-c++ highlighter-rouge"><span class="k">const</span></code>引用可以初始化为不同类型的对象或者初始化为右值，如字面值常量：
+  <li>
+    <p><code class="language-c++ highlighter-rouge"><span class="k">const</span></code>引用可以初始化为不同类型的对象或者初始化为右值，如字面值常量：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">r</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">r2</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="n">i</span><span class="p">;</span>
