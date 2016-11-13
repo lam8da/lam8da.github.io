@@ -11,6 +11,9 @@ tags:
 1. TOC
 {:toc}
 
+{::comment} Not show line_numbers {:/comment}
+{::options syntax_highlighter_opts="{default_lang: java \}" /}
+
 ## 策略模式
 
 策略模式定义了算法族，分别封装起来，让它们之间可以互相替换，此模式让算法的变化独立于使用算法的客户。
@@ -25,7 +28,7 @@ tags:
 
 1. 出版者+订阅者=观察者模式
 1. 不要依赖于观察者被通知的次序，因为一旦观察者/可观察者的实现有所改变，通知次序就会改变，很可能就会产生错误的结果，这绝对不是我们认为的松耦合
-1. java.util.Observale的黑暗面：Observable是一个类，如果某类想同时具有Observable类和另一个超类的行为，就会陷入两难，毕竟Java不支持多重继承，这限制了Observable的复用潜力；另外，Observable将关键方法（setChanged()）保护起来，这个设计违反了设计原则：多用组合，少用继承。
+1. `java.util.Observale`的黑暗面：`Observable`是一个类，如果某类想同时具有`Observable`类和另一个超类的行为，就会陷入两难，毕竟Java不支持多重继承，这限制了`Observable`的复用潜力；另外，`Observable`将关键方法（`setChanged()`）保护起来，这个设计违反了设计原则：多用组合，少用继承。
 
 ## 装饰者模式
 
@@ -66,32 +69,28 @@ tags:
 
 1. 实现方法：若将对象赋值给一个全局变量，那么必须在程序一开始就创建好对象。万一这个对象非常耗资源，而程序在这次执行过程中又一直没用到它，就会形成浪费。
 1. 单件模式实现中处理多线程问题的方法：
-
-{% highlight java linenos %}
-public class Singleton {
-  private volatile static Singleton uniqueInstance;
-  private Singleton() {
-  }
-  public static Singleton getInstance() {
-    if (uniqueInstance == null) {
-      synchronized(Singleton.class) {
-        if (uniqueInstance == null) {
-          uniqueInstance = new Singleton();
-        }
-      }
-    }
-    return uniqueInstance;
-  }
-}
-{% endhighlight %}
-
-使用synchronized关键字可能会导致效率严重下降。而volatile关键字定义的成员变量确保在同一时间最多只有一个线程对其进行访问，尤其是32位系统处理64位变量时。另外，也可以使用“急切”创建实例而不用延迟实例，在静态初始化器（static initializer）中创建单位：
-
-{% highlight java %}
-private static Singleton uniqueInstance = new Singleton();
-{% endhighlight %}
-
-但这样会导致1中提到的问题。
+   ```java
+   public class Singleton {
+     private volatile static Singleton uniqueInstance;
+     private Singleton() {
+     }
+     public static Singleton getInstance() {
+       if (uniqueInstance == null) {
+         synchronized(Singleton.class) {
+           if (uniqueInstance == null) {
+             uniqueInstance = new Singleton();
+           }
+         }
+       }
+       return uniqueInstance;
+     }
+   }
+   ```
+   使用`synchronized`关键字可能会导致效率严重下降。而volatile关键字定义的成员变量确保在同一时间最多只有一个线程对其进行访问，尤其是32位系统处理64位变量时。另外，也可以使用“急切”创建实例而不用延迟实例，在静态初始化器（static initializer）中创建单位：
+   ```
+   private static Singleton uniqueInstance = new Singleton();
+   ```
+   但这样会导致1中提到的问题。
 
 ## 命令模式（封装调用）
 
@@ -124,7 +123,7 @@ private static Singleton uniqueInstance = new Singleton();
 1. 常见形式：
    - 抽象方法：当子类必须提供算法中某个步骤的实现时使用
    - 钩子：当算法某个部分可选时使用
-1. 为了防止子类改变模板方法中的算法，可以将模板方法声明为final
+1. 为了防止子类改变模板方法中的算法，可以将模板方法声明为`final`
 
 ## 迭代器模式
 
@@ -146,9 +145,9 @@ private static Singleton uniqueInstance = new Singleton();
 
 ![state]({{ site.url }}/assets/2013-09-20-head-first-design-pattern-notes2.state.png)
 
-上述ConcreteStateA和ConcreteStateB对Context的引用并不是必须的。有时Context本身也可以决定状态转换的流向。当状态转换是固定时（例如做了某个动作后就一定转换到某特定状态），就适合放在Context中。当转换更动态的时候，通常就会放在状态类中。做这个决策的同时，也等于是在为另一件事情做决策：当系统进化时，究竟哪个类是对修改封闭。
+上述`ConcreteStateA`和`ConcreteStateB`对`Context`的引用并不是必须的。有时`Context`本身也可以决定状态转换的流向。当状态转换是固定时（例如做了某个动作后就一定转换到某特定状态），就适合放在`Context`中。当转换更动态的时候，通常就会放在状态类中。做这个决策的同时，也等于是在为另一件事情做决策：当系统进化时，究竟哪个类是对修改封闭。
 
-多个Context实例可共享状态对象（使用静态变量）。若状态需要利用Context中的方法，还必须在每个handler()方法内传入一个Context引用。
+多个`Context`实例可共享状态对象（使用静态变量）。若状态需要利用`Context`中的方法，还必须在每个`handler()`方法内传入一个`Context`引用。
 
 ## 代理模式
 

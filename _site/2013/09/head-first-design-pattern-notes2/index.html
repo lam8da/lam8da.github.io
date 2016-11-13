@@ -52,6 +52,9 @@
   <li><a href="#section-12" id="markdown-toc-section-12">模式分类</a></li>
 </ol>
 
+<p><!--  Not show line_numbers  -->
+</p>
+
 <h2 id="section">策略模式</h2>
 
 <p>策略模式定义了算法族，分别封装起来，让它们之间可以互相替换，此模式让算法的变化独立于使用算法的客户。</p>
@@ -67,7 +70,7 @@
 <ol>
   <li>出版者+订阅者=观察者模式</li>
   <li>不要依赖于观察者被通知的次序，因为一旦观察者/可观察者的实现有所改变，通知次序就会改变，很可能就会产生错误的结果，这绝对不是我们认为的松耦合</li>
-  <li>java.util.Observale的黑暗面：Observable是一个类，如果某类想同时具有Observable类和另一个超类的行为，就会陷入两难，毕竟Java不支持多重继承，这限制了Observable的复用潜力；另外，Observable将关键方法（setChanged()）保护起来，这个设计违反了设计原则：多用组合，少用继承。</li>
+  <li><code class="language-java highlighter-rouge"><span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Observale</span></code>的黑暗面：<code class="language-java highlighter-rouge"><span class="n">Observable</span></code>是一个类，如果某类想同时具有<code class="language-java highlighter-rouge"><span class="n">Observable</span></code>类和另一个超类的行为，就会陷入两难，毕竟Java不支持多重继承，这限制了<code class="language-java highlighter-rouge"><span class="n">Observable</span></code>的复用潜力；另外，<code class="language-java highlighter-rouge"><span class="n">Observable</span></code>将关键方法（<code class="language-java highlighter-rouge"><span class="n">setChanged</span><span class="o">()</span></code>）保护起来，这个设计违反了设计原则：多用组合，少用继承。</li>
 </ol>
 
 <h2 id="section-2">装饰者模式</h2>
@@ -115,24 +118,8 @@
 
 <ol>
   <li>实现方法：若将对象赋值给一个全局变量，那么必须在程序一开始就创建好对象。万一这个对象非常耗资源，而程序在这次执行过程中又一直没用到它，就会形成浪费。</li>
-  <li>单件模式实现中处理多线程问题的方法：</li>
-</ol>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>
+  <li>单件模式实现中处理多线程问题的方法：
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>
   <span class="kd">private</span> <span class="kd">volatile</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">uniqueInstance</span><span class="o">;</span>
   <span class="kd">private</span> <span class="nf">Singleton</span><span class="o">()</span> <span class="o">{</span>
   <span class="o">}</span>
@@ -146,14 +133,16 @@
     <span class="o">}</span>
     <span class="k">return</span> <span class="n">uniqueInstance</span><span class="o">;</span>
   <span class="o">}</span>
-<span class="o">}</span><span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
-
-<p>使用synchronized关键字可能会导致效率严重下降。而volatile关键字定义的成员变量确保在同一时间最多只有一个线程对其进行访问，尤其是32位系统处理64位变量时。另外，也可以使用“急切”创建实例而不用延迟实例，在静态初始化器（static initializer）中创建单位：</p>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">uniqueInstance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="o">();</span></code></pre></figure>
-
-<p>但这样会导致1中提到的问题。</p>
+<span class="o">}</span>
+</code></pre>
+    </div>
+    <p>使用<code class="language-java highlighter-rouge"><span class="kd">synchronized</span></code>关键字可能会导致效率严重下降。而volatile关键字定义的成员变量确保在同一时间最多只有一个线程对其进行访问，尤其是32位系统处理64位变量时。另外，也可以使用“急切”创建实例而不用延迟实例，在静态初始化器（static initializer）中创建单位：</p>
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">uniqueInstance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="o">();</span>
+</code></pre>
+    </div>
+    <p>但这样会导致1中提到的问题。</p>
+  </li>
+</ol>
 
 <h2 id="section-4">命令模式（封装调用）</h2>
 
@@ -192,7 +181,7 @@
       <li>钩子：当算法某个部分可选时使用</li>
     </ul>
   </li>
-  <li>为了防止子类改变模板方法中的算法，可以将模板方法声明为final</li>
+  <li>为了防止子类改变模板方法中的算法，可以将模板方法声明为<code class="language-java highlighter-rouge"><span class="kd">final</span></code></li>
 </ol>
 
 <h2 id="section-8">迭代器模式</h2>
@@ -215,9 +204,9 @@
 
 <p><img src="http://localhost:4000/assets/2013-09-20-head-first-design-pattern-notes2.state.png" alt="state" /></p>
 
-<p>上述ConcreteStateA和ConcreteStateB对Context的引用并不是必须的。有时Context本身也可以决定状态转换的流向。当状态转换是固定时（例如做了某个动作后就一定转换到某特定状态），就适合放在Context中。当转换更动态的时候，通常就会放在状态类中。做这个决策的同时，也等于是在为另一件事情做决策：当系统进化时，究竟哪个类是对修改封闭。</p>
+<p>上述<code class="language-java highlighter-rouge"><span class="n">ConcreteStateA</span></code>和<code class="language-java highlighter-rouge"><span class="n">ConcreteStateB</span></code>对<code class="language-java highlighter-rouge"><span class="n">Context</span></code>的引用并不是必须的。有时<code class="language-java highlighter-rouge"><span class="n">Context</span></code>本身也可以决定状态转换的流向。当状态转换是固定时（例如做了某个动作后就一定转换到某特定状态），就适合放在<code class="language-java highlighter-rouge"><span class="n">Context</span></code>中。当转换更动态的时候，通常就会放在状态类中。做这个决策的同时，也等于是在为另一件事情做决策：当系统进化时，究竟哪个类是对修改封闭。</p>
 
-<p>多个Context实例可共享状态对象（使用静态变量）。若状态需要利用Context中的方法，还必须在每个handler()方法内传入一个Context引用。</p>
+<p>多个<code class="language-java highlighter-rouge"><span class="n">Context</span></code>实例可共享状态对象（使用静态变量）。若状态需要利用<code class="language-java highlighter-rouge"><span class="n">Context</span></code>中的方法，还必须在每个<code class="language-java highlighter-rouge"><span class="n">handler</span><span class="o">()</span></code>方法内传入一个<code class="language-java highlighter-rouge"><span class="n">Context</span></code>引用。</p>
 
 <h2 id="section-11">代理模式</h2>
 

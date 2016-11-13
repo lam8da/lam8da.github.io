@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="lambda" />
-    <title>《C++ Primer》读书笔记（第5-8章） | lambda</title>
+    <title>《C++ Primer》读书笔记（第05-08章） | lambda</title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link href="http://localhost:4000/feed/" rel="alternate" title="lambda" type="application/atom+xml" />
     <link rel="stylesheet" href="/media/css/style.css">
@@ -21,7 +21,7 @@
     <div id="container">
       <div id="main" role="main">
         <header>
-        <h1>《C++ Primer》读书笔记（第5-8章）</h1>
+        <h1>《C++ Primer》读书笔记（第05-08章）</h1>
         </header>
         <nav>
         <span><a title="home page" class="" href="http://localhost:4000/">首页</a></span>
@@ -33,277 +33,222 @@
         </nav>
         <article class="content">
         <section class="post">
-<ol id="markdown-toc">
+<ul id="markdown-toc">
   <li><a href="#section" id="markdown-toc-section">第5章 表达式</a></li>
   <li><a href="#section-1" id="markdown-toc-section-1">第6章 语句</a></li>
   <li><a href="#section-2" id="markdown-toc-section-2">第7章 函数</a></li>
   <li><a href="#io" id="markdown-toc-io">第8章 标准I/O库</a></li>
-</ol>
+</ul>
+
+<p><!--  Not show line_numbers  -->
+</p>
 
 <h2 id="section">第5章 表达式</h2>
 
 <ol>
-  <li>
-    <p>若两个操作数都是负数则求模结果为负。</p>
+  <li>若两个操作数都是负数则求模结果为负。</li>
+  <li>逻辑非：若操作数非零值则结果为<code class="language-c++ highlighter-rouge"><span class="nb">false</span></code>。</li>
+  <li>如果<code class="language-c++ highlighter-rouge"><span class="n">val</span></code>不是<code class="language-c++ highlighter-rouge"><span class="kt">bool</span></code>类型，不要这样比较：<code class="language-c++ highlighter-rouge"><span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">==</span> <span class="nb">true</span><span class="p">)</span></code></li>
+  <li>如果操作数为负数，则位操作符如何处理其操作数的符号位依赖于机器，不可移植</li>
+  <li>移位操作的右操作数不可为负且必须严格小于左操作数位数值，否则结果未定义</li>
+  <li><code class="language-c++ highlighter-rouge"><span class="k">sizeof</span></code>是一个操作符，其结果是编译时常量。三种用法：
+    <ul>
+      <li><code class="language-c++ highlighter-rouge"><span class="k">sizeof</span><span class="p">(</span><span class="n">type</span> <span class="n">name</span><span class="p">)</span></code></li>
+      <li><code class="language-c++ highlighter-rouge"><span class="k">sizeof</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span></code></li>
+      <li><code class="language-c++ highlighter-rouge"><span class="k">sizeof</span> <span class="n">expr</span></code>
+将<code class="language-c++ highlighter-rouge"><span class="k">sizeof</span></code>用于<code class="language-c++ highlighter-rouge"><span class="n">expr</span></code>时，并没有计算<code class="language-c++ highlighter-rouge"><span class="n">expr</span></code>的值</li>
+    </ul>
   </li>
-  <li>
-    <p>逻辑非：若操作数非零值则结果为false。</p>
+  <li>逗号表达式从左向右计算，结果是其最右边表达式的值。如果最右边的操作数的左值，则逗号表达式的值也是左值。</li>
+  <li>值初始化的<code class="language-c++ highlighter-rouge"><span class="p">()</span></code>语法必须置于类型名后面，而不是变量后。如：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span><span class="p">();</span>
+</code></pre>
+    </div>
+    <p>上式声明了一个名为<code class="language-c++ highlighter-rouge"><span class="n">x</span></code>、没有参数而返回<code class="language-c++ highlighter-rouge"><span class="kt">int</span></code>值的函数，而不是定义一个变量。</p>
   </li>
-  <li>
-    <p>如果val不是bool类型，不要这样比较：if (val == true)</p>
+  <li>c++保证：删除0值的指针是安全的，但这样做没有任何意义。</li>
+  <li>删除指针后，该指针编程悬垂指针，不再有效。</li>
+  <li>动态创建<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>对象的例子：<code class="language-c++ highlighter-rouge"><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">pci</span> <span class="o">=</span> <span class="k">new</span> <span class="n">cons</span> <span class="n">tint</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span></code></li>
+  <li>删除动态分配的内存失败称为“内存泄露”</li>
+  <li>类类型可以定义由编译器自动执行的类型转换，如：<code class="language-c++ highlighter-rouge"><span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span><span class="p">)</span> <span class="p">...</span></code></li>
+  <li>显式转换也称为强制类型转换（cast），包括：dynamic_cast，const_cast，static_cast，reinterpret_cast。</li>
+  <li><code class="language-c++ highlighter-rouge"><span class="kt">char</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="s">"hello"</span><span class="p">;</span></code>在编译时会出现警告，改成<code class="language-c++ highlighter-rouge"><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span></code>就没问题。</li>
+  <li><code class="language-c++ highlighter-rouge"><span class="k">sizeof</span><span class="p">(</span><span class="n">func</span><span class="p">());</span></code>的结果是<code class="language-c++ highlighter-rouge"><span class="n">func</span></code>函数的返回类型的size，且不执行<code class="language-c++ highlighter-rouge"><span class="n">func</span></code>。注意，不能这样用：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">sizeof</span><span class="p">(</span><span class="n">func</span><span class="p">);</span>
+</code></pre>
+    </div>
+    <p>。因为<code class="language-c++ highlighter-rouge"><span class="n">func</span></code>是函数类型，而<code class="language-c++ highlighter-rouge"><span class="k">sizeof</span></code>不支持函数类型，<code class="language-c++ highlighter-rouge"><span class="n">func</span><span class="p">()</span></code>才是数据类型。</p>
   </li>
-  <li>
-    <p>如果操作数为负数，则位操作符如何处理其操作数的符号位依赖于机器，不可移植</p>
-  </li>
-  <li>
-    <p>移位操作的右操作数不可为负且必须严格小于左操作数位数值，否则结果未定义</p>
-  </li>
-  <li>
-    <p>sizeof是一个操作符，其结果是编译时常量。三种用法：</p>
-  </li>
-</ol>
-
-<p>sizeof (type name)
-sizeof (expr)
-sizeof expr
-将sizeof用于expr时，并没有计算expr的值</p>
-
-<ol>
-  <li>
-    <p>逗号表达式从左向右计算，结果是其最右边表达式的值。如果最右边的操作数的左值，则逗号表达式的值也是左值。</p>
-  </li>
-  <li>
-    <p>值初始化的“()”语法必须置于类型名后面，而不是变量后。如：
-int x();
-上式声明了一个名为x、没有参数而返回int值的函数，而不是定义一个变量。</p>
-  </li>
-  <li>
-    <p>c++保证：删除0值的指针是安全的，但这样做没有任何意义。</p>
-  </li>
-  <li>
-    <p>删除指针后，该指针编程悬垂指针，不再有效。</p>
-  </li>
-  <li>
-    <p>动态创建const对象的例子：const int *pci = new cons tint(10);</p>
-  </li>
-  <li>
-    <p>删除动态分配的内存失败称为“内存泄露”</p>
-  </li>
-  <li>
-    <p>类类型可以定义由编译器自动执行的类型转换，如：while (cin » s) …</p>
-  </li>
-  <li>
-    <p>显式转换也称为强制类型转换（cast），包括：dynamic_cast，const_cast，static_cast，reinterpret_cast。</p>
-  </li>
-  <li>
-    <p>char *p = “hello”;在编译时会出现警告，改成const char *就没问题。</p>
-  </li>
-  <li>
-    <p>sizeof (func ());的结果是func函数的返回类型的size，且不执行func。注意，不能这样用：sizeof (func);。因为func是函数类型，而sizeof不支持函数类型，func()才是数据类型。</p>
-  </li>
-  <li>
-    <p>string str();的作用是声明一个函数而不是定义一个变量（如果想定义一个使用默认构造函数的对象，正确写法是string str;）。但如果是string str(“abc”);则相反，因为编译器看到了”abc”是一个量而不是一个变量声明。另外可以这么干：string str = string();。</p>
-  </li>
-  <li>
-    <p>for (;;);是一个死循环；for语句只要中间不写东西就是，这是合法的。省略循环条件等效于其永远为true。</p>
-  </li>
-  <li>
-    <p>char *p = “hello”; p[0] = ‘x’;会导致segment fault。</p>
-  </li>
-  <li>
-    <p>大多数操作符没有定义左右操作数的求值顺序，故不能依赖它来编写程序。</p>
-  </li>
+  <li><code class="language-c++ highlighter-rouge"><span class="n">string</span> <span class="n">str</span><span class="p">();</span></code>的作用是声明一个函数而不是定义一个变量（如果想定义一个使用默认构造函数的对象，正确写法是<code class="language-c++ highlighter-rouge"><span class="n">string</span> <span class="n">str</span><span class="p">;</span></code>）。但如果是<code class="language-c++ highlighter-rouge"><span class="n">string</span> <span class="n">str</span><span class="p">(</span><span class="s">"abc"</span><span class="p">);</span></code>则相反，因为编译器看到了<code class="language-c++ highlighter-rouge"><span class="s">"abc"</span></code>是一个量而不是一个变量声明。另外可以这么干：<code class="language-c++ highlighter-rouge"><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="n">string</span><span class="p">();</span></code>。</li>
+  <li><code class="language-c++ highlighter-rouge"><span class="k">for</span> <span class="p">(;;);</span></code>是一个死循环；<code class="language-c++ highlighter-rouge"><span class="k">for</span></code>语句只要中间不写东西就是，这是合法的。省略循环条件等效于其永远为<code class="language-c++ highlighter-rouge"><span class="nb">true</span></code>。</li>
+  <li><code class="language-c++ highlighter-rouge"><span class="kt">char</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="s">"hello"</span><span class="p">;</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'x'</span><span class="p">;</span></code>会导致segment fault。</li>
+  <li>大多数操作符没有定义左右操作数的求值顺序，故不能依赖它来编写程序。</li>
 </ol>
 
 <h2 id="section-1">第6章 语句</h2>
 
 <ol>
-  <li>
-    <p>空语句，如：while (expr);；又如：a = b + c;;。后者由两条语句组成：一条表达式语句和一条空语句。</p>
+  <li>空语句，如：<code class="language-c++ highlighter-rouge"><span class="k">while</span> <span class="p">(</span><span class="n">expr</span><span class="p">);</span></code>；又如：<code class="language-c++ highlighter-rouge"><span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">;;</span></code>。后者由两条语句组成：一条表达式语句和一条空语句。</li>
+  <li>在条件表达式中定义的变量必须初始化，该条件检验的就是初始化对象的值。如：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">val</span><span class="p">)</span> <span class="p">...;</span>
+<span class="k">switch</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">func</span><span class="p">())</span> <span class="p">...;</span>
+</code></pre>
+    </div>
   </li>
+  <li><code class="language-c++ highlighter-rouge"><span class="k">switch</span></code>语句的每个<code class="language-c++ highlighter-rouge"><span class="k">case</span></code>的标号必须是整型常量表达式，浮点数也不行！任两个<code class="language-c++ highlighter-rouge"><span class="k">case</span></code>标号不能有相同的值，否则compile error。</li>
+  <li><code class="language-c++ highlighter-rouge"><span class="k">switch</span></code>结构中，除非使用块语句，否则只能在它的最后一个<code class="language-c++ highlighter-rouge"><span class="k">case</span></code>或<code class="language-c++ highlighter-rouge"><span class="k">default</span></code>标号后才能定义变量。</li>
+  <li><code class="language-c++ highlighter-rouge"><span class="k">do</span><span class="p">...</span><span class="k">while</span></code>中的<code class="language-c++ highlighter-rouge"><span class="k">continue</span></code>会继续求解循环条件（和<code class="language-c++ highlighter-rouge"><span class="k">while</span></code>一样）</li>
   <li>
-    <p>在条件表达式中定义的变量必须初始化，该条件检验的就是初始化对象的值。如：
-if (int x = val) …;
-switch (int x = func ()) …;</p>
-  </li>
-  <li>
-    <p>switch语句的每个case的标号必须是整型常量表达式，浮点数也不行！任两个case标号不能有相同的值，否则compile error。</p>
-  </li>
-  <li>
-    <p>switch结构中，除非使用块语句，否则只能在它的最后一个case或default标号后才能定义变量。</p>
-  </li>
-  <li>
-    <p>do…while中的continue会继续求解循环条件（和while一样）</p>
-  </li>
-  <li>
-    <p>使用预处理器进行调试：
-$ cc –DNDEBUG main.c
-这等效于在main.c的开头提供#define NDEBUG预处理命令。</p>
+    <p>使用预处理器进行调试：<code class="language-c++ highlighter-rouge"><span class="gp">$ </span>cc -DNDEBUG main.c</code></p>
+
+    <p>这等效于在main.c的开头提供<code class="language-c++ highlighter-rouge"><span class="cp">#define NDEBUG</span></code>预处理命令。</p>
   </li>
 </ol>
 
 <h2 id="section-2">第7章 函数</h2>
 
 <ol>
-  <li>
-    <p>函数由函数名以及一组操作数类型唯一地表示</p>
+  <li>函数由函数名以及一组操作数类型唯一地表示</li>
+  <li>在c语言中具有<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>形参或非<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>形参的函数并无区别（引用和指针除外），故：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">fcn</span> <span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{...}</span>
+<span class="kt">void</span> <span class="nf">fcn</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{...}</span>
+</code></pre>
+    </div>
+    <p>会产生编译错误：重定义。c++为了兼容也保持这点。</p>
   </li>
-  <li>
-    <p>在c语言中具有const形参或非const形参的函数并无区别（引用和指针除外），故：
-void fcn (const int i) { … }
-void fcn (int i) { … }
-会产生编译错误：重定义。c++为了兼容也保持这点。</p>
+  <li>由于数组不能复制，所以无法编写使用数组类型形参的函数，而函数也不允许返回一个数组！</li>
+  <li>由于使用数组名字时，数组会被自动转化为指针，所以处理数组的函数通常通过操纵指向数组中的元素的指针来处理数组。</li>
+  <li>虽然不能直接传递数组，但形参可以写成数组形式，下面三种定义是等价的，形参类型都是<code class="language-c++ highlighter-rouge"><span class="kt">int</span> <span class="o">*</span></code>：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">func</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="p">{...}</span>
+<span class="kt">void</span> <span class="nf">func</span><span class="p">(</span><span class="kt">int</span> <span class="p">[])</span> <span class="p">{...}</span>
+<span class="kt">void</span> <span class="nf">func</span><span class="p">(</span><span class="kt">int</span> <span class="p">[</span><span class="mi">10</span><span class="p">])</span> <span class="p">{...}</span>
+</code></pre>
+    </div>
+    <p>编译器只会检查实参是不是指针、指针类型是否匹配，而不会检查数组的长度。故对于以上第三种定义可以传个<code class="language-c++ highlighter-rouge"><span class="kt">int</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span></code>进去。</p>
   </li>
-  <li>
-    <p>由于数组不能复制，所以无法编写使用数组类型形参的函数，而函数也不允许返回一个数组！</p>
-  </li>
-  <li>
-    <p>由于使用数组名字时，数组会被自动转化为指针，所以处理数组的函数通常通过操纵指向数组中的元素的指针来处理数组。</p>
-  </li>
-  <li>
-    <p>虽然不能直接传递数组，但形参可以写成数组形式，下面三种定义是等价的，形参类型都是int *：
-void func (int *) {…}
-void func (int []) {…}
-void func (int [10]) {…}
-编译器只会检查实参是不是指针、指针类型是否匹配，而不会检查数组的长度。故对于以上第三种定义可以传个int[2]进去。</p>
-  </li>
-  <li>
-    <p>一般用法：传非引用指针：
-void func (const int *) {…}
+  <li>一般用法：传非引用指针：<code class="language-c++ highlighter-rouge"><span class="kt">void</span> <span class="nf">func</span> <span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="p">{...}</span></code>。
 也可通过引用传递，此时编译器将检查数组实参的大小与形参大小是否匹配：
-void func (int (&amp;arr)[10]) {…}</p>
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">func</span> <span class="p">(</span><span class="kt">int</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">)[</span><span class="mi">10</span><span class="p">])</span> <span class="p">{...}</span>
+</code></pre>
+    </div>
   </li>
-  <li>
-    <p>多维数组的传递：c++中没有多维数组，所谓多维数组实际上是一个一维数组，其元素是由数组组成。因此，除了第一维以外的所有维的长度都是元素类型的一部分，必须明确指定：
-void f (int (m*)[10]) {…}
-void f (int m[][10]) {…}
-void f (int m[100][10]) {…}
-上述三种定义是等价的。100，类似地，将会被忽略。</p>
+  <li>多维数组的传递：c++中没有多维数组，所谓多维数组实际上是一个一维数组，其元素是由数组组成。因此，除了第一维以外的所有维的长度都是元素类型的一部分，必须明确指定：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="p">)[</span><span class="mi">10</span><span class="p">])</span> <span class="p">{...}</span>
+<span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">[][</span><span class="mi">10</span><span class="p">])</span> <span class="p">{...}</span>
+<span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">[</span><span class="mi">100</span><span class="p">][</span><span class="mi">10</span><span class="p">])</span> <span class="p">{...}</span>
+</code></pre>
+    </div>
+    <p>上述三种定义是等价的。<code class="language-c++ highlighter-rouge"><span class="mi">100</span></code>，类似地，将会被忽略。</p>
   </li>
-  <li>
-    <p>关于可变形参：对于c++程序，只能将简单数据类型传递给含有省略符形参，实际上，当需要传递给省略符形参时，大多数类类型对象都不能正确地复制</p>
+  <li>关于可变形参：对于c++程序，只能将简单数据类型传递给含有省略符形参，实际上，当需要传递给省略符形参时，大多数类类型对象都不能正确地复制</li>
+  <li>返回类型为<code class="language-c++ highlighter-rouge"><span class="kt">void</span></code>的函数可以<code class="language-c++ highlighter-rouge"><span class="k">return</span></code>另一个返回类型同样是<code class="language-c++ highlighter-rouge"><span class="kt">void</span></code>的函数的调用结果</li>
+  <li>函数的返回值用于初始化在调用函数处创建的临时对象。当返回引用类型时，没有复制返回值，而是返回对象本身。</li>
+  <li>函数声明时需提供：返回类型、函数名、形参列表（不必对形参命名）。这三个元素成为函数原型。</li>
+  <li>默认实参可以是任何适当类型的表达式（包括函数调用）。</li>
+  <li>可在函数声明也可在函数定义中指定默认实参，但在一个文件中只能为一个形参指定默认实参一次（因此h和cc只能有一个这么干，因为cc包含了h）。如果在函数定义中指定默认实参，那么只有在包含该函数定义的源文件中调用该函数时（被指定的默认实参）才有效。在声明时指定默认实参可以类似于这么干：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
+</code></pre>
+    </div>
   </li>
-  <li>
-    <p>返回类型为void的函数可以return另一个返回类型同样是void的函数的调用结果</p>
-  </li>
-  <li>
-    <p>函数的返回值用于初始化在调用函数处创建的临时对象。当返回引用类型时，没有复制返回值，而是返回对象本身。</p>
-  </li>
-  <li>
-    <p>函数声明时需提供：返回类型、函数名、形参列表（不必对形参命名）。这三个元素成为函数原型。</p>
-  </li>
-  <li>
-    <p>默认实参可以是任何适当类型的表达式（包括函数调用）。</p>
-  </li>
-  <li>
-    <p>可在函数声明也可在函数定义中指定默认实参，但在一个文件中只能为一个形参指定默认实参一次（因此h和cc只能有一个这么干，因为cc包含了h）。如果在函数定义中指定默认实参，那么只有在包含该函数定义的源文件中调用该函数时（被指定的默认实参）才有效。在声明时指定默认实参可以类似于这么干：int f (int = 0);</p>
-  </li>
-  <li>
-    <p>只有当定义它的函数被调用时才存在的对象成为自动对象。</p>
-  </li>
-  <li>
-    <p>内联函数应该在头文件中定义，这一点不同于其他函数。这是因为，内联函数的定义对编译器而言必须是可见的，以便编译器能够在调用点内联展开该函数的代码。</p>
-  </li>
-  <li>
-    <p>由编译器自动生成的默认构造函数对内置类型成员的初始化规则：
-a. 若该类的对象被定义于全局作用域或定义为局部静态对象，这些成员被初始化为0
-b. 否则没有初始化
-另可参考《深度探索c++对象模型》</p>
-  </li>
-  <li>
-    <p>重载函数：出现于相同作用域中（当作用域不同时会发生名字屏蔽而不是重载），名字相同而形参表不同（默认实参不改变形参表）。注意，重载函数可以有不同的返回类型。</p>
-  </li>
-  <li>
-    <p>在c++中，名字查找发生在类型检查之前。</p>
-  </li>
-  <li>
-    <p>形参与const形参的等价性仅适用于非引用形参，有const引用的形参与有非const引用形参的函数是不同的，对于const指针和非const指针也是不同的。（即：仅当形参是引用或指针时，形参是否为const才有影响）</p>
-  </li>
-  <li>
-    <p>局部声明的名字会屏蔽全局声明的同名名字（包括函数名，此时，只要同名就会屏蔽，不管形参如何）</p>
-  </li>
-  <li>
-    <p>重载确定的寻找最佳匹配方法：若仅有一个函数满足以下条件则ok，否则编译错误：</p>
-  </li>
-</ol>
+  <li>只有当定义它的函数被调用时才存在的对象成为自动对象。</li>
+  <li>内联函数应该在头文件中定义，这一点不同于其他函数。这是因为，内联函数的定义对编译器而言必须是可见的，以便编译器能够在调用点内联展开该函数的代码。</li>
+  <li>由编译器自动生成的默认构造函数对内置类型成员的初始化规则：
+    <ol>
+      <li>若该类的对象被定义于全局作用域或定义为局部静态对象，这些成员被初始化为0</li>
+      <li>否则没有初始化</li>
+    </ol>
 
-<p>其每个实参的匹配都不劣于其他可行函数需要的匹配
-至少有一个实参的匹配优于其他可行函数提供的匹配</p>
-<ol>
-  <li>重载确定（overload resolution）的三个步骤：</li>
-</ol>
-
-<p>确定候选函数（candidate function）集：与被调函数同名的函数的集合（声明要在调用点可见；如果调用的是类的成员函数则不考虑访问控制符如public、private等，而是将该类的所有同名函数都取出拿来用）
-选择可行函数（viable function），两个条件：
-函数的形参个数与该调用的实参个数相同
-每一个实参的类型必须与对应形参的类型匹配，或者可被隐式转换为对应的形参类型
-寻找最佳匹配：先为每个实参划分等级，再按照第23点的方法做。</p>
-<ol>
-  <li>为了确定最佳匹配，编译器将实参到形参的类型转换划分等级：</li>
-</ol>
-
-<p>精确匹配
-通过类型提升（promotion）实现的匹配，包括整形提升：char、signed char、unsigned char、short和unsigned short提升为int，其次是提升为unsigned int。如，对于func (‘a’);来说，void func (int);要优于void func (short);。
-通过标准转换实现的匹配
-数组-&gt;指针，指针-&gt;void*，0-&gt;指针
-算术值和指针-&gt;bool
-算术值&lt;-&gt;bool
-enum-&gt;int或更高
-非const-&gt;const引用；非const指针-&gt;const指针
-由标准库类型定义的转换
-通过类类型转换实现的匹配</p>
-<ol>
-  <li>
-    <p>不能通过基于指针本身是否为const来实现函数重载（这符合第19点）：
-void f (int *);
-void f (int *const);  // 错误，重声明</p>
+    <p>另可参考《深度探索c++对象模型》</p>
   </li>
-  <li>
-    <p>函数指针：在引用函数名但又没有调用该函数时，函数名将被自动解释为指向函数的指针，故以下两句赋值含义相同：
-funcptr p1 = func;
-funcpty p2 = &amp;func;
-故调用时也相同：
-p1 (params);等价于(*p1) (params);</p>
+  <li>重载函数：出现于相同作用域中（当作用域不同时会发生名字屏蔽而不是重载），名字相同而形参表不同（默认实参不改变形参表）。注意，重载函数可以有不同的返回类型。</li>
+  <li>在c++中，名字查找发生在类型检查之前。</li>
+  <li>形参与<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>形参的等价性仅适用于非引用形参，有<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>引用的形参与有非<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>引用形参的函数是不同的，对于<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>指针和非<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>指针也是不同的。（即：仅当形参是引用或指针时，形参是否为<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>才有影响）</li>
+  <li>局部声明的名字会屏蔽全局声明的同名名字（包括函数名，此时，只要同名就会屏蔽，不管形参如何）</li>
+  <li>重载确定的寻找最佳匹配方法：若仅有一个函数满足以下条件则ok，否则编译错误：
+    <ul>
+      <li>其每个实参的匹配都不劣于其他可行函数需要的匹配</li>
+      <li>至少有一个实参的匹配优于其他可行函数提供的匹配</li>
+    </ul>
   </li>
-  <li>
-    <p>指向不同函数类型（包含返回类型的定义）的指针指针之间不存在转换。</p>
+  <li>重载确定（overload resolution）的三个步骤：
+    <ol>
+      <li>确定候选函数（candidate function）集：与被调函数同名的函数的集合（声明要在调用点可见；如果调用的是类的成员函数则不考虑访问控制符如<code class="language-c++ highlighter-rouge"><span class="k">public</span></code>、<code class="language-c++ highlighter-rouge"><span class="k">private</span></code>等，而是将该类的所有同名函数都取出拿来用）</li>
+      <li>选择可行函数（viable function），两个条件：
+        <ul>
+          <li>函数的形参个数与该调用的实参个数相同</li>
+          <li>每一个实参的类型必须与对应形参的类型匹配，或者可被隐式转换为对应的形参类型</li>
+        </ul>
+      </li>
+      <li>寻找最佳匹配：先为每个实参划分等级，再按照第下述方法做。</li>
+    </ol>
   </li>
-  <li>
-    <p>函数指针作为形参时，以下两种形式等价：
-void f (bool (int <em>));
-void f (bool (</em>)(int *));</p>
+  <li>为了确定最佳匹配，编译器将实参到形参的类型转换划分等级：
+    <ol>
+      <li>精确匹配</li>
+      <li>通过类型提升（promotion）实现的匹配，包括整形提升：<code class="language-c++ highlighter-rouge"><span class="kt">char</span></code>、<code class="language-c++ highlighter-rouge"><span class="kt">signed</span> <span class="kt">char</span></code>、<code class="language-c++ highlighter-rouge"><span class="kt">unsigned</span> <span class="kt">char</span></code>、<code class="language-c++ highlighter-rouge"><span class="kt">short</span></code>和<code class="language-c++ highlighter-rouge"><span class="kt">unsigned</span> <span class="kt">short</span></code>提升为<code class="language-c++ highlighter-rouge"><span class="kt">int</span></code>，其次是提升为<code class="language-c++ highlighter-rouge"><span class="kt">unsigned</span> <span class="kt">int</span></code>。如，对于
+<code class="language-c++ highlighter-rouge"><span class="n">func</span><span class="p">(</span><span class="sc">'a'</span><span class="p">);</span></code>来说，<code class="language-c++ highlighter-rouge"><span class="kt">void</span> <span class="n">func</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span></code>要优于<code class="language-c++ highlighter-rouge"><span class="kt">void</span> <span class="n">func</span><span class="p">(</span><span class="kt">short</span><span class="p">);</span></code>。</li>
+      <li>通过标准转换实现的匹配</li>
+      <li>数组-&gt;指针，指针-&gt;<code class="language-c++ highlighter-rouge"><span class="kt">void</span><span class="o">*</span></code>，<code class="language-c++ highlighter-rouge"><span class="mi">0</span></code>-&gt;指针</li>
+      <li>算术值和指针-&gt;<code class="language-c++ highlighter-rouge"><span class="kt">bool</span></code></li>
+      <li>算术值&lt;-&gt;<code class="language-c++ highlighter-rouge"><span class="kt">bool</span></code></li>
+      <li><code class="language-c++ highlighter-rouge"><span class="k">enum</span></code>-&gt;<code class="language-c++ highlighter-rouge"><span class="kt">int</span></code>或更高</li>
+      <li>非<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>-&gt;<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>引用；非<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>指针-&gt;<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>指针</li>
+      <li>由标准库类型定义的转换</li>
+      <li>通过类类型转换实现的匹配</li>
+    </ol>
   </li>
-  <li>
-    <p>返回类型中的函数指针的例子：int (<em>ff (int)) (int *, int);。其中，ff (int)是一个函数，它返回一个函数指针，其类型为int (</em>)(int *, int);。</p>
+  <li>不能通过基于指针本身是否为<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>来实现函数重载（这符合第19点）：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">);</span>
+<span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="k">const</span><span class="p">);</span>  <span class="c1">// 错误，重声明
+</span></code></pre>
+    </div>
   </li>
-  <li>
-    <p>函数的返回类型不能是一个函数，最多只能是一个函数指针！！</p>
+  <li>函数指针：在引用函数名但又没有调用该函数时，函数名将被自动解释为指向函数的指针，故以下两句赋值含义相同：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">funcptr</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">func</span><span class="p">;</span>
+<span class="n">funcpty</span> <span class="n">p2</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">func</span><span class="p">;</span>
+</code></pre>
+    </div>
+    <p>故调用时也相同：<code class="language-c++ highlighter-rouge"><span class="n">p1</span> <span class="p">(</span><span class="n">params</span><span class="p">);</span></code>等价于<code class="language-c++ highlighter-rouge"><span class="p">(</span><span class="o">*</span><span class="n">p1</span><span class="p">)(</span><span class="n">params</span><span class="p">);</span></code></p>
   </li>
-  <li>
-    <p>若类A有个带一个int参数的ctor，则以下函数定义是合法的：A func() { return 10; }</p>
+  <li>指向不同函数类型（包含返回类型的定义）的指针指针之间不存在转换。</li>
+  <li>函数指针作为形参时，以下两种形式等价：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">bool</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">));</span>
+<span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">bool</span> <span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">int</span> <span class="o">*</span><span class="p">));</span>
+</code></pre>
+    </div>
   </li>
-  <li>
-    <p>如果一个类定义了一个非const函数以及对应的const函数，是合法的，C++将其看成重载，不会引起编译错误。对于这点，我的理解是，C++会将成员函数重写为包含指向对象本身的隐含this指针的函数，这样，const成员函数就会变成const对象指针，根据第19点这是可以被重载的。</p>
+  <li>返回类型中的函数指针的例子：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">ff</span><span class="p">(</span><span class="kt">int</span><span class="p">))(</span><span class="kt">int</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+</code></pre>
+    </div>
+    <p>。其中，<code class="language-c++ highlighter-rouge"><span class="n">ff</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code>是一个函数，它返回一个函数指针，其类型为<code class="language-c++ highlighter-rouge"><span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">int</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span></code>。</p>
   </li>
+  <li>函数的返回类型不能是一个函数，最多只能是一个函数指针！！</li>
+  <li>若类<code class="language-c++ highlighter-rouge"><span class="n">A</span></code>有个带一个<code class="language-c++ highlighter-rouge"><span class="kt">int</span></code>参数的ctor，则以下函数定义是合法的：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">A</span> <span class="nf">func</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">10</span><span class="p">;</span> <span class="p">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>如果一个类定义了一个非<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>函数以及对应的<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>函数，是合法的，C++将其看成重载，不会引起编译错误。对于这点，我的理解是，C++会将成员函数重写为包含指向对象本身的隐含<code class="language-c++ highlighter-rouge"><span class="k">this</span></code>指针的函数，这样，<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>成员函数就会变成<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>对象指针，根据第19点这是可以被重载的。</li>
 </ol>
 
 <h2 id="io">第8章 标准I/O库</h2>
 
 <ol>
-  <li>
-    <p>IO对象不可复制或赋值，这表示着：
-a. 不能存储在容器中
-b. 函数的形参或返回类型不能是非指针或引用的流类型</p>
+  <li>IO对象不可复制或赋值，这表示着：
+    <ul>
+      <li>不能存储在容器中</li>
+      <li>函数的形参或返回类型不能是非指针或引用的流类型</li>
+    </ul>
   </li>
-  <li>
-    <p>刷新输出缓冲区的方法：
-cout « “hi” « flush;  // 不增加任何数据
-cout « “hi” « ends;  // 增加null字符
-cout « “hi” « endl;</p>
+  <li>刷新输出缓冲区的方法：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"hi"</span> <span class="o">&lt;&lt;</span> <span class="n">flush</span><span class="p">;</span>  <span class="c1">// 不增加任何数据
+</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"hi"</span> <span class="o">&lt;&lt;</span> <span class="n">ends</span><span class="p">;</span>  <span class="c1">// 增加null字符
+</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"hi"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</code></pre>
+    </div>
   </li>
-  <li>
-    <p>如果一个流调用tie函数将其本身绑在传递给tie的ostream实参对象上，则该流上任何IO操作都会刷新实参所关联的缓冲区。</p>
-  </li>
+  <li>如果一个流调用<code class="language-c++ highlighter-rouge"><span class="n">tie</span></code>函数将其本身绑在传递给<code class="language-c++ highlighter-rouge"><span class="n">tie</span></code>的<code class="language-c++ highlighter-rouge"><span class="n">ostream</span></code>实参对象上，则该流上任何IO操作都会刷新实参所关联的缓冲区。</li>
 </ol>
 
 </section>
