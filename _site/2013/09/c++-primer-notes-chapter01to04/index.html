@@ -64,8 +64,11 @@
     </ul>
   </li>
   <li>定义也是声明：当定义变量时我们声明了它的类型和名字</li>
-  <li>如果声明有初始化式，那么它可被当作是定义，即使被标记为<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>。如：
-<code class="language-c++ highlighter-rouge"><span class="k">extern</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span></code></li>
+  <li>
+    <p>如果声明有初始化式，那么它可被当作是定义，即使被标记为<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>。如：</p>
+
+    <p><code class="language-c++ highlighter-rouge"><span class="k">extern</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span></code></p>
+  </li>
   <li>只有当<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>声明位于函数外部时，才可以含有初始化式（此时被当成定义）</li>
   <li>与一般的变量不同，在全局作用域声明的<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>变量是定义该对象的文件的局部变量。此变量只存在于那个文件中，不能被其他文件访问。除非定义时加上<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>。</li>
   <li>引用是一种复合类型（是指用其他类型定义的类型）</li>
@@ -79,11 +82,13 @@
 </code></pre>
     </div>
     <p>但同样的初始化对于非<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>引用都是不合法的，因为对于：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">double</span> <span class="n">dval</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri</span> <span class="o">=</span> <span class="n">dval</span><span class="p">;</span>
 </code></pre>
     </div>
     <p>编译器会将其变成：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">dval</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
 </code></pre>
@@ -99,14 +104,18 @@
   <li>当在头文件中定义了<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>变量后，每个包含该头文件的源文件都有了自己的<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>变量，其名称和值都一样；定义在头文件中的<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>变量应该是常量表达式。</li>
   <li>若<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>变量不是用常量表达式初始化，就不应在头文件中定义，而应在源文件中定义并初始化，并添加<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>使其被多个文件共享。</li>
   <li>若在头文件中定义<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>的<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>变量，多个cc文件都<code class="language-c++ highlighter-rouge"><span class="cp">#include</span></code>了这个头文件且其obj会被链接到一起时，会出错：重定义。原因：这些cc文件引用头文件后相当于在文件中定义了这个<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>变量，但由于加了<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>，使其全局可见。</li>
-  <li>可以声明引用，例如在a.cc中定义：
+  <li>
+    <p>可以声明引用，例如在a.cc中定义：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">const</span> <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ra</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
 </code></pre>
     </div>
     <p>则可以在a.h中声明：<code class="language-c++ highlighter-rouge"><span class="k">extern</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ra</span><span class="p">;</span></code></p>
   </li>
-  <li>逗号表达式与定义，以下是合法的：
+  <li>
+    <p>逗号表达式与定义，以下是合法的：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="n">q</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>
 </code></pre>
@@ -135,7 +144,9 @@
       <li>不管数组在哪定义，若其元素为类类型，则用default constructor来初始化；若该类没有default constructor，则必须显式初始化。</li>
     </ul>
   </li>
-  <li>字符数组：字符串的字面值包含一个额外的<code class="language-c++ highlighter-rouge"><span class="n">null</span></code>字符
+  <li>
+    <p>字符数组：字符串的字面值包含一个额外的<code class="language-c++ highlighter-rouge"><span class="n">null</span></code>字符</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">char</span> <span class="n">ca1</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="sc">'c'</span><span class="p">,</span> <span class="sc">'+'</span><span class="p">,</span> <span class="sc">'+'</span> <span class="p">};</span>  <span class="c1">//长度为3
 </span><span class="kt">char</span> <span class="n">ca2</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"c++"</span><span class="p">;</span>  <span class="c1">//长度为4
 </span><span class="kt">char</span> <span class="n">ca3</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s">"c++"</span><span class="p">;</span>  <span class="c1">//编译错误
@@ -153,17 +164,22 @@
   <li><code class="language-c++ highlighter-rouge"><span class="kt">void</span><span class="o">*</span></code>指针可以保存任何类型对象的地址，不允许使用<code class="language-c++ highlighter-rouge"><span class="kt">void</span><span class="o">*</span></code>指针操纵它指向的对象</li>
   <li>两个指针减法操作的结果是标准库类型<code class="language-c++ highlighter-rouge"><span class="kt">ptrdiff_t</span></code>的数据。</li>
   <li>与任何<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>量一样，<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>指针也必须在定义时初始化。</li>
-  <li>考虑如下代码：
+  <li>
+    <p>考虑如下代码：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">typedef</span> <span class="n">string</span> <span class="o">*</span><span class="n">pstring</span><span class="p">;</span>
 <span class="k">const</span> <span class="n">pstring</span> <span class="n">cstr</span><span class="p">;</span>
 </code></pre>
     </div>
     <p>这里<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>修饰的是<code class="language-c++ highlighter-rouge"><span class="n">pstring</span></code>类型，这是一个指针。因此上述定义等价于</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">string</span> <span class="o">*</span> <span class="k">const</span> <span class="n">cstr</span><span class="p">;</span>
 </code></pre>
     </div>
   </li>
-  <li>可以在数组长度后加<code class="language-c++ highlighter-rouge"><span class="p">()</span></code>来对数组元素做值初始化：
+  <li>
+    <p>可以在数组长度后加<code class="language-c++ highlighter-rouge"><span class="p">()</span></code>来对数组元素做值初始化：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]();</span>  <span class="c1">// 初始化为0
 </span></code></pre>
     </div>

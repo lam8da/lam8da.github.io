@@ -60,7 +60,9 @@
     </ul>
   </li>
   <li>逗号表达式从左向右计算，结果是其最右边表达式的值。如果最右边的操作数的左值，则逗号表达式的值也是左值。</li>
-  <li>值初始化的<code class="language-c++ highlighter-rouge"><span class="p">()</span></code>语法必须置于类型名后面，而不是变量后。如：
+  <li>
+    <p>值初始化的<code class="language-c++ highlighter-rouge"><span class="p">()</span></code>语法必须置于类型名后面，而不是变量后。如：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span><span class="p">();</span>
 </code></pre>
     </div>
@@ -73,7 +75,9 @@
   <li>类类型可以定义由编译器自动执行的类型转换，如：<code class="language-c++ highlighter-rouge"><span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span><span class="p">)</span> <span class="p">...</span></code></li>
   <li>显式转换也称为强制类型转换（cast），包括：dynamic_cast，const_cast，static_cast，reinterpret_cast。</li>
   <li><code class="language-c++ highlighter-rouge"><span class="kt">char</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="s">"hello"</span><span class="p">;</span></code>在编译时会出现警告，改成<code class="language-c++ highlighter-rouge"><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span></code>就没问题。</li>
-  <li><code class="language-c++ highlighter-rouge"><span class="k">sizeof</span><span class="p">(</span><span class="n">func</span><span class="p">());</span></code>的结果是<code class="language-c++ highlighter-rouge"><span class="n">func</span></code>函数的返回类型的size，且不执行<code class="language-c++ highlighter-rouge"><span class="n">func</span></code>。注意，不能这样用：
+  <li>
+    <p><code class="language-c++ highlighter-rouge"><span class="k">sizeof</span><span class="p">(</span><span class="n">func</span><span class="p">());</span></code>的结果是<code class="language-c++ highlighter-rouge"><span class="n">func</span></code>函数的返回类型的size，且不执行<code class="language-c++ highlighter-rouge"><span class="n">func</span></code>。注意，不能这样用：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">sizeof</span><span class="p">(</span><span class="n">func</span><span class="p">);</span>
 </code></pre>
     </div>
@@ -89,7 +93,9 @@
 
 <ol>
   <li>空语句，如：<code class="language-c++ highlighter-rouge"><span class="k">while</span> <span class="p">(</span><span class="n">expr</span><span class="p">);</span></code>；又如：<code class="language-c++ highlighter-rouge"><span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">;;</span></code>。后者由两条语句组成：一条表达式语句和一条空语句。</li>
-  <li>在条件表达式中定义的变量必须初始化，该条件检验的就是初始化对象的值。如：
+  <li>
+    <p>在条件表达式中定义的变量必须初始化，该条件检验的就是初始化对象的值。如：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">val</span><span class="p">)</span> <span class="p">...;</span>
 <span class="k">switch</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">func</span><span class="p">())</span> <span class="p">...;</span>
 </code></pre>
@@ -109,7 +115,9 @@
 
 <ol>
   <li>函数由函数名以及一组操作数类型唯一地表示</li>
-  <li>在c语言中具有<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>形参或非<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>形参的函数并无区别（引用和指针除外），故：
+  <li>
+    <p>在c语言中具有<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>形参或非<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>形参的函数并无区别（引用和指针除外），故：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">fcn</span> <span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{...}</span>
 <span class="kt">void</span> <span class="nf">fcn</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{...}</span>
 </code></pre>
@@ -118,7 +126,9 @@
   </li>
   <li>由于数组不能复制，所以无法编写使用数组类型形参的函数，而函数也不允许返回一个数组！</li>
   <li>由于使用数组名字时，数组会被自动转化为指针，所以处理数组的函数通常通过操纵指向数组中的元素的指针来处理数组。</li>
-  <li>虽然不能直接传递数组，但形参可以写成数组形式，下面三种定义是等价的，形参类型都是<code class="language-c++ highlighter-rouge"><span class="kt">int</span> <span class="o">*</span></code>：
+  <li>
+    <p>虽然不能直接传递数组，但形参可以写成数组形式，下面三种定义是等价的，形参类型都是<code class="language-c++ highlighter-rouge"><span class="kt">int</span> <span class="o">*</span></code>：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">func</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="p">{...}</span>
 <span class="kt">void</span> <span class="nf">func</span><span class="p">(</span><span class="kt">int</span> <span class="p">[])</span> <span class="p">{...}</span>
 <span class="kt">void</span> <span class="nf">func</span><span class="p">(</span><span class="kt">int</span> <span class="p">[</span><span class="mi">10</span><span class="p">])</span> <span class="p">{...}</span>
@@ -126,13 +136,17 @@
     </div>
     <p>编译器只会检查实参是不是指针、指针类型是否匹配，而不会检查数组的长度。故对于以上第三种定义可以传个<code class="language-c++ highlighter-rouge"><span class="kt">int</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span></code>进去。</p>
   </li>
-  <li>一般用法：传非引用指针：<code class="language-c++ highlighter-rouge"><span class="kt">void</span> <span class="nf">func</span> <span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="p">{...}</span></code>。
-也可通过引用传递，此时编译器将检查数组实参的大小与形参大小是否匹配：
+  <li>
+    <p>一般用法：传非引用指针：<code class="language-c++ highlighter-rouge"><span class="kt">void</span> <span class="nf">func</span> <span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="p">{...}</span></code>。
+也可通过引用传递，此时编译器将检查数组实参的大小与形参大小是否匹配：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">func</span> <span class="p">(</span><span class="kt">int</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">)[</span><span class="mi">10</span><span class="p">])</span> <span class="p">{...}</span>
 </code></pre>
     </div>
   </li>
-  <li>多维数组的传递：c++中没有多维数组，所谓多维数组实际上是一个一维数组，其元素是由数组组成。因此，除了第一维以外的所有维的长度都是元素类型的一部分，必须明确指定：
+  <li>
+    <p>多维数组的传递：c++中没有多维数组，所谓多维数组实际上是一个一维数组，其元素是由数组组成。因此，除了第一维以外的所有维的长度都是元素类型的一部分，必须明确指定：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="p">)[</span><span class="mi">10</span><span class="p">])</span> <span class="p">{...}</span>
 <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">[][</span><span class="mi">10</span><span class="p">])</span> <span class="p">{...}</span>
 <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">[</span><span class="mi">100</span><span class="p">][</span><span class="mi">10</span><span class="p">])</span> <span class="p">{...}</span>
@@ -145,7 +159,9 @@
   <li>函数的返回值用于初始化在调用函数处创建的临时对象。当返回引用类型时，没有复制返回值，而是返回对象本身。</li>
   <li>函数声明时需提供：返回类型、函数名、形参列表（不必对形参命名）。这三个元素成为函数原型。</li>
   <li>默认实参可以是任何适当类型的表达式（包括函数调用）。</li>
-  <li>可在函数声明也可在函数定义中指定默认实参，但在一个文件中只能为一个形参指定默认实参一次（因此h和cc只能有一个这么干，因为cc包含了h）。如果在函数定义中指定默认实参，那么只有在包含该函数定义的源文件中调用该函数时（被指定的默认实参）才有效。在声明时指定默认实参可以类似于这么干：
+  <li>
+    <p>可在函数声明也可在函数定义中指定默认实参，但在一个文件中只能为一个形参指定默认实参一次（因此h和cc只能有一个这么干，因为cc包含了h）。如果在函数定义中指定默认实参，那么只有在包含该函数定义的源文件中调用该函数时（被指定的默认实参）才有效。在声明时指定默认实参可以类似于这么干：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
 </code></pre>
     </div>
@@ -197,13 +213,17 @@
       <li>通过类类型转换实现的匹配</li>
     </ol>
   </li>
-  <li>不能通过基于指针本身是否为<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>来实现函数重载（这符合第19点）：
+  <li>
+    <p>不能通过基于指针本身是否为<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>来实现函数重载（这符合第19点）：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">);</span>
 <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="k">const</span><span class="p">);</span>  <span class="c1">// 错误，重声明
 </span></code></pre>
     </div>
   </li>
-  <li>函数指针：在引用函数名但又没有调用该函数时，函数名将被自动解释为指向函数的指针，故以下两句赋值含义相同：
+  <li>
+    <p>函数指针：在引用函数名但又没有调用该函数时，函数名将被自动解释为指向函数的指针，故以下两句赋值含义相同：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">funcptr</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">func</span><span class="p">;</span>
 <span class="n">funcpty</span> <span class="n">p2</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">func</span><span class="p">;</span>
 </code></pre>
@@ -211,20 +231,26 @@
     <p>故调用时也相同：<code class="language-c++ highlighter-rouge"><span class="n">p1</span> <span class="p">(</span><span class="n">params</span><span class="p">);</span></code>等价于<code class="language-c++ highlighter-rouge"><span class="p">(</span><span class="o">*</span><span class="n">p1</span><span class="p">)(</span><span class="n">params</span><span class="p">);</span></code></p>
   </li>
   <li>指向不同函数类型（包含返回类型的定义）的指针指针之间不存在转换。</li>
-  <li>函数指针作为形参时，以下两种形式等价：
+  <li>
+    <p>函数指针作为形参时，以下两种形式等价：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">bool</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">));</span>
 <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">bool</span> <span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">int</span> <span class="o">*</span><span class="p">));</span>
 </code></pre>
     </div>
   </li>
-  <li>返回类型中的函数指针的例子：
+  <li>
+    <p>返回类型中的函数指针的例子：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">ff</span><span class="p">(</span><span class="kt">int</span><span class="p">))(</span><span class="kt">int</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
 </code></pre>
     </div>
     <p>。其中，<code class="language-c++ highlighter-rouge"><span class="n">ff</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code>是一个函数，它返回一个函数指针，其类型为<code class="language-c++ highlighter-rouge"><span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">int</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span></code>。</p>
   </li>
   <li>函数的返回类型不能是一个函数，最多只能是一个函数指针！！</li>
-  <li>若类<code class="language-c++ highlighter-rouge"><span class="n">A</span></code>有个带一个<code class="language-c++ highlighter-rouge"><span class="kt">int</span></code>参数的ctor，则以下函数定义是合法的：
+  <li>
+    <p>若类<code class="language-c++ highlighter-rouge"><span class="n">A</span></code>有个带一个<code class="language-c++ highlighter-rouge"><span class="kt">int</span></code>参数的ctor，则以下函数定义是合法的：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">A</span> <span class="nf">func</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">10</span><span class="p">;</span> <span class="p">}</span>
 </code></pre>
     </div>
@@ -241,7 +267,9 @@
       <li>函数的形参或返回类型不能是非指针或引用的流类型</li>
     </ul>
   </li>
-  <li>刷新输出缓冲区的方法：
+  <li>
+    <p>刷新输出缓冲区的方法：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"hi"</span> <span class="o">&lt;&lt;</span> <span class="n">flush</span><span class="p">;</span>  <span class="c1">// 不增加任何数据
 </span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"hi"</span> <span class="o">&lt;&lt;</span> <span class="n">ends</span><span class="p">;</span>  <span class="c1">// 增加null字符
 </span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"hi"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>

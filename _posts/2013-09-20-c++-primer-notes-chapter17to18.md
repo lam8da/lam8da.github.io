@@ -18,10 +18,12 @@ tags:
 
 1. 承诺不抛出任何异常的方法：`void func() throw() {}`
 2. 命名空间别名（像定义变量一样）：
+
    ```
    namespace n1 = n2;  // n2是一个已定义的命名空间
    ```
 3. 屏蔽命名空间名字规则的一个重要例外：接受类类型形参（或类类型指针及引用形参）的函数（包括重载操作符），以及与类本身定义在同一命名空间中的函数（包括重载操作符），在用类类型对象（或类类型的引用及指针）作为实参的时候是可见的。如：
+
    ```
    std::string s;
    getline(std::cin, s);  // ok
@@ -38,6 +40,7 @@ tags:
    - 可直接调用对象的析构函数来撤销对象。运行析构函数并不释放所在内存
    - `uninitialized_fill`和`uninitiated_copy`
 3. `operator new`/`operator delete`接口（只分配/释放空间，不构造/析构）：
+
    ```
    void *operator new(size_t);
    void *operator new[](size_t);
@@ -45,12 +48,14 @@ tags:
    void operator delete[](void*);
    ```
 4. 定位`new`表达式（在已分配但未构造的内存中初始化对象）：
+
    ```
    new (place_address) type
    new (place_address) type (initializer_list)
    ```
    其中`place_address`是指针，`initializer_list`是初始化列表。
    例如：
+
    ```
    allocator<T> alloc;
    alloc.construct(ptr, t);  // 复制构造
@@ -83,6 +88,7 @@ tags:
     - `typeid`操作符：返回动态类型信息（当类型有虚函数时）或静态的、编译时的类型信息（以`type_info`对象的形式返回）
     - `dynamic_cast`操作符的用法：
       - 作用于指针
+
         ```
         if (Derived *dptr = dynamic_cast<Derived*>(base_ptr)) {
           ...
@@ -91,6 +97,7 @@ tags:
         }
         ```
       - 作用于引用
+
         ```
         try {
           Derived &d = dynamic_cast<Derived&>(b);
@@ -105,6 +112,7 @@ tags:
     - 类的`static`成员不需要特殊语法来指向，其指针就是普通指针
 
     成员指针的使用（`.*`和`->*`操作符）：
+
     ```
     C cobj, *cptr;
     (cobj.*ptr)(arg_list);
@@ -113,6 +121,7 @@ tags:
 13. 关于嵌套类：
     - 嵌套在类模板内部的类是模板
     - 在外围类外部定义嵌套类的方法：
+
       ```
       class Outer { class Inner;  /* forward declaration */ };
       class Outer::Inter { /* definition */ };

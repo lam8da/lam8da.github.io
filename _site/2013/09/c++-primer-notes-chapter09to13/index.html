@@ -87,7 +87,9 @@
   <li>一旦一个名字被用作类型名，该名字就不能被重复定义。（但若一个名字在类外作用域中首先被定义为类型名，类中可以先重新定义它再用作类型名）。</li>
   <li>构造函数不能声明为<code class="language-c++ highlighter-rouge"><span class="k">const</span></code></li>
   <li>对非类类型的数据成员进行赋值或使用初始化式在结果和性能上都是等价的</li>
-  <li>成员被初始化的次序就是定义成员的次序，不管它们在初始化列表中顺序如何。因此以下程序非法：
+  <li>
+    <p>成员被初始化的次序就是定义成员的次序，不管它们在初始化列表中顺序如何。因此以下程序非法：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">X</span> <span class="p">{</span>
   <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
   <span class="kt">int</span> <span class="n">j</span><span class="p">;</span>
@@ -126,7 +128,9 @@
       <li>类C的copy ctor对当前作用域是否可见</li>
     </ul>
   </li>
-  <li>若使用元素初始化列表初始化数组元素，则首先根据指定值创建数组元素类型的元素，然后用复制构造函数将该值复制到相应元素：
+  <li>
+    <p>若使用元素初始化列表初始化数组元素，则首先根据指定值创建数组元素类型的元素，然后用复制构造函数将该值复制到相应元素：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">C</span> <span class="n">ci</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
   <span class="n">string</span><span class="p">(</span><span class="s">"hello"</span><span class="p">),</span>  <span class="c1">// 单参数ctor + copy ctor
 </span>  <span class="n">C</span><span class="p">()</span>  <span class="c1">// 默认ctor + copy ctor

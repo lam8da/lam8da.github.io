@@ -44,7 +44,9 @@
 
 <ol>
   <li>模板形参可以是表示类型的类型形参（type parameter，表示未知类型），也可以是表示常量表达式的非类型形参（nontype parameter，表示未知值）</li>
-  <li>函数模板也可以声明为<code class="language-c++ highlighter-rouge"><span class="kr">inline</span></code>。此时<code class="language-c++ highlighter-rouge"><span class="kr">inline</span></code>关键字放在模板形参表之后、返回类型之前，不能放在关键字<code class="language-c++ highlighter-rouge"><span class="k">template</span></code>之前：
+  <li>
+    <p>函数模板也可以声明为<code class="language-c++ highlighter-rouge"><span class="kr">inline</span></code>。此时<code class="language-c++ highlighter-rouge"><span class="kr">inline</span></code>关键字放在模板形参表之后、返回类型之前，不能放在关键字<code class="language-c++ highlighter-rouge"><span class="k">template</span></code>之前：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kr">inline</span> <span class="n">T</span> <span class="n">min</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>
 </code></pre>
     </div>
@@ -60,6 +62,7 @@
     </ul>
 
     <p>例：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">T</span> <span class="n">fobj</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">T</span><span class="p">);</span>
 <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">T</span> <span class="n">fref</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>
 <span class="n">string</span> <span class="n">s1</span><span class="p">;</span>
@@ -72,7 +75,9 @@
 </span></code></pre>
     </div>
   </li>
-  <li>可以使用函数模板对函数指针进行初始化或赋值：
+  <li>
+    <p>可以使用函数模板对函数指针进行初始化或赋值：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>
 <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">pf</span><span class="p">)(</span><span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="n">compare</span><span class="p">;</span>  <span class="c1">// 实例化
 </span></code></pre>
@@ -83,7 +88,9 @@
   <li>显式提供模板实参时可以像函数的默认实参机制那样省略右边的模板实参（由编译器推断）</li>
   <li>模板要进行实例化时，编译器必须能够访问定义模板的源代码。如果采用分别编译模型（separate compilation model），在模板定义时需要使用<code class="language-c++ highlighter-rouge"><span class="k">export</span></code>关键字。</li>
   <li>类模板的成员函数只有为程序所用才进行实例化，如果某函数从未使用，则不会实例化该成员函数。一个典型例子是，若某类型没有定义默认的构造函数，也可以用<code class="language-c++ highlighter-rouge"><span class="n">std</span><span class="o">::</span><span class="n">vector</span></code>存放它，但<code class="language-c++ highlighter-rouge"><span class="n">vector</span></code>初始化时不能使用<code class="language-c++ highlighter-rouge"><span class="n">vector</span></code>的只有一个<code class="language-c++ highlighter-rouge"><span class="n">size</span></code>成员的构造函数。</li>
-  <li>类模板中的友元声明：
+  <li>
+    <p>类模板中的友元声明：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">A</span><span class="p">;</span>
 <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">B</span> <span class="p">{</span>
  <span class="k">public</span><span class="o">:</span>
@@ -118,13 +125,17 @@
     </ol>
 
     <ul>
-      <li>例一：
+      <li>
+        <p>例一：</p>
+
         <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="cm">/* I. */</span> <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>
 <span class="cm">/* II.*/</span> <span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">);</span>
 </code></pre>
         </div>
         <ul>
-          <li>调用1：
+          <li>
+            <p>调用1：</p>
+
             <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">const</span> <span class="kt">char</span> <span class="n">const_arr1</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"world"</span><span class="p">,</span> <span class="n">const_arr2</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"hi"</span><span class="p">;</span>
 <span class="n">compare</span><span class="p">(</span><span class="n">const_arr1</span><span class="p">,</span> <span class="n">const_arr2</span><span class="p">);</span>
 </code></pre>
@@ -136,7 +147,9 @@
               <li>II的：<code class="language-c++ highlighter-rouge"><span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">);</span></code></li>
             </ul>
           </li>
-          <li>调用2：
+          <li>
+            <p>调用2：</p>
+
             <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">char</span> <span class="n">ch_arr1</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"world"</span><span class="p">,</span> <span class="n">ch_arr2</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"hi"</span><span class="p">;</span>
 <span class="n">compare</span><span class="p">(</span><span class="n">ch_arr1</span><span class="p">,</span> <span class="n">ch_arr2</span><span class="p">);</span>
 </code></pre>
@@ -145,8 +158,9 @@
           </li>
         </ul>
       </li>
-      <li>例二：
-如果I是这样：<code class="language-c++ highlighter-rouge"><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">T</span><span class="p">);</span></code>则：
+      <li>
+        <p>例二：
+如果I是这样：<code class="language-c++ highlighter-rouge"><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">T</span><span class="p">);</span></code>则：</p>
         <ul>
           <li><code class="language-c++ highlighter-rouge"><span class="n">compare</span><span class="p">(</span><span class="n">ch_arr1</span><span class="p">,</span><span class="n">ch_arr2</span><span class="p">);</span></code>将调用<code class="language-c++ highlighter-rouge"><span class="n">I</span></code>，<code class="language-c++ highlighter-rouge"><span class="n">T</span></code>绑定到<code class="language-c++ highlighter-rouge"><span class="kt">char</span><span class="o">*</span></code>。</li>
           <li><code class="language-c++ highlighter-rouge"><span class="n">compare</span><span class="p">(</span><span class="n">const_arr2</span><span class="p">,</span> <span class="n">const_arr2</span><span class="p">);</span></code>将调用II。</li>

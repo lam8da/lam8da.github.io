@@ -18,6 +18,7 @@ tags:
 
 1. 模板形参可以是表示类型的类型形参（type parameter，表示未知类型），也可以是表示常量表达式的非类型形参（nontype parameter，表示未知值）
 2. 函数模板也可以声明为`inline`。此时`inline`关键字放在模板形参表之后、返回类型之前，不能放在关键字`template`之前：
+
    ```
    template <typename T> inline T min(const T&, const T&);
    ```
@@ -30,6 +31,7 @@ tags:
    - 数组或函数到指针的转换。当模板形参不是引用类型时：数组/函数->指针。
 
    例：
+
    ```
    template<typename T> T fobj(T, T);
    template<typename T> T fref(const T&, const T&);
@@ -42,6 +44,7 @@ tags:
    // fref(a, b);  // error!
    ```
 8. 可以使用函数模板对函数指针进行初始化或赋值：
+
    ```
    template<typename T> int compare(const T&, const T&);
    int (*pf)(const int&, const int&) = compare;  // 实例化
@@ -52,6 +55,7 @@ tags:
 11. 模板要进行实例化时，编译器必须能够访问定义模板的源代码。如果采用分别编译模型（separate compilation model），在模板定义时需要使用`export`关键字。
 12. 类模板的成员函数只有为程序所用才进行实例化，如果某函数从未使用，则不会实例化该成员函数。一个典型例子是，若某类型没有定义默认的构造函数，也可以用`std::vector`存放它，但`vector`初始化时不能使用`vector`的只有一个`size`成员的构造函数。
 13. 类模板中的友元声明：
+
     ```
     template<class T> class A;
     template<class T> class B {
@@ -77,11 +81,13 @@ tags:
     4. 重新排列去掉函数模板实例的可行函数。如果只有一个函数可选，调用之；否则有二义性。
 
     - 例一：
+
       ```
       /* I. */ template<typename T> int compare(const T&, const T&);
       /* II.*/ int compare(const char*, const char*);
       ```
       - 调用1：
+
         ```
         const char const_arr1[] = "world", const_arr2[] = "hi";
         compare(const_arr1, const_arr2);
@@ -91,6 +97,7 @@ tags:
         - 从I实例化的：`int compare(const char* const&, const char* const&);`
         - II的：`int compare(const char*, const char*);`
       - 调用2：
+
         ```
         char ch_arr1[] = "world", ch_arr2[] = "hi";
         compare(ch_arr1, ch_arr2);

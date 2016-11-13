@@ -45,12 +45,16 @@
 
 <ol>
   <li>承诺不抛出任何异常的方法：<code class="language-c++ highlighter-rouge"><span class="kt">void</span> <span class="nf">func</span><span class="p">()</span> <span class="k">throw</span><span class="p">()</span> <span class="p">{}</span></code></li>
-  <li>命名空间别名（像定义变量一样）：
+  <li>
+    <p>命名空间别名（像定义变量一样）：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">namespace</span> <span class="n">n1</span> <span class="o">=</span> <span class="n">n2</span><span class="p">;</span>  <span class="c1">// n2是一个已定义的命名空间
 </span></code></pre>
     </div>
   </li>
-  <li>屏蔽命名空间名字规则的一个重要例外：接受类类型形参（或类类型指针及引用形参）的函数（包括重载操作符），以及与类本身定义在同一命名空间中的函数（包括重载操作符），在用类类型对象（或类类型的引用及指针）作为实参的时候是可见的。如：
+  <li>
+    <p>屏蔽命名空间名字规则的一个重要例外：接受类类型形参（或类类型指针及引用形参）的函数（包括重载操作符），以及与类本身定义在同一命名空间中的函数（包括重载操作符），在用类类型对象（或类类型的引用及指针）作为实参的时候是可见的。如：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span><span class="p">;</span>
 <span class="n">getline</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>  <span class="c1">// ok
 </span></code></pre>
@@ -72,7 +76,9 @@
       <li><code class="language-c++ highlighter-rouge"><span class="n">uninitialized_fill</span></code>和<code class="language-c++ highlighter-rouge"><span class="n">uninitiated_copy</span></code></li>
     </ul>
   </li>
-  <li><code class="language-c++ highlighter-rouge"><span class="k">operator</span> <span class="k">new</span></code>/<code class="language-c++ highlighter-rouge"><span class="k">operator</span> <span class="k">delete</span></code>接口（只分配/释放空间，不构造/析构）：
+  <li>
+    <p><code class="language-c++ highlighter-rouge"><span class="k">operator</span> <span class="k">new</span></code>/<code class="language-c++ highlighter-rouge"><span class="k">operator</span> <span class="k">delete</span></code>接口（只分配/释放空间，不构造/析构）：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="o">*</span><span class="k">operator</span> <span class="k">new</span><span class="p">(</span><span class="kt">size_t</span><span class="p">);</span>
 <span class="kt">void</span> <span class="o">*</span><span class="k">operator</span> <span class="k">new</span><span class="p">[](</span><span class="kt">size_t</span><span class="p">);</span>
 <span class="kt">void</span> <span class="k">operator</span> <span class="k">delete</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">);</span>
@@ -80,13 +86,16 @@
 </code></pre>
     </div>
   </li>
-  <li>定位<code class="language-c++ highlighter-rouge"><span class="k">new</span></code>表达式（在已分配但未构造的内存中初始化对象）：
+  <li>
+    <p>定位<code class="language-c++ highlighter-rouge"><span class="k">new</span></code>表达式（在已分配但未构造的内存中初始化对象）：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">new</span> <span class="p">(</span><span class="n">place_address</span><span class="p">)</span> <span class="n">type</span>
 <span class="k">new</span> <span class="p">(</span><span class="n">place_address</span><span class="p">)</span> <span class="n">type</span> <span class="p">(</span><span class="n">initializer_list</span><span class="p">)</span>
 </code></pre>
     </div>
     <p>其中<code class="language-c++ highlighter-rouge"><span class="n">place_address</span></code>是指针，<code class="language-c++ highlighter-rouge"><span class="n">initializer_list</span></code>是初始化列表。
 例如：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">allocator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">alloc</span><span class="p">;</span>
 <span class="n">alloc</span><span class="p">.</span><span class="n">construct</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span>  <span class="c1">// 复制构造
 </span></code></pre>
@@ -135,7 +144,9 @@
       <li><code class="language-c++ highlighter-rouge"><span class="k">typeid</span></code>操作符：返回动态类型信息（当类型有虚函数时）或静态的、编译时的类型信息（以<code class="language-c++ highlighter-rouge"><span class="n">type_info</span></code>对象的形式返回）</li>
       <li><code class="language-c++ highlighter-rouge"><span class="k">dynamic_cast</span></code>操作符的用法：
         <ul>
-          <li>作用于指针
+          <li>
+            <p>作用于指针</p>
+
             <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">Derived</span> <span class="o">*</span><span class="n">dptr</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">Derived</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">base_ptr</span><span class="p">))</span> <span class="p">{</span>
   <span class="p">...</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -144,7 +155,9 @@
 </code></pre>
             </div>
           </li>
-          <li>作用于引用
+          <li>
+            <p>作用于引用</p>
+
             <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">try</span> <span class="p">{</span>
   <span class="n">Derived</span> <span class="o">&amp;</span><span class="n">d</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">Derived</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
   <span class="p">...</span>
@@ -166,6 +179,7 @@
     </ul>
 
     <p>成员指针的使用（<code class="language-c++ highlighter-rouge"><span class="p">.</span><span class="o">*</span></code>和<code class="language-c++ highlighter-rouge"><span class="o">-&gt;*</span></code>操作符）：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">C</span> <span class="n">cobj</span><span class="p">,</span> <span class="o">*</span><span class="n">cptr</span><span class="p">;</span>
 <span class="p">(</span><span class="n">cobj</span><span class="p">.</span><span class="o">*</span><span class="n">ptr</span><span class="p">)(</span><span class="n">arg_list</span><span class="p">);</span>
 <span class="p">(</span><span class="n">cptr</span><span class="o">-&gt;*</span><span class="n">ptr</span><span class="p">)(</span><span class="n">arg_list</span><span class="p">);</span>
@@ -175,7 +189,9 @@
   <li>关于嵌套类：
     <ul>
       <li>嵌套在类模板内部的类是模板</li>
-      <li>在外围类外部定义嵌套类的方法：
+      <li>
+        <p>在外围类外部定义嵌套类的方法：</p>
+
         <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Outer</span> <span class="p">{</span> <span class="k">class</span> <span class="nc">Inner</span><span class="p">;</span>  <span class="cm">/* forward declaration */</span> <span class="p">};</span>
 <span class="k">class</span> <span class="nc">Outer</span><span class="o">::</span><span class="n">Inter</span> <span class="p">{</span> <span class="cm">/* definition */</span> <span class="p">};</span>
 </code></pre>

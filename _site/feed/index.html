@@ -7,7 +7,7 @@
     <title>lambda</title>
     <atom:link href="http://localhost:4000/feed/" rel="self" type="application/rss+xml" />
     <link>http://lam8da.github.io</link>
-    <lastBuildDate>2016-11-12T23:54:21-08:00</lastBuildDate>
+    <lastBuildDate>2016-11-12T23:59:42-08:00</lastBuildDate>
     <webMaster>lambda2fei@gmail.com</webMaster>
     
     <item>
@@ -920,12 +920,16 @@ colorful html representations. E.g.</p>
 
 <ol>
   <li>承诺不抛出任何异常的方法：<code class="language-c++ highlighter-rouge"><span class="kt">void</span> <span class="nf">func</span><span class="p">()</span> <span class="k">throw</span><span class="p">()</span> <span class="p">{}</span></code></li>
-  <li>命名空间别名（像定义变量一样）：
+  <li>
+    <p>命名空间别名（像定义变量一样）：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">namespace</span> <span class="n">n1</span> <span class="o">=</span> <span class="n">n2</span><span class="p">;</span>  <span class="c1">// n2是一个已定义的命名空间
 </span></code></pre>
     </div>
   </li>
-  <li>屏蔽命名空间名字规则的一个重要例外：接受类类型形参（或类类型指针及引用形参）的函数（包括重载操作符），以及与类本身定义在同一命名空间中的函数（包括重载操作符），在用类类型对象（或类类型的引用及指针）作为实参的时候是可见的。如：
+  <li>
+    <p>屏蔽命名空间名字规则的一个重要例外：接受类类型形参（或类类型指针及引用形参）的函数（包括重载操作符），以及与类本身定义在同一命名空间中的函数（包括重载操作符），在用类类型对象（或类类型的引用及指针）作为实参的时候是可见的。如：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span><span class="p">;</span>
 <span class="n">getline</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>  <span class="c1">// ok
 </span></code></pre>
@@ -947,7 +951,9 @@ colorful html representations. E.g.</p>
       <li><code class="language-c++ highlighter-rouge"><span class="n">uninitialized_fill</span></code>和<code class="language-c++ highlighter-rouge"><span class="n">uninitiated_copy</span></code></li>
     </ul>
   </li>
-  <li><code class="language-c++ highlighter-rouge"><span class="k">operator</span> <span class="k">new</span></code>/<code class="language-c++ highlighter-rouge"><span class="k">operator</span> <span class="k">delete</span></code>接口（只分配/释放空间，不构造/析构）：
+  <li>
+    <p><code class="language-c++ highlighter-rouge"><span class="k">operator</span> <span class="k">new</span></code>/<code class="language-c++ highlighter-rouge"><span class="k">operator</span> <span class="k">delete</span></code>接口（只分配/释放空间，不构造/析构）：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="o">*</span><span class="k">operator</span> <span class="k">new</span><span class="p">(</span><span class="kt">size_t</span><span class="p">);</span>
 <span class="kt">void</span> <span class="o">*</span><span class="k">operator</span> <span class="k">new</span><span class="p">[](</span><span class="kt">size_t</span><span class="p">);</span>
 <span class="kt">void</span> <span class="k">operator</span> <span class="k">delete</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">);</span>
@@ -955,13 +961,16 @@ colorful html representations. E.g.</p>
 </code></pre>
     </div>
   </li>
-  <li>定位<code class="language-c++ highlighter-rouge"><span class="k">new</span></code>表达式（在已分配但未构造的内存中初始化对象）：
+  <li>
+    <p>定位<code class="language-c++ highlighter-rouge"><span class="k">new</span></code>表达式（在已分配但未构造的内存中初始化对象）：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">new</span> <span class="p">(</span><span class="n">place_address</span><span class="p">)</span> <span class="n">type</span>
 <span class="k">new</span> <span class="p">(</span><span class="n">place_address</span><span class="p">)</span> <span class="n">type</span> <span class="p">(</span><span class="n">initializer_list</span><span class="p">)</span>
 </code></pre>
     </div>
     <p>其中<code class="language-c++ highlighter-rouge"><span class="n">place_address</span></code>是指针，<code class="language-c++ highlighter-rouge"><span class="n">initializer_list</span></code>是初始化列表。
 例如：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">allocator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">alloc</span><span class="p">;</span>
 <span class="n">alloc</span><span class="p">.</span><span class="n">construct</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span>  <span class="c1">// 复制构造
 </span></code></pre>
@@ -1010,7 +1019,9 @@ colorful html representations. E.g.</p>
       <li><code class="language-c++ highlighter-rouge"><span class="k">typeid</span></code>操作符：返回动态类型信息（当类型有虚函数时）或静态的、编译时的类型信息（以<code class="language-c++ highlighter-rouge"><span class="n">type_info</span></code>对象的形式返回）</li>
       <li><code class="language-c++ highlighter-rouge"><span class="k">dynamic_cast</span></code>操作符的用法：
         <ul>
-          <li>作用于指针
+          <li>
+            <p>作用于指针</p>
+
             <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">Derived</span> <span class="o">*</span><span class="n">dptr</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">Derived</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">base_ptr</span><span class="p">))</span> <span class="p">{</span>
   <span class="p">...</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -1019,7 +1030,9 @@ colorful html representations. E.g.</p>
 </code></pre>
             </div>
           </li>
-          <li>作用于引用
+          <li>
+            <p>作用于引用</p>
+
             <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">try</span> <span class="p">{</span>
   <span class="n">Derived</span> <span class="o">&amp;</span><span class="n">d</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">Derived</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
   <span class="p">...</span>
@@ -1041,6 +1054,7 @@ colorful html representations. E.g.</p>
     </ul>
 
     <p>成员指针的使用（<code class="language-c++ highlighter-rouge"><span class="p">.</span><span class="o">*</span></code>和<code class="language-c++ highlighter-rouge"><span class="o">-&gt;*</span></code>操作符）：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">C</span> <span class="n">cobj</span><span class="p">,</span> <span class="o">*</span><span class="n">cptr</span><span class="p">;</span>
 <span class="p">(</span><span class="n">cobj</span><span class="p">.</span><span class="o">*</span><span class="n">ptr</span><span class="p">)(</span><span class="n">arg_list</span><span class="p">);</span>
 <span class="p">(</span><span class="n">cptr</span><span class="o">-&gt;*</span><span class="n">ptr</span><span class="p">)(</span><span class="n">arg_list</span><span class="p">);</span>
@@ -1050,7 +1064,9 @@ colorful html representations. E.g.</p>
   <li>关于嵌套类：
     <ul>
       <li>嵌套在类模板内部的类是模板</li>
-      <li>在外围类外部定义嵌套类的方法：
+      <li>
+        <p>在外围类外部定义嵌套类的方法：</p>
+
         <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Outer</span> <span class="p">{</span> <span class="k">class</span> <span class="nc">Inner</span><span class="p">;</span>  <span class="cm">/* forward declaration */</span> <span class="p">};</span>
 <span class="k">class</span> <span class="nc">Outer</span><span class="o">::</span><span class="n">Inter</span> <span class="p">{</span> <span class="cm">/* definition */</span> <span class="p">};</span>
 </code></pre>
@@ -1080,7 +1096,9 @@ colorful html representations. E.g.</p>
 
 <ol>
   <li>模板形参可以是表示类型的类型形参（type parameter，表示未知类型），也可以是表示常量表达式的非类型形参（nontype parameter，表示未知值）</li>
-  <li>函数模板也可以声明为<code class="language-c++ highlighter-rouge"><span class="kr">inline</span></code>。此时<code class="language-c++ highlighter-rouge"><span class="kr">inline</span></code>关键字放在模板形参表之后、返回类型之前，不能放在关键字<code class="language-c++ highlighter-rouge"><span class="k">template</span></code>之前：
+  <li>
+    <p>函数模板也可以声明为<code class="language-c++ highlighter-rouge"><span class="kr">inline</span></code>。此时<code class="language-c++ highlighter-rouge"><span class="kr">inline</span></code>关键字放在模板形参表之后、返回类型之前，不能放在关键字<code class="language-c++ highlighter-rouge"><span class="k">template</span></code>之前：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kr">inline</span> <span class="n">T</span> <span class="n">min</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>
 </code></pre>
     </div>
@@ -1096,6 +1114,7 @@ colorful html representations. E.g.</p>
     </ul>
 
     <p>例：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">T</span> <span class="n">fobj</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">T</span><span class="p">);</span>
 <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">T</span> <span class="n">fref</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>
 <span class="n">string</span> <span class="n">s1</span><span class="p">;</span>
@@ -1108,7 +1127,9 @@ colorful html representations. E.g.</p>
 </span></code></pre>
     </div>
   </li>
-  <li>可以使用函数模板对函数指针进行初始化或赋值：
+  <li>
+    <p>可以使用函数模板对函数指针进行初始化或赋值：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>
 <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">pf</span><span class="p">)(</span><span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="n">compare</span><span class="p">;</span>  <span class="c1">// 实例化
 </span></code></pre>
@@ -1119,7 +1140,9 @@ colorful html representations. E.g.</p>
   <li>显式提供模板实参时可以像函数的默认实参机制那样省略右边的模板实参（由编译器推断）</li>
   <li>模板要进行实例化时，编译器必须能够访问定义模板的源代码。如果采用分别编译模型（separate compilation model），在模板定义时需要使用<code class="language-c++ highlighter-rouge"><span class="k">export</span></code>关键字。</li>
   <li>类模板的成员函数只有为程序所用才进行实例化，如果某函数从未使用，则不会实例化该成员函数。一个典型例子是，若某类型没有定义默认的构造函数，也可以用<code class="language-c++ highlighter-rouge"><span class="n">std</span><span class="o">::</span><span class="n">vector</span></code>存放它，但<code class="language-c++ highlighter-rouge"><span class="n">vector</span></code>初始化时不能使用<code class="language-c++ highlighter-rouge"><span class="n">vector</span></code>的只有一个<code class="language-c++ highlighter-rouge"><span class="n">size</span></code>成员的构造函数。</li>
-  <li>类模板中的友元声明：
+  <li>
+    <p>类模板中的友元声明：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">A</span><span class="p">;</span>
 <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">B</span> <span class="p">{</span>
  <span class="k">public</span><span class="o">:</span>
@@ -1154,13 +1177,17 @@ colorful html representations. E.g.</p>
     </ol>
 
     <ul>
-      <li>例一：
+      <li>
+        <p>例一：</p>
+
         <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="cm">/* I. */</span> <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span><span class="p">);</span>
 <span class="cm">/* II.*/</span> <span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">);</span>
 </code></pre>
         </div>
         <ul>
-          <li>调用1：
+          <li>
+            <p>调用1：</p>
+
             <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">const</span> <span class="kt">char</span> <span class="n">const_arr1</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"world"</span><span class="p">,</span> <span class="n">const_arr2</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"hi"</span><span class="p">;</span>
 <span class="n">compare</span><span class="p">(</span><span class="n">const_arr1</span><span class="p">,</span> <span class="n">const_arr2</span><span class="p">);</span>
 </code></pre>
@@ -1172,7 +1199,9 @@ colorful html representations. E.g.</p>
               <li>II的：<code class="language-c++ highlighter-rouge"><span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">);</span></code></li>
             </ul>
           </li>
-          <li>调用2：
+          <li>
+            <p>调用2：</p>
+
             <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">char</span> <span class="n">ch_arr1</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"world"</span><span class="p">,</span> <span class="n">ch_arr2</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"hi"</span><span class="p">;</span>
 <span class="n">compare</span><span class="p">(</span><span class="n">ch_arr1</span><span class="p">,</span> <span class="n">ch_arr2</span><span class="p">);</span>
 </code></pre>
@@ -1181,8 +1210,9 @@ colorful html representations. E.g.</p>
           </li>
         </ul>
       </li>
-      <li>例二：
-如果I是这样：<code class="language-c++ highlighter-rouge"><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">T</span><span class="p">);</span></code>则：
+      <li>
+        <p>例二：
+如果I是这样：<code class="language-c++ highlighter-rouge"><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">T</span><span class="p">);</span></code>则：</p>
         <ul>
           <li><code class="language-c++ highlighter-rouge"><span class="n">compare</span><span class="p">(</span><span class="n">ch_arr1</span><span class="p">,</span><span class="n">ch_arr2</span><span class="p">);</span></code>将调用<code class="language-c++ highlighter-rouge"><span class="n">I</span></code>，<code class="language-c++ highlighter-rouge"><span class="n">T</span></code>绑定到<code class="language-c++ highlighter-rouge"><span class="kt">char</span><span class="o">*</span></code>。</li>
           <li><code class="language-c++ highlighter-rouge"><span class="n">compare</span><span class="p">(</span><span class="n">const_arr2</span><span class="p">,</span> <span class="n">const_arr2</span><span class="p">);</span></code>将调用II。</li>
@@ -1243,13 +1273,16 @@ colorful html representations. E.g.</p>
     </ul>
 
     <p>为解决前/后缀形式的形参数目和类型相同的问题，后缀式操作符接受一个额外的（无用的）<code class="language-c++ highlighter-rouge"><span class="kt">int</span></code>型形参。使用时编译器提供<code class="language-c++ highlighter-rouge"><span class="mi">0</span></code>作为其实参。该形参不用命名，因为不应被使用到。显式调用的方法为：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">obj</span><span class="p">.</span><span class="k">operator</span><span class="o">++</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>  <span class="c1">// postfix
 </span><span class="n">obj</span><span class="p">.</span><span class="k">operator</span><span class="o">++</span><span class="p">();</span>  <span class="c1">// prefix
 </span></code></pre>
     </div>
   </li>
   <li>一般为表示操作的类重载调用操作符，其对象称为函数对象。</li>
-  <li>转换操作符（conversion operator）是一种特殊的类成员函数，它定义将类类型值转变为其他类型值的转换；它在类定义体内声明，在保留字<code class="language-c++ highlighter-rouge"><span class="k">operator</span></code>之后跟着转换的目标类型：
+  <li>
+    <p>转换操作符（conversion operator）是一种特殊的类成员函数，它定义将类类型值转变为其他类型值的转换；它在类定义体内声明，在保留字<code class="language-c++ highlighter-rouge"><span class="k">operator</span></code>之后跟着转换的目标类型：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">operator</span> <span class="n">Type2</span><span class="p">()</span> <span class="k">const</span> <span class="p">{...}</span>  <span class="c1">// 无返回类型，形参表为空
 </span></code></pre>
     </div>
@@ -1260,7 +1293,9 @@ colorful html representations. E.g.</p>
   <li>标准转换可放在类类型转换之前，例如使用构造函数执行的隐式转换：<code class="language-c++ highlighter-rouge"><span class="kt">double</span></code>-&gt;<code class="language-c++ highlighter-rouge"><span class="kt">int</span></code>-&gt;<code class="language-c++ highlighter-rouge"><span class="n">Type</span></code>，其中<code class="language-c++ highlighter-rouge"><span class="n">Type</span></code>类型有一个带单<code class="language-c++ highlighter-rouge"><span class="kt">int</span></code>参数的构造函数。</li>
   <li>如果两个转换操作符都可用于同一个调用中，而且转换之后存在标准转换，则根据该标准转换的类别使用最佳匹配</li>
   <li>当两个构造函数定义的转换都可以使用时，如果存在构造函数实参所需的标准转换，就用该标准转换的类别选择最佳匹配。</li>
-  <li>当两个类定义了转换时的二义性：
+  <li>
+    <p>当两个类定义了转换时的二义性：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="cm">/*I. */</span> <span class="k">class</span> <span class="nc">A</span> <span class="p">{</span> <span class="k">public</span><span class="o">:</span> <span class="n">A</span><span class="p">(</span><span class="n">B</span><span class="p">);</span> <span class="p">};</span>                <span class="c1">// B-&gt;A
 </span><span class="cm">/*II.*/</span> <span class="k">class</span> <span class="nc">B</span> <span class="p">{</span> <span class="k">public</span><span class="o">:</span> <span class="k">operator</span> <span class="n">A</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span> <span class="p">};</span>  <span class="c1">// B-&gt;A
 </span><span class="kt">void</span> <span class="n">func</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
@@ -1305,7 +1340,9 @@ colorful html representations. E.g.</p>
   <li>如果在构造函数或析构函数中调用虚函数（不论直接还是间接），则运行的是为构造函数或析构函数自身类型定义的版本。</li>
   <li>由于派生类的作用域嵌套在基类作用域中，在基类和派生类中使用同一名字的成员函数时，就像一般的在局部声明的函数和在全局声明的函数一样：在派生类作用域中派生类成员将屏蔽基类成员，即使函数原型不同。</li>
   <li>局部作用域中声明的函数不会重载外围作用域中定义的函数，而是会屏蔽！因此，若派生类定义了重载成员，则通过派生类（的对象、指针或引用）只能访问派生类中重定义的那些成员，不管基类中的成员是否为<code class="language-c++ highlighter-rouge"><span class="k">virtual</span></code>的！（可以通过<code class="language-c++ highlighter-rouge"><span class="k">using</span></code>声明解决这个问题）</li>
-  <li>通过基类可以调用被屏蔽的虚函数：
+  <li>
+    <p>通过基类可以调用被屏蔽的虚函数：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Base</span> <span class="p">{</span> <span class="k">virtual</span> <span class="kt">int</span> <span class="n">fcn</span><span class="p">();</span> <span class="p">}</span>
 <span class="k">struct</span> <span class="n">D1</span> <span class="o">:</span> <span class="n">Base</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">fcn</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>  <span class="cm">/* 屏蔽了Base的fcn */</span> <span class="p">}</span>
 <span class="k">struct</span> <span class="n">D2</span> <span class="o">:</span> <span class="n">D1</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">fcn</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>  <span class="cm">/* 屏蔽了D1的fcn */</span>  <span class="kt">int</span> <span class="n">fcn</span><span class="p">();}</span>
@@ -1390,7 +1427,9 @@ colorful html representations. E.g.</p>
   <li>一旦一个名字被用作类型名，该名字就不能被重复定义。（但若一个名字在类外作用域中首先被定义为类型名，类中可以先重新定义它再用作类型名）。</li>
   <li>构造函数不能声明为<code class="language-c++ highlighter-rouge"><span class="k">const</span></code></li>
   <li>对非类类型的数据成员进行赋值或使用初始化式在结果和性能上都是等价的</li>
-  <li>成员被初始化的次序就是定义成员的次序，不管它们在初始化列表中顺序如何。因此以下程序非法：
+  <li>
+    <p>成员被初始化的次序就是定义成员的次序，不管它们在初始化列表中顺序如何。因此以下程序非法：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">X</span> <span class="p">{</span>
   <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
   <span class="kt">int</span> <span class="n">j</span><span class="p">;</span>
@@ -1429,7 +1468,9 @@ colorful html representations. E.g.</p>
       <li>类C的copy ctor对当前作用域是否可见</li>
     </ul>
   </li>
-  <li>若使用元素初始化列表初始化数组元素，则首先根据指定值创建数组元素类型的元素，然后用复制构造函数将该值复制到相应元素：
+  <li>
+    <p>若使用元素初始化列表初始化数组元素，则首先根据指定值创建数组元素类型的元素，然后用复制构造函数将该值复制到相应元素：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">C</span> <span class="n">ci</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
   <span class="n">string</span><span class="p">(</span><span class="s">"hello"</span><span class="p">),</span>  <span class="c1">// 单参数ctor + copy ctor
 </span>  <span class="n">C</span><span class="p">()</span>  <span class="c1">// 默认ctor + copy ctor
@@ -1481,7 +1522,9 @@ colorful html representations. E.g.</p>
     </ul>
   </li>
   <li>逗号表达式从左向右计算，结果是其最右边表达式的值。如果最右边的操作数的左值，则逗号表达式的值也是左值。</li>
-  <li>值初始化的<code class="language-c++ highlighter-rouge"><span class="p">()</span></code>语法必须置于类型名后面，而不是变量后。如：
+  <li>
+    <p>值初始化的<code class="language-c++ highlighter-rouge"><span class="p">()</span></code>语法必须置于类型名后面，而不是变量后。如：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span><span class="p">();</span>
 </code></pre>
     </div>
@@ -1494,7 +1537,9 @@ colorful html representations. E.g.</p>
   <li>类类型可以定义由编译器自动执行的类型转换，如：<code class="language-c++ highlighter-rouge"><span class="k">while</span> <span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">s</span><span class="p">)</span> <span class="p">...</span></code></li>
   <li>显式转换也称为强制类型转换（cast），包括：dynamic_cast，const_cast，static_cast，reinterpret_cast。</li>
   <li><code class="language-c++ highlighter-rouge"><span class="kt">char</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="s">"hello"</span><span class="p">;</span></code>在编译时会出现警告，改成<code class="language-c++ highlighter-rouge"><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span></code>就没问题。</li>
-  <li><code class="language-c++ highlighter-rouge"><span class="k">sizeof</span><span class="p">(</span><span class="n">func</span><span class="p">());</span></code>的结果是<code class="language-c++ highlighter-rouge"><span class="n">func</span></code>函数的返回类型的size，且不执行<code class="language-c++ highlighter-rouge"><span class="n">func</span></code>。注意，不能这样用：
+  <li>
+    <p><code class="language-c++ highlighter-rouge"><span class="k">sizeof</span><span class="p">(</span><span class="n">func</span><span class="p">());</span></code>的结果是<code class="language-c++ highlighter-rouge"><span class="n">func</span></code>函数的返回类型的size，且不执行<code class="language-c++ highlighter-rouge"><span class="n">func</span></code>。注意，不能这样用：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">sizeof</span><span class="p">(</span><span class="n">func</span><span class="p">);</span>
 </code></pre>
     </div>
@@ -1510,7 +1555,9 @@ colorful html representations. E.g.</p>
 
 <ol>
   <li>空语句，如：<code class="language-c++ highlighter-rouge"><span class="k">while</span> <span class="p">(</span><span class="n">expr</span><span class="p">);</span></code>；又如：<code class="language-c++ highlighter-rouge"><span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">;;</span></code>。后者由两条语句组成：一条表达式语句和一条空语句。</li>
-  <li>在条件表达式中定义的变量必须初始化，该条件检验的就是初始化对象的值。如：
+  <li>
+    <p>在条件表达式中定义的变量必须初始化，该条件检验的就是初始化对象的值。如：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">val</span><span class="p">)</span> <span class="p">...;</span>
 <span class="k">switch</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">func</span><span class="p">())</span> <span class="p">...;</span>
 </code></pre>
@@ -1530,7 +1577,9 @@ colorful html representations. E.g.</p>
 
 <ol>
   <li>函数由函数名以及一组操作数类型唯一地表示</li>
-  <li>在c语言中具有<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>形参或非<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>形参的函数并无区别（引用和指针除外），故：
+  <li>
+    <p>在c语言中具有<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>形参或非<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>形参的函数并无区别（引用和指针除外），故：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">fcn</span> <span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{...}</span>
 <span class="kt">void</span> <span class="nf">fcn</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{...}</span>
 </code></pre>
@@ -1539,7 +1588,9 @@ colorful html representations. E.g.</p>
   </li>
   <li>由于数组不能复制，所以无法编写使用数组类型形参的函数，而函数也不允许返回一个数组！</li>
   <li>由于使用数组名字时，数组会被自动转化为指针，所以处理数组的函数通常通过操纵指向数组中的元素的指针来处理数组。</li>
-  <li>虽然不能直接传递数组，但形参可以写成数组形式，下面三种定义是等价的，形参类型都是<code class="language-c++ highlighter-rouge"><span class="kt">int</span> <span class="o">*</span></code>：
+  <li>
+    <p>虽然不能直接传递数组，但形参可以写成数组形式，下面三种定义是等价的，形参类型都是<code class="language-c++ highlighter-rouge"><span class="kt">int</span> <span class="o">*</span></code>：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">func</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="p">{...}</span>
 <span class="kt">void</span> <span class="nf">func</span><span class="p">(</span><span class="kt">int</span> <span class="p">[])</span> <span class="p">{...}</span>
 <span class="kt">void</span> <span class="nf">func</span><span class="p">(</span><span class="kt">int</span> <span class="p">[</span><span class="mi">10</span><span class="p">])</span> <span class="p">{...}</span>
@@ -1547,13 +1598,17 @@ colorful html representations. E.g.</p>
     </div>
     <p>编译器只会检查实参是不是指针、指针类型是否匹配，而不会检查数组的长度。故对于以上第三种定义可以传个<code class="language-c++ highlighter-rouge"><span class="kt">int</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span></code>进去。</p>
   </li>
-  <li>一般用法：传非引用指针：<code class="language-c++ highlighter-rouge"><span class="kt">void</span> <span class="nf">func</span> <span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="p">{...}</span></code>。
-也可通过引用传递，此时编译器将检查数组实参的大小与形参大小是否匹配：
+  <li>
+    <p>一般用法：传非引用指针：<code class="language-c++ highlighter-rouge"><span class="kt">void</span> <span class="nf">func</span> <span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="p">{...}</span></code>。
+也可通过引用传递，此时编译器将检查数组实参的大小与形参大小是否匹配：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">func</span> <span class="p">(</span><span class="kt">int</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">arr</span><span class="p">)[</span><span class="mi">10</span><span class="p">])</span> <span class="p">{...}</span>
 </code></pre>
     </div>
   </li>
-  <li>多维数组的传递：c++中没有多维数组，所谓多维数组实际上是一个一维数组，其元素是由数组组成。因此，除了第一维以外的所有维的长度都是元素类型的一部分，必须明确指定：
+  <li>
+    <p>多维数组的传递：c++中没有多维数组，所谓多维数组实际上是一个一维数组，其元素是由数组组成。因此，除了第一维以外的所有维的长度都是元素类型的一部分，必须明确指定：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="p">)[</span><span class="mi">10</span><span class="p">])</span> <span class="p">{...}</span>
 <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">[][</span><span class="mi">10</span><span class="p">])</span> <span class="p">{...}</span>
 <span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">[</span><span class="mi">100</span><span class="p">][</span><span class="mi">10</span><span class="p">])</span> <span class="p">{...}</span>
@@ -1566,7 +1621,9 @@ colorful html representations. E.g.</p>
   <li>函数的返回值用于初始化在调用函数处创建的临时对象。当返回引用类型时，没有复制返回值，而是返回对象本身。</li>
   <li>函数声明时需提供：返回类型、函数名、形参列表（不必对形参命名）。这三个元素成为函数原型。</li>
   <li>默认实参可以是任何适当类型的表达式（包括函数调用）。</li>
-  <li>可在函数声明也可在函数定义中指定默认实参，但在一个文件中只能为一个形参指定默认实参一次（因此h和cc只能有一个这么干，因为cc包含了h）。如果在函数定义中指定默认实参，那么只有在包含该函数定义的源文件中调用该函数时（被指定的默认实参）才有效。在声明时指定默认实参可以类似于这么干：
+  <li>
+    <p>可在函数声明也可在函数定义中指定默认实参，但在一个文件中只能为一个形参指定默认实参一次（因此h和cc只能有一个这么干，因为cc包含了h）。如果在函数定义中指定默认实参，那么只有在包含该函数定义的源文件中调用该函数时（被指定的默认实参）才有效。在声明时指定默认实参可以类似于这么干：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
 </code></pre>
     </div>
@@ -1618,13 +1675,17 @@ colorful html representations. E.g.</p>
       <li>通过类类型转换实现的匹配</li>
     </ol>
   </li>
-  <li>不能通过基于指针本身是否为<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>来实现函数重载（这符合第19点）：
+  <li>
+    <p>不能通过基于指针本身是否为<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>来实现函数重载（这符合第19点）：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">);</span>
 <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="k">const</span><span class="p">);</span>  <span class="c1">// 错误，重声明
 </span></code></pre>
     </div>
   </li>
-  <li>函数指针：在引用函数名但又没有调用该函数时，函数名将被自动解释为指向函数的指针，故以下两句赋值含义相同：
+  <li>
+    <p>函数指针：在引用函数名但又没有调用该函数时，函数名将被自动解释为指向函数的指针，故以下两句赋值含义相同：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">funcptr</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">func</span><span class="p">;</span>
 <span class="n">funcpty</span> <span class="n">p2</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">func</span><span class="p">;</span>
 </code></pre>
@@ -1632,20 +1693,26 @@ colorful html representations. E.g.</p>
     <p>故调用时也相同：<code class="language-c++ highlighter-rouge"><span class="n">p1</span> <span class="p">(</span><span class="n">params</span><span class="p">);</span></code>等价于<code class="language-c++ highlighter-rouge"><span class="p">(</span><span class="o">*</span><span class="n">p1</span><span class="p">)(</span><span class="n">params</span><span class="p">);</span></code></p>
   </li>
   <li>指向不同函数类型（包含返回类型的定义）的指针指针之间不存在转换。</li>
-  <li>函数指针作为形参时，以下两种形式等价：
+  <li>
+    <p>函数指针作为形参时，以下两种形式等价：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">bool</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">));</span>
 <span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">bool</span> <span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">int</span> <span class="o">*</span><span class="p">));</span>
 </code></pre>
     </div>
   </li>
-  <li>返回类型中的函数指针的例子：
+  <li>
+    <p>返回类型中的函数指针的例子：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">ff</span><span class="p">(</span><span class="kt">int</span><span class="p">))(</span><span class="kt">int</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
 </code></pre>
     </div>
     <p>。其中，<code class="language-c++ highlighter-rouge"><span class="n">ff</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code>是一个函数，它返回一个函数指针，其类型为<code class="language-c++ highlighter-rouge"><span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">int</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span></code>。</p>
   </li>
   <li>函数的返回类型不能是一个函数，最多只能是一个函数指针！！</li>
-  <li>若类<code class="language-c++ highlighter-rouge"><span class="n">A</span></code>有个带一个<code class="language-c++ highlighter-rouge"><span class="kt">int</span></code>参数的ctor，则以下函数定义是合法的：
+  <li>
+    <p>若类<code class="language-c++ highlighter-rouge"><span class="n">A</span></code>有个带一个<code class="language-c++ highlighter-rouge"><span class="kt">int</span></code>参数的ctor，则以下函数定义是合法的：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">A</span> <span class="nf">func</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">10</span><span class="p">;</span> <span class="p">}</span>
 </code></pre>
     </div>
@@ -1662,7 +1729,9 @@ colorful html representations. E.g.</p>
       <li>函数的形参或返回类型不能是非指针或引用的流类型</li>
     </ul>
   </li>
-  <li>刷新输出缓冲区的方法：
+  <li>
+    <p>刷新输出缓冲区的方法：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"hi"</span> <span class="o">&lt;&lt;</span> <span class="n">flush</span><span class="p">;</span>  <span class="c1">// 不增加任何数据
 </span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"hi"</span> <span class="o">&lt;&lt;</span> <span class="n">ends</span><span class="p">;</span>  <span class="c1">// 增加null字符
 </span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"hi"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
@@ -1711,8 +1780,11 @@ colorful html representations. E.g.</p>
     </ul>
   </li>
   <li>定义也是声明：当定义变量时我们声明了它的类型和名字</li>
-  <li>如果声明有初始化式，那么它可被当作是定义，即使被标记为<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>。如：
-<code class="language-c++ highlighter-rouge"><span class="k">extern</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span></code></li>
+  <li>
+    <p>如果声明有初始化式，那么它可被当作是定义，即使被标记为<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>。如：</p>
+
+    <p><code class="language-c++ highlighter-rouge"><span class="k">extern</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span></code></p>
+  </li>
   <li>只有当<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>声明位于函数外部时，才可以含有初始化式（此时被当成定义）</li>
   <li>与一般的变量不同，在全局作用域声明的<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>变量是定义该对象的文件的局部变量。此变量只存在于那个文件中，不能被其他文件访问。除非定义时加上<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>。</li>
   <li>引用是一种复合类型（是指用其他类型定义的类型）</li>
@@ -1726,11 +1798,13 @@ colorful html representations. E.g.</p>
 </code></pre>
     </div>
     <p>但同样的初始化对于非<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>引用都是不合法的，因为对于：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">double</span> <span class="n">dval</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri</span> <span class="o">=</span> <span class="n">dval</span><span class="p">;</span>
 </code></pre>
     </div>
     <p>编译器会将其变成：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">dval</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ri</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
 </code></pre>
@@ -1746,14 +1820,18 @@ colorful html representations. E.g.</p>
   <li>当在头文件中定义了<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>变量后，每个包含该头文件的源文件都有了自己的<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>变量，其名称和值都一样；定义在头文件中的<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>变量应该是常量表达式。</li>
   <li>若<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>变量不是用常量表达式初始化，就不应在头文件中定义，而应在源文件中定义并初始化，并添加<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>使其被多个文件共享。</li>
   <li>若在头文件中定义<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>的<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>变量，多个cc文件都<code class="language-c++ highlighter-rouge"><span class="cp">#include</span></code>了这个头文件且其obj会被链接到一起时，会出错：重定义。原因：这些cc文件引用头文件后相当于在文件中定义了这个<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>变量，但由于加了<code class="language-c++ highlighter-rouge"><span class="k">extern</span></code>，使其全局可见。</li>
-  <li>可以声明引用，例如在a.cc中定义：
+  <li>
+    <p>可以声明引用，例如在a.cc中定义：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">const</span> <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ra</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
 </code></pre>
     </div>
     <p>则可以在a.h中声明：<code class="language-c++ highlighter-rouge"><span class="k">extern</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">ra</span><span class="p">;</span></code></p>
   </li>
-  <li>逗号表达式与定义，以下是合法的：
+  <li>
+    <p>逗号表达式与定义，以下是合法的：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="n">q</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>
 </code></pre>
@@ -1782,7 +1860,9 @@ colorful html representations. E.g.</p>
       <li>不管数组在哪定义，若其元素为类类型，则用default constructor来初始化；若该类没有default constructor，则必须显式初始化。</li>
     </ul>
   </li>
-  <li>字符数组：字符串的字面值包含一个额外的<code class="language-c++ highlighter-rouge"><span class="n">null</span></code>字符
+  <li>
+    <p>字符数组：字符串的字面值包含一个额外的<code class="language-c++ highlighter-rouge"><span class="n">null</span></code>字符</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">char</span> <span class="n">ca1</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="sc">'c'</span><span class="p">,</span> <span class="sc">'+'</span><span class="p">,</span> <span class="sc">'+'</span> <span class="p">};</span>  <span class="c1">//长度为3
 </span><span class="kt">char</span> <span class="n">ca2</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"c++"</span><span class="p">;</span>  <span class="c1">//长度为4
 </span><span class="kt">char</span> <span class="n">ca3</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s">"c++"</span><span class="p">;</span>  <span class="c1">//编译错误
@@ -1800,17 +1880,22 @@ colorful html representations. E.g.</p>
   <li><code class="language-c++ highlighter-rouge"><span class="kt">void</span><span class="o">*</span></code>指针可以保存任何类型对象的地址，不允许使用<code class="language-c++ highlighter-rouge"><span class="kt">void</span><span class="o">*</span></code>指针操纵它指向的对象</li>
   <li>两个指针减法操作的结果是标准库类型<code class="language-c++ highlighter-rouge"><span class="kt">ptrdiff_t</span></code>的数据。</li>
   <li>与任何<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>量一样，<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>指针也必须在定义时初始化。</li>
-  <li>考虑如下代码：
+  <li>
+    <p>考虑如下代码：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">typedef</span> <span class="n">string</span> <span class="o">*</span><span class="n">pstring</span><span class="p">;</span>
 <span class="k">const</span> <span class="n">pstring</span> <span class="n">cstr</span><span class="p">;</span>
 </code></pre>
     </div>
     <p>这里<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>修饰的是<code class="language-c++ highlighter-rouge"><span class="n">pstring</span></code>类型，这是一个指针。因此上述定义等价于</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">string</span> <span class="o">*</span> <span class="k">const</span> <span class="n">cstr</span><span class="p">;</span>
 </code></pre>
     </div>
   </li>
-  <li>可以在数组长度后加<code class="language-c++ highlighter-rouge"><span class="p">()</span></code>来对数组元素做值初始化：
+  <li>
+    <p>可以在数组长度后加<code class="language-c++ highlighter-rouge"><span class="p">()</span></code>来对数组元素做值初始化：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">]();</span>  <span class="c1">// 初始化为0
 </span></code></pre>
     </div>

@@ -75,13 +75,16 @@
     </ul>
 
     <p>为解决前/后缀形式的形参数目和类型相同的问题，后缀式操作符接受一个额外的（无用的）<code class="language-c++ highlighter-rouge"><span class="kt">int</span></code>型形参。使用时编译器提供<code class="language-c++ highlighter-rouge"><span class="mi">0</span></code>作为其实参。该形参不用命名，因为不应被使用到。显式调用的方法为：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">obj</span><span class="p">.</span><span class="k">operator</span><span class="o">++</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>  <span class="c1">// postfix
 </span><span class="n">obj</span><span class="p">.</span><span class="k">operator</span><span class="o">++</span><span class="p">();</span>  <span class="c1">// prefix
 </span></code></pre>
     </div>
   </li>
   <li>一般为表示操作的类重载调用操作符，其对象称为函数对象。</li>
-  <li>转换操作符（conversion operator）是一种特殊的类成员函数，它定义将类类型值转变为其他类型值的转换；它在类定义体内声明，在保留字<code class="language-c++ highlighter-rouge"><span class="k">operator</span></code>之后跟着转换的目标类型：
+  <li>
+    <p>转换操作符（conversion operator）是一种特殊的类成员函数，它定义将类类型值转变为其他类型值的转换；它在类定义体内声明，在保留字<code class="language-c++ highlighter-rouge"><span class="k">operator</span></code>之后跟着转换的目标类型：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">operator</span> <span class="n">Type2</span><span class="p">()</span> <span class="k">const</span> <span class="p">{...}</span>  <span class="c1">// 无返回类型，形参表为空
 </span></code></pre>
     </div>
@@ -92,7 +95,9 @@
   <li>标准转换可放在类类型转换之前，例如使用构造函数执行的隐式转换：<code class="language-c++ highlighter-rouge"><span class="kt">double</span></code>-&gt;<code class="language-c++ highlighter-rouge"><span class="kt">int</span></code>-&gt;<code class="language-c++ highlighter-rouge"><span class="n">Type</span></code>，其中<code class="language-c++ highlighter-rouge"><span class="n">Type</span></code>类型有一个带单<code class="language-c++ highlighter-rouge"><span class="kt">int</span></code>参数的构造函数。</li>
   <li>如果两个转换操作符都可用于同一个调用中，而且转换之后存在标准转换，则根据该标准转换的类别使用最佳匹配</li>
   <li>当两个构造函数定义的转换都可以使用时，如果存在构造函数实参所需的标准转换，就用该标准转换的类别选择最佳匹配。</li>
-  <li>当两个类定义了转换时的二义性：
+  <li>
+    <p>当两个类定义了转换时的二义性：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="cm">/*I. */</span> <span class="k">class</span> <span class="nc">A</span> <span class="p">{</span> <span class="k">public</span><span class="o">:</span> <span class="n">A</span><span class="p">(</span><span class="n">B</span><span class="p">);</span> <span class="p">};</span>                <span class="c1">// B-&gt;A
 </span><span class="cm">/*II.*/</span> <span class="k">class</span> <span class="nc">B</span> <span class="p">{</span> <span class="k">public</span><span class="o">:</span> <span class="k">operator</span> <span class="n">A</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span> <span class="p">};</span>  <span class="c1">// B-&gt;A
 </span><span class="kt">void</span> <span class="n">func</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
@@ -137,7 +142,9 @@
   <li>如果在构造函数或析构函数中调用虚函数（不论直接还是间接），则运行的是为构造函数或析构函数自身类型定义的版本。</li>
   <li>由于派生类的作用域嵌套在基类作用域中，在基类和派生类中使用同一名字的成员函数时，就像一般的在局部声明的函数和在全局声明的函数一样：在派生类作用域中派生类成员将屏蔽基类成员，即使函数原型不同。</li>
   <li>局部作用域中声明的函数不会重载外围作用域中定义的函数，而是会屏蔽！因此，若派生类定义了重载成员，则通过派生类（的对象、指针或引用）只能访问派生类中重定义的那些成员，不管基类中的成员是否为<code class="language-c++ highlighter-rouge"><span class="k">virtual</span></code>的！（可以通过<code class="language-c++ highlighter-rouge"><span class="k">using</span></code>声明解决这个问题）</li>
-  <li>通过基类可以调用被屏蔽的虚函数：
+  <li>
+    <p>通过基类可以调用被屏蔽的虚函数：</p>
+
     <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Base</span> <span class="p">{</span> <span class="k">virtual</span> <span class="kt">int</span> <span class="n">fcn</span><span class="p">();</span> <span class="p">}</span>
 <span class="k">struct</span> <span class="n">D1</span> <span class="o">:</span> <span class="n">Base</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">fcn</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>  <span class="cm">/* 屏蔽了Base的fcn */</span> <span class="p">}</span>
 <span class="k">struct</span> <span class="n">D2</span> <span class="o">:</span> <span class="n">D1</span> <span class="p">{</span> <span class="kt">int</span> <span class="n">fcn</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>  <span class="cm">/* 屏蔽了D1的fcn */</span>  <span class="kt">int</span> <span class="n">fcn</span><span class="p">();}</span>
