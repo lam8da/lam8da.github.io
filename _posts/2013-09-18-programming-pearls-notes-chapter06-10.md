@@ -11,6 +11,9 @@ tags:
 * TOC
 {:toc}
 
+{::comment} Not show line_numbers {:/comment}
+{::options syntax_highlighter_opts="{default_lang: c++ \}" /}
+
 ## 第7章 粗略估算
 
 1. 72法则：假设以年利率`r%`投资一笔钱y年，金融版本的72法则指出，如果`ry=72`，那么你的投资差不多会翻倍。
@@ -34,8 +37,9 @@ tags:
    - 解：对累加和数组S排序后遍历，维护俩指针`p1`和`p2`使得`S[p2]-S[p1]<=t`而`S[p2+1]-S[p1]>t`即可。
 5. 习题12：将数组`x[0,...,n-1]`初始化全0后执行类似于以下的操作`n`次：
 
-       for i=[l, u] do x[i] += v，
-
+   ```
+   for i=[l, u] do x[i] += v
+   ```
    其中`l`，`u`，`v`为每次运算的参数，求一个更快的算法达到同样效果。
    - 解：初始化`y[0,...,n-1]`为全0，对每个操作令`y[l]+=v`和`y[u+1]-=v`。则结束时`x[i]=sigma{k=0 to i}(y[k])`。正确性：只需证明每一次执行完操作之后该性质保持不变即可。
 6. 书籍：Dr.Dobb’s Essential Books on Algorithms and Data Structuers

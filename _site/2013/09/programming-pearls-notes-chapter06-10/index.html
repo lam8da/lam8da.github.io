@@ -40,6 +40,9 @@
   <li><a href="#section-3" id="markdown-toc-section-3">第10章 节省空间</a></li>
 </ul>
 
+<p><!--  Not show line_numbers  -->
+</p>
+
 <h2 id="section">第7章 粗略估算</h2>
 
 <ol>
@@ -82,11 +85,9 @@
   <li>
     <p>习题12：将数组<code class="language-c++ highlighter-rouge"><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">,...,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></code>初始化全0后执行类似于以下的操作<code class="language-c++ highlighter-rouge"><span class="n">n</span></code>次：</p>
 
-    <div class="language-c++ highlighter-rouge"><div class="highlight"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="k">for</span> <span class="n">i</span><span class="o">=</span><span class="p">[</span><span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">]</span> <span class="k">do</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">v</span><span class="err">，</span>
-</pre></td></tr></tbody></table>
-</div>
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span><span class="o">=</span><span class="p">[</span><span class="n">l</span><span class="p">,</span> <span class="n">u</span><span class="p">]</span> <span class="k">do</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">v</span>
+</code></pre>
     </div>
-
     <p>其中<code class="language-c++ highlighter-rouge"><span class="n">l</span></code>，<code class="language-c++ highlighter-rouge"><span class="n">u</span></code>，<code class="language-c++ highlighter-rouge"><span class="n">v</span></code>为每次运算的参数，求一个更快的算法达到同样效果。</p>
     <ul>
       <li>解：初始化<code class="language-c++ highlighter-rouge"><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">,...,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></code>为全0，对每个操作令<code class="language-c++ highlighter-rouge"><span class="n">y</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">+=</span><span class="n">v</span></code>和<code class="language-c++ highlighter-rouge"><span class="n">y</span><span class="p">[</span><span class="n">u</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">-=</span><span class="n">v</span></code>。则结束时<code class="language-c++ highlighter-rouge"><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">sigma</span><span class="p">{</span><span class="n">k</span><span class="o">=</span><span class="mi">0</span> <span class="n">to</span> <span class="n">i</span><span class="p">}(</span><span class="n">y</span><span class="p">[</span><span class="n">k</span><span class="p">])</span></code>。正确性：只需证明每一次执行完操作之后该性质保持不变即可。</li>
