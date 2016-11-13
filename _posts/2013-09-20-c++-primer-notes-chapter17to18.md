@@ -76,8 +76,14 @@ tags:
    1. 对`sp`指向的对象运行适当的析构函数
    1. 调用名为`operator delete`的标准库函数释放内存
 8. 我们可以为一个类`C`定义它特定的`operator new`/`operator delete`（称为“成员`operator new`/`operator delete`”）或`operator new[]`/`operator delete[]`函数，改变`new`表达式的行为：
-   - `C *obj = new C(); delete obj;  // 调用自定义版本`
-   - `C *obj1 = ::new C(); ::delete obj1;  // 调用标准库版本`
+   - 
+     ```
+     C *obj = new C(); delete obj; // 调用自定义版本
+     ```
+   - 
+     ```
+     C *obj1 = ::new C(); ::delete obj1;  // 调用标准库版本
+     ```
 9. 成员`operator delete`有两种定义：
    - `void C::operator delete(void *p);`
    - `void C::operator delete(void *p, size_t sz);`

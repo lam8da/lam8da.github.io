@@ -126,8 +126,12 @@
   </li>
   <li>我们可以为一个类<code class="language-c++ highlighter-rouge"><span class="n">C</span></code>定义它特定的<code class="language-c++ highlighter-rouge"><span class="k">operator</span> <span class="k">new</span></code>/<code class="language-c++ highlighter-rouge"><span class="k">operator</span> <span class="k">delete</span></code>（称为“成员<code class="language-c++ highlighter-rouge"><span class="k">operator</span> <span class="k">new</span></code>/<code class="language-c++ highlighter-rouge"><span class="k">operator</span> <span class="k">delete</span></code>”）或<code class="language-c++ highlighter-rouge"><span class="k">operator</span> <span class="k">new</span><span class="p">[]</span></code>/<code class="language-c++ highlighter-rouge"><span class="k">operator</span> <span class="k">delete</span><span class="p">[]</span></code>函数，改变<code class="language-c++ highlighter-rouge"><span class="k">new</span></code>表达式的行为：
     <ul>
-      <li><code class="language-c++ highlighter-rouge"><span class="n">C</span> <span class="o">*</span><span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">C</span><span class="p">();</span> <span class="k">delete</span> <span class="n">obj</span><span class="p">;</span>  <span class="o">//</span> <span class="err">调用自定义版本</span></code></li>
-      <li><code class="language-c++ highlighter-rouge"><span class="n">C</span> <span class="o">*</span><span class="n">obj1</span> <span class="o">=</span> <span class="o">::</span><span class="k">new</span> <span class="n">C</span><span class="p">();</span> <span class="o">::</span><span class="k">delete</span> <span class="n">obj1</span><span class="p">;</span>  <span class="o">//</span> <span class="err">调用标准库版本</span></code></li>
+      <li><code class="language-c++ highlighter-rouge">
+  <span class="n">C</span> <span class="o">*</span><span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">C</span><span class="p">();</span> <span class="k">delete</span> <span class="n">obj</span><span class="p">;</span> <span class="c1">// 调用自定义版本
+</span> </code></li>
+      <li><code class="language-c++ highlighter-rouge">
+  <span class="n">C</span> <span class="o">*</span><span class="n">obj1</span> <span class="o">=</span> <span class="o">::</span><span class="k">new</span> <span class="n">C</span><span class="p">();</span> <span class="o">::</span><span class="k">delete</span> <span class="n">obj1</span><span class="p">;</span>  <span class="c1">// 调用标准库版本
+</span> </code></li>
     </ul>
   </li>
   <li>成员<code class="language-c++ highlighter-rouge"><span class="k">operator</span> <span class="k">delete</span></code>有两种定义：
