@@ -94,6 +94,7 @@ tags:
         ```
         将调用普通函数II。将`T`绑定到`const char*`的`I`也是可行函数，但是根据上述第3点第二条，它将被去掉。
         注：实际上是比较以下俩可行函数：
+
         - 从I实例化的：`int compare(const char* const&, const char* const&);`
         - II的：`int compare(const char*, const char*);`
       - 调用2：

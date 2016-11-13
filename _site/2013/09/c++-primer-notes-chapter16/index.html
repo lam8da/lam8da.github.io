@@ -142,6 +142,7 @@
             </div>
             <p>将调用普通函数II。将<code class="language-c++ highlighter-rouge"><span class="n">T</span></code>绑定到<code class="language-c++ highlighter-rouge"><span class="k">const</span> <span class="kt">char</span><span class="o">*</span></code>的<code class="language-c++ highlighter-rouge"><span class="n">I</span></code>也是可行函数，但是根据上述第3点第二条，它将被去掉。
 注：实际上是比较以下俩可行函数：</p>
+
             <ul>
               <li>从I实例化的：<code class="language-c++ highlighter-rouge"><span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="k">const</span><span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="k">const</span><span class="o">&amp;</span><span class="p">);</span></code></li>
               <li>II的：<code class="language-c++ highlighter-rouge"><span class="kt">int</span> <span class="n">compare</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="p">);</span></code></li>
