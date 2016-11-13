@@ -69,6 +69,7 @@ tags:
 
 1. 实现方法：若将对象赋值给一个全局变量，那么必须在程序一开始就创建好对象。万一这个对象非常耗资源，而程序在这次执行过程中又一直没用到它，就会形成浪费。
 1. 单件模式实现中处理多线程问题的方法：
+
    ```java
    public class Singleton {
      private volatile static Singleton uniqueInstance;
@@ -87,6 +88,7 @@ tags:
    }
    ```
    使用`synchronized`关键字可能会导致效率严重下降。而volatile关键字定义的成员变量确保在同一时间最多只有一个线程对其进行访问，尤其是32位系统处理64位变量时。另外，也可以使用“急切”创建实例而不用延迟实例，在静态初始化器（static initializer）中创建单位：
+
    ```
    private static Singleton uniqueInstance = new Singleton();
    ```
