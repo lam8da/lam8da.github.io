@@ -2,10 +2,12 @@
 layout: post
 title: 拜占庭将军问题
 categories:
-    - 分布式理论
+    - 网络&分布式
 tags:
+    - 分布式理论
     - 一致性
     - paper
+    - Work in Progress
 ---
 
 工作之余，花了一周的几乎每个晚上把Lamport神的那篇有关拜占庭将军问题的文章看完了。在这里做下笔记。
