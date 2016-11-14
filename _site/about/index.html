@@ -12,7 +12,12 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
-        "HTML-CSS": { scale: 80 }
+        "HTML-CSS": { scale: 80 },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
+          processEscapes: true
+        }
       });
     </script>
     <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -59,6 +64,13 @@
 <h2 id="section-3">本站架构</h2>
 
 <p>本站目前采用Jekyll作为后台系统，我希望这是我的最后一站。博客模板是在<a href="http://yihui.name/">Yihui Xie</a>那里扒过来的，我很喜欢这个简洁的设计，希望原博主不要介意。</p>
+
+<p>之前的站点（现已废弃）：</p>
+<ul>
+  <li>新浪云计算（相当的贵）：<a href="http://lam8da.sinaapp.com/">http://lam8da.sinaapp.com/</a></li>
+  <li>博客园</li>
+  <li>cnblog</li>
+</ul>
 
 <h2 id="section-4">联系方式</h2>
 

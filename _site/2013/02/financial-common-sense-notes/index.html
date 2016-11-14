@@ -12,7 +12,12 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
-        "HTML-CSS": { scale: 80 }
+        "HTML-CSS": { scale: 80 },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
+          processEscapes: true
+        }
       });
     </script>
     <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -155,6 +160,8 @@ $(function() {
         if (e.target.nodeName.toUpperCase() != 'BODY') return;
         var url = false;
         if (e.which == 37 || e.which == 74) {  // Left arrow and J
+          
+            url = 'http://localhost:4000/2013/02/demi-gods-and-semi-devils-notes/';
           
         } else if (e.which == 39 || e.which == 75) {  // Right arrow and K
           

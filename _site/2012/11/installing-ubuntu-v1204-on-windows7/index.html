@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="lambda" />
+    <title>Windows7下使用EasyBCD硬盘安装Ubuntu(12.04) | lambda</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="http://localhost:4000/feed/" rel="alternate" title="lambda" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link rel="stylesheet" href="/media/css/highlighter-rouge.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        "HTML-CSS": { scale: 80 },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>Windows7下使用EasyBCD硬盘安装Ubuntu(12.04)</h1>
+        </header>
+        <nav>
+        <span><a title="home page" class="" href="http://localhost:4000/">首页</a></span>
+        <span><a title="categories" class="" href="http://localhost:4000/categories/">分类</a></span>
+        <span><a title="tags" class="" href="http://localhost:4000/tags/">标签</a></span>
+        <span><a title="links" class="" href="http://localhost:4000/links/">链接</a></span>
+        <span><a title="about" class="" href="http://localhost:4000/about/">关于</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://localhost:4000/feed/">订阅</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<ol>
+  <li>首先划分出一个空的分区出来（一定要是主分区或者逻辑分区，Win7自创的所谓简单分区是不行的！），最好达到20G以上吧。</li>
+  <li>准备两个东西EasyBCD软件和iso镜像（我用的easybcd是2.2版，直接从官网下载免费版即可，据说不能是绿色版的；另外我的iso镜像是ubuntu-12.04-desktop-amd64.iso，注意即便cpu是Intel的也能使用这个amd64版进行安装，因为Intel采用的架构是amd先采用的，故iso起名为amd）</li>
+  <li>
+    <p>安装完后打开EasyBCD软件，选择Add New Entry，选NeoGrub 标签然后点Install，接着是Configure，然后就会出现一个menu.lst文件，把下面的内容复制进去，把原来的全覆盖掉</p>
+
+    <pre><code class="language-nothing">title Install Ubuntu
+root (hd0,0)
+kernel (hd0,0)/vmlinuz boot=casper iso-scan/filename=/ubuntu-11.10-i386.iso ro quiet splash locale=zh_CN.UTF-8
+initrd (hd0,0)/initrd.lz
+</code></pre>
+
+    <p>特别注意:</p>
+    <ul>
+      <li>ubuntu-12.04-desktop-amd64.iso是你的iso的名字，别写成我的了，这个要改成你的。</li>
+      <li>对于有的电脑上你的第一个盘符并不是C盘，在磁盘管理中可以看出，所以安装时需将(hd0,0)改为（hd0,1）（假设为第二个）。</li>
+    </ul>
+  </li>
+  <li>保存menu.lst然后关闭之。接下来：把准备好的iso用压缩软件或者虚拟光驱打开，找到casper文件夹，复制initrd.lz和vmlinuz到C盘,然后在把iso也拷贝到C盘。</li>
+  <li>重启后，就会看到有2个启动菜单，我们选择第2个（NeoGrub这个），然后选Install Ubuntu（即刚才我们在menu.lst上输入的title），然后等待一段时间，就会见到我们日思夜想的ubuntu了。</li>
+  <li>按Ctrl+Alt+T打开终端，输入代码：sudo umount -l /isodevice。这一命令取消掉对光盘所在驱动器的挂载，否则分区界面找不到分区。</li>
+  <li>默认桌面有2个文档，一个是演示的不用管，我们选择安装Ubuntu，开始安装，选语言不用说，选安装类型，我们用其他选项（自定义）。然后一路装下去即可。</li>
+  <li>最后进入Window7，打开EasyBCD删除安装时改的menu.lst文件，按Remove即可。然后去我们的c盘 删除vmlinuz，initrd.lz和系统的iso文件。</li>
+</ol>
+
+<p>注意：</p>
+
+<ul>
+  <li>在选择安装启动引导器的设备时，一定要选在原来windows系统引导程序所在磁盘的第一个分区！（直接选那块磁盘就行了）</li>
+  <li>若重启后发现原来windows进不去了，则需要打开终端输入命令：sudo gedit /etc/default/grub，然后修改GRUB_TIMEOUT="10"，然后在终端中输入sudo update-grub。update 命令会自动找到 windows 7 启动项。并且自动更新 /boot/grub/grub.cfg 文件。这样重启就能进windows了。</li>
+  <li>利用EasyBCD可以更改启动项菜单按Edit Boot Menu按钮，可以选择将Windows7设为默认开机选项。</li>
+</ul>
+
+</section>
+<section class="meta">
+<span class="author">
+  <a href="http://lam8da.github.io">lambda</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2012-11-13">2012-11-13</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="http://localhost:4000/categories/#环境&配置" title="环境&配置">环境&配置</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="http://localhost:4000/tags/#Windows7" title="Windows7">Windows7</a>&nbsp;
+  
+  <a href="http://localhost:4000/tags/#Ubuntu" title="Ubuntu">Ubuntu</a>&nbsp;
+  
+  <a href="http://localhost:4000/tags/#系统安装" title="系统安装">系统安装</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="comment">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'lambda'; // required: replace example with your forum shortname
+    var disqus_url = 'http://localhost:4000/2012/11/installing-ubuntu-v1204-on-windows7/';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+<script type="text/javascript">
+$(function() {
+    $(document).keydown(
+      function(e) {
+        if (e.target.nodeName.toUpperCase() != 'BODY') return;
+        var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+          
+            url = 'http://localhost:4000/2012/11/tcp-ip-illustrated-volumn-1-notes/';
+          
+        } else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+          
+            url = 'http://localhost:4000/2012/11/installing-cuda-v50-on-ubuntu-v1204/';
+          
+        }
+        if (url) {
+          window.location = url;
+        }
+      });
+})
+</script>
+
+        </article>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1988641-2']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

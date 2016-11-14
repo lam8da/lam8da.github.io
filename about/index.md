@@ -29,6 +29,11 @@ comments: yes
 
 本站目前采用Jekyll作为后台系统，我希望这是我的最后一站。博客模板是在[Yihui Xie](http://yihui.name/)那里扒过来的，我很喜欢这个简洁的设计，希望原博主不要介意。
 
+之前的站点（现已废弃）：
+- 新浪云计算（相当的贵）：<http://lam8da.sinaapp.com/>
+- 博客园
+- cnblog
+
 ## 联系方式
 
 Email：lambda2fei#at#gmail#dot#com

@@ -12,7 +12,12 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
-        "HTML-CSS": { scale: 80 }
+        "HTML-CSS": { scale: 80 },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
+          processEscapes: true
+        }
       });
     </script>
     <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -35,9 +40,15 @@
         <section class="post">
 <div id="tag_cloud">
 
-<a href="#经济&amp;金融" title="经济&amp;金融" rel="1">经济&amp;金融 (1)</a>
+<a href="#网络&amp;分布式" title="网络&amp;分布式" rel="2">网络&amp;分布式 (2)</a>
 
-<a href="#活着&amp;生活" title="活着&amp;生活" rel="1">活着&amp;生活 (1)</a>
+<a href="#环境&amp;配置" title="环境&amp;配置" rel="5">环境&amp;配置 (5)</a>
+
+<a href="#经济&amp;金融" title="经济&amp;金融" rel="3">经济&amp;金融 (3)</a>
+
+<a href="#活着&amp;生活" title="活着&amp;生活" rel="2">活着&amp;生活 (2)</a>
+
+<a href="#文学" title="文学" rel="1">文学 (1)</a>
 
 <a href="#程序&amp;设计" title="程序&amp;设计" rel="12">程序&amp;设计 (12)</a>
 
@@ -45,13 +56,52 @@
 
 <a href="#人工智能" title="人工智能" rel="1">人工智能 (1)</a>
 
-<a href="#网络&amp;分布式" title="网络&amp;分布式" rel="1">网络&amp;分布式 (1)</a>
-
 <a href="#未分类" title="未分类" rel="1">未分类 (1)</a>
 
 </div>
 
 <ul class="listing">
+
+  <li class="listing-seperator" id="网络&amp;分布式">网络&amp;分布式</li>
+
+  <li class="listing-item">
+  <time datetime="2014-03-08">2014-03-08</time>
+  <a href="http://localhost:4000/2014/03/byzantine-general-problem/" title="拜占庭将军问题">拜占庭将军问题</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2012-11-08">2012-11-08</time>
+  <a href="http://localhost:4000/2012/11/tcp-ip-illustrated-volumn-1-notes/" title="《TCP/IP详解[卷1]》读书笔记">《TCP/IP详解[卷1]》读书笔记</a>
+  </li>
+
+
+  <li class="listing-seperator" id="环境&amp;配置">环境&amp;配置</li>
+
+  <li class="listing-item">
+  <time datetime="2012-11-21">2012-11-21</time>
+  <a href="http://localhost:4000/2012/11/setup-svn-server-on-ubuntu-v1210/" title="Ubuntu12.10搭建svn服务器">Ubuntu12.10搭建svn服务器</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2012-11-19">2012-11-19</time>
+  <a href="http://localhost:4000/2012/11/tips-for-faster-typing-in-bash/" title="Bash下加速命令输入的两个技巧">Bash下加速命令输入的两个技巧</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2012-11-19">2012-11-19</time>
+  <a href="http://localhost:4000/2012/11/send-email-on-booting-ubuntu-v1204/" title="Ubuntu12.04开机自动发邮件程序">Ubuntu12.04开机自动发邮件程序</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2012-11-19">2012-11-19</time>
+  <a href="http://localhost:4000/2012/11/installing-cuda-v50-on-ubuntu-v1204/" title="Ubuntu12.04安装CUDA5.0">Ubuntu12.04安装CUDA5.0</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2012-11-13">2012-11-13</time>
+  <a href="http://localhost:4000/2012/11/installing-ubuntu-v1204-on-windows7/" title="Windows7下使用EasyBCD硬盘安装Ubuntu(12.04)">Windows7下使用EasyBCD硬盘安装Ubuntu(12.04)</a>
+  </li>
+
 
   <li class="listing-seperator" id="经济&amp;金融">经济&amp;金融</li>
 
@@ -60,12 +110,35 @@
   <a href="http://localhost:4000/2013/02/financial-common-sense-notes/" title="《我最需要的金融常识书》读书笔记">《我最需要的金融常识书》读书笔记</a>
   </li>
 
+  <li class="listing-item">
+  <time datetime="2012-11-21">2012-11-21</time>
+  <a href="http://localhost:4000/2012/11/the-ascent-of-money-a-financial-history-of-the-world-notes/" title="《货币崛起 - 金融如何影响世界历史》读书笔记">《货币崛起 - 金融如何影响世界历史》读书笔记</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2012-11-21">2012-11-21</time>
+  <a href="http://localhost:4000/2012/11/money-and-banking-notes/" title="《货币银行学》（易纲版）读书笔记">《货币银行学》（易纲版）读书笔记</a>
+  </li>
+
 
   <li class="listing-seperator" id="活着&amp;生活">活着&amp;生活</li>
 
   <li class="listing-item">
   <time datetime="2013-07-04">2013-07-04</time>
   <a href="http://localhost:4000/2013/07/my-dreams/" title="我的梦想">我的梦想</a>
+  </li>
+
+  <li class="listing-item">
+  <time datetime="2013-01-01">2013-01-01</time>
+  <a href="http://localhost:4000/2013/01/2013-summary/" title="2012年终总结">2012年终总结</a>
+  </li>
+
+
+  <li class="listing-seperator" id="文学">文学</li>
+
+  <li class="listing-item">
+  <time datetime="2013-02-25">2013-02-25</time>
+  <a href="http://localhost:4000/2013/02/demi-gods-and-semi-devils-notes/" title="《天龙八部》故事梗概">《天龙八部》故事梗概</a>
   </li>
 
 
@@ -155,14 +228,6 @@
   <li class="listing-item">
   <time datetime="2013-09-20">2013-09-20</time>
   <a href="http://localhost:4000/2013/09/beauty-of-math-junwu-notes/" title="《数学之美》读书笔记">《数学之美》读书笔记</a>
-  </li>
-
-
-  <li class="listing-seperator" id="网络&amp;分布式">网络&amp;分布式</li>
-
-  <li class="listing-item">
-  <time datetime="2014-03-08">2014-03-08</time>
-  <a href="http://localhost:4000/2014/03/byzantine-general-problem/" title="拜占庭将军问题">拜占庭将军问题</a>
   </li>
 
 
