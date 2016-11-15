@@ -40,7 +40,11 @@ blockquote p{margin:0;padding:.5em 0;}
 .content{font-size:16px;line-height:24px;}
 .content h1{padding:.5em 0;}
 /* .content img{max-width:600px;display:block;margin:4px auto;} */
-.content img{display:block;margin:4px auto;}
+.content img {
+  display: block;
+  margin: 4px auto;
+  max-width: 550px;
+}
 #tag_cloud{margin-bottom: 1em;}
 #tag_cloud a:hover{color:#333333 !important;text-decoration:none;}
 .listing-item,.listing-seperator{list-style-type:none;}

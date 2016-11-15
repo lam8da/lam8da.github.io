@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-11-14T11:30:32-08:00</updated><id>http://localhost:4000//</id><author><name>lambda</name></author><entry><title type="html">Blogging Resources</title><link href="http://localhost:4000/2016/11/welcome-to-jekyll/" rel="alternate" type="text/html" title="Blogging Resources" /><published>2016-11-07T00:00:00-08:00</published><updated>2016-11-07T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2016/11/welcome-to-jekyll/">&lt;ul id=&quot;markdown-toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-11-14T22:19:34-08:00</updated><id>http://localhost:4000//</id><author><name>lambda</name></author><entry><title type="html">Blogging Resources</title><link href="http://localhost:4000/2016/11/welcome-to-jekyll/" rel="alternate" type="text/html" title="Blogging Resources" /><published>2016-11-07T00:00:00-08:00</published><updated>2016-11-07T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2016/11/welcome-to-jekyll/">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#code-block-highlighting&quot; id=&quot;markdown-toc-code-block-highlighting&quot;&gt;Code block highlighting&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#how-to-use-highlighter&quot; id=&quot;markdown-toc-how-to-use-highlighter&quot;&gt;How to use highlighter&lt;/a&gt;&lt;/li&gt;
@@ -6,6 +6,7 @@
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#block-inline-attribute-lists-ial&quot; id=&quot;markdown-toc-block-inline-attribute-lists-ial&quot;&gt;Block inline attribute lists (IAL)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#math-equations&quot; id=&quot;markdown-toc-math-equations&quot;&gt;Math equations&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
@@ -86,7 +87,13 @@ colorful html representations. E.g.&lt;/p&gt;
 
 &lt;div class=&quot;language-ruby ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;Some&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;here&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name>lambda</name></author><summary type="html"></summary></entry><entry><title type="html">拜占庭将军问题</title><link href="http://localhost:4000/2014/03/byzantine-general-problem/" rel="alternate" type="text/html" title="拜占庭将军问题" /><published>2014-03-08T00:00:00-08:00</published><updated>2014-03-08T00:00:00-08:00</updated><id>http://localhost:4000/2014/03/byzantine-general-problem</id><content type="html" xml:base="http://localhost:4000/2014/03/byzantine-general-problem/">&lt;p&gt;工作之余，花了一周的几乎每个晚上把Lamport神的那篇有关拜占庭将军问题的文章看完了。在这里做下笔记。&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;math-equations&quot;&gt;Math equations&lt;/h2&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a = b&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Large a = b&lt;/script&gt;</content><author><name>lambda</name></author><summary type="html"></summary></entry><entry><title type="html">拜占庭将军问题</title><link href="http://localhost:4000/2014/03/byzantine-general-problem/" rel="alternate" type="text/html" title="拜占庭将军问题" /><published>2014-03-08T00:00:00-08:00</published><updated>2014-03-08T00:00:00-08:00</updated><id>http://localhost:4000/2014/03/byzantine-general-problem</id><content type="html" xml:base="http://localhost:4000/2014/03/byzantine-general-problem/">&lt;p&gt;工作之余，花了一周的几乎每个晚上把Lamport神的那篇有关拜占庭将军问题的文章看完了。在这里做下笔记。&lt;/p&gt;
 
 &lt;p&gt;个人觉得最难懂的就是OM算法，我将它理解成一个动态规划：&lt;/p&gt;
 

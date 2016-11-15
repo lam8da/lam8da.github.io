@@ -83,4 +83,10 @@ A simple paragraph with an ID attribute.
 {:.ruby}
     Some code here
 
+## Math equations
+
+$$ a = b $$
+
+$$ \Large a = b $$
+
 [jekyll-docs]: http://jekyllrb.com/docs/home
