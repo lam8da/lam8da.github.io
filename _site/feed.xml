@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-11-14T22:19:34-08:00</updated><id>http://localhost:4000//</id><author><name>lambda</name></author><entry><title type="html">Blogging Resources</title><link href="http://localhost:4000/2016/11/welcome-to-jekyll/" rel="alternate" type="text/html" title="Blogging Resources" /><published>2016-11-07T00:00:00-08:00</published><updated>2016-11-07T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2016/11/welcome-to-jekyll/">&lt;ul id=&quot;markdown-toc&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-11-17T07:56:51-08:00</updated><id>http://localhost:4000//</id><author><name>lambda</name></author><entry><title type="html">《算法谜题》读书笔记</title><link href="http://localhost:4000/2016/11/algorithmic-puzzles-notes/" rel="alternate" type="text/html" title="《算法谜题》读书笔记" /><published>2016-11-16T00:00:00-08:00</published><updated>2016-11-16T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/algorithmic-puzzles-notes</id><content type="html" xml:base="http://localhost:4000/2016/11/algorithmic-puzzles-notes/">&lt;p&gt;&lt;!--  Not show line_numbers  --&gt;
+&lt;/p&gt;
+
+
+&lt;ol&gt;
+  &lt;li&gt;为什么3阶幻方中间的数字一定是5？
+    &lt;ul&gt;
+      &lt;li&gt;解：&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;给定一个m*n的实数表格，能否找出一个算法，能够在仅允许将一整行或一整列的数字改变符号的前提下，使得所有的行和列之和非负？
+    &lt;ul&gt;
+      &lt;li&gt;解：能。用归纳法可以证明：假设对于m&lt;em&gt;(n-1)的表格存在这样的算法，对于m&lt;/em&gt;n表格，先把其由m行以及前n-1列构成的子表格通过该算法运行一次使得该m*(n-1)表格满足条件。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>lambda</name></author><category term="Work in Progress" /><summary type="html"></summary></entry><entry><title type="html">Blogging Resources</title><link href="http://localhost:4000/2016/11/welcome-to-jekyll/" rel="alternate" type="text/html" title="Blogging Resources" /><published>2016-11-07T00:00:00-08:00</published><updated>2016-11-07T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2016/11/welcome-to-jekyll/">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#code-block-highlighting&quot; id=&quot;markdown-toc-code-block-highlighting&quot;&gt;Code block highlighting&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#how-to-use-highlighter&quot; id=&quot;markdown-toc-how-to-use-highlighter&quot;&gt;How to use highlighter&lt;/a&gt;&lt;/li&gt;
@@ -1657,158 +1672,4 @@ colorful html representations. E.g.&lt;/p&gt;
     &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;如果一个流调用&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;tie&lt;/span&gt;&lt;/code&gt;函数将其本身绑在传递给&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;tie&lt;/span&gt;&lt;/code&gt;的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;ostream&lt;/span&gt;&lt;/code&gt;实参对象上，则该流上任何IO操作都会刷新实参所关联的缓冲区。&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>lambda</name></author><category term="c++" /><category term="读书笔记" /><summary type="html"></summary></entry><entry><title type="html">《C++ Primer》读书笔记（第01-04章）</title><link href="http://localhost:4000/2013/09/c++-primer-notes-chapter01to04/" rel="alternate" type="text/html" title="《C++ Primer》读书笔记（第01-04章）" /><published>2013-09-20T00:00:00-07:00</published><updated>2013-09-20T00:00:00-07:00</updated><id>http://localhost:4000/2013/09/c++-primer-notes-chapter01to04</id><content type="html" xml:base="http://localhost:4000/2013/09/c++-primer-notes-chapter01to04/">&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;第1章 快速入门&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;第2章 变量和基本类型&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;第3章 标准库类型&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-3&quot; id=&quot;markdown-toc-section-3&quot;&gt;第4章 数组和指针&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;!--  Not show line_numbers  --&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;第1章 快速入门&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Windows下查看程序返回值：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; %ERRORLEVEL%&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;endl是一个特殊值，称为操纵符（manipulator），将其写入输出流时将会输出换行效果并刷新与设备相关联的缓冲区&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;s&quot;&gt;&quot;A&quot;&lt;/span&gt;&lt;/code&gt;表示包含字母A和空字符两个字符的字符串&lt;/li&gt;
-  &lt;li&gt;宽字符：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;wchat_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;L'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;宽字符串：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;s&quot;&gt;L&quot;hello&quot;&lt;/span&gt;&lt;/code&gt;（包含了最后的宽空字符）&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;第2章 变量和基本类型&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;变量名不能包含两个连续的下划线，也不能以下划线开头后面紧跟一个大写字母&lt;/li&gt;
-  &lt;li&gt;定义和声明的区别：
-    &lt;ul&gt;
-      &lt;li&gt;定义：为变量分配存储空间，还可以为变量指定初值&lt;/li&gt;
-      &lt;li&gt;声明：用于向程序表明变量的类型和名字&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;定义也是声明：当定义变量时我们声明了它的类型和名字&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;如果声明有初始化式，那么它可被当作是定义，即使被标记为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;extern&lt;/span&gt;&lt;/code&gt;。如：&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;extern&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;只有当&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;extern&lt;/span&gt;&lt;/code&gt;声明位于函数外部时，才可以含有初始化式（此时被当成定义）&lt;/li&gt;
-  &lt;li&gt;与一般的变量不同，在全局作用域声明的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;变量是定义该对象的文件的局部变量。此变量只存在于那个文件中，不能被其他文件访问。除非定义时加上&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;extern&lt;/span&gt;&lt;/code&gt;。&lt;/li&gt;
-  &lt;li&gt;引用是一种复合类型（是指用其他类型定义的类型）&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;引用可以初始化为不同类型的对象或者初始化为右值，如字面值常量：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;但同样的初始化对于非&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;引用都是不合法的，因为对于：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dval&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.14&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ri&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;编译器会将其变成：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ri&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;如果&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;ri&lt;/span&gt;&lt;/code&gt;不是&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;，则可对其赋值，但不会修改&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;dval&lt;/span&gt;&lt;/code&gt;，矛盾。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;非&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;的引用只能绑定到与该引用同类型的对象；&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;引用则可以绑定到不同但类型相关的对象或右值。&lt;/li&gt;
-  &lt;li&gt;枚举成员的值可以不唯一，如：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;/code&gt;其中&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;/code&gt;和&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;/code&gt;都是3。&lt;/li&gt;
-  &lt;li&gt;不能把&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;/code&gt;等类型赋值给枚举类型的对象&lt;/li&gt;
-  &lt;li&gt;用于初始化的值必需是一个常量表达式，即在编译时就可以计算出值的表达式&lt;/li&gt;
-  &lt;li&gt;头文件一般包含：类的定义、&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;extern&lt;/span&gt;&lt;/code&gt;变量的声明和函数的声明&lt;/li&gt;
-  &lt;li&gt;对于“头文件不应含有定义”这一规则，有三个例外：头文件可以定义类、值在编译时就已知的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;对象和&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kr&quot;&gt;inline&lt;/span&gt;&lt;/code&gt;函数。这些实体可在多个源文件中定义，只要在每个源文件中的定义是相同的。p68&lt;/li&gt;
-  &lt;li&gt;当在头文件中定义了&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;变量后，每个包含该头文件的源文件都有了自己的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;变量，其名称和值都一样；定义在头文件中的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;变量应该是常量表达式。&lt;/li&gt;
-  &lt;li&gt;若&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;变量不是用常量表达式初始化，就不应在头文件中定义，而应在源文件中定义并初始化，并添加&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;extern&lt;/span&gt;&lt;/code&gt;使其被多个文件共享。&lt;/li&gt;
-  &lt;li&gt;若在头文件中定义&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;extern&lt;/span&gt;&lt;/code&gt;的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;变量，多个cc文件都&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include&lt;/span&gt;&lt;/code&gt;了这个头文件且其obj会被链接到一起时，会出错：重定义。原因：这些cc文件引用头文件后相当于在文件中定义了这个&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;变量，但由于加了&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;extern&lt;/span&gt;&lt;/code&gt;，使其全局可见。&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;可以声明引用，例如在a.cc中定义：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ra&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;则可以在a.h中声明：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;extern&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ra&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;逗号表达式与定义，以下是合法的：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;第3章 标准库类型&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;getline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;getline&lt;/span&gt;&lt;/code&gt;遇到第一个换行符就中止，即使&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt;&lt;/code&gt;的第一个字符就是&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;/code&gt;的“+”操作符左右两边必须至少有一个是&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;/code&gt;类型&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;/code&gt;对象的下标变量应为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size_type&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;注意区分&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;const_iterator&lt;/span&gt;&lt;/code&gt;和&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;iterator&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;任何改变&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;/code&gt;长度的操作都会使已存在的迭代器失效。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-3&quot;&gt;第4章 数组和指针&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;数组元素的类型不能是引用&lt;/li&gt;
-  &lt;li&gt;如果没有显式提供元素初值，数组元素会像普通变量一样初始化（2.3.4节）：
-    &lt;ul&gt;
-      &lt;li&gt;在函数体外定义的内置数组，元素均初始化为0&lt;/li&gt;
-      &lt;li&gt;在函数体内定义的内置数组，元素无初始化&lt;/li&gt;
-      &lt;li&gt;不管数组在哪定义，若其元素为类类型，则用default constructor来初始化；若该类没有default constructor，则必须显式初始化。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;字符数组：字符串的字面值包含一个额外的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;null&lt;/span&gt;&lt;/code&gt;字符&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ca1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'c'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'+'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'+'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//长度为3
-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ca2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;c++&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//长度为4
-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ca3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;c++&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//编译错误
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;对指针进行初始化和赋值只能使用：
-    &lt;ul&gt;
-      &lt;li&gt;0值常量表达式&lt;/li&gt;
-      &lt;li&gt;类型匹配的对象地址&lt;/li&gt;
-      &lt;li&gt;另一对象之后的下一地址&lt;/li&gt;
-      &lt;li&gt;同类型的另一个有效指针&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;/code&gt;指针可以保存任何类型对象的地址，不允许使用&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;/code&gt;指针操纵它指向的对象&lt;/li&gt;
-  &lt;li&gt;两个指针减法操作的结果是标准库类型&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;ptrdiff_t&lt;/span&gt;&lt;/code&gt;的数据。&lt;/li&gt;
-  &lt;li&gt;与任何&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;量一样，&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;指针也必须在定义时初始化。&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;考虑如下代码：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pstring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pstring&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cstr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;这里&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;修饰的是&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pstring&lt;/span&gt;&lt;/code&gt;类型，这是一个指针。因此上述定义等价于&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cstr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;可以在数组长度后加&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;来对数组元素做值初始化：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]();&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 初始化为0
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;若不加&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;对于内置类型是不初始化的，也不能用初始化列表。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;对象的动态数组对于内置类型一定要加&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;。&lt;/li&gt;
-  &lt;li&gt;c++允许动态分配空数组&lt;/li&gt;
 &lt;/ol&gt;</content><author><name>lambda</name></author><category term="c++" /><category term="读书笔记" /><summary type="html"></summary></entry></feed>
