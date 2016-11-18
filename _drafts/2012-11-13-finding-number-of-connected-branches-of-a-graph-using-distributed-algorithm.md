@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 
+title: 如何使用分布式找出一个图的连通分支数
 categories:
-    - 如何使用分布式找出一个图的连通分支数
+    - 算法&数学
 tags:
     - Work in Progress
-    - 
+    - 分布式算法
 ---
 
 {::comment} Not show line_numbers {:/comment}

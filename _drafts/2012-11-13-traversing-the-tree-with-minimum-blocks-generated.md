@@ -1,11 +1,12 @@
 ---
 layout: post
-title: 
+title: 如何遍历一棵树使得块数最少
 categories:
-    - 如何遍历一棵树使得块数最少
+    - 算法&数学
 tags:
     - Work in Progress
-    - 
+    - 树
+    - 算法
 ---
 
 {::comment} Not show line_numbers {:/comment}
