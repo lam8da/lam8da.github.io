@@ -3,6 +3,8 @@ layout: post
 title: Blogging Resources
 categories:
     - 未分类
+tags:
+    - 未分类
 ---
 
 * TOC
@@ -88,5 +90,18 @@ A simple paragraph with an ID attribute.
 $$ a = b $$
 
 $$ \Large a = b $$
+
+## Tables
+
+Table with header row:
+
+| a | b | c |
+|---+---+---|
+| d | e | f |
+
+Table without header row:
+
+| a | b | c |
+| d | e | f |
 
 [jekyll-docs]: http://jekyllrb.com/docs/home

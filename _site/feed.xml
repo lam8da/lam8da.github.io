@@ -1,19 +1,139 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-11-17T07:56:51-08:00</updated><id>http://localhost:4000//</id><author><name>lambda</name></author><entry><title type="html">《算法谜题》读书笔记</title><link href="http://localhost:4000/2016/11/algorithmic-puzzles-notes/" rel="alternate" type="text/html" title="《算法谜题》读书笔记" /><published>2016-11-16T00:00:00-08:00</published><updated>2016-11-16T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/algorithmic-puzzles-notes</id><content type="html" xml:base="http://localhost:4000/2016/11/algorithmic-puzzles-notes/">&lt;p&gt;&lt;!--  Not show line_numbers  --&gt;
-&lt;/p&gt;
-
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-11-27T01:39:11-08:00</updated><id>http://localhost:4000//</id><author><name>lambda</name></author><entry><title type="html">补胎和买车心得</title><link href="http://localhost:4000/2016/11/tire-repair/" rel="alternate" type="text/html" title="补胎和买车心得" /><published>2016-11-23T00:00:00-08:00</published><updated>2016-11-23T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/tire-repair</id><content type="html" xml:base="http://localhost:4000/2016/11/tire-repair/">&lt;p&gt;昨天中午出门时发现车胎瘪了，应该是前天出去买菜路上扎的（后来汽车还报警说低气压，可是一直没在意，因为很久没打气了可能刚好气压低过阈值）。在网上做了一晚功课，决定先去找家修理行修车胎，如果不行再去walmart活着costco换。最后今天早上折腾两个多小时终于在wheel works免费修好，写上一些经验和总结以备以后不时之需。&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;为什么3阶幻方中间的数字一定是5？
+  &lt;li&gt;去修理店，如果前台问扎了哪里，不要说扎在边缘上（即使真的离边缘很近），否则老板直接会说修不了建议换胎。总之，避免回答出任何可能导致老板建议换胎的答案。这样做的好处是：有机会把车子让修理师傅看一下，他说不能修才是不能修（这个不是前台说了算的因为他也不懂修，他的最终目的就是换胎赚你钱）&lt;/li&gt;
+  &lt;li&gt;车子常备一个手动打气筒（电动的应该也行，但我担心电动的由于各种原因在特发情况下不work，手动的应该总是能work的）&lt;/li&gt;
+  &lt;li&gt;个人觉得那些应急自救包（例如某种神喷射剂，需要自己拔出钉子往里喷，可以坚持好一会的那种；又例如手工修理包，walmart很便宜几块钱那种）貌似没什么用。如果不是专家或有经验，发现被扎后千万不要拔钉，最好打气看看漏得严不严重，如果不严重可以直接开到修理店修。如果拔钉，有可能自救包修不好，就只能千斤顶了；马路上太危险，要么就花（几百块？）叫个拖车？当然，买个应急包还是有用的，万一漏气很严重呢？要把所有可能都想到。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;另附上之前买车的心得：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;在truecar上找个quote，找到所有match该价格的买家&lt;/li&gt;
+  &lt;li&gt;第一家看车一定不能选你最想买的那家：你要先了解情况，试驾，试探市场情况和卖家的情况。这样去下一家的时候心里有数。当然你还是要狠狠的砍价，往比truecar低（例如好几百）的价格砍。注意，truecar也是被他们控制了的。&lt;/li&gt;
+  &lt;li&gt;找好一个贷款银行，写个preapproval letter，不然车行的利率会很难看（他们可以控制利率）&lt;/li&gt;
+  &lt;li&gt;砍价或者下offer时不要说你手头上有preapproval
+letter，否则当卖家得知自己不能控制利率可能就不会同意更低的价格&lt;/li&gt;
+  &lt;li&gt;dealer签字时推荐你的各种优惠package不要买（当然除非你非常有必要），他们就是想忽悠你赚钱&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>lambda</name></author><category term="汽车" /><summary type="html">昨天中午出门时发现车胎瘪了，应该是前天出去买菜路上扎的（后来汽车还报警说低气压，可是一直没在意，因为很久没打气了可能刚好气压低过阈值）。在网上做了一晚功课，决定先去找家修理行修车胎，如果不行再去walmart活着costco换。最后今天早上折腾两个多小时终于在wheel works免费修好，写上一些经验和总结以备以后不时之需。</summary></entry><entry><title type="html">读《时间的形状：相对论史话》</title><link href="http://localhost:4000/2016/11/shape-of-time-notes/" rel="alternate" type="text/html" title="读《时间的形状：相对论史话》" /><published>2016-11-20T00:00:00-08:00</published><updated>2016-11-20T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/shape-of-time-notes</id><content type="html" xml:base="http://localhost:4000/2016/11/shape-of-time-notes/">&lt;p&gt;这本书的逻辑性很好，从历史的角度介绍了经典物理学在20世纪初遇到的难题以及新理论的提出的过程，让非专业读者都能理解相对论的基本内容。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;第一章 不得不说的废话&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;所有的物理定律都无法被证实，只能被证伪。只有满足了“预言”和“证伪”两个条件，才能冠以科学之名。如果提出一个理论并且其做出的预言永远不能被实验推翻，这个就可以称为伪科学。&lt;/li&gt;
+  &lt;li&gt;奥卡姆剃刀原理：如果发现一个很奇怪的现象，要对它进行解释而不得不做很多各种各样的假设，则那个需要假设最少的解释往往是最接近真相的解释。例：以太学说（假设以太存在vs光速不变）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;第二章 伽利略和牛顿的世界&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;伽利略相对性原理：在任何惯性系中，力学规律保持不变&lt;/li&gt;
+  &lt;li&gt;伽利略变换&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;第三章 光的速度&lt;/h2&gt;
+
+&lt;p&gt;麦克斯韦方程组预言了电磁波的存在，赫兹发现了电磁波并测量了其传播速度，发现等于光速，证实光是一种电磁波。根据麦克斯韦的理论，波的传播速度是相对于介质而言的，不受波源运动速度的影响。于是，光在不同情况下的速度的异同就成了以太是否存在的关键证据。迈克尔逊-莫雷实验却表明：光速在所有情况下都不变。这成了20世纪初物理学第一朵乌云。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;第四章 爱因斯坦和狭义相对论&lt;/h2&gt;
+
+&lt;p&gt;在第一朵乌云笼罩下，物理学家都试图用各种解释来说明以太的存在与光速不变不矛盾。只有爱因斯坦开创性地抛弃以太说，引入光速不变原理和（狭义）相对性原理，推导出运动物体的时间膨胀和空间收缩性质（洛伦兹变换）以及新的速度合成公式（合成速度不可能超过光速）。进一步，为了解决”运动速度超过光速会怎样“的问题，爱因斯坦推导出质速关系式（任何有质量物体运动速度都不可能超过光速，否则质量会变成无穷大），准确地说，没有能量和信息的传播速度能超过光速。更进一步，从动能定理和质速关系式出发，爱因斯坦推导出质能方程。&lt;/p&gt;
+
+&lt;p&gt;如何理解狭义相对论：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;双生子佯谬&lt;/li&gt;
+  &lt;li&gt;长棍佯谬&lt;/li&gt;
+  &lt;li&gt;潜水艇佯谬&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;第五章 广义相对论的宇宙&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;爱因斯坦通过思想实验研究&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E7%AD%89%E6%95%88%E5%8E%9F%E7%90%86&quot;&gt;弱等效原理&lt;/a&gt;：观测者不能在局部的区域内分辨出由加速度所产生的惯性力或由物体所产生的引力，而它是由引力质量与惯性质量成正比例这一事实推演出来。通过弱等效原理和思想实验推导出引力会弯曲光线。更进一步，通过”爱因斯坦圆盘实验“，结合狭义相对论，我们可以推导出引力是把时间和空间都弯曲了。&lt;/li&gt;
+  &lt;li&gt;相对于地面上来说，在地球的高山上的物体运动得快（由于地球自转），根据狭义相对论时间会变慢，而根据广义相对论高山上引力变小因此时间会变快。根据精确计算，广义相对论造成的影响更大。&lt;/li&gt;
+  &lt;li&gt;引力波的传播速度也是光速。&lt;/li&gt;
+  &lt;li&gt;爱因斯坦引力场方程成功解释了水星进动现象，爱丁顿进行星光实验进一步验证其正确性&lt;/li&gt;
+  &lt;li&gt;广义相对论的推论
     &lt;ul&gt;
-      &lt;li&gt;解：&lt;/li&gt;
+      &lt;li&gt;黑洞的存在&lt;/li&gt;
+      &lt;li&gt;白洞&lt;/li&gt;
+      &lt;li&gt;场方程的一个解允许虫洞（即爱因斯坦-罗森塔尔桥）的存在，虫洞的一端是黑洞另一端是白洞&lt;/li&gt;
+      &lt;li&gt;宇宙正在加速膨胀&lt;/li&gt;
+      &lt;li&gt;宇宙有界无限（希尔伯特空间）&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;给定一个m*n的实数表格，能否找出一个算法，能够在仅允许将一整行或一整列的数字改变符号的前提下，使得所有的行和列之和非负？
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;第六章 红色革命&lt;/h2&gt;
+
+&lt;p&gt;主要描述魏嗣銮，相对论在中国的早期传播者之一，被文化大革命打压的历史。我们不希望这样的历史在当今世界重演。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-6&quot;&gt;第七章 时空那点事&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;闵可夫斯基四维空间：所有物体的运动速度在该空间中都是光速c。一个物体在三维空间中的速度越快，在时间维度上的速度越慢（根据勾股定理）。光在三维空间中速度达到极限，因此在时间维度上停滞（我们现在看到的遥远星系发出来的光是几十亿年前的光，没有任何变化）&lt;/li&gt;
+  &lt;li&gt;莫比乌斯带和克莱恩瓶&lt;/li&gt;
+  &lt;li&gt;如何避免时间旅行带来的逻辑悖论（如回到过去杀死自己的祖母）
     &lt;ul&gt;
-      &lt;li&gt;解：能。用归纳法可以证明：假设对于m&lt;em&gt;(n-1)的表格存在这样的算法，对于m&lt;/em&gt;n表格，先把其由m行以及前n-1列构成的子表格通过该算法运行一次使得该m*(n-1)表格满足条件。&lt;/li&gt;
+      &lt;li&gt;自由意志丧失说&lt;/li&gt;
+      &lt;li&gt;时空交错说：历史不能被改变，只能被观察&lt;/li&gt;
+      &lt;li&gt;多历史说（Feynman）：平行世界？&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>lambda</name></author><category term="Work in Progress" /><summary type="html"></summary></entry><entry><title type="html">Blogging Resources</title><link href="http://localhost:4000/2016/11/welcome-to-jekyll/" rel="alternate" type="text/html" title="Blogging Resources" /><published>2016-11-07T00:00:00-08:00</published><updated>2016-11-07T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2016/11/welcome-to-jekyll/">&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;可以制作出一种手表，当速度变化时，其频率随着变化。这样在星际旅行时就能准确知道地球上的时间（即假如这一刻我在地球上，地球上的时间）。&lt;/li&gt;
+  &lt;li&gt;星际贸易的经济学&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-7&quot;&gt;第八章 再谈四维空间&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;闵可夫斯基四维空间与光锥&lt;/li&gt;
+  &lt;li&gt;四维空间在三维上的投影和展开&lt;/li&gt;
+  &lt;li&gt;爱因斯坦认为这个宇宙是：
+    &lt;ul&gt;
+      &lt;li&gt;定域的：一个事件的将来光锥决定了这个事件对时空的影响范围，而它的过去光锥决定了怎样的时空范围可以影响到这个事件本身，过去光锥和将来光锥都是有大小和形状的，任何事件之间都不可能超越这个范围而产生互相影响&lt;/li&gt;
+      &lt;li&gt;客观存在的：宇宙万物的运动规律独立于观察者而存在，与观察者（人类）的存在与否无关&lt;/li&gt;
+      &lt;li&gt;因果律：如果知道宇宙某一时刻的状态且有足够的计算能力，我们就能知道下一刻的状态&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-8&quot;&gt;第九章 上帝的判决&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;双缝干涉实验：如果一次只释放一个粒子（光子，电子，etc），在重复这个实验多次以后，仍能得到干涉条纹。问：为什么得到的图像不是两个单缝图像的简单叠加？即单个粒子在穿越一个缝的时候是如何知道另一个缝的存在？&lt;/li&gt;
+  &lt;li&gt;波尔的解释（哥本哈根解释）：光子同时通过了两个缝&lt;/li&gt;
+  &lt;li&gt;进一步实验揭示：一旦电子被观测到了（哪怕是电子通过了双缝之后再去观测），干涉条纹便消失了；如果不去观测，又重新出现干涉条纹
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%83%A0%E5%8B%92%E5%BB%B6%E8%BF%9F%E9%80%89%E6%8B%A9%E5%AE%9E%E9%AA%8C&quot;&gt;惠勒延迟选择实验&lt;/a&gt;：通过了双缝之后再去观测&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;波尔：没有因果律，只有互补原理&lt;/li&gt;
+  &lt;li&gt;爱因斯坦提出了爱因斯坦-波多尔斯基-罗森（EPR）佯谬，揭示了量子力学的非定域性与我们常识之间的矛盾。
+    &lt;ul&gt;
+      &lt;li&gt;然后，他进一步把这个想法推广，设想了一桶不稳定的炸药，经过一段时间后，炸药处于爆炸与不爆炸之间的量子叠加态。薛定谔受此启发，把宏观量子叠加态推广到了生命体，提出了处于死与活量子叠加态的薛定谔的猫。这个思维实验提出了一个很尖锐的问题，宏观的量子叠加态何时退化为确定的经典状态？难道是在打开容器的那一瞬间么？摘自&lt;a href=&quot;http://www.guokr.com/article/440829/&quot;&gt;果壳网&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E8%B4%9D%E5%B0%94%E5%AE%9A%E7%90%86&quot;&gt;贝尔不等式&lt;/a&gt;使得EPR实验的检验成为可能。如果实验结果违反了贝尔不等式，说明：
+    &lt;ul&gt;
+      &lt;li&gt;真有超光速的信号存在，两个量子间可以瞬间相互知道对方的状态（违反定域性）；或者&lt;/li&gt;
+      &lt;li&gt;量子的自旋状态不是一个客观实在，在我们观测之前不存在确定状态，只有我们观测之后状态才确定（违反客观实在性）&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;section-9&quot;&gt;第十章 宇宙是一首交响乐&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;万物理论，弦论&lt;/li&gt;
+  &lt;li&gt;两个基本问题：
+    &lt;ul&gt;
+      &lt;li&gt;物质的最小构成单位：如何击碎粒子（粒子加速器）&lt;/li&gt;
+      &lt;li&gt;用一个统一的理论解释四种基本作用力（引力，电磁力，强核力，弱核力）&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;超弦理论与欧拉贝塔函数&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>lambda</name></author><category term="相对论" /><category term="量子力学" /><category term="物理" /><summary type="html">这本书的逻辑性很好，从历史的角度介绍了经典物理学在20世纪初遇到的难题以及新理论的提出的过程，让非专业读者都能理解相对论的基本内容。</summary></entry><entry><title type="html">Blogging Resources</title><link href="http://localhost:4000/2016/11/welcome-to-jekyll/" rel="alternate" type="text/html" title="Blogging Resources" /><published>2016-11-07T00:00:00-08:00</published><updated>2016-11-07T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2016/11/welcome-to-jekyll/">&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#code-block-highlighting&quot; id=&quot;markdown-toc-code-block-highlighting&quot;&gt;Code block highlighting&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#how-to-use-highlighter&quot; id=&quot;markdown-toc-how-to-use-highlighter&quot;&gt;How to use highlighter&lt;/a&gt;&lt;/li&gt;
@@ -22,6 +142,7 @@
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#block-inline-attribute-lists-ial&quot; id=&quot;markdown-toc-block-inline-attribute-lists-ial&quot;&gt;Block inline attribute lists (IAL)&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#math-equations&quot; id=&quot;markdown-toc-math-equations&quot;&gt;Math equations&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#tables&quot; id=&quot;markdown-toc-tables&quot;&gt;Tables&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
@@ -108,7 +229,45 @@ colorful html representations. E.g.&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;a = b&lt;/script&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Large a = b&lt;/script&gt;</content><author><name>lambda</name></author><summary type="html"></summary></entry><entry><title type="html">拜占庭将军问题</title><link href="http://localhost:4000/2014/03/byzantine-general-problem/" rel="alternate" type="text/html" title="拜占庭将军问题" /><published>2014-03-08T00:00:00-08:00</published><updated>2014-03-08T00:00:00-08:00</updated><id>http://localhost:4000/2014/03/byzantine-general-problem</id><content type="html" xml:base="http://localhost:4000/2014/03/byzantine-general-problem/">&lt;p&gt;工作之余，花了一周的几乎每个晚上把Lamport神的那篇有关拜占庭将军问题的文章看完了。在这里做下笔记。&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Large a = b&lt;/script&gt;
+
+&lt;h2 id=&quot;tables&quot;&gt;Tables&lt;/h2&gt;
+
+&lt;p&gt;Table with header row:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;a&lt;/th&gt;
+      &lt;th&gt;b&lt;/th&gt;
+      &lt;th&gt;c&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;d&lt;/td&gt;
+      &lt;td&gt;e&lt;/td&gt;
+      &lt;td&gt;f&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Table without header row:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;a&lt;/td&gt;
+      &lt;td&gt;b&lt;/td&gt;
+      &lt;td&gt;c&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;d&lt;/td&gt;
+      &lt;td&gt;e&lt;/td&gt;
+      &lt;td&gt;f&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>lambda</name></author><category term="未分类" /><summary type="html"></summary></entry><entry><title type="html">拜占庭将军问题</title><link href="http://localhost:4000/2014/03/byzantine-general-problem/" rel="alternate" type="text/html" title="拜占庭将军问题" /><published>2014-03-08T00:00:00-08:00</published><updated>2014-03-08T00:00:00-08:00</updated><id>http://localhost:4000/2014/03/byzantine-general-problem</id><content type="html" xml:base="http://localhost:4000/2014/03/byzantine-general-problem/">&lt;p&gt;工作之余，花了一周的几乎每个晚上把Lamport神的那篇有关拜占庭将军问题的文章看完了。在这里做下笔记。&lt;/p&gt;
 
 &lt;p&gt;个人觉得最难懂的就是OM算法，我将它理解成一个动态规划：&lt;/p&gt;
 
@@ -1428,248 +1587,4 @@ colorful html representations. E.g.&lt;/p&gt;
   &lt;li&gt;因为不能指定任何形参，所以不能重载析构函数&lt;/li&gt;
   &lt;li&gt;即使我们编写了自己的析构函数，合成的析构函数仍然运行。&lt;/li&gt;
   &lt;li&gt;自定义的copy ctor必须是引用传递形参（而不是传值），否则会导致无限递归。&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>lambda</name></author><category term="c++" /><category term="读书笔记" /><summary type="html"></summary></entry><entry><title type="html">《C++ Primer》读书笔记（第05-08章）</title><link href="http://localhost:4000/2013/09/c++-primer-notes-chapter05to08/" rel="alternate" type="text/html" title="《C++ Primer》读书笔记（第05-08章）" /><published>2013-09-20T00:00:00-07:00</published><updated>2013-09-20T00:00:00-07:00</updated><id>http://localhost:4000/2013/09/c++-primer-notes-chapter05to08</id><content type="html" xml:base="http://localhost:4000/2013/09/c++-primer-notes-chapter05to08/">&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;第5章 表达式&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;第6章 语句&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;第7章 函数&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#io&quot; id=&quot;markdown-toc-io&quot;&gt;第8章 标准I/O库&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;!--  Not show line_numbers  --&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;第5章 表达式&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;若两个操作数都是负数则求模结果为负。&lt;/li&gt;
-  &lt;li&gt;逻辑非：若操作数非零值则结果为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;/code&gt;。&lt;/li&gt;
-  &lt;li&gt;如果&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;/code&gt;不是&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt;&lt;/code&gt;类型，不要这样比较：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;如果操作数为负数，则位操作符如何处理其操作数的符号位依赖于机器，不可移植&lt;/li&gt;
-  &lt;li&gt;移位操作的右操作数不可为负且必须严格小于左操作数位数值，否则结果未定义&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;sizeof&lt;/span&gt;&lt;/code&gt;是一个操作符，其结果是编译时常量。三种用法：
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;sizeof&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expr&lt;/span&gt;&lt;/code&gt;
-将&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;sizeof&lt;/span&gt;&lt;/code&gt;用于&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;expr&lt;/span&gt;&lt;/code&gt;时，并没有计算&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;expr&lt;/span&gt;&lt;/code&gt;的值&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;逗号表达式从左向右计算，结果是其最右边表达式的值。如果最右边的操作数的左值，则逗号表达式的值也是左值。&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;值初始化的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;语法必须置于类型名后面，而不是变量后。如：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;上式声明了一个名为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;/code&gt;、没有参数而返回&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;/code&gt;值的函数，而不是定义一个变量。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;c++保证：删除0值的指针是安全的，但这样做没有任何意义。&lt;/li&gt;
-  &lt;li&gt;删除指针后，该指针编程悬垂指针，不再有效。&lt;/li&gt;
-  &lt;li&gt;动态创建&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;对象的例子：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pci&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cons&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;删除动态分配的内存失败称为“内存泄露”&lt;/li&gt;
-  &lt;li&gt;类类型可以定义由编译器自动执行的类型转换，如：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;显式转换也称为强制类型转换（cast），包括：dynamic_cast，const_cast，static_cast，reinterpret_cast。&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;在编译时会出现警告，改成&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;/code&gt;就没问题。&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;&lt;/code&gt;的结果是&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;/code&gt;函数的返回类型的size，且不执行&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;/code&gt;。注意，不能这样用：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;。因为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;/code&gt;是函数类型，而&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;sizeof&lt;/span&gt;&lt;/code&gt;不支持函数类型，&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;才是数据类型。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;的作用是声明一个函数而不是定义一个变量（如果想定义一个使用默认构造函数的对象，正确写法是&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;）。但如果是&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;abc&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;则相反，因为编译器看到了&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;s&quot;&gt;&quot;abc&quot;&lt;/span&gt;&lt;/code&gt;是一个量而不是一个变量声明。另外可以这么干：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;。&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(;;);&lt;/span&gt;&lt;/code&gt;是一个死循环；&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;/code&gt;语句只要中间不写东西就是，这是合法的。省略循环条件等效于其永远为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;/code&gt;。&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'x'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;会导致segment fault。&lt;/li&gt;
-  &lt;li&gt;大多数操作符没有定义左右操作数的求值顺序，故不能依赖它来编写程序。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;第6章 语句&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;空语句，如：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;；又如：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;&lt;/code&gt;。后者由两条语句组成：一条表达式语句和一条空语句。&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;在条件表达式中定义的变量必须初始化，该条件检验的就是初始化对象的值。如：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt;&lt;/code&gt;语句的每个&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt;&lt;/code&gt;的标号必须是整型常量表达式，浮点数也不行！任两个&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt;&lt;/code&gt;标号不能有相同的值，否则compile error。&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt;&lt;/code&gt;结构中，除非使用块语句，否则只能在它的最后一个&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt;&lt;/code&gt;或&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;/code&gt;标号后才能定义变量。&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;/code&gt;中的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;/code&gt;会继续求解循环条件（和&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;/code&gt;一样）&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;使用预处理器进行调试：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;cc -DNDEBUG main.c&lt;/code&gt;&lt;/p&gt;
-
-    &lt;p&gt;这等效于在main.c的开头提供&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#define NDEBUG&lt;/span&gt;&lt;/code&gt;预处理命令。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;第7章 函数&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;函数由函数名以及一组操作数类型唯一地表示&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;在c语言中具有&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;形参或非&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;形参的函数并无区别（引用和指针除外），故：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fcn&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{...}&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fcn&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{...}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;会产生编译错误：重定义。c++为了兼容也保持这点。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;由于数组不能复制，所以无法编写使用数组类型形参的函数，而函数也不允许返回一个数组！&lt;/li&gt;
-  &lt;li&gt;由于使用数组名字时，数组会被自动转化为指针，所以处理数组的函数通常通过操纵指向数组中的元素的指针来处理数组。&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;虽然不能直接传递数组，但形参可以写成数组形式，下面三种定义是等价的，形参类型都是&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;/code&gt;：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{...}&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{...}&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{...}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;编译器只会检查实参是不是指针、指针类型是否匹配，而不会检查数组的长度。故对于以上第三种定义可以传个&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;进去。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;一般用法：传非引用指针：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{...}&lt;/span&gt;&lt;/code&gt;。
-也可通过引用传递，此时编译器将检查数组实参的大小与形参大小是否匹配：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{...}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;多维数组的传递：c++中没有多维数组，所谓多维数组实际上是一个一维数组，其元素是由数组组成。因此，除了第一维以外的所有维的长度都是元素类型的一部分，必须明确指定：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{...}&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{...}&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{...}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;上述三种定义是等价的。&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;/code&gt;，类似地，将会被忽略。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;关于可变形参：对于c++程序，只能将简单数据类型传递给含有省略符形参，实际上，当需要传递给省略符形参时，大多数类类型对象都不能正确地复制&lt;/li&gt;
-  &lt;li&gt;返回类型为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;/code&gt;的函数可以&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;/code&gt;另一个返回类型同样是&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;/code&gt;的函数的调用结果&lt;/li&gt;
-  &lt;li&gt;函数的返回值用于初始化在调用函数处创建的临时对象。当返回引用类型时，没有复制返回值，而是返回对象本身。&lt;/li&gt;
-  &lt;li&gt;函数声明时需提供：返回类型、函数名、形参列表（不必对形参命名）。这三个元素成为函数原型。&lt;/li&gt;
-  &lt;li&gt;默认实参可以是任何适当类型的表达式（包括函数调用）。&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;可在函数声明也可在函数定义中指定默认实参，但在一个文件中只能为一个形参指定默认实参一次（因此h和cc只能有一个这么干，因为cc包含了h）。如果在函数定义中指定默认实参，那么只有在包含该函数定义的源文件中调用该函数时（被指定的默认实参）才有效。在声明时指定默认实参可以类似于这么干：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;只有当定义它的函数被调用时才存在的对象成为自动对象。&lt;/li&gt;
-  &lt;li&gt;内联函数应该在头文件中定义，这一点不同于其他函数。这是因为，内联函数的定义对编译器而言必须是可见的，以便编译器能够在调用点内联展开该函数的代码。&lt;/li&gt;
-  &lt;li&gt;由编译器自动生成的默认构造函数对内置类型成员的初始化规则：
-    &lt;ol&gt;
-      &lt;li&gt;若该类的对象被定义于全局作用域或定义为局部静态对象，这些成员被初始化为0&lt;/li&gt;
-      &lt;li&gt;否则没有初始化&lt;/li&gt;
-    &lt;/ol&gt;
-
-    &lt;p&gt;另可参考《深度探索c++对象模型》&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;重载函数：出现于相同作用域中（当作用域不同时会发生名字屏蔽而不是重载），名字相同而形参表不同（默认实参不改变形参表）。注意，重载函数可以有不同的返回类型。&lt;/li&gt;
-  &lt;li&gt;在c++中，名字查找发生在类型检查之前。&lt;/li&gt;
-  &lt;li&gt;形参与&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;形参的等价性仅适用于非引用形参，有&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;引用的形参与有非&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;引用形参的函数是不同的，对于&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;指针和非&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;指针也是不同的。（即：仅当形参是引用或指针时，形参是否为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;才有影响）&lt;/li&gt;
-  &lt;li&gt;局部声明的名字会屏蔽全局声明的同名名字（包括函数名，此时，只要同名就会屏蔽，不管形参如何）&lt;/li&gt;
-  &lt;li&gt;重载确定的寻找最佳匹配方法：若仅有一个函数满足以下条件则ok，否则编译错误：
-    &lt;ul&gt;
-      &lt;li&gt;其每个实参的匹配都不劣于其他可行函数需要的匹配&lt;/li&gt;
-      &lt;li&gt;至少有一个实参的匹配优于其他可行函数提供的匹配&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;重载确定（overload resolution）的三个步骤：
-    &lt;ol&gt;
-      &lt;li&gt;确定候选函数（candidate function）集：与被调函数同名的函数的集合（声明要在调用点可见；如果调用的是类的成员函数则不考虑访问控制符如&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt;&lt;/code&gt;、&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt;&lt;/code&gt;等，而是将该类的所有同名函数都取出拿来用）&lt;/li&gt;
-      &lt;li&gt;选择可行函数（viable function），两个条件：
-        &lt;ul&gt;
-          &lt;li&gt;函数的形参个数与该调用的实参个数相同&lt;/li&gt;
-          &lt;li&gt;每一个实参的类型必须与对应形参的类型匹配，或者可被隐式转换为对应的形参类型&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;寻找最佳匹配：先为每个实参划分等级，再按照第下述方法做。&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;为了确定最佳匹配，编译器将实参到形参的类型转换划分等级：
-    &lt;ol&gt;
-      &lt;li&gt;精确匹配&lt;/li&gt;
-      &lt;li&gt;通过类型提升（promotion）实现的匹配，包括整形提升：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;/code&gt;、&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;signed&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;/code&gt;、&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;/code&gt;、&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;short&lt;/span&gt;&lt;/code&gt;和&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;short&lt;/span&gt;&lt;/code&gt;提升为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;/code&gt;，其次是提升为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;/code&gt;。如，对于
-&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;来说，&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;要优于&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;short&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;。&lt;/li&gt;
-      &lt;li&gt;通过标准转换实现的匹配&lt;/li&gt;
-      &lt;li&gt;数组-&amp;gt;指针，指针-&amp;gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;/code&gt;，&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;/code&gt;-&amp;gt;指针&lt;/li&gt;
-      &lt;li&gt;算术值和指针-&amp;gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;算术值&amp;lt;-&amp;gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;enum&lt;/span&gt;&lt;/code&gt;-&amp;gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;/code&gt;或更高&lt;/li&gt;
-      &lt;li&gt;非&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;-&amp;gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;引用；非&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;指针-&amp;gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;指针&lt;/li&gt;
-      &lt;li&gt;由标准库类型定义的转换&lt;/li&gt;
-      &lt;li&gt;通过类类型转换实现的匹配&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;不能通过基于指针本身是否为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;来实现函数重载（这符合第19点）：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 错误，重声明
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;函数指针：在引用函数名但又没有调用该函数时，函数名将被自动解释为指向函数的指针，故以下两句赋值含义相同：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;funcptr&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;funcpty&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;故调用时也相同：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;等价于&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;指向不同函数类型（包含返回类型的定义）的指针指针之间不存在转换。&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;函数指针作为形参时，以下两种形式等价：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;返回类型中的函数指针的例子：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;。其中，&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;ff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;是一个函数，它返回一个函数指针，其类型为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;函数的返回类型不能是一个函数，最多只能是一个函数指针！！&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;若类&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;/code&gt;有个带一个&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;/code&gt;参数的ctor，则以下函数定义是合法的：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;如果一个类定义了一个非&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;函数以及对应的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;函数，是合法的，C++将其看成重载，不会引起编译错误。对于这点，我的理解是，C++会将成员函数重写为包含指向对象本身的隐含&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;/code&gt;指针的函数，这样，&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;成员函数就会变成&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;对象指针，根据第19点这是可以被重载的。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;io&quot;&gt;第8章 标准I/O库&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;IO对象不可复制或赋值，这表示着：
-    &lt;ul&gt;
-      &lt;li&gt;不能存储在容器中&lt;/li&gt;
-      &lt;li&gt;函数的形参或返回类型不能是非指针或引用的流类型&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;刷新输出缓冲区的方法：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hi&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flush&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 不增加任何数据
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hi&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ends&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 增加null字符
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hi&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;如果一个流调用&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;tie&lt;/span&gt;&lt;/code&gt;函数将其本身绑在传递给&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;tie&lt;/span&gt;&lt;/code&gt;的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;ostream&lt;/span&gt;&lt;/code&gt;实参对象上，则该流上任何IO操作都会刷新实参所关联的缓冲区。&lt;/li&gt;
 &lt;/ol&gt;</content><author><name>lambda</name></author><category term="c++" /><category term="读书笔记" /><summary type="html"></summary></entry></feed>

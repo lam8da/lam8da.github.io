@@ -29,10 +29,20 @@ comments: yes
 
 本站目前采用Jekyll作为后台系统，我希望这是我的最后一站。博客模板是在[Yihui Xie](http://yihui.name/)那里扒过来的，我很喜欢这个简洁的设计，希望原博主不要介意。
 
-之前的站点（现已废弃）：
+之前的站点：
 - 新浪云计算（相当的贵）：<http://lam8da.sinaapp.com/>
-- 博客园
-- cnblog
+- 博客园：<http://www.cnblogs.com/lambda2fei/>
+- 163：<http://lambda2fei.blog.163.com/>
+- cppblog：<http://www.cppblog.com/lambda/>
+- baidu：<https://wenzhang.baidu.com/>
+  （之前是<http://hi.baidu.com/lambda2fei/blog/>，现已关闭）
+- qq空间：<http://user.qzone.qq.com/307186265/2>
+
+所有这些站点现已废弃，所有博文将逐步转移到这个博客。
+
+现在重新阅读多年前自己写的青涩的文字，才知道那时的我是多么天真幼稚。
+
+物是人非。往事不堪回首。
 
 ## 联系方式
 
@@ -40,10 +50,10 @@ Email：lambda2fei#at#gmail#dot#com
 
 主页：<http://lam8da.github.io>
 
-<!--
 ## 我佩服的人
 
-- 我爹：他这辈子真的很不容易
+- 我爹妈：他们这辈子真的很不容易
+<!--
 - 杨阳：一个苦人，2008年一个夏雨夜说“我把一件工作当另一件工作的休息”，我不用想长征两万五，这个人就足以当苦的底线了
 - 王明夫、王丰和杨大林老师：思维、气场；2008-2009年士兵突击
 - 卢鸫翔：专业 + 敬业，尤其在2012年2月9日让我深感敬佩
