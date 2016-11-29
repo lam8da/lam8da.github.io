@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="lambda" />
+    <title>Dilworth定理，链还是反链？ | lambda</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="http://localhost:4000/feed/" rel="alternate" title="lambda" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link rel="stylesheet" href="/media/css/highlighter-rouge.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        "HTML-CSS": { scale: 80 },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>Dilworth定理，链还是反链？</h1>
+        </header>
+        <nav>
+        <span><a title="home page" class="" href="http://localhost:4000/">首页</a></span>
+        <span><a title="categories" class="" href="http://localhost:4000/categories/">分类</a></span>
+        <span><a title="tags" class="" href="http://localhost:4000/tags/">标签</a></span>
+        <span><a title="links" class="" href="http://localhost:4000/links/">链接</a></span>
+        <span><a title="about" class="" href="http://localhost:4000/about/">关于</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://localhost:4000/feed/">订阅</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<p>这两天被Dilworth、链和反链搞到头昏脑胀，终于有点眉目，现在来总结一下。</p>
+
+<ul>
+  <li>Dilworth定理说的是：对于一个偏序集，其最少链划分数等于其最长反链的长度。</li>
+  <li>Dilworth定理的对偶定理说的是：对于一个偏序集，其最少反链划分数等于其最长链的长度。</li>
+</ul>
+
+<p>Dilworth定理先不证，有空再不上来，其对偶定理证明如下：设一个偏序集S的最少反链划分数是p，最长链长度是r。</p>
+
+<ol>
+  <li>先证p≥r。这是显然的，因为最长链长度是r，r个元素中的任意两个都可以比较，因此它们必定两两属于不同的反链，因此反链个数≥r，即p≥r。</li>
+  <li>再证r≥p。设X1=S。找出X1的所有极小元组成集合Z1，将其从X1删之，得到X2，再找出X2的所有极小元组成集合Z2（特别注意Z2中的任何元素a2，在X1中必然存在一个元素a1使得a1≤a2，否则a2可以放到X1中，这与X1的选取矛盾），再将Z2从X2中删除，得到X3，……这样一直下去，总存在一个k使得XK不空但X(K+1)为空。这样便得到一条链a1，a2，a3，……，ak，其中ai属于Xi。由于r是最长链长度，因此r≥k。另一方面，我们也得到了一个反链划分，即X1，X2，X3，……，XK。由于p是最少反链划分，因此k≥p。因此有r≥p。证毕。</li>
+</ol>
+
+<p>导弹拦截问题可以重述为：对于一个整数序列s，第一问是最长不升子序列，第二问是求其最少的不升序列的划分数。</p>
+
+<p>首先定义一个偏序关系。对于s中的任意两个数a、b，如果a的出现不晚于b，且a的值不小于b，则称a、b满足偏序关系，记作a≤b。<span style="color: blue">特别注意有两点：一是这个小于等于号，它是一种偏序关系，而不是数值上的小于等于；二是定义中说的是“a的出现不晚于b”，而不是“a的出现先于b”，这是因为偏序关系具有反对称性，即a和a自身也是满足偏序关系的。</span></p>
+
+<p>举个例子，数列s为：1，2，<span style="color: red">3，2</span>，4，1，3，4。则红色表示的3和2满足上述定义的偏序关系，<span style="color: red">即3≤2</span>。这样，一个不升子序列即一条链，最长不升子序列的长度即最长链的长度，根据对偶定理，即等于最少反链划分数。由对偶定理的证明，我们可以每次找一个极小元集合来得到最少的反链划分。<span style="color: red">而这里的极小元集合是这样的a的集合：在a的前面不存在使得x≤a的x。</span>再强调一次，这里的小于等于号表示的是偏序关系，而不是数值大小。根据上面偏序关系的定义，可以通俗的理解为“在a的前面不存在不小于a的数”，即在a前面不存在大于等于a的数。转换一下，不难发现，<span style="color: red">即每次贪心找一条上升子序列！</span>贪心过程如下，如下：</p>
+
+<p><span style="color: red">1, 2, 3,</span>
+<span style="color: blue">2,</span>
+<span style="color: red">4,</span>
+<span style="color: green">1,</span>
+<span style="color: blue">3, 4</span></p>
+
+<p>其中红色的1，2，3，4为X1，即第一条反链，蓝色的2，3，4为X2，绿色的1为X3。即s的最长不降序列长度为3，这可以在三条反链中各取一个数获得，譬如3，2，1。当然这个复杂度是O(n^2)的，没必要这样做，有更优秀的O(nlogn）算法，这是题外话。</p>
+
+<p>对于第二个问题，求的是最少不升序列划分，即链划分，根据定理，可以转换成求最长反链长度。实际上，一般情况下Dilworth定理是反过来用的，即求最长反链长度转换成球最少链划分。这可以通过求DAG的最小路径覆盖求得。当然这题也可以这样做。</p>
+
+<p>网上看了很多文章，说第二问可以贪心解，但到底为什么可以贪心解，说的倒是乱七八糟。贪心解实际上是运用是Dilworth定理的对偶定理的基础上的，就像上面的证明过程2一样，但网上很多都说贪心解是因为Dilworth定理，这简直就是胡说八道！（当然不排除我没仔细看Dilworth定理的证明过程的原因，有可能Dilworth定理的证明也是贪心的，但我看过一次记得不是）</p>
+
+<p>这题是可以贪心解的，但不是因为Dilworth定理，更不是直接像上面一样套用其对偶定理（如果这样就更扯淡了）。我们重新看第二问，求的是最少不升序列划分，即链划分，即最长反链长度。反链是什么？就是上升子序列，因此第二问求的是最长上升子序列长度。如果我们把序列反过来，如s反过来后是s’：4，3，1，4，2，3，2，1；即原序列的最长上升子序列，变为s’的最长下降子序列，这是显然的。</p>
+
+<p>我们对s‘重新定义一个不严格的偏序关系，对于s’中的任意两数a和b，如果a的出现早于b且a的值大于b，则定义a≤b。这里我忽略了反对称性，但对于此题并不影响Dilworth定理的对偶定理的证明。</p>
+
+<p>于是可以像上面那样贪心了：每次选一个极小元子集，使得里面的每个a都满足：在a前面不存在值大于a的数。再转换一下，<span style="color: red">即每次贪心找一条不降序列！</span>于是这样一个新“偏序”关系下的反链划分：</p>
+
+<p><span style="color: red">4,</span>
+<span style="color: blue">3,</span>
+<span style="color: purple">1,</span>
+<span style="color: red">4,</span>
+<span style="color: purple">2,</span>
+<span style="color: blue">3,</span>
+<span style="color: purple">2,</span>
+<span style="color: green">1,</span></p>
+
+<p>于是其最长链长度为4。即s’的最长下降子序列长度为4，即原题第二问答案为4。</p>
+
+<p>这个方法也可以用于pku1065。即对于反链也可以定义一种偏序关系使之成为另一种“链”。</p>
+
+<p>总结一下，对于特殊情况下的链和反链问题，可以通过Dilworth定理的对偶定理来求。特殊情况是什么情况？<span style="color: red">就是存在两个不同的偏序定义，使得在一种偏序定义下的反链可以构成另一种偏序定义下链！</span><span style="color: blue">例如导弹拦截，求最长不升序列可以通过用贪心法求升序列的个数求得，求最长下降序列可以通过用贪心法求不降序列的个数求得，真是神奇啊！！</span></p>
+
+<p>现在想想hdu那题整除不整除的貌似也可以通过这样来转换？嗯过两天有空想想。。</p>
+
+<p>ps：重温第二问，求的是最少不升序列划分，实际上，我们可以重新定义一种“偏序”关系，使得不升序列在这个定义下是一条反链！那怎样定义？可以这样：<span style="color: blue">反链的“反”就是链</span>。不升序列的定义是a出现于b前且数值上≥b；那什么情况下不符合呢？我们可以枚举两个限制的组合：</p>
+
+<ol>
+  <li>a出现于b前且数值上a≥b</li>
+  <li>a出现于b前且数值上a&lt;b</li>
+  <li>b出现于a前且数值上b&lt;a</li>
+  <li>b出现于a前且数值上b≥a</li>
+</ol>
+
+<p>其中（1）即不升序列，实际上，（4）也是不升序列，（1）和（4）是等价的，只是把变量互换了而已！同理（2）和（3）是等价的。要使（1）和（4）是反链，令（2）和（3）是链即可，即把链定义成升序列！于是不升序列在这种定义下变成反链，即第二问变成求最少反链划分。这里要重新解释一下Dilworth定理的对偶定理，其贪心思想是用于求最长链长，即最少反链划分，方法是每次找一条反链。一句话，<span style="color: red">就是贪心地寻找反链可以得到最少的反链划分</span>。于是每次找一个极小元集（即每次贪心找一个不升子序列）。如下：</p>
+
+<p><span style="color: red">1,</span>
+<span style="color: blue">2,</span>
+<span style="color: purple">3,</span>
+<span style="color: blue">2,</span>
+<span style="color: green">4,</span>
+<span style="color: red">1,</span>
+<span style="color: purple">3,</span>
+<span style="color: green">4,</span></p>
+
+<p>答案还是4！真是牛逼！</p>
+
+<p>但这种方法只适用于可以定义两种偏序关系使得一种偏序关系下的链是另一种偏序关系下的反链的情况！</p>
+
+</section>
+<section class="meta">
+<span class="author">
+  <a href="http://lam8da.github.io">lambda</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2010-03-17">2010-03-17</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="http://localhost:4000/categories/#算法&数学" title="算法&数学">算法&数学</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="http://localhost:4000/tags/#Work in Progress" title="Work in Progress">Work in Progress</a>&nbsp;
+  
+  <a href="http://localhost:4000/tags/#组合数学" title="组合数学">组合数学</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="comment">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'lambda'; // required: replace example with your forum shortname
+    var disqus_url = 'http://localhost:4000/2010/03/dilworth-theorem-about-chain-and-anti-chain/';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+<script type="text/javascript">
+$(function() {
+    $(document).keydown(
+      function(e) {
+        if (e.target.nodeName.toUpperCase() != 'BODY') return;
+        var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+          
+            url = 'http://localhost:4000/2010/03/hdoj-3335-divisibility/';
+          
+        } else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+          
+            url = 'http://localhost:4000/2010/03/the-problem-of-conflicts-on-descriptions-of-minimum-value-of-intervals/';
+          
+        }
+        if (url) {
+          window.location = url;
+        }
+      });
+})
+</script>
+
+        </article>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1988641-2']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

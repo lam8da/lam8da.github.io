@@ -35,8 +35,9 @@ comments: yes
 - 163：<http://lambda2fei.blog.163.com/>
 - cppblog：<http://www.cppblog.com/lambda/>
 - baidu：<https://wenzhang.baidu.com/>
-  （之前是<http://hi.baidu.com/lambda2fei/blog/>，现已关闭）
-- qq空间：<http://user.qzone.qq.com/307186265/2>
+  （之前是<http://hi.baidu.com/lambda2fei/blog/>，现已被百度无情地关闭）
+- qq空间：<http://user.qzone.qq.com/>（qq号就省去了。。。）
+- 人人网：<http://www.renren.com/>（id就省去了。。。）
 
 所有这些站点现已废弃，所有博文将逐步转移到这个博客。
 

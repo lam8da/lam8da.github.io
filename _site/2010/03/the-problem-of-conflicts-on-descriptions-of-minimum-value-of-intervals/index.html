@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="lambda" />
+    <title>区间最小值描述的冲突性 | lambda</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link href="http://localhost:4000/feed/" rel="alternate" title="lambda" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link rel="stylesheet" href="/media/css/highlighter-rouge.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        "HTML-CSS": { scale: 80 },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>区间最小值描述的冲突性</h1>
+        </header>
+        <nav>
+        <span><a title="home page" class="" href="http://localhost:4000/">首页</a></span>
+        <span><a title="categories" class="" href="http://localhost:4000/categories/">分类</a></span>
+        <span><a title="tags" class="" href="http://localhost:4000/tags/">标签</a></span>
+        <span><a title="links" class="" href="http://localhost:4000/links/">链接</a></span>
+        <span><a title="about" class="" href="http://localhost:4000/about/">关于</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://localhost:4000/feed/">订阅</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<p>一个整点区间[1,RIGHT]，每个点都有一个值，每两个点的值都不一样。给n个描述，每个描述形如“区间[l,r]之间的最小值是x”。问这n个描述是否矛盾，如果矛盾则第一个发生矛盾的描述是第几条？</p>
+
+<p>显然，若给定任意m个描述，若能判断其是否矛盾，则可以通过二分法把问题转化成判别性问题。关键就在于如何判别是否矛盾。</p>
+
+<p>首先，由于每两个点的值都是不一样的，因此如果在两个不相交的区间内出现同一个最小值，则这肯定矛盾。这一步判别，在m个区间已经按最小值排好序的情况下，需要O(m)的时间，方法是每次测试两个最小值相同的区间是否嫩合并。</p>
+
+<p>如果通过了上述的判别，剩下来就是处理最小值不一样的区间之间的冲突性了。通过上述合并，具有相同最小值的区间可以合并成一个具有5个关键字的结构[l,r,L,R,val]，其中[l,r]表示所有具有最小值val的区间的交，[L,R]则表示并。此时val落在区间[l,r]里，而[l,r]包含于[L,R]。容易证明这一结构表示与多个均具有最小值val的区间的表示是等价的。因此接下来就判别这些具有不同val的结构的冲突性。为了方便，我们给这个结构起个名字，叫node。</p>
+
+<p>假设只有两个node，如何判别其是否冲突？设val小的一个是node1，另一个是node2。显然，当且仅当node1.[l,r]被node2.[L,R]覆盖时，矛盾才会产生；否则都可以找到一个属于node1而不属于node2的点，将其值置为node1.val即可。</p>
+
+<p>如果有3个，或者m个node呢？顺水推舟，可能想到的一种方法是对m个node两两做判别，时间复杂度为O(m^2)。但是实际上这是错误的。举个例子，有3个node，node1.val&lt;node2.val&lt;node3.val，但node1.[l,r]被node2.[L,R]和node3.[L,R]的并覆盖了，则这样也是矛盾的。因此，对于一个node，需要判别的，不仅仅是它与其他任何一个单独的node之间的矛盾性，而是它的[l,r]是否被val值比它大的node的[L,R]的并所覆盖。则这样可以确定一种判别顺序，即初始化一个空区间[1,RIGHT]，从val大的node开始，不断往区间里面覆盖[L,R]。如果找到一个node，其[l,r]被之前覆盖的[L,R]的并所覆盖，则矛盾，否则不矛盾。</p>
+
+<p>这个方法可以用归纳法证明是正确的。这里不再赘述。</p>
+
+<p>这种覆盖操作可以用线段树做到O(mlogn)，其中n=RIGHT。并查也许能做到更快。其实这题的原题是pku3657。需要离散化，离散化时也要注意，要对右端点+1（或左端点-1）之后再离散化，这是为了保证每个右端点到其右边最近的左端点之间至少有一个空位。否则如果原来有区间的[l,r]覆盖这个空位，离散化就会被无视并误认为矛盾。这是比较tricky的地方。</p>
+
+<p>推广1：如果描述的不是最小值而是最大值呢？扫描方向反过来做即可。</p>
+
+<p>推广2：如果描述改为“区间[l,r]之间的最小值是点x的值(l&lt;=x&lt;=r)”，该怎样做？如果你想到了，请联系我，我bg！</p>
+
+</section>
+<section class="meta">
+<span class="author">
+  <a href="http://lam8da.github.io">lambda</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2010-03-17">2010-03-17</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="http://localhost:4000/categories/#算法&数学" title="算法&数学">算法&数学</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="http://localhost:4000/tags/#Work in Progress" title="Work in Progress">Work in Progress</a>&nbsp;
+  
+  <a href="http://localhost:4000/tags/#二分法" title="二分法">二分法</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="comment">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'lambda'; // required: replace example with your forum shortname
+    var disqus_url = 'http://localhost:4000/2010/03/the-problem-of-conflicts-on-descriptions-of-minimum-value-of-intervals/';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+<script type="text/javascript">
+$(function() {
+    $(document).keydown(
+      function(e) {
+        if (e.target.nodeName.toUpperCase() != 'BODY') return;
+        var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+          
+            url = 'http://localhost:4000/2010/03/dilworth-theorem-about-chain-and-anti-chain/';
+          
+        } else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+          
+            url = 'http://localhost:4000/2010/03/three-dimemsional-longest-ascending-subsequence/';
+          
+        }
+        if (url) {
+          window.location = url;
+        }
+      });
+})
+</script>
+
+        </article>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1988641-2']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
