@@ -1,20 +1,161 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-11-29T23:11:28-08:00</updated><id>http://localhost:4000//</id><author><name>lambda</name></author><entry><title type="html">补胎和买车心得</title><link href="http://localhost:4000/2016/11/tire-repair/" rel="alternate" type="text/html" title="补胎和买车心得" /><published>2016-11-23T00:00:00-08:00</published><updated>2016-11-23T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/tire-repair</id><content type="html" xml:base="http://localhost:4000/2016/11/tire-repair/">&lt;p&gt;昨天中午出门时发现车胎瘪了，应该是前天出去买菜路上扎的（后来汽车还报警说低气压，可是一直没在意，因为很久没打气了可能刚好气压低过阈值）。在网上做了一晚功课，决定先去找家修理行修车胎，如果不行再去walmart活着costco换。最后今天早上折腾两个多小时终于在wheel works免费修好，写上一些经验和总结以备以后不时之需。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-12-21T17:28:14-08:00</updated><id>http://localhost:4000//</id><author><name>lambda</name></author><entry><title type="html">修割草机记</title><link href="http://localhost:4000/2016/12/lawn-mover-repair/" rel="alternate" type="text/html" title="修割草机记" /><published>2016-12-18T00:00:00-08:00</published><updated>2016-12-18T00:00:00-08:00</updated><id>http://localhost:4000/2016/12/lawn-mover-repair</id><content type="html" xml:base="http://localhost:4000/2016/12/lawn-mover-repair/"></content><author><name>lambda</name></author><category term="割草机" /><category term="自力更新" /><summary type="html"></summary></entry><entry><title type="html">回忆</title><link href="http://localhost:4000/2016/12/memory/" rel="alternate" type="text/html" title="回忆" /><published>2016-12-12T00:00:00-08:00</published><updated>2016-12-12T00:00:00-08:00</updated><id>http://localhost:4000/2016/12/memory</id><content type="html" xml:base="http://localhost:4000/2016/12/memory/"></content><author><name>lambda</name></author><category term="Work in Progress" /><summary type="html"></summary></entry><entry><title type="html">美国出生宝宝办各种证件心得 - CA</title><link href="http://localhost:4000/2016/12/baby-us-documents/" rel="alternate" type="text/html" title="美国出生宝宝办各种证件心得 - CA" /><published>2016-12-02T00:00:00-08:00</published><updated>2016-12-02T00:00:00-08:00</updated><id>http://localhost:4000/2016/12/baby-us-documents</id><content type="html" xml:base="http://localhost:4000/2016/12/baby-us-documents/">&lt;ol&gt;
+  &lt;li&gt;出生证和ssn：在医院出生当天就会有专员来让填表，马上就可以申请county clerk recorder开具的出生证，以及ssn。出生证一般6周左右能邮寄到家，ssn会早点。&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;出生证州务卿认证：出生证到了以后就可以为出生证办理州务卿认证，参考&lt;a href=&quot;http://www.sos.ca.gov/notary/authentication/&quot;&gt;官方网站&lt;/a&gt;，我准备的材料如下（邮寄）：&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;出生证原件。不接受复印件。&lt;/li&gt;
+      &lt;li&gt;附信说明将要去哪个国家使用。（网上说这会决定是使用附加证明书还是普通的认证）&lt;/li&gt;
+      &lt;li&gt;$20的支票（收款人必须是 Secretary of State）&lt;/li&gt;
+      &lt;li&gt;包含地址的返程信封（我用的预付费的priority mail）&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;我的附信是这样写的：&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;To Certification Desk - Office of the Secretary of State,&lt;/p&gt;
+
+      &lt;p&gt;I would like to request for certification of my son/daughter, XXX’s
+birth certificate, issued by Santa Clara County Clerk-Recorder, for use with
+China’s consulate in San Francisco.&lt;/p&gt;
+
+      &lt;p&gt;Enclosed contents in this mail:&lt;/p&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Original copy of birth certificate, issued by Santa Clara County Clerk-Recorder&lt;/li&gt;
+        &lt;li&gt;A check of $20.&lt;/li&gt;
+        &lt;li&gt;This letter.&lt;/li&gt;
+        &lt;li&gt;A self-addressed envelope for return mail.&lt;/li&gt;
+      &lt;/ul&gt;
+
+      &lt;p&gt;Sincerely yours,&lt;/p&gt;
+
+      &lt;p&gt;[手动签名和日期]&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;然后很恶心的是，usps几乎把我的包裹搞丢了！打了n个投诉电话未果后决定自己去首府跑一趟（过程非常曲折，看年终总结）。准备的东西只要出生证原件就行，现场先填一张申请表，最后用visa支付，立马就能拿到结果。顺道提一句，路上有meter路上有meter路上有meter，不要泊车忘给钱！！！&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;护照：我们去USPS办的，地址在&lt;a href=&quot;https://www.google.com/maps/place/37010+Dusterberry+Way,+Fremont,+CA+94536/@37.5558872,-122.0157803,17z/data=!3m1!4b1!4m5!3m4!1s0x808fbf9f3081fa69:0x265d42f0a7cb5dc0!8m2!3d37.555883!4d-122.0135916&quot;&gt;37010 DUSTERBERRY WAY, FREMONT, CA, 94536&lt;/a&gt;。不用预约，先到先服务。我们办的时候同时把上述认证材料寄出，就省得以后再跑一趟了。准备的材料如下：&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;2inch x 2inch护照照片&lt;/li&gt;
+      &lt;li&gt;出生证原件。不接受复印件。他们会拿走原件，但是说办完会随信退回来。事后是护照先寄回来，后来出生证再退回来了，两个不同的邮件。&lt;/li&gt;
+      &lt;li&gt;父母双方的id。我们用的自己的中国护照，办事人员拿去复印了。&lt;/li&gt;
+      &lt;li&gt;父母需要在场。&lt;/li&gt;
+      &lt;li&gt;DS-11表格。我们事先填好但是办事人员说有点小问题于是在场领一份重新填了。&lt;/li&gt;
+      &lt;li&gt;visa信用卡用来交钱，交多少钱视加急与否、办护照卡与否而定。&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;更多资料在这里：&lt;a href=&quot;https://travel.state.gov/content/passports/en/passports/apply.html&quot;&gt;https://travel.state.gov/content/passports/en/passports/apply.html&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;出生证领事认证：这个在三藩总领馆办理（门口每天都有法轮功宣传那个），参考&lt;a href=&quot;http://www.chinaconsulatesf.org/chn/qianzhen/gzrz/t1236894.htm&quot;&gt;官方网站&lt;/a&gt;。要准备的东西有：&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;州务卿认证过的出生证原件及复印件&lt;/li&gt;
+      &lt;li&gt;父母护照原件和复印件（需要带照片资料页和最新的visa页复印件）&lt;/li&gt;
+      &lt;li&gt;小孩美国护照原件和复印件（需要带照片资料页）&lt;/li&gt;
+      &lt;li&gt;填好的《中华人民共和国驻外使领馆公证认证申请表》表格一份。填表要注意：
+        &lt;ul&gt;
+          &lt;li&gt;国籍写中国。写美国你就悲剧了&lt;/li&gt;
+          &lt;li&gt;身份证件写美国护照的信息&lt;/li&gt;
+          &lt;li&gt;出生地写美国的城市加州名，比如San Jose, CA&lt;/li&gt;
+          &lt;li&gt;公证，认证的内容一栏写：出生公证（领事认证）&lt;/li&gt;
+          &lt;li&gt;公证，认证的使用目的一栏写：随父母回国定居落户&lt;/li&gt;
+          &lt;li&gt;提交材料及申办公证认证的份数一栏写：经州务卿认证的出生证 1份&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;如果忘记复印的话在旧金山领馆有投币复印机，25美分一张纸，只收硬币。如果忘带硬币的话拿纸币找工作人员换。如果纸币也忘带的话。。。
+办理好后拿到一个取件凭证，过几天再回去取件，取件时再交钱，可以用visa。这些都与办旅行证（下文）相同。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;旅行证：参考&lt;a href=&quot;http://www.chinaconsulatesf.org/chn/qianzhen/fzlxz&quot;&gt;官网&lt;/a&gt;。父母和小孩都要到场，在办理时工作人员会要求看小孩一眼才签名。&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;《中华人民共和国护照/旅行证/回国证明申请表》&lt;/li&gt;
+      &lt;li&gt;父母在美合法居留文件及复印件，比如I-797&lt;/li&gt;
+      &lt;li&gt;父母中国护照及复印件，复印件要包括带照片资料页，所有签证页，所有出入中国、美国国境的出入境章&lt;/li&gt;
+      &lt;li&gt;父母结婚证及复印件&lt;/li&gt;
+      &lt;li&gt;小孩的美国出生证原件及复印件&lt;/li&gt;
+      &lt;li&gt;小孩美国护照及复印件，复印件要包括带照片资料页，所有签证页，所有出入中国、美国国境的出入境章&lt;/li&gt;
+      &lt;li&gt;小孩照片4+1张。其中1张贴申请表，额外4张交进去。&lt;/li&gt;
+      &lt;li&gt;如果小孩之前曾经办过旅行证这次是过期换领新证，则旧旅行证的原件和复印件都要带上。原件会被收走。复印件要包括带照片资料页和所有出入境盖章页。&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;填表时要注意：&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;拼音姓名要和美国护照上英文名一样。不需要和中文名拼音一致。例如英文名是Mike San Zhang，其中San是middle name，则英文姓写Zhang，英文名写Mike San。&lt;/li&gt;
+      &lt;li&gt;出生地点写出生州，比如California&lt;/li&gt;
+      &lt;li&gt;原证件情况：如果之前办理过旅行证这次是过期换领新证，就写之前旅行证的信息，否则不要填。不要写小孩美国护照的信息（你写了他也会将其擦除）&lt;/li&gt;
+      &lt;li&gt;国内户籍地址需要填写国内地址（写亲戚的没关系）联系人姓名和电话都需要填写&lt;/li&gt;
+      &lt;li&gt;是否加入外国籍或持有外国护照这里，外国国籍选否，外国护照选是。需说明情况就写“小孩在国外出生”&lt;/li&gt;
+      &lt;li&gt;申请人签名需要父母两个人都签字&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;其他流程和办理领事认证类似。&lt;/p&gt;
+
+    &lt;blockquote class=&quot;lambda_question&quot;&gt;
+      &lt;p&gt;问：每个旅行证貌似必须回过一次才能renew，否则过期了也不能renew？&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.sina.com.cn/s/blog_696aea200101g3n7.html&quot;&gt;给美国宝宝办理护照旅行证以及出生证公证认证攻略&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://b.henryzhou.com/index.php/2014/04/american_born_kid_chinese_travel_documents/&quot;&gt;美国生华裔小孩在中国驻旧金山领馆办理旅行证和领事认证流程&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.delphij.net/wiki/kb/usa/california/sos_certification&quot;&gt;办理加州州务卿认证&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.delphij.net/wiki/kb/usa/prc/sfconsulate/traveldocument&quot;&gt;美国出生的中国公民子女办理中华人民共和国旅行证&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.delphij.net/wiki/kb/usa/prc/sfconsulate/cc&quot;&gt;领事认证&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>lambda</name></author><category term="Work in Progress" /><summary type="html">出生证和ssn：在医院出生当天就会有专员来让填表，马上就可以申请county clerk recorder开具的出生证，以及ssn。出生证一般6周左右能邮寄到家，ssn会早点。
+  
+    出生证州务卿认证：出生证到了以后就可以为出生证办理州务卿认证，参考官方网站，我准备的材料如下（邮寄）：
+
+    
+      出生证原件。不接受复印件。
+      附信说明将要去哪个国家使用。（网上说这会决定是使用附加证明书还是普通的认证）
+      $20的支票（收款人必须是 Secretary of State）
+      包含地址的返程信封（我用的预付费的priority mail）</summary></entry><entry><title type="html">2016年终总结</title><link href="http://localhost:4000/2016/11/2016-summary/" rel="alternate" type="text/html" title="2016年终总结" /><published>2016-11-30T00:00:00-08:00</published><updated>2016-11-30T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/2016-summary</id><content type="html" xml:base="http://localhost:4000/2016/11/2016-summary/">&lt;p&gt;大事记：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;老婆怀上小千金Zoey。整个过程真是一种折磨，首先是老婆换上肺炎，然后baby检查出是two vessel cord，老婆一直担心，一直不停做检查。期间还要搞买房各种破事。后来岳父过来帮忙总算好一点。最后宝宝在11月顺利出生，现在母女平安！&lt;/li&gt;
+  &lt;li&gt;升职加薪，工作真的好累的说！&lt;/li&gt;
+  &lt;li&gt;买房：我就搞不明白了就一破房为什么还这么多人抢！&lt;/li&gt;
+  &lt;li&gt;买新车！&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;小事记：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;学会修割草机（汽油式）&lt;/li&gt;
+  &lt;li&gt;在Sacramento吃了一个parking ticket，心有不甘啊&lt;/li&gt;
+  &lt;li&gt;白跑了一趟Sacramento：本来以为狗日的usps把我的包裹弄丢了，打了n个投诉电话未果，最后决定自己跑一趟，单程2小时来回4小时！停车时还吃了个ticket！排队办理时柜台电脑还坏了！这还算了，结果当天下午回件就寄到家里，心中无数个草泥马狂奔而过啊！一路上很冷，外面都是大雾飘飘，田里都是冰霜，本来还想去首府的usps邮局问清楚的，后来因为时间关系就放过了它。&lt;/li&gt;
+  &lt;li&gt;收到了爷爷奶奶姑姑国内寄来的给Aaron的书&lt;/li&gt;
+  &lt;li&gt;旧车扎了个钉子，做了大量功课后找修车厂免费修好，并学会怎样做应急处理&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;看过的书：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;时间的形状&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;学到的技术：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;paxos&lt;/li&gt;
+  &lt;li&gt;bitcoin&lt;/li&gt;
+  &lt;li&gt;jekyll &amp;amp; github pages&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>lambda</name></author><category term="生活" /><category term="年终总结" /><summary type="html">大事记：</summary></entry><entry><title type="html">补胎心得</title><link href="http://localhost:4000/2016/11/tire-repair/" rel="alternate" type="text/html" title="补胎心得" /><published>2016-11-23T00:00:00-08:00</published><updated>2016-11-23T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/tire-repair</id><content type="html" xml:base="http://localhost:4000/2016/11/tire-repair/">&lt;p&gt;昨天中午出门时发现车胎瘪了，应该是前天出去买菜路上扎的（后来汽车还报警说低气压，可是一直没在意，因为很久没打气了可能刚好气压低过阈值）。在网上做了一晚功课，决定先去找家修理行修车胎，如果不行再去walmart活着costco换。最后今天早上折腾两个多小时终于在wheel works免费修好，写上一些经验和总结以备以后不时之需。&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;去修理店，如果前台问扎了哪里，不要说扎在边缘上（即使真的离边缘很近），否则老板直接会说修不了建议换胎。总之，避免回答出任何可能导致老板建议换胎的答案。这样做的好处是：有机会把车子让修理师傅看一下，他说不能修才是不能修（这个不是前台说了算的因为他也不懂修，他的最终目的就是换胎赚你钱）&lt;/li&gt;
   &lt;li&gt;车子常备一个手动打气筒（电动的应该也行，但我担心电动的由于各种原因在特发情况下不work，手动的应该总是能work的）&lt;/li&gt;
   &lt;li&gt;个人觉得那些应急自救包（例如某种神喷射剂，需要自己拔出钉子往里喷，可以坚持好一会的那种；又例如手工修理包，walmart很便宜几块钱那种）貌似没什么用。如果不是专家或有经验，发现被扎后千万不要拔钉，最好打气看看漏得严不严重，如果不严重可以直接开到修理店修。如果拔钉，有可能自救包修不好，就只能千斤顶了；马路上太危险，要么就花（几百块？）叫个拖车？当然，买个应急包还是有用的，万一漏气很严重呢？要把所有可能都想到。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;另附上之前买车的心得：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;在truecar上找个quote，找到所有match该价格的买家&lt;/li&gt;
-  &lt;li&gt;第一家看车一定不能选你最想买的那家：你要先了解情况，试驾，试探市场情况和卖家的情况。这样去下一家的时候心里有数。当然你还是要狠狠的砍价，往比truecar低（例如好几百）的价格砍。注意，truecar也是被他们控制了的。&lt;/li&gt;
-  &lt;li&gt;找好一个贷款银行，写个preapproval letter，不然车行的利率会很难看（他们可以控制利率）&lt;/li&gt;
-  &lt;li&gt;砍价或者下offer时不要说你手头上有preapproval
-letter，否则当卖家得知自己不能控制利率可能就不会同意更低的价格&lt;/li&gt;
-  &lt;li&gt;dealer签字时推荐你的各种优惠package不要买（当然除非你非常有必要），他们就是想忽悠你赚钱&lt;/li&gt;
 &lt;/ol&gt;</content><author><name>lambda</name></author><category term="汽车" /><summary type="html">昨天中午出门时发现车胎瘪了，应该是前天出去买菜路上扎的（后来汽车还报警说低气压，可是一直没在意，因为很久没打气了可能刚好气压低过阈值）。在网上做了一晚功课，决定先去找家修理行修车胎，如果不行再去walmart活着costco换。最后今天早上折腾两个多小时终于在wheel works免费修好，写上一些经验和总结以备以后不时之需。</summary></entry><entry><title type="html">读《时间的形状：相对论史话》</title><link href="http://localhost:4000/2016/11/shape-of-time-notes/" rel="alternate" type="text/html" title="读《时间的形状：相对论史话》" /><published>2016-11-20T00:00:00-08:00</published><updated>2016-11-20T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/shape-of-time-notes</id><content type="html" xml:base="http://localhost:4000/2016/11/shape-of-time-notes/">&lt;p&gt;这本书的逻辑性很好，从历史的角度介绍了经典物理学在20世纪初遇到的难题以及新理论的提出的过程，让非专业读者都能理解相对论的基本内容。&lt;/p&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;第一章 不得不说的废话&lt;/h2&gt;
@@ -267,7 +408,66 @@ colorful html representations. E.g.&lt;/p&gt;
       &lt;td&gt;f&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>lambda</name></author><category term="未分类" /><summary type="html"></summary></entry><entry><title type="html">拜占庭将军问题</title><link href="http://localhost:4000/2014/03/byzantine-general-problem/" rel="alternate" type="text/html" title="拜占庭将军问题" /><published>2014-03-08T00:00:00-08:00</published><updated>2014-03-08T00:00:00-08:00</updated><id>http://localhost:4000/2014/03/byzantine-general-problem</id><content type="html" xml:base="http://localhost:4000/2014/03/byzantine-general-problem/">&lt;p&gt;工作之余，花了一周的几乎每个晚上把Lamport神的那篇有关拜占庭将军问题的文章看完了。在这里做下笔记。&lt;/p&gt;
+&lt;/table&gt;</content><author><name>lambda</name></author><category term="未分类" /><summary type="html"></summary></entry><entry><title type="html">买车心得</title><link href="http://localhost:4000/2016/09/buying-car-experience/" rel="alternate" type="text/html" title="买车心得" /><published>2016-09-24T00:00:00-07:00</published><updated>2016-09-24T00:00:00-07:00</updated><id>http://localhost:4000/2016/09/buying-car-experience</id><content type="html" xml:base="http://localhost:4000/2016/09/buying-car-experience/">&lt;p&gt;这天买了辆CRV，还算顺利，跟Anderson Honda讨价还价最后砍了100刀，不算很多，但是成交价也还说得过去。本文是后来补的买车心得。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;在truecar和&lt;a href=&quot;http://usnews.rankingsandreviews.com/cars-trucks/&quot;&gt;http://usnews.rankingsandreviews.com/cars-trucks/&lt;/a&gt;上找个quote，找到所有match该价格的买家&lt;/li&gt;
+  &lt;li&gt;第一家看车一定不能选你最想买的那家：你要先了解情况，试驾，试探市场情况和卖家的情况。这样去下一家的时候心里有数。当然你还是要狠狠的砍价，往比truecar低（例如好几百）的价格砍。注意，truecar也是被他们控制了的。&lt;/li&gt;
+  &lt;li&gt;找好一个贷款银行，写个preapproval letter，不然车行的利率会很难看（他们可以控制利率）&lt;/li&gt;
+  &lt;li&gt;砍价或者下offer时不要说你手头上有preapproval
+letter，否则当卖家得知自己不能控制利率可能就不会同意更低的价格&lt;/li&gt;
+  &lt;li&gt;dealer签字时推荐你的各种优惠package不要买（当然除非你非常有必要），他们就是想忽悠你赚钱&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;附上买车前做功课的一些记录，有些很搞笑：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;minivan, aka Loser’s Cruiser / Loser’s People Mover。&lt;/li&gt;
+  &lt;li&gt;经济条件尚可的家庭，谁会不顾全家性命去买minivan？即使上不起8万块的凯雷德或奔驰GL，上5万块的傻笨笨、TAHOE总行吧，再不济上个3万5的大卵狗也成啊。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.weiming.info/zhuti/Automobile/35183725/&quot;&gt;http://www.weiming.info/zhuti/Automobile/35183725/&lt;/a&gt;被提及的几款以及相关的有：
+    &lt;ul&gt;
+      &lt;li&gt;Sequoia&lt;/li&gt;
+      &lt;li&gt;XC90 , msrp $49K&lt;/li&gt;
+      &lt;li&gt;Explorer&lt;/li&gt;
+      &lt;li&gt;Land Cruiser (LC)&lt;/li&gt;
+      &lt;li&gt;Mercedes Metris, Passenger Van, 6700 pounds,starting at $32K&lt;/li&gt;
+      &lt;li&gt;durango&lt;/li&gt;
+      &lt;li&gt;acadia&lt;/li&gt;
+      &lt;li&gt;pilot&lt;/li&gt;
+      &lt;li&gt;Compact SUV: Forester, RAV4, CRV, CX&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;各个级别里安全性最好的车
+    &lt;ol&gt;
+      &lt;li&gt;Subcompact Sedan : Yaris 丰田鸭梨屎 – 毫无争议的第一名。&lt;/li&gt;
+      &lt;li&gt;Compact Sedan: Corrola 丰田烤骡拉 – 省油、省心(一车人一起死，一了百了)&lt;/li&gt;
+      &lt;li&gt;Midsize Sedan: Camry 丰田假美丽– 自动加速、极致吸能&lt;/li&gt;
+      &lt;li&gt;Fullsize Sedan: Avalon 丰田阿瓦隆 – 平装版Lexus ES&lt;/li&gt;
+      &lt;li&gt;Compact SUV: RAV4 丰田锐福 – 拉皮内增高版烤骡拉，平装版Lexus NX&lt;/li&gt;
+      &lt;li&gt;Midsize SUV: Pilot 本田飞行员 – 失控、翻车、头对头，不落下风；安全气囊射金属片。&lt;/li&gt;
+      &lt;li&gt;Fullsize SUV: Sequoia 丰田四颗牙儿 – 自动加速、刹车失灵、气囊不弹、皮薄馅大。&lt;/li&gt;
+      &lt;li&gt;Minivan: Sienna 丰田吸爷那儿 – 烤骡拉EX拉皮版，自动加速、刹车失灵、气囊不弹、皮薄馅大外加高速行驶过程中自动开电动侧门&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.weiming.info/zhuti/Automobile/32865349/&quot;&gt;http://www.weiming.info/zhuti/Automobile/32865349/&lt;/a&gt;提到的一些车的问题：
+    &lt;ul&gt;
+      &lt;li&gt;explorer 操纵性不行。&lt;/li&gt;
+      &lt;li&gt;丰田highlander爬坡不行&lt;/li&gt;
+      &lt;li&gt;pilot噪声大，油耗高，transmission问题多。&lt;/li&gt;
+      &lt;li&gt;大切洛基内部空间没有丢卵狗大。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;其他一些链接
+    &lt;ul&gt;
+      &lt;li&gt;http://www.gjczz.com/p/UVHxVFiX/2016kuan-san-pai-suvshi-jia-ti-yan-durango-explorer-acadia/&lt;/li&gt;
+      &lt;li&gt;http://www.weiming.info/zhuti/Automobile/35353379/&lt;/li&gt;
+      &lt;li&gt;http://mitbbstop.blogspot.com/2015/04/compact-suv-experience-with-forester.html&lt;/li&gt;
+      &lt;li&gt;http://carsort.com/compare-cars&lt;/li&gt;
+      &lt;li&gt;http://www.autoguide.com/new-cars/compare.html&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;什么SUV最安全？来自美国IIHS的报告&lt;a href=&quot;http://shuoke.autohome.com.cn/article/9410.html&quot;&gt;http://shuoke.autohome.com.cn/article/9410.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>lambda</name></author><category term="汽车" /><summary type="html">这天买了辆CRV，还算顺利，跟Anderson Honda讨价还价最后砍了100刀，不算很多，但是成交价也还说得过去。本文是后来补的买车心得。</summary></entry><entry><title type="html">拜占庭将军问题</title><link href="http://localhost:4000/2014/03/byzantine-general-problem/" rel="alternate" type="text/html" title="拜占庭将军问题" /><published>2014-03-08T00:00:00-08:00</published><updated>2014-03-08T00:00:00-08:00</updated><id>http://localhost:4000/2014/03/byzantine-general-problem</id><content type="html" xml:base="http://localhost:4000/2014/03/byzantine-general-problem/">&lt;p&gt;工作之余，花了一周的几乎每个晚上把Lamport神的那篇有关拜占庭将军问题的文章看完了。在这里做下笔记。&lt;/p&gt;
 
 &lt;p&gt;个人觉得最难懂的就是OM算法，我将它理解成一个动态规划：&lt;/p&gt;
 
@@ -959,632 +1159,4 @@ colorful html representations. E.g.&lt;/p&gt;
   &lt;li&gt;结构型：可让你把类或对象组合到更大的结构中。包括：Decorator、Proxy、Composite、Façade、Flyweight、Bridge、Adapter&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;反模式告诉你如何采用一个不好的解决方案解决一个问题，告诉你为何这个方案从长远看会造成不好的影响，警告你不要陷入某种致命的诱惑，建议你改用其他的模式以提供更好的解决方案。&lt;/p&gt;</content><author><name>lambda</name></author><category term="设计模式" /><category term="读书笔记" /><summary type="html"></summary></entry><entry><title type="html">《Head First设计模式》读书笔记（上）- 设计原则</title><link href="http://localhost:4000/2013/09/head-first-design-pattern-notes1/" rel="alternate" type="text/html" title="《Head First设计模式》读书笔记（上）- 设计原则" /><published>2013-09-20T00:00:00-07:00</published><updated>2013-09-20T00:00:00-07:00</updated><id>http://localhost:4000/2013/09/head-first-design-pattern-notes1</id><content type="html" xml:base="http://localhost:4000/2013/09/head-first-design-pattern-notes1/">&lt;ol id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;封装变化&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;针对接口编程，而不是针对实现编程&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;多用组合，少用继承&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-3&quot; id=&quot;markdown-toc-section-3&quot;&gt;为了交互对象之间的松耦合设计而努力&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-4&quot; id=&quot;markdown-toc-section-4&quot;&gt;类应该对扩展开放，对修改关闭&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-5&quot; id=&quot;markdown-toc-section-5&quot;&gt;要依赖抽象，不要依赖具体类&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-6&quot; id=&quot;markdown-toc-section-6&quot;&gt;最小知识原则&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-7&quot; id=&quot;markdown-toc-section-7&quot;&gt;好莱坞原则&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-8&quot; id=&quot;markdown-toc-section-8&quot;&gt;应尽量让每个类保持单一责任&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;封装变化&lt;/h2&gt;
-
-&lt;p&gt;找出应用中可能需要变化之处，把它们独立出来（并封装起来），不要和那些不要变化的代码混在一起。&lt;/p&gt;
-
-&lt;p&gt;如果每次新的需求一来，都会使某方面的代码发生变化，那么你就可以确定，这部分的代码需要被抽出来，和其他稳定的代码有所区分&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;针对接口编程，而不是针对实现编程&lt;/h2&gt;
-
-&lt;p&gt;以前的做法是：行为来自超类的具体实现，或是继承某个接口并由子类自行实现而来。这两种做法都是依赖于“实现”，我们被实现绑得死死的，没办法更改行为（除非写更多代码）。&lt;/p&gt;
-
-&lt;p&gt;“针对接口编程”真正的意思是“针对超类型（supertype）编程”，货可以更明确地说成“变量的声明类型应该是超类型，通常是一个抽象类或者是一个接口”。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;多用组合，少用继承&lt;/h2&gt;
-
-&lt;p&gt;良好的OO设计必须具备可复用、可扩充、可维护三个特性。大多数的模式都允许系统局部改变独立于其他部分&lt;/p&gt;
-
-&lt;h2 id=&quot;section-3&quot;&gt;为了交互对象之间的松耦合设计而努力&lt;/h2&gt;
-
-&lt;h2 id=&quot;section-4&quot;&gt;类应该对扩展开放，对修改关闭&lt;/h2&gt;
-
-&lt;h2 id=&quot;section-5&quot;&gt;要依赖抽象，不要依赖具体类&lt;/h2&gt;
-
-&lt;p&gt;依赖倒置原则（Dependency Inversion Principle）：不能让高层组件依赖低层组件，而且，不管高层或低层组件，两者都应该依赖于抽象。所谓高层组件，是由其他低层组件定义其行为的类。&lt;/p&gt;
-
-&lt;p&gt;一下指导方针能帮助避免在OO设计中违反依赖倒置原则：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;变量不可以持有具体类的引用&lt;/li&gt;
-  &lt;li&gt;不要让类派生自具体类&lt;/li&gt;
-  &lt;li&gt;不要覆盖基类中已实现的方法（如果覆盖基类已实现的方法，那么你的基类就不是一个真正适合被继承的抽象。基类中已实现的方法，应该由所有的子类共享）&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-6&quot;&gt;最小知识原则&lt;/h2&gt;
-
-&lt;p&gt;减少对象之间的交互，不要让太多的类耦合在一起。&lt;/p&gt;
-
-&lt;p&gt;指导方针：就任何对象而言，在该对象的方法内，我们只应该调用属于以下范围的方法：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;该对象本身&lt;/li&gt;
-  &lt;li&gt;被当做方法的参数而传进来的对象&lt;/li&gt;
-  &lt;li&gt;此方法所创建或实例化的任何对象&lt;/li&gt;
-  &lt;li&gt;对象的任何组件（Has-A）&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;注意，如果某对象是调用其他方法的返回结果，不要调用该对象的方法！&lt;/p&gt;
-
-&lt;h2 id=&quot;section-7&quot;&gt;好莱坞原则&lt;/h2&gt;
-
-&lt;p&gt;别调用（打电话给）我们，我们会调用（打电话给）你（将决策权放在高层模块中）。&lt;/p&gt;
-
-&lt;p&gt;例如模板方法模式中，低层组件绝对不可以直接调用高层组件。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-8&quot;&gt;应尽量让每个类保持单一责任&lt;/h2&gt;
-
-&lt;p&gt;因为一个类应该只有一个引起变化的原因。类的每个责任都有改变的潜在区域，超过一个责任，意味着超过一个改变的区域。如果一个类具有两个改变的原则，那么这会使得将来该类变化的几率上升；而当它真的改变时，你的设计中同时有两个方面将受到影响。&lt;/p&gt;
-
-&lt;p&gt;术语：&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;内聚（cohesion）：用来度量一个类或模块紧密地达到单一目的或责任&lt;/li&gt;
-  &lt;li&gt;高内聚：一个模块/类被设计成只支持一组相关功能&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>lambda</name></author><category term="设计模式" /><category term="读书笔记" /><summary type="html"></summary></entry><entry><title type="html">《C++ Primer》读书笔记（第17-18章完）</title><link href="http://localhost:4000/2013/09/c++-primer-notes-chapter17to18/" rel="alternate" type="text/html" title="《C++ Primer》读书笔记（第17-18章完）" /><published>2013-09-20T00:00:00-07:00</published><updated>2013-09-20T00:00:00-07:00</updated><id>http://localhost:4000/2013/09/c++-primer-notes-chapter17to18</id><content type="html" xml:base="http://localhost:4000/2013/09/c++-primer-notes-chapter17to18/">&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;第17章 用于大型程序的工具&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;第18章 特殊工具与技术&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;!--  Not show line_numbers  --&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;第17章 用于大型程序的工具&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;承诺不抛出任何异常的方法：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;命名空间别名（像定义变量一样）：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// n2是一个已定义的命名空间
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;屏蔽命名空间名字规则的一个重要例外：接受类类型形参（或类类型指针及引用形参）的函数（包括重载操作符），以及与类本身定义在同一命名空间中的函数（包括重载操作符），在用类类型对象（或类类型的引用及指针）作为实参的时候是可见的。如：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;getline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// ok
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;当compiler看到&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;getline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;时，它在当前作用域、包含调用的作用域以及定义&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt;&lt;/code&gt;和&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;/code&gt;的命名空间中查找匹配的函数。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;在最底层派生类的构造函数中，c++会首先初始化虚基类；在初始化中间层派生类时，忽略它们对虚基类的初始化。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;第18章 特殊工具与技术&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;c++提供以下两种方法分配和释放未构造的原始内存：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;allocator&lt;/span&gt;&lt;/code&gt;类；标准库中的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;/code&gt;和&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt;&lt;/code&gt;。&lt;/li&gt;
-  &lt;li&gt;c++还提供不同的方法在原始内存中构造和撤销对象：
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;allocator&lt;/span&gt;&lt;/code&gt;类的construct和destroy成员&lt;/li&gt;
-      &lt;li&gt;定位&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;/code&gt;表达式（placement new expression）接受指向未构造内存的指针，并在该空间中初始化一个对象或一个数组&lt;/li&gt;
-      &lt;li&gt;可直接调用对象的析构函数来撤销对象。运行析构函数并不释放所在内存&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;uninitialized_fill&lt;/span&gt;&lt;/code&gt;和&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;uninitiated_copy&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;/code&gt;/&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt;&lt;/code&gt;接口（只分配/释放空间，不构造/析构）：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;size_t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[](&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;size_t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[](&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;定位&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;/code&gt;表达式（在已分配但未构造的内存中初始化对象）：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;place_address&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;place_address&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;initializer_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;其中&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;place_address&lt;/span&gt;&lt;/code&gt;是指针，&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;initializer_list&lt;/span&gt;&lt;/code&gt;是初始化列表。
-例如：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;allocator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;construct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 复制构造
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;可以改为：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;allocator&lt;/span&gt;&lt;/code&gt;的construct只能使用复制构造，但定位&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;/code&gt;表达式可以使用任何构造函数&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;allocator&lt;/span&gt;&lt;/code&gt;的方法和低级操作的对应关系：
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;allocate&lt;/span&gt;&lt;/code&gt;   &amp;lt;==&amp;gt; &lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;deallocate&lt;/span&gt;&lt;/code&gt; &amp;lt;==&amp;gt; &lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;construct&lt;/span&gt;&lt;/code&gt;  &amp;lt;==&amp;gt; 定位&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;/code&gt;表达式&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;destroy&lt;/span&gt;&lt;/code&gt;    &amp;lt;==&amp;gt; 直接调用析构函数如：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;~&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;对于语句&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;initialized&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;实际上发生三件事：
-    &lt;ol&gt;
-      &lt;li&gt;调用&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;/code&gt;分配内存。如果&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;/code&gt;没被重载，就调用标准库中的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;/code&gt;。&lt;/li&gt;
-      &lt;li&gt;运行该类型的一个构造函数，在上一个步骤分配的内存中初始化之&lt;/li&gt;
-      &lt;li&gt;返回该对象的指针&lt;/li&gt;
-    &lt;/ol&gt;
-
-    &lt;p&gt;而&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;实际上发生两件事：&lt;/p&gt;
-    &lt;ol&gt;
-      &lt;li&gt;对&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;sp&lt;/span&gt;&lt;/code&gt;指向的对象运行适当的析构函数&lt;/li&gt;
-      &lt;li&gt;调用名为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt;&lt;/code&gt;的标准库函数释放内存&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;我们可以为一个类&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;/code&gt;定义它特定的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;/code&gt;/&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt;&lt;/code&gt;（称为“成员&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;/code&gt;/&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt;&lt;/code&gt;”）或&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;/code&gt;/&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;/code&gt;函数，改变&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;/code&gt;表达式的行为：
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;
-  &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 调用自定义版本
-&lt;/span&gt; &lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;
-  &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;obj1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 调用标准库版本
-&lt;/span&gt; &lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;成员&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt;&lt;/code&gt;有两种定义：
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;size_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sz&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;其中&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;/code&gt;形参由&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt;&lt;/code&gt;表达式用被&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt;&lt;/code&gt;的指针初始化，&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;size_t&lt;/span&gt;&lt;/code&gt;由编译器用第一个形参所指对象的字节大小自动初始化。&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;size_t&lt;/span&gt;&lt;/code&gt;一般用于继承层次，根据&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;virtual&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;/code&gt;指向的对象的大小确定。类似地，成员&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;/code&gt;也有两种定义。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;成员&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt;&lt;/code&gt;/&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt;&lt;/code&gt;函数隐式地为静态函数，不必显式地将它们声明为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt;&lt;/code&gt;，虽然这样做是合法的。&lt;/li&gt;
-  &lt;li&gt;运行时类型识别（RTTI）：
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;typeid&lt;/span&gt;&lt;/code&gt;操作符：返回动态类型信息（当类型有虚函数时）或静态的、编译时的类型信息（以&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;type_info&lt;/span&gt;&lt;/code&gt;对象的形式返回）&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;dynamic_cast&lt;/span&gt;&lt;/code&gt;操作符的用法：
-        &lt;ul&gt;
-          &lt;li&gt;
-            &lt;p&gt;作用于指针&lt;/p&gt;
-
-            &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Derived&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dptr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;dynamic_cast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Derived&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;base_ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-            &lt;/div&gt;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;p&gt;作用于引用&lt;/p&gt;
-
-            &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;Derived&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;dynamic_cast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Derived&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bad_cast&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-            &lt;/div&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;成员指针（pointer to member）：
-    &lt;ul&gt;
-      &lt;li&gt;数据成员的指针：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;Type&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;成员函数的指针：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;Type&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arg_type_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;类的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt;&lt;/code&gt;成员不需要特殊语法来指向，其指针就是普通指针&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;成员指针的使用（&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;/code&gt;和&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;*&lt;/span&gt;&lt;/code&gt;操作符）：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cobj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cobj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arg_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cptr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ptr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arg_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;关于嵌套类：
-    &lt;ul&gt;
-      &lt;li&gt;嵌套在类模板内部的类是模板&lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;在外围类外部定义嵌套类的方法：&lt;/p&gt;
-
-        &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Outer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Inner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;cm&quot;&gt;/* forward declaration */&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Outer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Inter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* definition */&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;固有的不可移植的特性包括：位域、&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;volatile&lt;/span&gt;&lt;/code&gt;限定符、链接指示（如&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;extern&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;C&quot;&lt;/span&gt;&lt;/code&gt;等）。&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>lambda</name></author><category term="c++" /><category term="读书笔记" /><summary type="html"></summary></entry><entry><title type="html">《C++ Primer》读书笔记（第16章）</title><link href="http://localhost:4000/2013/09/c++-primer-notes-chapter16/" rel="alternate" type="text/html" title="《C++ Primer》读书笔记（第16章）" /><published>2013-09-20T00:00:00-07:00</published><updated>2013-09-20T00:00:00-07:00</updated><id>http://localhost:4000/2013/09/c++-primer-notes-chapter16</id><content type="html" xml:base="http://localhost:4000/2013/09/c++-primer-notes-chapter16/">&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;第16章 模板与泛型编程&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;!--  Not show line_numbers  --&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;第16章 模板与泛型编程&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;模板形参可以是表示类型的类型形参（type parameter，表示未知类型），也可以是表示常量表达式的非类型形参（nontype parameter，表示未知值）&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;函数模板也可以声明为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kr&quot;&gt;inline&lt;/span&gt;&lt;/code&gt;。此时&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kr&quot;&gt;inline&lt;/span&gt;&lt;/code&gt;关键字放在模板形参表之后、返回类型之前，不能放在关键字&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;template&lt;/span&gt;&lt;/code&gt;之前：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;template&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typename&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;inline&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;模板形参遵循常规名字屏蔽规则：与全局作用域中声明的对象、函数或类型同名的模板形参会屏蔽全局名字&lt;/li&gt;
-  &lt;li&gt;用作模板形参的名字不能在模板内部重用&lt;/li&gt;
-  &lt;li&gt;模板也可以只声明而不定义&lt;/li&gt;
-  &lt;li&gt;若模板定义中使用了模板形参中的类型的一个内部定义的类型，必须用&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;typename&lt;/span&gt;&lt;/code&gt;显式指明该名字是一个类型，否则编译器会假定该名字指定的是一个数据成员&lt;/li&gt;
-  &lt;li&gt;当一个模板类型用作（同一函数的）一个以上函数形参类型时，对应的实参的类型必须完全一致（当通过“&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;&lt;/span&gt;&lt;/code&gt;”提供显式实参时，或者属于下列情况时，例外），因为一般而言不会转换实参以匹配已有的实例化，相反，会产生新的实例。例外的情况为：
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;转换：非&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;对象的引用或指针-&amp;gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;引用或指针；&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;或非&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;对象-&amp;gt;非引用类型（忽略&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;）&lt;/li&gt;
-      &lt;li&gt;数组或函数到指针的转换。当模板形参不是引用类型时：数组/函数-&amp;gt;指针。&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;例：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typename&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fobj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typename&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fref&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;fobj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// fobj(string, string); const is ignored
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fref&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// non const -&amp;gt; const reference
-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;fobj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// fobj(int*, int*);
-// fref(a, b);  // error!
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;可以使用函数模板对函数指针进行初始化或赋值：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typename&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;compare&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;compare&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 实例化
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;如果不能从函数指针类型确定模板实参，就会出错&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;某些情况下不可能推断出模板实参的类型。当函数的返回类型必须与形参表中所用的所有类型都不同时，最常出现这一问题。可以采用“增加一个模板形参以表示返回类型，调用时显示指定该类型”的方法解决&lt;/li&gt;
-  &lt;li&gt;显式提供模板实参时可以像函数的默认实参机制那样省略右边的模板实参（由编译器推断）&lt;/li&gt;
-  &lt;li&gt;模板要进行实例化时，编译器必须能够访问定义模板的源代码。如果采用分别编译模型（separate compilation model），在模板定义时需要使用&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt;&lt;/code&gt;关键字。&lt;/li&gt;
-  &lt;li&gt;类模板的成员函数只有为程序所用才进行实例化，如果某函数从未使用，则不会实例化该成员函数。一个典型例子是，若某类型没有定义默认的构造函数，也可以用&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;/code&gt;存放它，但&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;/code&gt;初始化时不能使用&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;/code&gt;的只有一个&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;/code&gt;成员的构造函数。&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;类模板中的友元声明：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;friend&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// ok: A is known to be a template
-&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;friend&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// ok: C must be an ordinary, non-template class
-&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;friend&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// ok: D is a template
-&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;friend&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;E&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// error: E wasn’t declare as a template
-&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;friend&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// error: F wasn’t declare as a template
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;在类特化的外部定义该特化类的成员时，成员之前不能加&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;&lt;/span&gt;&lt;/code&gt;标记&lt;/li&gt;
-  &lt;li&gt;可以只特化成员而不是特化整个类&lt;/li&gt;
-  &lt;li&gt;类模板的部分特化：特化某些模板形参而非全部。当声明了部分特化时，编译器将为实例化选择最特化的模板定义&lt;/li&gt;
-  &lt;li&gt;函数匹配与函数模板：若重载函数中既有普通函数又有函数模板，确定函数调用的步骤如下：
-    &lt;ol&gt;
-      &lt;li&gt;建立候选函数集，包括
-        &lt;ul&gt;
-          &lt;li&gt;与被调函数名字相同的任意普通函数&lt;/li&gt;
-          &lt;li&gt;任意函数模板实例化（模板实参推断发现了与调用中所用函数实参相匹配的模板实参）&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;确定哪些普通函数是可行的（见本笔记7.22或原书7.8节关于如何选择可行函数的讨论）。候选集中每个模板实例都是可行的，因为模板实参推断保证了这点。&lt;/li&gt;
-      &lt;li&gt;若需要转换来进行调用，根据转换的种类排列可行函数（注意模板函数的实例所允许的转换是有限的）
-        &lt;ul&gt;
-          &lt;li&gt;如果只有一个函数可选，就调用之&lt;/li&gt;
-          &lt;li&gt;如果调用有二义性，从可行函数集合中去掉所有函数模板实例&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;重新排列去掉函数模板实例的可行函数。如果只有一个函数可选，调用之；否则有二义性。&lt;/li&gt;
-    &lt;/ol&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;例一：&lt;/p&gt;
-
-        &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* I. */&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typename&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;compare&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;cm&quot;&gt;/* II.*/&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;compare&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-        &lt;/div&gt;
-        &lt;ul&gt;
-          &lt;li&gt;
-            &lt;p&gt;调用1：&lt;/p&gt;
-
-            &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;const_arr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;world&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;const_arr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hi&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;compare&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;const_arr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;const_arr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-            &lt;/div&gt;
-            &lt;p&gt;将调用普通函数II。将&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;/code&gt;绑定到&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;/code&gt;的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;I&lt;/span&gt;&lt;/code&gt;也是可行函数，但是根据上述第3点第二条，它将被去掉。
-注：实际上是比较以下俩可行函数：&lt;/p&gt;
-
-            &lt;ul&gt;
-              &lt;li&gt;从I实例化的：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;compare&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-              &lt;li&gt;II的：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;compare&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;p&gt;调用2：&lt;/p&gt;
-
-            &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch_arr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;world&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch_arr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hi&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;compare&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ch_arr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ch_arr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-            &lt;/div&gt;
-            &lt;p&gt;同样也调用普通函数II。I的实例将&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;/code&gt;绑定到&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;/code&gt;。&lt;/p&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;例二：
-如果I是这样：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typename&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;compare&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;则：&lt;/p&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;compare&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ch_arr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ch_arr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;将调用&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;I&lt;/span&gt;&lt;/code&gt;，&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;/code&gt;绑定到&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;/code&gt;。&lt;/li&gt;
-          &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;compare&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;const_arr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;const_arr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;将调用II。&lt;/li&gt;
-          &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cp1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;const_arr1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cp2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;const_arr2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;compare&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cp1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cp2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;将调用II。&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>lambda</name></author><category term="c++" /><category term="读书笔记" /><summary type="html"></summary></entry><entry><title type="html">《C++ Primer》读书笔记（第14-15章）</title><link href="http://localhost:4000/2013/09/c++-primer-notes-chapter14to15/" rel="alternate" type="text/html" title="《C++ Primer》读书笔记（第14-15章）" /><published>2013-09-20T00:00:00-07:00</published><updated>2013-09-20T00:00:00-07:00</updated><id>http://localhost:4000/2013/09/c++-primer-notes-chapter14to15</id><content type="html" xml:base="http://localhost:4000/2013/09/c++-primer-notes-chapter14to15/">&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;第14章 重载操作符与转换&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;第15章 面向对象编程&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;!--  Not show line_numbers  --&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;第14章 重载操作符与转换&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;不能重载的操作符包括：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;/code&gt;、&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;/code&gt;（取值）和三元运算符&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;?:&lt;/span&gt;&lt;/code&gt;。&lt;/li&gt;
-  &lt;li&gt;不能通过连接其他合法操作符来创建任何新操作符&lt;/li&gt;
-  &lt;li&gt;重载操作符必须具有至少一个类类型或枚举类型的操作数，因此内置类型的操作符含义不能改变，也不能为任何内置类型定义额外的新的操作符。&lt;/li&gt;
-  &lt;li&gt;操作符的优先级、结合性或操作数数目不能改变。除了函数调用操作符&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;外，重载操作符时使用默认实参是非法的。&lt;/li&gt;
-  &lt;li&gt;重载操作符并不保证操作数的求值顺序（尤其是&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;/code&gt;、&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;/code&gt;和逗号操作符）。在&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;/code&gt;和&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;/code&gt;的重载版本中，两个操作数都要进行求值。&lt;/li&gt;
-  &lt;li&gt;一般将算术和关系操作符定义为非成员函数，而将赋值操作符定义为成员。&lt;/li&gt;
-  &lt;li&gt;也可以像调用普通函数那样调用重载操作符如：
-    &lt;ul&gt;
-      &lt;li&gt;非类成员：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;item2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;类成员：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;item1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;item2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;不应重载具有内置含义的操作符：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;/code&gt;、&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;/code&gt;、&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;/code&gt;、&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;/code&gt;、&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;/code&gt;。&lt;/li&gt;
-  &lt;li&gt;赋值（&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;/code&gt;）、下标（&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;/code&gt;）、调用（&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;）和成员访问箭头（&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/code&gt;）必须定义为成员函数。&lt;/li&gt;
-  &lt;li&gt;箭头操作符虽然表现得像二元操作符，但重载时不接受显式形参：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;Type&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{...}&lt;/span&gt;&lt;/code&gt;。
-当这样编写时：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pointer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;，由于优先级规则，它等价于&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pointer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)();&lt;/span&gt;&lt;/code&gt;。求值过程为：
-    &lt;ol&gt;
-      &lt;li&gt;若&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pointer&lt;/span&gt;&lt;/code&gt;是一个指针，指向具有名为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;action&lt;/span&gt;&lt;/code&gt;的成员的类对象，则编译器将代码编译为调用该对象的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;action&lt;/span&gt;&lt;/code&gt;成员；&lt;/li&gt;
-      &lt;li&gt;否则，若&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pointer&lt;/span&gt;&lt;/code&gt;是定义了&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;/code&gt;操作符的一个对象，则&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pointer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;action&lt;/span&gt;&lt;/code&gt;与&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pointer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;action&lt;/span&gt;&lt;/code&gt;相同，即执行&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;pointer&lt;/span&gt;&lt;/code&gt;的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;，然后调用该结果重复这两步；&lt;/li&gt;
-      &lt;li&gt;否则，代码出错。&lt;/li&gt;
-    &lt;/ol&gt;
-
-    &lt;p&gt;因此，重载箭头操作符必须返回指向类类型的指针，或返回定义了自己箭头操作符的类类型对象。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;两种自增操作符的重载：
-    &lt;ul&gt;
-      &lt;li&gt;前自增：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;Type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{...}&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;后缀式自增：Type operator++(int) {…}`&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;为解决前/后缀形式的形参数目和类型相同的问题，后缀式操作符接受一个额外的（无用的）&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;/code&gt;型形参。使用时编译器提供&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;/code&gt;作为其实参。该形参不用命名，因为不应被使用到。显式调用的方法为：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// postfix
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// prefix
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;一般为表示操作的类重载调用操作符，其对象称为函数对象。&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;转换操作符（conversion operator）是一种特殊的类成员函数，它定义将类类型值转变为其他类型值的转换；它在类定义体内声明，在保留字&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt;&lt;/code&gt;之后跟着转换的目标类型：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Type2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{...}&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 无返回类型，形参表为空
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;对任何可作为函数返回类型的类型（&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;/code&gt;除外），都可以定义转换函数（故数组和函数类型不行）。虽然不能指定返回类型，但必须显式返回一个指定类型的值。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;只要定义了转换，编译器将在可以使用内置转换的地方自动调用它，包括显式类型转换&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;static_cast&lt;/span&gt;&lt;/code&gt;。&lt;/li&gt;
-  &lt;li&gt;使用转换函数时，被转换的类型不必与所需类型完全匹配，必要时可在类类型转换之后跟上标准转换（如&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;/code&gt;-&amp;gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt;&lt;/code&gt;这种）以获得想要的类型，但不能再跟另一个类类型转换！&lt;/li&gt;
-  &lt;li&gt;标准转换可放在类类型转换之前，例如使用构造函数执行的隐式转换：&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt;&lt;/code&gt;-&amp;gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;/code&gt;-&amp;gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;Type&lt;/span&gt;&lt;/code&gt;，其中&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;Type&lt;/span&gt;&lt;/code&gt;类型有一个带单&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;/code&gt;参数的构造函数。&lt;/li&gt;
-  &lt;li&gt;如果两个转换操作符都可用于同一个调用中，而且转换之后存在标准转换，则根据该标准转换的类别使用最佳匹配&lt;/li&gt;
-  &lt;li&gt;当两个构造函数定义的转换都可以使用时，如果存在构造函数实参所需的标准转换，就用该标准转换的类别选择最佳匹配。&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;当两个类定义了转换时的二义性：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/*I. */&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;// B-&amp;gt;A
-&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*II.*/&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// B-&amp;gt;A
-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// ambiguous
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;但若将I改为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;则不再存在二义性，这是因为使用&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;I&lt;/span&gt;&lt;/code&gt;将需要一个引用绑定到&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;/code&gt;的对象，而使用II则避免了这个额外步骤。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;转换与函数重载确定的关系：如果重载集里面的两个函数可以用同一转换函数匹配，则使用在转换之后或之前的标准转换序列的等级来确定最佳匹配；否则，如果可以使用不同的转换操作，则认为这两个转换是一样好的匹配，不管可能需要或不需要的标准转换等级如何。&lt;/li&gt;
-  &lt;li&gt;操作符的重载确定遵循常见的三步过程，而操作符的候选函数可能包括成员和非成员函数。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;第15章 面向对象编程&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;派生类对其基类类型的对象的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;protected&lt;/span&gt;&lt;/code&gt;成员没有特殊访问权限。&lt;/li&gt;
-  &lt;li&gt;派生类的虚函数的声明必须与基类完全匹配，但有个例外：派生类中的虚函数可以返回基类函数所返回类型（必须是引用或指针）的派生类的引用（或指针）&lt;/li&gt;
-  &lt;li&gt;一旦函数在基类中声明为虚函数，它就一直是虚函数，不管派生类中用不用&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;virtual&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;用作基类的类必须是已定义的，只声明不行（否则就可以从自身派生出一个类了）&lt;/li&gt;
-  &lt;li&gt;可以使用作用域操作符覆盖虚函数机制并强制函数调用使用虚函数的特定版本&lt;/li&gt;
-  &lt;li&gt;虚函数的默认实参不受动态绑定影响：通过类&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;/code&gt;的引用或指针调用虚函数时，默认实参是在&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;/code&gt;中定义的值，不管该引用或指针绑定的是&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;/code&gt;的对象还是其派生类对象。另外，基类中虚函数如果指定了默认实参，派生类可以指定也可以不指定；反之亦然。&lt;/li&gt;
-  &lt;li&gt;派生类不能访问基类的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt;&lt;/code&gt;成员&lt;/li&gt;
-  &lt;li&gt;使用&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt;&lt;/code&gt;，派生类可以恢复继承成员的访问级别，但不能使访问级别比基类中原来指定的更严格或更宽松（但g++ 4.6.1上却可以任意指定新的访问级别）&lt;/li&gt;
-  &lt;li&gt;友元关系不能继承：
-    &lt;ul&gt;
-      &lt;li&gt;基类的友元对派生类没有特殊访问权限&lt;/li&gt;
-      &lt;li&gt;如果基类被授予友元关系，则只有基类具有特殊访问权限，该基类的派生类不能访问授予友元关系给基类的类&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;若基类定义了&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt;&lt;/code&gt;成员，则整个继承层次中只有一个这样的成员，每个&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt;&lt;/code&gt;成员只有一个实例。&lt;/li&gt;
-  &lt;li&gt;派生类可以将基类的非纯虚的虚函数变为纯虚函数&lt;/li&gt;
-  &lt;li&gt;派生类到基类转换的可访问性：
-    &lt;ul&gt;
-      &lt;li&gt;如果是&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt;&lt;/code&gt;继承，则用户代码和后代类都可以访问（使用）派生类到基类的转换&lt;/li&gt;
-      &lt;li&gt;如果是&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;protected&lt;/span&gt;&lt;/code&gt;或&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt;&lt;/code&gt;继承，则用户代码不能将派生类型对象转换为基类对象&lt;/li&gt;
-      &lt;li&gt;如果是&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt;&lt;/code&gt;继承，则从&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt;&lt;/code&gt;继承类派生出来的类（即孙子层）不能转换为基类（不管是用户代码还是在下层派生类中）&lt;/li&gt;
-      &lt;li&gt;如果是&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;protected&lt;/span&gt;&lt;/code&gt;继承，则后续派生类的成员可以转换为基类类型&lt;/li&gt;
-      &lt;li&gt;派生类本身的成员和友元总是可以访问派生类到基类的转换（其实只要能访问到基类的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt;&lt;/code&gt;成员即可，不管派生了多少层）&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;合成的默认ctor、copy ctor和&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;/code&gt;以及析构函数将对对象的基类部分连同派生部分的成员一起进行初始化、复制、赋值和撤销；自定义的copy ctor和&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;/code&gt;需要显式调用基类的copy ctor和&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;/code&gt;或自己另行实现才能复制、赋值基类部分&lt;/li&gt;
-  &lt;li&gt;如果在构造函数或析构函数中调用虚函数（不论直接还是间接），则运行的是为构造函数或析构函数自身类型定义的版本。&lt;/li&gt;
-  &lt;li&gt;由于派生类的作用域嵌套在基类作用域中，在基类和派生类中使用同一名字的成员函数时，就像一般的在局部声明的函数和在全局声明的函数一样：在派生类作用域中派生类成员将屏蔽基类成员，即使函数原型不同。&lt;/li&gt;
-  &lt;li&gt;局部作用域中声明的函数不会重载外围作用域中定义的函数，而是会屏蔽！因此，若派生类定义了重载成员，则通过派生类（的对象、指针或引用）只能访问派生类中重定义的那些成员，不管基类中的成员是否为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;virtual&lt;/span&gt;&lt;/code&gt;的！（可以通过&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt;&lt;/code&gt;声明解决这个问题）&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;通过基类可以调用被屏蔽的虚函数：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Base&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;virtual&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fcn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;D1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Base&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fcn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;cm&quot;&gt;/* 屏蔽了Base的fcn */&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;D2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;D1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fcn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;cm&quot;&gt;/* 屏蔽了D1的fcn */&lt;/span&gt;  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fcn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();}&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;Base&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;D1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;D2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Base&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bp1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bp2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bp3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;bp1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fcn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Base::fcn
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bp2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fcn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Base::fcn，注意不能用D1的对象、引用或指针调用fcn()，因为它被fcn(int)屏蔽了！
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bp3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fcn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// D2::fcn
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;（名字查找与继承的关系）确定函数调用遵循以下四个步骤
-    &lt;ol&gt;
-      &lt;li&gt;首先确定进行函数调用的对象、引用或指针的静态类型&lt;/li&gt;
-      &lt;li&gt;在该类中查找函数（名字），若找不到则从直接基类开始往上找，若最终找不到则出错&lt;/li&gt;
-      &lt;li&gt;一旦找到了该名字，就进行常规类型检查，看调用是否合法&lt;/li&gt;
-      &lt;li&gt;若合法，编译器就生成代码。若函数为虚且通过引用或指针调用，则编译器生成代码以确定根据对象的动态类型运行哪个函数版本，否则，编译器生成代码直接调用函数。&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;</content><author><name>lambda</name></author><category term="c++" /><category term="读书笔记" /><summary type="html"></summary></entry><entry><title type="html">《C++ Primer》读书笔记（第09-13章）</title><link href="http://localhost:4000/2013/09/c++-primer-notes-chapter09to13/" rel="alternate" type="text/html" title="《C++ Primer》读书笔记（第09-13章）" /><published>2013-09-20T00:00:00-07:00</published><updated>2013-09-20T00:00:00-07:00</updated><id>http://localhost:4000/2013/09/c++-primer-notes-chapter09to13</id><content type="html" xml:base="http://localhost:4000/2013/09/c++-primer-notes-chapter09to13/">&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;第9章 顺序容器&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;第11章 泛型算法&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;第12章 类&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-3&quot; id=&quot;markdown-toc-section-3&quot;&gt;第13章 复制控制&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;!--  Not show line_numbers  --&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;第9章 顺序容器&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;指定容器大小的类型应该使用该容器的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;size_type&lt;/span&gt;&lt;/code&gt;类型&lt;/li&gt;
-  &lt;li&gt;允许通过使用内置数组中的一对指针初始化容器&lt;/li&gt;
-  &lt;li&gt;容器元素类型必须满足以下两个约束：
-    &lt;ul&gt;
-      &lt;li&gt;元素类型必须支持赋值运算（故不能是引用）&lt;/li&gt;
-      &lt;li&gt;元素类型的对象必须可以复制（用于初始化和&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;/code&gt;等）&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;第11章 泛型算法&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;为了以降序排列&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;/code&gt;，只需向&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;/code&gt;传递一对反向迭代器&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rbegin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;第12章 类&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;声明一个类而不定义它（即前向声明）时，该类是一个不完全类型，只能以有限方式使用：
-    &lt;ul&gt;
-      &lt;li&gt;不知道包含哪些成员&lt;/li&gt;
-      &lt;li&gt;只能用于定义指向该类型的指针及引用，或用于声明（而不是定义）使用该类型作为形参类型或返回类型的函数&lt;/li&gt;
-      &lt;li&gt;不能用于定义数据成员或该类的对象（故类不能具有自身类型的数据成员）&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;在一个源文件中一个类只能被定义一次，如果在多个文件中定义一个类，那么每个文件中的定义必须是完全相同的&lt;/li&gt;
-  &lt;li&gt;在普通的非&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;成员函数中，&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;/code&gt;的类型是一个指向类类型的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;指针&lt;/li&gt;
-  &lt;li&gt;当我们希望类的数据成员（甚至在&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;成员函数内）可以被修改时，可将它们声明为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;mutable&lt;/span&gt;&lt;/code&gt;。&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;mutable&lt;/span&gt;&lt;/code&gt;数据成员永远都不会且不能为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;。&lt;/li&gt;
-  &lt;li&gt;如果函数在类定义体之外定义，则用于返回类型的名字在类作用域之外（否则在之内）。&lt;/li&gt;
-  &lt;li&gt;在类定义体外定义的成员函数的返回类型如果使用由该类定义的类型，则必须使用完全限定名，这是因为在函数名被处理前，代码不在类作用域内。&lt;/li&gt;
-  &lt;li&gt;类定义实际上是在两个阶段中处理：
-    &lt;ol&gt;
-      &lt;li&gt;首先编译成员声明&lt;/li&gt;
-      &lt;li&gt;只有在所有成员出现之后，才编译它们的定义本身（因此成员函数可以使用类作用域中所有名字）&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;必须在类中先定义类型名字，才能将它们用作数据成员的类型，或者成员函数的返回类型或形参类型&lt;/li&gt;
-  &lt;li&gt;一旦一个名字被用作类型名，该名字就不能被重复定义。（但若一个名字在类外作用域中首先被定义为类型名，类中可以先重新定义它再用作类型名）。&lt;/li&gt;
-  &lt;li&gt;构造函数不能声明为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;对非类类型的数据成员进行赋值或使用初始化式在结果和性能上都是等价的&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;成员被初始化的次序就是定义成员的次序，不管它们在初始化列表中顺序如何。因此以下程序非法：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;X&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;当没有在初始化列表中指出或使用合成的默认构造函数时，对于内置和复合类型的成员（如指针和数组），只对定义在全局作用域中的对象才初始化。&lt;/li&gt;
-  &lt;li&gt;对于一个没有定义默认构造函数（显式或隐式地）的类：
-    &lt;ul&gt;
-      &lt;li&gt;不能用作动态分配数组的元素类型&lt;/li&gt;
-      &lt;li&gt;其静态分配数组必须为每个元素提供一个显式的初始化式&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;可以用单个实参来调用的非&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;explicit&lt;/span&gt;&lt;/code&gt;构造函数定义了从形参类型到该类类型的一个隐式转换。&lt;/li&gt;
-  &lt;li&gt;友元可以是普通的非成员函数，或前面定义的其他类的成员函数，或整个类。&lt;/li&gt;
-  &lt;li&gt;友元不是授予友元关系的那个类的成员，故它们不受其声明出现部分的访问控制影响。&lt;/li&gt;
-  &lt;li&gt;必须先定义包含成员函数的类，才能将成员函数设为友元。另一方面，不必预先声明类和非成员函数来将它们设为友元。&lt;/li&gt;
-  &lt;li&gt;友元声明将已命名的类或非成员函数引入到外围作用域中。此外，友元函数可以在类的内部定义，该函数的作用域扩展到包围该类定义的作用域。用友元引入的类名和函数（定义或声明），可以像预先声明的一样使用。&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt;&lt;/code&gt;数据成员在类的定义体中初始化时，该数据成员仍必须在类的定义体之外进行定义，但此时不必再指定初始值。&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt;&lt;/code&gt;数据成员的类型可以是该成员所属的类类型，并可用作默认实参。&lt;/li&gt;
-  &lt;li&gt;在构造函数初始化列表中除了默认的方式（如&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;）外，无法用其他方式（如传递一个数组）来初始化一个数组类型的成员变量。&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt;&lt;/code&gt;在类中必须出现在使用其定义的类型别名的声明之前。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-3&quot;&gt;第13章 复制控制&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;复制构造函数、赋值构造函数和析构函数总称为复制控制（copy control），编译器自动实现这些操作，但类也可以定义自己的版本。&lt;/li&gt;
-  &lt;li&gt;对于语句&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;，在创建&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;/code&gt;时，编译器首先调用接受一个c风格字符串形参的&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;/code&gt;构造函数，创建一个临时对象，然后编译器使用&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;/code&gt;复制构造函数将&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;/code&gt;初始化为那个临时对象的副本。&lt;/li&gt;
-  &lt;li&gt;对于语句&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;，&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt;&lt;/code&gt;的初始化是否正确取决于两点：
-    &lt;ul&gt;
-      &lt;li&gt;类C的带一个&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;/code&gt;形参的ctor是否为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;explicit&lt;/span&gt;&lt;/code&gt;（如果是&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;explicit&lt;/span&gt;&lt;/code&gt;则失败）&lt;/li&gt;
-      &lt;li&gt;类C的copy ctor对当前作用域是否可见&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;若使用元素初始化列表初始化数组元素，则首先根据指定值创建数组元素类型的元素，然后用复制构造函数将该值复制到相应元素：&lt;/p&gt;
-
-    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 单参数ctor + copy ctor
-&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 默认ctor + copy ctor
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;合成的复制构造函数将复制数组类型成员的每一个元素，合成的复制操作符也会给数组的每个元素赋值。&lt;/li&gt;
-  &lt;li&gt;当copy ctor定义为&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;explicit&lt;/span&gt;&lt;/code&gt;时，就不能用于向函数传递对象和从函数返回对象。&lt;/li&gt;
-  &lt;li&gt;容器（不管是标准库容器还是内置数组）中的元素总是按逆序撤销&lt;/li&gt;
-  &lt;li&gt;合成析构函数按对象创建时的逆序撤销每个非&lt;code class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt;&lt;/code&gt;成员（即按类中成员声明次序的逆序）&lt;/li&gt;
-  &lt;li&gt;因为不能指定任何形参，所以不能重载析构函数&lt;/li&gt;
-  &lt;li&gt;即使我们编写了自己的析构函数，合成的析构函数仍然运行。&lt;/li&gt;
-  &lt;li&gt;自定义的copy ctor必须是引用传递形参（而不是传值），否则会导致无限递归。&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>lambda</name></author><category term="c++" /><category term="读书笔记" /><summary type="html"></summary></entry></feed>
+&lt;p&gt;反模式告诉你如何采用一个不好的解决方案解决一个问题，告诉你为何这个方案从长远看会造成不好的影响，警告你不要陷入某种致命的诱惑，建议你改用其他的模式以提供更好的解决方案。&lt;/p&gt;</content><author><name>lambda</name></author><category term="设计模式" /><category term="读书笔记" /><summary type="html"></summary></entry></feed>
