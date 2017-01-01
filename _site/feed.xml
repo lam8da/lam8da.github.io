@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-12-21T17:28:14-08:00</updated><id>http://localhost:4000//</id><author><name>lambda</name></author><entry><title type="html">修割草机记</title><link href="http://localhost:4000/2016/12/lawn-mover-repair/" rel="alternate" type="text/html" title="修割草机记" /><published>2016-12-18T00:00:00-08:00</published><updated>2016-12-18T00:00:00-08:00</updated><id>http://localhost:4000/2016/12/lawn-mover-repair</id><content type="html" xml:base="http://localhost:4000/2016/12/lawn-mover-repair/"></content><author><name>lambda</name></author><category term="割草机" /><category term="自力更新" /><summary type="html"></summary></entry><entry><title type="html">回忆</title><link href="http://localhost:4000/2016/12/memory/" rel="alternate" type="text/html" title="回忆" /><published>2016-12-12T00:00:00-08:00</published><updated>2016-12-12T00:00:00-08:00</updated><id>http://localhost:4000/2016/12/memory</id><content type="html" xml:base="http://localhost:4000/2016/12/memory/"></content><author><name>lambda</name></author><category term="Work in Progress" /><summary type="html"></summary></entry><entry><title type="html">美国出生宝宝办各种证件心得 - CA</title><link href="http://localhost:4000/2016/12/baby-us-documents/" rel="alternate" type="text/html" title="美国出生宝宝办各种证件心得 - CA" /><published>2016-12-02T00:00:00-08:00</published><updated>2016-12-02T00:00:00-08:00</updated><id>http://localhost:4000/2016/12/baby-us-documents</id><content type="html" xml:base="http://localhost:4000/2016/12/baby-us-documents/">&lt;ol&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-12-31T17:01:50-08:00</updated><id>http://localhost:4000//</id><author><name>lambda</name></author><entry><title type="html">Unix痛恨者手册读书笔记</title><link href="http://localhost:4000/2016/12/unix-haters-handbook-notes/" rel="alternate" type="text/html" title="Unix痛恨者手册读书笔记" /><published>2016-12-31T00:00:00-08:00</published><updated>2016-12-31T00:00:00-08:00</updated><id>http://localhost:4000/2016/12/unix-haters-handbook-notes</id><content type="html" xml:base="http://localhost:4000/2016/12/unix-haters-handbook-notes/">&lt;p&gt;一些好玩的段子摘录：&lt;/p&gt;</content><author><name>lambda</name></author><category term="读书笔记" /><category term="Unix" /><category term="Linux" /><category term="Work in Progress" /><summary type="html">一些好玩的段子摘录：</summary></entry><entry><title type="html">修割草机记</title><link href="http://localhost:4000/2016/12/lawn-mover-repair/" rel="alternate" type="text/html" title="修割草机记" /><published>2016-12-18T00:00:00-08:00</published><updated>2016-12-18T00:00:00-08:00</updated><id>http://localhost:4000/2016/12/lawn-mover-repair</id><content type="html" xml:base="http://localhost:4000/2016/12/lawn-mover-repair/">&lt;p&gt;很久没割草了，最近大雨连连，前院的野草又疯狂长了起来。岳父说今天把草割了，早上拿出割草机才发现启动不了，还以为是天冷的原因，我们又把机器摆在外面晒了许久太阳，还是不行。找了一个上午的说明书，还是没找到。难道就这样给几十刀送修？不行，于是下午开始网上找视频看看怎样修。借助强大的Google和Youtube了，终于找到这个非常有用的链接：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=qzkyFOq1NeE&amp;amp;index=1&amp;amp;list=PLa3_CGj9janQw_dBWFPB29UyZmchH8QvY&amp;amp;t=85s&quot;&gt;Lawn Mower Won’t Start: Fuel, Ignition and Compression Problems&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;看完后马上去Walmart买了可以买到的各种装备，包括Starter Fluid和Gumout。回来一喷果然有用！花了一天时间，省点小钱，还是很值得的。重要的是可以把以后送修的时间和金钱都省了，在美帝自力更新才是王道啊！&lt;/p&gt;</content><author><name>lambda</name></author><category term="割草机" /><category term="自力更新" /><summary type="html">很久没割草了，最近大雨连连，前院的野草又疯狂长了起来。岳父说今天把草割了，早上拿出割草机才发现启动不了，还以为是天冷的原因，我们又把机器摆在外面晒了许久太阳，还是不行。找了一个上午的说明书，还是没找到。难道就这样给几十刀送修？不行，于是下午开始网上找视频看看怎样修。借助强大的Google和Youtube了，终于找到这个非常有用的链接：</summary></entry><entry><title type="html">回忆与思念</title><link href="http://localhost:4000/2016/12/memory/" rel="alternate" type="text/html" title="回忆与思念" /><published>2016-12-12T00:00:00-08:00</published><updated>2016-12-12T00:00:00-08:00</updated><id>http://localhost:4000/2016/12/memory</id><content type="html" xml:base="http://localhost:4000/2016/12/memory/"></content><author><name>lambda</name></author><category term="Work in Progress" /><summary type="html"></summary></entry><entry><title type="html">美国出生宝宝办各种证件心得 - CA</title><link href="http://localhost:4000/2016/12/baby-us-documents/" rel="alternate" type="text/html" title="美国出生宝宝办各种证件心得 - CA" /><published>2016-12-02T00:00:00-08:00</published><updated>2016-12-02T00:00:00-08:00</updated><id>http://localhost:4000/2016/12/baby-us-documents</id><content type="html" xml:base="http://localhost:4000/2016/12/baby-us-documents/">&lt;ol&gt;
   &lt;li&gt;出生证和ssn：在医院出生当天就会有专员来让填表，马上就可以申请county clerk recorder开具的出生证，以及ssn。出生证一般6周左右能邮寄到家，ssn会早点。&lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;出生证州务卿认证：出生证到了以后就可以为出生证办理州务卿认证，参考&lt;a href=&quot;http://www.sos.ca.gov/notary/authentication/&quot;&gt;官方网站&lt;/a&gt;，我准备的材料如下（邮寄）：&lt;/p&gt;
@@ -35,7 +41,7 @@ China’s consulate in San Francisco.&lt;/p&gt;
     &lt;p&gt;然后很恶心的是，usps几乎把我的包裹搞丢了！打了n个投诉电话未果后决定自己去首府跑一趟（过程非常曲折，看年终总结）。准备的东西只要出生证原件就行，现场先填一张申请表，最后用visa支付，立马就能拿到结果。顺道提一句，路上有meter路上有meter路上有meter，不要泊车忘给钱！！！&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;护照：我们去USPS办的，地址在&lt;a href=&quot;https://www.google.com/maps/place/37010+Dusterberry+Way,+Fremont,+CA+94536/@37.5558872,-122.0157803,17z/data=!3m1!4b1!4m5!3m4!1s0x808fbf9f3081fa69:0x265d42f0a7cb5dc0!8m2!3d37.555883!4d-122.0135916&quot;&gt;37010 DUSTERBERRY WAY, FREMONT, CA, 94536&lt;/a&gt;。不用预约，先到先服务。我们办的时候同时把上述认证材料寄出，就省得以后再跑一趟了。准备的材料如下：&lt;/p&gt;
+    &lt;p&gt;护照：参考&lt;a href=&quot;https://travel.state.gov/content/passports/en/passports/apply.html&quot;&gt;官方网站&lt;/a&gt;。我们去USPS办的，地址在&lt;a href=&quot;https://www.google.com/maps/place/37010+Dusterberry+Way,+Fremont,+CA+94536/@37.5558872,-122.0157803,17z/data=!3m1!4b1!4m5!3m4!1s0x808fbf9f3081fa69:0x265d42f0a7cb5dc0!8m2!3d37.555883!4d-122.0135916&quot;&gt;37010 DUSTERBERRY WAY, FREMONT, CA, 94536&lt;/a&gt;。不用预约，先到先服务。我们办的时候同时把上述认证材料寄出，就省得以后再跑一趟了。准备的材料如下：&lt;/p&gt;
 
     &lt;ul&gt;
       &lt;li&gt;2inch x 2inch护照照片&lt;/li&gt;
@@ -45,11 +51,9 @@ China’s consulate in San Francisco.&lt;/p&gt;
       &lt;li&gt;DS-11表格。我们事先填好但是办事人员说有点小问题于是在场领一份重新填了。&lt;/li&gt;
       &lt;li&gt;visa信用卡用来交钱，交多少钱视加急与否、办护照卡与否而定。&lt;/li&gt;
     &lt;/ul&gt;
-
-    &lt;p&gt;更多资料在这里：&lt;a href=&quot;https://travel.state.gov/content/passports/en/passports/apply.html&quot;&gt;https://travel.state.gov/content/passports/en/passports/apply.html&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;出生证领事认证：这个在三藩总领馆办理（门口每天都有法轮功宣传那个），参考&lt;a href=&quot;http://www.chinaconsulatesf.org/chn/qianzhen/gzrz/t1236894.htm&quot;&gt;官方网站&lt;/a&gt;。要准备的东西有：&lt;/p&gt;
+    &lt;p&gt;出生证领事认证：这个在三藩总领馆办理（门口每天都有法轮功宣传那个），地址在&lt;a href=&quot;https://www.google.com/maps/place/1450+Laguna+St,+San+Francisco,+CA+94115/@37.7846962,-122.4298091,17z/data=!3m1!4b1!4m5!3m4!1s0x808580be902b6903:0x45c451fe762bfa6b!8m2!3d37.784692!4d-122.4276204&quot;&gt;1450 Laguna St, San Francisco, CA 94115&lt;/a&gt;。参考&lt;a href=&quot;http://www.chinaconsulatesf.org/chn/qianzhen/gzrz/t1236894.htm&quot;&gt;官方网站&lt;/a&gt;。要准备的东西有：&lt;/p&gt;
 
     &lt;ul&gt;
       &lt;li&gt;州务卿认证过的出生证原件及复印件&lt;/li&gt;
@@ -104,13 +108,14 @@ China’s consulate in San Francisco.&lt;/p&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;参考资料：&lt;/p&gt;
+
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://blog.sina.com.cn/s/blog_696aea200101g3n7.html&quot;&gt;给美国宝宝办理护照旅行证以及出生证公证认证攻略&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://b.henryzhou.com/index.php/2014/04/american_born_kid_chinese_travel_documents/&quot;&gt;美国生华裔小孩在中国驻旧金山领馆办理旅行证和领事认证流程&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.delphij.net/wiki/kb/usa/california/sos_certification&quot;&gt;办理加州州务卿认证&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.delphij.net/wiki/kb/usa/prc/sfconsulate/traveldocument&quot;&gt;美国出生的中国公民子女办理中华人民共和国旅行证&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.delphij.net/wiki/kb/usa/prc/sfconsulate/cc&quot;&gt;领事认证&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>lambda</name></author><category term="Work in Progress" /><summary type="html">出生证和ssn：在医院出生当天就会有专员来让填表，马上就可以申请county clerk recorder开具的出生证，以及ssn。出生证一般6周左右能邮寄到家，ssn会早点。
+&lt;/ul&gt;</content><author><name>lambda</name></author><category term="旅行证" /><category term="出生证" /><category term="护照" /><category term="ssn" /><category term="在美国" /><category term="我是好爸爸" /><summary type="html">出生证和ssn：在医院出生当天就会有专员来让填表，马上就可以申请county clerk recorder开具的出生证，以及ssn。出生证一般6周左右能邮寄到家，ssn会早点。
   
     出生证州务卿认证：出生证到了以后就可以为出生证办理州务卿认证，参考官方网站，我准备的材料如下（邮寄）：
 
@@ -118,45 +123,84 @@ China’s consulate in San Francisco.&lt;/p&gt;
       出生证原件。不接受复印件。
       附信说明将要去哪个国家使用。（网上说这会决定是使用附加证明书还是普通的认证）
       $20的支票（收款人必须是 Secretary of State）
-      包含地址的返程信封（我用的预付费的priority mail）</summary></entry><entry><title type="html">2016年终总结</title><link href="http://localhost:4000/2016/11/2016-summary/" rel="alternate" type="text/html" title="2016年终总结" /><published>2016-11-30T00:00:00-08:00</published><updated>2016-11-30T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/2016-summary</id><content type="html" xml:base="http://localhost:4000/2016/11/2016-summary/">&lt;p&gt;大事记：&lt;/p&gt;
+      包含地址的返程信封（我用的预付费的priority mail）</summary></entry><entry><title type="html">2016年终总结</title><link href="http://localhost:4000/2016/11/2016-summary/" rel="alternate" type="text/html" title="2016年终总结" /><published>2016-11-30T00:00:00-08:00</published><updated>2016-11-30T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/2016-summary</id><content type="html" xml:base="http://localhost:4000/2016/11/2016-summary/">&lt;p&gt;PS：这篇是在12月31号，2016的最后一天补全的。&lt;/p&gt;
+
+&lt;p&gt;大事记：&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;老婆怀上小千金Zoey。整个过程真是一种折磨，首先是老婆换上肺炎，然后baby检查出是two vessel cord，老婆一直担心，一直不停做检查。期间还要搞买房各种破事。后来岳父过来帮忙总算好一点。最后宝宝在11月顺利出生，现在母女平安！&lt;/li&gt;
+  &lt;li&gt;老婆怀上小千金Zoey。整个过程真是一种折磨，首先是老婆患上肺炎，然后baby检查出是two vessel cord，老婆一直担心，一直不停做检查。期间还要搞买房各种破事。后来岳父过来帮忙总算好一点。最后宝宝在11月顺利出生，现在母女平安！（就是带娃好累，经常晚上半小时一醒啊有木有:-(）&lt;/li&gt;
   &lt;li&gt;升职加薪，工作真的好累的说！&lt;/li&gt;
-  &lt;li&gt;买房：我就搞不明白了就一破房为什么还这么多人抢！&lt;/li&gt;
-  &lt;li&gt;买新车！&lt;/li&gt;
+  &lt;li&gt;借钱凑首付买房，还有买家电各种：看房好累，尤其是在老婆大着肚子还带一个娃的情况下。看了好多好多个周末，Aaron只能下午在车里睡觉，又一次抱出来还着凉感冒了。然后就是下offer，虽然心里在滴血但是还是要下啊，我就搞不明白了就一破房为什么还这么多人抢！接着是贷款，万恶的BOA你特么还不允许两个月rent back？急忙中只能舍利率找了EverBank，然后appraisal还说房价高估了，导致自己要出一部分钱填上，钱不够还问了4个朋借（有的朋友还不借:-(）。我问老婆，这应该是我们最困难的时候了吧？唉。最后总算搞定，半条命都没了。&lt;/li&gt;
+  &lt;li&gt;买新车！越南人做生意很黑。或者说做车行生意的都很黑。&lt;/li&gt;
+  &lt;li&gt;妈妈终于成功买了房，也算是了却了一个心愿。我们是在是穷，没能帮上什么忙，要感谢一些亲戚能借钱给妈妈，患难见真情，以后我要好好报答。&lt;/li&gt;
+  &lt;li&gt;爸爸身体越来越不好了，高血压，肾结石（后来出来了一个），尿酸高（后来貌似好点儿了），风湿性关节炎？手肿脚也肿唉。希望爸爸早日康复身体健康吧&lt;/li&gt;
+  &lt;li&gt;妹妹转正了，百度糯米，虽然工资不高，但是我也很欣慰了。因为我能看到她那种努力，虽然我不知道过程（有这个结果，怎么也努力过吧？）&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;小事记：&lt;/p&gt;
 
 &lt;ul&gt;
+  &lt;li&gt;年中的时候开车被一印度女司机给追尾了，Aaron被吓得大哭。后来女司机貌似也吓到了，也算是负责的人，主动找自身保险Geico给我报修。不喜欢那个跟女司机同行的男阿三，油嘴滑舌特么最讨厌了。还换了个算是挺贵的car seat。&lt;/li&gt;
   &lt;li&gt;学会修割草机（汽油式）&lt;/li&gt;
   &lt;li&gt;在Sacramento吃了一个parking ticket，心有不甘啊&lt;/li&gt;
   &lt;li&gt;白跑了一趟Sacramento：本来以为狗日的usps把我的包裹弄丢了，打了n个投诉电话未果，最后决定自己跑一趟，单程2小时来回4小时！停车时还吃了个ticket！排队办理时柜台电脑还坏了！这还算了，结果当天下午回件就寄到家里，心中无数个草泥马狂奔而过啊！一路上很冷，外面都是大雾飘飘，田里都是冰霜，本来还想去首府的usps邮局问清楚的，后来因为时间关系就放过了它。&lt;/li&gt;
-  &lt;li&gt;收到了爷爷奶奶姑姑国内寄来的给Aaron的书&lt;/li&gt;
-  &lt;li&gt;旧车扎了个钉子，做了大量功课后找修车厂免费修好，并学会怎样做应急处理&lt;/li&gt;
+  &lt;li&gt;多跑了一趟三藩领馆：工作人员把取件日期给写错了我ri啊，一个好好的放假休息的早上就没有了！&lt;/li&gt;
+  &lt;li&gt;收到了爷爷奶奶姑姑国内寄来的给Aaron的书，寄了两个多月，包装纸箱都变成一堆烂纸皮了，还好书没坏。&lt;/li&gt;
+  &lt;li&gt;旧车扎了个钉子，做了大量功课后找修车厂免费修好（Wheel Works在这里中枪:-)），并学会怎样做应急处理&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;看过的书：&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;时间的形状&lt;/li&gt;
-  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;时间的形状。这是在老婆月子里我晚上带娃的时候拿着电脑看的。。&lt;/li&gt;
+  &lt;li&gt;然后就没有然后了。。。有了娃越来越没时间看书了，娃的绘本倒是看了不少。。。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;学到的技术：&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;paxos&lt;/li&gt;
   &lt;li&gt;bitcoin&lt;/li&gt;
   &lt;li&gt;jekyll &amp;amp; github pages&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>lambda</name></author><category term="生活" /><category term="年终总结" /><summary type="html">大事记：</summary></entry><entry><title type="html">补胎心得</title><link href="http://localhost:4000/2016/11/tire-repair/" rel="alternate" type="text/html" title="补胎心得" /><published>2016-11-23T00:00:00-08:00</published><updated>2016-11-23T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/tire-repair</id><content type="html" xml:base="http://localhost:4000/2016/11/tire-repair/">&lt;p&gt;昨天中午出门时发现车胎瘪了，应该是前天出去买菜路上扎的（后来汽车还报警说低气压，可是一直没在意，因为很久没打气了可能刚好气压低过阈值）。在网上做了一晚功课，决定先去找家修理行修车胎，如果不行再去walmart活着costco换。最后今天早上折腾两个多小时终于在wheel works免费修好，写上一些经验和总结以备以后不时之需。&lt;/p&gt;
+  &lt;li&gt;dre similar image detector&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;经验总结：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;有问题问Google！不懂就要做功课！不要盲目做决定！成功的例子是买车，补胎，修割草机。失败的例子多了去了，记不得了。。。&lt;/li&gt;
+  &lt;li&gt;没事不要随便和女生聊天，老婆看到了可不是闹着玩的。。。&lt;/li&gt;
+  &lt;li&gt;有时间多陪陪孩子，要耐心点，毕竟他们还什么都不懂啊！以后大了相陪都没机会了&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;最后是感恩，感谢那些2016年帮助过我们的朋友们。没有你们我们是不可能有今天的。&lt;/p&gt;</content><author><name>lambda</name></author><category term="生活" /><category term="年终总结" /><summary type="html">PS：这篇是在12月31号，2016的最后一天补全的。</summary></entry><entry><title type="html">补胎心得</title><link href="http://localhost:4000/2016/11/tire-repair/" rel="alternate" type="text/html" title="补胎心得" /><published>2016-11-23T00:00:00-08:00</published><updated>2016-11-23T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/tire-repair</id><content type="html" xml:base="http://localhost:4000/2016/11/tire-repair/">&lt;p&gt;昨天中午出门时发现车胎瘪了，应该是前天出去买菜路上扎的（后来汽车还报警说低气压，可是一直没在意，因为很久没打气了可能刚好气压低过阈值）。在网上做了一晚功课，决定先去找家修理行修车胎，如果不行再去walmart活着costco换。最后今天早上折腾两个多小时终于在wheel works免费修好，写上一些经验和总结以备以后不时之需。&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;去修理店，如果前台问扎了哪里，不要说扎在边缘上（即使真的离边缘很近），否则老板直接会说修不了建议换胎。总之，避免回答出任何可能导致老板建议换胎的答案。这样做的好处是：有机会把车子让修理师傅看一下，他说不能修才是不能修（这个不是前台说了算的因为他也不懂修，他的最终目的就是换胎赚你钱）&lt;/li&gt;
   &lt;li&gt;车子常备一个手动打气筒（电动的应该也行，但我担心电动的由于各种原因在特发情况下不work，手动的应该总是能work的）&lt;/li&gt;
   &lt;li&gt;个人觉得那些应急自救包（例如某种神喷射剂，需要自己拔出钉子往里喷，可以坚持好一会的那种；又例如手工修理包，walmart很便宜几块钱那种）貌似没什么用。如果不是专家或有经验，发现被扎后千万不要拔钉，最好打气看看漏得严不严重，如果不严重可以直接开到修理店修。如果拔钉，有可能自救包修不好，就只能千斤顶了；马路上太危险，要么就花（几百块？）叫个拖车？当然，买个应急包还是有用的，万一漏气很严重呢？要把所有可能都想到。&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>lambda</name></author><category term="汽车" /><summary type="html">昨天中午出门时发现车胎瘪了，应该是前天出去买菜路上扎的（后来汽车还报警说低气压，可是一直没在意，因为很久没打气了可能刚好气压低过阈值）。在网上做了一晚功课，决定先去找家修理行修车胎，如果不行再去walmart活着costco换。最后今天早上折腾两个多小时终于在wheel works免费修好，写上一些经验和总结以备以后不时之需。</summary></entry><entry><title type="html">读《时间的形状：相对论史话》</title><link href="http://localhost:4000/2016/11/shape-of-time-notes/" rel="alternate" type="text/html" title="读《时间的形状：相对论史话》" /><published>2016-11-20T00:00:00-08:00</published><updated>2016-11-20T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/shape-of-time-notes</id><content type="html" xml:base="http://localhost:4000/2016/11/shape-of-time-notes/">&lt;p&gt;这本书的逻辑性很好，从历史的角度介绍了经典物理学在20世纪初遇到的难题以及新理论的提出的过程，让非专业读者都能理解相对论的基本内容。&lt;/p&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;其他参考资料：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.weiming.info/zhuti/Automobile/32187019/&quot;&gt;http://www.weiming.info/zhuti/Automobile/32187019/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.weiming.info/zhuti/Automobile/32210019/&quot;&gt;http://www.weiming.info/zhuti/Automobile/32210019/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.weiming.info/zhuti/Automobile/33395301/&quot;&gt;http://www.weiming.info/zhuti/Automobile/33395301/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://lvchen.blogspot.com/2012/04/blog-post.html&quot;&gt;http://lvchen.blogspot.com/2012/04/blog-post.html&lt;/a&gt; 自己补胎&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.yelp.com/biz/americas-tire-store-fremont-fremont-3?osq=americas+tire+company&quot;&gt;https://www.yelp.com/biz/americas-tire-store-fremont-fremont-3?osq=americas+tire+company&lt;/a&gt; 4.0 225reviews&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.yelp.com/biz/big-discount-tire-pros-fremont-2&quot;&gt;https://www.yelp.com/biz/big-discount-tire-pros-fremont-2&lt;/a&gt; 3.5 71reviews&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.yelp.com/biz/fremont-auto-works-fremont&quot;&gt;https://www.yelp.com/biz/fremont-auto-works-fremont&lt;/a&gt; 5.0 67reviews&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.yelp.com/biz/performance-auto-care-repair-fremont&quot;&gt;https://www.yelp.com/biz/performance-auto-care-repair-fremont&lt;/a&gt; 4.5 177reviews&lt;/li&gt;
+  &lt;li&gt;Comments:
+    &lt;ul&gt;
+      &lt;li&gt;Firestone很黑&lt;/li&gt;
+      &lt;li&gt;WALMART也就10块钱&lt;/li&gt;
+      &lt;li&gt;Discount Tire&lt;/li&gt;
+      &lt;li&gt;pepboys&lt;/li&gt;
+      &lt;li&gt;America’s tire不用钱很久了&lt;/li&gt;
+      &lt;li&gt;Gateway tires也是免费的&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>lambda</name></author><category term="汽车" /><summary type="html">昨天中午出门时发现车胎瘪了，应该是前天出去买菜路上扎的（后来汽车还报警说低气压，可是一直没在意，因为很久没打气了可能刚好气压低过阈值）。在网上做了一晚功课，决定先去找家修理行修车胎，如果不行再去walmart活着costco换。最后今天早上折腾两个多小时终于在wheel works免费修好，写上一些经验和总结以备以后不时之需。</summary></entry><entry><title type="html">读《时间的形状：相对论史话》</title><link href="http://localhost:4000/2016/11/shape-of-time-notes/" rel="alternate" type="text/html" title="读《时间的形状：相对论史话》" /><published>2016-11-20T00:00:00-08:00</published><updated>2016-11-20T00:00:00-08:00</updated><id>http://localhost:4000/2016/11/shape-of-time-notes</id><content type="html" xml:base="http://localhost:4000/2016/11/shape-of-time-notes/">&lt;p&gt;这本书的逻辑性很好，从历史的角度介绍了经典物理学在20世纪初遇到的难题以及新理论的提出的过程，让非专业读者都能理解相对论的基本内容。&lt;/p&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;第一章 不得不说的废话&lt;/h2&gt;
 
@@ -919,244 +963,4 @@ letter，否则当卖家得知自己不能控制利率可能就不会同意更�
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>lambda</name></author><category term="分布式理论" /><category term="一致性" /><category term="paper" /><category term="Work in Progress" /><summary type="html">工作之余，花了一周的几乎每个晚上把Lamport神的那篇有关拜占庭将军问题的文章看完了。在这里做下笔记。</summary></entry><entry><title type="html">《Head First设计模式》读书笔记（下）- 设计模式</title><link href="http://localhost:4000/2013/09/head-first-design-pattern-notes2/" rel="alternate" type="text/html" title="《Head First设计模式》读书笔记（下）- 设计模式" /><published>2013-09-20T00:00:00-07:00</published><updated>2013-09-20T00:00:00-07:00</updated><id>http://localhost:4000/2013/09/head-first-design-pattern-notes2</id><content type="html" xml:base="http://localhost:4000/2013/09/head-first-design-pattern-notes2/">&lt;ol id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#section&quot; id=&quot;markdown-toc-section&quot;&gt;策略模式&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-1&quot; id=&quot;markdown-toc-section-1&quot;&gt;观察者模式&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-2&quot; id=&quot;markdown-toc-section-2&quot;&gt;装饰者模式&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#factory-method-pattern&quot; id=&quot;markdown-toc-factory-method-pattern&quot;&gt;工厂方法模式（Factory Method Pattern）&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-3&quot; id=&quot;markdown-toc-section-3&quot;&gt;抽象工厂模式&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#singleton-pattern&quot; id=&quot;markdown-toc-singleton-pattern&quot;&gt;单件模式（Singleton Pattern）&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-4&quot; id=&quot;markdown-toc-section-4&quot;&gt;命令模式（封装调用）&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-5&quot; id=&quot;markdown-toc-section-5&quot;&gt;适配器模式&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-6&quot; id=&quot;markdown-toc-section-6&quot;&gt;外观模式&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-7&quot; id=&quot;markdown-toc-section-7&quot;&gt;模板方法模式&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-8&quot; id=&quot;markdown-toc-section-8&quot;&gt;迭代器模式&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-9&quot; id=&quot;markdown-toc-section-9&quot;&gt;组合模式&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-10&quot; id=&quot;markdown-toc-section-10&quot;&gt;状态模式&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-11&quot; id=&quot;markdown-toc-section-11&quot;&gt;代理模式&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#mvc--&quot; id=&quot;markdown-toc-mvc--&quot;&gt;MVC：模型-视图-控制器&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#section-12&quot; id=&quot;markdown-toc-section-12&quot;&gt;模式分类&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;!--  Not show line_numbers  --&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;策略模式&lt;/h2&gt;
-
-&lt;p&gt;策略模式定义了算法族，分别封装起来，让它们之间可以互相替换，此模式让算法的变化独立于使用算法的客户。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2013-09-20-head-first-design-pattern-notes2.strategy.png&quot; alt=&quot;strategy&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;观察者模式&lt;/h2&gt;
-
-&lt;p&gt;观察者模式定义了对象之间的一对多依赖，这样一来，当一个对象改变状态时，它的所有依赖者都会收到通知并自动更新。以下是Java的观察者模式：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2013-09-20-head-first-design-pattern-notes2.observers.png&quot; alt=&quot;observers&quot; /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;出版者+订阅者=观察者模式&lt;/li&gt;
-  &lt;li&gt;不要依赖于观察者被通知的次序，因为一旦观察者/可观察者的实现有所改变，通知次序就会改变，很可能就会产生错误的结果，这绝对不是我们认为的松耦合&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-java highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;util&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Observale&lt;/span&gt;&lt;/code&gt;的黑暗面：&lt;code class=&quot;language-java highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;Observable&lt;/span&gt;&lt;/code&gt;是一个类，如果某类想同时具有&lt;code class=&quot;language-java highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;Observable&lt;/span&gt;&lt;/code&gt;类和另一个超类的行为，就会陷入两难，毕竟Java不支持多重继承，这限制了&lt;code class=&quot;language-java highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;Observable&lt;/span&gt;&lt;/code&gt;的复用潜力；另外，&lt;code class=&quot;language-java highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;Observable&lt;/span&gt;&lt;/code&gt;将关键方法（&lt;code class=&quot;language-java highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;setChanged&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;/code&gt;）保护起来，这个设计违反了设计原则：多用组合，少用继承。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;装饰者模式&lt;/h2&gt;
-
-&lt;p&gt;装饰者模式动态地将责任附加到对象上。若要扩展功能，装饰者提供了比继承更有弹性的替代方案。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2013-09-20-head-first-design-pattern-notes2.decorator.png&quot; alt=&quot;decorator&quot; /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;如上述类图关系，重点在于，装饰者和被装饰者必须是一样的类型，也就是有同样的超类，这相当关键。在这里，我们利用继承达到“类型匹配”而不是获得“行为”。&lt;/li&gt;
-  &lt;li&gt;为何装饰者和被装饰者有相同的接口：因为装饰者必须能取代被装饰者。&lt;/li&gt;
-  &lt;li&gt;通常装饰者模式是采用抽象类，但是在Java中可以使用接口&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;factory-method-pattern&quot;&gt;工厂方法模式（Factory Method Pattern）&lt;/h2&gt;
-
-&lt;p&gt;工厂方法模式定义了一个创建对象的接口，但由子类决定要实例化的类是哪一个。工厂方法让类把实例化推迟到子类，通过让子类决定该创建的对象是什么，来达到将对象创建的过程封装的目的。&lt;/p&gt;
-
-&lt;p&gt;工厂模式具有平行的类层级：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2013-09-20-head-first-design-pattern-notes2.factory.png&quot; alt=&quot;factory&quot; /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;当可能有许多客户程序通过各种方法来创建一个类型的新对象时，可以考虑到把创建这个对象的方法放到一个工厂中去，即使用工厂模式。所有工厂模式都用来封装对象的创建。&lt;/li&gt;
-  &lt;li&gt;工厂方法用来处理对象的创建，并将这样的行为封装在子类中。这样，客户程序中关于超类的代码就和子类对象创建代码解耦了。工厂方法不一定要真的放到一个非本类的“工厂类”中。&lt;/li&gt;
-  &lt;li&gt;使用“工厂”意味着客户在实例化对象时，只会依赖于接口而不是具体类。这符合依赖倒置原则。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-3&quot;&gt;抽象工厂模式&lt;/h2&gt;
-
-&lt;p&gt;抽象工厂模式提供一个接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2013-09-20-head-first-design-pattern-notes2.abstract-factory.png&quot; alt=&quot;abstract-factory&quot; /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;抽象工厂的方法经常以工厂方法的方式实现。抽象工厂的任务是定义一个负责创建一组产品的接口，这个接口内的每个方法都负责创建一个具体产品，同时我们利用实现抽象工厂的子类来提供这些具体的做法&lt;/li&gt;
-  &lt;li&gt;抽象工厂和工厂方法都是负责创建对象，工厂方法用的方法是继承，抽象工厂是通过对象的组合&lt;/li&gt;
-  &lt;li&gt;当需要创建产品家族和想让制造的相关产品集合起来时，可以使用抽象工厂；而工厂方法可以把客户代码从需要实例化的具体类中解耦，或如果目前还不知道将来需要实例化哪些具体类时，也可以用工厂方法。&lt;/li&gt;
-  &lt;li&gt;所有工厂模式都通过减少应用程序和具体类之间的依赖促进松耦合&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;singleton-pattern&quot;&gt;单件模式（Singleton Pattern）&lt;/h2&gt;
-
-&lt;p&gt;单件模式用来创建独一无二的、只能有一个实例的对象。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;实现方法：若将对象赋值给一个全局变量，那么必须在程序一开始就创建好对象。万一这个对象非常耗资源，而程序在这次执行过程中又一直没用到它，就会形成浪费。&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;单件模式实现中处理多线程问题的方法：&lt;/p&gt;
-
-    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Singleton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;volatile&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Singleton&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uniqueInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Singleton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Singleton&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uniqueInstance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;kd&quot;&gt;synchronized&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Singleton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uniqueInstance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;n&quot;&gt;uniqueInstance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Singleton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uniqueInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;使用&lt;code class=&quot;language-java highlighter-rouge&quot;&gt;&lt;span class=&quot;kd&quot;&gt;synchronized&lt;/span&gt;&lt;/code&gt;关键字可能会导致效率严重下降。而volatile关键字定义的成员变量确保在同一时间最多只有一个线程对其进行访问，尤其是32位系统处理64位变量时。另外，也可以使用“急切”创建实例而不用延迟实例，在静态初始化器（static initializer）中创建单位：&lt;/p&gt;
-
-    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Singleton&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uniqueInstance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Singleton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;但这样会导致1中提到的问题。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-4&quot;&gt;命令模式（封装调用）&lt;/h2&gt;
-
-&lt;p&gt;将“请求”封装成对象，以便使用不同的请求、队列或者日志来参数化其他对象。命令模式也支持可撤销的操作。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2013-09-20-head-first-design-pattern-notes2.command.png&quot; alt=&quot;command&quot; /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;当需要将发出请求的对象和执行请求的对象解耦的时候，使用命令模式&lt;/li&gt;
-  &lt;li&gt;宏命令模式：&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2013-09-20-head-first-design-pattern-notes2.macro-command.png&quot; alt=&quot;macro-command&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-5&quot;&gt;适配器模式&lt;/h2&gt;
-
-&lt;p&gt;适配器模式将一个类的接口，转换成客户期望的另一个接口。适配器让原本接口不兼容的类可以合作无间。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2013-09-20-head-first-design-pattern-notes2.adapter.png&quot; alt=&quot;adapter&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-6&quot;&gt;外观模式&lt;/h2&gt;
-
-&lt;p&gt;外观模式改变接口，将一个或数个类的复杂的一切都隐藏在背后，只显露出一个干净美好的外观，让接口更简单。&lt;/p&gt;
-
-&lt;p&gt;外观模式提供了一个统一的接口，用来访问子系统中的一群接口。外观定义了一个高层接口，让子系统更容易使用。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-7&quot;&gt;模板方法模式&lt;/h2&gt;
-
-&lt;p&gt;模板方法模式在一个方法中定义一个算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以在不改变算法结构的情况下，重新定义算法中的某些步骤。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;模板方法不一定要使用继承，例如c++的stl的排序方法使用的比较函数&lt;/li&gt;
-  &lt;li&gt;常见形式：
-    &lt;ul&gt;
-      &lt;li&gt;抽象方法：当子类必须提供算法中某个步骤的实现时使用&lt;/li&gt;
-      &lt;li&gt;钩子：当算法某个部分可选时使用&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;为了防止子类改变模板方法中的算法，可以将模板方法声明为&lt;code class=&quot;language-java highlighter-rouge&quot;&gt;&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-8&quot;&gt;迭代器模式&lt;/h2&gt;
-
-&lt;p&gt;迭代器模式提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2013-09-20-head-first-design-pattern-notes2.iterator.png&quot; alt=&quot;iterator&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-9&quot;&gt;组合模式&lt;/h2&gt;
-
-&lt;p&gt;组合模式允许你将对象组合成树形结构来表现“整体/部分”层次结构。组合能让客户以一致的方式处理个别对象以及对象组合&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2013-09-20-head-first-design-pattern-notes2.composite.png&quot; alt=&quot;composite&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;组合模式是让一个类有两个责任的模式，它不但要管理层次结构，而且还要执行菜单的操作。但组合模式以单一责任设计原则换取透明性（transparency）：通过让组件的接口同事包含一些管理子节点和叶节点的操作，客户就可以将组合和叶节点一视同仁，这是一个很典型的折中案例。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-10&quot;&gt;状态模式&lt;/h2&gt;
-
-&lt;p&gt;允许对象在内部状态改变时改变它的行为，对象看起来好像修改了它的类。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2013-09-20-head-first-design-pattern-notes2.state.png&quot; alt=&quot;state&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;上述&lt;code class=&quot;language-java highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;ConcreteStateA&lt;/span&gt;&lt;/code&gt;和&lt;code class=&quot;language-java highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;ConcreteStateB&lt;/span&gt;&lt;/code&gt;对&lt;code class=&quot;language-java highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt;&lt;/code&gt;的引用并不是必须的。有时&lt;code class=&quot;language-java highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt;&lt;/code&gt;本身也可以决定状态转换的流向。当状态转换是固定时（例如做了某个动作后就一定转换到某特定状态），就适合放在&lt;code class=&quot;language-java highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt;&lt;/code&gt;中。当转换更动态的时候，通常就会放在状态类中。做这个决策的同时，也等于是在为另一件事情做决策：当系统进化时，究竟哪个类是对修改封闭。&lt;/p&gt;
-
-&lt;p&gt;多个&lt;code class=&quot;language-java highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt;&lt;/code&gt;实例可共享状态对象（使用静态变量）。若状态需要利用&lt;code class=&quot;language-java highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt;&lt;/code&gt;中的方法，还必须在每个&lt;code class=&quot;language-java highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;handler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;&lt;/code&gt;方法内传入一个&lt;code class=&quot;language-java highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;Context&lt;/span&gt;&lt;/code&gt;引用。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-11&quot;&gt;代理模式&lt;/h2&gt;
-
-&lt;p&gt;代理模式为另一个对象提供一个替身或占位符以控制对这个对象的访问。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2013-09-20-head-first-design-pattern-notes2.proxy.png&quot; alt=&quot;proxy&quot; /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;几种代理模式：
-    &lt;ul&gt;
-      &lt;li&gt;远程代理：控制访问远程对象&lt;/li&gt;
-      &lt;li&gt;虚拟代理：控制访问创建开销大的资源&lt;/li&gt;
-      &lt;li&gt;保护代理：基于权限控制对资源的访问&lt;/li&gt;
-      &lt;li&gt;防火墙代理（Firewall Proxy）&lt;/li&gt;
-      &lt;li&gt;智能引用代理（Smart Reference Proxy）&lt;/li&gt;
-      &lt;li&gt;缓存代理（Caching Proxy）&lt;/li&gt;
-      &lt;li&gt;同步代理（Synchronization Proxy）&lt;/li&gt;
-      &lt;li&gt;复杂隐藏代理（Complexity Hiding Proxy）&lt;/li&gt;
-      &lt;li&gt;写入时复制代理（Copy-On-Write Proxy）&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Java RMI（远程过程调用）
-    &lt;ul&gt;
-      &lt;li&gt;java.rmi.Remote&lt;/li&gt;
-      &lt;li&gt;stub、skeleton&lt;/li&gt;
-      &lt;li&gt;rmic、rmiregistry工具&lt;/li&gt;
-      &lt;li&gt;transient关键字：告诉Java不要序列化一个对象&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Java的动态代理技术：&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2013-09-20-head-first-design-pattern-notes2.java-dynamic-proxy.png&quot; alt=&quot;java-dynamic-proxy&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;mvc--&quot;&gt;MVC：模型-视图-控制器&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2013-09-20-head-first-design-pattern-notes2.mvc.png&quot; alt=&quot;mvc&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;图解：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;策略模式：视图是一个对象，可以被调整使用不同的策略，而控制器提供了策略&lt;/li&gt;
-  &lt;li&gt;视图用组合模式组织各窗口、面板、按钮等&lt;/li&gt;
-  &lt;li&gt;模型实现了观察者模式，当状态改变时通知对象更新。这使得同一模型可以使用不同的视图甚至可使用多个视图&lt;/li&gt;
-  &lt;li&gt;不同接口的模型常常通过适配器模式复用同一个视图&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/2013-09-20-head-first-design-pattern-notes2.mvc-web.png&quot; alt=&quot;mvc-web&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;上图是Web中的MVC，称为Model 2（Servlet+JSP）。&lt;/p&gt;
-
-&lt;p&gt;复合模式：结合两个或以上的模式，组成一个解决方案，解决一再发生的一般性问题。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-12&quot;&gt;模式分类&lt;/h2&gt;
-
-&lt;p&gt;模式是在某情景下，针对某问题的某种解决方案。模式可分为以下几类：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;创建型：涉及到将对象实例化，这类模式都提供一个方法，将客户从所需要实例化的对象中解耦。包括：Singleton、Builder、Prototype、Abstract Factory、Factory Method&lt;/li&gt;
-  &lt;li&gt;行为型：设计到类和对象如何交互及分配的职责。包括：Template Method、Visitor、Mediator、Iterator、Command、Memento、Interpreter、Observer、Chain of Responsibility、State、Strategy&lt;/li&gt;
-  &lt;li&gt;结构型：可让你把类或对象组合到更大的结构中。包括：Decorator、Proxy、Composite、Façade、Flyweight、Bridge、Adapter&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;反模式告诉你如何采用一个不好的解决方案解决一个问题，告诉你为何这个方案从长远看会造成不好的影响，警告你不要陷入某种致命的诱惑，建议你改用其他的模式以提供更好的解决方案。&lt;/p&gt;</content><author><name>lambda</name></author><category term="设计模式" /><category term="读书笔记" /><summary type="html"></summary></entry></feed>
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>lambda</name></author><category term="分布式理论" /><category term="一致性" /><category term="paper" /><category term="Work in Progress" /><summary type="html">工作之余，花了一周的几乎每个晚上把Lamport神的那篇有关拜占庭将军问题的文章看完了。在这里做下笔记。</summary></entry></feed>
