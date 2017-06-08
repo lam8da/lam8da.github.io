@@ -1,6 +1,6 @@
 # Note: each time this file is changed we need to reload the jekyll http server
 # in order to make it take effect.
-permalink: /:year/:month/:title/
+permalink: /:year/:month/:day/:title/
 url: http://lam8da.github.io
 author: lambda
 # paginate: 5
