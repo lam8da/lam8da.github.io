@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="lambda" />
+    <title>《C++ Primer》读书笔记（第09-13章） | lambda</title>
+    <link rel="shortcut icon" href="">
+    <link href="http://localhost:4001/feed/" rel="alternate" title="lambda" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link rel="stylesheet" href="/media/css/highlighter-rouge.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        "HTML-CSS": { scale: 80 },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>《C++ Primer》读书笔记（第09-13章）</h1>
+        </header>
+        <nav>
+        <span><a title="home page" class="" href="http://localhost:4001/">首页</a></span>
+        <span><a title="categories" class="" href="http://localhost:4001/categories/">分类</a></span>
+        <span><a title="tags" class="" href="http://localhost:4001/tags/">标签</a></span>
+        <span><a title="links" class="" href="http://localhost:4001/links/">链接</a></span>
+        <span><a title="about" class="" href="http://localhost:4001/about/">关于</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://localhost:4001/feed/">订阅</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">第9章 顺序容器</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">第11章 泛型算法</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">第12章 类</a></li>
+  <li><a href="#section-3" id="markdown-toc-section-3">第13章 复制控制</a></li>
+</ul>
+
+<p><!--  Not show line_numbers  -->
+</p>
+
+<h2 id="section">第9章 顺序容器</h2>
+
+<ol>
+  <li>指定容器大小的类型应该使用该容器的<code class="language-c++ highlighter-rouge"><span class="n">size_type</span></code>类型</li>
+  <li>允许通过使用内置数组中的一对指针初始化容器</li>
+  <li>容器元素类型必须满足以下两个约束：
+    <ul>
+      <li>元素类型必须支持赋值运算（故不能是引用）</li>
+      <li>元素类型的对象必须可以复制（用于初始化和<code class="language-c++ highlighter-rouge"><span class="n">push_back</span></code>等）</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="section-1">第11章 泛型算法</h2>
+
+<ol>
+  <li>为了以降序排列<code class="language-c++ highlighter-rouge"><span class="n">vector</span></code>，只需向<code class="language-c++ highlighter-rouge"><span class="n">sort</span></code>传递一对反向迭代器<code class="language-c++ highlighter-rouge"><span class="n">sort</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">rbegin</span><span class="p">(),</span> <span class="n">vec</span><span class="p">.</span><span class="n">rend</span><span class="p">());</span></code></li>
+</ol>
+
+<h2 id="section-2">第12章 类</h2>
+
+<ol>
+  <li>声明一个类而不定义它（即前向声明）时，该类是一个不完全类型，只能以有限方式使用：
+    <ul>
+      <li>不知道包含哪些成员</li>
+      <li>只能用于定义指向该类型的指针及引用，或用于声明（而不是定义）使用该类型作为形参类型或返回类型的函数</li>
+      <li>不能用于定义数据成员或该类的对象（故类不能具有自身类型的数据成员）</li>
+    </ul>
+  </li>
+  <li>在一个源文件中一个类只能被定义一次，如果在多个文件中定义一个类，那么每个文件中的定义必须是完全相同的</li>
+  <li>在普通的非<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>成员函数中，<code class="language-c++ highlighter-rouge"><span class="k">this</span></code>的类型是一个指向类类型的<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>指针</li>
+  <li>当我们希望类的数据成员（甚至在<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>成员函数内）可以被修改时，可将它们声明为<code class="language-c++ highlighter-rouge"><span class="k">mutable</span></code>。<code class="language-c++ highlighter-rouge"><span class="k">mutable</span></code>数据成员永远都不会且不能为<code class="language-c++ highlighter-rouge"><span class="k">const</span></code>。</li>
+  <li>如果函数在类定义体之外定义，则用于返回类型的名字在类作用域之外（否则在之内）。</li>
+  <li>在类定义体外定义的成员函数的返回类型如果使用由该类定义的类型，则必须使用完全限定名，这是因为在函数名被处理前，代码不在类作用域内。</li>
+  <li>类定义实际上是在两个阶段中处理：
+    <ol>
+      <li>首先编译成员声明</li>
+      <li>只有在所有成员出现之后，才编译它们的定义本身（因此成员函数可以使用类作用域中所有名字）</li>
+    </ol>
+  </li>
+  <li>必须在类中先定义类型名字，才能将它们用作数据成员的类型，或者成员函数的返回类型或形参类型</li>
+  <li>一旦一个名字被用作类型名，该名字就不能被重复定义。（但若一个名字在类外作用域中首先被定义为类型名，类中可以先重新定义它再用作类型名）。</li>
+  <li>构造函数不能声明为<code class="language-c++ highlighter-rouge"><span class="k">const</span></code></li>
+  <li>对非类类型的数据成员进行赋值或使用初始化式在结果和性能上都是等价的</li>
+  <li>
+    <p>成员被初始化的次序就是定义成员的次序，不管它们在初始化列表中顺序如何。因此以下程序非法：</p>
+
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">X</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">j</span><span class="p">;</span>
+ <span class="k">public</span><span class="o">:</span>
+  <span class="n">X</span><span class="p">(</span><span class="kt">int</span> <span class="n">val</span><span class="p">)</span><span class="o">:</span> <span class="n">j</span><span class="p">(</span><span class="n">val</span><span class="p">),</span> <span class="n">i</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">};</span>
+</code></pre>
+    </div>
+  </li>
+  <li>当没有在初始化列表中指出或使用合成的默认构造函数时，对于内置和复合类型的成员（如指针和数组），只对定义在全局作用域中的对象才初始化。</li>
+  <li>对于一个没有定义默认构造函数（显式或隐式地）的类：
+    <ul>
+      <li>不能用作动态分配数组的元素类型</li>
+      <li>其静态分配数组必须为每个元素提供一个显式的初始化式</li>
+    </ul>
+  </li>
+  <li>可以用单个实参来调用的非<code class="language-c++ highlighter-rouge"><span class="k">explicit</span></code>构造函数定义了从形参类型到该类类型的一个隐式转换。</li>
+  <li>友元可以是普通的非成员函数，或前面定义的其他类的成员函数，或整个类。</li>
+  <li>友元不是授予友元关系的那个类的成员，故它们不受其声明出现部分的访问控制影响。</li>
+  <li>必须先定义包含成员函数的类，才能将成员函数设为友元。另一方面，不必预先声明类和非成员函数来将它们设为友元。</li>
+  <li>友元声明将已命名的类或非成员函数引入到外围作用域中。此外，友元函数可以在类的内部定义，该函数的作用域扩展到包围该类定义的作用域。用友元引入的类名和函数（定义或声明），可以像预先声明的一样使用。</li>
+  <li><code class="language-c++ highlighter-rouge"><span class="k">const</span> <span class="k">static</span></code>数据成员在类的定义体中初始化时，该数据成员仍必须在类的定义体之外进行定义，但此时不必再指定初始值。</li>
+  <li><code class="language-c++ highlighter-rouge"><span class="k">static</span></code>数据成员的类型可以是该成员所属的类类型，并可用作默认实参。</li>
+  <li>在构造函数初始化列表中除了默认的方式（如<code class="language-c++ highlighter-rouge"><span class="n">x</span><span class="p">()</span></code>）外，无法用其他方式（如传递一个数组）来初始化一个数组类型的成员变量。</li>
+  <li><code class="language-c++ highlighter-rouge"><span class="k">typedef</span></code>在类中必须出现在使用其定义的类型别名的声明之前。</li>
+</ol>
+
+<h2 id="section-3">第13章 复制控制</h2>
+
+<ol>
+  <li>复制构造函数、赋值构造函数和析构函数总称为复制控制（copy control），编译器自动实现这些操作，但类也可以定义自己的版本。</li>
+  <li>对于语句<code class="language-c++ highlighter-rouge"><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"hello"</span><span class="p">;</span></code>，在创建<code class="language-c++ highlighter-rouge"><span class="n">str</span></code>时，编译器首先调用接受一个c风格字符串形参的<code class="language-c++ highlighter-rouge"><span class="n">string</span></code>构造函数，创建一个临时对象，然后编译器使用<code class="language-c++ highlighter-rouge"><span class="n">string</span></code>复制构造函数将<code class="language-c++ highlighter-rouge"><span class="n">str</span></code>初始化为那个临时对象的副本。</li>
+  <li>对于语句<code class="language-c++ highlighter-rouge"><span class="n">C</span> <span class="n">ci</span> <span class="o">=</span> <span class="n">string</span><span class="p">(</span><span class="s">"hello"</span><span class="p">);</span></code>，<code class="language-c++ highlighter-rouge"><span class="n">ci</span></code>的初始化是否正确取决于两点：
+    <ul>
+      <li>类C的带一个<code class="language-c++ highlighter-rouge"><span class="n">string</span></code>形参的ctor是否为<code class="language-c++ highlighter-rouge"><span class="k">explicit</span></code>（如果是<code class="language-c++ highlighter-rouge"><span class="k">explicit</span></code>则失败）</li>
+      <li>类C的copy ctor对当前作用域是否可见</li>
+    </ul>
+  </li>
+  <li>
+    <p>若使用元素初始化列表初始化数组元素，则首先根据指定值创建数组元素类型的元素，然后用复制构造函数将该值复制到相应元素：</p>
+
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">C</span> <span class="n">ci</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="n">string</span><span class="p">(</span><span class="s">"hello"</span><span class="p">),</span>  <span class="c1">// 单参数ctor + copy ctor
+</span>  <span class="n">C</span><span class="p">()</span>  <span class="c1">// 默认ctor + copy ctor
+</span><span class="p">};</span>
+</code></pre>
+    </div>
+  </li>
+  <li>合成的复制构造函数将复制数组类型成员的每一个元素，合成的复制操作符也会给数组的每个元素赋值。</li>
+  <li>当copy ctor定义为<code class="language-c++ highlighter-rouge"><span class="k">explicit</span></code>时，就不能用于向函数传递对象和从函数返回对象。</li>
+  <li>容器（不管是标准库容器还是内置数组）中的元素总是按逆序撤销</li>
+  <li>合成析构函数按对象创建时的逆序撤销每个非<code class="language-c++ highlighter-rouge"><span class="k">static</span></code>成员（即按类中成员声明次序的逆序）</li>
+  <li>因为不能指定任何形参，所以不能重载析构函数</li>
+  <li>即使我们编写了自己的析构函数，合成的析构函数仍然运行。</li>
+  <li>自定义的copy ctor必须是引用传递形参（而不是传值），否则会导致无限递归。</li>
+</ol>
+
+</section>
+<section class="meta">
+<span class="author">
+  <a href="http://lam8da.github.io">lambda</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2013-09-20">2013-09-20</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="http://localhost:4001/categories/#程序&设计" title="程序&设计">程序&设计</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="http://localhost:4001/tags/#c++" title="c++">c++</a>&nbsp;
+  
+  <a href="http://localhost:4001/tags/#读书笔记" title="读书笔记">读书笔记</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="comment">
+
+<!--
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'lambda'; // required: replace example with your forum shortname
+  var disqus_url = 'http://localhost:4001/2013/09/20/c++-primer-notes-chapter09to13/';
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+-->
+
+<div id="gitment_thread"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    owner: 'lam8da',
+    repo: 'lam8da.github.io.comments',
+    oauth: {
+      client_id: '4ec8d7487458f49ba8f2',
+      client_secret: 'dbd58db32dee8f9a954f35b6f1ecf931a0a4edfc',
+    },
+  })
+  gitment.render('gitment_thread')
+</script>
+
+</section>
+
+<script type="text/javascript">
+$(function() {
+    $(document).keydown(
+      function(e) {
+        if (e.target.nodeName.toUpperCase() != 'BODY') return;
+        var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+          
+            url = 'http://localhost:4001/2013/09/20/c++-primer-notes-chapter05to08/';
+          
+        } else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+          
+            url = 'http://localhost:4001/2013/09/20/c++-primer-notes-chapter14to15/';
+          
+        }
+        if (url) {
+          window.location = url;
+        }
+      });
+})
+</script>
+
+        </article>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1988641-2']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

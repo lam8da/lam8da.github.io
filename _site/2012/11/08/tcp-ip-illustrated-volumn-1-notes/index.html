@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="lambda" />
+    <title>《TCP/IP详解[卷1]》读书笔记 | lambda</title>
+    <link rel="shortcut icon" href="">
+    <link href="http://localhost:4001/feed/" rel="alternate" title="lambda" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link rel="stylesheet" href="/media/css/highlighter-rouge.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        "HTML-CSS": { scale: 80 },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>《TCP/IP详解[卷1]》读书笔记</h1>
+        </header>
+        <nav>
+        <span><a title="home page" class="" href="http://localhost:4001/">首页</a></span>
+        <span><a title="categories" class="" href="http://localhost:4001/categories/">分类</a></span>
+        <span><a title="tags" class="" href="http://localhost:4001/tags/">标签</a></span>
+        <span><a title="links" class="" href="http://localhost:4001/links/">链接</a></span>
+        <span><a title="about" class="" href="http://localhost:4001/about/">关于</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://localhost:4001/feed/">订阅</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<p><!--  Not show line_numbers  -->
+</p>
+
+<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">第1章 概述</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">第2章 链路层</a></li>
+  <li><a href="#ip" id="markdown-toc-ip">第3章 IP：网际协议</a></li>
+  <li><a href="#arp" id="markdown-toc-arp">第4章 ARP：地址解析协议</a></li>
+  <li><a href="#rarp" id="markdown-toc-rarp">第5章 RARP：逆地址解析协议（已过时）</a></li>
+  <li><a href="#icmpinternet" id="markdown-toc-icmpinternet">第6章 ICMP：Internet控制报文协议</a></li>
+  <li><a href="#ping" id="markdown-toc-ping">第7章 Ping程序</a></li>
+  <li><a href="#traceroute" id="markdown-toc-traceroute">第8章 Traceroute程序</a></li>
+  <li><a href="#ip-1" id="markdown-toc-ip-1">第9章 IP选路</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">第10章 动态选路协议</a></li>
+  <li><a href="#udp" id="markdown-toc-udp">第11章 UDP：用户数据报协议</a></li>
+  <li><a href="#section-3" id="markdown-toc-section-3">第12章 广播和多播</a></li>
+  <li><a href="#igmpinternet" id="markdown-toc-igmpinternet">第13章 IGMP：Internet组管理协议（没细看）</a></li>
+  <li><a href="#dns" id="markdown-toc-dns">第14章 DNS：域名系统</a></li>
+  <li><a href="#tftp" id="markdown-toc-tftp">第15章 TFTP：简单文件传送协议（已过时）</a></li>
+  <li><a href="#bootp" id="markdown-toc-bootp">第16章 BOOTP：引导程序协议</a></li>
+  <li><a href="#tcp" id="markdown-toc-tcp">第17章 TCP：传输控制协议</a></li>
+  <li><a href="#tcp-1" id="markdown-toc-tcp-1">第18章 TCP连接的建立与终止</a></li>
+  <li><a href="#tcp-2" id="markdown-toc-tcp-2">第19章 TCP的交互数据流</a></li>
+  <li><a href="#tcp-3" id="markdown-toc-tcp-3">第20章 TCP的成块数据流</a></li>
+  <li><a href="#tcp-4" id="markdown-toc-tcp-4">第21章 TCP的超时与重传</a></li>
+  <li><a href="#tcp-5" id="markdown-toc-tcp-5">第22章TCP的坚持定时器</a></li>
+  <li><a href="#tcp-6" id="markdown-toc-tcp-6">第23章TCP的保活定时器</a></li>
+  <li><a href="#tcp-7" id="markdown-toc-tcp-7">第24章TCP的未来和性能</a></li>
+  <li><a href="#section-4" id="markdown-toc-section-4">第25章之后的没看，要么过时，要么非重点。</a></li>
+</ul>
+
+<h2 id="section">第1章 概述</h2>
+
+<ol>
+  <li>网桥是在链路层上对网络进行互连，它使多个局域网（LAN）组合在一起，这样对上层来说就好像一个局域网</li>
+  <li>交换机的目标是快速转发（交换）数据（不管是多少层交换机），而路由器的目标是其复杂的路由功能。路由器有NAT等功能但（三层以上的）交换机不支持</li>
+  <li>TCP服务器是并发型（开多进程或多线程），UDP服务器是重复型（每次处理一个请求，完成后再处理下一个）</li>
+</ol>
+
+<h2 id="section-1">第2章 链路层</h2>
+
+<ol>
+  <li>最大传输单元（MTU）、路径MTU等概念。</li>
+  <li>
+    <p>（来自本书第二版）生成树协议（STP）</p>
+
+    <blockquote class="lambda_question">
+      <p>是否协议完成之后的所有帧转发都按照生成树的边来发？这样的每条割边会不会成为性能瓶颈？</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h2 id="ip">第3章 IP：网际协议</h2>
+
+<ol>
+  <li>IP检验和只覆盖IP首部。</li>
+</ol>
+
+<h2 id="arp">第4章 ARP：地址解析协议</h2>
+
+<ol>
+  <li>每个主机上都有一个ARP高速缓存。</li>
+  <li>ARP代理。</li>
+</ol>
+
+<h2 id="rarp">第5章 RARP：逆地址解析协议（已过时）</h2>
+
+<h2 id="icmpinternet">第6章 ICMP：Internet控制报文协议</h2>
+
+<h2 id="ping">第7章 Ping程序</h2>
+
+<ol>
+  <li>实现：发送一份ICMP回显请求报文给目标主机。</li>
+  <li>IP的记录路由（RR）选项。</li>
+  <li>IP的时间戳选项。</li>
+</ol>
+
+<h2 id="traceroute">第8章 Traceroute程序</h2>
+
+<ol>
+  <li>工作过程：从n=1开始，每次发送一份ttl=n的报文给目标主机，若ttl太小则中间路由器会返回ICMP超时信息，于是源端主机便可获得中间路由器地址。当ttl刚好足够到达目标主机时，由于程序使用UDP并选择了一个不可能的值作为UDP端口，于是目标主机返回端口不可达的ICMP报文。Traceroute判断ICMP报文的类型以决定什么时候结束循环。</li>
+  <li>IP源站选路选项：严格的源路由选择（指定每一跳所必须选择的路由，不可达时返回源站路由失败ICMP错误），宽松的源站路由选项（指明一个数据包经过的IP地址清单）。</li>
+  <li>Traceroute如何找出往返路由：先指定一个宽松的源站路由选项，中间路由器为目标端主机，目的地为本机。</li>
+</ol>
+
+<h2 id="ip-1">第9章 IP选路</h2>
+
+<ol>
+  <li>
+    <blockquote class="lambda_question">
+      <p>面向连接的协议如TCP在建立连接时要固定路由，为什么？</p>
+    </blockquote>
+  </li>
+  <li>ICMP重定向允许TCP/IP主机在进行选路时不需要具备智能特性，而把所有的智能特性放在路由器端。</li>
+  <li>ICMP路由器发现报文：主机在引导后要广播或多播传送一份路由器请求报文，一台或多台路由器响应一份路由器通告报文。另外，路由器定期地广播或多播传送它们的路由器通告报文，允许每个正在监听的主机相应地更新它们的路由表。</li>
+</ol>
+
+<h2 id="section-2">第10章 动态选路协议</h2>
+
+<ol>
+  <li>动态选路改变的仅仅是放置到路由表的信息</li>
+  <li>每个自治系统（例如一个学校或一间公司）可以选择该自治系统中各个路由器之间的选路协议，这种协议成为内部网关协议IGP（Interior Gateway Protocol）。域内选路协议的分隔选路协议成为外部网关协议EGP（Exterier Gateway Protocol）。新EGP用于NSFNET骨干网和一些连接到骨干网的区域性网络上，称为边界网关协议BGP（Border Gateway Protocol）。</li>
+  <li>RIP（Routing Information Protocol）、OSPF（开放最短路径优先）、BGP</li>
+</ol>
+
+<h2 id="udp">第11章 UDP：用户数据报协议</h2>
+
+<ol>
+  <li>IP分片：IP标志字段中有一个“不分片”位，若出错则返回ICMP报文。缺点：即使只丢失一片数据也要重传整个数据报。</li>
+  <li>分片时，除了最后一片外，其他每一片中的数据部分必须是8字节的整数倍（这是因为用了3位做标志）。</li>
+  <li>分片后，协议名（在IP首部中）被复制到各片中，但是端口号在UDP首部，只能在第一片中被发现。</li>
+  <li>IP数据报指IP层端到端的传输单元（在分片之前和重组之后），分组指IP层和链路层之间传送的数据单元。一个分组可以是一个完整的IP数据报也可以是一个分片。</li>
+  <li>和ARP的交互：如果ARP缓存中不存在目标主机的MAC地址，则在接收到第一个ARP应答前的数据报片被丢弃！</li>
+  <li>分片后，在接收端，在第一个数据报片（给定数据报的第一个到达的数据报片，而不是第一个分片）到达时，IP层必须启动一个定时器（30或60秒），若超时而所有其他片未全部到达则将这些收的片丢弃。否则那些永远不会到达的数据报片迟早会引起接收端缓存满。在丢弃时，如果被丢弃的不包括第一个分片，则不要求发送ICMP差错（因为无法确定应用端口号）。</li>
+  <li>UDP有个输入队列，应用程序并不知道其输入队列何时溢出，只是由UDP对超出数据报进行丢弃处理，丢弃时不发回任何数据报通知客户端。</li>
+  <li>UDP可以限制本地接受的IP地址（当有多个网卡时）。在限制本地IP地址的情况下可以限制客户端IP地址和端口号。</li>
+</ol>
+
+<h2 id="section-3">第12章 广播和多播</h2>
+
+<ol>
+  <li>广播和多播仅应用与UDP。</li>
+  <li>当接口呗设置为混杂模式时能接收到每个帧的一个复制。</li>
+  <li>指向子网的广播地址为主机号为全1且有特定子网号的地址。</li>
+  <li>
+    <blockquote class="lambda_question">
+      <p>ping一个广播地址不需要发送ARP？</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>多播：32个不同的多播组号被映射成一个以太网地址</p>
+
+    <blockquote class="lambda_question">
+      <p>多播就是一个不靠谱的东西？</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h2 id="igmpinternet">第13章 IGMP：Internet组管理协议（没细看）</h2>
+
+<h2 id="dns">第14章 DNS：域名系统</h2>
+
+<ol>
+  <li>Unix库函数gethostbyname和gethostbyaddr</li>
+  <li>完全合格的域名FQDN（Full Qualified Domain Name）</li>
+  <li>顶级域名分3部分：arpa（用作地址到名字转换的特殊域）、7个3字符长的普通域（com，edu等）、2字符长的域（国家代码）。</li>
+  <li>一个区域的管理者必须为该区域提供一个主名字服务器和至少一个辅助名字服务器。主名字服务器从磁盘文件调入该区域所有信息，辅名字服务器则从主服务器调入所有信息（称为区域传送）。</li>
+  <li>指针查询：例如对于IP地址为140.252.13.33的主机，其DNS名字为33.13.252.140.in-addr.arpa。</li>
+  <li>Unix系统的名字解析器文件为/etc/resolv/conf。从中删除nameserver行将导致名字解析器使用本地主机上的名字服务器。</li>
+  <li>普通的DNS请求/回答都是采用UDP，但是当返回响应中的TC（删减标志）位被设为1（意味着响应长度超过512字节而仅返回前512个字节）时，名字解析器通常用TCP重发原来的查询请求。另外，区域传送将使用TCP。</li>
+</ol>
+
+<h2 id="tftp">第15章 TFTP：简单文件传送协议（已过时）</h2>
+
+<h2 id="bootp">第16章 BOOTP：引导程序协议</h2>
+
+<blockquote class="lambda_question">
+  <p>已被DHCP取代？</p>
+</blockquote>
+
+<h2 id="tcp">第17章 TCP：传输控制协议</h2>
+
+<ol>
+  <li>TCP不在字节流中插入记录标示符，即接收方没法区分发送方发了多少次记录，只知道发了多少个字节。这称为字节流服务。</li>
+  <li>一个IP地址和一个端口号也称为一个插口（socket）。</li>
+  <li>确认序号包含发送确认一端所期望收到的下一个序号。</li>
+  <li>每一端都可以指定最长报文大小MSS（Maximum Segment Size）。</li>
+</ol>
+
+<h2 id="tcp-1">第18章 TCP连接的建立与终止</h2>
+
+<ol>
+  <li>单方的主动打开：三次握手。</li>
+  <li>终止连接：四次握手。</li>
+  <li>半关闭：只终止了一端的连接。</li>
+  <li>2MSL等待状态：MSL（Maximum Segment Lifetime）指报文最大生存时间。处理原则：当TCP执行一个主动关闭，并发回最后一个ACK（四次握手完成后），该连接必须在TIME_WAIT状态停留的时间为2倍的MSL。这样可让TCP再次发送最后的ACK以防止这个ACK丢失（另一端超时并重发最后的FIN）。</li>
+  <li>在连接处于2MSL等待时，任何迟到的报文段将被丢弃。因为处于2MSL等待的、由该插口对（socket pair）定义的连接在这段时间内不能被再用。TCP不能允许一个新的连接建立在已用的插口对上。</li>
+  <li>RFC793指出TCP在重启后MSL秒内不能建立任何连接。这称为平静时间（quiet time）。</li>
+  <li>两端同时执行主动打开的情况下需要交换4个报文；两端同时执行主动关闭时也只需4个报文。</li>
+  <li>TCP可以限定本地IP地址（当有多快卡时），这种情况下可以同时限定远端地址和端口号。和UDP一样，在不限定本地IP地址时不能限定远端地址和端口号。</li>
+  <li>正等待连接请求的一端有一个固定长度的连接队列，该队列中的连接已被TCP接受（即三次握手已完成）但还没被应用程序接受。注意区分TCP接受一个连接是将其放入这个队列，而应用层接受连接是将其从该队列中移出。应用层将指明该队列的最大长度，这个值通常称为积压值（backlog），取值0-5。因此当应用程序被告知连接请求已经到来时，TCP的三次握手已经结束。这意味着TCP服务器无法使客户进程的主动打开失效。</li>
+</ol>
+
+<h2 id="tcp-2">第19章 TCP的交互数据流</h2>
+
+<ol>
+  <li>经受时延的确认：绝大多数实现采用的时延为200ms，TCP将等待这么长时间看是否有数据一起发送。</li>
+  <li>Nagle算法：要求一个TCP连接上最多只能有一个未被确认的未完成的小分组，在该分组的确认到达之前不能发送其他小分组。相反，TCP收集这些少量分组，并在确认到来时以一个分组的方式发出去。</li>
+</ol>
+
+<h2 id="tcp-3">第20章 TCP的成块数据流</h2>
+
+<ol>
+  <li>PUSH标志：发送方使用该标志通知接收方将所有收到的数据立即全部提交给接收进程，而不能等待判断是否还有额外的数据到达。</li>
+  <li>慢启动（slow start）和拥塞窗口（congestion window）cwnd。慢启动时，实际上是没收到一个ack就发送2个报文，于是cwnd是以指数方式增长的（想象一棵完全二叉树）。</li>
+  <li>带宽时延乘积：capacity(bit)=bandwidth(b/s)*round-trip time(s)。</li>
+  <li>
+    <p>紧急方式：紧急指针被置为一个正的偏移量，该偏移量必须与TCP首部最后那个的序号字段相加，以便得出紧急数据的最后一个字节的序号。</p>
+
+    <blockquote class="lambda_question">
+      <p>这个有啥用？另如果一个紧急数据发出后收到的ack没有将其确认，则会重复发送同样的紧急数据直到收到确认？</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h2 id="tcp-4">第21章 TCP的超时与重传</h2>
+
+<ol>
+  <li>对每个连接TCP管理4个不同的定时器：重传定时器、坚持（persist）定时器、保活（keepalive）定时器、2MSL定时器。</li>
+  <li>往返时间RTT的测量：每次调用500ms的TCP定时器例程对一个报文进行测量，测量结果为一个取整后的整数值（以500ms为单位）。在发送一个报文段时，如果给定连接的定时器已经被使用，则该报文段不被计时。另外（Karn算法），当一个超时和重传发生时，在重传数据的确认最后到达时，不能更新RTT估计器，因为我们并不知道ACK对应那次传输。</li>
+  <li>RTO（Retransmission TimeOut）估计器：设M为最新的RTT的测量值，则使用如下方式计算RTO：
+    <div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="nv">Err</span><span class="o">=</span>M-A
+<span class="nv">A</span><span class="o">=</span>A+g<span class="k">*</span>Err
+<span class="nv">D</span><span class="o">=</span>D+h<span class="o">(</span>|Err|-D<span class="o">)</span>
+<span class="nv">RTO</span><span class="o">=</span>A+4D
+</code></pre>
+    </div>
+
+    <p>其中A是被平滑的RTT均值的估计器，D是被平滑的均值偏差，Err是刚得到的测量结果与之前的RTT估计器之差，增量g起平均作用，取为1/8，偏差增益h取0.25.当RTT变化时，较大的偏差增益将使RTO快速变化。变量A和D分别被初始化为0和3秒，一开始计算RTO初值时使用RTO=A+2D，之后才用4。当超时时使用RTO=A+4D计算RTO，然后再应用指数退避（第一次超时使用倍数2，下次是4），得出的值才是下次用于超时计时器的值。</p>
+  </li>
+  <li>
+    <blockquote class="lambda_question">
+      <p>当第一个数据报文段的ACK到达时（即第一次算A时），用的是A=M+0.5的方法？</p>
+    </blockquote>
+  </li>
+  <li>Jacobson快速重传算法：TCP对收到的重复ACK进行计数，当收到第三个时，就假定一个报文段已经丢失并重传自那个序号起的第一个报文段。</li>
+  <li>有两种分组丢失的指示：发生超时和收到重复确认。</li>
+  <li>
+    <p>拥塞避免算法和慢启动算法：需要对每个连接维持两个变量：一个拥塞窗口 cwnd和一个慢启动门限ssthresh。这样得到的算法的工作过程如下：</p>
+
+    <ol>
+      <li>对一个给定的连接，初始化cwnd为1个报文段，ssthresh为65535个字节。</li>
+      <li>TCP输出例程的输出不能超过cwnd和接收方通告窗口的大小。拥塞避免是发送方使用的流量控制，而通告窗口则是接收方进行的流量控制。前者是发送方感受到的网络拥塞的估计，而后者则与接收方在该连接上的可用缓存大小有关。</li>
+      <li>当拥塞发生时（超时或收到重复确认），ssthresh被设置为当前窗口大小的一半（cwnd和接收方通告窗口大小的最小值，但最少为2个报文段）。此外，如果是超时引起了拥塞，则cwnd被设置为1个报文段（这就是慢启动）。</li>
+      <li>当新的数据被对方确认时，就增加cwnd，但增加的方法依赖于我们是否正在进行慢启动或拥塞避免。如果cwnd小于或等于ssthresh，则正在进行慢启动，否则正在进行拥塞避免。</li>
+    </ol>
+
+    <p>慢启动一直持续到我们回到当拥塞发生时所处位置的半时候才停止（因为我们记录了在步骤2中给我们制造麻烦的窗口大小的一半），然后转为执行拥塞避免。慢启动算法初始设置cwnd为1个报文段，此后每收到一个确认就加1。那样，这会使窗口按指数方式增长：发送1个报文段，然后是2个，接着是4个……。</p>
+
+    <p>拥塞避免算法要求每次收到一个确认时将cwnd增加1/cwnd。与慢启动的指数增加比起来，这是一种加性增长(additiveincrease)。我们希望在一个往返时间内最多为cwnd增加1个报文段（不管在这个RTT中收到了多少个ACK），然而慢启动将根据这个往返时间中所收到的确认的个数增加cwnd。</p>
+  </li>
+  <li>
+    <p>快速重传完成之后接下来之行的不是慢启动而是拥塞避免算法，这就是快速恢复算法。没有执行慢启动的原因是由于收到重复的ACK说明收发两端之间仍然有流动的数据，而我们不想执行慢启动来突然减少数据流。这个算法通常按如下过程进行实现：</p>
+
+    <ol>
+      <li>当收到第3个重复的ACK时，将ssthresh设置为当前拥塞窗口cwnd的一半。重传丢失的报文段。设置cwnd为ssthresh加上3倍的报文段大小。</li>
+      <li>每次收到另一个重复的ACK时，cwnd增加1个报文段大小并发送1个分组（如果新的cwnd允许发送）。</li>
+      <li>当下一个确认新数据的ACK到达时，设置cwnd为ssthresh（在第1步中设置的值）。这个ACK应该是在进行重传后的一个往返时间内对步骤1中重传的确认。另外，这个ACK也应该是对丢失的分组和收到的第1个重复的ACK之间的所有中间报文段的确认。这一步采用的是拥塞避免，因为当分组丢失时我们将当前的速率减半。</li>
+    </ol>
+  </li>
+  <li>
+    <blockquote class="lambda_question">
+      <p>问题：若重传扔丢失了呢？</p>
+    </blockquote>
+  </li>
+</ol>
+
+<h2 id="tcp-5">第22章TCP的坚持定时器</h2>
+
+<ol>
+  <li>如果一个确认丢失了，则双方就有可能因为等待对方而使连接终止：接收方等待接收数据（因为它已经向发送方通告了一个非0的窗口），而发送方在等待允许它继续发送数据的窗口更新。为防止这种死锁情况的发生，发送方使用一个坚持定时器(persist timer)来周期性地向接收方查询，以便发现窗口是否已增大。这些从发送方发出的报文段称为窗口探查(window probe)。</li>
+  <li>TCP从不放弃发送窗口探查。这些探查每隔60秒发送一次，这个过程将持续到或者窗口被打开，或者应用进程使用的连接被终止。</li>
+  <li>
+    <p>糊涂窗口综合症（Silly Window Syndrome）：少量的数据将通过连接进行交换，而不是满长度的报文段。可如下避免：</p>
+
+    <ul>
+      <li>接收方不通告小窗口。通常的算法是接收方不通告一个比当前窗口大的窗口（可以为0），除非窗口可以增加一个报文段大小（也就是将要接收的MSS）或者可以增加接收方缓存空间的一半，不论实际有多少。</li>
+      <li>发送方避免出现糊涂窗口综合症的措施是只有以下条件之一满足时才发送数据：(a)可以发送一个满长度的报文段；(b)可以发送至少是接收方通告窗口大小一半的报文段；(c)可以发送任何数据并且不希望接收ACK（也就是说，我们没有还未被确认的数据）或者该连接上不能使用Nagle算法</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="tcp-6">第23章TCP的保活定时器</h2>
+
+<ol>
+  <li>2小时之内没任何动作时发送查探报文。</li>
+</ol>
+
+<h2 id="tcp-7">第24章TCP的未来和性能</h2>
+
+<ol>
+  <li>路径MTU发现</li>
+  <li>长肥管道（longfatpipe）的问题：窗口大小不够、分组丢失会使吞吐量急剧减少、序号回绕。</li>
+</ol>
+
+<h2 id="section-4">第25章之后的没看，要么过时，要么非重点。</h2>
+
+</section>
+<section class="meta">
+<span class="author">
+  <a href="http://lam8da.github.io">lambda</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2012-11-08">2012-11-08</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="http://localhost:4001/categories/#网络&分布式" title="网络&分布式">网络&分布式</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="http://localhost:4001/tags/#TCP/IP" title="TCP/IP">TCP/IP</a>&nbsp;
+  
+  <a href="http://localhost:4001/tags/#协议" title="协议">协议</a>&nbsp;
+  
+  <a href="http://localhost:4001/tags/#网络" title="网络">网络</a>&nbsp;
+  
+  <a href="http://localhost:4001/tags/#读书笔记" title="读书笔记">读书笔记</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="comment">
+
+<!--
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'lambda'; // required: replace example with your forum shortname
+  var disqus_url = 'http://localhost:4001/2012/11/08/tcp-ip-illustrated-volumn-1-notes/';
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+-->
+
+<div id="gitment_thread"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    owner: 'lam8da',
+    repo: 'lam8da.github.io.comments',
+    oauth: {
+      client_id: '4ec8d7487458f49ba8f2',
+      client_secret: 'dbd58db32dee8f9a954f35b6f1ecf931a0a4edfc',
+    },
+  })
+  gitment.render('gitment_thread')
+</script>
+
+</section>
+
+<script type="text/javascript">
+$(function() {
+    $(document).keydown(
+      function(e) {
+        if (e.target.nodeName.toUpperCase() != 'BODY') return;
+        var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+          
+            url = 'http://localhost:4001/2012/10/21/tcp-ip-protocol-suite-diagram/';
+          
+        } else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+          
+            url = 'http://localhost:4001/2012/11/13/installing-ubuntu-v1204-on-windows7/';
+          
+        }
+        if (url) {
+          window.location = url;
+        }
+      });
+})
+</script>
+
+        </article>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1988641-2']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

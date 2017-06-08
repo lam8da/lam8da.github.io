@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="lambda" />
+    <title>《Head First设计模式》读书笔记（上）- 设计原则 | lambda</title>
+    <link rel="shortcut icon" href="">
+    <link href="http://localhost:4001/feed/" rel="alternate" title="lambda" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link rel="stylesheet" href="/media/css/highlighter-rouge.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        "HTML-CSS": { scale: 80 },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>《Head First设计模式》读书笔记（上）- 设计原则</h1>
+        </header>
+        <nav>
+        <span><a title="home page" class="" href="http://localhost:4001/">首页</a></span>
+        <span><a title="categories" class="" href="http://localhost:4001/categories/">分类</a></span>
+        <span><a title="tags" class="" href="http://localhost:4001/tags/">标签</a></span>
+        <span><a title="links" class="" href="http://localhost:4001/links/">链接</a></span>
+        <span><a title="about" class="" href="http://localhost:4001/about/">关于</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://localhost:4001/feed/">订阅</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<ol id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">封装变化</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">针对接口编程，而不是针对实现编程</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">多用组合，少用继承</a></li>
+  <li><a href="#section-3" id="markdown-toc-section-3">为了交互对象之间的松耦合设计而努力</a></li>
+  <li><a href="#section-4" id="markdown-toc-section-4">类应该对扩展开放，对修改关闭</a></li>
+  <li><a href="#section-5" id="markdown-toc-section-5">要依赖抽象，不要依赖具体类</a></li>
+  <li><a href="#section-6" id="markdown-toc-section-6">最小知识原则</a></li>
+  <li><a href="#section-7" id="markdown-toc-section-7">好莱坞原则</a></li>
+  <li><a href="#section-8" id="markdown-toc-section-8">应尽量让每个类保持单一责任</a></li>
+</ol>
+
+<h2 id="section">封装变化</h2>
+
+<p>找出应用中可能需要变化之处，把它们独立出来（并封装起来），不要和那些不要变化的代码混在一起。</p>
+
+<p>如果每次新的需求一来，都会使某方面的代码发生变化，那么你就可以确定，这部分的代码需要被抽出来，和其他稳定的代码有所区分</p>
+
+<h2 id="section-1">针对接口编程，而不是针对实现编程</h2>
+
+<p>以前的做法是：行为来自超类的具体实现，或是继承某个接口并由子类自行实现而来。这两种做法都是依赖于“实现”，我们被实现绑得死死的，没办法更改行为（除非写更多代码）。</p>
+
+<p>“针对接口编程”真正的意思是“针对超类型（supertype）编程”，货可以更明确地说成“变量的声明类型应该是超类型，通常是一个抽象类或者是一个接口”。</p>
+
+<h2 id="section-2">多用组合，少用继承</h2>
+
+<p>良好的OO设计必须具备可复用、可扩充、可维护三个特性。大多数的模式都允许系统局部改变独立于其他部分</p>
+
+<h2 id="section-3">为了交互对象之间的松耦合设计而努力</h2>
+
+<h2 id="section-4">类应该对扩展开放，对修改关闭</h2>
+
+<h2 id="section-5">要依赖抽象，不要依赖具体类</h2>
+
+<p>依赖倒置原则（Dependency Inversion Principle）：不能让高层组件依赖低层组件，而且，不管高层或低层组件，两者都应该依赖于抽象。所谓高层组件，是由其他低层组件定义其行为的类。</p>
+
+<p>一下指导方针能帮助避免在OO设计中违反依赖倒置原则：</p>
+
+<ol>
+  <li>变量不可以持有具体类的引用</li>
+  <li>不要让类派生自具体类</li>
+  <li>不要覆盖基类中已实现的方法（如果覆盖基类已实现的方法，那么你的基类就不是一个真正适合被继承的抽象。基类中已实现的方法，应该由所有的子类共享）</li>
+</ol>
+
+<h2 id="section-6">最小知识原则</h2>
+
+<p>减少对象之间的交互，不要让太多的类耦合在一起。</p>
+
+<p>指导方针：就任何对象而言，在该对象的方法内，我们只应该调用属于以下范围的方法：</p>
+
+<ol>
+  <li>该对象本身</li>
+  <li>被当做方法的参数而传进来的对象</li>
+  <li>此方法所创建或实例化的任何对象</li>
+  <li>对象的任何组件（Has-A）</li>
+</ol>
+
+<p>注意，如果某对象是调用其他方法的返回结果，不要调用该对象的方法！</p>
+
+<h2 id="section-7">好莱坞原则</h2>
+
+<p>别调用（打电话给）我们，我们会调用（打电话给）你（将决策权放在高层模块中）。</p>
+
+<p>例如模板方法模式中，低层组件绝对不可以直接调用高层组件。</p>
+
+<h2 id="section-8">应尽量让每个类保持单一责任</h2>
+
+<p>因为一个类应该只有一个引起变化的原因。类的每个责任都有改变的潜在区域，超过一个责任，意味着超过一个改变的区域。如果一个类具有两个改变的原则，那么这会使得将来该类变化的几率上升；而当它真的改变时，你的设计中同时有两个方面将受到影响。</p>
+
+<p>术语：</p>
+<ul>
+  <li>内聚（cohesion）：用来度量一个类或模块紧密地达到单一目的或责任</li>
+  <li>高内聚：一个模块/类被设计成只支持一组相关功能</li>
+</ul>
+
+</section>
+<section class="meta">
+<span class="author">
+  <a href="http://lam8da.github.io">lambda</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2013-09-20">2013-09-20</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="http://localhost:4001/categories/#程序&设计" title="程序&设计">程序&设计</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="http://localhost:4001/tags/#设计模式" title="设计模式">设计模式</a>&nbsp;
+  
+  <a href="http://localhost:4001/tags/#读书笔记" title="读书笔记">读书笔记</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="comment">
+
+<!--
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'lambda'; // required: replace example with your forum shortname
+  var disqus_url = 'http://localhost:4001/2013/09/20/head-first-design-pattern-notes1/';
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+-->
+
+<div id="gitment_thread"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    owner: 'lam8da',
+    repo: 'lam8da.github.io.comments',
+    oauth: {
+      client_id: '4ec8d7487458f49ba8f2',
+      client_secret: 'dbd58db32dee8f9a954f35b6f1ecf931a0a4edfc',
+    },
+  })
+  gitment.render('gitment_thread')
+</script>
+
+</section>
+
+<script type="text/javascript">
+$(function() {
+    $(document).keydown(
+      function(e) {
+        if (e.target.nodeName.toUpperCase() != 'BODY') return;
+        var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+          
+            url = 'http://localhost:4001/2013/09/20/c++-primer-notes-chapter17to18/';
+          
+        } else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+          
+            url = 'http://localhost:4001/2013/09/20/head-first-design-pattern-notes2/';
+          
+        }
+        if (url) {
+          window.location = url;
+        }
+      });
+})
+</script>
+
+        </article>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1988641-2']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

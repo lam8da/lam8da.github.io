@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="lambda" />
+    <title>分布式找出出现次数最多的url | lambda</title>
+    <link rel="shortcut icon" href="">
+    <link href="http://localhost:4001/feed/" rel="alternate" title="lambda" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link rel="stylesheet" href="/media/css/highlighter-rouge.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        "HTML-CSS": { scale: 80 },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>分布式找出出现次数最多的url</h1>
+        </header>
+        <nav>
+        <span><a title="home page" class="" href="http://localhost:4001/">首页</a></span>
+        <span><a title="categories" class="" href="http://localhost:4001/categories/">分类</a></span>
+        <span><a title="tags" class="" href="http://localhost:4001/tags/">标签</a></span>
+        <span><a title="links" class="" href="http://localhost:4001/links/">链接</a></span>
+        <span><a title="about" class="" href="http://localhost:4001/about/">关于</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://localhost:4001/feed/">订阅</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<p>某天某度给了这么一条面试题：有N台机器（例如100台），每台机器上有个数十G的文件，每个文件上是一行行的url，这些url是用户访问的记录。求出所有机器中出现次数最多的url及其出现次数。</p>
+
+<p>我想都没想就说用MapReduce说这是一个word count的过程，但是面试官不爽，说太慢了而且传输数据量极大。于是我又说不管怎样在最坏情况下都需要传输所有数据一遍的（例如没有重复的url的情况下。。），面试官说不行，他们想了个方法是可以不全部传输的。于是到最后我都没想到他想要的答案。。</p>
+
+<p>后来，通过和cc等同学讨论，我想面试官想说的是，不管在什么情况下，在保证答案正确的前提下（不是近似值，即普通的去掉长尾的方法是不行的），让能传输的数据量尽量最少。如果是这样就有一个比较明显的剪枝方法，可以这样做：</p>
+
+<ol>
+  <li>首先把每台机器中相同的url合并在一起</li>
+  <li>把每台机器排名前k位（可以简单地取为1）的url分别发到所有其他机器中，最后合并得到每台机器排名前k位的url（一共M个）的全局计数（如果所有这些前k位的url都不相同，那么最多有M=N⋅k个url），然后把这些url从每台机的排名中删除</li>
+  <li>如果当前（删掉第2步中那些topk的url之后）所有机器排名最高的url的计数加起来（注意不要求它们是相同的url）都小于当前得到的全局计数最多的url的计数，则结束，否则继续第二步</li>
+</ol>
+
+<p>这个算法我目测是正确的，以后有空的时候再来证明一下。而且根据现实生活中的长尾效应，不需要计算太多轮就能找到出现次数最多的url了，且不用传输所有url，又没使用近似值，也许这就是面试官要的答案吧。不知道有没别的剪枝方法比这个更好。</p>
+
+<p>[2016/11/14补充]</p>
+
+<p>其实哈希一下，只传64位的哈希值做word
+count，找到次数最多的哈希，然后再读一遍源文件找出该哈希对应的url，行不行？</p>
+
+</section>
+<section class="meta">
+<span class="author">
+  <a href="http://lam8da.github.io">lambda</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2012-10-11">2012-10-11</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="http://localhost:4001/categories/#算法&数学" title="算法&数学">算法&数学</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="http://localhost:4001/tags/#分布式算法" title="分布式算法">分布式算法</a>&nbsp;
+  
+  <a href="http://localhost:4001/tags/#面试题" title="面试题">面试题</a>&nbsp;
+  
+  <a href="http://localhost:4001/tags/#Work in Progress" title="Work in Progress">Work in Progress</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="comment">
+
+<!--
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'lambda'; // required: replace example with your forum shortname
+  var disqus_url = 'http://localhost:4001/2012/10/11/finding-the-most-frequent-url/';
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+-->
+
+<div id="gitment_thread"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    owner: 'lam8da',
+    repo: 'lam8da.github.io.comments',
+    oauth: {
+      client_id: '4ec8d7487458f49ba8f2',
+      client_secret: 'dbd58db32dee8f9a954f35b6f1ecf931a0a4edfc',
+    },
+  })
+  gitment.render('gitment_thread')
+</script>
+
+</section>
+
+<script type="text/javascript">
+$(function() {
+    $(document).keydown(
+      function(e) {
+        if (e.target.nodeName.toUpperCase() != 'BODY') return;
+        var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+          
+            url = 'http://localhost:4001/2012/10/11/cost-of-upgrading-equipments/';
+          
+        } else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+          
+            url = 'http://localhost:4001/2012/10/12/expectation-on-max-number-of-working-days-for-some-it-company/';
+          
+        }
+        if (url) {
+          window.location = url;
+        }
+      });
+})
+</script>
+
+        </article>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1988641-2']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

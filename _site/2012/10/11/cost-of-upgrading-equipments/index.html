@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="lambda" />
+    <title>加护装备的代价：一道笔试题小记 | lambda</title>
+    <link rel="shortcut icon" href="">
+    <link href="http://localhost:4001/feed/" rel="alternate" title="lambda" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link rel="stylesheet" href="/media/css/highlighter-rouge.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        "HTML-CSS": { scale: 80 },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>加护装备的代价：一道笔试题小记</h1>
+        </header>
+        <nav>
+        <span><a title="home page" class="" href="http://localhost:4001/">首页</a></span>
+        <span><a title="categories" class="" href="http://localhost:4001/categories/">分类</a></span>
+        <span><a title="tags" class="" href="http://localhost:4001/tags/">标签</a></span>
+        <span><a title="links" class="" href="http://localhost:4001/links/">链接</a></span>
+        <span><a title="about" class="" href="http://localhost:4001/about/">关于</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://localhost:4001/feed/">订阅</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<p>前些时间参加了国内某著名互联网公司游戏部门的笔试，该司的题目以难闻名，当天一见果然名不虚传。说题目很难倒不见得，出得很有水平很有含金量倒是真的，不像企鹅等司随便糊弄就算了。其中有一题当时没做出来，回去后偶尔有时间想一下，竟然在最近某天早上在床上装尸体时想到了怎么做！这篇文章就是记录一下这个题目。</p>
+
+<p>题意大概是，有个玩家小盆友在玩该司的网络游戏时有一件装备需要加护。装备一开始是0级，每次加护消耗一枚宝石，加护后等级可能+1可能不变也可能-1，整个转移概率为\(T(i,j)\)，其中\(i\)为当前装备等级，\(j\)为加护后的装备等级。例如\(T(0,1)=1\)表示在0级时加护一次有100%的概率变为1级。转移概率矩阵\(T\)如下所示。该小盆友决定一旦加护到3级之后就停止加护，问期望消耗的宝石数。</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+T=\begin{pmatrix} 0 & 1 & 0 & 0\\ \frac{1}{3} & \frac{1}{3} & \frac{1}{3} & 0\\ 0 & \frac{4}{9} & \frac{4}{9} & \frac{1}{9}\\ 0 & 0 & 0 & 0 \end{pmatrix} %]]></script>
+
+<p>上面的\(T\)矩阵是我自己写出来的，原题还有个公式计算所有这些概率，而不是直接给出矩阵（这就是关键所在，如果想不到使用矩阵来进行整个计算过程，那就很难得到正确答案了）。另外，\(T\)的最后一行全0是因为，加护到3级后就停止加护了，可以简单地理解为在3级的情况下再加护多一次将丢失这个装备。这样做从本质上说是为了使如下的状态计算过程正确。这个问题描述的实际上是一个马尔科夫过程。废话不多说了，下面直接给出这题的解法。设加护\(i\)次后装备处于等级\(j\)的概率为\(s_i(j)\)，则我们可以吧\(s_i\)看成一个行向量，于是初始状态为：</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+s_0=\begin{pmatrix} 1 & 0 & 0 & 0 \end{pmatrix} %]]></script>
+
+<p>加护\(i\)次后装备的状态就是\(s_0\cdot T^i\)，而装备刚好处于等级3的概率就是该式的第四个分量值。\(T\)的最后一行全0保证了这个式子的正确性。于是所求期望就等于求下式结果向量的第四个分量的值：</p>
+
+<script type="math/tex; mode=display">E=s_0\sum_{i=0}^{\infty}i\cdot s_0\cdot T^i</script>
+
+<p>由于\(T\)是一个矩阵而不是一个普通变量，求这条式子变得有些难度。但是通过矩阵理论可以证明（以后有机会补上），该式的结果和把\(T\)看成一个普通变量得到的结果是一样的。于是我们就可以通过各种方法（生成函数、数列级数的加减等）求得上式的值为：</p>
+
+<script type="math/tex; mode=display">E=s_0\cdot T\cdot(I-T)^{-2}</script>
+
+<p>其中\(I\)为单位阵。通过matlab可以求得结果为30（我懒得手算矩阵的逆了。。笔试时即便会求也会算到手软啊！！）。</p>
+
+<p>结果是30。。。那说明啥？把一个装备加护到3级平均需要30颗宝石！！这是多么坑爹啊，怪不得游戏公司这么赚钱啊！玩家加护时肯定都捶胸顿足啊！我也玩过网游，但是到底是我玩游戏还是游戏玩我？工程师一个小小的概率转移矩阵就把成千上万的玩家的“宝石”骗光了。。所以通过这道笔试题，我决定以后少玩网游了。。。</p>
+
+</section>
+<section class="meta">
+<span class="author">
+  <a href="http://lam8da.github.io">lambda</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2012-10-11">2012-10-11</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="http://localhost:4001/categories/#算法&数学" title="算法&数学">算法&数学</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="http://localhost:4001/tags/#算法" title="算法">算法</a>&nbsp;
+  
+  <a href="http://localhost:4001/tags/#随机过程" title="随机过程">随机过程</a>&nbsp;
+  
+  <a href="http://localhost:4001/tags/#面试题" title="面试题">面试题</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="comment">
+
+<!--
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'lambda'; // required: replace example with your forum shortname
+  var disqus_url = 'http://localhost:4001/2012/10/11/cost-of-upgrading-equipments/';
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+-->
+
+<div id="gitment_thread"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    owner: 'lam8da',
+    repo: 'lam8da.github.io.comments',
+    oauth: {
+      client_id: '4ec8d7487458f49ba8f2',
+      client_secret: 'dbd58db32dee8f9a954f35b6f1ecf931a0a4edfc',
+    },
+  })
+  gitment.render('gitment_thread')
+</script>
+
+</section>
+
+<script type="text/javascript">
+$(function() {
+    $(document).keydown(
+      function(e) {
+        if (e.target.nodeName.toUpperCase() != 'BODY') return;
+        var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+          
+            url = 'http://localhost:4001/2012/10/11/catching-the-fox-finding-the-winning-strategy/';
+          
+        } else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+          
+            url = 'http://localhost:4001/2012/10/11/finding-the-most-frequent-url/';
+          
+        }
+        if (url) {
+          window.location = url;
+        }
+      });
+})
+</script>
+
+        </article>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1988641-2']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

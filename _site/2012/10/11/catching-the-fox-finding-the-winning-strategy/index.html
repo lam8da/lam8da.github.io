@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="lambda" />
+    <title>猎人抓狐狸：寻求必胜策略 | lambda</title>
+    <link rel="shortcut icon" href="">
+    <link href="http://localhost:4001/feed/" rel="alternate" title="lambda" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link rel="stylesheet" href="/media/css/highlighter-rouge.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        "HTML-CSS": { scale: 80 },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>猎人抓狐狸：寻求必胜策略</h1>
+        </header>
+        <nav>
+        <span><a title="home page" class="" href="http://localhost:4001/">首页</a></span>
+        <span><a title="categories" class="" href="http://localhost:4001/categories/">分类</a></span>
+        <span><a title="tags" class="" href="http://localhost:4001/tags/">标签</a></span>
+        <span><a title="links" class="" href="http://localhost:4001/links/">链接</a></span>
+        <span><a title="about" class="" href="http://localhost:4001/about/">关于</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://localhost:4001/feed/">订阅</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">原题</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">环形山洞</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">二维扩展</a></li>
+  <li><a href="#section-3" id="markdown-toc-section-3">受限的猎人</a></li>
+</ul>
+
+<h2 id="section">原题</h2>
+
+<p>这又是某度的一条面试题，我觉得这是我面该司的最有意思、最考思维的题目了，大意如下：</p>
+
+<p>山上有五个山洞排成一行，编号从1到5。有个狐狸，它第一天藏在某个山洞中，从第二天开始，每天可以逃到前一天所在山洞相邻的山洞中，但逃到哪一个是随机的（当然如果狐狸当前在1号山洞那么它第二天只能去2号洞了，5号也类似）。有个猎人，他每天只能搜寻一个山洞（因为山洞太复杂了。。。。），如果狐狸当天在他搜寻的山洞中就被逮到了。问猎人是否有必定能抓住狐狸的策略？</p>
+
+<p>这个题看起来像IQ题，不过考的仍然是数学思维。从题目的提问方式就知道这题必定有解的，可惜我当时没完全做出来，思路倒是给对了。以下先来考虑一些简单的变种。假设只有3个山洞，易知最坏情况下在第二个山洞连续呆两天必定能抓到狐狸。如果有4个山洞呢？通过某种暴力枚举策略的方法容易得到如下策略：首先在2号洞呆两天，如果没抓着说明狐狸当前在3或4号洞，于是第3天去3号洞再呆两天，如果还没抓住说明当前狐狸在1号洞，于是第5天去2号洞就逮到了。</p>
+
+<p>但是，一旦上升到5个山洞，暴力枚举就很难了，数手指都会数到头晕。必须抓住问题的本质才能得到简洁的方法。上述解法的本质是什么呢？答：奇偶性！通过前3天的搜寻，我们可以得出结论：狐狸在第一天的时候必然不在奇数号洞中，否则一定可以在前3天内逮到！接下来，用类似的方法把偶数的可能性搜寻一次，便找到狐狸了。</p>
+
+<p>于是我们有如下解法：猎人第一天在1号洞，第二天在2号洞，……，直到第四天在4号洞，如果经过这4天还没逮到狐狸，说明狐狸第一天在偶数号洞中，即第四天在奇数号洞中。这是为什么呢？这是因为，假设狐狸第一天在奇数号洞中，由于猎人第一天也在奇数号（1号）洞中，每经过一天，他们俩的距离要么不变，要么减2。由于一开始时的距离是大于0的偶数（假设第一天没逮到），在整个过程中距离必定在某一天变成0。这样，如果前4天都没抓到的话，狐狸第一天一定在偶数号洞中。于是从第5天开始，用类似的方法反向扫描一次（第五天再在4号洞中呆一天，然后第六天去3号洞，第七天去2号洞），必能逮到狐狸。</p>
+
+<p>我个人认为这是相当美妙的解答，有些元素我至今仍未琢磨透。当有n个山洞时的解法是一样的：正向扫描一次到第n−1个洞，然后在该洞中呆多一天，紧接着反向扫描到第2个洞即可。最坏情况下只需2n−3就能逮到狐狸。</p>
+
+<p>如果问题改为求最坏情况下能抓住狐狸需要的最少天数，该怎么解呢？易知当n=3时为2，n=4时为5，那么当n比较大的时候呢？由上面的解答中我们可以得到一个上界是2n−3，但是这个是最少天数吗？我不知道，也没法证明。哪位网友如果证明了请告诉我一声:)。</p>
+
+<p>[2012/10/12补充]</p>
+
+<p>今天又想到一个更好的解，不管n多大，最坏情况下只需2n−4天就能逮到狐狸，策略是这样的：</p>
+
+<p>若n为奇数，则从第一天开始搜寻的山洞编号为：2, 3, 4, …, n-1, 2, 3, 4, …, n-1
+若n为偶数，则从第一天开始搜寻的山洞编号为：2, 3, 4, …, n-1, n-1, n-2, …, 3, 2
+不管哪种情况，只需2n−4步即可逮到狐狸。</p>
+
+<p>证明也是很容易的，这里只证n为奇数的情况：前面n-2天的搜寻可以排除狐狸第一天在偶数号洞的所有case，后面n-2天的搜寻可以排除狐狸第一天在奇数号洞的所有case。当n为偶数时，后n-2天的搜寻是反序的，这样才能排除掉狐狸第一天在奇数号洞的所有case（奇偶性不同）。</p>
+
+<h2 id="section-1">环形山洞</h2>
+
+<p>如果山洞不是排成一排而是连成一个环，是否又有必胜策略呢？</p>
+
+<p>这个我目测是没有的。我也没空去想如何证明，如果哪位网友想到了证明或者证明我是错的，都欢迎留下解答过程！:)</p>
+
+<h2 id="section-2">二维扩展</h2>
+
+<p>如果是二维的山洞，狐狸每天只能逃到和前一天所在山洞相邻的山洞，问猎人是否还有必胜策略？</p>
+
+<p>上述环形山洞问题是这个扩展问题以及更高维的扩展问题的一个特例。所以如果上述问题的答案是“否”，此题也一样。</p>
+
+<h2 id="section-3">受限的猎人</h2>
+
+<p>[2016/11/18补充]</p>
+
+<p>受限的猎人：猎人能看到狐狸，但只能像狐狸那样每次移动到相邻山洞</p>
+
+<p>这个问题的二维版本出自《算法谜题》（Algorithmic Puzzles）题73。</p>
+
+<p>未完待续。</p>
+
+</section>
+<section class="meta">
+<span class="author">
+  <a href="http://lam8da.github.io">lambda</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2012-10-11">2012-10-11</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="http://localhost:4001/categories/#算法&数学" title="算法&数学">算法&数学</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="http://localhost:4001/tags/#算法" title="算法">算法</a>&nbsp;
+  
+  <a href="http://localhost:4001/tags/#面试题" title="面试题">面试题</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="comment">
+
+<!--
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'lambda'; // required: replace example with your forum shortname
+  var disqus_url = 'http://localhost:4001/2012/10/11/catching-the-fox-finding-the-winning-strategy/';
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+-->
+
+<div id="gitment_thread"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    owner: 'lam8da',
+    repo: 'lam8da.github.io.comments',
+    oauth: {
+      client_id: '4ec8d7487458f49ba8f2',
+      client_secret: 'dbd58db32dee8f9a954f35b6f1ecf931a0a4edfc',
+    },
+  })
+  gitment.render('gitment_thread')
+</script>
+
+</section>
+
+<script type="text/javascript">
+$(function() {
+    $(document).keydown(
+      function(e) {
+        if (e.target.nodeName.toUpperCase() != 'BODY') return;
+        var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+          
+            url = 'http://localhost:4001/2012/08/16/the-climbing-ants-on-the-pole-problem-and-extension/';
+          
+        } else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+          
+            url = 'http://localhost:4001/2012/10/11/cost-of-upgrading-equipments/';
+          
+        }
+        if (url) {
+          window.location = url;
+        }
+      });
+})
+</script>
+
+        </article>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1988641-2']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="lambda" />
+    <title>Ubuntu12.10搭建svn服务器 | lambda</title>
+    <link rel="shortcut icon" href="">
+    <link href="http://localhost:4001/feed/" rel="alternate" title="lambda" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/style.css">
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link rel="stylesheet" href="/media/css/highlighter-rouge.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        "HTML-CSS": { scale: 80 },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <h1>Ubuntu12.10搭建svn服务器</h1>
+        </header>
+        <nav>
+        <span><a title="home page" class="" href="http://localhost:4001/">首页</a></span>
+        <span><a title="categories" class="" href="http://localhost:4001/categories/">分类</a></span>
+        <span><a title="tags" class="" href="http://localhost:4001/tags/">标签</a></span>
+        <span><a title="links" class="" href="http://localhost:4001/links/">链接</a></span>
+        <span><a title="about" class="" href="http://localhost:4001/about/">关于</a></span>
+        <span><a title="subscribe by RSS" class="" href="http://localhost:4001/feed/">订阅</a></span>
+        </nav>
+        <article class="content">
+        <section class="post">
+<p><!--  Not show line_numbers  -->
+</p>
+
+<p>首先安装必要包，初始化目录：</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sudo apt-get install apache2 libapache2-svn subversion
+sudo mkdir /home/svn
+</code></pre>
+</div>
+
+<p>创建svn项目：</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sudo svnadmin create /home/svn/Medusa
+</code></pre>
+</div>
+
+<p>启动svn服务：</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>svnserve -d -r /home/svn
+</code></pre>
+</div>
+
+<p>现在可以本地访问了：</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~/Tmp/
+svn co svn://localhost/Medusa
+</code></pre>
+</div>
+
+<p>但是不能commit，如：</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>Medusa
+touch localtest <span class="o">&amp;&amp;</span> svn add localtest
+svn ci -m <span class="s1">'local test'</span>
+svn: 提交失败<span class="o">(</span>细节如下<span class="o">)</span>:
+svn: 认证失败
+</code></pre>
+</div>
+
+<p>这是因为没设置用户访问权限，于是sudo编辑3个文件，例如：</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> /home/svn/Medusa/conf
+</code></pre>
+</div>
+
+<ol>
+  <li>打开svnserve.conf，把：
+    <div class="language-ini highlighter-rouge"><pre class="highlight"><code><span class="py">anon-access</span> <span class="p">=</span> <span class="s">read</span>
+<span class="py">auth-access</span> <span class="p">=</span> <span class="s">write</span>
+<span class="py">password-db</span> <span class="p">=</span> <span class="s">passwd</span>
+<span class="py">authz-db</span> <span class="p">=</span> <span class="s">authz</span>
+</code></pre>
+    </div>
+
+    <p>前面的注释删掉</p>
+  </li>
+  <li>
+    <p>打开passwd，<code class="language-c++ highlighter-rouge"><span class="nn">[users]</span></code>下面添加：</p>
+
+    <div class="language-ini highlighter-rouge"><pre class="highlight"><code><span class="py">lambda-svn</span> <span class="p">=</span> <span class="s">123456</span>
+</code></pre>
+    </div>
+
+    <p>意思是添加一个svn的用户（不是linux系统用户）lambda-svn，密码为123456</p>
+  </li>
+  <li>
+    <p>打开authz，<code class="language-c++ highlighter-rouge"><span class="nn">[groups]</span></code>下面添加：</p>
+
+    <div class="language-ini highlighter-rouge"><pre class="highlight"><code><span class="nn">[/]</span>
+<span class="py">lambda-svn</span> <span class="p">=</span> <span class="s">rw</span>
+<span class="err">*</span> <span class="err">=</span>
+</code></pre>
+    </div>
+
+    <blockquote class="lambda_question">
+      <p>其中/表示项目根目录/home/svn/Medusa？</p>
+    </blockquote>
+
+    <p>下面一句表示用户lambda-svn可以读写这个目录的所有文件，<code class="language-c++ highlighter-rouge"><span class="err">*</span> <span class="err">=</span> </code>表示其他所有用户什么也不能干。</p>
+  </li>
+</ol>
+
+<p>现在再来测试下（注意不要把svnserve kill掉）：</p>
+
+<ol>
+  <li>
+    <p>测试本地提交：</p>
+
+    <div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~/Tmp/Medusa/
+svn ci -m <span class="s1">'local test'</span>
+</code></pre>
+    </div>
+
+    <p>提示输入用户名密码时输入lambda-svn和123456，然后出错：</p>
+
+    <div class="language-sh highlighter-rouge"><pre class="highlight"><code>svn: 不能打开文件“/home/svn/Medusa/db/txn-current-lock”: 权限不够
+</code></pre>
+    </div>
+
+    <p>这次的错误和第一次提交时的错误不同了，先不管，看下一个测试。</p>
+  </li>
+  <li>
+    <p>测试重新checkout：</p>
+
+    <div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ..
+svn co svn://localhost/Medusa Medusa1
+</code></pre>
+    </div>
+
+    <p>发现是可以的，这是因为svnserve.conf中设置了<code class="language-c++ highlighter-rouge"><span class="py">anon-access</span> <span class="p">=</span> <span class="s">read</span></code>，即匿名用户可以读。注意，虽然authz里面写了<code class="language-c++ highlighter-rouge"><span class="err">*</span> <span class="err">=</span> </code>，但是匿名用户仍然所可以访问的，要令匿名用户也不可已读的话需要吧svnserve.conf中设置了<code class="language-c++ highlighter-rouge"><span class="py">anon-access</span> <span class="p">=</span> <span class="s">none</span></code>。（我想应该是这样，但是我测试了一下貌似设置了none之后还是可以匿名访问。。。狂汗一个<code class="language-c++ highlighter-rouge"><span class="o">=</span> <span class="o">=|||</span></code>）而authz里面的设置只是针对认证用户，即passwd里面设定的用户。</p>
+  </li>
+</ol>
+
+<p>现在来解决权限不够的问题，原因在于我们是用当前系统用户（假定为current-user）创建的svnserve进程，而current-user对/home/svn/Medusa/db/txn-current-lock没有写的权限。解决这个问题有两个方法：</p>
+
+<ol>
+  <li>
+    <p>使用超级管理员身份来启动svnserve：</p>
+
+    <div class="language-sh highlighter-rouge"><pre class="highlight"><code>sudo svnserve -d -r /home/svn
+</code></pre>
+    </div>
+
+    <p>这个方法非常简单快捷</p>
+
+    <blockquote class="lambda_question">
+      <p>但是不知到会不会出漏洞？</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>令current-user对/home/svn/Medusa/db/txn-current-lock有写权限。这个方法非常繁琐，自己也没真正弄清楚，还是下次重新看看Unix高级环境编程再说了。</p>
+  </li>
+</ol>
+
+<p>这样之后，在本地是可以co和ci了，但是远程还是不行。需要设置/etc/apache2/mods-available/dav_svn.conf，在最后加上：</p>
+
+<div class="language-apache highlighter-rouge"><pre class="highlight"><code><span class="p">&lt;</span><span class="nl">Location</span><span class="sr"> /Medusa</span><span class="p">&gt;
+</span><span class="nc">DAV</span> svn
+SVNPath /home/svn/Medusa
+<span class="nc">AuthType</span> <span class="ss">Basic</span>
+<span class="nc">AuthName</span> "Medusa"
+<span class="nc">AuthUserFile</span> /home/svn/Medusa/conf/passwd
+
+<span class="c"># 如果想每次登陆都输入密码请把这个标签对引掉</span>
+<span class="p">&lt;</span><span class="nl">LimitExcept</span><span class="sr"> GET PROPFIND OPTIONS REPORT</span><span class="p">&gt;
+</span><span class="nc">Require</span> <span class="ss">valid-user</span>
+<span class="p">&lt;/</span><span class="nl">LimitExcept</span><span class="p">&gt;
+&lt;/</span><span class="nl">Location</span><span class="p">&gt;
+</span></code></pre>
+</div>
+
+<p>然后貌似要重启apache服务：<code class="language-c++ highlighter-rouge">sudo service apache2 restart</code>， 就可以了。</p>
+
+</section>
+<section class="meta">
+<span class="author">
+  <a href="http://lam8da.github.io">lambda</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2012-11-21">2012-11-21</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="http://localhost:4001/categories/#环境&配置" title="环境&配置">环境&配置</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="http://localhost:4001/tags/#Apache" title="Apache">Apache</a>&nbsp;
+  
+  <a href="http://localhost:4001/tags/#SVN" title="SVN">SVN</a>&nbsp;
+  
+  <a href="http://localhost:4001/tags/#Ubuntu" title="Ubuntu">Ubuntu</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="comment">
+
+<!--
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'lambda'; // required: replace example with your forum shortname
+  var disqus_url = 'http://localhost:4001/2012/11/21/setup-svn-server-on-ubuntu-v1210/';
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+-->
+
+<div id="gitment_thread"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    owner: 'lam8da',
+    repo: 'lam8da.github.io.comments',
+    oauth: {
+      client_id: '4ec8d7487458f49ba8f2',
+      client_secret: 'dbd58db32dee8f9a954f35b6f1ecf931a0a4edfc',
+    },
+  })
+  gitment.render('gitment_thread')
+</script>
+
+</section>
+
+<script type="text/javascript">
+$(function() {
+    $(document).keydown(
+      function(e) {
+        if (e.target.nodeName.toUpperCase() != 'BODY') return;
+        var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+          
+            url = 'http://localhost:4001/2012/11/21/money-and-banking-notes/';
+          
+        } else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+          
+            url = 'http://localhost:4001/2012/11/21/the-ascent-of-money-a-financial-history-of-the-world-notes/';
+          
+        }
+        if (url) {
+          window.location = url;
+        }
+      });
+})
+</script>
+
+        </article>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1988641-2']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
