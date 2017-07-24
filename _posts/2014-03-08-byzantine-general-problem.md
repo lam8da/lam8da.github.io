@@ -2,7 +2,7 @@
 layout: post
 title: 拜占庭将军问题
 categories:
-    - 网络&分布式
+    - 算法&数学
 tags:
     - 分布式理论
     - 一致性

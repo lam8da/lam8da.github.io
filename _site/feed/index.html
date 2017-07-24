@@ -7,8 +7,662 @@
     <title>lambda</title>
     <atom:link href="http://localhost:4001/feed/" rel="self" type="application/rss+xml" />
     <link>http://lam8da.github.io</link>
-    <lastBuildDate>2017-07-13T07:47:33-07:00</lastBuildDate>
+    <lastBuildDate>2017-07-23T17:04:08-07:00</lastBuildDate>
     <webMaster>lambda2fei@gmail.com</webMaster>
+    
+    <item>
+      <title>《新概念物理教程》读书笔记</title>
+      <link>http://localhost:4001/2017/07/23/new-concept-physics-notes/</link>
+      <pubDate>2017-07-23T00:00:00-07:00</pubDate>
+      <author>lambda</author>
+      <guid>http://localhost:4001/2017/07/23/new-concept-physics-notes</guid>
+      <content:encoded><![CDATA[<p><!--  Not show line_numbers  -->
+</p>
+
+<ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">力学</a>    <ul>
+      <li><a href="#section-1" id="markdown-toc-section-1">第一章 质点运动学</a></li>
+      <li><a href="#section-2" id="markdown-toc-section-2">第二章 动量守恒 质点动力学</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="section">力学</h2>
+
+<h3 id="section-1">第一章 质点运动学</h3>
+
+<ul>
+  <li>视差：观测者在两个不同位置看到同一天体的方向之差</li>
+  <li>基线：两个不同位置之间的联线</li>
+  <li>AU：地球公转轨道的半径=1AU</li>
+  <li>角秒：符号为<code class="language-c++ highlighter-rouge"><span class="s">"</span></code>，数量上等于$\pi/648000$（弧度制）</li>
+  <li>秒差距（parsec，単位符号为pc）：选地球公转轨道半径为基线，视差等于1角秒的距离，叫做1秒差距，值为3.261633光年</li>
+  <li>通过加速度（矢量）的定义（即$\Delta t$趋于0时速度矢量的变化）以及平面几何相似三角形的关系可以求得匀速圆周运动的加速度大小为$\frac{v^2}{R}$而方向垂直于运动物体的速度方向并指向圆心</li>
+  <li>变速圆周运动和匀速圆周运动加速度的唯一不同在于切向加速度分量不为0</li>
+  <li>一般曲线运动某点的加速度可以通过曲率半径和变速圆周运动联系起来求解</li>
+  <li>反之，曲线运动中若知道某点的加速度，就可以求出该点的曲率半径</li>
+  <li>圆周运动的叠加可以通过相对运动的经典力学法则（非相对论，即非洛伦兹变换）来理解</li>
+</ul>
+
+<h3 id="section-2">第二章 动量守恒 质点动力学</h3>
+
+<ul>
+  <li><strong>实验表明</strong>，在一个参考系中，只要某个物体符合惯性定律，则其他物体都服从惯性定律</li>
+  <li>因此定义：对某一特定物体惯性定律成立的参考系，为<strong>惯性参考系</strong>，简称惯性系。从这里初步可以看到，惯性不是个别物体的性质，而是参考系，或者说，时空的性质</li>
+  <li>任何惯性参考系所描述的空间都是均匀各向同性的，它们具有平移对称性和转动对称性。</li>
+</ul>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>底层并发控制机制</title>
+      <link>http://localhost:4001/2017/07/23/low-level-concurrency-control/</link>
+      <pubDate>2017-07-23T00:00:00-07:00</pubDate>
+      <author>lambda</author>
+      <guid>http://localhost:4001/2017/07/23/low-level-concurrency-control</guid>
+      <content:encoded><![CDATA[<p><!--  Not show line_numbers  -->
+</p>
+
+<ul id="markdown-toc">
+  <li><a href="#spin-lock" id="markdown-toc-spin-lock">Spin Lock</a></li>
+  <li><a href="#out-of-order-execution" id="markdown-toc-out-of-order-execution">乱序执行（out-of-order execution）和内存屏障</a></li>
+  <li><a href="#volatilehttpbaiycndoccppadvancedtopicaboutmulticoreandthreadinghtme58e9fe5ad90e6938de4bd9ce5928cvolatilee585b3e994aee5ad97" id="markdown-toc-volatilehttpbaiycndoccppadvancedtopicaboutmulticoreandthreadinghtme58e9fe5ad90e6938de4bd9ce5928cvolatilee585b3e994aee5ad97"><a href="http://baiy.cn/doc/cpp/advanced_topic_about_multicore_and_threading.htm#%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C%E5%92%8C_volatile_%E5%85%B3%E9%94%AE%E5%AD%97">原子操作和volatile关键字</a></a></li>
+</ul>
+
+<h2 id="spin-lock">Spin Lock</h2>
+
+<ul>
+  <li>spinlock<a href="http://imaupk.blog.163.com/blog/static/348222512008112655221557/">实现1</a>，结构体类似于：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">struct</span> <span class="n">spinlock</span> <span class="p">{</span>
+  <span class="k">volatile</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">slock</span><span class="p">;</span>  <span class="c1">// Initialized to 0.
+</span><span class="p">}</span> <span class="n">t</span><span class="p">;</span>
+</code></pre>
+    </div>
+    <ul>
+      <li>上锁：
+        <ul>
+          <li>先把处理器的flag寄存器存起来，然后关中断</li>
+          <li>spin_lock函数：用lock前缀（锁总线？）做一个原子操作：把t.slock的最低位置1并返回原来的值。然后检查原来的值，如果是0，说明当前线程成功上锁，可以返回；否则，说明之前已被上锁，然后不断循环测试t.slock的最低位的值（忙等待），直到变为0（某其他线程释放了），再重新用lock前缀去做原子操作并重复执行上述步骤。</li>
+        </ul>
+      </li>
+      <li>解锁：
+        <ul>
+          <li>spin_unlock函数：用lock前缀将t.slock最低位置0
+            <blockquote class="lambda_question">
+              <p>问：这里可以不用lock前缀吗？</p>
+            </blockquote>
+          </li>
+          <li>开中断，恢复flag寄存器的值</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>当我们能保证即使发生中断、在中断程序中也不会修改critical section的数据时，可以直接使用实现1的spin_lock和spin_unlock函数而无需保存flag寄存器和关中断</li>
+  <li>读写者spinlock：与实现1类似，只是除了用1个bit表示写者是否已经获得锁之外，用31个bit来表示当前读者的个数（这样写者很容易饿死吧？）</li>
+  <li>spinlock<a href="http://blog.csdn.net/yeqishi/article/details/6570208">实现2</a>：结构体与实现1一样，下面叙述忽略保存flag寄存器和关中断等内容
+    <ul>
+      <li>上锁：用lock前缀调用decb汇编指令将t.slock的值减 1。然后用jns汇编指令检查EFLAGS寄存器的SF(符号)位，如果为 0，说明slock原来的值为1，则线程获得锁，然后结束本次函数调用；如果SF位为1，说明slock原来的值为0或负数，锁已被占用，那么线程开始不断测试t.slock与0的大小关系，直到t.slock大于0，说明锁已被释放，则跳转到开始位置重新申请锁，重复上述过程。</li>
+      <li>解锁：把t.slock置为1（不用lock前缀）</li>
+    </ul>
+  </li>
+  <li>兼顾公平：排队自旋锁
+    <ul>
+      <li>排队自旋锁仍然使用原有的数据结构，但是赋予slock域新的含义。为了保存顺序信息，slock 域被分成两部分，分别保存锁持有者和未来锁申请者的票据序号(Ticket Number)：如果处理器个数不超过 256，则 Owner 域为 slock 的 0-7 位，Next 域为 slock 的 8-15 位，slock 的高 16 位不使用；如果处理器个数超过 256，则 Owner 和 Next 域均为 16 位，其中 Owner 域为 slock 的低 16 位。可见排队自旋锁最多支持 2^16=65536 个处理器。</li>
+      <li>只有 Next 域与 Owner 域相等时，才表明锁处于未使用状态（此时也无人申请该锁）。排队自旋锁初始化时 slock 被置为 0，即 Owner 和 Next 置为 0。内核执行线程申请自旋锁时，原子地将 Next 域加 1，并将原值返回作为自己的票据序号。如果返回的票据序号等于申请时的 Owner 值，说明自旋锁处于未使用状态，则直接获得锁；否则，该线程忙等待检查 Owner 域是否等于自己持有的票据序号，一旦相等，则表明锁轮到自己获取。线程释放锁时，原子地将 Owner 域加 1 即可，下一个线程将会发现这一变化，从忙等待状态中退出。线程将严格地按照申请顺序依次获取排队自旋锁，从而完全解决了“不公平”问题。</li>
+    </ul>
+  </li>
+  <li><a href="https://en.wikipedia.org/wiki/ABA_problem">ABA problem</a></li>
+</ul>
+
+<h2 id="out-of-order-execution">乱序执行（out-of-order execution）和内存屏障</h2>
+
+<ul>
+  <li>乱序执行实现了避免计算机在用于运算的对象不可获取时的大量等待。</li>
+  <li>
+    <p>乱序执行使用其他“可以执行”的指令来填补了时间的空隙，然后在在结束时重新排序运算结果来实现指令的顺序执行中的运行结果。指令在原始计算机代码中的顺序被称为程序顺序，在处理器中他们被按照数据顺序中被处理，这种顺序中，数据，运算符，在计算机寄存器中变得可以获取。一般来说乱序执行需要复杂的电路来实现转换一种顺序到另一中顺序并且维护在输出时的逻辑顺序；而处理器本身就好像是随机执行的样子。</p>
+  </li>
+  <li>内存一致性模型（<a href="http://www.cnblogs.com/haippy/p/3412858.html">参考这里</a>），以下讨论的写操作的order都是指针对不同内存位置的写，对同一内存位置的写必须是顺序一致的，否则程序正确性无法保证
+    <ul>
+      <li>顺序一致性（sequential consistency）模型：Lamport于1979：the result of any execution is the same as if the operations of all the processors were executed in some sequential order, and the operations of each individual processor appear in this sequence in the order specified by its program。这要求同一处理器的所有操作（包括读和写）都是顺序执行的</li>
+      <li>处理器一致性（processor consistency）模型：同一处理器中，所有读操作之间是sequential consistency的，任意写操作执行前所有先于（指program order）该写操作的所有访存操作（包括读和写）都已完成。该模型允许读操作被reorder至对另一位置的写之前。</li>
+      <li>弱一致性（weak consistency）模型：把普通的读写访存操作和同步操作进行区分。所有同步操作之间是sequential consistency的，任一同步操作开始前所有先于该操作的普通访存操作都已完成，任一普通访存操作开始前所有先于该操作的同步操作都已完成。</li>
+      <li>释放一致性（release consistency）模型：把同步操作进一步分为acquire和release操作。所有同步操作之间是sequential consistency的，任一release操作开始前所有先于该操作的普通访存操作都已完成，任一普通访存操作开始前所有先于该操作的acquire操作都已完成。</li>
+    </ul>
+  </li>
+  <li>x86-64的内存模型：
+    <ul>
+      <li>Loads are not reordered with other loads.</li>
+      <li>Stores are not reordered with other stores.</li>
+      <li>Stores are not reordered with older loads.</li>
+      <li><span style="color: blue">Loads may be reordered with older writes to different locations but not with older writes to the same location.</span></li>
+      <li>In a multiprocessor system, memory ordering obeys causality （因果关系） (memory ordering respects transitive visibility).</li>
+      <li>In a multiprocessor system, stores to the same location have a total order.</li>
+      <li>In a multiprocessor system, locked instructions have a total order.</li>
+      <li>Loads and stores are not reordered with locked instructions.</li>
+    </ul>
+  </li>
+  <li><code class="language-c++ highlighter-rouge"><span class="k">asm</span> <span class="k">volatile</span><span class="p">(</span><span class="s">""</span> <span class="o">:::</span> <span class="s">"memory"</span><span class="p">);</span></code> creates a <span style="color: blue">compiler level</span> memory barrier forcing <span style="color: blue">optimizer</span> to not re-order memory accesses across the barrier.</li>
+  <li>指令流水线（pipelining）：把一条指令分为取址、解码、执行、存储结果、结束等几个部分，连续的指令的不同部分并行执行，形成一个流水线</li>
+  <li>lfence/sfence/mfence from intel manual section 8.2.2
+    <ul>
+      <li>Reads cannot pass earlier LFENCE and MFENCE instructions.</li>
+      <li>Writes cannot pass earlier LFENCE, SFENCE, and MFENCE instructions.</li>
+      <li>LFENCE instructions cannot pass earlier reads.</li>
+      <li>SFENCE instructions cannot pass earlier writes.</li>
+      <li>MFENCE instructions cannot pass earlier reads or writes.</li>
+      <li>by i and iii, lfence enforces #LoadLoad ordering</li>
+      <li>by ii and iii, lfence enforces #LoadStore ordering</li>
+      <li>by ii and iv, sfence enforces #StoreStore ordering</li>
+      <li>sfence not enforces #StoreLoad ordering</li>
+    </ul>
+  </li>
+  <li>lock 前缀的访存指令相当于 Full Barrier，xchg 已隐式加 lock 前缀。</li>
+  <li>具有acquire语义的内存屏障，保证其后的读写不会提前到屏障之前</li>
+  <li>具有release语义的屏障，保证之前的读写已经生效/可见</li>
+  <li>acquire和release这两种内存屏障都是单向的，即允许临界区外的读写进入到临界区内。具体到 X86-64 架构，考虑前面描述的内存模型，读操作就具有acquire语义（因为一个读操作其后的读写都不会被reorder到该读操作之前），而写操作具有release语义（因为一个写操作之前的读写都不会被reorder到该写操作之后）</li>
+  <li><a href="https://en.wikipedia.org/wiki/MESI_protocol">MSEI protocol</a></li>
+</ul>
+
+<h2 id="volatilehttpbaiycndoccppadvancedtopicaboutmulticoreandthreadinghtme58e9fe5ad90e6938de4bd9ce5928cvolatilee585b3e994aee5ad97"><a href="http://baiy.cn/doc/cpp/advanced_topic_about_multicore_and_threading.htm#%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C%E5%92%8C_volatile_%E5%85%B3%E9%94%AE%E5%AD%97">原子操作和volatile关键字</a></h2>
+
+<ul>
+  <li>C/C++ 中的volatile关键字提供了以下保证：
+    <ul>
+      <li>对声明为volatile的变量进行的任何操作都不会被优化器去除，即使它看起来没有意义（例如：连续多次对某个变量赋相同的值），因为它可能被某个在编译时未知的外部设备或线程访问。</li>
+      <li>被声明为volatile的变量不会被编译器优化到寄存器中，每次读写操作都保证在内存(详见下文)中完成。</li>
+      <li>在不同表达式内的多个volatile变量间的操作顺序不会被优化器调换（即：编译器保证多个volatile变量在 sequence point之间的访问顺序不会被优化和调整）。</li>
+    </ul>
+  </li>
+  <li>volatile<span style="color: blue"><strong>不</strong></span>提供如下保证
+    <ul>
+      <li>volatile声明不保证读写和运算操作的原子性。</li>
+      <li>volatile声明不保证对其进行的读写操作直接发生在主内存。相反，CPU 会尽可能让这些读写操作发生在 L1/L2 等cache上。除非：
+        <ul>
+          <li>发生了一个未命中的读请求。</li>
+          <li>所有级别的cache均已被配置为通过式写（write through）。</li>
+          <li>目标地址为 non-cacheable区（主要是其它设备映射到内存地址空间的通信接口。例如：网卡的板载缓冲区、显卡板载显存、WatchDog寄存器等等）。</li>
+        </ul>
+      </li>
+      <li>编译器仅保证在生成目标码时不调整volatile变量的访问顺序，但通常并不保证该变量不受处理器的out-of-order特性影响。目前唯一一个已知的特例是安腾（IA64）处理器版的 VC：在生成 IA64 Target时，VC会自动在所有volatile访问之间添加内存屏障（详见下文）以保证访问顺序。但ISO标准并未要求编译器实现类似机制。实际上，其它编译器（或是面向其它平台的 VC）也都没有类似保证。也就是说，通常认为volatile并不保证代码在处理器上的执行顺序，如果需要类似的保证，程序员应当自己使用内存屏障操作。</li>
+    </ul>
+  </li>
+  <li>而原子操作要求做到以下保证：
+    <ul>
+      <li>对原子量的 ‘读出-计算-写入’ 操作序列是原子的，在以上动作完成之前，任何其它处理器和线程均无法访问该原子量。</li>
+      <li>原子操作必须保证缓存一致性。即：在多处理器环境中，原子操作要同时保持所有处理器上的各级cache之间、以及它们与主存间的访问一致性。</li>
+    </ul>
+  </li>
+  <li>可见，使用volitale关键字并不足以保证操作的原子语义。volitale关键字的主要设计目的是支持C/C++程序与内存映射设备间的通信。但这并不是说volitale关键字对原子操作没有任何帮助：
+    <ul>
+      <li>对于一个被声明为volitale类型的原子量来说，如果所有写操作都是原子的，并且已提供了必要的cache一致性保证，那么读取该原子量时就不必再次对总线上锁。</li>
+      <li>这是因为volitale关键字保证了对该变量的读操作起码是在当前 CPUcache中完成的（即：该变量不会被优化到寄存器中）。与此同时，只要当前环境能够保证多个处理器的cache之间，以及cache与主存之间的访问一致性。那么该读操作不管在主存还是当前系统中任意一个处理器的cache上发生，读到的都是一致的数据。</li>
+      <li>在这里，volitale关键字配合原子量的写入操作一起实现了一个典型的读者/写者同步模型：所有写操作和cache同步都保证被原子、互斥地完成；读操作则可以被并发地实现。这也是 Windows API 中没有提供类似 ‘AtomicLoad’ 式语义操作的原因。</li>
+      <li>当然，这里还有一个隐含的附加条件，就是 CPU 必须能够在一个操作中读入这个原子量。这个条件通常可以忽略，因为超出CPU位宽的数据类型通常无法被实现成真正的原子量类型。</li>
+    </ul>
+  </li>
+</ul>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>互斥算法</title>
+      <link>http://localhost:4001/2017/07/22/mutual-exclusion-algorithms/</link>
+      <pubDate>2017-07-22T00:00:00-07:00</pubDate>
+      <author>lambda</author>
+      <guid>http://localhost:4001/2017/07/22/mutual-exclusion-algorithms</guid>
+      <content:encoded><![CDATA[<p><!--  Not show line_numbers  -->
+</p>
+
+<ul id="markdown-toc">
+  <li><a href="#petersoncpu" id="markdown-toc-petersoncpu">Peterson算法（要注意CPU对内存访问顺序的优化改变）</a></li>
+  <li><a href="#filtern2peterson" id="markdown-toc-filtern2peterson">Filter算法：N大于2时的Peterson算法</a></li>
+  <li><a href="#deker" id="markdown-toc-deker">Deker算法</a></li>
+  <li><a href="#lamport" id="markdown-toc-lamport">Lamport面包店算法</a></li>
+  <li><a href="#eisenberg--mcguire-algorithm" id="markdown-toc-eisenberg--mcguire-algorithm">Eisenberg &amp; McGuire algorithm</a></li>
+  <li><a href="#szymanski" id="markdown-toc-szymanski">Szymanski算法</a></li>
+</ul>
+
+<h2 id="petersoncpu">Peterson算法（要注意CPU对内存访问顺序的优化改变）</h2>
+
+<ul>
+  <li>Initialization
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">flag</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">flag</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="n">turn</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</code></pre>
+    </div>
+  </li>
+  <li>P0:
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">flag</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="n">turn</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="nb">true</span> <span class="o">&amp;&amp;</span> <span class="n">turn</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">...</span>  <span class="cm">/* critical section here */</span>
+<span class="n">flag</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</code></pre>
+    </div>
+  </li>
+  <li>P1:
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">flag</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="n">turn</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nb">true</span> <span class="o">&amp;&amp;</span> <span class="n">turn</span> <span class="o">==</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">...</span>  <span class="cm">/* critical section here */</span>
+<span class="n">flag</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h2 id="filtern2peterson">Filter算法：N大于2时的Peterson算法</h2>
+
+<ul>
+  <li>Initialization
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">level</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">...,</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="o">-</span><span class="mi">1</span> <span class="p">};</span>  <span class="c1">// current level of processes 0...N-1
+</span>
+<span class="c1">// the waiting process of each level 0...N-2.
+// 这是一个排队队列，任何时刻当所有进程在以下while忙等待稳定后或在临界区执行中
+// 时（假设临界区足够长），不可能有两个或以上pending进程的level为同一个值
+</span><span class="n">waiting</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">...,</span> <span class="n">N</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="o">-</span><span class="mi">1</span> <span class="p">};</span>
+</code></pre>
+    </div>
+  </li>
+  <li>Code for process #i
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">for</span><span class="p">(</span><span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">l</span><span class="p">)</span> 
+  <span class="n">level</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">l</span><span class="p">;</span>
+  <span class="n">waiting</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+  <span class="k">while</span><span class="p">(</span><span class="n">waiting</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">there</span> <span class="n">exists</span> <span class="n">k</span> <span class="o">!=</span> <span class="n">i</span><span class="p">,</span> <span class="n">such</span> <span class="n">that</span> <span class="n">level</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">l</span><span class="p">));</span>  <span class="c1">// busy wait
+</span><span class="p">}</span>
+<span class="p">...</span>  <span class="cm">/* critical section here */</span>
+<span class="n">level</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// exit section
+</span></code></pre>
+    </div>
+  </li>
+</ul>
+
+<h2 id="deker">Deker算法</h2>
+
+<ul>
+  <li>Initialization
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">flag</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="n">turn</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// or 1. The init value determines the first
+</span>           <span class="c1">// process to enter the critical section
+</span></code></pre>
+    </div>
+  </li>
+  <li>P0:
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">flag</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">turn</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">flag</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">turn</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">);</span>  <span class="c1">// busy wait
+</span>    <span class="n">flag</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">...</span>  <span class="cm">/* critical section here */</span>
+<span class="n">turn</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">flag</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</code></pre>
+    </div>
+  </li>
+  <li>P1:
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">flag</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">turn</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">flag</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">turn</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">);</span>  <span class="c1">// busy wait
+</span>    <span class="n">flag</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">...</span>  <span class="cm">/* critical section here */</span>
+<span class="n">turn</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">flag</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h2 id="lamport">Lamport面包店算法</h2>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="c1">// Declaration and initial values of global variables
+</span><span class="nl">Entering:</span> <span class="n">array</span> <span class="p">[</span><span class="mf">1.</span><span class="p">.</span><span class="n">NUM_THREADS</span><span class="p">]</span> <span class="n">of</span> <span class="kt">bool</span> <span class="o">=</span> <span class="p">{</span><span class="nb">false</span><span class="p">};</span>
+<span class="n">Number</span><span class="o">:</span> <span class="n">array</span> <span class="p">[</span><span class="mf">1.</span><span class="p">.</span><span class="n">NUM_THREADS</span><span class="p">]</span> <span class="n">of</span> <span class="n">integer</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+
+<span class="n">lock</span><span class="p">(</span><span class="n">integer</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Entering</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="n">Number</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">max</span><span class="p">(</span><span class="n">Number</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">...,</span> <span class="n">Number</span><span class="p">[</span><span class="n">NUM_THREADS</span><span class="p">]);</span>
+  <span class="n">Entering</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">NUM_THREADS</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Wait until thread j receives its number:
+</span>    <span class="k">while</span> <span class="p">(</span><span class="n">Entering</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+    <span class="c1">// 上述这个while必不可少，否则在下面的&lt;判断中可能会有两个（或多个？）线程
+</span>    <span class="c1">// 同时失效而同时进入critical section：考虑两个线程都把Number设为同一值但是
+</span>    <span class="c1">// j&lt;i且i先到达此处的情况，这样j可能还未设置Number[j]，于是i将读到0，下面的
+</span>    <span class="c1">// while失效而进入临界区；而当j进入时，下面的小于号判断失效，也进入临界区
+</span>
+    <span class="c1">// Wait until all threads with smaller numbers or with the same number,
+</span>    <span class="c1">// but with higher priority, finish their work:
+</span>    <span class="k">while</span> <span class="p">((</span><span class="n">Number</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">((</span><span class="n">Number</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">j</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">Number</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span><span class="p">)));</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">unlock</span><span class="p">(</span><span class="n">integer</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">Number</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">Thread</span><span class="p">(</span><span class="n">integer</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lock</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+    <span class="p">...</span>  <span class="cm">/* critical section here */</span>
+    <span class="n">unlock</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+    <span class="p">...</span>  <span class="c1">// non-critical section
+</span>  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="eisenberg--mcguire-algorithm">Eisenberg &amp; McGuire algorithm</h2>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">enum</span> <span class="n">pstate</span> <span class="o">=</span> <span class="p">{</span><span class="n">IDLE</span><span class="p">,</span> <span class="n">WAITING</span><span class="p">,</span> <span class="n">ACTIVE</span><span class="p">};</span>
+<span class="n">pstate</span> <span class="n">flags</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">turn</span><span class="p">;</span>
+<span class="c1">// The variable turn, is set arbitrarily to a number between 0 and n-1 at the
+// start of the algorithm.
+// The flags variable, for each process is set to WAITING whenever it intends to
+// enter the critical section.
+// flags takes either IDLE or WAITING or ACTIVE.
+// Initially the flags variable for each process is initialized to IDLE.
+</span><span class="n">repeat</span> <span class="p">{</span>
+  <span class="n">flags</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">:=</span> <span class="n">WAITING</span><span class="p">;</span>  <span class="cm">/* announce that we need the resource */</span>
+
+  <span class="cm">/* scan processes from the one with the turn up to ourselves. */</span>
+  <span class="cm">/* repeat if necessary until the scan finds all processes idle */</span>
+  <span class="n">index</span> <span class="o">:=</span> <span class="n">turn</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">index</span> <span class="o">!=</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">flags</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">!=</span> <span class="n">IDLE</span><span class="p">)</span> <span class="n">index</span> <span class="o">:=</span> <span class="n">turn</span><span class="p">;</span>
+    <span class="k">else</span> <span class="n">index</span> <span class="o">:=</span> <span class="p">(</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="n">mod</span> <span class="n">n</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">flags</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">:=</span> <span class="n">ACTIVE</span><span class="p">;</span>  <span class="cm">/* now tentatively claim the resource */</span>
+
+  <span class="cm">/* find the first active process besides ourselves, if any */</span>
+  <span class="n">index</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">((</span><span class="n">index</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">((</span><span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">flags</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">!=</span> <span class="n">ACTIVE</span><span class="p">)))</span> <span class="p">{</span>
+    <span class="n">index</span> <span class="o">:=</span> <span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// if there were no other active processes, AND if we have the turn or else
+</span>  <span class="c1">// whoever has it is idle, then proceed.
+</span>  <span class="c1">// Otherwise, repeat the whole sequence.
+</span><span class="p">}</span> <span class="n">until</span> <span class="p">((</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="n">n</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">((</span><span class="n">turn</span> <span class="o">=</span> <span class="n">i</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">flags</span><span class="p">[</span><span class="n">turn</span><span class="p">]</span> <span class="o">=</span> <span class="n">IDLE</span><span class="p">)));</span>
+
+<span class="n">turn</span> <span class="o">:=</span> <span class="n">i</span><span class="p">;</span>  <span class="cm">/* claim the turn and proceed */</span>
+
+<span class="cm">/* Critical Section Code of the Process */</span>
+
+<span class="c1">// find a process which is not IDLE (if there are no others, we will find
+// ourselves)
+</span><span class="n">index</span> <span class="o">:=</span> <span class="n">turn</span><span class="o">+</span><span class="mi">1</span> <span class="n">mod</span> <span class="n">n</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">flags</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">IDLE</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">index</span> <span class="o">:=</span> <span class="p">(</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="n">mod</span> <span class="n">n</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">turn</span> <span class="o">:=</span> <span class="n">index</span><span class="p">;</span>  <span class="cm">/* give the turn to someone that needs it, or keep it */</span>
+<span class="n">flags</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">:=</span> <span class="n">IDLE</span><span class="p">;</span>  <span class="cm">/* we're finished now */</span>
+</code></pre>
+</div>
+
+<h2 id="szymanski">Szymanski算法</h2>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="c1">// 进入临界区的协议：
+</span><span class="n">flag</span><span class="p">[</span><span class="n">self</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1">// 站在入口门外，申请进入等候室
+// 等待入口门打开。即不存在有进程处于3、4状态，包括正在进门、正在使用临界区
+</span><span class="n">await_until</span><span class="p">(</span><span class="n">all</span> <span class="n">flag</span><span class="p">[</span><span class="mf">1.</span><span class="p">.</span><span class="n">N</span><span class="p">]</span> <span class="n">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">})</span>
+<span class="n">flag</span><span class="p">[</span><span class="n">self</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1">// 站在入口门处，即正在进入。
+</span><span class="k">if</span> <span class="n">any</span> <span class="n">flag</span><span class="p">[</span><span class="mf">1.</span><span class="p">.</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">:</span>  <span class="c1">// 如果还有在入口门外等待进入的线程
+</span>  <span class="n">flag</span><span class="p">[</span><span class="n">self</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1">// 把自己置为在入口门内，等待所有提出申请的线程都完成进入等候室
+</span>  <span class="n">await_until</span><span class="p">(</span><span class="n">any</span> <span class="n">flag</span><span class="p">[</span><span class="mf">1.</span><span class="p">.</span><span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>  <span class="c1">// 等待最后进门的线程关闭入口门
+</span><span class="n">flag</span><span class="p">[</span><span class="n">self</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1">// 门处于关闭状态，线程在等候室
+</span><span class="n">await_until</span><span class="p">(</span><span class="n">all</span> <span class="n">flag</span><span class="p">[</span><span class="mf">1.</span><span class="p">.</span><span class="n">self</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="n">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">})</span>
+<span class="c1">// 等待所有具有更高优先级的线程访问完临界区，退出等候室
+</span>
+<span class="c1">// 这里是临界区...
+</span>
+<span class="c1">// 退出临界区的协议
+// 确保所有比自己优先级低的已经通过入口门的线程都进入了等候室
+</span><span class="n">await_until</span><span class="p">(</span><span class="n">all</span> <span class="n">flag</span><span class="p">[</span><span class="n">self</span><span class="o">+</span><span class="mf">1.</span><span class="p">.</span><span class="n">N</span><span class="p">]</span> <span class="n">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">})</span>
+<span class="n">flag</span><span class="p">[</span><span class="n">self</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">// 离开等候室，如果自己是最后离开的，则入口门被打开
+</span></code></pre>
+</div>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>GCC内嵌汇编笔记</title>
+      <link>http://localhost:4001/2017/07/22/gcc-inline-assembly/</link>
+      <pubDate>2017-07-22T00:00:00-07:00</pubDate>
+      <author>lambda</author>
+      <guid>http://localhost:4001/2017/07/22/gcc-inline-assembly</guid>
+      <content:encoded><![CDATA[<p><!--  Not show line_numbers  -->
+</p>
+
+
+<ul>
+  <li><code class="language-c++ highlighter-rouge"><span class="n">__asm__</span></code>表示后面的代码为内嵌汇编，<code class="language-c++ highlighter-rouge"><span class="k">asm</span></code>是<code class="language-c++ highlighter-rouge"><span class="n">__asm__</span></code>的别名。<code class="language-c++ highlighter-rouge"><span class="n">__volatile__</span></code>表示编译器不要优化代码，后面的指令保留原样，<code class="language-c++ highlighter-rouge"><span class="k">volatile</span></code>是它的别名。括号里面是汇编指令。使用内嵌汇编，要先编写汇编指令模板，然后将C语言表达式与指令的操作数相关联，并告诉GCC对这些操作有哪些限制条件。示例：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">__asm__</span> <span class="n">__violate__</span> <span class="p">(</span><span class="s">"movl %1,%0"</span> <span class="o">:</span> <span class="s">"=r"</span> <span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">:</span> <span class="s">"m"</span> <span class="p">(</span><span class="n">input</span><span class="p">));</span>
+</code></pre>
+    </div>
+    <p>其中<code class="language-c++ highlighter-rouge"><span class="n">movl</span> <span class="o">%</span><span class="mi">1</span><span class="p">,</span><span class="o">%</span><span class="mi">0</span></code>是指令模板；<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="mi">0</span></code>和<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="mi">1</span></code>代表指令的操作数，称为占位符，内嵌汇编靠它们将C语言表达式与指令操作数相对应。指令模板后面用小括号括起来的是C语言表达式，本例中只有两个：<code class="language-c++ highlighter-rouge"><span class="n">result</span></code>和<code class="language-c++ highlighter-rouge"><span class="n">input</span></code>，他们按照出现的顺序分别与指令操作数<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="mi">0</span></code>、<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="mi">1</span></code>对应；注意对应顺序：第一个C表达式对应<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="mi">0</span></code>；第二个表达式对应<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="mi">1</span></code>，依次类推，操作数至多有10个，分别用<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="mi">0</span></code>，<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="mi">1</span></code>，…，<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="mi">9</span></code>表示。 在每个操作数前面有一个用引号括起来的字符串，字符串的内容是对该操作数的限制或者说要求。<code class="language-c++ highlighter-rouge"><span class="n">result</span></code>前面的限制字符串是<code class="language-c++ highlighter-rouge"><span class="o">=</span><span class="n">r</span></code>，其中<code class="language-c++ highlighter-rouge"><span class="o">=</span></code>表示<code class="language-c++ highlighter-rouge"><span class="n">result</span></code>是输出操作数，<code class="language-c++ highlighter-rouge"><span class="n">r</span></code>表示需要将<code class="language-c++ highlighter-rouge"><span class="n">result</span></code>与某个通用寄存器相关联，先将操作数的值读入寄存器，然后在指令中使用相应寄存器，而不是<code class="language-c++ highlighter-rouge"><span class="n">result</span></code>本身，当然指令执行完后需要将寄存器中的值存入变量<code class="language-c++ highlighter-rouge"><span class="n">result</span></code>，从表面上看好像是指令直接对<code class="language-c++ highlighter-rouge"><span class="n">result</span></code>进行操作，实际上GCC做了隐式处理，这样我们可以少写一些指令。<code class="language-c++ highlighter-rouge"><span class="n">input</span></code>前面的<code class="language-c++ highlighter-rouge"><span class="n">r</span></code>表示该表达式需要先放入某个寄存器，然后在指令中使用该寄存器参加运算。</p>
+  </li>
+  <li>C表达式或者变量与寄存器的关系由GCC自动处理，我们只需使用限制字符串指导GCC如何处理即可。限制字符必须与指令对操作数的要求相匹配，否则产生的汇编代码将会有错，读者可以将上例中的两个<code class="language-c++ highlighter-rouge"><span class="n">r</span></code>，都改为<code class="language-c++ highlighter-rouge"><span class="n">m</span></code>(<code class="language-c++ highlighter-rouge"><span class="n">m</span></code>表示操作数放在内存，而不是寄存器中)，编译后得到的结果是：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">movl</span> <span class="n">input</span><span class="p">,</span> <span class="n">result</span>
+</code></pre>
+    </div>
+    <p>很明显这是一条非法指令，因此限制字符串必须与指令对操作数的要求匹配。例如指令<code class="language-c++ highlighter-rouge"><span class="n">movl</span></code>允许寄存器到寄存器，立即数到寄存器等，但是不允许内存到内存的操作，因此两个操作数不能同时使用<code class="language-c++ highlighter-rouge"><span class="n">m</span></code>作为限定字符。</p>
+  </li>
+  <li>内嵌汇编语法如下：<code class="language-c++ highlighter-rouge"><span class="n">__asm__</span><span class="p">(</span></code>汇编语句模板<code class="language-c++ highlighter-rouge"><span class="o">:</span> </code>输出部分<code class="language-c++ highlighter-rouge"><span class="o">:</span> </code>输入部分<code class="language-c++ highlighter-rouge"><span class="o">:</span> </code>破坏描述部分<code class="language-c++ highlighter-rouge"><span class="p">)</span></code>
+共四个部分：汇编语句模板，输出部分，输入部分，破坏描述部分，各部分使用<code class="language-c++ highlighter-rouge"><span class="o">:</span></code>格开，汇编语句模板必不可少，其他三部分可选，如果使用了后面的部分，而前面部分为空，也需要用<code class="language-c++ highlighter-rouge"><span class="o">:</span></code>格开，相应部分内容为空。例如：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">__asm__</span> <span class="n">__volatile__</span><span class="p">(</span><span class="s">"cli"</span><span class="o">:</span> <span class="o">:</span> <span class="o">:</span><span class="s">"memory"</span><span class="p">)</span>
+</code></pre>
+    </div>
+  </li>
+  <li>语法细节
+    <ul>
+      <li>汇编语句模板：汇编语句模板由汇编语句序列组成，语句之间使用<code class="language-c++ highlighter-rouge"><span class="p">;</span></code>、<code class="language-c++ highlighter-rouge"><span class="err">\</span><span class="n">n</span></code>或<code class="language-c++ highlighter-rouge"><span class="err">\</span><span class="n">n</span><span class="err">\</span><span class="n">t</span></code>分开。指令中的操作数可以使用占位符引用C语言变量，操作数占位符最多10个，名称如下：<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="mi">0</span></code>，<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="mi">1</span></code>，…，<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="mi">9</span></code>。指令中使用占位符表示的操作数，总被视为<code class="language-c++ highlighter-rouge"><span class="kt">long</span></code>型（4个字节），但对其施加的操作根据指令可以是字或者字节，当把操作数当作字或者字节使用时，默认为低字或者低字节。对字节操作可以显式的指明是低字节还是次字节。方法是在<code class="language-c++ highlighter-rouge"><span class="o">%</span></code>和序号之间插入一个字母，<code class="language-c++ highlighter-rouge"><span class="n">b</span></code>代表低字节，<code class="language-c++ highlighter-rouge"><span class="n">h</span></code>代表高字节，例如：<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="n">h1</span></code>。</li>
+      <li>输出部分：输出部分描述输出操作数，不同的操作数描述符之间用逗号格开，每个操作数描述符由限定字符串和C语言变量组成。每个输出操作数的限定字符串必须包含<code class="language-c++ highlighter-rouge"><span class="o">=</span></code>表示他是一个输出操作数。例如：
+        <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">__asm__</span> <span class="n">__volatile__</span><span class="p">(</span><span class="s">"pushfl ; popl %0 ; cli"</span><span class="o">:</span><span class="s">"=g"</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>
+</code></pre>
+        </div>
+        <p>描述符字符串表示对该变量的限制条件，这样GCC就可以根据这些条件决定如何分配寄存器，如何产生必要的代码处理指令操作数与C表达式或C变量之间的联系。</p>
+      </li>
+      <li>输入部分：输入部分描述输入操作数，不同的操作数描述符之间使用逗号格开，每个操作数描述符由限定字符串和C语言表达式或者C语言变量组成。示例如下:
+        <ul>
+          <li>例1：<code class="language-c++ highlighter-rouge"><span class="n">__asm__</span> <span class="n">__volatile__</span> <span class="p">(</span><span class="s">"lidt %0"</span> <span class="o">:</span> <span class="o">:</span> <span class="s">"m"</span> <span class="p">(</span><span class="n">real_mode_idt</span><span class="p">))</span></code>;</li>
+          <li>例2：
+            <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">set_bit</span><span class="p">(</span><span class="kt">int</span> <span class="n">nr</span><span class="p">,</span> <span class="k">volatile</span> <span class="kt">void</span> <span class="o">*</span><span class="n">addr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">__asm__</span><span class="p">(</span><span class="s">"btsl %1,%0"</span><span class="o">:</span><span class="s">"=m"</span> <span class="p">(</span><span class="n">addr</span><span class="p">)</span><span class="o">:</span><span class="s">"Ir"</span> <span class="p">(</span><span class="n">nr</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre>
+            </div>
+            <p>后例功能是将<code class="language-c++ highlighter-rouge"><span class="o">*</span><span class="n">addr</span></code>的第<code class="language-c++ highlighter-rouge"><span class="n">nr</span></code>位设为1。第一个占位符<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="mi">0</span></code>与C语言变量<code class="language-c++ highlighter-rouge"><span class="n">ADDR</span></code>对应，第二个占位符<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="mi">1</span></code>与C语言变量<code class="language-c++ highlighter-rouge"><span class="n">nr</span></code>对应。因此上面的汇编语句代码与下面的伪代码等价：<code class="language-c++ highlighter-rouge"><span class="n">btsl</span> <span class="n">nr</span><span class="p">,</span> <span class="n">ADDR</span></code>，该指令的两个操作数不能全是内存变量，因此将<code class="language-c++ highlighter-rouge"><span class="n">nr</span></code>的限定字符串指定为<code class="language-c++ highlighter-rouge"><span class="n">Ir</span></code>，将<code class="language-c++ highlighter-rouge"><span class="n">nr</span></code>与立即数或者寄存器相关联，这样两个操作数中只有<code class="language-c++ highlighter-rouge"><span class="n">ADDR</span></code>为内存变量。</p>
+          </li>
+        </ul>
+      </li>
+      <li>限制字符：限制字符有很多种，有些是与特定体系结构相关，此处仅列出常用的限定字符和i386中可能用到的一些常用的限定符。它们的作用是指示编译器如何处理其后的C语言变量与指令操作数之间的关系。限定符分类如下：
+        <ul>
+          <li>通用寄存器
+            <ul>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">a</span></code> 将输入变量放入eax</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">b</span></code> 将输入变量放入ebx</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">c</span></code> 将输入变量放入ecx</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">d</span></code> 将输入变量放入edx</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">s</span></code> 将输入变量放入esi</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">d</span></code> 将输入变量放入edi</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">q</span></code> 将输入变量放入eax，ebx，ecx，edx中的一个</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">r</span></code> 将输入变量放入通用寄存器，即eax，ebx，ecx，edx，esi，edi之一</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">A</span></code> 把eax和edx合成一个64位的寄存器(use <code class="language-c++ highlighter-rouge"><span class="kt">long</span> <span class="kt">long</span></code>s)</li>
+            </ul>
+          </li>
+          <li>内存
+            <ul>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">m</span></code> 内存变量</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">o</span></code> 操作数为内存变量，但其寻址方式是偏移量类型，也即基址寻址</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">V</span></code> 操作数为内存变量，但寻址方式不是偏移量类型</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="p">,</span></code> 操作数为内存变量，但寻址方式为自动增量</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">p</span></code> 操作数是一个合法的内存地址（指针）</li>
+            </ul>
+          </li>
+          <li>寄存器或内存
+            <ul>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">g</span></code> 将输入变量放入eax，ebx，ecx，edx之一，或作为内存变量</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">X</span></code> 操作数可以是任何类型</li>
+            </ul>
+          </li>
+          <li>立即数
+            <ul>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">I</span></code> 0-31之间的立即数（用于32位移位指令）</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">J</span></code> 0-63之间的立即数（用于64位移位指令）</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">N</span></code> 0-255之间的立即数（用于<code class="language-c++ highlighter-rouge"><span class="n">out</span></code>指令）</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">i</span></code> 立即数</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">n</span></code> 立即数，有些系统不支持除字以外的立即数，则应使用<code class="language-c++ highlighter-rouge"><span class="n">n</span></code>而非 <code class="language-c++ highlighter-rouge"><span class="n">i</span></code></li>
+            </ul>
+          </li>
+          <li>匹配
+            <ul>
+              <li><code class="language-c++ highlighter-rouge"><span class="mi">0</span></code> 表示用它限制的操作数与某个指定的操作数匹配</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="mi">1</span></code> …<code class="language-c++ highlighter-rouge"><span class="mi">9</span></code> 也即该操作数就是指定的那个操作数，例如<code class="language-c++ highlighter-rouge"><span class="mi">0</span></code>去描述<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="mi">1</span></code>操作数，那么<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="mi">1</span></code>引用的其实就是<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="mi">0</span></code>操作数，注意作为限定符字母的0－9与指令中的<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="mi">0</span></code>－<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="mi">9</span></code>的区别，前者描述操作数，后者代表操作数。</li>
+              <li>&amp; 该输出操作数不能使用过和输入操作数相同的寄存器操作数类型</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="o">=</span></code> 操作数在指令中是只写的（输出操作数）</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="o">+</span></code> 操作数在指令中是读写类型的（输入输出操作数）</li>
+            </ul>
+          </li>
+          <li>浮点数
+            <ul>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">f</span></code> 浮点寄存器</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">t</span></code> 第一个浮点寄存器</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">u</span></code> 第二个浮点寄存器</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="n">G</span></code> 标准的80387浮点常数</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="o">%</span></code> 该操作数可以和下一个操作数交换位置，例如<code class="language-c++ highlighter-rouge"><span class="n">addl</span></code>的两个操作数可以交换顺序（当然两个操作数都不能是立即数）</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="cp">#</span></code> 部分注释，从该字符到其后的逗号之间所有字母被忽略</li>
+              <li><code class="language-c++ highlighter-rouge"><span class="o">*</span></code> 表示如果选用寄存器，则其后的字母被忽略</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>破坏描述部分：破坏描述符用于通知编译器我们使用了哪些寄存器或内存，由逗号格开的字符串组成，每个字符串描述一种情况，一般是寄存器名；除寄存器外还有<code class="language-c++ highlighter-rouge"><span class="n">memory</span></code>。例如：<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="n">eax</span></code>，<code class="language-c++ highlighter-rouge"><span class="o">%</span><span class="n">ebx</span></code>，<code class="language-c++ highlighter-rouge"><span class="n">memory</span></code>等。</li>
+    </ul>
+  </li>
+</ul>
+
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>《程序员的自我修养》读书笔记</title>
+      <link>http://localhost:4001/2017/07/20/programmer-self-cultivation-notes/</link>
+      <pubDate>2017-07-20T00:00:00-07:00</pubDate>
+      <author>lambda</author>
+      <guid>http://localhost:4001/2017/07/20/programmer-self-cultivation-notes</guid>
+      <content:encoded><![CDATA[<p><!--  Not show line_numbers  -->
+</p>
+
+
+<ul>
+  <li>参考文献
+    <ul>
+      <li>Linux内核源代码情景分析</li>
+      <li>深入理解Windows操作系统 - Microsoft Windows Server 2003/Windows XP/Wincows 2000技术内幕</li>
+      <li><span style="color: red">此书一共三卷，这是第一卷，还有两卷呢？？</span></li>
+    </ul>
+  </li>
+  <li>singleton的实现：
+    <div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">singleton_ptr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lock</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">singleton_ptr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">singleton_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">T</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="n">unlock</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+    <p>实际上是不安全的，因为语句<code class="language-c++ highlighter-rouge"><span class="n">singleton_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">T</span><span class="p">();</span></code>分三步：第一步分配内存，第二步在分配的内存上构造T，第三步把内存指针赋值给singleton_ptr。其中第二步和第三步可能被cpu乱序执行调换顺序，因为它们之间没有依赖。这样如果第三步先执行，另一线程并发访问，就会发现singleton_ptr被赋值了但是内容还没被构造。</p>
+  </li>
+  <li>linux的clone函数</li>
+  <li>三种线程模型（“对”表示用户线程和内核线程的映射情况）：
+    <ul>
+      <li>1对1：缺点是OS限制了内核线程数量从而导致用户线程数量受限，而且线程切换开销较大</li>
+      <li>多对1：一个用户线程阻塞将导致所有线程阻塞，增加cpu个数也不管用</li>
+      <li>多对多：在多处理器系统上多对多模型的性能提升幅度不如一对一模型高</li>
+    </ul>
+  </li>
+  <li>汇编器as，链接器ld</li>
+  <li>词法分析器lex，语法分析器yacc</li>
+  <li>链接过程主要包括：地址和空间分配（Address and Storage Allocation）、符号决议（Symbol Resolution）和重定位（Relocation）</li>
+  <li>文件类型p57
+    <ul>
+      <li>可重定位文件：windows的.obj和linux的.o</li>
+      <li>动态链接库：windows的.dll和linux的.so</li>
+      <li>静态链接库：windows的.lib和linux的.a</li>
+      <li>可执行文件</li>
+      <li>核心转储文件：linux的core dump</li>
+    </ul>
+  </li>
+</ul>
+
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>《代码优化：有效使用内存》读书笔记</title>
+      <link>http://localhost:4001/2017/07/20/code-optimization-effective-memory-usage-notes/</link>
+      <pubDate>2017-07-20T00:00:00-07:00</pubDate>
+      <author>lambda</author>
+      <guid>http://localhost:4001/2017/07/20/code-optimization-effective-memory-usage-notes</guid>
+      <content:encoded><![CDATA[<p><!--  Not show line_numbers  -->
+</p>
+
+
+<ul>
+  <li>Intel的VTune性能分析器提供了行级的代码profiling</li>
+</ul>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>《Buffer Overflow Attacks》读书笔记</title>
+      <link>http://localhost:4001/2017/07/20/buffer-overflow-attacks-notes/</link>
+      <pubDate>2017-07-20T00:00:00-07:00</pubDate>
+      <author>lambda</author>
+      <guid>http://localhost:4001/2017/07/20/buffer-overflow-attacks-notes</guid>
+      <content:encoded><![CDATA[<p><!--  Not show line_numbers  -->
+</p>
+
+
+<ul>
+  <li>exploit是一种程序，通过该程序可以触发软件的一个漏洞并为攻击者使用</li>
+  <li>第一章资源
+    <ul>
+      <li><a href="http://www.securiteam.com">http://www.securiteam.com</a></li>
+      <li><a href="http://www.ngssoftware.com">http://www.ngssoftware.com</a></li>
+      <li><a href="http://www.foundstone.com">http://www.foundstone.com</a></li>
+      <li><a href="http://www.atstake.com">http://www.atstake.com</a></li>
+      <li><a href="http://www.vulnerability.org">http://www.vulnerability.org</a></li>
+      <li><a href="http://www.ntbugtraq.com">http://www.ntbugtraq.com</a></li>
+      <li><a href="http://www.first.org">http://www.first.org</a></li>
+    </ul>
+  </li>
+  <li>第二章资源
+    <ul>
+      <li><a href="http://www.applicationdefense.com">http://www.applicationdefense.com</a></li>
+      <li><a href="http://www.shellcode.com.ar">http://www.shellcode.com.ar</a></li>
+      <li><a href="http://www.enderunix.org/docs/en/sc-en.txt">http://www.enderunix.org/docs/en/sc-en.txt</a></li>
+      <li><a href="http://www.metasploit.com/shellcode.html">http://www.metasploit.com/shellcode.html</a></li>
+      <li><a href="http://www.SecurityFocus.com">http://www.SecurityFocus.com</a></li>
+    </ul>
+  </li>
+  <li>其他网上资源
+    <ul>
+      <li><a href="http://shell-storm.org/shellcode/">http://shell-storm.org/shellcode/</a>包含常见os在常见processor上的常用shellcode</li>
+    </ul>
+  </li>
+</ul>
+]]></content:encoded>
+    </item>
     
     <item>
       <title>《Unix/Linux编程实践教程》读书笔记</title>
@@ -94,840 +748,6 @@
   </li>
 </ul>
 
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>《深入理解计算机系统》读书笔记</title>
-      <link>http://localhost:4001/2017/07/13/computer-systems-a-programmers-perspective-notes/</link>
-      <pubDate>2017-07-13T00:00:00-07:00</pubDate>
-      <author>lambda</author>
-      <guid>http://localhost:4001/2017/07/13/computer-systems-a-programmers-perspective-notes</guid>
-      <content:encoded><![CDATA[<p><!--  Not show line_numbers  -->
-</p>
-
-
-<ul>
-  <li>2.2.7 c语言规定，像由short→unsigned int这类型的转换，都是先扩充字节（大小），再改变符号</li>
-  <li>2.3.7 补码负数x右移k位等于[x/2^k]（[]表示向下取整），但根据规则来说应该是向上取整才对。可以通过{x/y}=[(x+y-1)/y]（{}表示向上取整）来达到这个目的</li>
-  <li>2.4.3 以IEEE754格式表示的非NaN的两个正（负）浮点数的大小顺序与其位模式对应的无符号数的大小顺序是相同（相反）的！！！</li>
-  <li>2.4.5 浮点数的加法不遵循可结合性，因此某些时候编译器不会进行某些理论上可行的实数运算优化。
-    <ul>
-      <li>浮点加法满足可结合性：若a&gt;=b则对于任意非NaN的x有a+x&gt;=b+x</li>
-      <li>浮点乘法满足单调性：若a&gt;=b且c&gt;=0则a<em>c&gt;=b</em>c，若a&gt;=b且c&lt;=0则a<em>c&lt;=b</em>c</li>
-    </ul>
-  </li>
-  <li>3.? leave指令等价于指令组合：movl %ebp %esp; popl %ebp</li>
-  <li>3.? call ADDR等价于（不合法的）指令组合：pushl %eip; movl ADDR %eip</li>
-  <li>3.? ret指令等价于：popl %eip</li>
-  <li>3.? 在IA32中，call ADDR后，该call指令的下一条指令地址会被压栈，而ADDR处的前几条指令必须为：pushl %ebp; movl %esp %ebp。这与leave刚好相反</li>
-  <li>3.? 在IA32中，调用者保存寄存器包括eax, edx, ecx；被调用者保存寄存器包括ebx, esi, edi</li>
-  <li>3.? IA32中：Linux的对齐策略是，2字节类型如short的地址必须是2的倍数，4字节以上必须为4的倍数；windows则有更强的要求，N字节类型的地址必须为N的倍数（N为2，4，8）；SSE要求的地址必须是16的倍数。</li>
-  <li>3.? IA32惯例：确保每个栈帧的长度是16字节的整数倍</li>
-  <li>3.? 防止buffer overflow的方法：
-    <ul>
-      <li>程序地址随机化</li>
-      <li>用随机产生的canary（金丝雀传说能吸去毒素）值作返回前校验</li>
-      <li>限制可执行的内存页，让栈所在的页不可以被执行</li>
-    </ul>
-  </li>
-  <li>3.? 文献：81，94；Blum的书9；Application Binary Interface；Muchnick的76；蠕虫102，40；缓冲区冲击94</li>
-  <li>4 文献：Katz的逻辑设计教科书[56]</li>
-  <li>4 SEQ和PIPE的HCL书附源代码</li>
-  <li>寄存器重命名；时间局部性和空间局部性</li>
-  <li>高效矩阵转置和矩阵乘法：<a href="http://edisonx.pixnet.net/blog/post/91005914-%5Bc%E8%AA%9E%E8%A8%80%E6%95%B8%E5%80%BC%E5%88%86%E6%9E%90%5D-%E7%9F%A9%E9%99%A3%E4%B9%98%E6%B3%95-%3C-cache-block-%3E">link1</a>，<a href="http://fanhq666.blog.163.com/blog/static/8194342620115127329901/">link3-高逸函</a>。<span style="color: red">对于乘法，可以先对乘数矩阵做转置再做，这个与按缓存大小分块方法（不转置直接乘）哪个更快？</span></li>
-  <li><span style="color: red">习题6.46：优化矩阵转置</span>
-    <ul>
-      <li>方法1：每次处理一个4<em>4的小矩阵，因为两个（source and dest）该规模的小矩阵的大小为2</em>4<em>4</em>4=128B能够完全放入L1 cache，所以交换16个元素只会有8次cache miss。见<a href="http://blog.csdn.net/yang_f_k/article/details/9499359">这里</a></li>
-    </ul>
-  </li>
-  <li><span style="color: red">习题6.47：优化矩阵的如下操作：f[i][j] = f[i][j] || f[j][i] for each i, j</span>
-    <ul>
-      <li>方法1：类似于上题的方法1，见<a href="http://blog.csdn.net/yang_f_k/article/details/9500225">这里</a></li>
-    </ul>
-  </li>
-  <li>命令：c预处理器cpp，c编译器cc1，汇编器as，链接器ld</li>
-  <li>GNU的binutils</li>
-  <li>第七章参考：Levine的专著[66]；[52]；二进制翻译Valgrind；Atom[103]</li>
-  <li>c++/Java异常是通过setjmp/longjmp实现的？catch类比于setjmp，throw类比于longjmp</li>
-  <li>strace命令打印一个正在运行的程序和它的子进程调用的每个系统调用的轨迹</li>
-  <li>pmap命令显示进程的存储器映射</li>
-  <li>/proc：cat /proc/loadavg显示linux系统的平均负载</li>
-  <li>第八章参考：W.Richard Stevens[110]，Bovet&amp;Cesati[11]linux内核，Blum[9]关于x86汇编</li>
-</ul>
-
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>《多处理器编程的艺术》读书笔记</title>
-      <link>http://localhost:4001/2017/07/12/the-art-of-multiprocessor-programming-notes/</link>
-      <pubDate>2017-07-12T00:00:00-07:00</pubDate>
-      <author>lambda</author>
-      <guid>http://localhost:4001/2017/07/12/the-art-of-multiprocessor-programming-notes</guid>
-      <content:encoded><![CDATA[<p><!--  Not show line_numbers  -->
-</p>
-
-<ul id="markdown-toc">
-  <li><a href="#section" id="markdown-toc-section">第1章 引言</a></li>
-</ul>
-
-<h1 id="section">第1章 引言</h1>
-
-<ul>
-  <li>习题1.4：P个囚犯被分隔在不同房间，互相不能通信。有一个“开关房间”，里面有个灯，只能处于开关状态。每天监狱长随机选一个囚犯进去开关房间，囚犯可以改变灯的状态，也可以不变。当某天某个囚犯可以肯定地说：所有囚犯都至少到过开关房间一次，所有囚犯就会被释放；若他说错了，所有囚犯都处死。问囚犯在下列情况下该如何制定策略：
-    <ul>
-      <li>开关初始状态为关。对囚犯编号，囚犯0维持一个计数器初值为0，第一次进入房间将灯打开，之后每次进入房间看到如果灯是关的就将其打开并计数器加一，每次看到灯是开的不做任何事。其他囚犯如果进入房间看到灯是开的且之前没做过任何动作就将其灭掉，否则不做任何事。当囚犯0的计数器变成P-1时就能确定条件满足了</li>
-      <li>开关初始状态未知。此时囚犯0第一次如果看到灯是灭掉的就打开，如果是打开的就不动，之后他每次看到灭掉的灯计数器就加一。他的计数器要到2P-1才能确定条件满足，而所有其他囚犯在前两次看到灯打开时都要将其灭掉，之后不做任何事。</li>
-    </ul>
-  </li>
-  <li>习题1.4：P个囚犯站成一排，每人头上带上一定红色或蓝色的帽子，每人只能看到前面的人的帽子颜色，不知道自己及自己身后的人的帽子颜色。监狱长从后面开始逐个询问囚犯，让每人猜自己头上帽子颜色，猜对释放猜错处死。每个囚犯都可以听到后面的人的回答但不知道对错。囚犯事前可以商定策略。求一个至少释放P-1个囚犯的策略。解：最后一个囚犯说出前面所有囚犯头上红色帽子的个数是奇数还是偶数（例如约定说红色表示奇数），之后每个囚犯根据后面囚犯的话和前面的奇偶情况判断自己的颜色。</li>
-</ul>
-
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>《枪炮、病菌与钢铁》读书笔记</title>
-      <link>http://localhost:4001/2017/07/12/guns-erms-and-steel-notes/</link>
-      <pubDate>2017-07-12T00:00:00-07:00</pubDate>
-      <author>lambda</author>
-      <guid>http://localhost:4001/2017/07/12/guns-erms-and-steel-notes</guid>
-      <content:encoded><![CDATA[<ol>
-  <li>人类从非洲进化而来，进而先后移居到欧洲、亚洲、澳洲、北美和南美</li>
-  <li>由于非洲的原始人和动物一起进化了数百万年，而非洲原始人的狩猎技巧提高很慢，非洲动物有了足够的对人类产生恐惧的时间，故没有灭绝</li>
-  <li>相反，当人类从亚欧移居澳洲时（第一次扩张），澳洲动物对人类完全没有提防，没有恐惧，因此很快就被灭绝了。这导致本来可以用来驯化的所有大型野生动物也被消灭了。</li>
-  <li>征服澳洲后人类开始第二次扩张：进入西伯利亚（并灭绝了长毛象等？），然后渡过白令海峡，到达阿拉斯加，从北向南在美洲扩张，并沿途同理灭绝了大型哺乳动物，失去了驯化为家畜的机会。</li>
-  <li>自然地理环境使得同一个祖先的不同后裔群体演化为完全不同的社会（不同的自然地理环境使得不同部落的生产和生活方式不一样，能产生多余粮食的生产生活方式使得该部落有多余粮食来养活专业人员，从而发展科技、军事等等？）</li>
-  <li>马匹和钢铁的使用使得西班牙人对印加帝国印第安人产生压倒性优势，欧洲移民带来的天花等病菌在欧洲人征服之前消灭了大部分印第安人（当然土著病菌也对征服产生了障碍），船只是西班牙人到达印加帝国的必要条件，而行政系统是支持船只建造的必要条件；没有文字使印加帝国消息封闭；文化修养使得西班牙人有了大量人类行为和历史的知识，也使得印加国王及其大臣多次中了圈套；</li>
-  <li>动植物的驯化→粮食越来越多→人口越来越稠密→粮食剩余+蓄力运输→定居+行政集中+等级产生+经济复杂的社会的必要条件</li>
-  <li>刚开始时，狩猎生活比种粮食定居生活得到的回报大得多，因为当时人很少动物很多，动物野味很容易获得，人的狩猎技巧比种植技巧高很多；然后人口通过狩猎慢慢变得越来越密集，动物也越来越少，种植技巧才在必须的过程中慢慢发展起来的</li>
-  <li>有些地方存在强大的地理或生态障碍，粮食生产很难从外面移入，适合本地的粮食生产技术也很难传播进来，所以狩猎采集族才能在一些适合粮食生产的地区一直生存岛现代</li>
-  <li>不同地区的自然生态环境不同，导致当地人类能获得的能驯化的动植物组合不一样（而不是因为不同地域的人的自身问题或是不同地区同一品种动植物的问题或是粮食生产和狩猎采集的竞争的问题），这是某些地区的粮食生产落后于其他地区的原因。因为这种落后，导致了社会阶段和文明的差距，使得那些更早产生粮食生产制度的社会更早拥有枪炮病菌和钢铁</li>
-  <li>不同动物或同种动物不同分支的驯化状态，取决于动物的食物来源、生长速度、生性和脾性、繁殖方式等。</li>
-  <li>同一种植物在邻近地区被多次驯化表明该植物是该地区附近传播得比较慢，使得另一邻近地区有足够多的时间去重新发现这种植物的可驯化性而不是从该地区传播过来</li>
-  <li>不同大陆板块的轴线走向影响了粮食以及文明的传播速度：东西走向传播得较快，因为毗邻地方有相似的自然气候条件；南北走向则刚好相反</li>
-  <li>新大陆的可驯化动物的缺少使得该地区难以产生需要畜物/人类大量聚集才能流行的病毒，而且新大陆的人口密度从未像旧大陆那么大，流行病发生的概率要低。除了枪炮和钢铁，病菌是更重要的使得欧洲人征服世界的原因。</li>
-  <li>文字的产生的两个条件：有粮食生产制度生产出足够的粮食养活文字专员，社会产生职能分化产生出需要用文字记事的工作</li>
-  <li>地理和生态系统对文字传播也有很大影响：某些地方因为地理隔绝而影响了文字的传播</li>
-  <li>技术的发展是长期积累的，而不是靠孤立的英雄行为；技术在发明出来后大部分都得到了使用，而不是发明出来去满足某种预见到的需要</li>
-  <li>大多数有文字的社会之所以获得文字，或是通过向邻近的社会借用，或是由于受到它们的启发而发明出文字，而不是靠自己独立创造出来的。那些没有文字的社会在粮食生产方面比苏美尔、墨西哥和中国起步晚。如果假以时日，这些没有文字的社会也可能最后靠自己的力量发明出文字来。</li>
-  <li>不同的社会对技术的接受程度可能有差别，而同一社会不同群族对技术的接受程度也会有差异！因此技术的产生与不同人种或社会没有必然联系</li>
-  <li>粮食生产使定居生活因而也使财产积累成为可能，它还在技术史上起了决定性的作用。它在人类进化中第一次使发展经济专业化社会成为可能，这种社会是由从事粮食生产的农民养活的不从事粮食生产的专门人员组成的。粮食生产在不同的时间出现在不同的大陆，而本地技术的发生和保持，不但要依靠本地的发明，而且也要依靠来自其他地方的技术传播。这个因素往往使技术在没有可能影响其传播的地理和生态障碍的大陆上发展得最快。</li>
-  <li>一个大陆上的每一个社会都体现了发展技术和采用技术的进一步机会，因为各个社会在创新精神方面由于许多不同的原因而存在着巨大的差异。因此，在所有其他条件相同的情况下，技术发展最快的是那些人口众多、有许多潜在的发明家和许多互相竞争的社会的广大而富有成果的地区。</li>
-  <li>国家的形成是逐步的：原始部落是无法形成国家的，因为他们解决冲突的办法可以是简单的逃亡；只有在粮食生产和定居形式的生活出现后（从而养活更多政治家、军事家、征服者）、人数越来越多以致任意冲突都不能通过人与人的直接或间接关系解决时，部族之间因为无法通过逃亡解决冲突才会产生征服和被征服的结果，某些成功的领导者因而会制定相关的制度预防或解决部族内的冲突而产生社会制度、再分配的经济制度（如苛捐杂税）、奴役制度等，从而萌生国家雏形。而这些制度又反过来加速了粮食和其他生活用品的密集生产。</li>
-  <li>统治者通过解除平民武装、生产资料或产品大部分再分配、武力、制造宗教等意识形态来达到统治的目的。</li>
-  <li>粮食生产及社会之间的竞争与混合，产生了征服的直接原动力：病菌、文字、技术和中央集权的政治组织。这些都是终极原因，是通过因果关系链而表现出来的，虽然这些因果关系在细节上有所不同，但全都与稠密的庞大人口和定居的生活方式有关。由于这些终极原因在不同的大陆上有不同的发展，征服的这些原动力在不同的大陆上也有不同的发展。</li>
-  <li>为啥是欧洲不是新月沃地引导了近代的征服浪潮：因为新月沃地自然地理条件不利于再生资源（如树木草原等）的迅速恢复，人类的过度开采、放牧等导致该地自然优势丧失殆尽，而欧洲的自然条件却能够保证资源的迅速再生。由此带来的国家的权力的逐渐西移最终导致新月沃地现在成为荒漠和仅仅依靠石油生产的国度。</li>
-  <li>为啥中国封建社会的繁荣并未能持续而是丢失了领先优势：中国太统一，君主的一个命令就可以废除一个新技术或新发明而极大延缓社会的步伐，而欧洲是分裂的，一个国家禁止发明创造不会影响另一个国家，而一旦某个国家发现了某种新技术新发明的优势时别的国家就会及时采用，这保证了发明创造的长久不衰。</li>
-</ol>
-
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>《Linux程序设计》（第四版）读书笔记</title>
-      <link>http://localhost:4001/2017/07/12/beginning-linux-programming-notes/</link>
-      <pubDate>2017-07-12T00:00:00-07:00</pubDate>
-      <author>lambda</author>
-      <guid>http://localhost:4001/2017/07/12/beginning-linux-programming-notes</guid>
-      <content:encoded><![CDATA[<p><!--  Not show line_numbers  -->
-</p>
-
-<ul>
-  <li>1.2.4 静态库也称归档文件（archive），按惯例它们的文件名都以.a结尾。命令<code class="language-sh highlighter-rouge">gcc -c</code>和<code class="language-sh highlighter-rouge">ar</code>命令用于建立它们</li>
-  <li>1.2.4 <code class="language-sh highlighter-rouge">nm</code>命令：查看哪些函数被包含在目标文件、函数库或可执行文件</li>
-  <li>1.2.4 静态库的缺点：当运行的许多程序都是用同一函数库的函数时内存中会有同一函数的多份副本，程序文件中也有多份副本</li>
-  <li>2.6.1 shell环境变量：<code class="language-sh highlighter-rouge"><span class="nv">$0</span></code>是shell脚本名字，<code class="language-sh highlighter-rouge"><span class="nv">$#</span></code>是传递给脚本的参数个数，<code class="language-sh highlighter-rouge"><span class="nv">$$</span></code>是shell脚本进程号，<code class="language-sh highlighter-rouge"><span class="nv">$?</span></code>是返回值，<code class="language-sh highlighter-rouge"><span class="nv">$*</span></code>是所有参数（由IFS第一个字符分割），<code class="language-sh highlighter-rouge"><span class="nv">$@</span></code>类似于<code class="language-sh highlighter-rouge"><span class="nv">$*</span></code>只是总是以空格分开各参数</li>
-  <li>2.6.3 <code class="language-sh highlighter-rouge"><span class="o">{}</span></code>或<code class="language-sh highlighter-rouge"><span class="o">()</span></code>包含的语句块的执行结果由其最后一条语句的执行结果决定（注意与<code class="language-sh highlighter-rouge"><span class="k">if</span></code>等条件判断的混合使用）</li>
-  <li>2.6.4 <code class="language-sh highlighter-rouge"><span class="k">return</span></code>命令可以返回数字值，如果无<code class="language-sh highlighter-rouge"><span class="k">return</span></code>则函数的返回值是执行的最后一条命令的退出码</li>
-  <li>2.6.5 <code class="language-sh highlighter-rouge"><span class="nb">break</span></code>命令可以指定一个额外数值参数表示需要跳出的循环层数</li>
-  <li>2.6.5 <code class="language-sh highlighter-rouge">.</code>命令用于在当前shell中执行命令，如<code class="language-sh highlighter-rouge">. ./shell_script.sh</code></li>
-  <li>2.6.5 <code class="language-sh highlighter-rouge"><span class="nb">exec</span></code>命令将当前shell替换为一个不同的程序，也可以用于修改当前文件描述符；<code class="language-sh highlighter-rouge"><span class="nb">shift</span></code>命令将所有参数变量左移一个位置；<code class="language-sh highlighter-rouge"><span class="nb">trap</span></code>命令用于指定在接收到信号后采取的行动；<code class="language-sh highlighter-rouge"><span class="nb">unset</span></code>在环境中删除变量或函数</li>
-  <li>2.6.6 参数扩展：
-    <ul>
-      <li><code class="language-sh highlighter-rouge"><span class="k">${#</span><span class="nv">param</span><span class="k">}</span></code>给出长度</li>
-      <li><code class="language-sh highlighter-rouge"><span class="k">${</span><span class="nv">param</span><span class="p">%word</span><span class="k">}</span></code>尾部删除最小匹配</li>
-      <li><code class="language-sh highlighter-rouge"><span class="k">${</span><span class="nv">param</span><span class="p">#word</span><span class="k">}</span></code>头部删除最小匹配</li>
-      <li><code class="language-sh highlighter-rouge"><span class="k">${</span><span class="nv">param</span>:offset:len<span class="k">}</span></code>选择子串（<code class="language-sh highlighter-rouge">len</code>可选）</li>
-      <li><code class="language-sh highlighter-rouge"><span class="k">${</span><span class="nv">param</span><span class="p">/pattern/str</span><span class="k">}</span></code>替换最长匹配（<code class="language-sh highlighter-rouge">str</code>可选）</li>
-      <li><code class="language-sh highlighter-rouge"><span class="k">${</span><span class="nv">param</span><span class="p">//pattern/str</span><span class="k">}</span></code>替换所有匹配（<code class="language-sh highlighter-rouge">str</code>可选）</li>
-      <li><code class="language-sh highlighter-rouge"><span class="k">${</span><span class="nv">var</span>:?string<span class="k">}</span></code>若变量<code class="language-sh highlighter-rouge">var</code>不为空，则用变量<code class="language-sh highlighter-rouge">var</code>的值来替换<code class="language-sh highlighter-rouge"><span class="k">${</span><span class="nv">var</span>:?string<span class="k">}</span></code>；若<code class="language-sh highlighter-rouge">var</code>不存在或为空时输出<code class="language-sh highlighter-rouge">var:string</code>并异常终止</li>
-      <li><code class="language-sh highlighter-rouge"><span class="k">${</span><span class="nv">var</span>:+string<span class="k">}</span></code>存在且不为空时返回<code class="language-sh highlighter-rouge">string</code></li>
-      <li><code class="language-sh highlighter-rouge"><span class="k">${</span><span class="nv">var</span><span class="k">:-</span><span class="nv">string</span><span class="k">}</span></code>若变量<code class="language-sh highlighter-rouge">var</code>为空，则用在命令行中用<code class="language-sh highlighter-rouge">string</code>来替换<code class="language-sh highlighter-rouge"><span class="k">${</span><span class="nv">var</span><span class="k">:-</span><span class="nv">string</span><span class="k">}</span></code>，否则变量<code class="language-sh highlighter-rouge">var</code>不为空时，则用变量<code class="language-sh highlighter-rouge">var</code>的值来替换</li>
-      <li><code class="language-sh highlighter-rouge"><span class="k">${</span><span class="nv">var</span>:<span class="p">=string</span><span class="k">}</span></code>和<code class="language-sh highlighter-rouge"><span class="k">${</span><span class="nv">var</span><span class="k">:-</span><span class="nv">string</span><span class="k">}</span></code>类似，不同之处是若<code class="language-sh highlighter-rouge">var</code>为空时，用<code class="language-sh highlighter-rouge">string</code>替换<code class="language-sh highlighter-rouge"><span class="k">${</span><span class="nv">var</span>:<span class="p">=string</span><span class="k">}</span></code>的同时，把<code class="language-sh highlighter-rouge">string</code>赋给变量<code class="language-sh highlighter-rouge">var</code></li>
-    </ul>
-  </li>
-  <li>其他非书中所述的bash特性也一并写在这里：
-    <ul>
-      <li><code class="language-sh highlighter-rouge"><span class="k">if</span></code>的条件中，<code class="language-sh highlighter-rouge">＝</code>用于比较字符串；<code class="language-sh highlighter-rouge">-eq</code>用于比较整型数。</li>
-      <li><code class="language-sh highlighter-rouge"><span class="nv">$[</span>a+1]</code> vs. <code class="language-sh highlighter-rouge"><span class="k">$((</span>a+1<span class="k">))</span></code> vs. <code class="language-sh highlighter-rouge">expr <span class="s1">'$a+1'</span></code> vs. <code class="language-sh highlighter-rouge">bc</code>: <code class="language-sh highlighter-rouge"><span class="nv">$[</span><span class="o">]</span></code>访问变量要加<code class="language-sh highlighter-rouge"><span class="err">$</span></code>，<code class="language-sh highlighter-rouge"><span class="o">(())</span></code>不用</li>
-      <li><code class="language-sh highlighter-rouge"><span class="nb">let</span></code>等价于用于数学表达式中的<code class="language-sh highlighter-rouge"><span class="o">(())</span></code></li>
-      <li><code class="language-sh highlighter-rouge"><span class="k">$(())</span></code>是把<code class="language-sh highlighter-rouge"><span class="o">(())</span></code>中的值取出来</li>
-      <li><code class="language-sh highlighter-rouge"><span class="o">()</span></code>和<code class="language-sh highlighter-rouge"><span class="o">{}</span></code>的区别
-        <ul>
-          <li><code class="language-sh highlighter-rouge"><span class="o">()</span></code>只是对一串命令重新开一个子shell进行执行，<code class="language-sh highlighter-rouge"><span class="o">{}</span></code>对一串命令在当前shell执行</li>
-          <li><code class="language-sh highlighter-rouge"><span class="o">()</span></code>最后一个命令可以不用分号，<code class="language-sh highlighter-rouge"><span class="o">{}</span></code>最后一个命令要用分号</li>
-          <li><code class="language-sh highlighter-rouge"><span class="o">{}</span></code>的第一个命令和左括号之间必须要有一个空格，<code class="language-sh highlighter-rouge"><span class="o">()</span></code>里的各命令不必和括号有空格</li>
-        </ul>
-      </li>
-      <li><code class="language-sh highlighter-rouge"><span class="k">$()</span></code>只取标准输出而不取标准错误的内容？！</li>
-      <li><code class="language-sh highlighter-rouge"><span class="k">${#</span><span class="p">*</span><span class="k">}</span></code>和<code class="language-sh highlighter-rouge"><span class="k">${#</span><span class="p">@</span><span class="k">}</span></code>是位置参量的个数，为<code class="language-sh highlighter-rouge"><span class="k">${#</span><span class="nv">param</span><span class="k">}</span></code>的特例</li>
-      <li><code class="language-sh highlighter-rouge"><span class="k">${</span><span class="nv">param</span>:3:5<span class="k">}</span></code> 替换为变量的第3个字符到第5个字符</li>
-      <li>命令<code class="language-sh highlighter-rouge">dirname</code>返回操作数表示的文件（夹）所在的目录</li>
-      <li>传命令参数时，<code class="language-sh highlighter-rouge"><span class="s2">"</span><span class="k">${</span><span class="nv">a</span><span class="k">}</span><span class="s2">"</span></code>表示把变量a的值作为一个整体（即一个参数）传给命令行，而<code class="language-sh highlighter-rouge"><span class="k">${</span><span class="nv">a</span><span class="k">}</span></code>则表示如果<code class="language-sh highlighter-rouge">a</code>里面有空格就分割为多个参数传给命令行！</li>
-      <li>在一个命令前加反斜杠可以去掉其<code class="language-sh highlighter-rouge"><span class="nb">alias</span></code>的效果，例如有<code class="language-sh highlighter-rouge"><span class="nb">alias </span><span class="nv">ls</span><span class="o">=</span><span class="s1">'ls --color'</span></code>那么<code class="language-sh highlighter-rouge"><span class="se">\l</span>s</code>表示原来的<code class="language-sh highlighter-rouge">ls</code>命令而不是<code class="language-sh highlighter-rouge"><span class="nb">alias</span></code>后的命令</li>
-    </ul>
-  </li>
-  <li>2.6.7 <code class="language-sh highlighter-rouge">here</code>文档：<code class="language-sh highlighter-rouge">&lt;&lt;</code>操作符；<code class="language-sh highlighter-rouge">ed</code>编辑器！！！</li>
-  <li>2.8 <code class="language-sh highlighter-rouge">cut</code>命令用于截取一列以空格（或其他字符？）分隔的字符串</li>
-  <li>3.1 <code class="language-sh highlighter-rouge">/dev/tty</code>为当前终端文件</li>
-  <li>3.4.1 处理被缓冲的输出时，当程序退出时文件描述符会被自动关闭吗？</li>
-  <li>3.4.3 文件操作的<code class="language-sh highlighter-rouge">open</code>调用是一个原子操作</li>
-  <li>3.5.5 <code class="language-sh highlighter-rouge">fclose</code>函数隐含执行了<code class="language-sh highlighter-rouge">flush</code>操作</li>
-  <li>3.6.1 标准库的<code class="language-sh highlighter-rouge"><span class="nb">printf</span></code>等格式化输出可以输出可变长度字符串，如<code class="language-sh highlighter-rouge"><span class="nb">printf</span><span class="o">(</span><span class="s2">"%*s"</span>, 20, <span class="s2">"hello"</span><span class="o">)</span>;</code></li>
-  <li>3.6.2 格式化输入：<code class="language-sh highlighter-rouge">%o</code>和<code class="language-sh highlighter-rouge">%x</code>读取八进制或十六进制整数，<code class="language-sh highlighter-rouge">%f</code>和<code class="language-sh highlighter-rouge">%e</code>和<code class="language-sh highlighter-rouge">%g</code>读取浮点数，<code class="language-sh highlighter-rouge">%c</code>读取字符时不会忽略空格，<code class="language-sh highlighter-rouge">%[]</code>读取字符集合入<code class="language-sh highlighter-rouge">%[A-Z]</code>，<code class="language-sh highlighter-rouge">%%</code>读取百分号</li>
-  <li>3.7.3 先<code class="language-sh highlighter-rouge">open</code>再<code class="language-sh highlighter-rouge">unlink</code>是创建临时文件的技巧</li>
-  <li>3.10 <code class="language-sh highlighter-rouge">/proc/cpuinfo</code>，<code class="language-sh highlighter-rouge">/proc/数字</code>表示进程id为给定数字的进行信息</li>
-  <li>3.11 <code class="language-sh highlighter-rouge">fcntl</code>和<code class="language-sh highlighter-rouge">mmap</code>内存映射</li>
-  <li>4.1 <code class="language-sh highlighter-rouge">getopt</code>函数用于处理输入参数</li>
-  <li>5.1 终端输入的规范模式或标准模式：所有输入都基于行进行处理；非标准模式则有更大控制权</li>
-  <li>5.4 POSIX规范的终端处理标准接口：<code class="language-sh highlighter-rouge">termios</code></li>
-  <li>6 curses库</li>
-  <li>7.1 <code class="language-sh highlighter-rouge">calloc</code>按照元素类型和个数的方式分配内存且全部初始化为0，<code class="language-sh highlighter-rouge">realloc</code></li>
-  <li>7.2 用<code class="language-sh highlighter-rouge">open</code>系统调用创建文件锁；<code class="language-sh highlighter-rouge">fcntl</code>可以锁定文件一部分</li>
-  <li>9.2 makefile的出现在命令前的特殊字符：<code class="language-sh highlighter-rouge">-</code>告诉make忽略所有错误；<code class="language-sh highlighter-rouge">@</code>告诉make在执行某条命令前不要将该命令显示在标准输出上</li>
-  <li>10.3.8 程序运行失败时，Linux系统通常会产生一个核心转储（core dump），并将它保存在core文件中，这个文件其实是程序的内存映像文件，它包含程序在运行失败的那个时刻的全局变量的取值</li>
-  <li>10.4.2 <code class="language-sh highlighter-rouge">cflow</code>程序打印出一个函数调用树，它显示了函数之间的调用关系</li>
-  <li>10.6.2 <code class="language-sh highlighter-rouge">valgrind</code>是一个内存调试工具，可以检测出数组访问错误和内存泄露</li>
-  <li>11 进程和信号</li>
-  <li>12.3 通过定义宏<code class="language-sh highlighter-rouge">_REENTRAN</code>来告诉编译器我们需要可重入功能</li>
-  <li>12.6 脱离线程（detached thread）</li>
-  <li>13 匿名管道：标准库的<code class="language-sh highlighter-rouge">popen</code>和<code class="language-sh highlighter-rouge">pclose</code>函数，unistd.h的<code class="language-sh highlighter-rouge">pipe</code>、<code class="language-sh highlighter-rouge">dup</code>和<code class="language-sh highlighter-rouge">dup2</code>函数；命名管道FIFO：<code class="language-sh highlighter-rouge">mkfifo</code>，<code class="language-sh highlighter-rouge">mknod</code></li>
-  <li>14 Dekker算法，IPC：信号量、共享内存和消息队列</li>
-  <li>15 套接字</li>
-  <li>18 Linux标准化规范（LSB）：www.linux-foundation.org</li>
-  <li>18.1 gcc的警告选项：<code class="language-sh highlighter-rouge">-pedantic</code>检查代码的最强大编译器选项，<code class="language-sh highlighter-rouge">-Wall</code>启用绝大多数gcc警告</li>
-</ul>
-
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>高考</title>
-      <link>http://localhost:4001/2017/06/07/gaokao/</link>
-      <pubDate>2017-06-07T08:26:25-07:00</pubDate>
-      <author>lambda</author>
-      <guid>http://localhost:4001/2017/06/07/gaokao</guid>
-      <content:encoded><![CDATA[<p>今天是一年一度的高考的第一天。十一年前的今天，我也像现在的考生一样经历所有的酸甜苦辣。时间就如白驹过隙的弹指一瞬，一切都历历在目。</p>
-
-<!--more-->
-
-<p>我很清楚高考是什么感觉。考前的几个月我根本没心思复习，一模尤其是二模都考得奇差，特别是二模的数学成绩简直就是我高中数学最差的成绩（也许没有之一）。为了逃避，我把时间都花在看三国演义上面了。每周六补课一结束我就跑去网吧或者亲戚同学家里打游戏，虽然我都忘了打过什么了，大概是《天外来客》等网游？</p>
-
-<p>高考那天，所有老师都穿上了红色，是希望我们鸿运当头吧。第一科必须是语文，我清晰地记得作文我的遣词造句都似乎倒退回了小学水平，大概是太紧张了，都不知道自己写了什么。下午貌似是数学？我还做错了一道选择题，5分就这样没了；最后的大题也只写了一点点；结果考场出来HB还在我前面说考得很不错啊都挺简单的，让我的心情差到了极点。英语倒是觉得做的不错。物理的实验题我花了超级多时间做，是我做过的最变态最难的实验题（考场上初中好基友花生G还坐在我后面）。综合我倒没什么印象。</p>
-
-<p>考完后我那是拼命的玩啊，基本上都在打《天外来客》《天骄2》这几款游戏。</p>
-
-<p>记得出成绩那天我是跟越前同学渡过的（在M记？）。在回来的路上，快到家经过楼下停车场收费处的时候，我收到了成绩通知。我简直不敢相信我的眼睛：语761数819物750总分807！我兴奋地上楼又用固话查了一遍——我没看错，就是这样！我兴奋地告诉了november和咏葱（已经忘了谁是第一个了），抓着我爸的胳膊兴奋地跳了起来——我实在是高兴坏了。我还记得当晚我一直聊qq，咏葱还怪我没告诉新权（？）生了我的气。</p>
-
-<p>后来知道，我是语数物三科单科以及总分都是全班第一，总分年级第三。知乎上有个帖子是“有什么牛逼你能吹一辈子”，我想这个应该就是属于我的那个牛逼吧。但这其实是一个很神奇的事情：我很想知道我的语文作文得了多少分，还有我数学是怎样考过800的。对于英语成绩（貌似是700多一点）我倒是有点意外，我考完跟november对过答案的，我们所有答案都一样（所以我们英语同分），感觉都没做错哪里，为啥只有这么点分数？不过有时候事情就是这样，结果往往跟预想的相反。也许我永远都没有机会知道这些问题的答案了。后来我还知道HB数学考得并不是很好，大概当时他是想让自己放松才那样说的吧。</p>
-
-<p>我还记得考完后我给水根通了电话，兴奋地告诉他我的成绩，却感觉他不是很高兴。后来我知道了，那是因为我不是年级第一的缘故，尽管我已经相当满意了。</p>
-
-<p>这么多年了，大家早已各奔东西。当年的同学朋友们现在也该结婚生子了。高考对人生的影响到底有多重要，也许大家都会仰天长叹吧。花生G和拉风的蜗牛，当年JYOnline的好基友们，你们还好吗？</p>
-
-<p>我应该写个流水账记录一下小学到高中，以及高考后到大学毕业前的生活。先挖个坑在这里吧。</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>手抄《林中生活》</title>
-      <link>http://localhost:4001/2017/05/15/life-in-the-forest/</link>
-      <pubDate>2017-05-15T00:00:00-07:00</pubDate>
-      <author>lambda</author>
-      <guid>http://localhost:4001/2017/05/15/life-in-the-forest</guid>
-      <content:encoded><![CDATA[<ul id="markdown-toc">
-  <li><a href="#section" id="markdown-toc-section">松鼠的仓库</a></li>
-  <li><a href="#section-1" id="markdown-toc-section-1">白衬衫</a></li>
-  <li><a href="#section-2" id="markdown-toc-section-2">松鼠搬家</a></li>
-  <li><a href="#section-3" id="markdown-toc-section-3">冻结</a></li>
-  <li><a href="#section-4" id="markdown-toc-section-4">打猎的经验</a></li>
-  <li><a href="#section-5" id="markdown-toc-section-5">隐身的松鸡</a></li>
-  <li><a href="#section-6" id="markdown-toc-section-6">有耐心的小鸭</a></li>
-  <li><a href="#section-7" id="markdown-toc-section-7">发明家</a></li>
-  <li><a href="#section-8" id="markdown-toc-section-8">狡猾的松鼠</a></li>
-  <li><a href="#section-9" id="markdown-toc-section-9">一棵树的秘密</a></li>
-  <li><a href="#section-10" id="markdown-toc-section-10">白颊凫小骑手</a></li>
-  <li><a href="#section-11" id="markdown-toc-section-11">预兆</a></li>
-  <li><a href="#section-12" id="markdown-toc-section-12">风雪</a></li>
-  <li><a href="#section-13" id="markdown-toc-section-13">烟斗的故事</a></li>
-  <li><a href="#section-14" id="markdown-toc-section-14">生命的代价</a></li>
-  <li><a href="#section-15" id="markdown-toc-section-15">大森林的主人</a></li>
-  <li><a href="#section-16" id="markdown-toc-section-16">大森林的主人（修改版，见于小学课文）</a></li>
-  <li><a href="#section-17" id="markdown-toc-section-17">【参考】</a></li>
-</ul>
-
-<p>乌斯季诺维奇 著</p>
-
-<p>梦海 译</p>
-
-<h2 id="section">松鼠的仓库</h2>
-
-<p>在秋天，每当暖和晴朗的日子，
-我常在树林里看见有菌子挂在树枝上。但当那些菌子刚干的时候，我却发现它们不知道哪儿去了。</p>
-
-<p>“这是松鼠的储藏物呵，它在准备过冬呢。”哥哥对我这样解释。</p>
-
-<p>我可不相信。</p>
-
-<p>冬天，我和父亲、哥哥一同到树林里去打柴。我们捡了一棵干枯的枞树，把它砍倒了。我们看见树干上有一个洞，我们便把洞锯开，硬果子和干了的菌子就都从洞里滚出来，洒落在雪地上，我把硬果子拾了满满的一帽子。</p>
-
-<p>哥哥望着我，带着得意的微笑说：“记得吗，你还不相信哩！”</p>
-
-<h2 id="section-1">白衬衫</h2>
-
-<p>我和帕夫里克准备一同去钓鱼，我们掘了许多蚯蚓，收拾好钓竿，还拿了放鱼的小桶子。</p>
-
-<p>“我们走吧！”我带着老大哥的口气命令说。</p>
-
-<p>在门口我们遇见邻居的老婆婆。她正拿着枯树枝赶着一群鹅，用了她那好像近视眼一般的眯细着的眼镜，目送着我们，同时还用期望的口吻说道：</p>
-
-<p>“希望你们钓到满满的一桶啊！”</p>
-
-<p>但是坐在小凳子上的老头儿伊里亚却说：</p>
-
-<p>“帕夫里克会钓得到，尼古拉却是钓不到的。那个小桶子是多带的呀……”</p>
-
-<p>我生气极了：老头儿凭什么这样说呢？帕夫里克根本不懂得钓鱼，老是说话和[X]闹罢了。要是老头儿晓得这些，我想他一定不会这样说的了。</p>
-
-<p>我们出了围墙，沿着草地向河边走去。在恬静的河岸边各自拣了一块地方，把钓钩放进水去。那时候几乎连钓丝泼动水的声音都能听得出来，平滑如镜的水面上激起了微微的水圈，渐渐地一切都平静下来了。</p>
-
-<p>水中倒映着许多树木和无边无际地漂浮着白云的天空。假如你从岸上跳进水里去——你马上会感觉到好像到了另一个陌生的世界。</p>
-
-<p>“上钩了！上钩了！”帕夫里克突然叫了起来，把一条肥大的鲈鱼抛到沙地上。</p>
-
-<p>“现在该是我的钓竿上钩了吧，”我想，一面把身子弯向钓竿去。</p>
-
-<p>“这么大！”帕夫里克喊着说。“我以为钓竿都会折断呢！”</p>
-
-<p>“低声些！”我很生气地说。“鱼要被你吓跑的呀。”</p>
-
-<p>“鱼是不怕我的，”帕夫里克说。</p>
-
-<p>这时候他又接连钓起了几条鲈鱼。我不过才钓了一条，他已经有十几条了。</p>
-
-<p>“老头儿说得多么对呀！”帕夫里克兴高采烈地喊着。</p>
-
-<p>“这是因为你拣的地位好呀！”我羡慕地咕噜到。</p>
-
-<p>“我们来换好啦，”帕夫里克非常大量的提出。</p>
-
-<p>“那末换呀，”我同意说。</p>
-
-<p>于是我们便互相换了地位。奇怪！帕夫里克又钓了许多，可是我的浮标却老是浮在水面，好像冻结了一样。这时候我恼怒得快要哭出来了。</p>
-
-<p>我们钓鱼的结果终于和老头儿的预言几乎一样：帕夫里克钓到了满满的一桶，可是我所钓到的还盖不满桶底。</p>
-
-<p>回家的时候，我们又遇见伊里亚老头儿。</p>
-
-<p>“怎么样？”老头儿蛮有兴趣的问道。</p>
-
-<p>我们便把桶子递给他看。</p>
-
-<p>老头儿看了我钓到的鱼，摇摇头，狡猾地笑着说：</p>
-
-<p>“明白了吗，怎么回事？”</p>
-
-<p>“不明白呀，”我说。</p>
-
-<p>老头儿用手指点点我的钓竿说：</p>
-
-<p>“白的。”</p>
-
-<p>“这是刚做的呀，”我说。</p>
-
-<p>“你的衬衫也是白的，”老头儿继续说。“可是帕夫里克的钓竿是黑的，衬衫是灰的。你明白了吗？”</p>
-
-<p>“我还有些不明白哩……”</p>
-
-<p>“白的颜色会把鱼吓跑的，”老头儿解释道。“多半在二十步之外，见了你的钓竿和衬衫，它就要退回去了。”</p>
-
-<p>“可是帕夫里克一直在讲话的呀，”我反驳说。</p>
-
-<p>“讲话，这倒没有什么关系，”老头儿继续说。“可是你的一举一动，鱼是怕的。你站在岸边去试试看罢：等鱼游来的时候，你开口讲话——它是不会怎样的。可是你的手倘一挥动——那你马上可以看出它会怎样了！”</p>
-
-<p>“为什么你早不教我这些呢？”我说。</p>
-
-<p>老头儿笑着说：</p>
-
-<p>“要这样，你才可以记得牢些。不吃苦——是学不好的呵。”</p>
-
-<h2 id="section-2">松鼠搬家</h2>
-
-<p>在我刚学会打枪的时候，父亲第一次带我到狩猎区去。我们到了森林，便留在一所打猎的小屋里。过了一天，第二天，我看见父亲老是愁眉蹙额。</p>
-
-<p>有一次打猎后我们一同坐在炉子边，锅里煮着羹汤。</p>
-
-<p>“事情真糟啊！”父亲叹了口气说。“我想，松鼠都要跑掉啦。今年胡桃是凶年啊……就连松果，也都是空空的！”</p>
-
-<p>我明白，事情可真是糟了。松鼠——是供养我们生活的啊。跑掉了——那可怎样办呢？</p>
-
-<p>不多一会父亲就离开我到村庄上去了，留下我一个人在森林里。</p>
-
-<p>“好好地留在屋子里，不要到旁的地方去，”父亲吩咐我说。“不然会迷路的啊。”</p>
-
-<p>那怎样会呢！当父亲刚刚走开，我就拿了猎枪到森林里去了！走着，走着，我只见到一只松鼠，而后来那只松鼠也不见了。那时候，我又倦又饿……我想算了吧，于是大踏步的回家转了。</p>
-
-<p>突然我的两只狗叫了起来，大声地狂吠着。我一看——无无数数的松鼠正在对着我奔跑过来。两只、三只、十只、二十只……我开枪打了第一只，我刚刚装好枪——松鼠已经来得更多了！他们越过树木、枯枝和雪地——向同一的方向奔着。</p>
-
-<p>这是怎么一回事呀！狗像发了疯似的狂奔着，它们抓到了松鼠便立刻把它咬得粉碎。那时候我一直没有离开过原来的地方，把所有的子弹都打完了，枪杆热得发烫，好像要燃烧起来了……</p>
-
-<p>我回到小屋去拿子弹，那里也是同样情形：成千成万的松鼠在奔着跳着。</p>
-
-<p>我不知道已经打了多久了，一直到了傍晚，我方始明白过来。可是我的狗却整夜没有回来。我把猎得的松鼠扔在地板上，站在门边沉思着：这是我在做梦呢，还是真的呢？父亲在所有的猎季也从来没有得到过这样多的收获呵！</p>
-
-<p>明天一早我到森林里去。静极了，好像是死一般的……我跑了半天——一只松鼠也找不到，它们全都跑掉了。</p>
-
-<h2 id="section-3">冻结</h2>
-
-<p>二月底，我在树林中的湖面上敲着冰块。一有水出现，冰窟窿口就有鱼从冰下面张口吹着水泡。它们一条条地叠了起来，从水里窜上来贪婪地呼吸着空气。可以清楚地看到，它们在下面挤得紧紧的，同时有几条小鱼跳到冰上面来了。</p>
-
-<p>那时候我就用手去抓鱼，一连抓了许多，直到我的手指快要冻僵了，才停止下来。</p>
-
-<p>恰巧这时候年老的渔翁阿基姆老爹走过，他停在冰窟窿口，痛心地摇摇头。</p>
-
-<p>“这叫做‘冻结’，”他对我解释。“在冰下面，——可以说，空气几乎没有了，鱼已经无法呼吸了。它们只得挤上来！不这样，会闷死的呀。”</p>
-
-<p>果然是这样的。到了冰融化的时候，我带着钓竿再到湖边去。那里的鱼往年总是很多的。</p>
-
-<p>我站了半天只抓到一只青蛙。一条鱼也没有——全部死掉了。</p>
-
-<p>至少要过几年，鱼才会再有哩。</p>
-
-<h2 id="section-4">打猎的经验</h2>
-
-<p>寒假中我来到乡村。过关了乌烟瘴气的都市生活，这里的一切都感到不平常：经常不变的宁静、高高的没有踩踏过的雪地、深夜的狼嗥声、盖满了白雪的死寂的田野和森林……</p>
-
-<p>初初一看，这里好像是死沉沉的，然而事实上却无论在田野，或在森林里，都是过着平常的冬天生活。当我第一次出去散步的时候便证实了：松鸡在矮小的树丛里咶噪着飞来飞去，砍到了的柳树边，兔子在雪地上跳蹦着，松鼠在茂密的松林里啃啮着硬果子。貂的脚迹随处都可以见到。</p>
-
-<p>我从储藏室里拿出了捕兽器，一面把貂喜欢吃的东西——老鼠——系在它的碟子上，然后把捕兽器安放在有着许多貂的脚迹的地方。</p>
-
-<p>“明天一定会捉到的，”我骄傲地对父亲说。</p>
-
-<p>可是到了明天早晨，我走近捕兽器一看，只见它们全是空空的！新踩上的脚迹倒很多！有一处，貂已经完全走到捕兽器的近旁了，可是它好像突然被什么东西吓了一跳，跳到一边逃掉了。</p>
-
-<p>“喂，怎么啦，猎人？”父亲遇见我的时候问道。</p>
-
-<p>当我说没有捉到的时候，我恼怒得快要哭出来了。</p>
-
-<p>“捕兽器你安放得好吗？有没有盖上雪？是不是只有老鼠露在上面呢？”</p>
-
-<p>“盖上的呀。”</p>
-
-<p>“你会不会在捕兽器旁边留下自己的脚迹呢？”</p>
-
-<p>“没有。雪靴没有脱过呀。”</p>
-
-<p>“那我可不明白了……”父亲把双手一摊。</p>
-
-<p>后来我们又走到捕兽器那里去，父亲只是耸了耸肩膀。他突然拍着自己的额角说：</p>
-
-<p>“那末老鼠是怎样地系上去的呢？是不是用你赤裸的手？”</p>
-
-<p>我点点头。</p>
-
-<p>“正是这个缘故呀……不可以这样的啊！”</p>
-
-<p>“要怎样才好呢？”我茫然地说。</p>
-
-<p>“要戴上手套，”父亲说。“手套和捕兽器都要用树叶擦过，貂嗅到了人的气息就要逃跑的。如果你用赤裸的手碰了引诱它的东西——那便糟了，貂再也不会来上钩了。它的嗅觉是很发达的啊！”</p>
-
-<p>从此以后，人家一直讥笑着我的骄傲自大。可是用不着生气的：打猎的经验不是一下子能得到的呀！</p>
-
-<h2 id="section-5">隐身的松鸡</h2>
-
-<p>我停在静静的溪边的一所小屋里。在棕色的芦苇中间，我听到蟋蟀声和溅水声——那边爬上了一只雏鸭。</p>
-
-<p>鹡鸰摇晃着长长的尾巴，在生满了苔藓的、横倒在地下的树干上徘徊。鲫鱼在水花丛中闪动着。</p>
-
-<p>溪边生长着各种各样粗大的树木。白桦树上飘落着黄叶，树枝低垂到水边，尖尖的松针好想穿戳着蔚蓝的天空；下面，靠近水潭的路未变，成熟了的酱果发着黑油油的颜色。</p>
-
-<p>就在落叶的旁边，悉缩地响着轻微的声音。我从小屋里看出去：在布满了蜘蛛网的枯草丛里，躲着一只松鸡，它正在啄着那把四周围映得一片通红的覆盆子，一面跳向前去。</p>
-
-<p>树林上面突然闪过一只老鹰的侧影。松鸡振了振……不见了。老鹰在小屋上面闪电似的掠过，无聊地在树丛中飞掠了一会，又无目的地飞走了。</p>
-
-<p>“松鸡躲到什么地方去了呢？”我想。</p>
-
-<p>松鸡仍旧是在原来的地方：他瞧见了老鹰，缩拢着，紧紧地伏在地面上，和灰色的地面溶成一片。要瞧了好一会，才能从枯草页中把它辨认出来。</p>
-
-<p>然而老鹰又突然在树林后面出现了，他躲在一颗枯死的松树顶上。它一心想找出那只松鸡来。</p>
-
-<p>溪边变得寂然无声了：鹡鸰飞走了，芦苇中的鸭不响了，连山雀也从树顶上飞到地面上去了。</p>
-
-<p>老鹰在死寂中忍不住，就飞开去了。于是一切立刻重又活跃起来，喧嚷起来了：鹡鸰在水面上飞掠，山雀啾啁地飞向高处，鸭从芦苇中游了出来。松鸡跳了起来，又急忙地躲到芦苇里去了。</p>
-
-<h2 id="section-6">有耐心的小鸭</h2>
-
-<p>我肩上掮着钓竿走向河边去。狭长的小路上生满了苔藓，连鞋子也会软软地陷进去，听不出一些脚步声来。在无声无息的举步中，有着一种特别的情趣。我好像是带了隐身帽一般，在弯弯曲曲的小路上向前走着，在我面前展开了一幕一幕林中生活的新鲜的景象。有几只小兔子在矮小的树丛里跳蹦着；再前面，松鼠在横到地下的松树上忙碌地工作，松鸡在树丛里安详地闲散着。</p>
-
-<p>我绕过最后的樱树林，便停下了。就在我的脚边，有几只小鸭从河滩上滑落到水里去。它们钻进水里……不见了。</p>
-
-<p>我站了好几分钟——也不见一只小鸭钻出水面来。</p>
-
-<p>“它们到哪里去了呢？”我满有兴趣的注意着周围。岸边都是沙，一些旁的东西也没有，仅仅在水面上露出了三两根轻软的芦苇。</p>
-
-<p>到处找不到小鸭，我便把吊钩投进水里去。</p>
-
-<p>鱼上钩的情形很不好：只钓到了一条鲈鱼，第二条便把钓丝拉断了。</p>
-
-<p>停留了一个多种点，我决定换一个地位。脚刚站了起来，就突然发现，在离开我两步左右的芦苇中间，有鸭的嘴巴露出在水面上了。</p>
-
-<p>现在一切都很容易明白了。突然吃了一惊的小鸭来不及躲到[X]草里去。它们便钻入水中，然后小心翼翼地把嘴巴窜了上来，一面耐心地等待着我跑开。</p>
-
-<h2 id="section-7">发明家</h2>
-
-<p>河流把树林分成了两边。两岸绵绵不断的都是浓密的树丛，生满了白绒毛的枝条一直垂到水面。经过水冲[X]的地面上露出枯了的树根，浅滩上铺满了横倒的树干和树椿。</p>
-
-<p>我徐徐地用桨划着小船，静悄悄地顺着水流荡漾。许多叶子从树上飘落下来，它们慢慢地落在水面上，漂浮着，在小船的周围迴旋者。</p>
-
-<p>晴朗的天空中响着飞向南方去的鹤鸣声。在阴暗浓密的枞树林里可以听到松鸡的啸叫。敏捷的鲣鸟轻快地在挂满了鲜红果实的山梨树丛中飞来飞去。空气中凝聚着树叶和枯草的气息。</p>
-
-<p>我绕过大堆横倒的树木。这里有穿过树堆的水流，它们发出一种固定的呜鸣声。可是今天在这声响中又稀疏地夹杂着一种新的声音，不时可以听出轻微的泼水声，好像是什么东西跳到水中去似的。</p>
-
-<p>我停住了小船，倾听着。谜一般的声音是从转弯地方发出来的。于是我轻轻地向前划去，停在垂到水面的茂密的灌木丛后面。</p>
-
-<p>扑通！……靠近船边响了一声。水[X]动着，水[X]远远地四散开去。</p>
-
-<p>我小心翼翼地把树枝拨开来，把头伸进去。我的面前就是[X][X]横倒的树堆的对岸。</p>
-
-<p>好一会不见什么动静。后来有一只灰色的小动物从水中爬到险滩上来了。</p>
-
-<p>“水獭！”我认得出来。</p>
-
-<p>水獭爬到险滩的顶上，把肚子躺着，头部向下，一面用后脚抵撑着。它迅速地顺着平滑的土地滑了下来，在空中跃起两公尺，再蹦落到水中去。一瞬眼它又不见了，后来就在这岸边的水中把头露了出来，这时候发明家重又爬到险滩上去了。</p>
-
-<p>我对水獭观察了好一会。最后猜到了：这小动物一定是在做游戏，从小丘上滑下来，用它浓密光滑的皮毛来代替小橇车。</p>
-
-<p>我不愿意妨碍水獭游戏，便悄悄地回转了。当小船绕过横倒的树堆的时候，后面又不时发出一种泼水的声音。这声音渐渐地低下去，最后和河流的声音混和在一起了。</p>
-
-<h2 id="section-8">狡猾的松鼠</h2>
-
-<p>一个晴朗的秋天。林中的居民都在忙着准备过冬：松鼠嘴里装的满满的在枯枝中窜来窜去，星鸟把硬果子藏在毛绒里，老鼠把一束枯草拖到洞里去。</p>
-
-<p>有一只松鼠正在树丛里工作。它在地上搜到了菌子，就把它们搁在树枝上风干。这小动物在没命地忙碌着自己的工作，连我走到它的身旁时，它也没有发觉。</p>
-
-<p>这时候树林上突然出现了一只老鹰。松鼠慌张得吱吱地逃到一边。这只凶猛的鸟缩紧了翅膀，蜷作一团飞落下来，敏捷的小动物一跃跃上了一棵粗壮的松树。</p>
-
-<p>一场机智的竞赛开始了。老鹰露出了锐利的爪子向松鼠扑来。小动物急忙地躲到树干的背面，老鹰的翅膀擦着树皮，又迅速地飞袭下来，然而当它飞下来的时候，松鼠已经在相反的另一面了。</p>
-
-<p>这样反复了好几次。松鼠狡猾地绕着树干盘旋，螺旋似的逐渐上升。后来它到了树干的中央，一眨眼已躲在一枝枯枝的旁边了。老鹰重新向自己的猎逐物扑过来。这时候小动物蜷屈着钻进洞里去了。漂亮尾巴的尖端在钩形的鹰嘴前炫耀一下便消失了。</p>
-
-<p>老鹰像呆子般的停在那里。后来它无聊地绕着松树迴旋了一会，飞到树林里去了。我想，当这只凶猛的鸟飞去的时候，它一定还在无可奈何的恼怒下擦击着嘴巴哩。</p>
-
-<h2 id="section-9">一棵树的秘密</h2>
-
-<p>在茂密的树林中长者一棵齐整青壮的落叶松。我打松鸡的时候常常在它下面休息，所以很记得它。</p>
-
-<p>可是后来树顶上的桠枝枯掉了。它们一根根死去，而且向下垂落，枯黄的针叶在枝头上凄凉地瑟瑟作响。</p>
-
-<p>经过好久我都不明白，这落叶松究竟是怎么一回事。</p>
-
-<p>有一次我追踪一只雷鸟。在薄雾中，我站在一颗熟悉的树底下，从树枝间闲眺晚霞的余辉，倾听着树林里的声音。翅膀吱吱作响的山雀在树丛中飞来飞去，野鸭飞翔着，什么地方还有猫头鹰在嘎嘎地鸣叫……</p>
-
-<p>树林里突然浮起了一阵[X]声。一只又大又黑的鸟飞落在落叶松的顶上。我好像听到有树枝被拗折和坠落的声音。</p>
-
-<p>“谁在拗折树枝呢！”我猜想着。“是雷鸟吧！难道林中的树木还不算多吗，不然它干嘛老是躲在这棵落叶松上呢？”</p>
-
-<p>雷鸟在枝间盘桓了好一会，后来静下来了。我等待着，直到它睡着了，才悄悄地回家。在路上我遇见年老的猎人路基奇，我便把这个故事讲给他听。</p>
-
-<p>“常常有的，”路基奇点点头说。“雷鸟是喜欢在一定地方过夜的。当它在一棵树上住熟了——它便会把整棵树顶毁了。”</p>
-
-<p>天刚亮时我射击这只雷鸟，它以后再也不飞到这棵树上来了。可是这课落叶松已经不能够恢复原来的样子。它正像现在一样——毁坏了，顶上枯萎了。</p>
-
-<h2 id="section-10">白颊凫小骑手</h2>
-
-<p>有一次，我走到一条大河边上。太阳刚从树林后面露出脸来；雾气在河面上旋捲，渐渐消散了。苍白色的圆月还隐现在西边浅蓝色的天空中。</p>
-
-<p>我在前面发现一只野鸭，从侧面看去我断定那是一只白颊凫。有几个小绒球似的东西正在它的近旁浮水，那就是小白颊凫。</p>
-
-<p>我慢慢地走近去，不经心踏在枯枝上，发出轻微的㗭[X]声。</p>
-
-<p>“呷！”母凫惊慌了，叫了起来。</p>
-
-<p>小白颊凫就突然都挤作一团。母凫钻到了它们的下面去，一会儿……小白颊凫已经出现在它的背上了。母凫急忙地躲进了芦苇，把自己的孩子们救出了险境。</p>
-
-<h2 id="section-11">预兆</h2>
-
-<p>一只山猫把我们引到了一处陌生的森林。它带了伤沿着森林深处已经奔跑了两昼夜，雪地上留着血迹。我和马克西梅奇执拗地追着它，有几次已逼近了，可是没有能够打中。最后它已经精疲力尽了，我们把它赶进一个没有出口的洞穴。于是马克西梅奇跪下来把它打中了。山猫渐渐地四脚伸直，嘴脸埋入雪中……</p>
-
-<p>当目的达到，不再需要心急的时候，我们大家都感到非常疲倦。希望能够永远躺在雪地上，不再想什么，不再挂记什么。我们慢慢地剥下猎获物的皮，一面向四周闲眺。针叶树阴[X]地耸立着。阴沉的天空好像要挂下来似的，北面挂着劲烈的风。</p>
-
-<p>“往哪一边走呢？”我带着不安的情绪问马克西梅奇。</p>
-
-<p>猎人茫然地耸了耸肩膀。</p>
-
-<p>“回头走吧，依着我们的脚迹，”我提议说。</p>
-
-<p>马克西梅奇看了看天空，摇摇头说。</p>
-
-<p>“晚上有暴风雪。脚迹会被盖没的。”</p>
-
-<p>于是我们只好瞎闯了。</p>
-
-<p>“那边也许会有村庄吧。到黄昏时候总找得到的，”猎人安慰我说。</p>
-
-<p>他说话的语气，使我觉得他自己也并不怎样相信。</p>
-
-<p>到了黄昏，我们还没有找到村庄。森林好像没有底似的，到处不见一星光亮。树顶摇摆着，震耳地喧嚣着，树缝里飘下来微微的雪花。</p>
-
-<p>天黑了……</p>
-
-<p>马克西梅奇停住脚步，把枪从肩上拿下来。</p>
-
-<p>“准备找地方过夜吧，”他坚决地说。</p>
-
-<p>“当然只好这样啰，”我垂头丧气地同意说。</p>
-
-<p>我们脱下雪靴，踏着沙沙作响的雪地。</p>
-
-<p>那时候树林上面飞过一只松鸡。它在灰色的天空中一闪，就很快的消失了。</p>
-
-<p>马克西梅奇停下来问道：</p>
-
-<p>“它是从哪一面飞来的？”</p>
-
-<p>“没有注意啊，”我淡淡地回答他。</p>
-
-<p>“呃，你啊!”猎人埋怨我说。</p>
-
-<p>“管它从哪一面飞来呢，反正不是一样吗？”我生气地说。</p>
-
-<p>马克西梅奇对我作了很有表情的一瞥，看样子好像他不屑用言语来证明这非常明显的事实，便掉转身去了。</p>
-
-<p>那时候在我们上面又飞过一只松鸡。</p>
-
-<p>猎人高兴得拍起手来了。</p>
-
-<p>“赶快穿上雪靴！我们走吧！”</p>
-
-<p>我很不高兴地依从了他，我们向松鸡飞来的方向走去。走了靠近一小时。天开始夜了，树林还是深得没有尽头。</p>
-
-<p>“这算是什么预兆啊！”我喃喃不平地说。</p>
-
-<p>马克西梅奇不作声。</p>
-
-<p>暴风雪开始了。四周发出呼吼声、喧嚣声。空中飞旋着雪的河流。</p>
-
-<p>突然在树林里隐约看到有广大发白的一片。我们加快脚步找到了田野。穿过风雪的幕帷，前面闪亮着村庄上的灯光。</p>
-
-<p>马克西梅奇拍拍我的肩膀说：</p>
-
-<p>“现在你还有话说吗？”</p>
-
-<p>我哑口无言了。</p>
-
-<p>走进村庄的时候，猎人整了整背上的山猫皮，好像有意无意地解释道：</p>
-
-<p>“田里有着禾堆，喏！松鸡白天飞到这上面来。吃饱了——再飞回树林里去过夜。它们是决不会白飞的。”</p>
-
-<p>马克西梅奇放下肩上的猎枪，已经不能隐藏自己得意的样子了，他继续说：</p>
-
-<p>“松鸡不是呆子，它决不会白飞的。不，它比旁的猎人还要来得聪明。它呀！才说得上是真正的猎人——它对任何微细的事情都能够注意到，它懂得一切。可是有些人啊，连别人替他嚼碎了，放进他的嘴巴，他还是不能够咽下去。这样的懒人，哪里配得上到森林里去走动呢……还是坐在火炉旁边歇歇吧。”</p>
-
-<blockquote>
-  <p>另见<a href="https://www.douban.com/group/topic/24019681/">https://www.douban.com/group/topic/24019681/</a>，略有差别。</p>
-</blockquote>
-
-<h2 id="section-12">风雪</h2>
-
-<p>晚上下了一场薄薄的小雪，早晨刮着风。我以为这风很快就会停止的，就到田野里去了。可是风并没有静下来。所有的野兽脚迹都已经隐没了。我只好回家去。当我走下小山坡的时候，在路上遇见一处浓密的灌木丛。它的周围流着雪水，但在风所吹不到的一面，在没有落到雪的一块三角形的地面上，隐隐地可以看出刚踩上的狐狸脚迹。这算是唯一的脚迹。</p>
-
-<p>我想依着这个脚迹找到树林里去。</p>
-
-<p>不过先要解决一个难题：就是狐狸究竟跑到那里去的呢？我对于田野的情形很熟悉，我知道靠近低洼的地方，一定会有许多老鼠。明白了：它是去‘捕鼠’的。</p>
-
-<p>我绕了一个大圈子，逆着风走近低洼的地方，从灌木丛后面张望过去。在纷飞的雪花中有一点黑点在前面跳动着。这便是狐狸了。</p>
-
-<p>我不声不响地爬到灌木丛的边缘，隐伏在雪地上，嘴里衔着一根很细的管子，短促地装着鼠叫的声音。狐狸竖起了耳朵倾听着，然后用轻巧缓慢的步子向着我走来。但在离开灌木丛四十步的地方突然停下了，把鼻子迎风嗅嗅。它觉察了，知道事情不妙。于是我就屏住呼吸把枪举起来……</p>
-
-<h2 id="section-13">烟斗的故事</h2>
-
-<p>我在打猎的时候失去了一只烟斗。这是一只装有琥珀管的、用卡莱里亚白桦木做成的好烟斗。我停下来想了一想：“到哪里去找寻呢？”离开最后一个歇脚的地方已经有十公里了。要找遍所有的森林区是不可能的呀！白费气力的，算了吧。</p>
-
-<p>过了两天，我偶然依着狼的脚迹行走。这只凶猛的野兽，曾经在昨天晚上从羊舍里拖出一只小羊，在菜园外面把它吃掉后，穿过田野跑到树林里去了。我想找出它歇脚的地方，用小旗插在它的周围。</p>
-
-<p>在两个树林之间脚迹突然弯到一边去了。原来这狼绕了一个大圈子，重又折回本来的方向。</p>
-
-<p>非常明显，这只野兽一定是在这里觉察了什么危险。正像它有时候避开不高明的陷阱一样。</p>
-
-<p>前面隐约地看到我的一只旧雪靴。可是狼决不会害怕雪靴的呀——况且在绕圈子的时候，它又是好好地跨过它的。</p>
-
-<p>那末它究竟害怕些什么呢？</p>
-
-<p>我站着想了好一会。</p>
-
-<p>狼只是害怕人。这样说来，前面也许会有什么东西，上面留着一种能使它联想到人的气味。而且这种气味一定非常强烈，所以狼在老远的地方就嗅得出来了。</p>
-
-<p>“烟斗！”我突然想起来了。</p>
-
-<p>正是它呀。当我走近雪鞋的时候，在雪地里我见到了失去的烟斗。</p>
-
-<h2 id="section-14">生命的代价</h2>
-
-<p>森林里刮了三天大风雪。树木吹倒时发出裂断的声音，天空中飞旋着雪的河流：风刮得使人睁不开眼睛，会使人栽倒下来。</p>
-
-<p>我和马克西梅奇停留在林中暖和的小屋里，一直听着森林里的呼啸声。到了第四天，在吃中饭的时候，天气开始变化了：风平静了，天色也明朗起来了。</p>
-
-<p>“我们走吧，”马克西梅奇急急地说，“我们去看捕兽器吧。”</p>
-
-<p>“快去看呀！”我高兴地同意说，虽然明知野兽在这样的天气，也是躲在洞里的。</p>
-
-<p>我们困难地把门推开——小屋子几乎连屋顶也都埋在雪里了。</p>
-
-<p>云块在树林上面飞驰，在它们的空隙中闪出蔚蓝的天空。森林里不时散落着坚硬的雪子。</p>
-
-<p>“大冷天快要来了，”马克西梅奇很有把握地说。</p>
-
-<p>他飞速向前奔跑。我紧紧追随者他，许多熟悉的地方已经很难认得出来了：到处横满了刚倒下来的树木，松软的雪堆高高地耸立着。我们的捕兽器盖在雪的下面。要把它们掘起来再重新安放已没有时间：短短的白天一下子就过去了。</p>
-
-<p>走在前面的马克西梅奇半路上停下来说：</p>
-
-<p>“过了一夜再说。我们回去吧。”</p>
-
-<p>他突然脱下帽子，同时出神地呆着。我也同样出神地听着。前面，从小枞树的背后，发出一种低沉的呜呜声。可以使人想像到缚在锁链上的饿狗的叫声。</p>
-
-<p>“捕兽器里……”马克西梅奇低声说，同时他从肩上拿下猎枪，滑到丛林里去了。</p>
-
-<p>我紧随着他。</p>
-
-<p>我们走近小枞树。穿过树枝看到在白雪中有褐色的一点在闪动着。</p>
-
-<p>“狐狸，”我猜想，同时准备打中它的脑袋。</p>
-
-<p>褐色的一点突然又闪到一边去，不见了。</p>
-
-<p>“怎么？……”马克西梅奇吃惊地说。</p>
-
-<p>我们穿过枞林冲向前去。</p>
-
-<p>在捕兽器的铁闸口露出一只咬断了的鲜血淋淋的脚爪，狐狸的脚迹一直通到树丛里，旁边一路上流着血迹。</p>
-
-<p>马克西梅奇用唾沫湿了湿手指，向上面举起来，然后说：</p>
-
-<p>“明白了……”</p>
-
-<p>“怎么回事呀？”我不明白。</p>
-
-<p>“我们应该逆风走的呀”，猎人解释道，“可是我们却顺着风走了。可能在两公里之外，狐狸就已经觉察我们了。喏，它咬断了自己的脚爪，逃跑了。”</p>
-
-<p>我惊奇得一句话也说不出来。后来才踌躇地说：</p>
-
-<p>“要不要去追追看呢？”</p>
-
-<p>马克西梅奇没有回答，他调转雪靴。一路上阴[X]地喘息着，一直到了自己的小屋旁边，他才一面把身上的雪抖落，一面说道：</p>
-
-<p>“为了生命它偿付了多么大的代价啊。”</p>
-
-<p>沉默了一会，他责难地补充说：</p>
-
-<p>“你还说——要去追哩……”</p>
-
-<h2 id="section-15">大森林的主人</h2>
-
-<p>整整一星期下着使人纳闷的秋雨。大森林上面展开了像酸果冻似的、水气般流动的云层，吹着使人发闷的风。浸了雨水的树枝垂落到地面上。涨到岸边的河流呜咽着。</p>
-
-<p>我和马克西梅奇顺流划着小船。在一处窄狭的地方，‘独木舟’被隐在水面下的树干撞翻了。我们仅仅把猎枪带上了岸。食品、弹药和我们所有的猎获物全都沉没了。</p>
-
-<p>我们又倦、又饿，从头到脚都浸湿了，停留在离开住所很远的森林里。我冷得发抖，茫然地望着我的同伴，心里怀着希望：他是无论在什么情形下都能够想出办法来的。可是马克西梅奇却吐着唾沫，默默地绞着衣服。</p>
-
-<p>“应该生一堆火啊，”我提议说，一面从衣袋里拿出火柴来。</p>
-
-<p>火柴匣里流出水来……</p>
-
-<p>马克西梅奇不声不响的拿出子弹筒来，把里面的弹丸和弹塞倒出来，再用从枞树上取下来的干苔藓把火柴塞紧。</p>
-
-<p>“你去找一些干的树枝和白桦皮来，”他吩咐我说。</p>
-
-<p>我找来了。猎人把子弹筒放进了猎枪，对着地面开了一枪。苔藓烧着了，马克西梅奇慢慢地把它吹旺，一面又把树枝和碎木片放上去。火便熊熊地燃旺起来了。</p>
-
-<p>“你好好地照顾火堆，我去打一些野味来，”猎人说着，人就在树背后不见了。</p>
-
-<p>不一会，树林里响了几枪。我还没有捡到多少燃料，马克西梅奇已经回来了。他的腰里挂着几只摇摇晃晃的松鸡。</p>
-
-<p>“现在我们来做饭吧，”他说着，一面把火堆移到一边去，用刀子在地面上掘了一个洞。</p>
-
-<p>我们把野禽的毛拔光，又把他的内脏取了出来。马克西梅奇找到几张还没有完全干枯的阔树叶，把松鸡裹起来放进洞里，再用泥土盖好，然后在上面架起火堆来。</p>
-
-<p>等到我们的身上烘干了，松鸡也烧好了。掘开洞的时候可以闻到一阵引人馋液的舒服的香味来。我们不用盐和面包就把它吃了。可是我觉得从来没有吃过比这个更鲜美的东西！</p>
-
-<p>天黑了。还是和先前一样的下着毛毛雨，树顶上的风呼呼地响着。</p>
-
-<p>“睡吧，”马克西梅奇打着呵欠提议说。</p>
-
-<p>我的眼睛也快要闭拢来了，可是我却不愿意睡在潮湿的、冰冷的地面上。我决定坐在火堆旁边过夜了。然而有经验的猎人却只管照他自己的意思做。我们拗了许多小的枞树枝，把火堆移到一边去，然后在它的上面铺了一层厚厚的小枞树枝。过夜的火堆马克西梅奇也做的很特别：他把两段木头并放着，再把第三段搁在上面，把一端点燃起来。</p>
-
-<p>“这叫做‘露天暖壁’，”他解释道。</p>
-
-<p>在被火堆烧得热热的地面上，透过小枞树枝发出舒适的温暖，一夜里我们好像睡在暖炉上一般。‘露天暖壁’温暖着我们；我们整夜都不用起来照顾火堆：木头徐缓地均匀地燃烧着。</p>
-
-<p>早晨，在早餐的时候，我对猎人说：</p>
-
-<p>“要不是像你这样机警，我们一定要受些小痛苦了……”</p>
-
-<p>马克西梅奇微笑着回答说：</p>
-
-<p>“在大森林里你不能像客人一样，你应该像一个主人。你要明白，一切东西都可以拿来应用的啊——只消动动你的脑筋。要是你不动脑筋啊——那便糟了。”</p>
-
-<p>……从此过了许多年头。我遭遇过不少次困难。每次都是冷静地估量一下环境，不失望，动动脑筋，那末办法总是会有的。</p>
-
-<p>当我遭到任何一次困难的时候，我总是怀着感谢的心情记起我那位老师——粗野的大森林的主人。</p>
-
-<h2 id="section-16">大森林的主人（修改版，见于小学课文）</h2>
-
-<p>秋雨下了整整一个星期。灰色的云层低低地压在大森林上面，潮湿的风缓缓地吹着。吸饱雨水的树枝垂下来。河水涨到齐了岸。我和猎人划着小船顺流而下。到了河身狭窄的地方，小船突然撞在水面下的树桩上，翻了。食物和打来的野味全给冲走了，我们只好带着猎枪上了岸。</p>
-
-<p>这里离住所还很远。我们俩浑身是水，又累又饿。我冷得发抖，呆呆地望着猎人，希望他有个办法。猎人不声不响，只顾拧他的衣服。“应该生一堆火呀！”我提议，可是从口袋里摸出火柴盒一看，里面竟流出水来。</p>
-
-<p>猎人还是不声不响。他在一棵枞树的窟窿里找到了一些干的苔藓，又拿出一颗子弹，拔下弹头，把苔藓塞进弹壳，塞得紧紧的。他吩咐我：“你去找些干的树枝和树皮来。”</p>
-
-<p>我找来了。他把那颗拔掉弹头的子弹装进枪膛，对着地面开了一枪。从枪口喷出来的苔藓烧着了。他小心地把火吹旺，把树枝和树皮一点儿一点儿加上去，不一会儿，篝火熊熊，烧得很旺。</p>
-
-<p>“你照看火堆。我去打些野味来。”猎人说着，转到树背后就不见了。只听见树林里响了几枪。我还没捡到多少干柴，他已经回来了。几只松鸡挂在他腰上，摇摇晃晃的。</p>
-
-<p>“我们做晚饭吧。”他说。他把火堆移到一边，用刀子在刚才烧火的地上挖了个洞。我把松鸡拔了毛，掏了内脏。猎人又找来几片大树叶，把松鸡裹好，放进洞里，盖上薄薄的一层土，然后在上面又烧起一堆火。</p>
-
-<p>等我们把衣服烘干，松鸡也烧好了，扒开洞，就闻到一股香味。我们俩大吃起来，我觉得从来没吃过这么鲜美的东西。</p>
-
-<p>天黑了，风刮过树顶，呼呼地响。</p>
-
-<p>“睡吧。”猎人打了个呵欠说。</p>
-
-<p>我的眼也快要合上了。可是这潮湿冰冷的地面，怎么能睡呢？</p>
-
-<p>猎人带着我折来许多枞树枝。他把两个火堆移开，在烤热的地面上铺上枞树枝，铺了厚厚的一层。热气透上来，暖烘烘的，我们睡得很舒服，跟睡在炕上一个样。</p>
-
-<p>天亮了，我对猎人说：“你真有办法。要不是你，我一定要吃苦头了。”</p>
-
-<p>猎人微笑着说：“大森林里，你不能像个客人，得像个主人。只要肯动脑筋，一切东西都可以拿来用。”</p>
-
-<h2 id="section-17">【参考】</h2>
-
-<ul>
-  <li>线上手写汉子识别工具，用于查找不认识的繁体字：<a href="http://www.yibizi.com/html5/">http://www.yibizi.com/html5/</a></li>
-</ul>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>我和老婆在美国的日子</title>
-      <link>http://localhost:4001/2017/04/12/my-1314-with-my-wife/</link>
-      <pubDate>2017-04-12T00:00:00-07:00</pubDate>
-      <author>lambda</author>
-      <guid>http://localhost:4001/2017/04/12/my-1314-with-my-wife</guid>
-      <content:encoded><![CDATA[<p>不买零食上飞机下飞机之后就没吃的饿惨了第二天去大兵家蹭吃饭过马路看不懂红绿灯只好胡来到了之后一直很饿还玩了一会xbox然后终于可以吃饭饭后去ATT大华walmart买自行车傍晚推回来第二天早上我做第一顿饭烤鸡翅老婆不高兴因为我没跟mp说一起吃饭后来和靓仔找apartment然后和mp吃饭被bg常常走去walmart和大华买菜上班搬家去宜家买家具天天和老婆吵架老婆要我减压买铁盆泡脚骑车买菜和老婆第一次也可能是最后一次骑那个biking trail去shoreline park认识天学车买车看爸爸去哪造人后来造了大庸出来但不知道就去了三藩后来知道了老婆很恶心不吃肉去摘樱桃打网球去santa cruze买相机拍照还摔了个跟头老婆吓坏了。。。。。。</p>
-
-<p>未完待续</p>
 ]]></content:encoded>
     </item>
     
