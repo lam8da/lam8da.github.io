@@ -2,7 +2,7 @@
 layout: post
 title: TCP/IP协议簇Multiplex图解
 categories:
-    - 网络&分布式
+    - 网络
 tags:
     - TCP/IP
     - 协议

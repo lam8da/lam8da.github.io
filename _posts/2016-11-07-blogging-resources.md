@@ -16,6 +16,7 @@ tags:
 1. kramdown
    - quickref/examples: <http://kramdown.gettalong.org/quickref.html>
    - syntax/manual: <http://kramdown.gettalong.org/syntax.html>
+   - vs. regular markdown: <http://gohom.win/2015/11/06/Kramdown-note/>
 1. rouge options: <https://github.com/jneen/rouge#full-options>
 1. latex cheat sheet: <https://wch.github.io/latexsheet/>
 1. [Jekyll docs][jekyll-docs]

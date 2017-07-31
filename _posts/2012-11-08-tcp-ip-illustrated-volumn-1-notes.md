@@ -2,7 +2,7 @@
 layout: post
 title: 《TCP/IP详解[卷1]》读书笔记
 categories:
-    - 网络&分布式
+    - 网络
 tags:
     - TCP/IP
     - 协议

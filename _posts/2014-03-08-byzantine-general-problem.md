@@ -2,11 +2,11 @@
 layout: post
 title: 拜占庭将军问题
 categories:
-    - 算法&数学
+    - 分布式计算
 tags:
     - 分布式理论
     - 一致性
-    - paper
+    - Paper
     - Work in Progress
 ---
 
