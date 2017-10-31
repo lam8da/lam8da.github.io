@@ -2,7 +2,7 @@
 layout: post
 title: 读《时间的形状：相对论史话》
 categories:
-    - 物理
+    - 数学&物理
 tags:
     - 相对论
     - 量子力学

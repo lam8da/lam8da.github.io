@@ -2,7 +2,7 @@
 layout: post
 title: 《新概念物理教程》读书笔记
 categories:
-    - 物理
+    - 数学&物理
 tags:
     - 物理
     - 数学
