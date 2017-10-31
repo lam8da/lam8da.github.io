@@ -90,6 +90,13 @@ $$ a = b $$
 
 $$ \Large a = b $$
 
+For more info:
+- <https://jekyllrb.com/docs/extras/>
+- <http://www.gastonsanchez.com/visually-enforced/opinion/2014/02/16/Mathjax-with-jekyll/>
+- <http://haixing-hu.github.io/programming/2013/09/20/how-to-use-mathjax-in-jekyll-generated-github-pages/>
+- <https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference>
+- <http://latex.wikia.com/wiki/List_of_LaTeX_symbols>
+
 ## Tables
 
 Table with header row:
