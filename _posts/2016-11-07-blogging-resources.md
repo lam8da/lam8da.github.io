@@ -110,4 +110,28 @@ Table without header row:
 | a | b | c |
 | d | e | f |
 
+## Graphviz, digraph, flowchart
+
+See:
+
+- <http://www.gravizo.com/>
+- <https://www2.graphviz.org/>
+- <https://www.draw.io/>
+- <https://news.ycombinator.com/item?id=13326065>
+
+For example:
+
+<img src='https://g.gravizo.com/svg?
+ digraph G {
+   main -> parse -> execute;
+   main -> init;
+   main -> cleanup;
+   execute -> make_string;
+   execute -> printf
+   init -> make_string;
+   main -> printf;
+   execute -> compare;
+ }
+'/>
+
 [jekyll-docs]: http://jekyllrb.com/docs/home
