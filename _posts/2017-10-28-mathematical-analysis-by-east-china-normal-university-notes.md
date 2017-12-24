@@ -428,7 +428,22 @@ tags:
 
 ## 第十一章 反常积分
 
-1. 
+1. 问题的提出（即应用）：求第二宇宙速度（使得火箭能够克服地球引力无限远离地球）；求盛满水的圆柱形桶通过底下小孔流光所有水所需时间
+1. 定义
+   - $$f$$定义在$$[a,+\infty)$$上且在任何有限区间$$[a,u]$$上可积。若存在极限$$\lim_{u\to+\infty}\int_a^u f(x)\mathrm{d}x=J$$则称此极限为$$f$$在$$[a,+\infty)$$上的无穷限反常积分，记为$$J=\int_a^{+\infty}f(x)\mathrm{d}x$$，并称$$\int_a^{+\infty}f(x)\mathrm{d}x$$收敛。
+   - $$(-\infty,+\infty)$$上的无穷积分通过上述和对应的另一种单边无穷积分来定义（任取一分割点把两者相加），只有两种单边无穷积分都收敛才收敛，且分割点选取与收敛时的值无关
+   - $$f$$定义在$$(a,b]$$上且在$$a$$的任一右邻域无界，但在任何闭区间$$[u,b]\subset(a,b]$$上有界且可积。若存在极限$$\lim_{u\to a^+}\int_u^b f(x)\mathrm{d}x=J$$则称此极限为无界函数$$f$$在$$(a,b]$$上的反常积分，记为$$J=\int_a^b f(x)\mathrm{d}x$$并称$$\int_a^b f(x)\mathrm{d}x$$收敛。$$a$$称为瑕点，这种积分也称为瑕积分。
+1. 定理11.1（无穷积分收敛的柯西准则）：无穷积分收敛的充要条件是任给$$\varepsilon>0$$，存在$$G\ge a$$，只要$$u_1,u_2>G$$便有$$\left\vert\int_a^{u_2}f(x)\mathrm{d}x-\int_a^{u_1}f(x)\mathrm{d}x\right\vert=\left\vert\int_{u_1}^{u_2}f(x)\mathrm{d}x\right\vert<\varepsilon$$。证明：通过函数极限的柯西准则。
+   - 性质：两收敛的无穷积分的线性组合也收敛，且满足线性运算性质
+   - 若$$f$$在任何有限区间$$[a,u]$$上可积且$$\int_a^{+\infty}\vert f(x)\vert\mathrm{d}x$$收敛，则$$\int_a^{+\infty}f(x)\mathrm{d}x$$也收敛，且有$$\left\vert\int_a^{+\infty}f(x)\mathrm{d}x\right\vert\le\int_a^{+\infty}\vert f(x)\vert\mathrm{d}x$$。当$$\int_a^{+\infty}\vert f(x)\vert\mathrm{d}x$$收敛时，称$$\int_a^{+\infty}f(x)\mathrm{d}x$$为绝对收敛，因此这条性质表明绝对收敛=>收敛。但是反之不成立，例如当$$0<p\le1$$时$$\int_1^{+\infty}\frac{\sin x}{x^p}\mathrm{d}x$$条件收敛。称收敛而不绝对收敛者为条件收敛。
+1. 定理11.2（比较判别法）：若定义在$$[a,+\infty)$$上的两个函数$$f$$和$$g$$都在任何有限区间$$[a,u]$$上可积且满足$$\vert f(x)\vert\le g(x),x\in[a,+\infty)$$，则当$$\int_a^{+\infty}g(x)\mathrm{d}x$$收敛时$$\int_a^{+\infty}\vert f(x)\vert\mathrm{d}x$$必收敛。证明：$$\int_a^{+\infty}\vert f(x)\vert\mathrm{d}x$$关于上界$$u$$是单调递增，而$$\int_a^{+\infty}g(x)\mathrm{d}x$$的收敛性给了它一个上界，于是单调有界定理。
+   - 推论：若$$\vert f(x)\vert$$和$$g(x)$$的比值为一常数，利用此定理通过该常数的大小来判断。
+1. 定理11.3（狄利克雷判别法）：若$$F(u)=\int_a^u f(x)\mathrm{d}x$$在$$[a,+\infty)$$上有界，$$g(x)$$在$$[a,+\infty)$$上当$$x\to+\infty$$时单调趋于0，则$$\int_a^{+\infty}f(x)g(x)\mathrm{d}x$$收敛。证明：积分第二中值定理+柯西准则。
+1. 定理11.4（阿贝尔判别法）：若$$\int_a^{+\infty} f(x)\mathrm{d}x$$收敛，$$g(x)$$在$$[a,+\infty)$$上单调有界，则$$\int_a^{+\infty}f(x)g(x)\mathrm{d}x$$收敛。证明：积分第二中值定理或定理11.3。
+1. 当$$x\to+\infty$$时被积函数即使不趋于零，甚至是无解的，无穷积分仍有可能收敛，例如$$\int_1^{+\infty}x\sin x^4\mathrm{d}x$$。
+1. 和无穷积分类似，我们有：
+   - 定理11.5（瑕积分收敛的柯西准则）
+   - 定理11.6（瑕积分收敛判定的比较法则）
 
 ## 第十二章 数项级数
 
