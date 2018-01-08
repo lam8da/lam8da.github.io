@@ -96,7 +96,7 @@ blockquote p {
   /* line-height: 24px; */
 }
 .content h1 {
-  padding: .5em 0;
+  /* padding: .5em 0; */
 }
 /*
  * .content img {
@@ -180,11 +180,13 @@ h1 {
 h2 {
   font-family: "Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   font-size: 1.4em;
+  font-style: italic;
   color: #111;
 }
 h3 {
   font-family: "Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   font-size: 1.2em;
+  text-decoration: underline;
   color: #222;
 }
 h4 {
