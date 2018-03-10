@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《货币银行学》（易纲版）读书笔记
+title: 《货币银行学》（易纲版）笔记
 categories:
     - 经济&金融
 tags:

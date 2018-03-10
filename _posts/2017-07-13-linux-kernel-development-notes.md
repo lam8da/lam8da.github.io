@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《Linux内核设计与实现》（中+英）读书笔记
+title: 《Linux内核设计与实现》（中+英）笔记
 categories:
     - 系统&体系结构
 tags:

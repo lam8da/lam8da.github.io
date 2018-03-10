@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《新概念物理教程》读书笔记
+title: 《新概念物理教程》笔记
 categories:
     - 数学&物理
 tags:

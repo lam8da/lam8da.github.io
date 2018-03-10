@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  《Head First设计模式》读书笔记（上）- 设计原则
+title:  《Head First设计模式》笔记（上）- 设计原则
 categories:
     - 程序&设计
 tags:

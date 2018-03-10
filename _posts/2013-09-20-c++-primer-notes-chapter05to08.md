@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《C++ Primer》读书笔记（第05-08章）
+title: 《C++ Primer》笔记（第05-08章）
 categories:
     - 程序&设计
 tags:

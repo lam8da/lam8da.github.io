@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《程序员的自我修养》读书笔记
+title: 《程序员的自我修养》笔记
 categories:
     - 系统&体系结构
 tags:

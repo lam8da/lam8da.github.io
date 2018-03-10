@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《编程珠玑》读书笔记（第11-15章完）
+title: 《编程珠玑》笔记（第11-15章完）
 categories:
     - 算法&数学
 tags:

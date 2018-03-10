@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《我最需要的金融常识书》读书笔记
+title: 《我最需要的金融常识书》笔记
 categories:
     - 经济&金融
 tags:

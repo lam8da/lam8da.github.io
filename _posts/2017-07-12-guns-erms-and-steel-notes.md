@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《枪炮、病菌与钢铁》读书笔记
+title: 《枪炮、病菌与钢铁》笔记
 categories:
     - 历史&社会
 tags:

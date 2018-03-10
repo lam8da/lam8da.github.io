@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《编程珠玑》读书笔记（第01-05章）
+title: 《编程珠玑》笔记（第01-05章）
 categories:
     - 算法&数学
 tags:

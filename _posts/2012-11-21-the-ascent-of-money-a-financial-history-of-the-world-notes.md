@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《货币崛起 - 金融如何影响世界历史》读书笔记
+title: 《货币崛起 - 金融如何影响世界历史》笔记
 categories:
     - 经济&金融
 tags:

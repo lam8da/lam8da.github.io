@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《多处理器编程的艺术》读书笔记
+title: 《多处理器编程的艺术》笔记
 categories:
     - 算法&数学
 tags:

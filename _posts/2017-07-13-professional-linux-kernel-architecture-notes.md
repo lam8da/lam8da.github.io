@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《深入Linux内核架构》读书笔记
+title: 《深入Linux内核架构》笔记
 categories:
     - 系统&体系结构
 tags:

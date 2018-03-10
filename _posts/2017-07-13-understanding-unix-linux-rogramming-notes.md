@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《Unix/Linux编程实践教程》读书笔记
+title: 《Unix/Linux编程实践教程》笔记
 categories:
     - 程序&设计
 tags:

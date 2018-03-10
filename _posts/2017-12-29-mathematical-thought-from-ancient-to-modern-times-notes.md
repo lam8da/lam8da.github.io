@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《古今数学思想》读书笔记
+title: 《古今数学思想》笔记
 categories:
     - 数学&物理
 tags:

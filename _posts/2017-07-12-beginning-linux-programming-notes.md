@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《Linux程序设计》（第四版）读书笔记
+title: 《Linux程序设计》（第四版）笔记
 categories:
     - 程序&设计
 tags:

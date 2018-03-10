@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《Effective C++》读书笔记（条款41-55完）
+title: 《Effective C++》笔记（条款41-55完）
 categories:
     - 程序&设计
 tags:

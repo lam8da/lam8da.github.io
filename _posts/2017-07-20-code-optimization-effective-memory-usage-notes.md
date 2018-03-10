@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《代码优化：有效使用内存》读书笔记
+title: 《代码优化：有效使用内存》笔记
 categories:
     - 程序&设计
 tags:

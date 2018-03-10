@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《TCP/IP详解[卷1]》读书笔记
+title: 《TCP/IP详解[卷1]》笔记
 categories:
     - 网络
 tags:

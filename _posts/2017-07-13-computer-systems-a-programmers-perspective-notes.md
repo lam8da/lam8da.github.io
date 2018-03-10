@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《深入理解计算机系统》读书笔记
+title: 《深入理解计算机系统》笔记
 categories:
     - 系统&体系结构
 tags:

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《Buffer Overflow Attacks》读书笔记
+title: 《Buffer Overflow Attacks》笔记
 categories:
     - 信息安全
 tags:

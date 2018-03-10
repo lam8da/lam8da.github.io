@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《数学分析》（华东师范大学）读书笔记
+title: 《数学分析》（华东师范大学）笔记
 categories:
     - 数学&物理
 tags:

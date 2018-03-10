@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《数学之美》读书笔记
+title: 《数学之美》笔记
 categories:
     - 人工智能
 tags:
