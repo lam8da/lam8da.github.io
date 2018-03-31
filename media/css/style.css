@@ -180,8 +180,17 @@ h1 {
 h2 {
   font-family: "Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   font-size: 1.4em;
-  font-style: italic;
+  /* font-style: italic; */
   color: #111;
+}
+h2:before {
+  content: "\A";
+  width: 10px;
+  height: 10px;
+  border-radius: 30%;
+  background: #000000;
+  display: inline-block;
+  margin: 0 8px 3px 5px;
 }
 h3 {
   font-family: "Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;

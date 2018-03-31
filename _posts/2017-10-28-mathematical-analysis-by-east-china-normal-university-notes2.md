@@ -49,7 +49,7 @@ tags:
 1. 收敛但不一致收敛的例子：$$\{x^n\}$$在$$(0,1)$$上收敛于$$f(x)=0$$但不一致收敛。
 1. 定理13.1：函数列一致收敛的柯西准则
 1. 定理13.2：一致收敛的充要条件是$$\lim_{n\to\infty}\sup_{x\in D}\vert f_n(x)-f(x)\vert=0$$。（由一致收敛、极限、上确界的定义可证）
-1. 定义：函数项级数$$\sum_{n=1}^{\infty}u_n(x)$$或简写为$$\sum u_n(x)$$；部分和函数列：$$S_n(x)=\sum_{k=1}^n u_k(x)$$；若部分和数列（不是函数列）$$S_n(x_0)$$当$$n\to\infty$$时极限存在，则称该函数项级数在点$$x_0$$收敛（否则称为在该点发散）。收敛域$$D$$的定义。和函数$$S(x)=\sum u_n(x)=\lim_{n\to\infty}S_n(x),x\in D$$，
+1. 定义：函数项级数$$\sum_{n=1}^{\infty}u_n(x)$$或简写为$$\sum u_n(x)$$；部分和函数列：$$S_n(x)=\sum_{k=1}^n u_k(x)$$；若部分和数列（不是函数列）$$S_n(x_0)$$当$$n\to\infty$$时极限存在，则称该函数项级数在点$$x_0$$收敛（否则称为在该点发散）。收敛域$$D$$的定义。和函数$$S(x)=\sum u_n(x)=\lim_{n\to\infty}S_n(x)=\lim_{n\to\infty}\big(\sum_{k=1}^n u_k(x)\big),x\in D$$。
 1. 一致收敛的定义：$$\{S_n(x)\}$$在$$D$$上一致收敛于函数$$S(x)$$。
 1. 定理13.3：函数项级数一致收敛的柯西准则（直接由函数列一致收敛的柯西准则可得）
 1. 余项$$R_n(x)=S(x)-S_n(x)$$
@@ -70,14 +70,18 @@ tags:
    \le&\varepsilon(b-a)
    \end{align}
    $$
-1. 定理13.11：设$$\{f_n\}$$为定义在$$[a,b]$$上的函数列，若$$x_0\in[a,b]$$为$$\{f_n\}$$的收敛点，$$\{f_n\}$$的每一项在$$[a,b]$$上有连续的导数，且$$\{f'_n\}$$在$$[a,b]$$上 一致收敛，则$$\frac{\mathrm{d}}{\mathrm{d}x}\lim_{n\to\infty}f_n(x)=\lim_{n\to\infty}\frac{\mathrm{d}}{\mathrm{d}x}f_n(x)$$。证明：设$$\{f'_n\}$$一致收敛于$$g$$，由定理13.9知$$g$$连续。设$$f_n(x_0)$$收敛于$$A$$，根据定积分的牛顿-莱布尼兹公式有$$f_n(x)=f_n(x_0)+\int_{x_0}^{x}f'_n(t)\mathrm{d}t$$，且由于$$n\to\infty$$时右边第一项极限为$$A$$，第二项极限根据定理13.10为$$\int_{x_0}^{x}g(t)\mathrm{d}t$$，因此左边极限存在，记为$$f$$（即$$\{f\}$$收敛于$$f$$）。于是$$f(x)=\lim_{n\to\infty}f_n(x)=A+\int_{x_0}^{x}g(t)\mathrm{d}t$$。根据$$g$$的连续性和微积分学基本定理推得$$f'(x)=g(x)$$，证毕。
+1. 定理13.11：设$$\{f_n\}$$为定义在$$[a,b]$$上的函数列，若$$x_0\in[a,b]$$为$$\{f_n\}$$的收敛点，$$\{f_n\}$$的每一项在$$[a,b]$$上有连续的导数，且$$\{f'_n\}$$在$$[a,b]$$上 一致收敛，则$$\frac{\mathrm{d}}{\mathrm{d}x}\lim_{n\to\infty}f_n(x)=\lim_{n\to\infty}\frac{\mathrm{d}}{\mathrm{d}x}f_n(x)$$。证明：设$$\{f'_n\}$$一致收敛于$$g$$，由定理13.9知$$g$$连续。设$$f_n(x_0)$$收敛于$$A$$，根据定积分的牛顿-莱布尼兹公式有$$f_n(x)=f_n(x_0)+\int_{x_0}^{x}f'_n(t)\mathrm{d}t$$，且由于$$n\to\infty$$时右边第一项极限为$$A$$，第二项极限根据定理13.10为$$\int_{x_0}^{x}g(t)\mathrm{d}t$$，因此左边极限存在，记为$$f$$（即$$\{f_n\}$$收敛于$$f$$）。于是$$f(x)=\lim_{n\to\infty}f_n(x)=A+\int_{x_0}^{x}g(t)\mathrm{d}t$$。根据$$g$$的连续性和微积分学基本定理推得$$f'(x)=g(x)$$，证毕。
 1. 在定理13.11的条件下还可以证明$$f_n$$一致收敛于$$f$$。
    > 如何证明？
      {: .lambda_question}
-1. 定理13.12：
+1. 定理13.12：若函数项级数$$\sum u_n(x)$$在区间$$[a,b]$$上一致收敛且每一项都连续，则其和函数在$$[a,b]$$上也连续。这是定理13.9的推论。这个定理表明，在一致收敛条件下，（无限项）求和运算与求极限运算可以交换顺序，即$$\sum\big(\lim_{x\to x_0}u_n(x)\big)=\sum u_n(x_0)=\lim_{x\to x_0}\big(\sum u_n(x)\big)$$。
+1. 定理13.13：若函数项级数$$\sum u_n(x)$$在$$[a,b]$$上一致收敛且每一项$$u_n(x)$$都连续，则$$\sum\int_a^b u_n(x)\mathrm{d}x=\lim_{n\to\infty}\Big(\sum_{k=1}^n\big(\int_a^b u_k(x)\big)\Big)=\lim_{n\to\infty}\Big(\int_a^b\big(\sum_{k=1}^n u_k(x)\big)\Big)=\int_a^b\sum u_n(x)\mathrm{d}x$$。这是定理13.10的推论，其中等式左边第二项是根据和函数的定义对第一项的展开式，第三项是在第二项上使用黎曼积分的性质，第四项是第三项使用定理13.10把极限符号和积分符号交换并且把极限求和按照定义简写成和函数的形式。
+1. 定理13.14：若函数项级数$$\sum u_n(x)$$在$$[a,b]$$上每一项都有连续的导函数，$$x_0\in[a,b]$$为$$\sum u_n(x)$$的收敛点且$$\sum u′_n(x)$$在$$[a,b]$$上一致收敛，则有$$\sum\frac{\mathrm{d}}{\mathrm{d}x}u_n(x)=\lim_{n\to\infty}\Big(\sum_{k=1}^n\big(\frac{\mathrm{d}}{\mathrm{d}x}u_k(x)\big)\Big)=\lim_{n\to\infty}\Big(\frac{\mathrm{d}}{\mathrm{d}x}\big(\sum_{k=1}^n u_k(x)\big)\Big)=\frac{\mathrm{d}}{\mathrm{d}x}\Big(\lim_{n\to\infty}\big(\sum_{k=1}^n u_k(x)\big)\Big)=\frac{\mathrm{d}}{\mathrm{d}x}\big(\sum u_n(x)\big)$$。这是定理13.11的推论，和上面类似，第二第三步分别把和函数按定义展开并利用导数的四则运算法则，第四步使用了定理13.11。
 
 ## 第十四章 幂级数
 
+1. 定义：幂级数$$\sum_{n=0}^{\infty}a_n(x-x_0)^n$$，本章只讨论$$x_0=0$$的情况
+1. 
 
 ## 第十五章 傅里叶级数
 
