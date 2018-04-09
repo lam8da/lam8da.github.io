@@ -116,8 +116,19 @@ tags:
 
 # 第十五章 傅里叶级数
 
+1. 本章研究由三角函数列$$1,\cos x,\sin x,\cos 2x, \sin 2x,\cdots,\cos nx,\sin nx,\cdots$$（书中称为三角函数系(5)）产生的一般形式的三角级数$$\frac{a_0}{2}+\sum_{n=1}^{\infty}(a_n\cos nx+b_n\sin nx)$$，书中称为级数(4)
+1. 定理15.1：若级数$$\frac{\vert a_0\vert}{2}+\sum_{n=1}^{\infty}(\vert a_n\vert+\vert b_n\vert)$$收敛，则级数(4)在整个数轴上绝对收敛且一致收敛。由定理13.5（魏尔斯特拉斯判别法）可证。
+1. 在三角函数系(5)中，任何两个不相同的函数的乘积在$$[-\pi,\pi]$$上的 积分都等于零，而(5)中任何一个函数的平方在$$[-\pi,\pi]$$上的积分都不等于零。通常把两个函数在$$[a,b]$$上可积且满足$$\int_a^b \phi(x)\psi(x)\mathrm{d}x=0$$的函数$$\phi$$和$$\psi$$称为在$$[a,b]$$上是正交的。由此我们说三角函数系(5)在$$[-\pi,\pi]$$上具有正交性，或说其是正交函数系。
+1. 定理 15.2：若在整个数轴上$$f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}(a_n\cos nx+b_n\sin nx)$$且等式右边级数一致收敛，则有如下关系式
 
-到第69页。
+   $$
+   \begin{align}
+   a_n=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos nx\mathrm{d}x,n=0,1,2,\cdots\\
+   b_n=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin nx\mathrm{d}x,n=1,2,\cdots\\
+   \end{align}
+   $$
+
+到第71页。
 
 
 # 第十六章 多元函数的极限与连续
