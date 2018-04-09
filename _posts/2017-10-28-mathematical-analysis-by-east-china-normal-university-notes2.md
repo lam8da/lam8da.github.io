@@ -80,8 +80,16 @@ tags:
 1. 定理13.6（阿贝尔判别法）：若$$\sum u_n(x)$$在$$I$$上一致收敛，$$\{v_n(x_0)\}$$是单调数列对于每一个$$x_0\in I$$成立，且$$\{v_n(x)\}$$在$$I$$上一致有界（即对一切$$x\in I$$和正整数$$n$$，存在正数$$M$$使得$$\vert v_n(x)\vert\le M$$），则级数$$\sum u_n(x)v_n(x)$$在$$I$$上一致收敛。
 1. 定理13.7（狄利克雷判别法）：若$$\sum u_n(x)$$的部分和函数列在$$I$$上一致有界，$$\{v_n(x_0)\}$$是单调数列对于每一个$$x_0\in I$$成立，且在$$I$$上$$v_n(x)$$一致收敛于0，则级数$$\sum u_n(x)v_n(x)$$在$$I$$上一致收敛。
 1. 定理13.12：若函数项级数$$\sum u_n(x)$$在区间$$[a,b]$$上一致收敛且每一项都连续，则其和函数在$$[a,b]$$上也连续。这是定理13.9的推论。这个定理表明，在一致收敛条件下，（无限项）求和运算与求极限运算可以交换顺序，即$$\sum\big(\lim_{x\to x_0}u_n(x)\big)=\sum u_n(x_0)=\lim_{x\to x_0}\big(\sum u_n(x)\big)$$。
-1. 定理13.13：若函数项级数$$\sum u_n(x)$$在$$[a,b]$$上一致收敛且每一项$$u_n(x)$$都连续，则$$\sum\int_a^b u_n(x)\mathrm{d}x=\lim_{n\to\infty}\Big(\sum_{k=1}^n\big(\int_a^b u_k(x)\big)\Big)=\lim_{n\to\infty}\Big(\int_a^b\big(\sum_{k=1}^n u_k(x)\big)\Big)=\int_a^b\sum u_n(x)\mathrm{d}x$$。这是定理13.10的推论，其中等式左边第二项是根据和函数的定义对第一项的展开式，第三项是在第二项上使用黎曼积分的性质，第四项是第三项使用定理13.10把极限符号和积分符号交换并且把极限求和按照定义简写成和函数的形式。
-1. 定理13.14：若函数项级数$$\sum u_n(x)$$在$$[a,b]$$上每一项都有连续的导函数，$$x_0\in[a,b]$$为$$\sum u_n(x)$$的收敛点且$$\sum u′_n(x)$$在$$[a,b]$$上一致收敛，则有$$\sum\frac{\mathrm{d}}{\mathrm{d}x}u_n(x)=\lim_{n\to\infty}\Big(\sum_{k=1}^n\big(\frac{\mathrm{d}}{\mathrm{d}x}u_k(x)\big)\Big)=\lim_{n\to\infty}\Big(\frac{\mathrm{d}}{\mathrm{d}x}\big(\sum_{k=1}^n u_k(x)\big)\Big)=\frac{\mathrm{d}}{\mathrm{d}x}\Big(\lim_{n\to\infty}\big(\sum_{k=1}^n u_k(x)\big)\Big)=\frac{\mathrm{d}}{\mathrm{d}x}\big(\sum u_n(x)\big)$$。这是定理13.11的推论，和上面类似，第二第三步分别把和函数按定义展开并利用导数的四则运算法则，第四步使用了定理13.11。
+1. 定理13.13：若函数项级数$$\sum u_n(x)$$在$$[a,b]$$上一致收敛且每一项$$u_n(x)$$都连续，则
+
+   $$\sum\int_a^b u_n(x)\mathrm{d}x=\lim_{n\to\infty}\Big(\sum_{k=1}^n\big(\int_a^b u_k(x)\big)\Big)=\lim_{n\to\infty}\Big(\int_a^b\big(\sum_{k=1}^n u_k(x)\big)\Big)=\int_a^b\sum u_n(x)\mathrm{d}x$$
+   
+   。这是定理13.10的推论，其中等式左边第二项是根据和函数的定义对第一项的展开式，第三项是在第二项上使用黎曼积分的性质，第四项是第三项使用定理13.10把极限符号和积分符号交换并且把极限求和按照定义简写成和函数的形式。
+1. 定理13.14：若函数项级数$$\sum u_n(x)$$在$$[a,b]$$上每一项都有连续的导函数，$$x_0\in[a,b]$$为$$\sum u_n(x)$$的收敛点且$$\sum u′_n(x)$$在$$[a,b]$$上一致收敛，则有
+
+   $$\sum\frac{\mathrm{d}}{\mathrm{d}x}u_n(x)=\lim_{n\to\infty}\Big(\sum_{k=1}^n\big(\frac{\mathrm{d}}{\mathrm{d}x}u_k(x)\big)\Big)=\lim_{n\to\infty}\Big(\frac{\mathrm{d}}{\mathrm{d}x}\big(\sum_{k=1}^n u_k(x)\big)\Big)=\frac{\mathrm{d}}{\mathrm{d}x}\Big(\lim_{n\to\infty}\big(\sum_{k=1}^n u_k(x)\big)\Big)=\frac{\mathrm{d}}{\mathrm{d}x}\big(\sum u_n(x)\big)$$
+
+   。这是定理13.11的推论，和上面类似，第二第三步分别把和函数按定义展开并利用导数的四则运算法则，第四步使用了定理13.11。
 
 # 第十四章 幂级数
 
@@ -128,11 +136,33 @@ tags:
    \end{align}
    $$
 
-到第71页。
+   证明：使用逐项积分（定理13.13）。
+1. 定理15.3：若以$$2\pi$$为周期的函数$$f$$在$$[-\pi,\pi]$$上按段光滑（即该函数至多有有限个第一类间断点，且其导函数除了至多有限个点外都存在且连续，且在这有限个点上导函数的左、右极限存在），则在每一点$$x\in[-\pi,\pi]$$，$$f$$的傅里叶级数收敛于$$f$$在点$$x$$的左、右极限的算术平均值。即
 
+   $$\frac{f(x+0)+f(x-0)}{2}=\frac{a_0}{2}+\sum_{n=1}^{\infty}(a_n\cos nx+b_n\sin nx)$$
+
+   证明非常复杂，需要用到贝塞耳（Bessel）不等式和另外的预备定理，略去。
+1. 推论：若$$f$$是以$$2\pi$$为周期的连续函数，且在$$[-\pi,\pi]$$上按段光滑，则$$f$$的傅里叶级数在$$(-\infty,\infty)$$上收敛于$$f$$
 
 # 第十六章 多元函数的极限与连续
 
+1. 定义：平面点集（即有序实数对）、$$\delta$$圆邻域、$$\delta$$方邻域、点A的邻域（点A的任一圆邻域可以包含在点A的某一方邻域之内，反之亦然）记为$$U(A;\delta)$$或$$U(A)$$、点A的空心邻域记为$$U^\circ(A;\delta)$$或$$U^\circ(A)$$
+1. 定义：
+   - 内点：存在A的某邻域$$U(A)$$使得$$U(A)\subset E$$，称A是点集E的内点。E的全体内点构成的集合称为E的内部，记作$$\mathrm{int}\,E$$
+   - 外点：存在A的某邻域$$U(A)$$使得$$U(A)\cap E=\varnothing$$，称A是点集E的外点
+   - 界点：在A的任何邻域内既有属于E的点又有不属于E的点
+   - 聚点：在A的任何空心邻域内都有E中的点（A本身可以属于E也可以不属于E）
+   - 孤立点：若A属于E但不是E的聚点
+   - 孤立点一定是界点；内点和非孤立的界点一定是聚点；既不是聚点，又不是孤立点，则必为外点
+   - 开集：若E所属的每一点都是E的内点
+   - 闭集：若E的所有聚点都属于E，或E没有聚点
+   - 约定空集既是开集又是闭集。可以证明，在一切平面点集中，只有$$\mathbf{R}^2$$与空集是既开又闭的点集
+   - 开域：
+   - 闭域：
+   - 区域：
+
+
+到第94页。
 
 # 第十七章 多元函数微分学
 
