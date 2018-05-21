@@ -37,8 +37,18 @@ tags:
 构建方法是：
 
 - 从NFA到DFA：类似直接用NFA识别语音的过程，把$$\epsilon\text{-}closure(s_0)$$作为一个确定状态（其中$$s_0$$是初始的NFA状态），对每个状态和每个符号，找到该状态通过该转移符号可达的所有结点，并算出其$$\epsilon\text{-}closure$$作为新的状态。重复此过程直到没有新的状态为止。缺点是这个转换可能导致状态空间的指数增长，例如与$$(a\vert b)^*a(a\vert b)^{n-1}$$的NFA等价的状态书不少于$$2^n$$。
-- 直接生成DFA：把正则表达式转换为语法树，为每个结点$$p$$计算函数$$nullable(p)$$并用其计算$$firstpos(p)$$，然后计算$$lastpos(p)$$并用其和$$firstpos(p)$$计算$$followpos(p)$$。生成DFA时，初始状态为$$firstpos(root)$$，每次取一个未处理过的状态，并为其对每个符号通过该状态的每个$$p$$对应的$$followpos(p)$$作转移生成新的结点集作为一个新状态。一直重复直到没有更多新状态产生为止。
-- 最小化DFS的状态数：一个DFA的两个状态称为可区分的，如果存在某个字符序列，使得能且只能从其中的一个状态出发沿着该字符序列可以达到终结状态。如果两个状态是不可区分的，说明以该其中一个状态为初始状态、原终结状态为终结状态的子DFA与另一个子DFA识别相同的语言，因此该两个状态可以合并为同一个（初始状态）。根据这个思想的最小化算法：初始化时把所有状态分为两类（终结状态和非终结状态，注意一个DFA中终结状态可以有多个），然后每次把每个类分为多个子类并将原类替换掉，分类的规则是所有同一个子类的状态对每个字符都转移到同一个其他类（或自身）；重复此过程直到无法再分出更多的类为止。
+- 直接生成DFA：把正则表达式转换为语法树，为每个结点$$p$$计算函数$$nullable(p)$$并用其计算$$firstpos(p)$$，然后计算$$lastpos(p)$$并用其和$$firstpos(p)$$计算$$followpos(p)$$。生成DFA时，初始状态为$$firstpos(root)$$，每次取一个未处理过的状态，并为其对每个符号通过该状态的每个$$p$$对应的$$followpos(p)$$作转移生成新的结点集作为一个新状态。一直重复直到没有更多新状态产生为止。计算方法：
+
+  | Node $$n$$ | $$nullable(n)$$ | $$firstpos(n)$$ | $$lastpost(n)$$ | $$followpos(n) $$
+  |---+---+---+---+---|
+  | Leaf $$\varepsilon$$ | $$true$$ | $$\varnothing$$ | $$\varnothing$$ | |
+  | Leaf $$i$$ | $$false$$ | $$\{i\}$$ | $$\{i\}$$ | |
+  | Root of $$(c_1\vert c_2)$$ | $$nullable(c_1) \vert\vert nullable(c_2)$$ | $$firstpos(c_1)\cup firstpos(c_2)$$ | $$lastpos(c_1)\cup lastpos(c_2)$$ | |
+  | Root of $$(c_1 c_2)$$ | $$nullable(c_1) \&\& nullable(c_2)$$ | if $$nullable(c_1)$$ then $$firstpos(c_1)\cup firstpos(c_2)$$ else $$firstpos(c_1)$$ | if $$nullable(c_2)$$ then $$lastpos(c_1)\cup lastpos(c_2)$$ else $$lastpos(c_2)$$ | $$\forall i\in lastpos(c_1)$$, $$firstpos(c_2)\subset followpos(i)$$ |
+  | Root of $$c_1*$$ | $$true$$ | $$firstpos(c_1)$$ | $$lastpos(c_1)$$ | $$\forall i\in lastpos(c_1)$$, $$firstpos(c_1)\subset followpos(i)$$ |
+- 最小化DFA的状态数：一个DFA的两个状态称为可区分的，如果存在某个字符序列，使得能且只能从其中的一个状态出发沿着该字符序列可以达到终结状态。如果两个状态是不可区分的，说明以该其中一个状态为初始状态、原终结状态为终结状态的子DFA与另一个子DFA识别相同的语言，因此该两个状态可以合并为同一个（初始状态）。根据这个思想的最小化算法：初始化时把所有状态分为两类（终结状态和非终结状态，注意一个DFA中终结状态可以有多个），然后每次把每个类分为多个子类并将原类替换掉，分类的规则是所有同一个子类的状态对每个字符都转移到同一个其他类（或自身）；重复此过程直到无法再分出更多的类为止。
+  > 问：上面直接生成DFA的方法是否总是能使生成的DFA的状态数最小？答：不能。例子：
+    {: .lambda_question}
 
 ## 相关
 
