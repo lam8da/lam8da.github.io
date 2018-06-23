@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HDOJ 3335 Divisibility之贪心解法正确性
+title: 「趣题」HDOJ 3335 Divisibility之贪心解法正确性
 categories:
     - 算法&数学
 tags:

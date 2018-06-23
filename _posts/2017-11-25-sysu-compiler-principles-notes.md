@@ -53,6 +53,8 @@ tags:
 ## 相关
 
 - 定理：NFA、DFA和正则表达式三者的描述能力是一样的。
+  > 问：从正则表达式到NFA/DFA可以构造证明，反方向怎么证明？
+    {: .lambda_question}
 - 局限：例如，正则表达式无法计数，如无法构造一个有限自动机接受语言$$L=\{a^n b^n\vert n\ge1\}$$。
   > 问：如何证明？
     {: .lambda_question}
@@ -66,7 +68,7 @@ tags:
 - 正则语言用来定义每个单词（token），上下文无关文法用来定义一个程序语句（statement）。而程序语句由单词（下面也成为符号）组成。
 - 文法二义性：存在一个句子使得该文法存在两种产生不同分析树的推导
 - 文法二义性是不可判定问题（无法给出一个通用算法可以判定所有上下文无关文法的二义性）
-  > 问：如何证明？
+  > 问：如何证明？参考[维基百科](https://en.wikipedia.org/wiki/Ambiguous_grammar#Recognizing_ambiguous_grammars)
     {: .lambda_question}
 - 正则语言可以转换为上下文无关文法（通过所谓“[右线性文法](https://en.wikipedia.org/wiki/Linear_grammar)”）。实际上，所有能用左/右线性文法表示的语言都能用正则语言表示
   > 问：如何证明？

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 猎人抓狐狸：寻求必胜策略
+title: 「趣题」猎人抓狐狸：寻求必胜策略
 categories:
     - 算法&数学
 tags:

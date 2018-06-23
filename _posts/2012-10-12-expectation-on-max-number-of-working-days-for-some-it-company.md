@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 某IT公司一年最多上班时间的期望
+title: 「趣题」某IT公司一年最多上班时间的期望
 categories:
     - 算法&数学
 tags:

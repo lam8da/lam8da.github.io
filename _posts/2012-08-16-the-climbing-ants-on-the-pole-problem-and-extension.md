@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《编程之美》蚂蚁爬杆问题的扩展
+title: 「趣题」《编程之美》蚂蚁爬杆问题的扩展
 categories:
     - 算法&数学
 tags:

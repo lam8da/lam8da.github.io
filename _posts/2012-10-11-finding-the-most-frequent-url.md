@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 分布式找出出现次数最多的url
+title: 「趣题」分布式找出出现次数最多的url
 categories:
     - 算法&数学
 tags:

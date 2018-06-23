@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 三维最长上升子序列
+title: 「趣题」三维最长上升子序列
 categories:
     - 算法&数学
 tags:

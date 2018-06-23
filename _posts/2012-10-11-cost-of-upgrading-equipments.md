@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 加护装备的代价：一道笔试题小记
+title: 「趣题」加护装备的代价：一道笔试题小记
 categories:
     - 算法&数学
 tags:

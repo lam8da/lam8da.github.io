@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 区间最小值描述的冲突性
+title: 「趣题」区间最小值描述的冲突性
 categories:
     - 算法&数学
 tags:
