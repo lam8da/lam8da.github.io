@@ -32,7 +32,10 @@ comments: yes
 之前的站点：
 
 - 新浪云计算（相当的贵）：<http://lam8da.sinaapp.com/>
-- 博客园：<http://www.cnblogs.com/lambda2fei/>
+- 博客园：
+  - <http://www.cnblogs.com/lambda2fei/>
+  - <http://www.cnblogs.com/lambda/>
+  - <http://www.cnblogs.com/bloodelf/>
 - 163：<http://lambda2fei.blog.163.com/>
 - cppblog：<http://www.cppblog.com/lambda/>
 - baidu：<https://wenzhang.baidu.com/>（之前是<http://hi.baidu.com/lambda2fei/blog/>，现已被百度无情地关闭）
