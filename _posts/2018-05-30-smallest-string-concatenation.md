@@ -39,13 +39,35 @@ tags:
 
 # $$prop$$函数的性质
 
+首先补充定义两个相等关系：$$=_{lex}$$表示两个串字典序一样，也即两个串相等；$$=_{concat}$$表示两个串的两种连接方式得到的结果相同。我们现在来看看$$a=_{concat}b$$，即$$a+b=_{lex}b+a$$到底意味着什么。首先，如果$$len(a)=len(b)$$，显然$$a$$和$$b$$是同一个串，我们不考虑这种没什么意思的情况，假设$$n=len(a),m=len(b),m\gt n$$。令$$s[i:j]$$表示串$$s$$从第$$i$$个字符到第$$j$$个字符之间的子串。把$$a+b$$、$$b+a$$两个串并排地放在一起，我们可以看到$$b$$比$$a$$多出来的部分可以把$$a+b$$和$$b+a$$分成三对相等的段：
+
+- $$a=_{lex}b[1:n]$$
+- $$b[1:m-n]=_{lex}b[n+1:m]$$
+- $$b[m-n+1,m]=_{lex}a$$
+
+从而我们有：
+
+$$
+\begin{aligned}
+a+b[1:m-n]&=_{lex}b[1:n]+b[n+1:m]\\
+&=_{lex}b\\
+&=_{lex}b[1:m-n]+b[m-n+1:m]\\
+&=_{lex}b[1:m-n]+a
+\end{aligned}
+$$
+
+也即$$a=_{concat}b[1:m-n]$$。看出来了吗？当$$m\gt n$$时，$$a=_{concat}b$$等价于$$a=_{concat}b[1:m-n]$$。这是不是跟最大公约数的辗转相除法有点像？没错，这正是辗转相除法，通过递归地应用这种方式，到最后一定会有两个串长度相等的时候，这时该长度就是原串$$a$$和$$b$$长度的最大公约数。当$$a$$和$$b$$长度相等时这也显然。这说明，$$a=_{concat}b$$的充要条件是，<span style="color: blue">它们均由长度等于它们俩长度的最大公约数的串重复多次得到。</span>
+
 现在形式化地写出上面提到的几个函数的定义：
 
 1. $$val(s_1s_2s_3\cdots s_n)=\sum_{i=1}^{n}\big(s_i*(Z+1)^{-i}\big), s_i\in\{1,2,\cdots,Z\}$$
-2. $$prop(s_1s_2s_3\cdots s_n)=\frac{val(s_1s_2s_3\cdots s_n)}{1-(Z+1)^{-n-1}}=\frac{\sum_{i=1}^{n}\big(s_i*(Z+1)^{-i}\big)}{1-(Z+1)^{-n-1}}$$
+2. $$prop(s_1s_2s_3\cdots s_n)=\frac{val(s_1s_2s_3\cdots s_n)}{1-(Z+1)^{-n-1}}=\frac{\sum_{i=1}^{n}\big(s_i*(Z+1)^{-i}\big)}{1-(Z+1)^{-n-1}}, s_i\in\{1,2,\cdots,Z\}$$
 
-未完待续。。。
+因此，$$prop(s_1s_2s_3\cdots s_n)=prop(t_1t_2t_3\cdots t_m)$$的唯一解，就是：
 
+- $$s_i=s_{i+\gcd(m,n)}, i\in\{1,2,\cdots,n-\gcd(m,n)\}$$
+- $$t_j=t_{j+\gcd(m,n)}, j\in\{1,2,\cdots,m-\gcd(m,n)\}$$
+- $$s_k=t_k,k\in\{1,2,\cdots,\gcd(m,n)\}$$
 
 # 参考
 
