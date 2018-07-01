@@ -17,10 +17,11 @@
 -->
 
 <div id="gitment_thread"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<link rel="stylesheet" href="/media/css/gitment.css">
+<script src="/media/js/gitment.js"></script>
 <script>
   var gitment = new Gitment({
+    id: '<%= page.date %>',
     owner: 'lam8da',
     repo: 'lam8da.github.io.comments',
     oauth: {
