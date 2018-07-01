@@ -21,7 +21,7 @@
 <script src="/media/js/gitment.js"></script>
 <script>
   var gitment = new Gitment({
-    id: '{{ page.date }}'
+    id: '{{ page.date }}',
     owner: 'lam8da',
     repo: 'lam8da.github.io.comments',
     oauth: {
