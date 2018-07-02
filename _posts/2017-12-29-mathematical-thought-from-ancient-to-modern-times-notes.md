@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 《古今数学思想》笔记
-date: 2017-10-29 00:00:01 +0000
+date: 2017-12-29 00:00:01 +0000
 categories:
     - 数学&物理
 tags:
