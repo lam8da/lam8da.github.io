@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 《C++ Primer》笔记（第17-18章完）
+date: 2013-09-20 00:00:06 +0000
 categories:
     - 程序&设计
 tags:

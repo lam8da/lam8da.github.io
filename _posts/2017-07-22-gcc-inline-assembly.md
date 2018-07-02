@@ -1,6 +1,7 @@
 ---
 layout: post
 title: GCC内嵌汇编笔记
+date: 2017-07-22 00:00:00 +0000
 categories:
     - 程序&设计
 tags:

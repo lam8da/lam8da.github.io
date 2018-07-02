@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Bash下加速命令输入的两个技巧
+date: 2012-11-19 00:00:02 +0000
 categories:
     - 环境&配置
 tags:

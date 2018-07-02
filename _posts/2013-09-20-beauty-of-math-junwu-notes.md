@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 《数学之美》笔记
+date: 2013-09-20 00:00:00 +0000
 categories:
     - 人工智能
 tags:

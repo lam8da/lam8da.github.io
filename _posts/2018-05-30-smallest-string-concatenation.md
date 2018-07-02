@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 「趣题」字典序最小的字符串连接
+date: 2018-05-30 00:00:01 +0000
 categories:
     - 算法&数学
 tags:

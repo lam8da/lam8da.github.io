@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 《深入Linux内核架构》笔记
+date: 2017-07-13 00:00:02 +0000
 categories:
     - 系统&体系结构
 tags:

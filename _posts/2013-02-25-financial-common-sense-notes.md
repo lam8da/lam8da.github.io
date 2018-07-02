@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 《我最需要的金融常识书》笔记
+date: 2013-02-25 00:00:01 +0000
 categories:
     - 经济&金融
 tags:

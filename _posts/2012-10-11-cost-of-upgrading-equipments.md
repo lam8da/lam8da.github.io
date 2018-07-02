@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 「趣题」加护装备的代价：一道笔试题小记
+date: 2012-10-11 00:00:01 +0000
 categories:
     - 算法&数学
 tags:

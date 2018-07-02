@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 《C++ Primer》笔记（第16章）
+date: 2013-09-20 00:00:05 +0000
 categories:
     - 程序&设计
 tags:

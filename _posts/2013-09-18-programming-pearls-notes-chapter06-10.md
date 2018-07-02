@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 《编程珠玑》笔记（第06-10章）
+date: 2013-09-18 00:00:05 +0000
 categories:
     - 算法&数学
 tags:

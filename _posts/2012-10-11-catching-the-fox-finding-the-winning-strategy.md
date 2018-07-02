@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 「趣题」猎人抓狐狸：寻求必胜策略
+date: 2012-10-11 00:00:00 +0000
 categories:
     - 算法&数学
 tags:

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 《数学分析》（华东师范大学）笔记（下）
+date: 2017-10-28 00:00:01 +0000
 categories:
     - 数学&物理
 tags:

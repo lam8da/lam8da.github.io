@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  《Head First设计模式》笔记（下）- 设计模式
+date: 2013-09-20 00:00:08 +0000
 categories:
     - 程序&设计
 tags:

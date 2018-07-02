@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Ubuntu12.10搭建svn服务器
+date: 2012-11-21 00:00:01 +0000
 categories:
     - 环境&配置
 tags:

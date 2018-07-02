@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Dilworth定理，链还是反链？
+date: 2010-03-17 00:00:00 +0000
 categories:
     - 算法&数学
 tags:

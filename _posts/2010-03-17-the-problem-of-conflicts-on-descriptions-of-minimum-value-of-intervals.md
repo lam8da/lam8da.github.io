@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 「趣题」区间最小值描述的冲突性
+date: 2010-03-17 00:00:01 +0000
 categories:
     - 算法&数学
 tags:

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 离别
+date: 2010-05-10 00:00:01 +0000
 categories:
     - 活着&生活
 tags:

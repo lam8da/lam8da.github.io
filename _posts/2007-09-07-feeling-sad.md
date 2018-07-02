@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 殇
+date: 2017-09-07 00:00:01 +0000
 categories:
     - 活着&生活
 tags:

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 《Effective C++》笔记（条款18-31）
+date: 2013-09-18 00:00:01 +0000
 categories:
     - 程序&设计
 tags:

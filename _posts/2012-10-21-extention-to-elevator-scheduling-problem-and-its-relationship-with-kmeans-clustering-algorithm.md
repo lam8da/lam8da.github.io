@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 《编程之美》电梯调度问题扩展及其与K-means聚类的关系
+date: 2012-10-21 00:00:00 +0000
 categories:
     - 算法&数学
 tags:

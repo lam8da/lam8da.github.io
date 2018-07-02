@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 《货币银行学》（易纲版）笔记
+date: 2012-11-21 00:00:00 +0000
 categories:
     - 经济&金融
 tags:

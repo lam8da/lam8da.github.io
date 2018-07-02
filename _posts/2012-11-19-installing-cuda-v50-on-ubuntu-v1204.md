@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Ubuntu12.04安装CUDA5.0
+date: 2012-11-19 00:00:00 +0000
 categories:
     - 环境&配置
 tags:

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 《多处理器编程的艺术》笔记
+date: 2017-07-12 00:00:02 +0000
 categories:
     - 算法&数学
 tags:

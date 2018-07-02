@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 《程序员的自我修养》笔记
+date: 2017-07-20 00:00:02 +0000
 categories:
     - 系统&体系结构
 tags:

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 互斥算法
+date: 2017-07-22 00:00:01 +0000
 categories:
     - 算法&数学
 tags:

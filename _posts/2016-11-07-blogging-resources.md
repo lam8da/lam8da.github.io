@@ -17,6 +17,11 @@ tags:
    - quickref/examples: <http://kramdown.gettalong.org/quickref.html>
    - syntax/manual: <http://kramdown.gettalong.org/syntax.html>
    - vs. regular markdown: <http://gohom.win/2015/11/06/Kramdown-note/>
+1. gitment
+   - <https://zhangquan1995.github.io/2016/03/07/Jekyll%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0Gitment%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/>
+   - <http://xichen.pub/2018/01/31/2018-01-31-gitment/>
+   - <http://www.xjdesyxx.top/2018/02/07/errsln/>
+   - <https://extremegtr.github.io/2017/09/07/Add-Gitment-comment-system-to-hexo-theme-NexT/>
 1. rouge options: <https://github.com/jneen/rouge#full-options>
 1. latex cheat sheet: <https://wch.github.io/latexsheet/>
 1. [Jekyll docs][jekyll-docs]

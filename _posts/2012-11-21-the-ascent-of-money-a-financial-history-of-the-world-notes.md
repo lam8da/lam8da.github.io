@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 《货币崛起 - 金融如何影响世界历史》笔记
+date: 2012-11-21 00:00:02 +0000
 categories:
     - 经济&金融
 tags:

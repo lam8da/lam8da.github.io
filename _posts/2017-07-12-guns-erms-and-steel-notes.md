@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 《枪炮、病菌与钢铁》笔记
+date: 2017-07-12 00:00:01 +0000
 categories:
     - 历史&社会
 tags:
