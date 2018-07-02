@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 读《时间的形状：相对论史话》
+title: 《时间的形状》笔记
 categories:
     - 数学&物理
 tags:

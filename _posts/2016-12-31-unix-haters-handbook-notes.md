@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Unix痛恨者手册读书笔记
+title: 《Unix痛恨者手册》笔记
 categories:
     - 程序&设计
 tags:
