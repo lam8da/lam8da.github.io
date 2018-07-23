@@ -194,8 +194,9 @@ tags:
 1. 定理17.2（可微的充分条件）：若偏导数在所考察点的某邻域内存在且俩偏导数在所考察点处连续，则函数所考察点可微。证明：改写$$\Delta z=\big(f(x_0+\Delta x,y_0+\Delta y)-f(x_0,y_0+\Delta y)\big)+\big(f(x_0,y_0+\Delta y)-f(x_0,y_0)\big)$$，右端两个减式分别使用一元函数的拉格朗日中值定理，再利用偏导连续的条件把式子怎么地写成$$A\Delta x+B\Delta y+o(\rho)$$的形式即可。
 1. 偏导数连续并不是函数可微的必要条件。但若可微且偏导数也连续，就称为连续可微
 1. 定理17.3（二元函数中值公式）：设函数$$f$$在点$$(x_0,y_0)$$的某邻域内存在偏导数，若$$(x,y)$$属于该邻域，则存在$$\xi=x_0+\theta_1(x-x_0)$$和$$\eta=y_0+\theta_2(y-y_0),0\lt\theta_1,\theta_2\lt1$$，使得$$f(x,y)-f(x_0,y_0)=f_x(\xi,y)(x-x_0)+f_y(x_0,\eta)(y-y_0)$$。这其实是证明定理17.2过程中出现的公式。
-1. 切平面的定义。所以变成解析几何了？WTF？
+1. 切平面的定义，简单来说就是满足以下性质的平面：曲面上动点以任何方式趋近于所考察点时恒有$$\frac{h}{d}\to0$$（其中$$h$$是动点到所考察平面的距离，$$d$$是动点到所考察点的距离）。所以变成解析几何了？WTF？
 1. 定理17.4：曲面$$z=f(x,y)$$在点$$P(x_0,y_0,f(x_0,y_0))$$存在不平行于$$z$$轴的切平面的充要条件是函数$$f$$在点$$P_0(x_0,y_0)$$可微。根据切平面的定义以及可微的定义来证明。此定理说明若$$f$$在点$$(x_0,y_0)$$可微，则曲面$$z=f(x,y)$$在点$$P(x_0,y_0,z_0)$$的切平面方程为$$z-z_0=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)$$，据此可求得过$$P$$点的法线方程是$$\frac{(x-x_0)}{f_x(x_0,y_0)}+\frac{(y-y_0)}{f_y(x_0,y_0)}=\frac{z-z_0}{-1}$$
+   - 这里涉及[点到平面的距离公式](https://zh.wikipedia.org/wiki/%E8%B7%9D%E7%A6%BB#%E7%82%B9%E5%88%B0%E5%B9%B3%E9%9D%A2%E7%9A%84%E8%B7%9D%E9%9B%A2)。
 1. 定理17.5（复合函数求导的链式法则）：若函数$$x=\phi(s,t),y=\psi(s,t)$$在点$$(s,t)\in D$$可微，$$z=f(x,y)$$在点$$(x,y)=(\phi(s,t),\psi(s,t))$$可微，则复合函数$$z=f(\phi(s,t),\psi(s,t))$$在点$$(s,t)$$可微，且它关于$$s$$与$$t$$的偏导数分别为
 
    $$
@@ -206,16 +207,37 @@ tags:
    $$
 
    证明方法就是把$$x$$和$$y$$的全增量（用$$s$$和$$t$$表示）式子代入$$z$$的全增量表达式，并将其写成微分的增量表示形式。
-1. 多元函数的一阶（全）微分形式不变性
+1. 多元函数的一阶（全）微分形式不变性：对于复合函数$$z=f(x,y),x=\varphi(s,t),y=\psi(s,t)$$，有$$\mathrm{d}z=\frac{\partial z}{\partial x}\mathrm{d}x+\frac{\partial z}{\partial y}\mathrm{d}y$$，其中$$\mathrm{d}x=\frac{\partial x}{\partial s}\mathrm{d}s+\frac{\partial x}{\partial t}\mathrm{d}t, \mathrm{d}y=\frac{\partial y}{\partial s}\mathrm{d}s+\frac{\partial y}{\partial t}\mathrm{d}t$$
 1. 方向导数的定义：即极限$$\lim_{\rho\to 0^+}\frac{f(P)-f(P_0)}{\rho}$$（要求其存在）。其中$$P$$为从$$P_0$$出发所考察方向上的一点，$$\rho$$为$$P$$和$$P_0$$两点间距离
 1. 定理17.6：若**三元**函数$$f$$在点$$P_0(x_0,y_0,z_0)$$可微，则$$f$$在点$$P_0$$处沿任一方向$$l$$的方向导数都存在，且$$f_l(P_0)=f_x(P_0)\cos\alpha+f_y(P_0)\cos\beta+f_z(P_0)\cos\gamma$$，其中$$\cos\alpha,\cos\beta,\cos\gamma$$为方向$$l$$的方向余弦。证明过程就是把全微分的定义式改写成方向导数的定义式。
-1. 梯度的定义：三元函数$$f$$的梯度（向量）为$$\mathrm{grad}f=(f_x(P_0),f_y(P_0),f_z(P_0))$$。于是方向导数公式又可以写成$$f_l(P_0)=\vert\mathrm{grad}f(P_0)\vert\cos\theta$$，因此当$$\theta=0$$时即梯度方向使得$$f$$增长最快，$$\theta=\pi$$时减少最快。
+1. 梯度的定义：三元函数$$f$$的梯度（向量）为$$\mathrm{grad}\,f=(f_x(P_0),f_y(P_0),f_z(P_0))$$。于是方向导数公式又可以写成$$f_l(P_0)=\vert\mathrm{grad}\,f(P_0)\vert\cos\theta$$，因此当$$\theta=0$$时即梯度方向使得$$f$$增长最快，$$\theta=\pi$$时减少最快。
+   - 内积的坐标形式和余弦形式为什么相等：
+     - 如果把坐标形式作为内积的定义，那么这两者相等就是定义，不是定理。定义过程为：内积的定义就是$$x\cdot y=(s_1,b_1)\cdot(s_2,b_2)=s_1s_2+b_1b_2$$，这个时候长度、夹角这些东西都还不存在。有了这个内积之后，才能写长度的定义$$\vert\alpha\vert=\sqrt{\alpha\cdot\alpha}$$。这个时候两个向量才有了夹角余弦$$\cos\theta=\frac{x\cdot y}{\vert x\vert\vert y\vert}$$。具体参见[这里](https://www.zhihu.com/question/29039728/answer/139939836)。
+     - 如果从引入欧几里得几何、再在平面内引入平面直角坐标系、然后重新定义三角函数、最后用有向线段引入向量、然后用三角函数和模定义内积的高中教学思路，就可以这么证明：
+
+       $$
+       \begin{align}
+       a_x b_x+a_y b_y&=(\vert a\vert\sin\theta_1)(\vert b\vert\sin\theta_2)+(\vert a\vert\cos\theta_1)(\vert b\vert\cos\theta_2)\\
+       &=\vert a\vert\vert b\vert(\sin\theta_1\sin\theta_2+\cos\theta_1\cos\theta_2)\\
+       &=\vert a\vert\vert b\vert(\cos(\theta_1-\theta_2))\\
+       &=\vert a\vert\vert b\vert\cos\theta\\
+       &=a\cdot b
+       \end{align}
+       $$
+ 
+       具体参见[这里](https://www.zhihu.com/question/29039728/answer/140045949)。
 1. 定理17.7：若$$f_{xy}(x,y)$$和$$f_{yx}(x,y)$$都在点$$(x_0,y_0)$$连续，则$$f_{xy}(x,y)=f_{yx}(x,y)$$。其中$$f_{xy}(x,y)$$表示$$f(x,y)$$的二阶偏导函数（先对$$x$$求一阶偏导再对$$y$$求一阶偏导）。证明：令$$F(\Delta x,\Delta y)=f(x_0+\Delta x,y_0+\Delta y)-f(x_0,y_0+\Delta y)-f(x_0,y_0+\Delta y)-f(x_0,y_0)$$，通过一元函数中值定理可以得到$$F(\Delta x,\Delta y)=f_{xy}(x_0+\theta_1\Delta x,y_0+\theta_2\Delta y)\Delta x\Delta y=f_{yx}(x_0+\theta_3\Delta x,y_0+\theta_4\Delta y)\Delta x\Delta y$$，再利用连续性得证。
 1. 凸区域的定义：对任意两点$$P_1(x_1,y_1),P_2(x_2,y_2)\in D$$和一切$$\lambda(0le\lambda\le1)$$，恒有$$P(x_1+\lambda(x_2-x_1),y_1+\lambda(y_2-y_1))\in D$$
 1. 定理17.8（二元函数在凸域上的中值公式）：设二元函数$$f$$在凸开域$$D\subset\mathbf{R}^2$$上连续，在$$D$$的所有内点都可微，则对$$D$$内任意两点$$P(a,b),Q(a+h,b+k)\in D$$，存在某$$\theta(0\lt\theta\lt1)$$，使得$$f(a+h,b+k)-f(a,b)=f_x(a+\theta h,b+\theta k)h+f_y(a+\theta h,b+\theta k)k$$。证明：对$$\Phi(t)=f(a+th,b+tk)$$在$$t\in[0,1]$$上使用一元函数的微分中值定理，然后对$$\Phi(\theta)$$应用复合函数求导法则即得
 1. 定理17.9（二元函数的泰勒定理）。公式巨复杂，从略。
 1. 定理17.10（极值必要条件）：若函数$$f$$在点$$P_0(x_0,y_0)$$存在偏导数，且在$$P_0$$取得极值，则有$$f_x(x_0,y_0)=0,f_y(x_0,y_0)=0$$。参加定理5.3的证明
 1. 定理17.11（极值充分条件）：设二元函数$$f$$在点$$P_0(x_0,y_0)$$的某邻域$$U(P_0)$$内具有二阶连续偏导数，且$$P_0$$是$$f$$的稳定点（即$$f_x(P_0)=f_y(P_0)=0$$）。则当黑赛矩阵$$H_f(P_0)=\begin{pmatrix} f_{xx}(P_0) & f_{xy}(P_0) \\ f_{yx}(P_0) & f_{yy}(P_0) \\ \end{pmatrix}$$是正定矩阵时，$$f$$在$$P_0$$取得极小值；当$$H_f(P_0)$$是负定矩阵时，$$f$$在$$P_0$$取得极大值；当$$H_f(P_0)$$是不定矩阵时，$$f$$在$$P_0$$不取极值。证明：对极小值，使用$$f$$在点$$P_0$$的二阶泰勒公式，结合正定矩阵的定义来证明$$f(x,y)-f(x_0,y_0)\ge0$$。极大值类似。不取极值用反证法。
+1. lambda小结：
+   - 搞清楚几个概念的关系：
+     - （偏）导数和全微分的定义（分别考虑一元和多元函数）
+     - 求复合函数的（偏）导数的链式法则（分别考虑一元和多元**复合**函数）
+     - 复合函数的全微分的形式不变性（分别考虑一元和多元**复合**函数）
+     - 偏导数、方向导数、梯度的关系：偏导数的一种特殊的方向导数（方向为坐标轴）；梯度是一个向量，每个方向上的值等于函数在该点的偏导数值
 
 
 # 第十八章 隐函数定理及其应用
