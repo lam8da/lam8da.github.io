@@ -217,11 +217,11 @@ tags:
 
        $$
        \begin{align}
-       a_x b_x+a_y b_y&=(\vert a\vert\sin\theta_1)(\vert b\vert\sin\theta_2)+(\vert a\vert\cos\theta_1)(\vert b\vert\cos\theta_2)\\
-       &=\vert a\vert\vert b\vert(\sin\theta_1\sin\theta_2+\cos\theta_1\cos\theta_2)\\
+       a\cdot b&=\vert a\vert\vert b\vert\cos\theta\\
        &=\vert a\vert\vert b\vert(\cos(\theta_1-\theta_2))\\
-       &=\vert a\vert\vert b\vert\cos\theta\\
-       &=a\cdot b
+       &=\vert a\vert\vert b\vert(\sin\theta_1\sin\theta_2+\cos\theta_1\cos\theta_2)\\
+       &=(\vert a\vert\sin\theta_1)(\vert b\vert\sin\theta_2)+(\vert a\vert\cos\theta_1)(\vert b\vert\cos\theta_2)\\
+       &=a_x b_x+a_y b_y
        \end{align}
        $$
  
@@ -237,12 +237,26 @@ tags:
      - （偏）导数和全微分的定义（分别考虑一元和多元函数）
      - 求复合函数的（偏）导数的链式法则（分别考虑一元和多元**复合**函数）
      - 复合函数的全微分的形式不变性（分别考虑一元和多元**复合**函数）
-     - 偏导数、方向导数、梯度的关系：偏导数的一种特殊的方向导数（方向为坐标轴）；梯度是一个向量，每个方向上的值等于函数在该点的偏导数值
+     - 偏导数、方向导数、梯度的关系：偏导数是一种特殊的方向导数（方向为坐标轴）；梯度是一个向量，每个方向上的值等于函数在该点的偏导数值
 
 
 # 第十八章 隐函数定理及其应用
 
 1. 定义：设$$E\subset\mathbf{R}^2$$，函数$$F:E\to\mathbf{R}^2$$。对于方程$$F(x,y)=0$$若存在集合$$I,J\subset E$$，对于任何$$x\in I$$，有惟一确定的$$y\in J$$，使得$$(x,y)\in E$$且满足该方程，则称由该方程确定一个定义在$$I$$上，值域含于$$J$$的隐函数
+1. 定理18.1（隐函数存在唯一性定理）：若函数$$F(x,y)$$满足下列条件：
+   - $$F$$在以$$P_0(x_0,y_0)$$为内点的某一区域$$D\subset\mathbf{R}^2$$上连续；
+   - $$F(x_0,y_0)=0$$（称为初始条件）；
+   - $$F$$在$$D$$内存在连续的偏导数$$F_y(x,y)$$；
+   - $$F_y(x_0,y_0)\ne0$$。
+   
+   则：
+
+   - 存在点$$P_0$$的某邻域$$U(P_0)\subset D$$在$$U(P_0)$$上方程$$F(x,y)=0$$唯一地决定了一个定义在某区间$$(x_0-\alpha,x_0+\alpha)$$上的（隐）函数$$y=f(x)$$，使得当$$x\in(x_0-\alpha,x_0+\alpha)$$时，$$(x,f(x))\in U(P_0)$$，且$$F(x,f(x))=0,f(x_0)=y_0$$
+   - $$f(x)$$在$$(x_0-\alpha,x_0+\alpha)$$上连续
+
+   证明：由第四个条件不妨设$$F_y(x_0,y_0)\gt0$$，由第三个条件根据局部保号性存在$$P_0$$的一个方邻域使得在其上每一点都有$$F_y(x,y)\gt0$$，因此对该邻域内每个固定的$$x$$，$$F(x,y)$$作为$$y$$的一元函数必定在该邻域沿$$y$$递增方向严格增且连续。又由第二个条件知道一元函数$$F(x_0,y)$$在该邻域的$$y$$小的一端$$y_1$$小于0另一端$$y_2$$大于0，再由第一个条件又知道一元函数$$F(x,y_1)$$和$$F(x,y_2)$$在某个$$x_0$$的邻域也是连续的，因此又由局部保号性对于该邻域的每个固定的$$x$$都有$$F(x,y_1)\lt0\lt F(x,y_2)$$，这样根据介值性定理存在唯一的$$y$$满足$$F(x,y)=0$$，这样就证明了第一点（隐函数的存在性）。第二点（连续性）直接用连续的定义即可证。
+1. 定理18.2（隐函数可微性定理）：满足定理18.1的四个条件的$$F(x,y)$$如果在$$D$$上还存在连续的偏导数$$F_x(x,y)$$，则由$$F(x,y)=0$$确定的隐函数在其定义域上有连续导函数$$f'(x)=-\frac{F_x(x,y)}{F_y(x,y)}$$。证明：由$$F(x,y)=0,F(x+\Delta x,y+\Delta y)=0$$，再由$$F_x,F_y$$的连续性（因此可以）应用二元函数中值定理，得$$0=F_x(x+\theta\Delta x,y+\theta\Delta y)\Delta x+F_y(x+\theta\Delta x,y+\theta\Delta y)\Delta y$$，移项并取极限即得所求证结果。
+1. 
 
 到第152/163页。
 
