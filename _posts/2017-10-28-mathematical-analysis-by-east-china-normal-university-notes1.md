@@ -191,6 +191,9 @@ tags:
 1. 莱布尼兹公式：函数的积的n阶导数展开式的系数为二项式系数
 1. 微分的定义：若存在常数$$A$$使得$$\Delta y=f(x_0+\Delta x)-f(x_0)$$可以表示成$$\Delta y=A\Delta x+o(\Delta x)$$。其中$$A\Delta x$$记为$$\mathrm{d} y$$称为$$f$$在点$$x_0$$的微分，当$$A\ne 0$$时也说$$\mathrm{d} y$$是$$\Delta y$$的线性主部。
 1. 定理5.10：可微的充要条件是可导，且$$A=f'(x_0)$$。证明：必要性直接对上式取极限，充分性使用有限增量公式。
+
+## 我的理解
+
 1. 由上述定理有**定义**$$\mathrm{d}y=f'(x_0)\Delta x$$。根据该定义，函数$$i(x)=x$$的微分$$\mathrm{d}i(x)=i'(x)\Delta x=\Delta x$$因此按照定义表示为$$\mathrm{d}x=\Delta x$$，因此我们可以写$$\mathrm{d}y=f'(x_0)\mathrm{d}x$$
    - 我的理解是**自变量为$$x$$的函数$$y$$的微分等于$$f'(x_0)$$和自变量为$$x$$的函数$$i(x)$$的微分的积**。
    - [微分和导数的关系是什么？ - 马同学的回答](https://www.zhihu.com/question/22199657/answer/115178055)、[为什么自变量x的二阶微分d(dx)等于零？ - 陈老师的回答](https://www.zhihu.com/question/27750522/answer/141475199)以及菲赫金哥尔茨的《微积分教程》都说，**微分是一个函数，不是一个数**。而$$\Delta x$$是一个和$$x$$无关的自变量，因此$$\mathrm{d}(\mathrm{d}x)=\mathrm{d}\Delta x=\mathrm{d}(\mathrm{constant})=0$$。
