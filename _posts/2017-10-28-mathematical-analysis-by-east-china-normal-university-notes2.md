@@ -122,6 +122,7 @@ tags:
 1. 定理14.11：设$$f$$在点$$x_0$$具有任意阶导数，那么$$f$$在区间$$(x_0-r,x_0+r)$$内等于它的泰勒级数的和函数的充分条件是：对一切满足不等式$$\vert x-x_0\vert\lt r$$的$$x$$，有$$\lim_{n\to\infty}R_n(x)=0$$，这里$$R_n(x)$$是$$f$$在$$x_0$$的泰勒公式余项。通过定理6.9（泰勒定理，函数可以展开为带有拉格朗日型余项的泰勒公式）来证明。
 1. 如果$$f$$能在$$x_0$$的某邻域上等于其泰勒级数的和函数，则称函数$$f$$在$$x_0$$的这一邻域内可以展开成泰勒级数，并称等式$$f(x)=\sum_{n=0}^{\infty}\big(\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n\big)$$的右边为$$f$$在$$x=x_0$$处的泰勒展开式或幂级数展开式。根据定理14.8的推论2可知这个展开式是唯一的。在实际应用上，主要讨论函数在$$x_0=0$$处的展开式，称为麦克劳林级数
 1. 复数项级数及其收敛/绝对收敛的定义，复数项幂级数及其收敛的定义，复变量的指数函数、正弦函数、余弦函数的定义，以及欧拉公式的简述
+1. 生成函数（母函数）就是一个幂级数，所以其收敛性可以用本章的定理来分析
 
 # 第十五章 傅里叶级数
 
@@ -226,7 +227,7 @@ tags:
        $$
  
        具体参见[这里](https://www.zhihu.com/question/29039728/answer/140045949)。
-1. 定理17.7：若$$f_{xy}(x,y)$$和$$f_{yx}(x,y)$$都在点$$(x_0,y_0)$$连续，则$$f_{xy}(x,y)=f_{yx}(x,y)$$。其中$$f_{xy}(x,y)$$表示$$f(x,y)$$的二阶偏导函数（先对$$x$$求一阶偏导再对$$y$$求一阶偏导）。证明：令$$F(\Delta x,\Delta y)=f(x_0+\Delta x,y_0+\Delta y)-f(x_0,y_0+\Delta y)-f(x_0,y_0+\Delta y)-f(x_0,y_0)$$，通过一元函数中值定理可以得到$$F(\Delta x,\Delta y)=f_{xy}(x_0+\theta_1\Delta x,y_0+\theta_2\Delta y)\Delta x\Delta y=f_{yx}(x_0+\theta_3\Delta x,y_0+\theta_4\Delta y)\Delta x\Delta y$$，再利用连续性得证。
+1. 定理17.7：若$$f_{xy}(x,y)$$和$$f_{yx}(x,y)$$都在点$$(x_0,y_0)$$连续，则$$f_{xy}(x,y)=f_{yx}(x,y)$$。其中$$f_{xy}(x,y)$$表示$$f(x,y)$$的二阶偏导函数（先对$$x$$求一阶偏导再对$$y$$求一阶偏导）。证明：令$$F(\Delta x,\Delta y)=f(x_0+\Delta x,y_0+\Delta y)-f(x_0+\Delta y,y_0)-f(x_0,y_0+\Delta y)+f(x_0,y_0)$$，通过一元函数中值定理可以得到$$F(\Delta x,\Delta y)=f_{xy}(x_0+\theta_1\Delta x,y_0+\theta_2\Delta y)\Delta x\Delta y=f_{yx}(x_0+\theta_3\Delta x,y_0+\theta_4\Delta y)\Delta x\Delta y$$，再利用连续性得证。
 1. 凸区域的定义：对任意两点$$P_1(x_1,y_1),P_2(x_2,y_2)\in D$$和一切$$\lambda(0le\lambda\le1)$$，恒有$$P(x_1+\lambda(x_2-x_1),y_1+\lambda(y_2-y_1))\in D$$
 1. 定理17.8（二元函数在凸域上的中值公式）：设二元函数$$f$$在凸开域$$D\subset\mathbf{R}^2$$上连续，在$$D$$的所有内点都可微，则对$$D$$内任意两点$$P(a,b),Q(a+h,b+k)\in D$$，存在某$$\theta(0\lt\theta\lt1)$$，使得$$f(a+h,b+k)-f(a,b)=f_x(a+\theta h,b+\theta k)h+f_y(a+\theta h,b+\theta k)k$$。证明：对$$\Phi(t)=f(a+th,b+tk)$$在$$t\in[0,1]$$上使用一元函数的微分中值定理，然后对$$\Phi(\theta)$$应用复合函数求导法则即得
 1. 定理17.9（二元函数的泰勒定理）。公式巨复杂，从略。
@@ -308,8 +309,33 @@ tags:
 
 # 第十九章 含参量积分
 
-到第185/193页。
+## 含参量（正常）积分
 
+1. 含参量$$x$$的（正常）积分（简称含参量积分）：$$\varphi(x)=\int_c^d f(x,y)\mathrm{d}y,x\in[a,b]$$或$$F(x)=\int_{c(x)}^{d(x)}f(x,y)\mathrm{d}y,x\in[a,b]$$。要求对于$$[a,b]$$上每个固定的$$x$$，$$f(x,y)$$作为$$y$$的函数在闭区间$$[c,d]$$或$$[c(x),d(x)]$$上可积。注意：含参量积分是一个函数，该函数的表达式是积分的形式。
+1. 定理19.1（连续性）：若$$f(x,y)$$在$$[a,b]\times[c,d]$$上连续则$$\varphi(x)=\int_c^d f(x,y)\mathrm{d}y$$在$$[a,b]$$上连续。证明：用连续性定义，考虑$$\varphi(x+\Delta x)-\varphi(x)=\int_c^d \big(f(x+\Delta x,y)-f(x,y)\big)\mathrm{d}y$$。
+1. 推论：对于满足上述定理的任何$$x_0\in[a,b]$$都有$$\lim_{x\to x_0}\int_c^d f(x,y)\mathrm{d}y=\int_c^d\lim_{x\to x_0}f(x,y)\mathrm{d}y$$。
+1. 定理19.2（连续性）：若$$f(x,y)$$在$$\{(x,y)\vert c(x)\le y\le d(x),a\le x\le b\}$$上连续，其中$$c(x)$$和$$d(x)$$均为$$[a,b]$$上的连续函数，则函数$$F(x)=\int_{c(x)}^{d(x)}f(x,y)\mathrm{d}y$$在$$[a,b]$$上连续。证明：令$$y=c(x)+t\big(d(x)-c(x)\big),t\in[0,1]$$并对该$$F(x)$$使用换元积分法，可以得到定理19.1的形式。
+1. 定理19.3（可微性）：若$$f(x,y)$$与其偏导数$$\frac{\partial}{\partial x}f(x,y)$$都在矩形区域$$[a,b]\times[c,d]$$上连续，则$$\varphi(x)=\int_c^d f(x,y)\mathrm{d}y$$在$$[a,b]$$上可微，且$$\frac{\mathrm{d}}{\mathrm{d}x}\int_c^d f(x,y)\mathrm{d}y=\int_c^d\frac{\partial}{\partial x}f(x,y)\mathrm{d}y$$。证明：实际上就是证明$$\big\vert\frac{\Delta\varphi}{\Delta x}-\int_c^d f_x(x,y)\mathrm{d}y\big\vert$$在$$\Delta x$$足够小时可以任意小，通过拉格朗日中值定理和连续性（从而有一致连续性）以及放缩法可证。
+1. 定理19.4（可微性）：设$$f(x,y)$$，$$f_x(x,y)$$在$$[a,b]\times[p,q]$$上连续，$$c(x)$$，$$d(x)$$为定义在$$[a,b]$$上其值含于$$[p,q]$$内的可微函数，则$$F(x)=\int_{c(x)}^{d(x)}f(x,y)\mathrm{d}y$$在$$[a,b]$$上可微，且$$F'(x)=\int_{c(x)}^{d(x)}f_x(x,y)\mathrm{d}y+f(x,d(x))d'(x)-f(x,c(x))c'(x)$$。证明：把$$F(x)$$看作复合函数$$F(x)=H(x,c,d)=\int_c^d f(x,y)\mathrm{d}y,c=c(x),d=d(x)$$，由复合函数求导法则、变上（下）限积分求导法则以及定理19.3可证。
+1. 定理19.5（可积性）：若$$f(x,y)$$在$$[a,b]\times[c,d]$$上连续，则$$\varphi(x)$$和$$\psi(y)$$分别在$$[a,b]$$和$$[c,d]$$上可积。分别记作$$\int_a^b\mathrm{d}x\int_c^d f(x,y)\mathrm{d}y$$和$$\int_c^d\mathrm{d}y\int_a^b f(x,y)\mathrm{d}x$$，称为累次积分或二次积分。由定理19.1和定理19.2连续性即可证。
+1. 定理19.6：若$$f(x,y)$$在$$[a,b]\times[c,d]$$上连续则上述两个二次积分相等。证明：把固定上限$$b$$变为可变上限$$u$$，对左右两边分别对$$u$$求导，结果均为$$\varphi(u)$$（其中右边需要用定理19.3才能把偏导符号和积分符号交换）。
+
+## 含参量（反常）积分
+
+1. 含参量$$x$$的无穷限反常积分（简称含参量反常积分）：$$\Phi(x)=\int_c^{+\infty}f(x,y)\mathrm{d}y,x\in[a,b]$$，要求对每个固定的$$x$$它都收敛
+1. 一致收敛的定义：若对任给$$\epsilon\gt0$$，总存在实数$$N>c>0$$，使得当$$M>N$$时对一切$$x\in[a,b]$$都有$$\big\vert\int_c^M f(x,y)\mathrm{d}y-\Phi(x)\big\vert\lt\epsilon$$则称该反常积分在定义域上一致收敛于$$\Phi(x)$$
+1. 定理19.7（一致收敛的柯西准则）：对任给$$\epsilon\gt0$$，总存在实数$$M>c$$，使得当$$A_1,A_2\gt M$$时对一切$$x\in[a,b]$$都有$$\big\vert\int_{A_1}^{A_2}f(x,y)\mathrm{d}y\big\vert\lt\epsilon$$
+1. 定理19.8：$$\Phi(x)$$一致收敛的充要条件是$$\lim_{A\to+\infty}F(A)=0$$，其中$$F(A)=\sup_{x\in[a,b]}\big\vert\int_A^{+\infty}f(x,y)\mathrm{d}y\big\vert$$。由定义即得。
+1. 定理19.9：$$\Phi(x)$$一致收敛的充要条件是，对任一趋于正无穷的递增数列$$\{A_n\}$$（其中$$A_1=c$$），函数项级数$$\sum_{n=1}^{\infty}\int_{A_n}^{A_{n+1}}f(x,y)\mathrm{d}y=\sum_{n=1}^{\infty}u_n(x)$$在$$[a,b]$$上一致收敛。必要性显然，充分性用反证法。
+1. 含参量反常积分的一致收敛性判别法（证明从略，因与函数项级数相应的判别法相仿）
+   - 魏尔斯特拉斯M判别法
+   - 狄利克雷判别法
+   - 阿贝尔判别法
+1. 定理19.10（连续性）：设$$f(x,y)$$在$$[a,b]\times[c,+\infty)$$上连续，若$$\Phi(x)=\int_c^{+\infty}f(x,y)\mathrm{d}y$$在$$[a,b]$$上一致收敛，则$$\Phi(x)$$在$$[a,b]$$上连续。证明：通过定理19.9，对应的函数项级数一致收敛，而每一项函数都连续，根据函数项级数的连续性定理$$\Phi(x)$$连续。这个定理表明，在一致收敛的条件下，极限运算与积分运算可以交换：$$\lim_{x\to x_0}\int_c^{+\infty}f(x,y)\mathrm{d}y=\int_c^{+\infty}\lim_{x\to x_0}f(x,y)\mathrm{d}y$$
+1. 定理19.11（可微性）：设$$f(x,y)$$和$$f_x(x,y)$$在$$I\times[c,+\infty)$$上连续，若$$\Phi(x)=\int_c^{+\infty}f(x,y)\mathrm{d}y$$在$$I$$上收敛，$$\int_c^{+\infty}f_x(x,y)\mathrm{d}y$$在$$I$$上一致收敛，则$$\Phi(x)$$在$$I$$上可微且$$\Phi'(x)=\int_c^{+\infty}f_x(x,y)\mathrm{d}y$$。证明：同样的，拆为函数项级数，每项由定理19.3均可微，而由19.9知该函数项级数一致收敛，最后由函数项级数的逐项求导定理即得。这个定理表明求导和积分符号可交换：$$\frac{\mathrm{d}}{\mathrm{d}x}\int_c^{+infty}f(x,y)\mathrm{d}y=\int_c^{+\infty}\frac{\partial}{\partial x}f(x,y)\mathrm{d}y$$
+1. 定理19.12（可积性）：若$$f(x,y)$$在$$[a,b]\times[c,+\infty)$$上连续，若$$\Phi(x)$$在$$[a,b]$$上一致收敛，则$$\Phi(x)$$在$$[a,b]$$上可积，且$$\int_a^b\mathrm{d}x\int_c^{+\infty}f(x,y)\mathrm{d}y=\int_c^{+\infty}\mathrm{d}y\int_a^b f(x,y)\mathrm{d}x$$。证明：19.10说明$$\Phi(x)$$连续故可积，而从19.10的证明中应用函数项级数的逐项求积定理即得。
+
+到pdf新版206页定理19.3
 
 # 第二十章 曲线积分（即所谓路径积分）
 
