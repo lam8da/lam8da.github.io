@@ -331,13 +331,26 @@ tags:
    - 魏尔斯特拉斯M判别法
    - 狄利克雷判别法
    - 阿贝尔判别法
-1. 定理19.10（连续性）：设$$f(x,y)$$在$$[a,b]\times[c,+\infty)$$上连续，若$$\Phi(x)=\int_c^{+\infty}f(x,y)\mathrm{d}y$$在$$[a,b]$$上一致收敛，则$$\Phi(x)$$在$$[a,b]$$上连续。证明：通过定理19.9，对应的函数项级数一致收敛，而每一项函数都连续，根据函数项级数的连续性定理$$\Phi(x)$$连续。这个定理表明，在一致收敛的条件下，极限运算与积分运算可以交换：$$\lim_{x\to x_0}\int_c^{+\infty}f(x,y)\mathrm{d}y=\int_c^{+\infty}\lim_{x\to x_0}f(x,y)\mathrm{d}y$$
+1. 定理19.10（连续性）：设$$f(x,y)$$在$$[a,b]\times[c,+\infty)$$上连续，若$$\Phi(x)=\int_c^{+\infty}f(x,y)\mathrm{d}y$$在$$[a,b]$$上一致收敛，则$$\Phi(x)$$在$$[a,b]$$上连续。证明：通过定理19.9，对应的函数项级数一致收敛，而由定理19.2每一项函数都连续，根据函数项级数的连续性定理$$\Phi(x)$$连续。这个定理表明，在一致收敛的条件下，极限运算与积分运算可以交换：$$\lim_{x\to x_0}\int_c^{+\infty}f(x,y)\mathrm{d}y=\int_c^{+\infty}\lim_{x\to x_0}f(x,y)\mathrm{d}y$$
 1. 定理19.11（可微性）：设$$f(x,y)$$和$$f_x(x,y)$$在$$I\times[c,+\infty)$$上连续，若$$\Phi(x)=\int_c^{+\infty}f(x,y)\mathrm{d}y$$在$$I$$上收敛，$$\int_c^{+\infty}f_x(x,y)\mathrm{d}y$$在$$I$$上一致收敛，则$$\Phi(x)$$在$$I$$上可微且$$\Phi'(x)=\int_c^{+\infty}f_x(x,y)\mathrm{d}y$$。证明：同样的，拆为函数项级数，每项由定理19.3均可微，而由19.9知该函数项级数一致收敛，最后由函数项级数的逐项求导定理即得。这个定理表明求导和积分符号可交换：$$\frac{\mathrm{d}}{\mathrm{d}x}\int_c^{+infty}f(x,y)\mathrm{d}y=\int_c^{+\infty}\frac{\partial}{\partial x}f(x,y)\mathrm{d}y$$
 1. 定理19.12（可积性）：若$$f(x,y)$$在$$[a,b]\times[c,+\infty)$$上连续，若$$\Phi(x)$$在$$[a,b]$$上一致收敛，则$$\Phi(x)$$在$$[a,b]$$上可积，且$$\int_a^b\mathrm{d}x\int_c^{+\infty}f(x,y)\mathrm{d}y=\int_c^{+\infty}\mathrm{d}y\int_a^b f(x,y)\mathrm{d}x$$。证明：19.10说明$$\Phi(x)$$连续故可积，而从19.10的证明中应用函数项级数的逐项求积定理即得。
+1. 定义：若在区间$$I$$的任一闭子区间上反常积分都一致收敛，则称该反常积分在$$I$$上**内闭一致收敛**
+1. 定理19.3：设$$f(x,y)$$在$$[a,+\infty)\times[c,+\infty)$$上连续。若：
+   - (i) $$\int_a^{+\infty}f(x,y)\mathrm{d}x$$关于$$y$$在$$[c,+\infty)$$上内闭一致收敛，$$\int_c^{+infty}f(x,y)\mathrm{d}y$$关于$$x$$在$$[a,+\infty)$$上内闭一致收敛
+   - (ii) 积分$$\int_a^{+\infty}\mathrm{d}x\int_c^{+\infty}\vert f(x,y)\vert\mathrm{d}y$$与$$\int_c^{+\infty}\mathrm{d}y\int_a^{+\infty}\vert f(x,y)\vert\mathrm{d}x$$中有一个收敛
 
-到pdf新版206页定理19.3
+   则$$\int_a^{+\infty}\mathrm{d}x\int_c^{+\infty}f(x,y)\mathrm{d}y=\int_c^{+\infty}\mathrm{d}y\int_a^{+\infty}f(x,y)\mathrm{d}x$$，即两个“累次反常积分”相等。主要思路就是证明$$J_d=\big\vert\int_c^d\mathrm{d}y\int_a^{+\infty}f(x,y)\mathrm{d}x-\int_a^{+\infty}\mathrm{d}x\int_c^{+\infty}f(x,y)\mathrm{d}y\big\vert=\big\vert\int_a^{+\infty}\mathrm{d}x\int_d^{+\infty}f(x,y)\mathrm{d}y\big\vert\le\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$$，其中第二个等号由条件(i)和19.12推得，小于等于号由条件(ii)和内一致收敛性推得
+
+## 欧拉积分
+
+以下函数统称为欧拉积分，本节就是研究它们的各种性质（连续性，递推公式，延拓等）：
+
+- 伽玛函数$$\Gamma(s)=\int_0^{+\infty}x^{s-1}e^{-x}\mathrm{d}x,s\gt0$$
+- 贝塔函数$$\mathrm{B}(p,q)=\int_0^1 x^{p-1}(1-x)^{q-1}\mathrm{d}x,p\gt0,q\gt0$$
 
 # 第二十章 曲线积分（即所谓路径积分）
+
+到pdf新版217页
 
 
 # 第二十一章 重积分
