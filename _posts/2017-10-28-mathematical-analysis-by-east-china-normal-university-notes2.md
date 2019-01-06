@@ -84,7 +84,7 @@ tags:
 1. 定理13.13：若函数项级数$$\sum u_n(x)$$在$$[a,b]$$上一致收敛且每一项$$u_n(x)$$都连续，则
 
    $$\sum\int_a^b u_n(x)\mathrm{d}x=\lim_{n\to\infty}\Big(\sum_{k=1}^n\big(\int_a^b u_k(x)\big)\Big)=\lim_{n\to\infty}\Big(\int_a^b\big(\sum_{k=1}^n u_k(x)\big)\Big)=\int_a^b\sum u_n(x)\mathrm{d}x$$
-   
+
    。这是定理13.10的推论，其中等式左边第二项是根据和函数的定义对第一项的展开式，第三项是在第二项上使用黎曼积分的性质，第四项是第三项使用定理13.10把极限符号和积分符号交换并且把极限求和按照定义简写成和函数的形式。
 1. 定理13.14：若函数项级数$$\sum u_n(x)$$在$$[a,b]$$上每一项都有连续的导函数，$$x_0\in[a,b]$$为$$\sum u_n(x)$$的收敛点且$$\sum u′_n(x)$$在$$[a,b]$$上一致收敛，则有
 
@@ -225,7 +225,7 @@ tags:
        &=a_x b_x+a_y b_y
        \end{align}
        $$
- 
+
        具体参见[这里](https://www.zhihu.com/question/29039728/answer/140045949)。
 1. 定理17.7：若$$f_{xy}(x,y)$$和$$f_{yx}(x,y)$$都在点$$(x_0,y_0)$$连续，则$$f_{xy}(x,y)=f_{yx}(x,y)$$。其中$$f_{xy}(x,y)$$表示$$f(x,y)$$的二阶偏导函数（先对$$x$$求一阶偏导再对$$y$$求一阶偏导）。证明：令$$F(\Delta x,\Delta y)=f(x_0+\Delta x,y_0+\Delta y)-f(x_0+\Delta y,y_0)-f(x_0,y_0+\Delta y)+f(x_0,y_0)$$，通过一元函数中值定理可以得到$$F(\Delta x,\Delta y)=f_{xy}(x_0+\theta_1\Delta x,y_0+\theta_2\Delta y)\Delta x\Delta y=f_{yx}(x_0+\theta_3\Delta x,y_0+\theta_4\Delta y)\Delta x\Delta y$$，再利用连续性得证。
 1. 凸区域的定义：对任意两点$$P_1(x_1,y_1),P_2(x_2,y_2)\in D$$和一切$$\lambda(0le\lambda\le1)$$，恒有$$P(x_1+\lambda(x_2-x_1),y_1+\lambda(y_2-y_1))\in D$$
@@ -251,7 +251,7 @@ tags:
    - $$F(x_0,y_0)=0$$（称为初始条件）；
    - $$F$$在$$D$$内存在连续的偏导数$$F_y(x,y)$$；
    - $$F_y(x_0,y_0)\ne0$$。
-   
+
    则：
 
    - 存在点$$P_0$$的某邻域$$U(P_0)\subset D$$在$$U(P_0)$$上方程$$F(x,y)=0$$唯一地决定了一个定义在某区间$$(x_0-\alpha,x_0+\alpha)$$上的（隐）函数$$y=f(x)$$，使得当$$x\in(x_0-\alpha,x_0+\alpha)$$时，$$(x,f(x))\in U(P_0)$$，且$$F(x,f(x))=0,f(x_0)=y_0$$
@@ -356,8 +356,58 @@ tags:
    - 不同曲线拼接而成的曲线的第一型曲线积分等于各个曲线段上的第一型曲线积分的和
    - 若在曲线上一函数的值总是小于等于另一函数则关于该函数的第一型曲线积分值也小于另一个函数的 
    - 积分的绝对值小于等于函数绝对值的积分
-   - 存在介于$$[\inf_L f(x,y),\sup_L f(x,y)$$的常数$$c$$使第一型曲线积分的值等于$$cs$$（$$s$$为$$L$$的弧长）
-1. 定理20.1（参数方程表示的曲线的第一型曲线积分的计算）：
+   - 存在介于$$[\inf_L f(x,y),\sup_L f(x,y)]$$的常数$$c$$使第一型曲线积分的值等于$$cs$$（$$s$$为$$L$$的弧长）
+1. 定理20.1（参数方程表示的曲线的第一型曲线积分的计算）：设有光滑曲线 
+   $$
+   L:\left\{
+   \begin{array}{l}
+   x=\varphi(t),\\
+   y=\psi(t),
+   \end{array}
+   \right.
+   t\in[\alpha,\beta]
+   $$，函数$$f(x,y)$$为定义在$$L$$上的连续函数，则
+
+   $$\int_L f(x,y)\mathrm{d}s=\int_{\alpha}^{\beta}f(\varphi(t),\psi(t))\sqrt{\varphi'^2(t)+\psi'^2(t)}\mathrm{d}t$$
+
+   证明：由弧长公式、各个函数的连续性和积分中值定理可得
+
+   $$\sum_{i=1}^n f(\xi_i,\eta_i)\Delta s_i=\sum_{i=1}^n f(\varphi(\tau''_i),\psi(\tau''_i))\sqrt{\varphi'^2(\tau''_i)+\psi'^2(\tau''_i)}\Delta t_i+\sigma$$
+
+   其中
+
+   $$\sigma=\sum_{i=1}^n f(\varphi(\tau''_i),\psi(\tau''_i))\big(\sqrt{\varphi'^2(\tau'_i)+\psi'^2(\tau'_i)}-\sqrt{\varphi'^2(\tau''_i)+\psi'^2(\tau''_i)}\big)\Delta t_i$$
+
+   然后证明$$\lim_{\Delta t\to0}\sigma=0$$，最后由定积分的定义即得结果。
+1. 类似地，由参数方程表示的三维空间曲线的第一型曲线积分为
+
+   $$\int_L f(x,y,z)\mathrm{d}s=\int_{\alpha}^{\beta}f(\varphi(t),\psi(t),\chi(t))\sqrt{\varphi'^2(t)+\psi'^2(t)+\chi'^2(t)}\mathrm{d}t$$
+1. 定义：设函数$$P(x,y)$$与$$Q(x,y)$$定义在平面**有向**可求长度曲线$$L:\overparen{AB}$$上，对$$L$$的任一分割$$T$$，它把$$L$$分成$$n$$个小弧段$$\overparen{M_{i-1}M_i}(i=1,2,\cdots,n)$$，其中$$M_0=A,M_n=B$$。记各小弧段$$\overparen{M_{i-1}M_i}$$的弧长为$$\Delta s_i$$，分割$$T$$的细度$$\Vert T\Vert=\max_{1\le i\le n}\Delta s_i$$。又设$$T$$的分点$$M_i$$的坐标为$$(x_i,y_i)$$，并记$$\Delta x_i=x_i-x_{i-1},\Delta y_i=y_i-y_{i-1}(i=1,2,\cdots,n)$$。在每个小弧段$$\overparen{M_{i-1}M_i}$$上任取一点$$(\xi_i,\eta_i)$$，若极限
+
+   $$\lim_{\Vert T\Vert\to0}\sum_{i=1}^n P(\xi_i,\eta_i)\Delta x_i+\lim_{\Vert T\Vert\to0}\sum_{i=1}^n Q(\xi_i,\eta_i)\Delta y_i$$
+
+   存在且与分割$$T$$和点$$(\xi_i,\eta_i)$$的取法无关，则称此极限为函数$$P(x,y),Q(x,y)$$沿有向曲线$$L$$上的第二型曲线积分，记为
+
+   $$\int_L P(x,y)\mathrm{d}x+Q(x,y)\mathrm{d}y$$
+
+   或
+
+   $$\int_{AB} P(x,y)\mathrm{d}x+Q(x,y)\mathrm{d}y$$
+
+   。常简写为$$\int_L P\mathrm{d}x+Q\mathrm{d}y$$或$$\int_{AB}P\mathrm{d}x+Q\mathrm{d}y$$。若$$L$$为封闭的有向曲线，则记为$$\oint P\mathrm{d}x+Q\mathrm{d}y$$。若记$$\pmb{F}(x,y)=\big(P(x,y),Q(x,y)\big),\mathrm{d}\pmb{s}=(\mathrm{d}x,\mathrm{d}y)$$，则该积分又可写成向量形式$$\int_L\pmb{F}\cdot\mathrm{d}\pmb{s}$$或$$\int_{AB}\pmb{F}\cdot\mathrm{d}\pmb{s}$$，于是力$$\pmb{F}(x,y)=\big(P(x,y),Q(x,y)\big)$$沿有向曲线$$L:\overparen{AB}$$对质点所作的功为$$W=\int_L P(x,y)\mathrm{d}x+Q(x,y)\mathrm{d}y$$
+1. 性质：
+   - 不同积分的线性组合那些常数因子可以放进积分号后（里）面，积分值不变
+   - 首尾相接的有向曲线拼接而成的有向曲线的第二型曲线积分等于各个曲线上的第二型曲线积分的和
+1. 和第一型曲线积分类似，对于参数方程表示的曲线的第二型曲线积分也可以化为定积分来计算。设平面曲线 
+   $$
+   L:\left\{
+   \begin{array}{l}
+   x=\varphi(t),\\
+   y=\psi(t),
+   \end{array}
+   \right.
+   t\in[\alpha,\beta]
+   $$，其中$$\varphi(t),\psi(t)$$在$$[\alpha,\beta]$$上具有一阶连续导函数，且点$$A$$与$$B$$的坐标分别为$$(\varphi(\alpha),\psi(\alpha))$$与$$(\varphi(\beta),\psi(\beta))$$。又设$$P(x,y)$$与$$Q(x,y)$$为$$L$$上的连续函数，则沿$$L$$从$$A$$到$$B$$的第二型曲线积分$$\int_L P(x,y)\mathrm{d}x+Q(x,y)\mathrm{d}y=\int_{\alpha}^{\beta}\big(P(\varphi(t),\psi(t))\varphi'(t)+Q(\varphi(t),\psi(t))\psi'(t)\big)\mathrm{d}t$$。证明和定理20.1类似。
 
 到pdf新版219页
 
