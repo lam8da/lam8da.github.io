@@ -435,9 +435,22 @@ f(\xi_i,\eta_i)\Delta\sigma_i$$为函数$$f(x,y)$$在$$D$$上属于分割$$T$$�
 1. 定理21.8：设函数$$f(x,y)$$在矩形区域$$D=[a,b]\times[c,d]$$上二重可积，且队每个$$x\in[a,b]$$积分$$\int_c^d f(x,y)\mathrm{d}y$$都存在，则累次积分$$\int_a^b\mathrm{d}x\int_c^d f(x,y)\mathrm{d}y$$也存在且二重积分值和它相等。证明思路：讨论$$\sum_{i=1}^n\int_c^d f(\xi_i,y)\mathrm{d}y$$，可以证明它和二重积分的值相等（两边夹逼法，然后根据二重积分的定义），也和累次积分的值相等（由定积分的定义）
 1. 定理21.9和21.8类似，只是把$$x$$和$$y$$交换
 1. 定理21.10：若$$f(x,y)$$在区域$$D=\{(x,y)\vert y_1(x)\le y\le y_2(x),a\le x\le b\}$$上连续，其中$$y_1(x)$$和$$y_2(x)$$在$$[a,b]$$上连续，则$$\iint_D f(x,y)\mathrm{d}\sigma=\int_a^b\mathrm{d}x\int_{y_1(x)}^{y_2(x)}f(x,y)\mathrm{d}y$$。证明：拿另外一个区域$$D'=[a,b]\times[c,d]$$包着$$D$$，在$$D'$$上用定理21.8可证。
-1. 定理21.11（格林公式，二重积分和边界曲线上的第二型曲线积分的关系）：若$$P(x,y),Q(x,y)$$在有界闭区域$$D$$上连续且有连续的一阶偏导数，则有$$\iint_d\big(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\big)\mathrm{d}\sigma=\oint_L P\mathrm{d}x+Q\mathrm{d}y$$，这里$$L$$为$$D$$的边界曲线，并取正方向（人沿边界走时$$D$$总在其左边，这样的人走的方向为正方向）
+1. 定理21.11（格林公式，二重积分和边界曲线上的第二型曲线积分的关系）：若$$P(x,y),Q(x,y)$$在有界闭区域$$D$$上连续且有连续的一阶偏导数，则有$$\iint_d\big(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\big)\mathrm{d}\sigma=\oint_L P\mathrm{d}x+Q\mathrm{d}y$$，这里$$L$$为$$D$$的边界曲线，并取正方向（人沿边界走时$$D$$总在其左边，这样的人走的方向为正方向）。证明思路：把区域分割为这样一些简单区域的并，使得平行于坐标轴的直线和$$L$$至多交于两点，然后求在每个简单区域上的二重积分：先化为累次积分，然后用牛顿-莱布尼兹公式把对导数的积分转换为原函数的减法，然后将减法合并为闭合曲线的第二型曲线积分即可。最后把所有这些区域上的二重积分加起来即可，区域的边界上的第二型曲线积分会互相抵消。
+1. 如何理解格林公式：
+   - 参考[格林公式的几何意义是什么？ - 马同学的回答 - 知乎](https://www.zhihu.com/question/22674439/answer/185939984)
+   - 一个精辟的观察是：任意的路径边界上的功，等于路径围成的区域内的所有微分矩形（即把该区域按照网格切分称很多小区域）的边界上的功之和
+   - 感觉有点异曲同工：就像牛顿莱布尼兹公式中定积分值和两端值有关，格林公式中区域二重积分和边界曲线积分有关。知乎上说“其实这些都是流形上的斯托克斯公式”？
+1. 在格林公式中，令$$P=-y,Q=x$$则得到一个计算平面区域$$D$$的面积公式$$S_D=\iint_D \mathrm{d}\sigma=\frac{1}{2}\oint_L x\mathrm{d}x-y\mathrm{d}x$$
+1. 定义：若平面区域$$D$$上任一**封闭**曲线皆可不经过$$D$$以外的点儿连续收缩于属于$$D$$的某一点，则称此平面区域为单连通区域，否则称为复连通区域（WTF这又是平面几何的定义方法）
+1. 定理21.12：设$$D$$是单连通区域，若函数$$P(x,y),Q(x,y)$$在$$D$$内连续且具有一阶连续偏导数，则以下四个条件等价：
+   - 沿$$D$$内任一按段光滑封闭曲线$$L$$有$$\oint_l P\mathrm{d}x+Q\mathrm{d}y=0$$ 
+   - 对$$D$$中任一按段光滑曲线$$L$$，曲线积分$$\int_L P\mathrm{d}x+Q\mathrm{d}y$$与路线无关，只与$$L$$的起点及终点有关 
+   - $$P\mathrm{d}x+Q\mathrm{d}y$$是$$D$$内某一函数$$u(x,y)$$的全微分，即在$$D$$内有$$\mathrm{d}u=P\mathrm{d}x+Q\mathrm{d}y$$
+   - 在$$D$$内处处成立$$\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$$
 
-到pdf新版244页
+   证明：第一点到第二点显然。第二点到第三点：设$$A(x_0,y_0)$$为$$D$$内某一定点，$$B(x,y)$$为$$D$$内任意一点，令$$u(x,y)=\int_{AB}P\mathrm{d}x+Q\mathrm{d}y$$，根据第二点证得$$\frac{\partial u}{\partial x}=P(x,y)$$和$$\frac{\partial u}{\partial y}=Q(x,y)$$，于是有$$\mathrm{d}u=P\mathrm{d}x+Q\mathrm{d}y$$。第三点到第四点：由定理17.7可证$$\frac{\partial P}{\partial y}=\frac{\partial^2 u}{\partial x\partial y}=\frac{\partial^2 u}{\partial y\partial x}=\frac{\partial Q}{\partial x}$$。第四点到第一点直接由格林公式可得。思考：“单连通区域”这个条件哪里用到了？
+
+到pdf新版253页
 
 # 第二十二章 曲面积分
 
