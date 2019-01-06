@@ -95,6 +95,8 @@ $$ a = b $$
 
 $$ \Large a = b $$
 
+$$\mathop{\underset{\mmlToken{mo}{⎵}}{78\,255\,300,00}}\limits_{10\text{zählende Ziffern}}$$
+
 For more info:
 - <https://jekyllrb.com/docs/extras/>
 - <http://www.gastonsanchez.com/visually-enforced/opinion/2014/02/16/Mathjax-with-jekyll/>
