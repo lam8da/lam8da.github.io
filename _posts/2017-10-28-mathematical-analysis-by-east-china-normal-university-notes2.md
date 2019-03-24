@@ -440,7 +440,9 @@ f(\xi_i,\eta_i)\Delta\sigma_i$$为函数$$f(x,y)$$在$$D$$上属于分割$$T$$�
    - 参考[格林公式的几何意义是什么？ - 马同学的回答 - 知乎](https://www.zhihu.com/question/22674439/answer/185939984)
    - 一个精辟的观察是：任意的路径边界上的功，等于路径围成的区域内的所有微分矩形（即把该区域按照网格切分称很多小区域）的边界上的功之和
    - 感觉有点异曲同工：就像牛顿莱布尼兹公式中定积分值和两端值有关，格林公式中区域二重积分和边界曲线积分有关。知乎上说“其实这些都是流形上的斯托克斯公式”？
-1. 在格林公式中，令$$P=-y,Q=x$$则得到一个计算平面区域$$D$$的面积公式$$S_D=\iint_D \mathrm{d}\sigma=\frac{1}{2}\oint_L x\mathrm{d}x-y\mathrm{d}x$$
+1. 在格林公式中，令$$P=-y,Q=x$$则得到一个计算平面区域$$D$$的面积公式$$S_D=\iint_D \mathrm{d}\sigma=\frac{1}{2}\oint_L x\mathrm{d}y-y\mathrm{d}x$$。或者令$$Q=x,P=0$$也得到$$S_D=\iint_D\mathrm{d}\sigma=\oint_L x\mathrm{d}y$$。这就表示$$-\oint_L y\mathrm{d}x=\oint_L x\mathrm{d}y$$即$$\oint_L x\mathrm{d}y+y\mathrm{d}x=0$$
+   > 怎么理解？
+     {: .lambda_question}
 1. 定义：若平面区域$$D$$上任一**封闭**曲线皆可不经过$$D$$以外的点儿连续收缩于属于$$D$$的某一点，则称此平面区域为单连通区域，否则称为复连通区域（WTF这又是平面几何的定义方法）
 1. 定理21.12：设$$D$$是单连通区域，若函数$$P(x,y),Q(x,y)$$在$$D$$内连续且具有一阶连续偏导数，则以下四个条件等价：
    - 沿$$D$$内任一按段光滑封闭曲线$$L$$有$$\oint_l P\mathrm{d}x+Q\mathrm{d}y=0$$ 
