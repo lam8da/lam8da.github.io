@@ -15,7 +15,6 @@ tags:
 * TOC
 {:toc}
 
-
 # Convolutional Neural Networks (by Andrew Ng)
 
 - 视频链接在[这里](https://www.youtube.com/playlist?list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF)
@@ -43,3 +42,19 @@ tags:
   - Neural Style Transfer的关键就是定义一个cost function，由两部分组成：content cost和style cost。content cost评价结果图片和content image的“相似”程度，style cost评价结果哦图片和style image的style的“相似”程度。
   - 计算这两种cost的方法都是：选择某个层，对content/style input image和结果图片分别计算该层的输出，然后在该层上定义content/style的相似性，然后对所有层的content/style相似性加权求和便得到最终的content/style相似性。唯一的区别是content/style的相似性的定义：对于content相似性直接用对应层的值求差和平方和即可，对于style相似性要先计算该层上C个channel间的correlation得到一个CxC的矩阵然后再用两个图片的这个矩阵求差和平方和得到（为啥是这样呢？correlation可以这样理解：correlate的意思是，对应于两个不同channel的两个特征要么同时出现要么同时不出现）
   - 对于每层在最终相似性中的权重，可以通过第一步的visualization得到一些sense。
+
+# 我对计算机视觉的一些理解
+
+- 拿灰度图像来说，如果用0-255来编码一个灰度图像，很自然我们用0表示黑255表示白，数值越大越接近白，越小越接近黑
+- 为什么不能吧顺序打乱？例如0表示浅灰，100表示白，200表示黑，255表示深灰色等等？
+- 原因是这种编码表示必须满足一个特性：如果我们肉眼看到两个灰度很接近，那么这两个灰度在编码上的表示也应该很“接近”
+- 怎么定义“接近”？这里用的是差值：差值越小越相似
+- 那我可不可以用其他相似性定义？我觉得可以，只要这种定义满足线性关系（例如a和b比a和c更相似，那么a和b的相似性的数学表示应该在值上和a和c的相似值满足某种全序关系。问：可以是偏序吗？）但是除了正常的线性编码外（例如0表示黑255表示白或者反过来），这样的相似性定义应该很难找
+- 而两个图像相似是一个至少是一个三元关系：颜色相似、形状相似且大小相似。所以我对视觉计算的理解就是如何定义、计算并处理这些相似性。
+- 这就决定了为什么convolution用的是乘法和加法：待续。。。
+
+# 其他资源
+
+- [MSRA计算机视觉的修炼秘笈](https://www.msra.cn/zh-cn/news/features/book-recommendation-cv)
+- [计算机视觉入门书](https://www.zhihu.com/question/28813777)
+- [科学空间](https://kexue.fm/)
