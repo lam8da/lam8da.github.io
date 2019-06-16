@@ -10,4 +10,4 @@ tags:
     - 网络
 ---
 
-![strategy]({{ site.url }}/assets/2012-10-21-tcp-ip-protocol-suite-diagram.network-multiplex.png)
+![strategy]({{ site.url }}/assets/2012-10-21-tcp-ip-protocol-suite-diagram/network-multiplex.png)
