@@ -103,6 +103,7 @@ For more info:
 - <http://haixing-hu.github.io/programming/2013/09/20/how-to-use-mathjax-in-jekyll-generated-github-pages/>
 - <https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference>
 - <http://latex.wikia.com/wiki/List_of_LaTeX_symbols>
+- <http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm>
 
 # Tables
 

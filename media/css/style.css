@@ -107,7 +107,7 @@ blockquote p {
  */
 .content img {
   display: block;
-  margin: 4px auto;
+  margin: 4px auto;  /* 'auto' makes it middle-aligned */
   max-width: 550px;
 }
 #tag_cloud {

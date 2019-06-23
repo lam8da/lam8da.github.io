@@ -1,2 +1,8 @@
 .DS_Store
 _site/
+assets/2019-04-22-compiler-principles-notes/*.aux
+assets/2019-04-22-compiler-principles-notes/*.fdb_latexmk
+assets/2019-04-22-compiler-principles-notes/*.fls
+assets/2019-04-22-compiler-principles-notes/*.log
+assets/2019-04-22-compiler-principles-notes/*.synctex.gz
+assets/2019-04-22-compiler-principles-notes/*.xdv

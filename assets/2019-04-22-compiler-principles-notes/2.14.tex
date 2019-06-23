@@ -1,0 +1,50 @@
+\documentclass[varwidth=\maxdimen]{standalone}
+
+\usepackage{url}
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont{Songti SC} % 设置中文字体。如果设为非宋体，也会影响英文字体。
+\XeTeXlinebreaklocale "zh"
+% \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt %文章内中文自动换行，可以自行调节
+
+% Use \usepackage[noend]{algpseudocode} if you don't want the ending clause.
+\usepackage{algpseudocode}
+\algnewcommand{\LineComment}[1]{\State \(\triangleright\) #1}
+\newcommand{\LeftComment}[1]{$\quad\triangleright$ #1}
+
+\begin{document}
+
+\begin{algorithmic}[1]
+  \Procedure{$NextWord$}{$ $}
+  \State $state \gets s_0$
+  \State $lexeme \gets ''$
+  \State $clear(stack)$
+  \State $push(bad)$
+  \While{$state\not=s_e$}
+    \State $NextChar(char)$
+    \State $lexeme \gets lexeme+char$
+    \If{$state\in S_A$}
+      \LineComment{一旦到达一个可接受状态就清除所有之前的状态（包括所有bad状态），}
+      \LineComment{所以这是匹配最长的串}
+      \State $clear(stack)$
+    \EndIf
+    \State $push(state)$ \LeftComment{这也可能是一个bad状态}
+    \State $cat \gets CharCat[char]$
+    \State $state \gets \delta[state,cat]$
+  \EndWhile
+  \LineComment{如果状态是bad，因为匹配的是最长的串，所以就算之前有一个可接受状态，}
+  \LineComment{但只要在到达$s_e$前到达bad，bad状态也会被记录且起作用}
+  \While{$state \notin S_A$ and $state \not=bad$}
+    \State $state \gets pop()$
+    \State $truncate(lexeme)$
+    \State $RollBack()$
+  \EndWhile
+  \If{$state\in S_A$}
+    \State \textbf{return} $Type[state]$
+  \Else
+    \State \textbf{return} $invalid$
+  \EndIf
+  \EndProcedure
+\end{algorithmic}
+
+\end{document}
