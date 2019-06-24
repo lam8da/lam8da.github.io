@@ -1,0 +1,66 @@
+% See https://tex.stackexchange.com/questions/94391/standalone-varwidth-option-limits-output-width
+\documentclass[varwidth=\maxdimen]{standalone}
+
+\usepackage{url}
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont{Songti SC} % 设置中文字体。如果设为非宋体，也会影响英文字体。
+\XeTeXlinebreaklocale "zh"
+% \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt %文章内中文自动换行，可以自行调节
+
+% Use \usepackage[noend]{algpseudocode} if you don't want the ending clause.
+\usepackage{algpseudocode}
+\algnewcommand{\LineComment}[1]{\State \(\triangleright\) #1}
+\algnewcommand{\StateReturn}{\State \textbf{return} }
+\algnewcommand{\Break}{\State \textbf{break} }
+\newcommand{\LeftComment}[1]{$\quad\triangleright$ #1}
+
+\begin{document}
+
+\begin{algorithmic}[1] % The number tells where the line numbering should start
+  \Procedure{$NextWord$}{$ $}
+    \State $state \gets s_0$
+    \State $lexeme \gets ''$
+    \State $clear(stack)$
+    \State $push(\langle bad, bad\rangle)$
+    \While{$state \not=s_e$}
+      \State $NextChar(char)$
+      \State $InputPos \gets InputPos+1$
+      \State $lexeme \gets lexeme+char$
+      \If{$Failed[state,InputPos]$}
+        \Break
+      \EndIf
+      \If{$state\in S_A$}
+        \State $clear(stack)$
+      \EndIf
+      \State $push(\langle state, InputPos\rangle)$
+      \State $cat \gets CharCat[char]$
+      \State $state \gets \delta[state,cat]$
+    \EndWhile
+    
+    \While{$state\notin S_A$ and $state\not=bad$}
+      \State $Failed[state,InputPos] \gets true$
+      \State $\langle state, InputPos\rangle \gets pop()$
+      \State $truncate(lexeme)$
+      \State $RollBack()$
+    \EndWhile
+
+    \If{$state \in S_A$}
+      \StateReturn $TokenType[state]$
+    \Else
+      \StateReturn $bad$
+    \EndIf
+    
+  \EndProcedure
+
+  \Procedure{$InitializeScanner$}{$ $}
+    \State $InputPos \gets 0$
+    \For{\textbf{each} state $s$ in the DFA}
+      \For{$i=0$ to $\vert input\ stream\vert$}
+        \State $Failed[s,i] \gets false$
+      \EndFor
+    \EndFor
+  \EndProcedure
+\end{algorithmic}
+
+\end{document}

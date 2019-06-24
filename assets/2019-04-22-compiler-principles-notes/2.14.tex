@@ -10,6 +10,7 @@
 % Use \usepackage[noend]{algpseudocode} if you don't want the ending clause.
 \usepackage{algpseudocode}
 \algnewcommand{\LineComment}[1]{\State \(\triangleright\) #1}
+\algnewcommand{\StateReturn}{\State \textbf{return} }
 \newcommand{\LeftComment}[1]{$\quad\triangleright$ #1}
 
 \begin{document}
@@ -40,9 +41,9 @@
     \State $RollBack()$
   \EndWhile
   \If{$state\in S_A$}
-    \State \textbf{return} $Type[state]$
+    \StateReturn $Type[state]$
   \Else
-    \State \textbf{return} $invalid$
+    \StateReturn $invalid$
   \EndIf
   \EndProcedure
 \end{algorithmic}

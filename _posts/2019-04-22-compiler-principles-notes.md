@@ -26,8 +26,11 @@ tags:
   > 如何证明正确性？
     {: .lambda_question}
 - RE实现词法分析器
-  - 基本算法
+  - 识别token的基本算法
     <img src="{{ site.url }}/assets/2019-04-22-compiler-principles-notes/2.14.png" alt="2.14" style="margin: 4px">
+  - 上述算法会导致平方级别的回滚调用。考虑正则表达式$$ab\vert(ab)\ast
+    c$$，对于串$$abababab$$会导致平方级别回滚，因为在读到终结符前都不会到达$$s_e$$。下面改进的算法通过保存额外的失败信息可以避免这个问题：
+    <img src="{{ site.url }}/assets/2019-04-22-compiler-principles-notes/2.15.png" alt="2.15" style="margin: 4px">
 
 # 参考
 
