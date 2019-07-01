@@ -18,7 +18,7 @@
 \begin{document}
 
 \begin{algorithmic}[1] % The number tells where the line numbering should start
-  \Procedure{$NextWord$}{$ $}
+  \Function{$NextWord$}{$ $}
     \State $state \gets s_0$
     \State $lexeme \gets ''$
     \State $clear(stack)$
@@ -28,7 +28,7 @@
       \State $InputPos \gets InputPos+1$
       \State $lexeme \gets lexeme+char$
       \If{$Failed[state,InputPos]$}
-        \Break
+        \Break \LeftComment{尽早结束，避免平方回滚}
       \EndIf
       \If{$state\in S_A$}
         \State $clear(stack)$
@@ -51,16 +51,18 @@
       \StateReturn $bad$
     \EndIf
     
-  \EndProcedure
+  \EndFunction
 
-  \Procedure{$InitializeScanner$}{$ $}
+  \State
+
+  \Function{$InitializeScanner$}{$ $}
     \State $InputPos \gets 0$
     \For{\textbf{each} state $s$ in the DFA}
       \For{$i=0$ to $\vert input\ stream\vert$}
         \State $Failed[s,i] \gets false$
       \EndFor
     \EndFor
-  \EndProcedure
+  \EndFunction
 \end{algorithmic}
 
 \end{document}
