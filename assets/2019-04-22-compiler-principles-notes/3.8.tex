@@ -1,0 +1,45 @@
+% See https://tex.stackexchange.com/questions/94391/standalone-varwidth-option-limits-output-width
+\documentclass[varwidth=\maxdimen]{standalone}
+
+\usepackage{url}
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont{Songti SC} % 设置中文字体。如果设为非宋体，也会影响英文字体。
+\XeTeXlinebreaklocale "zh"
+% \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt %文章内中文自动换行，可以自行调节
+
+% Use \usepackage[noend]{algpseudocode} if you don't want the ending clause.
+\usepackage{algpseudocode}
+\algnewcommand{\LineComment}[1]{\State \(\triangleright\) #1}
+\algnewcommand{\StateReturn}{\State \textbf{return} }
+\newcommand{\LeftComment}[1]{$\quad\triangleright$ #1}
+% To define a new start/end structure:
+% \algdef{SE}{PreLoop}{EndPreLoop}[1]{\textbf{preloop} \(\mbox{#1}\) \textbf{do}}{\textbf{end}}%
+
+\begin{document}
+
+\begin{algorithmic}[1] % The number tells where the line numbering should start
+  \For{\textbf{each} $A\in NT$}
+    \State $FOLLOW(A) \gets \emptyset$
+  \EndFor
+  \State $FOLLOW(S) \gets \{eof\}$  \LeftComment{$S$是什么？}
+  \While{$FOLLOW$ sets are still changing}
+    \For{\textbf{each} $p\in P$ of the form $A\to\beta_1\beta_2\cdots\beta_k$}
+      \State $TRAILER \gets FOLLOW(A)$
+      \For{$i \gets k$ down to $1$}
+        \If{$\beta_i\in NT$}
+          \State $FOLLOW(\beta_i) \gets FOLLOW(\beta_i)\cup TRAILER$
+          \If{$\epsilon\in FIRST(\beta_i)$}
+            \State $TRAILER \gets TRAILER\cup(FIRST(\beta_i)-\epsilon)$
+          \Else
+            \State $TRAILER \gets FIRST(\beta_i)$
+          \EndIf
+        \Else
+          \State $TRAILER \gets FIRST(\beta_i)$
+        \EndIf
+      \EndFor
+    \EndFor
+  \EndWhile
+\end{algorithmic}
+
+\end{document}

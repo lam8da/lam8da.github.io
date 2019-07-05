@@ -1,0 +1,46 @@
+% See https://tex.stackexchange.com/questions/94391/standalone-varwidth-option-limits-output-width
+\documentclass[varwidth=\maxdimen]{standalone}
+
+\usepackage{url}
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont{Songti SC} % 设置中文字体。如果设为非宋体，也会影响英文字体。
+\XeTeXlinebreaklocale "zh"
+% \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt %文章内中文自动换行，可以自行调节
+
+% Use \usepackage[noend]{algpseudocode} if you don't want the ending clause.
+\usepackage{algpseudocode}
+\algnewcommand{\LineComment}[1]{\State \(\triangleright\) #1}
+\algnewcommand{\StateReturn}{\State \textbf{return} }
+\newcommand{\LeftComment}[1]{$\quad\triangleright$ #1}
+% To define a new start/end structure:
+% \algdef{SE}{PreLoop}{EndPreLoop}[1]{\textbf{preloop} \(\mbox{#1}\) \textbf{do}}{\textbf{end}}%
+
+\begin{document}
+
+\begin{algorithmic}[1] % The number tells where the line numbering should start
+  \For{\textbf{each} $\alpha\in (T\cup eof\cup \epsilon)$}
+    \State $FIRST(\alpha) \gets \alpha$
+  \EndFor
+  \For{\textbf{each} $A\in NT$}
+    \State $FIRST(A) \gets \emptyset$
+  \EndFor
+  \While{$FIRST$ sets are still changing}
+    \For{\textbf{each} $p\in P$, where $p$ has the form $A\to\beta$}
+      \If{$\beta$ is $\beta_1\beta_2\cdots\beta_k$, where $\beta_i\in T\cup NT$}
+        \State $rhs \gets FIRST(\beta_1)-\{\epsilon\}$
+        \State $i \gets 1$
+        \While{$\epsilon\in FIRST(\beta_i)$ and $i\le k-1$}
+          \State $rhs \gets rhs\cup(FIRST(\beta_{i+1}-\{\epsilon\})$
+          \State $i \gets i+1$
+        \EndWhile
+      \EndIf
+      \If{$i=k$ and $\epsilon\in FIRST(\beta_k)$}
+        \State $rhs \gets rhs\cup \{\epsilon\}$
+      \EndIf
+      \State $FIRST(A) \gets FIRST(A)\cup rhs$
+    \EndFor
+  \EndWhile
+\end{algorithmic}
+
+\end{document}

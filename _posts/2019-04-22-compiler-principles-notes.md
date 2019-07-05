@@ -70,7 +70,31 @@ tags:
 - 自顶向下语法分析器可能会无限循环（因为左递归）。很容易消除直接左递归（略），消除间接左递归的算法如下（将间接左递归转换为直接左递归，再重写直接左递归为右递归）：
   <img src="{{ site.url }}/assets/2019-04-22-compiler-principles-notes/3.6.png" alt="3.6" style="margin: 4px">
 - 解决了无限循环问题后还是有可能会回溯。可以利用一个简单修改来（尝试）避免回溯：在选择下一条产生式时，可以同时考虑当前关注的符号以及下一个输入符号（前瞻符号）。如果这样做后不需要回溯，就说该语法在前瞻一个符号时是无回溯的。形式化定义如下：
-  - $$FIRST(\alpha)$$定义为语法符号$$\alpha$$推导出的语句开头可能出现的终结符的集合。$$\epsilon$$和$$eof$$同时出现在$$FIRST$$的定义域和值域中。可以通过一个简单的不动点算法算出每个语法符号的$$FIRST$$集合
+  - $$FIRST(\alpha)$$定义为语法符号（可以为终结符$$T$$或非终结符$$NT$$）$$\alpha$$推导出的语句开头可能出现的终结符的集合。$$\epsilon$$和$$eof$$同时出现在$$FIRST$$的定义域和值域中。可以通过一个简单的不动点算法算出每个语法符号的$$FIRST$$集合，如下：
+    <img src="{{ site.url }}/assets/2019-04-22-compiler-principles-notes/3.7.png" alt="3.7" style="margin: 4px">
+  - 当前瞻符号不是任何其他备选产生式的$$FIRST$$集合的成员，且存在形如$$A\to\epsilon$$的产生式时，应该使用该$$\epsilon$$产生式。但为了区分合法输入和语法错误，语法分析器必须知道在应用了该产生式后哪些单词可能作为第一个符号出现。为此定义$$FOLLOW(\alpha)$$为紧跟非终结符$$\alpha$$导出的符号串之后的所有可能单词，计算方法如下：
+    <img src="{{ site.url }}/assets/2019-04-22-compiler-principles-notes/3.8.png" alt="3.8" style="margin: 4px">
+  - 为准确定义无回溯条件，对于产生式$$A\to\beta$$，定义其增强$$FIRST$$集$$FIRST^+$$，如下
+
+    $$
+    FIRST^+(A\to\beta)=\left\{
+    \begin{array}{l}
+    FIRST(\beta)\ \textbf{if}\ \epsilon\notin FIRST(\beta)\\
+    FIRST(\beta)\cup FOLLOW(A)\ \textbf{otherwise}
+    \end{array}
+    \right.
+    $$
+    
+    这样，一个语法是无回溯语法的充分条件是，对任何匹配多个产生式的非终结符$$A$$，$$A\to\beta_1\vert\beta_2\vert\cdots\beta_n$$，有
+
+    $$
+    FIRST^+(A\to\beta_i)\cap FIRST^+(A\to\beta_j)=\emptyset, \forall 1\le i,j\le
+    n, i\ne j
+    $$
+- 一个有回溯的语法有时可以通过提取左因子（left
+  factoring，即提取并隔离共同前缀的过程）将其变为无回溯语法
+- 有时候前瞻两个符号也可以解决回溯的问题，但是对于使用任意有限个前瞻符号的情况，都可以设计出一种语法，使得在给定数目的前瞻符号下不足以进行预测
+    
 
 # 参考
 
