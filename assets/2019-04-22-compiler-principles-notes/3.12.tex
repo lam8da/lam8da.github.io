@@ -19,27 +19,20 @@
 \begin{document}
 
 \begin{algorithmic}[1] % The number tells where the line numbering should start
-  \For{\textbf{each} $A\in NT$}
-    \State $FOLLOW(A) \gets \emptyset$
-  \EndFor
-  \State $FOLLOW(S) \gets \{eof\}$ \LeftComment{$S$是语法的起始符号（非终结符），表示$L(G)$中语句的集合}
-  \While{$FOLLOW$ sets are still changing}
-    \For{\textbf{each} $p\in P$ of the form $A\to\beta_1\beta_2\cdots\beta_k$}
-      \State $TRAILER \gets FOLLOW(A)$
-      \For{$i \gets k$ down to $1$}
-        \If{$\beta_i\in NT$}
-          \State $FOLLOW(\beta_i) \gets FOLLOW(\beta_i)\cup TRAILER$
-          \If{$\epsilon\in FIRST(\beta_i)$}
-            \State $TRAILER \gets TRAILER\cup(FIRST(\beta_i)-\epsilon)$
-          \Else
-            \State $TRAILER \gets FIRST(\beta_i)$
-          \EndIf
-        \Else
-          \State $TRAILER \gets FIRST(\beta_i)$
-        \EndIf
-      \EndFor
+  \State build $FIRST$, $FOLLOW$, and $FIRST^+$ sets
+  \For{\textbf{each} nonterminal $A$}
+    \For{\textbf{each} terminal $w$}
+      \State $Table[A,w] \gets error$
     \EndFor
-  \EndWhile
+    \For{\textbf{each} production $p$ of the form $A\to\beta$}
+      \For{\textbf{each} terminal $w\in FIRST^+(A\to\beta)$}
+        \State $Table[A,w] \gets p$
+      \EndFor
+      \If{$eof\in FIRST^+(A\to\beta)$}
+        \State $Table[A,eof] \gets p$
+      \EndIf
+    \EndFor
+  \EndFor
 \end{algorithmic}
 
 \end{document}
