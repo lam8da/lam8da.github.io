@@ -1,0 +1,34 @@
+% See https://tex.stackexchange.com/questions/94391/standalone-varwidth-option-limits-output-width
+\documentclass[varwidth=\maxdimen]{standalone}
+
+\usepackage{url}
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont{Songti SC} % 设置中文字体。如果设为非宋体，也会影响英文字体。
+\XeTeXlinebreaklocale "zh"
+% \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt %文章内中文自动换行，可以自行调节
+
+% Use \usepackage[noend]{algpseudocode} if you don't want the ending clause.
+\usepackage{algpseudocode}
+\algnewcommand{\LineComment}[1]{\State \(\triangleright\) #1}
+\algnewcommand{\StateReturn}{\State \textbf{return} }
+\newcommand{\LeftComment}[1]{$\quad\triangleright$ #1}
+% To define a new start/end structure:
+% \algdef{SE}{PreLoop}{EndPreLoop}[1]{\textbf{preloop} \(\mbox{#1}\) \textbf{do}}{\textbf{end}}%
+\algdef{SE}{LoopForever}{EndLoopForever}{\textbf{loop forever}}{\textbf{end}}%
+
+\begin{document}
+
+\begin{algorithmic}[1] % The number tells where the line numbering should start
+  \Function{$goto$}{$s,x$}  \LeftComment{$s$是一个LR(1)项集，$s$为一个语法符号}
+    \State $moved \gets \emptyset$
+    \For{\textbf{each} LR(1) item $i\in s$}
+      \If{the form of $i$ is $[\alpha\to\beta\cdot x\delta,a]$}
+        \State $moved \gets moved\cup\{[\alpha\to\beta x\cdot\delta,a]\}$
+      \EndIf
+    \EndFor
+    \StateReturn $closure(moved)$
+  \EndFunction
+\end{algorithmic}
+
+\end{document}

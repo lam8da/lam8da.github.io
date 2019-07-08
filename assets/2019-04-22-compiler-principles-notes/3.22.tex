@@ -1,0 +1,39 @@
+% See https://tex.stackexchange.com/questions/94391/standalone-varwidth-option-limits-output-width
+\documentclass[varwidth=\maxdimen]{standalone}
+
+\usepackage{url}
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont{Songti SC} % 设置中文字体。如果设为非宋体，也会影响英文字体。
+\XeTeXlinebreaklocale "zh"
+% \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt %文章内中文自动换行，可以自行调节
+
+% Use \usepackage[noend]{algpseudocode} if you don't want the ending clause.
+\usepackage{algpseudocode}
+\algnewcommand{\LineComment}[1]{\State \(\triangleright\) #1}
+\algnewcommand{\StateReturn}{\State \textbf{return} }
+\newcommand{\LeftComment}[1]{$\quad\triangleright$ #1}
+% To define a new start/end structure:
+% \algdef{SE}{PreLoop}{EndPreLoop}[1]{\textbf{preloop} \(\mbox{#1}\) \textbf{do}}{\textbf{end}}%
+\algdef{SE}{LoopForever}{EndLoopForever}{\textbf{loop forever}}{\textbf{end}}%
+
+\begin{document}
+
+\begin{algorithmic}[1] % The number tells where the line numbering should start
+  \State $CC_0 \gets closure(\{[S'\to \cdot S,eof]\})$
+  \State $CC \gets \{CC_0\}$
+  \While{new sets are still being added to $CC$}
+    \For{\textbf{each} unmarked set $CC_i\in CC$}
+      \State mark $CC_i$ as processed
+      \For{\textbf{each} $x$ following a $\cdot$ in an LR(1) item in $CC_i$}
+        \State $temp \gets goto(CC_i,x)$
+        \If{$temp\notin CC$}
+          \State $CC \gets CC\cup\{temp\}$
+        \EndIf
+        \State record transition from $CC_i$ to $temp$ on $x$
+      \EndFor
+    \EndFor
+  \EndWhile
+\end{algorithmic}
+
+\end{document}

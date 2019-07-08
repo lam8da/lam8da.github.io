@@ -126,7 +126,19 @@ tags:
   - 增加的前瞻符号并不能增大LR语法分析器可以识别的语言集合。对于$$k>1$$，LR(1)语法分析器与LR(k)语法分析器接受的语言集合是相同的。但是，同一语言的LR(1)语法可能比LR(k)语法更复杂。
 - LR(1)算法：
   <img src="{{ site.url }}/assets/2019-04-22-compiler-principles-notes/3.15.png" alt="3.15" style="margin: 4px; max-width: 5500px">
-- LR(1)项：
+- 构建$$Action$$表和$$Goto$$表
+  - LR(1)项：形如$$[A\to\beta\cdot\gamma,a]$$，其中$$A\to\beta\gamma$$是一个产生式，$$\cdot$$表示语法分析器栈顶的位置，而$$a$$是语法中的一个终结符。这个项表示，语法分析器已经从$$[A\to\cdot\beta\gamma,a]$$（另一个LR(1)项）前进了一步（识别了$$\beta$$），如果输入确实能归约到$$A$$，下一步将要识别出$$\gamma$$；而这里$$a$$表示，$$A$$后接$$a$$是符合语法的，即如果在识别了$$\gamma$$后前瞻符号为$$a$$，语法分析器可以将$$\beta\gamma$$归约到$$A$$。
+  - 为简化任务，要求语法有一个唯一的目标符号（非终结符），该符号不会出现在任一产生式的右侧。设该符号为$$S'$$，则$$\{[S'\to S, eof]\}$$形成了LR(1)项集的规范族CC的第一个状态$$CC_0$$的核心项集。下面的闭包运算可以根据此核心项集计算出$$CC_0$$的完备项集。
+  - LR(1)项集合的两个基本运算：
+    - 闭包运算：
+      <img src="{{ site.url }}/assets/2019-04-22-compiler-principles-notes/3.20.png" alt="3.20" style="margin: 4px; max-width: 5500px">
+    - goto过程实现了语法分析器根据当前状态和某个语法符号进行的转移过程。
+      <img src="{{ site.url }}/assets/2019-04-22-compiler-principles-notes/3.21.png" alt="3.21" style="margin: 4px; max-width: 5500px">
+  - 构建LR(1)项集的规范族CC：
+    <img src="{{ site.url }}/assets/2019-04-22-compiler-principles-notes/3.22.png" alt="3.22" style="margin: 4px; max-width: 5500px">
+  - 构建$$Action$$表和$$Goto$$表：
+    <img src="{{ site.url }}/assets/2019-04-22-compiler-principles-notes/3.24.png" alt="3.24" style="margin: 4px; max-width: 5500px">
+- 一些观察：LR(1)语法分析器的效率，来源于$$Action$$表和$$Goto$$表内蕴的快速句柄查找机制。规范族CC表示了一个句柄查找DFA（局病毒集合是有限的，因此句柄的语言是一种正则语言）
 
 # 参考
 

@@ -1,0 +1,36 @@
+% See https://tex.stackexchange.com/questions/94391/standalone-varwidth-option-limits-output-width
+\documentclass[varwidth=\maxdimen]{standalone}
+
+\usepackage{url}
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont{Songti SC} % 设置中文字体。如果设为非宋体，也会影响英文字体。
+\XeTeXlinebreaklocale "zh"
+% \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt %文章内中文自动换行，可以自行调节
+
+% Use \usepackage[noend]{algpseudocode} if you don't want the ending clause.
+\usepackage{algpseudocode}
+\algnewcommand{\LineComment}[1]{\State \(\triangleright\) #1}
+\algnewcommand{\StateReturn}{\State \textbf{return} }
+\newcommand{\LeftComment}[1]{$\quad\triangleright$ #1}
+% To define a new start/end structure:
+% \algdef{SE}{PreLoop}{EndPreLoop}[1]{\textbf{preloop} \(\mbox{#1}\) \textbf{do}}{\textbf{end}}%
+\algdef{SE}{LoopForever}{EndLoopForever}{\textbf{loop forever}}{\textbf{end}}%
+
+\begin{document}
+
+\begin{algorithmic}[1] % The number tells where the line numbering should start
+  \Function{$closure$}{$s$}
+    \While{$s$ is still changing}
+      \For{\textbf{each} LR(1) item $[A\to\beta\cdot C\delta,a]\in s$}
+        \For{\textbf{each} production $C\to\gamma\in P$}
+          \For{\textbf{each} $b\in FIRST(\delta a)$}
+            \State $s \gets s\cup\{[C\to\cdot\gamma,b]\}$
+          \EndFor
+        \EndFor
+      \EndFor
+    \EndWhile
+  \EndFunction
+\end{algorithmic}
+
+\end{document}
