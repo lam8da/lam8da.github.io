@@ -518,7 +518,7 @@ f(\xi_i,\eta_i)\Delta\sigma_i$$为函数$$f(x,y)$$在$$D$$上属于分割$$T$$�
    0\le r\lt+\infty,0\le\theta\le 2\pi
    \right.
    $$
-   
+
    下，$$xy$$平面上有界闭区域$$D$$与$$r\theta$$平面上区域$$\Delta$$对应（注意这里说的是$$r\theta$$平面，在该平面上$$r$$和$$\theta$$是坐标轴，建的是直角坐标系；而不是说把$$xy$$直角坐标系变为极坐标系），则有：
 
    $$
@@ -592,7 +592,7 @@ f(\xi_i,\eta_i)\Delta\sigma_i$$为函数$$f(x,y)$$在$$D$$上属于分割$$T$$�
 1. 求质心。设$$V$$是密度函数为$$\rho(x,y,z)$$的空间物体，$$\rho(x,y,z)$$在$$V$$上连续。对该物体细分，根据质点系质心坐标公式
 
    $$
-   \overline{x_n}\frac{\sum_{i=1}^{n}\xi_i\rho(\xi_i,\eta_i,\zeta_i)\Delta v_i}{\sum_{i=1}^{n}\rho(\xi_i,\eta_i,\zeta_i)\Delta v_i}
+   \overline{x_n}=\frac{\sum_{i=1}^{n}\xi_i\rho(\xi_i,\eta_i,\zeta_i)\Delta v_i}{\sum_{i=1}^{n}\rho(\xi_i,\eta_i,\zeta_i)\Delta v_i}
    $$
 
    取极限得：
@@ -615,8 +615,76 @@ f(\xi_i,\eta_i)\Delta\sigma_i$$为函数$$f(x,y)$$在$$D$$上属于分割$$T$$�
    $$
 
    ，类似可求二维的情况。
+1. 求引力。密度为$$\rho(x,y,z)$$的立体对立体外质量为1的质点A的引力在$$x$$轴上的投影为：$$\mathrm{d}F_x=k\frac{x-\xi}{r^3}\rho\mathrm{d}V$$，对其他轴的投影类似。
 
-到pdf新版280页
+## n重积分
+
+1. 例子：求两个物体之间的引力问题是一个6重积分：
+
+   $$
+   \overbrace{\idotsint\limits_V}^{6\text{ times}}\frac{\rho_1(x_{1},y_{1},z_{1})\rho_2(x_2,y_2,z_2)(x_{1}-x_{2})}{r^3}\mathrm{d}x_{1}\mathrm{d}y_1\mathrm{d}z_1\mathrm{d}x_2\mathrm{d}y_2\mathrm{d}z_2
+   $$
+
+1. 和二重积分类似，n重积分
+
+   $$
+   I=\overbrace{\idotsint\limits_V}^{n\text{ times}}f(x_{1},x_{2},\cdots,x_{n})\mathrm{d}x_1\cdots\mathrm{d}x_n
+   $$
+
+   的性质有：
+   - 若$$f(x_1,\cdots,x_n)$$在$$n$$维有界闭域$$V$$上连续，则$$n$$重积分$$I$$存在
+   - 当$$V$$由不等式组$$a_1\le x_1\le b_1,a_2(x_1)\le x_2\le b_2(x_1),\cdots,a_n(x_1,\cdots,x_{n-1})\le x_n\le b_n(x_1,\cdots,x_{n-1})$$表示时，有
+
+     $$
+     I=\int_{a_1}^{b_1}\mathrm{d}x_1 \int_{a_(x_1)}^{b_2(x_1)}\mathrm{d}x_2 \cdots \int_{a_n(x_1,\cdots,x_{n-1})}^{b_n(x_1,\cdots,x_{n-1})} f(x_1,\cdots,x_n) \mathrm{d}x_n
+     $$
+
+1. 设变换$$T:x_i=x_i(\xi_1,\xi_2,\cdots,\xi_n),1\le i\le n$$把$$n$$维$$\xi_1\xi_2\cdots\xi_n$$空间区域$$V'$$一对一地映射成$$n$$维$$x_1x_2\cdots x_n$$空间中的区域$$V$$，且在$$V'$$上函数行列式$$J=\frac{\partial(x_1,\cdots,x_n)}{\partial(\xi_1,\cdots\xi_n)}$$恒不为零，则成立下列换元公式：
+
+   $$
+   I=\overbrace{\idotsint\limits_V}^{n\text{ times}}
+   f(x_1(\xi_1,\cdots,\xi_n),x_2(\xi_1,\cdots,\xi_n),\cdots,x_n(\xi_1,\cdots,\xi_n)) \vert J \vert
+   \mathrm{d}\xi_1 \mathrm{d}\xi_2 \cdots \mathrm{d}\xi_n
+   $$
+
+1. 应用：$$n$$维单纯形$$T_n:x_1\ge0,x_2\ge0,\cdots,x_n\ge0,x_1+x_2+\cdots+x_n\le h$$的体积为
+
+   $$
+   \Delta T_n=\frac{h^n}{n!}
+   $$
+
+1. 应用：$$n$$维球体$$V_n:x_1^2+x_2^2+\cdots+x_n^2\le R^2$$的体积为
+
+   $$
+   \Delta V_n=\left\{
+   \begin{array}{l}
+     \frac{R^{2m}}{m!}\pi^m,&n=2m,\\
+     \frac{2R^{2m+1}(2\pi)^m}{(2m+1)!!},&n=2m+1
+   \end{array}
+   \right.
+   $$
+
+   其中$$n!!=\prod_{k=0}^{\lceil\frac{n}{2}-1\rceil}(n-2k)=n(n-1)(n-4)\cdots$$
+1. 应用：$$n$$维空间中的曲面$$x_n=f(x_1,\cdots,x_{n-1}),(x_1,\cdots,x_{n-1})\in\Delta\subset\mathbf{R^{n-1}}$$的面积为：
+
+   $$
+   \overbrace{\idotsint\limits_\Delta}^{n-1\text{ times}}
+   \sqrt{1+\big(\frac{\partial x_n}{\partial x_1}\big)^2+\cdots+\big(\frac{\partial x_n}{\partial x_{n-1}}\big)^2}
+   \mathrm{d}x_1 \cdots \mathrm{d}x_{n-1}
+   $$
+
+   据此可求得$$n$$维单位球面$$x_1^2+\cdots+x_n^2=1$$的面积为
+
+   $$
+   \Delta S_n=\left\{
+   \begin{array}{l}
+     \frac{2\pi^m}{(m-1)!},&n=2m,\\
+     \frac{2(2\pi)^m}{(2m-1)!!},&n=2m+1
+   \end{array}
+   \right.
+   $$
+
+到pdf新版287页
 
 # 第二十二章 曲面积分
 
