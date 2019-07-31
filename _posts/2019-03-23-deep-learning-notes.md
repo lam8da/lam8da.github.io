@@ -43,6 +43,28 @@ tags:
   - 计算这两种cost的方法都是：选择某个层，对content/style input image和结果图片分别计算该层的输出，然后在该层上定义content/style的相似性，然后对所有层的content/style相似性加权求和便得到最终的content/style相似性。唯一的区别是content/style的相似性的定义：对于content相似性直接用对应层的值求差和平方和即可，对于style相似性要先计算该层上C个channel间的correlation得到一个CxC的矩阵然后再用两个图片的这个矩阵求差和平方和得到（为啥是这样呢？correlation可以这样理解：correlate的意思是，对应于两个不同channel的两个特征要么同时出现要么同时不出现）
   - 对于每层在最终相似性中的权重，可以通过第一步的visualization得到一些sense。
 
+# Notes
+
+1. Terminologies
+   - CNN: convolutional neural network
+   - R-CNN: regional convolutional neural network
+   - FCN: fully convolutional networks
+   - RPN: region proposal network
+   - FPN: feature pyramid networks
+1. Faster R-CNN ([Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks](https://arxiv.org/abs/1506.01497))
+   - [从编程实现角度学习Faster R-CNN（附极简实现）](https://zhuanlan.zhihu.com/p/32404424)
+   - [一文读懂Faster RCNN](https://zhuanlan.zhihu.com/p/31426458)
+   - [图解Faster R-CNN简单流程](https://zhuanlan.zhihu.com/p/35481542)
+1. FCN ([Fully Convolutional Networks for Semantic Segmentation](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf))
+   - [精读深度学习论文(18) FCN - 清欢守护者的文章 - 知乎](https://zhuanlan.zhihu.com/p/35370022)
+   - [深度学习论文笔记（六）--- FCN 全连接网络](https://cloud.tencent.com/developer/article/1008418)
+   - 通常CNN网络在卷积层之后会接上若干个全连接层, 将卷积层产生的特征图(feature map)映射成一个固定长度的特征向量。以AlexNet为代表的经典CNN结构适合于图像级的分类和回归任务，因为它们最后都期望得到整个输入图像的一个数值描述（概率），比如AlexNet的ImageNet模型输出一个1000维的向量表示输入图像属于每一类的概率(softmax归一化)。而要做Semantic Segmentation（语义分割），希望能够直接输出一幅分割图像结果，所以就有了本篇FCN网络的提出。FCN将传统CNN中最后的全连接层转化成1x1xC卷积层，然后用conv2d_transpose来上采样。由于没有全连接层的存在，所以输入图像的尺寸要求并不固定了。这个原因是因为全连接层是一个矩阵乘法的操作，可以自己去想一想。而最后实现的是对每个像素点的分类预测，而能做到这样，是因为卷积层的输出的结果是datamap，而不是一个向量！经过反卷积后得到与原图一样大小的1000层heatmap，每一层代表一个类，然后观察每个位置的像素，在哪一层它这个点对应的值最大，就认为这个像素点属于这一层的类
+1. R-FCN ([R-FCN: Object Detection via Region-based Fully Convolutional Networks](https://arxiv.org/abs/1605.06409))
+   - [论文笔记 R-FCN: Object Detection via Region-based Fully Convolutional Networks](https://blog.csdn.net/u012905422/article/details/53242183)
+   - [深度学习目标检测模型全面综述：Faster R-CNN、R-FCN和SSD](https://zhuanlan.zhihu.com/p/29434605)
+   - 比Faster R-CNN更快，但是能达到差不多（精度稍微差一点）的效果。怎么做到的：Faster R-CNN对卷积层做了共享，但是经过RoI pooling后，却没有共享，例如如果一副图片有500个region proposal，那么就得分别进行500次卷积，这样就太浪费时间了。R-FCN的思路是，能不能把RoI后面的几层建立共享卷积，只对一个feature map进行一次卷积。但与Faster R-CNN相同，其最后的输出是object的分类和BB回归。我的理解是，两者都用了海量anchor来propose ROI，不同的是Faster R-CNN在propose之后要对修正后的每个anchor单独做Roi Pooling和分类，而R-FPN不用再用一个单独分类网络而是直接用计算好的score maps来pool一下再加个softmax就搞定
+   - [目标检测-R-FCN-论文笔记](https://arleyzhang.github.io/articles/7e6bc4a/) 这篇文章写的非常好，特别是说明了为什么简单的直接在ResNet上（出来单个feature map）接一个FCN用来做检测的方案不work（文中图6和图2的对比）而需要用$$k^2$$组feature map（成为score maps）。最后那个R-CNN/Faster R-CNN/R-FCN的直观比较的图很赞。
+
 # 我对计算机视觉的一些理解
 
 - 拿灰度图像来说，如果用0-255来编码一个灰度图像，很自然我们用0表示黑255表示白，数值越大越接近白，越小越接近黑
