@@ -58,12 +58,21 @@ tags:
 1. FCN ([Fully Convolutional Networks for Semantic Segmentation](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf))
    - [精读深度学习论文(18) FCN - 清欢守护者的文章 - 知乎](https://zhuanlan.zhihu.com/p/35370022)
    - [深度学习论文笔记（六）--- FCN 全连接网络](https://cloud.tencent.com/developer/article/1008418)
-   - 通常CNN网络在卷积层之后会接上若干个全连接层, 将卷积层产生的特征图(feature map)映射成一个固定长度的特征向量。以AlexNet为代表的经典CNN结构适合于图像级的分类和回归任务，因为它们最后都期望得到整个输入图像的一个数值描述（概率），比如AlexNet的ImageNet模型输出一个1000维的向量表示输入图像属于每一类的概率(softmax归一化)。而要做Semantic Segmentation（语义分割），希望能够直接输出一幅分割图像结果，所以就有了本篇FCN网络的提出。FCN将传统CNN中最后的全连接层转化成1x1xC卷积层，然后用conv2d_transpose来上采样。由于没有全连接层的存在，所以输入图像的尺寸要求并不固定了。这个原因是因为全连接层是一个矩阵乘法的操作，可以自己去想一想。而最后实现的是对每个像素点的分类预测，而能做到这样，是因为卷积层的输出的结果是datamap，而不是一个向量！经过反卷积后得到与原图一样大小的1000层heatmap，每一层代表一个类，然后观察每个位置的像素，在哪一层它这个点对应的值最大，就认为这个像素点属于这一层的类
+   - 是用来做semantic segmentation而不是object detection或者instance segmantation的。通常CNN网络在卷积层之后会接上若干个全连接层, 将卷积层产生的特征图(feature map)映射成一个固定长度的特征向量。以AlexNet为代表的经典CNN结构适合于图像级的分类和回归任务，因为它们最后都期望得到整个输入图像的一个数值描述（概率），比如AlexNet的ImageNet模型输出一个1000维的向量表示输入图像属于每一类的概率(softmax归一化)。而要做Semantic Segmentation（语义分割），希望能够直接输出一幅分割图像结果，所以就有了本篇FCN网络的提出。FCN将传统CNN中最后的全连接层转化成1x1xC卷积层，然后用conv2d_transpose来上采样。由于没有全连接层的存在，所以输入图像的尺寸要求并不固定了。这个原因是因为全连接层是一个矩阵乘法的操作，可以自己去想一想。而最后实现的是对每个像素点的分类预测，而能做到这样，是因为卷积层的输出的结果是datamap，而不是一个向量！经过反卷积后得到与原图一样大小的1000层heatmap，每一层代表一个类，然后观察每个位置的像素，在哪一层它这个点对应的值最大，就认为这个像素点属于这一层的类
 1. R-FCN ([R-FCN: Object Detection via Region-based Fully Convolutional Networks](https://arxiv.org/abs/1605.06409))
    - [论文笔记 R-FCN: Object Detection via Region-based Fully Convolutional Networks](https://blog.csdn.net/u012905422/article/details/53242183)
    - [深度学习目标检测模型全面综述：Faster R-CNN、R-FCN和SSD](https://zhuanlan.zhihu.com/p/29434605)
    - 比Faster R-CNN更快，但是能达到差不多（精度稍微差一点）的效果。怎么做到的：Faster R-CNN对卷积层做了共享，但是经过RoI pooling后，却没有共享，例如如果一副图片有500个region proposal，那么就得分别进行500次卷积，这样就太浪费时间了。R-FCN的思路是，能不能把RoI后面的几层建立共享卷积，只对一个feature map进行一次卷积。但与Faster R-CNN相同，其最后的输出是object的分类和BB回归。我的理解是，两者都用了海量anchor来propose ROI，不同的是Faster R-CNN在propose之后要对修正后的每个anchor单独做Roi Pooling和分类，而R-FPN不用再用一个单独分类网络而是直接用计算好的score maps来pool一下再加个softmax就搞定
    - [目标检测-R-FCN-论文笔记](https://arleyzhang.github.io/articles/7e6bc4a/) 这篇文章写的非常好，特别是说明了为什么简单的直接在ResNet上（出来单个feature map）接一个FCN用来做检测的方案不work（文中图6和图2的对比）而需要用$$k^2$$组feature map（成为score maps）。最后那个R-CNN/Faster R-CNN/R-FCN的直观比较的图很赞。
+1. U-Net ([U-Net: Convolutional Networks for Biomedical Image Segmentation](https://arxiv.org/abs/1505.04597))
+   - 和FCN类似，是用来做semantic segmentation而不是object detection或者instance segmantation的。
+   - [图像语义分割入门+FCN/U-Net网络解析](https://zhuanlan.zhihu.com/p/31428783)：与FCN逐点相加不同，U-Net采用将特征在channel维度拼接在一起，形成更“厚”的特征。所以语义分割网络在特征融合时也有2种办法：
+     - FCN式的逐点相加，对应tensorflow的tf.add()
+     - U-Net式的channel维度拼接融合，对应tensorflow的tf.concat()
+   - 总结一下，CNN图像语义分割也就基本上是这个套路：
+     - 下采样+上采样：Convolution + Deconvolution/Resize（Resize指的是类似于keras的UpSampling2d，只是resize而不做deconvolution）
+     - 多尺度特征融合：特征逐点相加/特征channel维度拼接
+     - 获得像素级别的segement map：对每一个像素点进行判断类别
 
 # 我对计算机视觉的一些理解
 
