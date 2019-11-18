@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 编译原理笔记
+title: 《编译器设计》笔记
 categories:
     - 编译原理
 tags:
