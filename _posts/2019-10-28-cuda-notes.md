@@ -139,6 +139,11 @@ for (int i = threadidx.x; i < imax; i += blockDim.x) {
 }
 ```
 
+## References:
+
+- [Performance Optimization](https://www.nvidia.com/docs/IO/116711/sc11-perf-optimization.pdf)
+- [GPU Optimization Fundamentals](https://www.olcf.ornl.gov/wp-content/uploads/2013/02/GPU_Opt_Fund-CW1.pdf)
+
 # Profiling
 
 - [Memory Transactions](https://docs.nvidia.com/gameworks/content/developertools/desktop/analysis/report/cudaexperiments/sourcelevel/memorytransactions.htm)
