@@ -27,9 +27,25 @@ tags:
   - 该线段两端点坐标为$$x=0$$和$$x=L$$
   - 分为$$N$$段，每段长度为$$h$$
   - 假设线段密度为$$\rho$$，根据牛顿第二定律，第$$n$$段所受作用力可以表示为$$\rho hy_{n}''(t)$$
-  - 设$$\tau>0$$为线段的张力系数（常数），第$$n$$段所受右边（左边类似）相邻段的张力和$$(y_{n+1}-y_{n})/h$$成正比，这样该段所受左右两边的张力和为$$\frac{\tau}{h}\{y_{n+1}(t)+y_{n-1}(t)-2y_{n}(t)\}$$。其中$$y_{n}(t)=u(x_{n},t)$$
-  - 联立上述两式得$$\rho hy_{n}''(t)=\frac{\tau}{h}\{y_{n+1}(t)+y_{n-1}(t)-2y_{n}(t)\}$$
-  - 令$$h\to0$$取极限有$$\rho\frac{\partial^{2}u}{\partial t^{2}}=\tau\frac{\partial^{2}u}{\partial x^{2}}$$。这就是one-dimentional wave equation
+  - 设$$\tau>0$$为线段的张力系数（常数），第$$n$$段所受右边（左边类似）相邻段的张力和$$(y_{n+1}-y_{n})/h$$成正比，这样该段所受左右两边的张力和为
+
+    $$
+    \frac{\tau}{h}\{y_{n+1}(t)+y_{n-1}(t)-2y_{n}(t)\}
+    $$
+
+    其中$$y_{n}(t)=u(x_{n},t)$$
+  - 联立上述两式得
+
+    $$
+    \rho hy_{n}''(t)=\frac{\tau}{h}\{y_{n+1}(t)+y_{n-1}(t)-2y_{n}(t)\}
+    $$
+  - 令$$h\to0$$取极限有
+
+    $$
+    \rho\frac{\partial^{2}u}{\partial t^{2}}=\tau\frac{\partial^{2}u}{\partial x^{2}}
+    $$
+
+    这就是one-dimentional wave equation
 - 求解上述wave equation的两种方法
   - 
   
