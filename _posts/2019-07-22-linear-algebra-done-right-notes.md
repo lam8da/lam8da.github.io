@@ -150,3 +150,63 @@ tags:
   - 当方程多于变量时，必有一组常数项使得相应的非齐次线性方程组无解。
 
 ## 线性映射的矩阵
+
+- 设$$T\in\mathcal{L}(V,W)$$，$$(\pmb{v}_{1},\cdots,\pmb{v}_{n})$$是$$V$$的基，$$\pmb{w}_{1},\cdots,\pmb{w}_{m}$$是$$W$$的基，那么对于每个$$k=1,\cdots,n$$，$$T\pmb{v}_{k}$$都可以唯一地写成这些$$\pmb{w}$$的线性组合：$$T\pmb{v}_{k}=a_{1,k}\pmb{w}_{1}+\cdots+a_{m,k}\pmb{w}_{m}$$，其中$$a_{j,k}\in\mathbf{F},j=1,\cdots,m$$。因为线性映射由其在基上的值确定，所以线性映射$$T$$由这些标量$$a_{j,k}$$完全确定。由这些$$a$$构成的$$m\times n$$矩阵：
+
+  $$
+  \left[
+  \begin{array}\\
+    a_{1,1}&\cdots&a_{1,n}\\
+    \vdots& &\vdots\\
+    a_{m,1}&\cdots&a_{m,n}
+  \end{array}
+  \right]
+  $$
+
+  称为$$T$$关于基$$(\pmb{v}_{1},\cdots,\pmb{v}_{n})$$和基$$(\pmb{w}_{1},\cdots,\pmb{w}_{m})$$的矩阵，记为$$\mathcal{M}(T,(\pmb{v}_{1},\cdots,\pmb{v}_{n}),(\pmb{w}_{1},\cdots,\pmb{w}_{m}))$$，或简记为$$\mathcal{M}(T)$$。为方便记忆可以把矩阵写成这样：
+
+  $$
+  \begin{array}{cc}
+    &
+    \begin{matrix}
+      \pmb{v}_{1} \cdots & \pmb{v}_{k} & \cdots \pmb{v}_{n} \\
+    \end{matrix} \\
+    \begin{matrix}
+      \pmb{w}_{1} \\
+      \vdots      \\
+      \pmb{w}_{m} \\
+    \end{matrix} &
+    \left[
+    \begin{array} \\
+      & & & a_{1,k} & & & \\
+      & & & \vdots  & & & \\
+      & & & a_{m,k} & & & \\
+    \end{array}
+    \right]
+  \end{array}
+  $$
+
+  即第k列就是$$T\pmb{v}_{k}$$用基$$(\pmb{w}_{1},\cdots,\pmb{w}_{m})$$表示时对应的系数。
+- 两个矩阵的和定义为对应元素的和。这个定义恰好使得$$\mathcal{M}(T+S)=\mathcal{M}(T)+\mathcal{M}(S)$$成立。
+- 矩阵的标量乘法定义为该标量乘以矩阵的每个元素。这个定义恰好使得$$\mathcal{M}(cT)=c\mathcal{M}(T)$$成立。
+- 用上述两个定义可以产生一个向量空间：元素在$$\mathbf{F}$$中的所有$$m\times n$$矩阵之集记为$$\text{Mat}(m,n,\mathbf{F})$$。用向量空间的定义可证。
+- 小结：到目前为止已涉及的向量空间的类型
+  - $$\mathbf{F}^{n}$$，其元素是元组$$(x_{1},\cdots,x_{n})$$
+  - $$\mathbf{F}^{n}$$到$$\mathbf{F}^{n}$$的线性映射的集合，其元素是单个线性映射
+  - 线性映射的矩阵的集合，其元素是矩阵
+    > 问：这个空间的元素和线性映射的空间的元素是一一对应的吗？
+      {: .lambda_question}
+
+
+# Helpers
+
+```
+a T in L(V,W): T\in\mathcal{L}(V,W)
+e      rangeT: \text{range}T
+f       nullT: \text{null}T
+u       u1-um: \pmb{u}_{1},\cdots,\pmb{u}_{m}
+v       v1-vn: \pmb{v}_{1},\cdots,\pmb{v}_{n}
+w       w1-wm: \pmb{w}_{1},\cdots,\pmb{w}_{m}
+
+```
+
