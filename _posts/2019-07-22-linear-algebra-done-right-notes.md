@@ -228,7 +228,16 @@ tags:
 - 习题24：设$$V$$是有限维的，并且$$T\in\mathcal{L}(V)$$，证明$$T$$是恒等映射的标量倍当且仅当对每个$$S\in\mathcal{L}(V)$$都有$$ST=TS$$。
   > 如何证明？
     {: .lambda_question}
-  
+
+# 第四章 多项式
+
+## 次数
+
+- 多项式：$$p(z)=a_{0}+a_{1}z+a_{2}z^{2}+\cdots+a_{m}z^{m},a_{m}\ne0$$，则$$m$$称为$$p$$的次数，记作$$\deg p$$。
+- 4.1命题：设$$p\in\mathcal{P}(\mathbf{F})$$是$$m\ge1$$次多项式。令$$\lambda\in\mathbf{F}$$，则$$\lambda$$是$$p$$的根当且仅当存在$$m-1$$次多项式$$q\in\mathcal{P}\mathbf{F}$$使得$$p(z)=(z-\lambda)q(z),z\in\mathbf{F}$$。
+  - 证明：<=是显然的。=>方向：由$$p(z)=p(z)-0=p(z)-p(\lambda)=(z-\lambda)(a_{1}+a_{2}q_{1}(z)+\cdots+a_{m}q_{m-1}(z))$$可得。
+- 4.3推论：设$$p\in\mathcal{P}(\mathbf{F})$$是$$m\ge0$$次多项式，则$$p$$在$$\mathbf{F}$$中最多由$$m$$个互不相同的根。证明：由4.1和数学归纳法易得。
+- 4.4推论：设$$a_{0},\cdots,a_{m}\in\mathbf{F}$$，如果$$a_{0}+a_{1}z+a_{2}z^{2}+\cdots+a_{m}z^{m}$$对$$z\in\mathbf{F}$$成立，则$$a_{0}=a_{1}=\cdots=a_{m}=0$$。证明：根据4.3，任何非负整数都不可能是这个多项式的次数，于是所有系数都等于0。
 
 # Helpers
 
@@ -236,6 +245,7 @@ tags:
 a T in L(V,W): T\in\mathcal{L}(V,W)
 e      rangeT: \text{range}T
 f       nullT: \text{null}T
+p            : p(z)=a_{0}+a_{1}z+a_{2}z^{2}+\cdots+a_{m}z^{m}
 u       u1-um: \pmb{u}_{1},\cdots,\pmb{u}_{m}
 v       v1-vn: \pmb{v}_{1},\cdots,\pmb{v}_{n}
 w       w1-wm: \pmb{w}_{1},\cdots,\pmb{w}_{m}
