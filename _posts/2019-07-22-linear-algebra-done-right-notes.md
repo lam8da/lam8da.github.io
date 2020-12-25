@@ -18,9 +18,18 @@ tags:
 
 # 复数的一些性质
 
-这里打乱顺序把关于复数的一些基本定义和性质单独列出，主要来自第一章和？？？
+这里打乱顺序把关于复数的一些基本定义和性质单独列出，主要来自第一章和第四章第三节。
 
-1. 复数的定义：其实就是一个有序数对。$$\mathbf{C}$$上的加法和乘法满足：加法/乘法交换率、加法/乘法结合律、存在加法/乘法单位元（分别为0和1）、存在加法逆（和为0）和乘法逆（积为1）、分配率。
+- 复数的定义：其实就是一个有序数对。$$\mathbf{C}$$上的加法和乘法满足：加法/乘法交换率、加法/乘法结合律、存在加法/乘法单位元（分别为0和1）、存在加法逆（和为0）和乘法逆（积为1）、分配率。
+- 复数$$z=a+bi$$，实部$$\text{Re }z$$，虚部$$\text{Im }z$$
+- 复共轭定义为：$$\overline{z}=\text{Re }z-(\text{Im }z)i$$
+- 绝对值定义为$$\vert z \vert=\sqrt{(\text{Re }z)^{2}+(\text{Im }z)^{2}}$$
+- 一些性质：
+  - $z\overline{z}=\vert z \vert^{2}$
+  - $\overline{w+z}=\overline{w}+\overline{z}$
+  - $\overline{wz}=\overline{w}\text{ }\overline{z}$
+  - $\vert wz \vert=\vert w \vert\vert z \vert$
+
 
 # 第一章 向量空间
 
@@ -238,6 +247,27 @@ tags:
   - 证明：<=是显然的。=>方向：由$$p(z)=p(z)-0=p(z)-p(\lambda)=(z-\lambda)(a_{1}+a_{2}q_{1}(z)+\cdots+a_{m}q_{m-1}(z))$$可得。
 - 4.3推论：设$$p\in\mathcal{P}(\mathbf{F})$$是$$m\ge0$$次多项式，则$$p$$在$$\mathbf{F}$$中最多由$$m$$个互不相同的根。证明：由4.1和数学归纳法易得。
 - 4.4推论：设$$a_{0},\cdots,a_{m}\in\mathbf{F}$$，如果$$a_{0}+a_{1}z+a_{2}z^{2}+\cdots+a_{m}z^{m}$$对$$z\in\mathbf{F}$$成立，则$$a_{0}=a_{1}=\cdots=a_{m}=0$$。证明：根据4.3，任何非负整数都不可能是这个多项式的次数，于是所有系数都等于0。
+- 4.5带余除法：设$$p,q\in\mathcal{P}(\mathbf{F})$$，并且$$p\ne0$$，则存在多项式$$s,r\n\mathcal{P}(\mathbf{F})$$，使得$$q=sp+r$$并且$$\deg r<\deg p$$。证明：取$$s\in\mathcal{P}(\mathbf{F})$$使得$$q-sp$$的次数最小，将其赋值为$$r$$，然后用反证法证明$$\deg r<\deg p$$。
+
+## 复系数
+
+- 4.7代数学基本定理：每个不是常数的复系数多项式都有根。证明需要用到Liouville定理，超出书本范围故略去。
+- 4.8推论：如果$$p\in\mathcal{P}(\mathbf{C})$$是非常数多项式，则$$p$$可以唯一分解成这样的形式$$p(z)=c(z-\lambda_{1})\cdots(z-\lambda_{m})$$。用归纳法和4.7直接证得。
+
+## 实系数
+
+- 4.10命题：设$$p$$是实系数多项式，如果$$\lambda\in\mathbf{C}$$是$$p$$的根，则$$\overline{\lambda}$$也是$$p$$的根。证明：对$$a_{0}+a_{1}\lambda+\cdots+a_{m}\lambda^{m}=0$$两端取复共轭即得。
+- 4.14定理：如果$$p\in\mathcal{P}(\mathbf{R})$$是非常数多项式，则$$p$$可以唯一（除因子的次序之外）分解成如下形式$$p(x)=c(x-\lambda_{1})\cdots(x-\lambda_{m})(x^{2}+\alpha_{1}x+\beta_{1})\cdots(x^{2}+\alpha_{M}x+\beta_{M})$$，其中$$c,\lambda_{1},\cdots,\lambda_{m}\in\mathbf{R},(\alpha_{1},\beta_{1}),\cdots,(\alpha_{M},\beta_{M})\in\mathbf{R}^{2}$$，并且对每个$$j$$都有$$\alpha_{j}^{2}<4\beta_{j}$$
+  - 证明：就是用4.8和4.10。其中要注意的问题是，如果$$\lambda$$是一个非实数的复根，则根据4.10，$$\overline{\lambda}$$也是一个复根，单4.10并未说明这两个根的次数相同。解决办法是由$$p(x)=(x-\lambda)(x-\overline{\lambda})q(x)$$得$$q(x)=\frac{p(x)}{x^{2}-2(\text{Re }\lambda)x+\vert \lambda \vert^{2}}$$，可知对任何$$x\in\mathbf{R}$$都有$$q(x)\in\mathbf{R}$$，然后由4.4证明$$q(x)$$展开后每项系数的虚部都是0。
+
+# 本征值与本征向量
+
+本章主要研究算子（到自身的线性映射）。
+
+## 不变子空间
+
+
+
 
 # Helpers
 
