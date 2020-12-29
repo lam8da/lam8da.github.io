@@ -146,7 +146,8 @@ tags:
 ## 零空间与值域
 
 - 对于$$T\in\mathcal{L}(V,W)$$，$$V$$中被$$T$$映成$$\pmb{0}$$的那些向量所组成的子集称为$$T$$的零空间（null space），记为$$\text{null} T$$
-- 3.1命题：若$$T\in\mathcal{L}(V,W)$$，则$$\text{null} T$$是$$V$$的子空间。用子空间的定义即得。于是，“零空间”这个名字中的“空间”就变得有意义了。
+- 3.1命题：若$$T\in\mathcal{L}(V,W)$$，则$$\text{null}T$$是$$V$$的子空间，特别地$$\pmb{0}\in\text{null}T$$。证明：用子空间的定义即得。于是，“零空间”这个名字中的“空间”就变得有意义了。
+  - <a name="zero-space">注意</a>：<span style="color: blue">这个命题对于任意的线性映射都成立。而$$\text{null}T$$的元素虽然由$$T$$来确定，但是它作为一个子空间的存在并不依赖于$$T$$！</span>
 - 线性映射称为单的，如果像相同蕴含原像相同。
 - 3.2命题：设$$T\in\mathcal{L}(V,W)$$，则$$T$$是单的当且仅当$$\text{null}T=\{\pmb{0}\}$$。由“单”的定义以及零空间的定义即得。
 - 对于$$T\in\mathcal{L}(V,W)$$，由$$W$$中形如$$T\pmb{v}(\pmb{v}\in V)$$的向量组成的子集称为$$T$$的值域，记为$$\text{range}T=\{T\pmb{v}:\pmb{v}\in V\}$$。如果值域等于$$W$$则称该线性映射为满的。
@@ -247,7 +248,7 @@ tags:
   - 证明：<=是显然的。=>方向：由$$p(z)=p(z)-0=p(z)-p(\lambda)=(z-\lambda)(a_{1}+a_{2}q_{1}(z)+\cdots+a_{m}q_{m-1}(z))$$可得。
 - 4.3推论：设$$p\in\mathcal{P}(\mathbf{F})$$是$$m\ge0$$次多项式，则$$p$$在$$\mathbf{F}$$中最多由$$m$$个互不相同的根。证明：由4.1和数学归纳法易得。
 - 4.4推论：设$$a_{0},\cdots,a_{m}\in\mathbf{F}$$，如果$$a_{0}+a_{1}z+a_{2}z^{2}+\cdots+a_{m}z^{m}$$对$$z\in\mathbf{F}$$成立，则$$a_{0}=a_{1}=\cdots=a_{m}=0$$。证明：根据4.3，任何非负整数都不可能是这个多项式的次数，于是所有系数都等于0。
-- 4.5带余除法：设$$p,q\in\mathcal{P}(\mathbf{F})$$，并且$$p\ne0$$，则存在多项式$$s,r\n\mathcal{P}(\mathbf{F})$$，使得$$q=sp+r$$并且$$\deg r<\deg p$$。证明：取$$s\in\mathcal{P}(\mathbf{F})$$使得$$q-sp$$的次数最小，将其赋值为$$r$$，然后用反证法证明$$\deg r<\deg p$$。
+- 4.5带余除法：设$$p,q\in\mathcal{P}(\mathbf{F})$$，并且$$p\ne0$$，则存在多项式$$s,r\in\mathcal{P}(\mathbf{F})$$，使得$$q=sp+r$$并且$$\deg r<\deg p$$。证明：取$$s\in\mathcal{P}(\mathbf{F})$$使得$$q-sp$$的次数最小，将其赋值为$$r$$，然后用反证法证明$$\deg r<\deg p$$。
 
 ## 复系数
 
@@ -260,19 +261,44 @@ tags:
 - 4.14定理：如果$$p\in\mathcal{P}(\mathbf{R})$$是非常数多项式，则$$p$$可以唯一（除因子的次序之外）分解成如下形式$$p(x)=c(x-\lambda_{1})\cdots(x-\lambda_{m})(x^{2}+\alpha_{1}x+\beta_{1})\cdots(x^{2}+\alpha_{M}x+\beta_{M})$$，其中$$c,\lambda_{1},\cdots,\lambda_{m}\in\mathbf{R},(\alpha_{1},\beta_{1}),\cdots,(\alpha_{M},\beta_{M})\in\mathbf{R}^{2}$$，并且对每个$$j$$都有$$\alpha_{j}^{2}<4\beta_{j}$$
   - 证明：就是用4.8和4.10。其中要注意的问题是，如果$$\lambda$$是一个非实数的复根，则根据4.10，$$\overline{\lambda}$$也是一个复根，单4.10并未说明这两个根的次数相同。解决办法是由$$p(x)=(x-\lambda)(x-\overline{\lambda})q(x)$$得$$q(x)=\frac{p(x)}{x^{2}-2(\text{Re }\lambda)x+\vert \lambda \vert^{2}}$$，可知对任何$$x\in\mathbf{R}$$都有$$q(x)\in\mathbf{R}$$，然后由4.4证明$$q(x)$$展开后每项系数的虚部都是0。
 
-# 本征值与本征向量
+# 第五章 本征值与本征向量
 
 本章主要研究算子（到自身的线性映射）。
 
 ## 不变子空间
 
+- 对于$$T\in\mathcal{L}(V)$$和$$V$$的子空间$$U$$，如果对每个$$\pmb{u}\in U$$都有$$T\pmb{u}\in U$$，则称$$U$$在$$T$$下是不变的。不变子空间的一些例子：
+  - $\{\pmb{0}\}$
+  - $\text{null}T$
+  - $\text{range}T$
+- 对于$$T\in\mathcal{L}(V)$$和标量$$\lambda\in\mathbf{F}$$，如果有非零向量$$\pmb{u}\in V$$使得$$T\pmb{u}=\lambda\pmb{u}$$，则称$$\lambda$$为$$T$$的本征值，而$$\pmb{u}$$是$$T$$的（相应于$$\lambda$$的）本征向量。
+  - 注意，$$\pmb{u}$$必须是非零，但$\lambda$可以是0
+  - $$T\pmb{u}=\lambda\pmb{u}$$等价于$$(T-\lambda I)\pmb{u}=\pmb{0}$$，因此：
+    - $$\lambda$$是$$T$$的本征值当且仅当$$T-\lambda I$$不是单的
+    - 对有限维向量空间而言，根据3.21，$$\lambda$$是$$T$$的本征值当且仅当$$T-\lambda I$$不可逆，当且仅当$$T-\lambda I$$不是满的
+    - $$T$$的相应于$$\lambda$$的本征向量之集等于$$\text{null}(T-\lambda I)$$，而且是$$V$$的子空间（看[这里](#zero-space)）
+  - 注意：同一个本征值可以有多于一个不同的且线性无关的本征向量。如$$I$$的本征值为1，但$$\mathbf{R}^{2}$$上的$$I$$就有两个不同的本征向量$$(0,1)$$和$$(1,0)$$。
+  - 例子：对于算子$$T\in\mathcal{L}(\mathbf{F}^{2}),T(\pmb{w},\pmb{z})=(-\pmb{z},\pmb{w})$$。若$$\mathbf{F}=\mathbf{R}$$，此算子有很好的几何解释（绕$$\mathbf{R}^{2}$$的原点逆时针转$$90^{\circ}$$，易知$$T$$没有本征值。若$$\mathbf{F}=\mathbf{C}$$，$$i$$和$$-i$$都是$$T$$的本征值。
+- 5.6定理：设$$T\in\mathcal{L}(V)$$，$$\lambda_{1},\cdots,\lambda_{m}$$是$$T$$的互不相同的本征值，$$\pmb{v}_{1},\cdots,\pmb{v}_{m}$$的相应的非零本征向量，则$$(\pmb{v}_{1},\cdots,\pmb{v}_{m})$$线性无关。
+  - 证明：反证法，设$$k$$是使$$\pmb{v}_{k}\in\text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{k-1})$$成立的最小正整数（由2.4知道这样的$$k$$一定存在），于是有$$\pmb{v}_{k}=a_{1}\pmb{v}_{1}+\cdots+a_{k-1}\pmb{v}_{k-1}$$，然后把$$T$$作用于该等式两端，易得$$\pmb{v}_{k}$$等于$$\pmb{0}$$，与特征向量不为零的假设矛盾。
+- 5.9推论：$$V$$上的每个算子最多由$$\dim V$$个互不相同的本征值。证明：由5.6即得。
 
+## 多项式对算子的作用
 
+- 定义：算子的幂，$$T^{0}$$定义为恒等算子
+- 定义：$$p(T)=a_{0}I+a_{1}T+a_{2}T^{2}+\cdots+a_{m}T^{m}$$
+  - 容易验证：对于一个固定的算子$$T\in\mathcal{L}(V)$$，由$$p\mapsto p(T)$$所给出的从$$\mathcal{P}(\mathbf{F})$$到$$\mathcal{L}(V)$$的函数是线性的。
+- 乘法性质：易证$$p(T)q(T)=q(T)p(T)$$
+
+## 上三角矩阵
+
+- 5.10定理：有限维非零复向量空间上的每个算子都有本征值。
+  - 证明：设$$V$$是$$n>0$$维复向量空间，$$T\in\mathcal{L}(V)$$，取$$\pmb{v}\in V$$使得$$\pmb{v}\ne\pmb{0}$$。因为$$V$$是$$n$$维的，所以$$n+1$$个向量$$(\pmb{v},T\pmb{v},T^{2}\pmb{v},\cdots,T^{n}\pmb{v})$$必定线性相关，因此有不全为零的复数$$a_{0},\cdots,a_{n}$$使得$$\mathbf{0}=a_{0}\pmb{v}+a_{1}T\pmb{v}+\cdots+a_{n}T^{n}\pmb{v}$$。对其作多项式分解（4.8）得$$\mathbf{0}=c(T-\lambda_{1}I)\cdots(T-\lambda_{m}I)\pmb{v}$$对于某个$$c$$和某个$$0\lt m\le n$$成立，而这意味着存在某个$$j$$使得$$T-\lambda_{j}I$$不是单的，即$$T$$有本征值。
 
 # Helpers
 
 ```
-a T in L(V,W): T\in\mathcal{L}(V,W)
+a T in L(V,W): T\in\mathcal{L}(V)
 e      rangeT: \text{range}T
 f       nullT: \text{null}T
 p            : p(z)=a_{0}+a_{1}z+a_{2}z^{2}+\cdots+a_{m}z^{m}
