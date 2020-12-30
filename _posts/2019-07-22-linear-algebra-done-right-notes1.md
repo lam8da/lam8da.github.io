@@ -1,11 +1,10 @@
 ---
 layout: post
-title: 《线性代数应该这样学》笔记
+title: 《线性代数应该这样学》笔记（上）
 date: 2019-07-22 22:04:32.601622
 categories:
     - 数学&物理
 tags:
-    - Work in Progress
     - 代数
     - 线性代数
 ---
@@ -358,24 +357,3 @@ tags:
   - $\text{null}P_{U,W}=W$
 - 5.26定理：在奇数维实向量空间上，每个算子都有本征值。
   - 证明：对维数用归纳法。若维数为1，显然成立。设$$\dim V>1$$是奇数，且结论对$$\dim V-2$$成立。设$$T\in\mathcal{L}(V)$$，若$$T$$由本征值则证明结束，否则由5.24知$$V$$有在$$T$$下不变的2维子空间$$U$$，由2.13知存在$$V$$的子空间$$W$$使得$$V=U\oplus W$$。注意不能直接对$$W$$和$$T\vert W$$用归纳法因为$$W$$可能不是在$$T$$下不变的。定义$$S\in\mathcal{L}(W)$$为$$S\pmb{w}=P_{W,U}(T\pmb{w}),\pmb{w}\in W$$。由归纳法假设$$S$$有一个本征值$$\lambda$$，其对应的非零本征向量为$$\pmb{w}\in W$$。如果$$\pmb{w}$$是$$T$$的相应于本征值$$\lambda$$的本征向量，则证明结束。否则考虑$$U+\text{span}(\pmb{w})$$中的一个典型向量$$\pmb{u}+a\pmb{w}$$，易得$$(T-\lambda I)(\pmb{u}+a\pmb{w})=T\pmb{u}-\lambda\pmb{u}+aP_{U,W}(T\pmb{w})\in U$$，因此$$T-\lambda I$$把$$U+\text{span}(\pmb{w})$$映到$$U$$内。由于$$U+\text{span}(\pmb{w})$$的维数比$$U$$的维数大，故$$(T-\lambda I)\vert_{U+\text{span}(\pmb{w})}$$不是单的（3.5），于是$$T$$有本征值。
-
-# 内积空间
-
-## 内积
-
-
-
-# Helpers
-
-```
-a T in L(V,W): T\in\mathcal{L}(V)
-e      rangeT: \text{range}T
-f       nullT: \text{null}T
-p            : p(z)=a_{0}+a_{1}z+a_{2}z^{2}+\cdots+a_{m}z^{m}
-l   lambda1-m: \lambda_{1},\cdots,\lambda_{m}
-u       u1-um: (\pmb{u}_{1},\cdots,\pmb{u}_{m})
-v       v1-vn: (\pmb{v}_{1},\cdots,\pmb{v}_{n})
-w       w1-wm: (\pmb{w}_{1},\cdots,\pmb{w}_{m})
-
-```
-
