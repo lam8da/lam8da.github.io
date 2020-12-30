@@ -110,6 +110,13 @@ tags:
 - 2.19命题：设$$V$$是有限维的，并且$$U_{1},\cdots,U_{m}$$的$$V$$的子空间，使得$$V=U_{1}+\cdots+U_{m}$$并且$$\dim V=\dim U_{1}+\cdots+\dim U_{m}$$，则$$V=U_{1}\oplus\cdots\oplus U_{m}$$。
   - 证明：根据假设，可以把每个$$U$$的基concat成一个长尾$$\dim V$$的组，而且这个组张成$$V$$，从而是$$V$$的基（2.16）且线性无关。用1.8可以证得。
 
+## 习题
+
+- 习题16：证明：若$$V$$是有限维向量空间且$$U_{1},\cdots,U_{m}$$都是$$V$$的子空间，则$$\dim(U_{1}+\cdots+U_{m})\le\dim U_{1}+\cdots+\dim U_{m}$$。
+  - 证明：对$$m$$进行归纳。$$m=2$$时由2.18即得。设当$$m=k$$时成立，则当$$m=k+1$$时有$$\dim(U_{1}+\cdots+U_{k}+U_{k+1})\le\dim(U_{1}+\cdots+U_{k})+\dim U_{k+1}\le\dim U_{1}+\cdots+\dim U_{k}+\dim U_{k+1}$$
+- 习题17：设$$V$$是有限维的，证明：如果$$U_{1},\cdots,U_{m}$$是$$V$$的子空间使得$$V=U_{1}\oplus\cdots\oplus U_{m}$$，那么$$\dim V=\dim U_{1}+\cdots+\dim U_{m}$$。
+  - 证明：设$$U_{k}$$的一组基为$$(\pmb{v}_{1}^{k},\cdots,\pmb{v}_{\dim U_{k}}^{k})$$，易知所有这些$$\pmb{v}$$线性无关，否则$$\pmb{w}=\sum_{k=1}^{m}\sum_{i=1}^{\dim U_{k}}\pmb{v}_{i}^{k}$$就有多于一种的表示法，与直和的定义矛盾。又因为所有这些$$\pmb{v}$$都属于$$V$$，因此它们可以扩充成$$V$$的基，故$$\dim V\ge\dim U_{1}+\cdots+\dim U_{m}$$。用习题16可以证明另一个方向，即得。
+
 # 第三章 线性映射
 
 ## 定义
@@ -230,6 +237,9 @@ tags:
 - 一个向量空间到其自身的线性映射称为算子。用$$\mathcal{L}(V)=\mathcal{L}(V,V)$$表示$$V$$上算子的集合。
 - 3.21定理：设$$V$$是有限维的，如果$$T\in\mathcal{L}(V)$$，那么下列等价：（a）$$T$$是可逆的（b）$$T$$是单的（c）$$T$$是满的
   - 证明：b=>c和c=>b都是用3.4式。
+
+## 习题
+
 - 习题22：设$$V$$是有限维的，并且$$S,T\in\mathcal{L}(V)$$，证明$$ST$$可逆当且仅当$$S$$和$$T$$都可逆
   > 如何证明？
     {: .lambda_question}
@@ -328,7 +338,32 @@ tags:
 - 5.20命题：若$$T\in\mathcal{L}(V)$$由$$\dim V$$个互不相同的本征值，则$$T$$关于$$V$$的某个基有对角矩阵
   - 注意逆命题不成立，某些本征值较少的算子也可能有对角矩阵
   - 证明：设$$T\in\mathcal{L}(V)$$有$$\dim V$$个互不相同的本征值$$\lambda_{1},\cdots,\lambda_{\dim V}$$，根据5.6，它们对应的非零本征向量线性无关，根据2.17，这些本征向量是$$V$$的基，因此$$T$$关于由这些本征向量组成的基由对角矩阵。
-- 5.21命题：设$$T\in\mathcal{L}(V)$$
+- 5.21命题：设$$T\in\mathcal{L}(V)$$，并设$$\lambda_{1},\cdots,\lambda_{m}$$是$$T$$的所有互不相同的本征值，则下列等价：
+  - (a)$$T$$关于$$V$$的某个基有对角矩阵
+  - (b)$$V$$有一个由$$T$$的本征向量组成的基
+  - (c)$$V$$有在$$T$$下不变的1维子空间$$U_{1},\cdots,U_{n}$$使得$$V=U_{1}\oplus\cdots\oplus U_{n}$$
+  - (d)$$V=\text{null}(T-\lambda_{1}I)\oplus\cdots\oplus\text{null}(T-\lambda_{m}I)$$
+  - (e)$$\dim V=\dim\text{null}(T-\lambda_{1}I)+\cdots+\dim\text{null}(T-\lambda_{m}I)$$
+
+  证明：(a)和(b)等价已在之前说明。(b)=>(c)可令$$U_{j}=\text{span}(\pmb{v}_{j})$$，其中$$\pmb{v}_{j}$$是$$T$$的其中一个本征向量。(c)=>(b)对每个$$\pmb{v}_{j}\in U_{j}$$，它都是$$T$$的本征向量，又由直和的条件易知$$(\pmb{v}_{1},\cdots,\pmb{v}_{n})$$是$$V$$的基，即得。(b)=>(d)易知$$V$$中每个向量都是$$T$$的本征向量的线性组合，故$$V=\text{null}(T-\lambda_{1}I)+\cdots+\text{null}(T-\lambda_{m}I)$$，现只需证明这个和是直和；对于任意$$\pmb{u}_{j}\in\text{null}(T-\lambda_{j}I)$$，要使$$\pmb{0}=\pmb{u}_{1}+\cdots+\pmb{u}_{m}$$成立，它们只能全都等于0（根据5.6），从而前述的和是直和。(d)=>(e)由第二章习题17即得。(e)=>(b)在每个$$\text{null}(T-\lambda_{j}I)$$中取一个基，全部这些基组成$$T$$的一个本征向量$$(\pmb{v}_{1},\cdots,\pmb{v}_{n})$$，由(e)的条件知道$$n=\dim V$$，现要证它们线性无关，即$$a_{1}\pmb{v}_{1}+\cdots+a_{n}\pmb{v}_{n}=\pmb{0}$$的所有$$a$$都是$$0$$，只需对它们分组然后用5.6知每组都是$$\pmb{0}$$，而每组内的$$\pmb{v}_{k}$$是$$\text{null}(T-\lambda_{j}I)$$的基从而所有$$a_{k}$$都是0，即得。
+
+## 实向量空间的不变子空间
+
+- 5.24定理：在有限维非零实向量空间中，每个算子都有1维或2维的不变子空间。
+  - 证明：设$$V$$是$$n>0$$维实向量空间，$$T\in\mathcal{L}(V)$$，取$$\pmb{v}\in V,\pmb{v}\ne0$$，由$$n+1$$个向量的线性相关性知存在不全为零的实数$$a_{0},\cdots,a_{n}$$使得$$\pmb{0}=a_{0}\pmb{v}+a_{1}T\pmb{v}+\cdots+a_{n}T^{n}\pmb{v}$$，根据4.14可以作分解$$\pmb{0}=c(T-\lambda_{1}I)\cdots(T-\lambda_{m}I)(T^{2}+\alpha_{1}T+\beta_{1}I)\cdots(T^{2}+\alpha_{M}T+\beta_{M}I)\pmb{v}$$，这意味着至少有一个$$j$$使得$$T-\lambda_{j}I$$不是单的或者$$(T^{2}+\alpha_{j}T+\beta_{j}I)$$不是单的。若是前者，则$$T$$有1维不变子空间。若是后者，考虑$$\text{span}(\pmb{u},T\pmb{u})$$的一个典型元素$$a\pmb{u}+bT\pmb{u};a,b\in\mathbf{R}$$，对其应用$$T$$并且条件$$T^{2}\pmb{u}+\alpha_{j}T\pmb{u}+\beta_{j}\pmb{u}=\pmb{0}$$知$$T(a\pmb{u}+bT\pmb{u})\in\text{span}(\pmb{u},T\pmb{u})$$，于是$$\text{span}(\pmb{u},T\pmb{u})$$在$$T$$下不变。
+- 设$$V=U\oplus W$$，则每个$$\pmb{v}\in V$$都可表示为$$\pmb{v}=\pmb{u}+\pmb{w};\pmb{u}\in U,\pmb{w}\in W$$。定义线性映射$$P_{U,W}\in\mathcal{L}(V)$$为：$$P_{U,W}\pmb{v}=\pmb{u}$$。这和”投影“类似。性质包括：
+  - 对每个$$\pmb{v}\in V$$都有$$\pmb{v}=P_{U,W}\pmb{v}+P_{W,U}\pmb{v}$$
+  - $P^{2}_{U,W}=P_{U,W}$
+  - $\text{range}P_{U,W}=U$
+  - $\text{null}P_{U,W}=W$
+- 5.26定理：在奇数维实向量空间上，每个算子都有本征值。
+  - 证明：对维数用归纳法。若维数为1，显然成立。设$$\dim V>1$$是奇数，且结论对$$\dim V-2$$成立。设$$T\in\mathcal{L}(V)$$，若$$T$$由本征值则证明结束，否则由5.24知$$V$$有在$$T$$下不变的2维子空间$$U$$，由2.13知存在$$V$$的子空间$$W$$使得$$V=U\oplus W$$。注意不能直接对$$W$$和$$T\vert W$$用归纳法因为$$W$$可能不是在$$T$$下不变的。定义$$S\in\mathcal{L}(W)$$为$$S\pmb{w}=P_{W,U}(T\pmb{w}),\pmb{w}\in W$$。由归纳法假设$$S$$有一个本征值$$\lambda$$，其对应的非零本征向量为$$\pmb{w}\in W$$。如果$$\pmb{w}$$是$$T$$的相应于本征值$$\lambda$$的本征向量，则证明结束。否则考虑$$U+\text{span}(\pmb{w})$$中的一个典型向量$$\pmb{u}+a\pmb{w}$$，易得$$(T-\lambda I)(\pmb{u}+a\pmb{w})=T\pmb{u}-\lambda\pmb{u}+aP_{U,W}(T\pmb{w})\in U$$，因此$$T-\lambda I$$把$$U+\text{span}(\pmb{w})$$映到$$U$$内。由于$$U+\text{span}(\pmb{w})$$的维数比$$U$$的维数大，故$$(T-\lambda I)\vert_{U+\text{span}(\pmb{w})}$$不是单的（3.5），于是$$T$$有本征值。
+
+# 内积空间
+
+## 内积
+
+
 
 # Helpers
 
@@ -337,6 +372,7 @@ a T in L(V,W): T\in\mathcal{L}(V)
 e      rangeT: \text{range}T
 f       nullT: \text{null}T
 p            : p(z)=a_{0}+a_{1}z+a_{2}z^{2}+\cdots+a_{m}z^{m}
+l   lambda1-m: \lambda_{1},\cdots,\lambda_{m}
 u       u1-um: (\pmb{u}_{1},\cdots,\pmb{u}_{m})
 v       v1-vn: (\pmb{v}_{1},\cdots,\pmb{v}_{n})
 w       w1-wm: (\pmb{w}_{1},\cdots,\pmb{w}_{m})
