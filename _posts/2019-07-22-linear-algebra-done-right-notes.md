@@ -279,8 +279,8 @@ tags:
     - $$T$$的相应于$$\lambda$$的本征向量之集等于$$\text{null}(T-\lambda I)$$，而且是$$V$$的子空间（看[这里](#zero-space)）
   - 注意：同一个本征值可以有多于一个不同的且线性无关的本征向量。如$$I$$的本征值为1，但$$\mathbf{R}^{2}$$上的$$I$$就有两个不同的本征向量$$(0,1)$$和$$(1,0)$$。
   - 例子：对于算子$$T\in\mathcal{L}(\mathbf{F}^{2}),T(\pmb{w},\pmb{z})=(-\pmb{z},\pmb{w})$$。若$$\mathbf{F}=\mathbf{R}$$，此算子有很好的几何解释（绕$$\mathbf{R}^{2}$$的原点逆时针转$$90^{\circ}$$，易知$$T$$没有本征值。若$$\mathbf{F}=\mathbf{C}$$，$$i$$和$$-i$$都是$$T$$的本征值。
-- 5.6定理：设$$T\in\mathcal{L}(V)$$，$$\lambda_{1},\cdots,\lambda_{m}$$是$$T$$的互不相同的本征值，$$\pmb{v}_{1},\cdots,\pmb{v}_{m}$$的相应的非零本征向量，则$$(\pmb{v}_{1},\cdots,\pmb{v}_{m})$$线性无关。
-  - 证明：反证法，设$$k$$是使$$\pmb{v}_{k}\in\text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{k-1})$$成立的最小正整数（由2.4知道这样的$$k$$一定存在），于是有$$\pmb{v}_{k}=a_{1}\pmb{v}_{1}+\cdots+a_{k-1}\pmb{v}_{k-1}$$，然后把$$T$$作用于该等式两端，易得$$\pmb{v}_{k}$$等于$$\pmb{0}$$，与特征向量不为零的假设矛盾。
+- 5.6定理：设$$T\in\mathcal{L}(V)$$，$$\lambda_{1},\cdots,\lambda_{m}$$是$$T$$的互不相同的本征值，$$\pmb{v}_{1},\cdots,\pmb{v}_{m}$$是相应的非零本征向量，则$$(\pmb{v}_{1},\cdots,\pmb{v}_{m})$$线性无关。
+  - 证明：反证法，设$$k$$是使$$\pmb{v}_{k}\in\text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{k-1})$$成立的最小正整数（由2.4知道这样的$$k$$一定存在），于是有$$\pmb{v}_{k}=a_{1}\pmb{v}_{1}+\cdots+a_{k-1}\pmb{v}_{k-1}$$，然后用该式两端乘以$$\lambda_{k}$$得到的式子减去把$$T$$作用于该等式两端得到的式子，根据$$(\pmb{v}_{1},\cdots,\pmb{v}_{k-1})$$的线性无关性易知这些$$a$$都是0，从而$$\pmb{v}_{k}$$等于$$\pmb{0}$$，与特征向量不为零的假设矛盾。
 - 5.9推论：$$V$$上的每个算子最多由$$\dim V$$个互不相同的本征值。证明：由5.6即得。
 
 ## 多项式对算子的作用
@@ -288,12 +288,47 @@ tags:
 - 定义：算子的幂，$$T^{0}$$定义为恒等算子
 - 定义：$$p(T)=a_{0}I+a_{1}T+a_{2}T^{2}+\cdots+a_{m}T^{m}$$
   - 容易验证：对于一个固定的算子$$T\in\mathcal{L}(V)$$，由$$p\mapsto p(T)$$所给出的从$$\mathcal{P}(\mathbf{F})$$到$$\mathcal{L}(V)$$的函数是线性的。
-- 乘法性质：易证$$p(T)q(T)=q(T)p(T)$$
+- 乘法性质：易证$$p(T)q(T)=q(T)p(T)$$（直接展开然后用$$T$$的交换律即可）
 
 ## 上三角矩阵
 
 - 5.10定理：有限维非零复向量空间上的每个算子都有本征值。
-  - 证明：设$$V$$是$$n>0$$维复向量空间，$$T\in\mathcal{L}(V)$$，取$$\pmb{v}\in V$$使得$$\pmb{v}\ne\pmb{0}$$。因为$$V$$是$$n$$维的，所以$$n+1$$个向量$$(\pmb{v},T\pmb{v},T^{2}\pmb{v},\cdots,T^{n}\pmb{v})$$必定线性相关，因此有不全为零的复数$$a_{0},\cdots,a_{n}$$使得$$\mathbf{0}=a_{0}\pmb{v}+a_{1}T\pmb{v}+\cdots+a_{n}T^{n}\pmb{v}$$。对其作多项式分解（4.8）得$$\mathbf{0}=c(T-\lambda_{1}I)\cdots(T-\lambda_{m}I)\pmb{v}$$对于某个$$c$$和某个$$0\lt m\le n$$成立，而这意味着存在某个$$j$$使得$$T-\lambda_{j}I$$不是单的，即$$T$$有本征值。
+  - 证明：设$$V$$是$$n>0$$维复向量空间，$$T\in\mathcal{L}(V)$$，取$$\pmb{v}\in V$$使得$$\pmb{v}\ne\pmb{0}$$。因为$$V$$是$$n$$维的，所以$$n+1$$个向量$$(\pmb{v},T\pmb{v},T^{2}\pmb{v},\cdots,T^{n}\pmb{v})$$必定线性相关，因此有不全为零的复数$$a_{0},\cdots,a_{n}$$使得$$\mathbf{0}=a_{0}\pmb{v}+a_{1}T\pmb{v}+\cdots+a_{n}T^{n}\pmb{v}$$。对其作多项式分解（4.8）得$$\mathbf{0}=c(T-\lambda_{1}I)\cdots(T-\lambda_{m}I)\pmb{v}$$对于某个$$c$$和某个$$0\lt m\le n$$成立，而这意味着存在某个$$j$$使得$$(T-\lambda_{j+1}I)\cdots(T-\lambda_{m}I)\pmb{v}\ne\pmb{0}$$但$$(T-\lambda_{j}I)\cdots(T-\lambda_{m}I)\pmb{v}=\pmb{0}$$，因此$$T-\lambda_{j}I$$不是单的，即$$T$$有本征值。
+- 一个矩阵称为上三角的，如果位于对角线下方的元素全为0。注意：对角线上的元素是否为0并没有限制。
+- 5.12命题：设$$T\in\mathcal{L}(V)$$，并且$$(\pmb{v}_{1},\cdots,\pmb{v}_{n})$$是$$V$$的基，则下列等价：
+  - (a)$$T$$关于基$$(\pmb{v}_{1},\cdots,\pmb{v}_{n})$$的矩阵是上三角的
+  - (b)$$T\pmb{v}_{k}\in\text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{k}),k=1,\cdots,n$$
+  - (c)$$\text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{k})$$在$$T$$下是不变的，$$k=1,\cdots,n$$
+
+  证明：显然。
+- 5.13定理：设$$V$$是复向量空间，并设$$T\in\mathcal{L}(V)$$，则$$T$$关于$$V$$的某个基具有上三角矩阵。
+  - 证明：对$$V$$的维数用归纳法。若$$\dim V=1$$结论显然成立。设$$\dim V>1$$，并设对于**所有**维数比$$V$$小的复向量空间结果都成立。设$$\lambda$$是$$T$$的任意本征值（5.10），设$$U=\text{range}(T-\lambda I)$$，由3.21知$$T-\lambda I$$不是满的，故$$\dim <\dim V$$。通过$$T\pmb{u}=(T-\lambda I)\pmb{u}+\lambda\pmb{u}$$易证$$U$$在$$T$$下是不变的，因此$$T\vert_{U}$$是$$U$$上的算子。由归纳法假设，$$U$$有基$$(\pmb{u}_{1},\cdots,\pmb{u}_{m})$$使得$$T\vert_{U}$$关于此基有上三角矩阵，因此根据5.12对每个$$j$$都有$$T\pmb{u}_{j}=(T\vert_{U})(\pmb{u}_{j})\in\text{span}(\pmb{u}_{1},\cdots,\pmb{u}_{j})$$。把$$(\pmb{u}_{1},\cdots,\pmb{u}_{m})$$扩充成$$V$$的基$$(\pmb{u}_{1},\cdots,\pmb{u}_{m},\pmb{v}_{1},\cdots,\pmb{v}_{n})$$，则对每个$$k$$都有$$T\pmb{v}_{k}=(T-\lambda I)\pmb{v}_{k}+\lambda\pmb{v}_{k}$$，其中第一项$$\in U=\text{span}(\pmb{u}_{1},\cdots,\pmb{u}_{m})$$，因此$$T\pmb{v}_{k}=\text{span}(\pmb{u}_{1},\cdots,\pmb{u}_{m},\pmb{v}_{1},\cdots,\pmb{v}_{n})$$，而由5.12知$$T$$关于基$$(\pmb{u}_{1},\cdots,\pmb{u}_{m},\pmb{v}_{1},\cdots,\pmb{v}_{n})$$有上三角矩阵。
+- 5.16命题：设$$T\in\mathcal{L}(V)$$关于$$V$$的某个基有上三角矩阵，则$$T$$可逆当且仅当这个上三角矩阵对角线上的元素都不是0。
+  - 证明：只需证明等价命题：$$T$$不可逆当且仅当某个元素是0。设$$(\pmb{v}_{1},\cdots,\pmb{v}_{n})$$是$$V$$的基使$$T$$关于此基有上三角矩阵。
+
+    $$
+    \left[
+    \begin{array}\\
+      \lambda_{1} & & & *\\
+      & \lambda_{2} & & \\
+      & & \ddots & \\
+      0 & & & \lambda_{n}
+    \end{array}
+    \right]
+    $$
+
+    - <=方向：若$$\lambda_{1}=0$$则$$T\pmb{v}_{1}=\pmb{0}$$，故$$T$$不可逆。否则设$$\lambda_{k}=0,1\lt k\le n$$，由5.17，$$T\pmb{v}_{k}\in\text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{k-1})$$，根据3.5，存在非零向量$$\pmb{v}\in\text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{k})$$使得$$T\pmb{v}=0$$，故$$T$$不可逆。
+    - =>方向：假设$$T$$不可逆，因此它不是单的且有非零向量$$\pmb{v}\in V$$使得$$\pmb{0}=T\pmb{v}=T(a_{1}\pmb{v}_{1}+\cdots+a_{k}\pmb{v}_{k})=(a_{1}T\pmb{v}_{1}+\cdots+a_{k-1}T\pmb{v}_{k-1})+a_{k}T\pmb{v}_{k};a_{1},\cdots,a_{k}\in\mathbf{F};a_{k}\ne0$$（把$$\pmb{v}$$表示成基的线性组合然后取$$k$$是系数不为0的最大下标）。最后那个括号中的向量含于$$\text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{k-1})$$（因为$$T$$关于该基的矩阵是上三角的，5.12），于是$$a_{k}T\pmb{v}_{k}$$从而$$T\pmb{v}_{k}$$也含于$$\text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{k-1})$$，于是若把$$T\pmb{v}_{k}$$写成基$$(\pmb{v}_{1},\cdots,\pmb{v}_{n})$$的线性组合，则$$\pmb{v}_{k}$$的系数即$$\lambda_{k}$$是0。
+- 5.18命题：设$$T\in\mathcal{L}(V)$$关于$$V$$的某个基有上三角矩阵，则这个上三角矩阵对角线上的元素恰好是$$T$$的所有本征值。
+  - 证明：设$$T$$关于某个基有上三角矩阵$$\mathcal{M}(T)$$，设$$\lambda\in\mathbf{F}$$，则矩阵$$\mathcal{M}(T-\lambda I)$$也是一个上三角矩阵且对角线上元素为$$\lambda_{k}-\lambda$$。根据5.16，$$T-\lambda I$$不可逆当且仅当$$\lambda$$等于某个$$\lambda_{j}$$，即$$\lambda$$是$$T$$的本征值当且仅当$$\lambda$$等于某个$$\lambda_{j}$$。
+
+## 对角矩阵
+
+- 易知$$T\in\mathcal{L}(V)$$关于$$V$$的某个基有对角矩阵当且仅当$$V$$有一个由$$T$$的本征向量组成的基
+- 5.20命题：若$$T\in\mathcal{L}(V)$$由$$\dim V$$个互不相同的本征值，则$$T$$关于$$V$$的某个基有对角矩阵
+  - 注意逆命题不成立，某些本征值较少的算子也可能有对角矩阵
+  - 证明：设$$T\in\mathcal{L}(V)$$有$$\dim V$$个互不相同的本征值$$\lambda_{1},\cdots,\lambda_{\dim V}$$，根据5.6，它们对应的非零本征向量线性无关，根据2.17，这些本征向量是$$V$$的基，因此$$T$$关于由这些本征向量组成的基由对角矩阵。
+- 5.21命题：设$$T\in\mathcal{L}(V)$$
 
 # Helpers
 
@@ -302,9 +337,9 @@ a T in L(V,W): T\in\mathcal{L}(V)
 e      rangeT: \text{range}T
 f       nullT: \text{null}T
 p            : p(z)=a_{0}+a_{1}z+a_{2}z^{2}+\cdots+a_{m}z^{m}
-u       u1-um: \pmb{u}_{1},\cdots,\pmb{u}_{m}
-v       v1-vn: \pmb{v}_{1},\cdots,\pmb{v}_{n}
-w       w1-wm: \pmb{w}_{1},\cdots,\pmb{w}_{m}
+u       u1-um: (\pmb{u}_{1},\cdots,\pmb{u}_{m})
+v       v1-vn: (\pmb{v}_{1},\cdots,\pmb{v}_{n})
+w       w1-wm: (\pmb{w}_{1},\cdots,\pmb{w}_{m})
 
 ```
 
