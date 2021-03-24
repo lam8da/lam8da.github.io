@@ -84,6 +84,14 @@ tags:
 - 而两个图像相似是一个至少是一个三元关系：颜色相似、形状相似且大小相似。所以我对视觉计算的理解就是如何定义、计算并处理这些相似性。
 - 这就决定了为什么convolution用的是乘法和加法：待续。。。
 
+# 基本概念
+
+- $$precision=TP/(TP+FP)$$
+- $$True Positive Rate (TPR)=recall=TP/(TP+FN)$$
+- $$False Positive Rate (FPR)=FP/(FP+TN)$$。
+- ROC curve：横轴FPR，纵轴TPR，每个值是在某个分类threshold上对应的FPR和TPR的值。例如threshold为0，则全部样例都被归类为positive，没有样例归类为negative，因此FPR和TPR都是1。如果threshold为inf，则没有样例归为positive，因此FPR和TPR都是0。
+- AUC：**A**rea **U**nder the ROC **C**urve
+
 # 其他资源
 
 - [MSRA计算机视觉的修炼秘笈](https://www.msra.cn/zh-cn/news/features/book-recommendation-cv)
