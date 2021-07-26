@@ -43,7 +43,7 @@ tags:
   - 计算这两种cost的方法都是：选择某个层，对content/style input image和结果图片分别计算该层的输出，然后在该层上定义content/style的相似性，然后对所有层的content/style相似性加权求和便得到最终的content/style相似性。唯一的区别是content/style的相似性的定义：对于content相似性直接用对应层的值求差和平方和即可，对于style相似性要先计算该层上C个channel间的correlation得到一个CxC的矩阵然后再用两个图片的这个矩阵求差和平方和得到（为啥是这样呢？correlation可以这样理解：correlate的意思是，对应于两个不同channel的两个特征要么同时出现要么同时不出现）
   - 对于每层在最终相似性中的权重，可以通过第一步的visualization得到一些sense。
 
-# Notes
+# CNN Notes
 
 1. Terminologies
    - CNN: convolutional neural network
@@ -86,11 +86,25 @@ tags:
 
 # 基本概念
 
-- $$precision=TP/(TP+FP)$$
-- $$True Positive Rate (TPR)=recall=TP/(TP+FN)$$
+- $$precision=TP/(TP+FP)$$。
+- $$True Positive Rate (TPR)=recall=TP/(TP+FN)$$。
 - $$False Positive Rate (FPR)=FP/(FP+TN)$$。
 - ROC curve：横轴FPR，纵轴TPR，每个值是在某个分类threshold上对应的FPR和TPR的值。例如threshold为0，则全部样例都被归类为positive，没有样例归类为negative，因此FPR和TPR都是1。如果threshold为inf，则没有样例归为positive，因此FPR和TPR都是0。
 - AUC：**A**rea **U**nder the ROC **C**urve
+- 信息量：假设$$X$$是一个离散型随机变量，其取值集合为$$\chi$$，概率分布函数$$p(x)=Pr(X=x),x\in\chi$$,则定义事件$$X=x_{0}$$的信息量为：$$I(x_0)=−\log(p(x_0))$$。直观理解：越不可能发生的事情，如果它发生了，信息量就越大。
+- 熵：用来表示所有信息量的期望，即
+
+  $$H(X)=-\sum_{i=1}^{n}p(x_{i})\log(p(x_{i}))$$
+- 相对熵（KL散度）：在机器学习中，P往往用来表示样本的真实分布，Q用来表示模型所预测的分布，直观的理解就是如果用P来描述样本，那么就非常完美。而用Q来描述样本，虽然可以大致描述，但是不是那么的完美，信息量不足，需要额外的一些“信息增量”才能达到和P一样完美的描述。如果我们的Q通过反复训练，也能完美的描述样本，那么就不再需要额外的“信息增量”，Q等价于P。
+
+  $$D_{KL}(p\vert\vert q)=\sum_{i=1}^{n}p(x_i)\log(\frac{p(x_i)}{q(x_i)})$$
+
+  $$D_{KL}$$的值越小，表示q分布和p分布越接近
+  > 如何证明$$D_{KL}$$的值非负？看[这里](https://hsinjhao.github.io/2019/05/22/KL-DivergenceIntroduction/)
+    {: .lambda_question}
+- 交叉熵：
+
+  $$H(p,q)=-\sum_{i=1}^{n}p(x_i)\log(q(x_i))=D_{KL}(p\vert\vert q)+H(p(x))$$
 
 # 其他资源
 

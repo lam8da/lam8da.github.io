@@ -20,6 +20,7 @@ tags:
 这里打乱顺序把关于复数的一些基本定义和性质单独列出，主要来自第一章和第四章第三节。
 
 - 复数的定义：其实就是一个有序数对。$$\mathbf{C}$$上的加法和乘法满足：加法/乘法交换率、加法/乘法结合律、存在加法/乘法单位元（分别为0和1）、存在加法逆（和为0）和乘法逆（积为1）、分配率。
+  - 乘法逆：由$$(a+bi)(a-bi)=a^{2}+b^{2}$$知道$$a+bi$$的逆为$$\frac{a-bi}{a^{2}+b^{2}}$$
 - 复数$$z=a+bi$$，实部$$\text{Re }z$$，虚部$$\text{Im }z$$
 - 复共轭定义为：$$\overline{z}=\text{Re }z-(\text{Im }z)i$$
 - 绝对值定义为$$\vert z \vert=\sqrt{(\text{Re }z)^{2}+(\text{Im }z)^{2}}$$
@@ -27,14 +28,14 @@ tags:
   - $z\overline{z}=\vert z \vert^{2}$
   - $\overline{w+z}=\overline{w}+\overline{z}$
   - $\overline{wz}=\overline{w}\text{ }\overline{z}$
-  - $\vert wz \vert=\vert w \vert\vert z \vert$
+  - $\vert wz \vert=\vert w \vert\vert z \vert$（通过上述第一式和第三式得到）
 
 
 # 第一章 向量空间
 
 ## 向量空间的定义
 
-向量空间：就是定义了加法和（标量）乘法并满足以下性质的集合$$V$$：加法交换律、加法/乘法结合律、加法单位元（0）、加法逆（和为0）、乘法单位元（1）、分配率。其中$$V$$中的元素属于$$\mathbf{F}^n$$，而$$\mathbf{F}$$是$$\mathbf{R}$$或$$\mathbf{C}$$（以下均采用这个$$\mathbf{F}$$的定义）。
+向量空间：就是定义了加法和（标量）乘法并满足以下性质的集合$$V$$：加法交换律、加法/乘法结合律、加法单位元（向量$$\pmb{0}$$）、加法逆（和为向量$$\pmb{0}$$）、乘法单位元（标量1）、分配率。其中$$V$$中的元素属于$$\mathbf{F}^n$$，而$$\mathbf{F}$$是$$\mathbf{R}$$或$$\mathbf{C}$$（以下均采用这个$$\mathbf{F}$$的定义）。
 
 - 注意这里没有乘法交换律，因为这里乘法指标量乘法，而三个量间的乘法在有至少两个量是$$V$$中的元素时是无定义的，而如果有两个量是$$F$$中的元素则显然结果仍在$$V$$中。据此无法定义三个$$V$$中元素的乘法故无交换律。
 - 向量空间的例子：
@@ -47,7 +48,7 @@ tags:
   - 1.3：向量空间中的每个元素都有唯一的加法逆
   - 1.4：对每个$$\pmb{v}\in V$$都有$$0\pmb{v}=\pmb{0}$$
   - 1.5：对每个$$a\in\mathbf{F}$$都有$$a\pmb{0}=\pmb{0}$$
-  - 1.6：对每个$$\pmb{v}\in V$$都有$$(-1)\pmb{v}=\pmb{v}$$
+  - 1.6：对每个$$\pmb{v}\in V$$都有$$(-1)\pmb{v}=-\pmb{v}$$
 
 ## 子空间
 
@@ -60,7 +61,7 @@ tags:
   - $$\mathbf{R}^{2}$$的子空间恰为：$$\{\pmb{0}\}$$，$$\mathbf{R}^{2}$$，$$\mathbf{R}^{2}$$中所有过原点的直线
   - $$\mathbf{R}^{3}$$的子空间恰为：$$\{\pmb{0}\}$$，$$\mathbf{R}^{3}$$，$$\mathbf{R}^{3}$$中所有过原点的直线，$$\mathbf{R}^{3}$$中所有过原点的平面
 
-## 和与直和
+## （空间的）和与直和
 
 - 设$$U_{1},\cdots,U_{m}$$都是$$V$$的子空间，则它们的和定义为$$U_{1}+\cdots+U_{m}=\{\pmb{u}_{1}+\cdots+\pmb{u}_{m}:\pmb{u}_{1}\in U_{1},\cdots,\pmb{u}_{m}\in U_{m}\}$$
 - 易证该和也是$$V$$的子空间，且是$$V$$中包含$$U_{1},\cdots,U_{m}$$的最小子空间
@@ -73,12 +74,12 @@ tags:
 
 # 第二章 有限维向量空间
 
-## 张成与线性无关
+## （向量的）张成与线性无关
 
 - $$V$$中的一组向量$$(\pmb{v}_{1},\cdots,\pmb{v}_{m})$$的所有线性组合构成的集合称为$$(\pmb{v}_{1},\cdots,\pmb{v}_{m})$$的张成（span），记为$$\text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{m})=\{a_{1}\pmb{v}_{1}+\cdots+a_{m}\pmb{v}_{m}:a_{1},\cdots,a_{m}\in\mathbf{F}\}$$
   - 我们人为地令空组$$()$$的张成等于$$\{\pmb{0}\}$$。这样，可以验证，$$V$$的任意一组向量的张成都是$$V$$的子空间，且是包含该组向量的最小子空间
   - 如果$$V=\text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{m})$$，则称$$(\pmb{v}_{1},\cdots,\pmb{v}_{m})$$张成$$V$$。
-  - 如果一个向量空间可以由它的一组（有限的）向量张成，则称其为有限维的（finite dimensional）
+  - 如果一个向量空间可以由它的一组（有限个）向量张成，则称其为有限维的（finite dimensional）（注意这里“有限”并不是指每个向量里的元素个数有限，例如$$\mathbf{F}_{x}^{\infty}=\{(x,x,\cdots),x\in \mathbf{F}\}$$是有限维（一维）的，但$$\mathbf{F}^{\infty}$$不是有限维的）
 - 对于$$V$$中的一组向量$$(\pmb{v}_{1},\cdots,\pmb{v}_{m})$$，如果使得$$a_{1}\pmb{v}_{1}+\cdots+a_{m}\pmb{v}_{m}=0$$的$$a_{1},\cdots,a_{m}\in\mathbf{F}$$只有$$a_{1}=\cdots=a_{m}=0$$，则称$$(\pmb{v}_{1},\cdots,\pmb{v}_{m})$$是线性无关的（linearly independent）
   - 易证$$(\pmb{v}_{1},\cdots,\pmb{v}_{m})$$是线性无关的当且仅当$$\text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{m})$$中的每个向量都可以唯一地表示成$$(\pmb{v}_{1},\cdots,\pmb{v}_{m})$$的线性组合
   - 我们人为地令空组$$()$$是线性无关的。这样可以证明，如果从一个线性无关向量组中去掉一些向量，那么余下的向量组还是线性无关的。
@@ -99,15 +100,15 @@ tags:
 
 ## 维数
 
-- 2.14定理：有限维向量空间的任意两个基的长度都相同。证明：对任意两个基，用基的定义并应用2.6即得。
+- 2.14定理：有限维向量空间的任意两个基的长度都相同。证明：对任意两个基，用基的定义并应用2.6即得（每个基的长度都小于等于另一个基的长度，因为基也是一个张成组）。
 - 维数：定义为有限维向量空间的任意基的长度，记为$$\dim V$$
 - 2.15定理：若$$V$$是有限维的，并且$$U$$是$$V$$的子空间，则$$\dim U\le\dim V$$。证明：用2.12。
 - 2.16命题：若$$V$$是有限维的，则$$V$$中每个长度为$$\dim V$$的张成向量组都是$$V$$的一个基。证明：由2.10和2.14即得。
 - 2.17命题：若$$V$$是有限维的，则$$V$$中每个长度为$$\dim V$$的线性无关向量组都是$$V$$的基。证明：由2.12和2.14即得。
 - 2.18定理：如果$$U_{1}$$和$$U_{2}$$是同一个有限维向量空间的两个子空间，那么$$\dim(U_{1}+U_{2})=\dim U_{1}+\dim U_{2}-\dim(U_{1}\cap U_{2})$$。
   - 证明：设$$(\pmb{u}_{1},\cdots,\pmb{u}_{m})$$是$$U_{1}\cap U_{2}$$的基，它可以扩充为$$U_{1}$$的一个基$$(\pmb{u}_{1},\cdots,\pmb{u}_{m},\pmb{v}_{1},\cdots,\pmb{v}_{j})$$，也可以扩充为$$U_{2}$$的一组基$$(\pmb{u}_{1},\cdots,\pmb{u}_{m},\pmb{w}_{1},\cdots,\pmb{w}_{k})$$。只需证$$(\pmb{u}_{1},\cdots,\pmb{u}_{m},\pmb{v}_{1},\cdots,\pmb{v}_{j},\pmb{w}_{1},\cdots,\pmb{w}_{k})$$是$$U_{1}+U_{2}$$的一个基，而这只需证明该组是线性无关的，用定义以及$$U_{1}$$和$$U_{2}$$的关系即可证。
-- 2.19命题：设$$V$$是有限维的，并且$$U_{1},\cdots,U_{m}$$的$$V$$的子空间，使得$$V=U_{1}+\cdots+U_{m}$$并且$$\dim V=\dim U_{1}+\cdots+\dim U_{m}$$，则$$V=U_{1}\oplus\cdots\oplus U_{m}$$。
-  - 证明：根据假设，可以把每个$$U$$的基concat成一个长尾$$\dim V$$的组，而且这个组张成$$V$$，从而是$$V$$的基（2.16）且线性无关。用1.8可以证得。
+- 2.19命题：设$$V$$是有限维的，并且$$U_{1},\cdots,U_{m}$$是$$V$$的子空间，使得$$V=U_{1}+\cdots+U_{m}$$并且$$\dim V=\dim U_{1}+\cdots+\dim U_{m}$$，则$$V=U_{1}\oplus\cdots\oplus U_{m}$$。
+  - 证明：根据假设，可以把每个$$U$$的基concat成一个长为$$\dim V$$的组，而且这个组张成$$V$$，从而是$$V$$的基（2.16）且线性无关。用1.8可以证得。
 
 ## 习题
 
@@ -157,13 +158,14 @@ tags:
 - 线性映射称为单的，如果像相同蕴含原像相同。
 - 3.2命题：设$$T\in\mathcal{L}(V,W)$$，则$$T$$是单的当且仅当$$\text{null}T=\{\pmb{0}\}$$。由“单”的定义以及零空间的定义即得。
 - 对于$$T\in\mathcal{L}(V,W)$$，由$$W$$中形如$$T\pmb{v}(\pmb{v}\in V)$$的向量组成的子集称为$$T$$的值域，记为$$\text{range}T=\{T\pmb{v}:\pmb{v}\in V\}$$。如果值域等于$$W$$则称该线性映射为满的。
+  - 一个非常有用但比较抽象的结论是：对于算子$$T\in\mathcal{L}(V)$$，$$\text{range}(\text{range}T)\subseteq\text{range}T$$。换句话说，若$$\pmb{v}\in\text{range}T$$，则$$T\pmb{v}\in\text{range}T$$，即$$\text{range}T$$在$$T$$下是不变的
 - 3.3命题：设$$T\in\mathcal{L}(V,W)$$，那么$$\text{range}T$$是$$W$$的子空间。由值域的定义以及子空间的定义即可证。
 - 3.4命题：如果$$V$$是有限维向量空间，并且$$T\in\mathcal{L}(V,W)$$，那么$$\text{range}T$$是$$W$$的有限维子空间，并且$$\dim V=\dim\text{null}T+\dim\text{range}T$$。证明：用$$\text{null}T$$的一组基扩充成$$V$$的基，只需证明扩充出来的部分的像是$$\text{range}T$$的基。
 - 3.5推论：如果$$V$$和$$W$$都是有限维向量空间，且$$\dim V>\dim W$$，那么从$$V$$到$$W$$的线性映射一定不是单的。由3.4和3.2可证。
 - 3.6推论：如果$$V$$和$$W$$都是有限维向量空间，且$$\dim V<\dim W$$，那么从$$V$$到$$W$$的线性映射一定不是满的。由3.4和“满”的定义可证。
 - 令$$T(x_{1},\cdots,x_{n})=\big(\sum_{k=1}^{n}a_{1,k}x_{k},\cdots,\sum_{k=1}^{n}a_{m,k}x_{k}\big)$$，利用3.5和3.6可证：
-  - 当变量多于方程时，齐次线性方程组必有非零解
-  - 当方程多于变量时，必有一组常数项使得相应的非齐次线性方程组无解。
+  - 当变量多于方程时，齐次线性方程组（即$$T\pmb{x}=\pmb{0}$$）必有非零解（易知$$\text{null}T$$严格大于$$\{\pmb{0}\}$$，由3.5知这意味着$$n>m$$）。
+  - 当方程多于变量时，必有一组常数项使得相应的非齐次线性方程组（即$$T\pmb{x}=\pmb{c}\ne\pmb{0}$$）无解（无解意味着$$T$$不是满的，即存在某个$$\pmb{c}$$，其不存在原像。由3.6知这意味着$$n< m$$）。
 
 ## 线性映射的矩阵
 
@@ -212,7 +214,7 @@ tags:
   $$
   \mathcal{M}(\pmb{v})=\left[\begin{array}\\b_{1}\\\vdots\\b_{n}\\\end{array}\right]
   $$
-- 3.14命题：设$$T\in\mathcal{L}(V,W)$$，那么对于每个$$\pmb{v}\in V$$都有$$\mathcal{M}(T\pmb{v})=\mathcal{M}(T)\mathcal{M}(\pmb{v})$$。按照定义展开即证得。
+- 3.14命题：设$$T\in\mathcal{L}(V,W)$$，那么对于每个$$\pmb{v}\in V$$都有$$\mathcal{M}(T\pmb{v})=\mathcal{M}(T)\mathcal{M}(\pmb{v})$$（注意这里的$$\mathcal{M}(T\pmb{v})$$里的$$T\pmb{v}$$是$$W$$上的元素）。按照定义展开即证得。
 - 小结：到目前为止已涉及的向量空间的类型
   - $$\mathbf{F}^{n}$$，其元素是元组$$(x_{1},\cdots,x_{n})$$
   - $$\mathbf{F}^{n}$$到$$\mathbf{F}^{n}$$的线性映射的集合，其元素是单个线性映射（函数）
@@ -223,7 +225,7 @@ tags:
 ## 可逆性
 
 - 线性映射$$T\in\mathcal{L}(V,W)$$称为可逆的，如果存在线性映射$$S\in\mathcal{L}(W,V)$$使得$$ST$$等于$$V$$上的恒等映射，**并且**$$TS$$等于$$W$$上的恒等映射。满足$$ST=I,TS=I$$的线性映射$$S\in\mathcal{L}(W,V)$$称为$$T$$的逆。
-  > 问：是否存在$$S\in\mathcal{L}(W,V)$$使得$$ST$$等于$$V$$上的恒等映射，**但是**$$TS$$**不**等于$$W$$上的恒等映射？习题23解决了$$S\in\mathcal{L}(V)$$的情况，但是否对一般情况也适用？
+  > 问：是否存在$$S\in\mathcal{L}(W,V)$$使得$$ST$$等于$$V$$上的恒等映射，**但是**$$TS$$**不**等于$$W$$上的恒等映射？习题23解决了$$S\in\mathcal{L}(V)$$的情况，但是否对一般情况也适用？用下面的同构来证？
     {: .lambda_question}
 - 3.17命题：一个线性映射是可逆的当且仅当它既是单的又是满的。证明：=>方向用定义即得。<=方向：对于每个$$\pmb{w}\in W$$定义$$S\pmb{w}$$是$$V$$中唯一使得$$T(S\pmb{w})=\pmb{w}$$的那个元素（根据$$T$$既单且满可得此元素的存在性和唯一性）。$$TS$$显然等于$$W$$上的恒等映射。要证明$$ST$$是$$V$$上的恒等映射，有$$T(ST\pmb{v})=(TS)(T\pmb{v})=I(T\pmb{v})=T\pmb{v}$$，这表明$$ST\pmb{v}=\pmb{v}$$（因$$T$$是单的）。除此以外还要证明$$S$$是一个线性映射（齐性+线性），用定义即可。
 - 称两个向量空间是同构的，如果存在从一个到另一个的可逆线性映射。
@@ -240,13 +242,18 @@ tags:
 ## 习题
 
 - 习题22：设$$V$$是有限维的，并且$$S,T\in\mathcal{L}(V)$$，证明$$ST$$可逆当且仅当$$S$$和$$T$$都可逆
-  > 如何证明？
-    {: .lambda_question}
+  - <=方向：设$$S$$的逆为$$S'$$，$$T$$的逆为$$T'$$，易证$$ST$$的逆为$$T'S'$$
+  - =>方向：设$$ST$$的逆为$$K$$，则$$(ST)K=K(ST)=I$$，现在需证$$TK$$是$$S$$的逆。易证$$S(TK)=(ST)K=I$$，然后有两种方法可证$$(TK)S=I$$：
+    - 第一种方法：由下面习题23直接得知！
+    - 第二种方法：首先我们有$$TKS=TIKS=T(KST)KS=(TKS)(TKS)$$，令$$G=TKS$$，这里说明$$G=GG$$即$$G(G-I)$$是零映射。然后？
+      > 然后怎么证？
+        {: .lambda_question}
+      
 - 习题23：设$$V$$是有限维的，并且$$S,T\in\mathcal{L}(V)$$，证明$$ST=I$$当且仅当$$TS=I$$
   - 证明：先证$$T$$是单的。否则，根据3.2，设$$\pmb{v}\ne\pmb{0}$$且$$T\pmb{v}=\pmb{0}$$，由于$$(ST)\pmb{v}=I\pmb{v}=\pmb{v}$$，但$$(ST)\pmb{v}=S(T\pmb{v})=S\pmb{0}=\pmb{0}$$，这与$$\pmb{v}\ne\pmb{0}$$矛盾。故T是单的。根据3.21，$$T$$是可逆的，设其逆为$$T'$$，则有$$T'T=TT'=I$$。现要证$$S=T'$$，有$$T'=IT'=(ST)T'=S(TT')=S$$。
 - 习题24：设$$V$$是有限维的，并且$$T\in\mathcal{L}(V)$$，证明$$T$$是恒等映射的标量倍当且仅当对每个$$S\in\mathcal{L}(V)$$都有$$ST=TS$$。
-  > 如何证明？
-    {: .lambda_question}
+  - =>方向：若$$T=aI$$，则$$ST=S(aI)=aS=aIS=TS$$
+  - <=方向：一个非常不优美的方法是用矩阵$$\mathcal{M}(S)$$和$$\mathcal{M}(T)$$的乘积的元素的通项公式来证。有$$\mathcal{M}(S)$$的任意性可证得$$\mathcal{M}(T)$$是对角矩阵且对角线上元素相等。
 
 # 第四章 多项式
 
@@ -256,19 +263,22 @@ tags:
 - 4.1命题：设$$p\in\mathcal{P}(\mathbf{F})$$是$$m\ge1$$次多项式。令$$\lambda\in\mathbf{F}$$，则$$\lambda$$是$$p$$的根当且仅当存在$$m-1$$次多项式$$q\in\mathcal{P}\mathbf{F}$$使得$$p(z)=(z-\lambda)q(z),z\in\mathbf{F}$$。
   - 证明：<=是显然的。=>方向：由$$p(z)=p(z)-0=p(z)-p(\lambda)=(z-\lambda)(a_{1}+a_{2}q_{1}(z)+\cdots+a_{m}q_{m-1}(z))$$可得。
 - 4.3推论：设$$p\in\mathcal{P}(\mathbf{F})$$是$$m\ge0$$次多项式，则$$p$$在$$\mathbf{F}$$中最多由$$m$$个互不相同的根。证明：由4.1和数学归纳法易得。
-- 4.4推论：设$$a_{0},\cdots,a_{m}\in\mathbf{F}$$，如果$$a_{0}+a_{1}z+a_{2}z^{2}+\cdots+a_{m}z^{m}$$对$$z\in\mathbf{F}$$成立，则$$a_{0}=a_{1}=\cdots=a_{m}=0$$。证明：根据4.3，任何非负整数都不可能是这个多项式的次数，于是所有系数都等于0。
+- 4.4推论：设$$a_{0},\cdots,a_{m}\in\mathbf{F}$$，如果$$a_{0}+a_{1}z+a_{2}z^{2}+\cdots+a_{m}z^{m}=0$$对$$z\in\mathbf{F}$$成立，则$$a_{0}=a_{1}=\cdots=a_{m}=0$$。证明：根据4.3，任何非负整数都不可能是这个多项式的次数（否则根据4.3其最多只有$$m$$个根，根这里条件说其有无数个根矛盾），于是所有系数都等于0。
 - 4.5带余除法：设$$p,q\in\mathcal{P}(\mathbf{F})$$，并且$$p\ne0$$，则存在多项式$$s,r\in\mathcal{P}(\mathbf{F})$$，使得$$q=sp+r$$并且$$\deg r<\deg p$$。证明：取$$s\in\mathcal{P}(\mathbf{F})$$使得$$q-sp$$的次数最小，将其赋值为$$r$$，然后用反证法证明$$\deg r<\deg p$$。
 
 ## 复系数
 
 - 4.7代数学基本定理：每个不是常数的复系数多项式都有根。证明需要用到Liouville定理，超出书本范围故略去。
+  > 看看北大《高等代数》怎么证。
+    {: .lambda_question}
+  
 - 4.8推论：如果$$p\in\mathcal{P}(\mathbf{C})$$是非常数多项式，则$$p$$可以唯一分解成这样的形式$$p(z)=c(z-\lambda_{1})\cdots(z-\lambda_{m})$$。用归纳法和4.7直接证得。
 
 ## 实系数
 
-- 4.10命题：设$$p$$是实系数多项式，如果$$\lambda\in\mathbf{C}$$是$$p$$的根，则$$\overline{\lambda}$$也是$$p$$的根。证明：对$$a_{0}+a_{1}\lambda+\cdots+a_{m}\lambda^{m}=0$$两端取复共轭即得。
+- 4.10命题：设$$p$$是实系数多项式，如果$$\lambda\in\mathbf{C}$$是$$p$$的根，则$$\overline{\lambda}$$也是$$p$$的根。证明：对$$a_{0}+a_{1}\lambda+\cdots+a_{m}\lambda^{m}=0$$两端取复共轭即得（要用到$$\overline{wz}=\overline{w}\text{ }\overline{z}$$）。
 - 4.14定理：如果$$p\in\mathcal{P}(\mathbf{R})$$是非常数多项式，则$$p$$可以唯一（除因子的次序之外）分解成如下形式$$p(x)=c(x-\lambda_{1})\cdots(x-\lambda_{m})(x^{2}+\alpha_{1}x+\beta_{1})\cdots(x^{2}+\alpha_{M}x+\beta_{M})$$，其中$$c,\lambda_{1},\cdots,\lambda_{m}\in\mathbf{R},(\alpha_{1},\beta_{1}),\cdots,(\alpha_{M},\beta_{M})\in\mathbf{R}^{2}$$，并且对每个$$j$$都有$$\alpha_{j}^{2}<4\beta_{j}$$
-  - 证明：就是用4.8和4.10。其中要注意的问题是，如果$$\lambda$$是一个非实数的复根，则根据4.10，$$\overline{\lambda}$$也是一个复根，单4.10并未说明这两个根的次数相同。解决办法是由$$p(x)=(x-\lambda)(x-\overline{\lambda})q(x)$$得$$q(x)=\frac{p(x)}{x^{2}-2(\text{Re }\lambda)x+\vert \lambda \vert^{2}}$$，可知对任何$$x\in\mathbf{R}$$都有$$q(x)\in\mathbf{R}$$，然后由4.4证明$$q(x)$$展开后每项系数的虚部都是0。
+  - 证明：就是用4.8和4.10。其中要注意的问题是，如果$$\lambda$$是一个非实数的复根，则根据4.10，$$\overline{\lambda}$$也是一个复根，但4.10并未说明这两个根的次数相同。解决办法是由$$p(x)=(x-\lambda)(x-\overline{\lambda})q(x)$$得$$q(x)=\frac{p(x)}{x^{2}-2(\text{Re }\lambda)x+\vert \lambda \vert^{2}}$$，可知对任何$$x\in\mathbf{R}$$都有$$q(x)\in\mathbf{R}$$，这样若把$$q$$写成$$q(x)=a_{0}+a_{1}x+\cdots+a_{n-1}x^{n-1}$$可看到$$0=\text{Im }q(x)=(\text{Im }a_{0})+(\text{Im }a_{1})x+\cdots+(\text{Im }a_{n-2})x^{n-2}$$，然后由4.4证明这些虚部都是0。最后，唯一性用4.8来证。
 
 # 第五章 本征值与本征向量
 
@@ -290,7 +300,7 @@ tags:
   - 例子：对于算子$$T\in\mathcal{L}(\mathbf{F}^{2}),T(\pmb{w},\pmb{z})=(-\pmb{z},\pmb{w})$$。若$$\mathbf{F}=\mathbf{R}$$，此算子有很好的几何解释（绕$$\mathbf{R}^{2}$$的原点逆时针转$$90^{\circ}$$，易知$$T$$没有本征值。若$$\mathbf{F}=\mathbf{C}$$，$$i$$和$$-i$$都是$$T$$的本征值。
 - 5.6定理：设$$T\in\mathcal{L}(V)$$，$$\lambda_{1},\cdots,\lambda_{m}$$是$$T$$的互不相同的本征值，$$\pmb{v}_{1},\cdots,\pmb{v}_{m}$$是相应的非零本征向量，则$$(\pmb{v}_{1},\cdots,\pmb{v}_{m})$$线性无关。
   - 证明：反证法，设$$k$$是使$$\pmb{v}_{k}\in\text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{k-1})$$成立的最小正整数（由2.4知道这样的$$k$$一定存在），于是有$$\pmb{v}_{k}=a_{1}\pmb{v}_{1}+\cdots+a_{k-1}\pmb{v}_{k-1}$$，然后用该式两端乘以$$\lambda_{k}$$得到的式子减去把$$T$$作用于该等式两端得到的式子，根据$$(\pmb{v}_{1},\cdots,\pmb{v}_{k-1})$$的线性无关性易知这些$$a$$都是0，从而$$\pmb{v}_{k}$$等于$$\pmb{0}$$，与特征向量不为零的假设矛盾。
-- 5.9推论：$$V$$上的每个算子最多由$$\dim V$$个互不相同的本征值。证明：由5.6即得。
+- 5.9推论：$$V$$上的每个算子最多有$$\dim V$$个互不相同的本征值。证明：由5.6即得。
 
 ## 多项式对算子的作用
 
@@ -311,7 +321,7 @@ tags:
 
   证明：显然。
 - 5.13定理：设$$V$$是复向量空间，并设$$T\in\mathcal{L}(V)$$，则$$T$$关于$$V$$的某个基具有上三角矩阵。
-  - 证明：对$$V$$的维数用归纳法。若$$\dim V=1$$结论显然成立。设$$\dim V>1$$，并设对于**所有**维数比$$V$$小的复向量空间结果都成立。设$$\lambda$$是$$T$$的任意本征值（5.10），设$$U=\text{range}(T-\lambda I)$$，由3.21知$$T-\lambda I$$不是满的，故$$\dim <\dim V$$。通过$$T\pmb{u}=(T-\lambda I)\pmb{u}+\lambda\pmb{u}$$易证$$U$$在$$T$$下是不变的，因此$$T\vert_{U}$$是$$U$$上的算子。由归纳法假设，$$U$$有基$$(\pmb{u}_{1},\cdots,\pmb{u}_{m})$$使得$$T\vert_{U}$$关于此基有上三角矩阵，因此根据5.12对每个$$j$$都有$$T\pmb{u}_{j}=(T\vert_{U})(\pmb{u}_{j})\in\text{span}(\pmb{u}_{1},\cdots,\pmb{u}_{j})$$。把$$(\pmb{u}_{1},\cdots,\pmb{u}_{m})$$扩充成$$V$$的基$$(\pmb{u}_{1},\cdots,\pmb{u}_{m},\pmb{v}_{1},\cdots,\pmb{v}_{n})$$，则对每个$$k$$都有$$T\pmb{v}_{k}=(T-\lambda I)\pmb{v}_{k}+\lambda\pmb{v}_{k}$$，其中第一项$$\in U=\text{span}(\pmb{u}_{1},\cdots,\pmb{u}_{m})$$，因此$$T\pmb{v}_{k}=\text{span}(\pmb{u}_{1},\cdots,\pmb{u}_{m},\pmb{v}_{1},\cdots,\pmb{v}_{n})$$，而由5.12知$$T$$关于基$$(\pmb{u}_{1},\cdots,\pmb{u}_{m},\pmb{v}_{1},\cdots,\pmb{v}_{n})$$有上三角矩阵。
+  - 证明：对$$V$$的维数用归纳法。若$$\dim V=1$$结论显然成立。设$$\dim V>1$$，并设对于**所有**维数比$$V$$小的复向量空间结果都成立。设$$\lambda$$是$$T$$的任意本征值（5.10），设$$U=\text{range}(T-\lambda I)$$，由3.21知$$T-\lambda I$$不是满的，故$$\dim U<\dim V$$。通过$$T\pmb{u}=(T-\lambda I)\pmb{u}+\lambda\pmb{u}$$易证$$U$$在$$T$$下是不变的，因此$$T\vert_{U}$$是$$U$$上的算子。由归纳法假设，$$U$$有基$$(\pmb{u}_{1},\cdots,\pmb{u}_{m})$$使得$$T\vert_{U}$$关于此基有上三角矩阵，因此根据5.12对每个$$j$$都有$$T\pmb{u}_{j}=(T\vert_{U})(\pmb{u}_{j})\in\text{span}(\pmb{u}_{1},\cdots,\pmb{u}_{j})$$。把$$(\pmb{u}_{1},\cdots,\pmb{u}_{m})$$扩充成$$V$$的基$$(\pmb{u}_{1},\cdots,\pmb{u}_{m},\pmb{v}_{1},\cdots,\pmb{v}_{n})$$，则对每个$$k$$都有$$T\pmb{v}_{k}=(T-\lambda I)\pmb{v}_{k}+\lambda\pmb{v}_{k}$$，其中第一项$$\in U=\text{span}(\pmb{u}_{1},\cdots,\pmb{u}_{m})$$，因此$$T\pmb{v}_{k}=\text{span}(\pmb{u}_{1},\cdots,\pmb{u}_{m},\pmb{v}_{1},\cdots,\pmb{v}_{n})$$，而由5.12知$$T$$关于基$$(\pmb{u}_{1},\cdots,\pmb{u}_{m},\pmb{v}_{1},\cdots,\pmb{v}_{n})$$有上三角矩阵。
 - 5.16命题：设$$T\in\mathcal{L}(V)$$关于$$V$$的某个基有上三角矩阵，则$$T$$可逆当且仅当这个上三角矩阵对角线上的元素都不是0。
   - 证明：只需证明等价命题：$$T$$不可逆当且仅当某个元素是0。设$$(\pmb{v}_{1},\cdots,\pmb{v}_{n})$$是$$V$$的基使$$T$$关于此基有上三角矩阵。
 
@@ -329,7 +339,7 @@ tags:
     - <=方向：若$$\lambda_{1}=0$$则$$T\pmb{v}_{1}=\pmb{0}$$，故$$T$$不可逆。否则设$$\lambda_{k}=0,1\lt k\le n$$，由5.17，$$T\pmb{v}_{k}\in\text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{k-1})$$，根据3.5，存在非零向量$$\pmb{v}\in\text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{k})$$使得$$T\pmb{v}=0$$，故$$T$$不可逆。
     - =>方向：假设$$T$$不可逆，因此它不是单的且有非零向量$$\pmb{v}\in V$$使得$$\pmb{0}=T\pmb{v}=T(a_{1}\pmb{v}_{1}+\cdots+a_{k}\pmb{v}_{k})=(a_{1}T\pmb{v}_{1}+\cdots+a_{k-1}T\pmb{v}_{k-1})+a_{k}T\pmb{v}_{k};a_{1},\cdots,a_{k}\in\mathbf{F};a_{k}\ne0$$（把$$\pmb{v}$$表示成基的线性组合然后取$$k$$是系数不为0的最大下标）。最后那个括号中的向量含于$$\text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{k-1})$$（因为$$T$$关于该基的矩阵是上三角的，5.12），于是$$a_{k}T\pmb{v}_{k}$$从而$$T\pmb{v}_{k}$$也含于$$\text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{k-1})$$，于是若把$$T\pmb{v}_{k}$$写成基$$(\pmb{v}_{1},\cdots,\pmb{v}_{n})$$的线性组合，则$$\pmb{v}_{k}$$的系数即$$\lambda_{k}$$是0。
 - 5.18命题：设$$T\in\mathcal{L}(V)$$关于$$V$$的某个基有上三角矩阵，则这个上三角矩阵对角线上的元素恰好是$$T$$的所有本征值。
-  - 证明：设$$T$$关于某个基有上三角矩阵$$\mathcal{M}(T)$$，设$$\lambda\in\mathbf{F}$$，则矩阵$$\mathcal{M}(T-\lambda I)$$也是一个上三角矩阵且对角线上元素为$$\lambda_{k}-\lambda$$。根据5.16，$$T-\lambda I$$不可逆当且仅当$$\lambda$$等于某个$$\lambda_{j}$$，即$$\lambda$$是$$T$$的本征值当且仅当$$\lambda$$等于某个$$\lambda_{j}$$。
+  - 证明：设$$T$$关于某个基有上三角矩阵$$\mathcal{M}(T)$$，设$$\lambda\in\mathbf{F}$$，则矩阵$$\mathcal{M}(T-\lambda I)$$也是一个上三角矩阵且对角线上元素为$$\lambda_{k}-\lambda$$。根据5.16，$$T-\lambda I$$不可逆（即其不是单的，即存在非零向量被其映成零向量）当且仅当$$\lambda$$等于某个$$\lambda_{j}$$，即$$\lambda$$是$$T$$的本征值当且仅当$$\lambda$$等于某个$$\lambda_{j}$$。
 
 ## 对角矩阵
 
@@ -344,15 +354,15 @@ tags:
   - (d)$$V=\text{null}(T-\lambda_{1}I)\oplus\cdots\oplus\text{null}(T-\lambda_{m}I)$$
   - (e)$$\dim V=\dim\text{null}(T-\lambda_{1}I)+\cdots+\dim\text{null}(T-\lambda_{m}I)$$
 
-  证明：(a)和(b)等价已在之前说明。(b)=>(c)可令$$U_{j}=\text{span}(\pmb{v}_{j})$$，其中$$\pmb{v}_{j}$$是$$T$$的其中一个本征向量。(c)=>(b)对每个$$\pmb{v}_{j}\in U_{j}$$，它都是$$T$$的本征向量，又由直和的条件易知$$(\pmb{v}_{1},\cdots,\pmb{v}_{n})$$是$$V$$的基，即得。(b)=>(d)易知$$V$$中每个向量都是$$T$$的本征向量的线性组合，故$$V=\text{null}(T-\lambda_{1}I)+\cdots+\text{null}(T-\lambda_{m}I)$$，现只需证明这个和是直和；对于任意$$\pmb{u}_{j}\in\text{null}(T-\lambda_{j}I)$$，要使$$\pmb{0}=\pmb{u}_{1}+\cdots+\pmb{u}_{m}$$成立，它们只能全都等于0（根据5.6），从而前述的和是直和。(d)=>(e)由第二章习题17即得。(e)=>(b)在每个$$\text{null}(T-\lambda_{j}I)$$中取一个基，全部这些基组成$$T$$的一个本征向量$$(\pmb{v}_{1},\cdots,\pmb{v}_{n})$$，由(e)的条件知道$$n=\dim V$$，现要证它们线性无关，即$$a_{1}\pmb{v}_{1}+\cdots+a_{n}\pmb{v}_{n}=\pmb{0}$$的所有$$a$$都是$$0$$，只需对它们分组然后用5.6知每组都是$$\pmb{0}$$，而每组内的$$\pmb{v}_{k}$$是$$\text{null}(T-\lambda_{j}I)$$的基从而所有$$a_{k}$$都是0，即得。
+  证明：(a)和(b)等价已在之前说明。(b)=>(c)可令$$U_{j}=\text{span}(\pmb{v}_{j})$$，其中$$\pmb{v}_{j}$$是$$T$$的其中一个本征向量。(c)=>(b)对每个$$\pmb{v}_{j}\in U_{j}$$，它都是$$T$$的本征向量，又由直和的条件易知$$(\pmb{v}_{1},\cdots,\pmb{v}_{n})$$是$$V$$的基，即得。(b)=>(d)易知$$V$$中每个向量都是$$T$$的本征向量的线性组合，故$$V=\text{null}(T-\lambda_{1}I)+\cdots+\text{null}(T-\lambda_{m}I)$$，现只需证明这个和是直和；对于任意$$\pmb{u}_{j}\in\text{null}(T-\lambda_{j}I)$$，要使$$\pmb{0}=\pmb{u}_{1}+\cdots+\pmb{u}_{m}$$成立，它们只能全都等于0（根据5.6），从而前述的和是直和。(d)=>(e)由第二章习题17即得。(e)=>(b)在每个$$\text{null}(T-\lambda_{j}I)$$中取一个基，全部这些基组成$$T$$的一组本征向量$$(\pmb{v}_{1},\cdots,\pmb{v}_{n})$$，由(e)的条件知道$$n=\dim V$$，现要证它们线性无关，即$$a_{1}\pmb{v}_{1}+\cdots+a_{n}\pmb{v}_{n}=\pmb{0}$$的所有$$a$$都是$$0$$，只需对它们分组然后用5.6知每组都是$$\pmb{0}$$，而每组内的$$\pmb{v}_{k}$$是$$\text{null}(T-\lambda_{j}I)$$的基从而所有$$a_{k}$$都是0，即得。
 
 ## 实向量空间的不变子空间
 
 - 5.24定理：在有限维非零实向量空间中，每个算子都有1维或2维的不变子空间。
-  - 证明：设$$V$$是$$n>0$$维实向量空间，$$T\in\mathcal{L}(V)$$，取$$\pmb{v}\in V,\pmb{v}\ne0$$，由$$n+1$$个向量的线性相关性知存在不全为零的实数$$a_{0},\cdots,a_{n}$$使得$$\pmb{0}=a_{0}\pmb{v}+a_{1}T\pmb{v}+\cdots+a_{n}T^{n}\pmb{v}$$，根据4.14可以作分解$$\pmb{0}=c(T-\lambda_{1}I)\cdots(T-\lambda_{m}I)(T^{2}+\alpha_{1}T+\beta_{1}I)\cdots(T^{2}+\alpha_{M}T+\beta_{M}I)\pmb{v}$$，这意味着至少有一个$$j$$使得$$T-\lambda_{j}I$$不是单的或者$$(T^{2}+\alpha_{j}T+\beta_{j}I)$$不是单的。若是前者，则$$T$$有1维不变子空间。若是后者，考虑$$\text{span}(\pmb{u},T\pmb{u})$$的一个典型元素$$a\pmb{u}+bT\pmb{u};a,b\in\mathbf{R}$$，对其应用$$T$$并且条件$$T^{2}\pmb{u}+\alpha_{j}T\pmb{u}+\beta_{j}\pmb{u}=\pmb{0}$$知$$T(a\pmb{u}+bT\pmb{u})\in\text{span}(\pmb{u},T\pmb{u})$$，于是$$\text{span}(\pmb{u},T\pmb{u})$$在$$T$$下不变。
-- 设$$V=U\oplus W$$，则每个$$\pmb{v}\in V$$都可表示为$$\pmb{v}=\pmb{u}+\pmb{w};\pmb{u}\in U,\pmb{w}\in W$$。定义线性映射$$P_{U,W}\in\mathcal{L}(V)$$为：$$P_{U,W}\pmb{v}=\pmb{u}$$。这和”投影“类似。性质包括：
+  - 证明：设$$V$$是$$n>0$$维实向量空间，$$T\in\mathcal{L}(V)$$，取$$\pmb{v}\in V,\pmb{v}\ne0$$，由$$n+1$$个向量的线性相关性知存在不全为零的实数$$a_{0},\cdots,a_{n}$$使得$$\pmb{0}=a_{0}\pmb{v}+a_{1}T\pmb{v}+\cdots+a_{n}T^{n}\pmb{v}$$，根据4.14可以作分解$$\pmb{0}=c(T-\lambda_{1}I)\cdots(T-\lambda_{m}I)(T^{2}+\alpha_{1}T+\beta_{1}I)\cdots(T^{2}+\alpha_{M}T+\beta_{M}I)\pmb{v}$$，这意味着至少有一个$$j$$使得$$T-\lambda_{j}I$$不是单的或者$$(T^{2}+\alpha_{j}T+\beta_{j}I)$$不是单的。若是前者，则$$T$$有1维不变子空间。若是后者，则存在$$\pmb{u}\in V, \pmb{u}\ne\pmb{0}$$，我们考虑$$\text{span}(\pmb{u},T\pmb{u})$$的一个典型元素$$a\pmb{u}+bT\pmb{u};a,b\in\mathbf{R}$$，对其应用$$T$$并且条件$$T^{2}\pmb{u}+\alpha_{j}T\pmb{u}+\beta_{j}\pmb{u}=\pmb{0}$$知$$T(a\pmb{u}+bT\pmb{u})\in\text{span}(\pmb{u},T\pmb{u})$$，于是$$\text{span}(\pmb{u},T\pmb{u})$$在$$T$$下不变。
+- 设$$V=U\oplus W$$，则每个$$\pmb{v}\in V$$都可表示为$$\pmb{v}=\pmb{u}+\pmb{w};\pmb{u}\in U,\pmb{w}\in W$$。定义线性映射$$P_{U,W}\in\mathcal{L}(V)$$为：$$P_{U,W}\pmb{v}=\pmb{u}$$。这和“投影”类似。性质包括：
   - 对每个$$\pmb{v}\in V$$都有$$\pmb{v}=P_{U,W}\pmb{v}+P_{W,U}\pmb{v}$$
-  - $P^{2}_{U,W}=P_{U,W}$
+  - 多次应用，结果不变：$$P^{2}_{U,W}=P_{U,W}$$
   - $\text{range}P_{U,W}=U$
   - $\text{null}P_{U,W}=W$
 - 5.26定理：在奇数维实向量空间上，每个算子都有本征值。
