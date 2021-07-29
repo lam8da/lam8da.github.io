@@ -23,11 +23,49 @@ tags:
 ## 内积
 
 - 实向量空间或复向量空间$$V$$上的内积（inner product）就是一个函数，它把$$V$$中元素的每个有序对$$(\pmb{u},\pmb{v})$$都映成一个数$$\langle\pmb{u},\pmb{v}\rangle\in\mathbf{F}$$，并且具有性质：
-  - 正性：对所有$$\pmb{v}\in V$$都有$$\langle\pmb{v},\pmb{v}\rangle\ge0$$
+  - 正性：对所有$$\pmb{v}\in V$$都有$$\langle\pmb{v},\pmb{v}\rangle\ge0$$（这意味着$$\langle\pmb{v},\pmb{v}\rangle$$是一个实数）
   - 定性：$$\langle\pmb{v},\pmb{v}\rangle=0$$当且仅当$$\pmb{v}=0$$
-  - 第一个位置的加性：对所有$$\pmb{u},\pmb{v},\pmb{w}\in V$$都有$$\langle\pmb{u+v},\pmb{w}\rangle=\langle\pmb{u},\pmb{w}\rangle+\langle\pmb{v},\pmb{w}\rangle$$
+  - 第一个位置的加性：对所有$$\pmb{u},\pmb{v},\pmb{w}\in V$$都有$$\langle\pmb{u}+\pmb{v},\pmb{w}\rangle=\langle\pmb{u},\pmb{w}\rangle+\langle\pmb{v},\pmb{w}\rangle$$
+    - 通过这个和下一个性质可以证明第二个位置也具有加性，即：$$\langle\pmb{u},\pmb{v}+\pmb{w}\rangle=\langle\pmb{u},\pmb{v}\rangle+\langle\pmb{u},\pmb{w}\rangle$$
+    - 可证$$\langle\pmb{0},\pmb{w}\rangle=\langle\pmb{w},\pmb{0}\rangle=0,\pmb{w}\in V$$
   - 第一个位置的齐性：对所有$$a\in\mathbf{F},\pmb{v},\pmb{w}\in V$$都有$$\langle a\pmb{v},\pmb{w}\rangle=a\langle\pmb{v},\pmb{w}\rangle$$
+    - 通过这个和上一个性质可以证明第二个位置具有共轭齐性，即：$$\langle\pmb{u},a\pmb{v}\rangle=\overline{a}\langle\pmb{u},\pmb{v}\rangle$$
   - 共轭对称性：对所有$$\pmb{v},\pmb{w}\in V$$都有$$\langle\pmb{v},\pmb{w}\rangle=\overline{\langle\pmb{w},\pmb{v}\rangle}$$
+    - 对实向量空间这等价于$$\langle\pmb{v},\pmb{w}\rangle=\langle\pmb{w},\pmb{v}\rangle$$
+- 内积空间是带有内积的向量空间。例子：
+  - $$\mathbf{F}^{n}$$，内积定义为$$\langle(w_{1},\cdots,w_{n}),(z_{1},\cdots,z_{n})\rangle=w_{1}\overline{z_{1}}+\cdots+w_{n}\overline{z_{n}}$$（这称为欧几里得内积）
+  - 同样为$$\mathbf{F}^{n}$$，但用另一个内积：若$$c_{1},\cdots,c_{n}$$是正数，定义内积$$\langle(w_{1},\cdots,w_{n}),(z_{1},\cdots,z_{n})\rangle=c_{1}w_{1}\overline{z_{1}}+\cdots+c_{n}w_{n}\overline{z_{n}}$$
+  - 由系数在$$\mathbf{F}$$中次数不超过$$m$$的所有多项式组成的向量空间$$\mathcal{P}_{m}(\mathbf{F})$$，定义内积$$\langle p,q\rangle=\int_{0}^{1}p(x)\overline{q(x)}\mathrm{d}x$$
+
+## 范数
+
+- 范数定义为$$\| \pmb{v}\|=\sqrt{\langle\pmb{v},\pmb{v}\rangle}$$。性质：
+  - $$\| \pmb{v}\|=0$$当且仅当$$\pmb{v}=0$$
+  - 对所有$$a\in\mathbf{F}, \pmb{v}\in V$$都有$$\| a\pmb{v}\|=\vert a\vert\| \pmb{v}\|$$（两边平方即可证）
+- 对于两个向量$$\pmb{u},\pmb{v}\in V$$，如果$$\langle\pmb{u},\pmb{v}\rangle=0$$，则称$$\pmb{u}$$和$$\pmb{v}$$是正交的
+  - 注意次序无关紧要（由共轭对称性）
+  - $$\pmb{0}$$正交于每个向量，且$$\pmb{0}$$是唯一正交于自身的向量。
+- 6.3：勾股定理：如果$$\pmb{u},\pmb{v}$$是$$V$$中的正交向量，那么$$\| \pmb{u}+\pmb{v}\|^{2}=\|\pmb{u}\|^{2}+\|\pmb{v}\|^{2}$$。证明：对$$\|\pmb{u}+\pmb{v}\|^{2}$$展开即得。
+  - 易证这个命题的逆命题在实内积空间中成立。
+- 6.5：正交分解：设$$\pmb{u},\pmb{v}\in V$$，如果$$\pmb{v}\ne0$$，可以证明这个式子把$$\pmb{u}$$写成了$$\pmb{v}$$的标量倍加上一个正交于$$\pmb{v}$$的向量：
+
+  $$
+  \pmb{u}=\frac{\langle\pmb{u},\pmb{v}\rangle}{\|\pmb{v}\|^{2}}\pmb{v}+\left(\pmb{u}-\frac{\langle\pmb{u},\pmb{v}\rangle}{\|\pmb{v}\|^{2}}\pmb{v}\right)
+  $$
+- 6.6：柯西-施瓦茨不等式（Cauchy-Schwarz Inequality）：若$$\pmb{u},\pmb{v}\in V$$，则
+
+  $$
+  \vert \langle\pmb{u},\pmb{v}\rangle\vert\le\| \pmb{u}\|\| \pmb{v}\|
+  $$
+
+  而且其中的等号成立当且仅当$$\pmb{u},\pmb{v}$$之一是另一个的标量倍。
+  - 证明：设$$\pmb{v}\ne\pmb{0}$$（否则等号成立），然后用上述正交分解。令$$\pmb{w}$$等于右端第二项，则由勾股定理有：
+
+    $$
+    \| \pmb{u}\|^{2}=\left\| \frac{\langle\pmb{u},\pmb{v}\rangle}{\| \pmb{v}\|^{2}}\pmb{v}\right\|^{2}+\| \pmb{w}\|^{2}=\frac{\vert\langle\pmb{u},\pmb{v}\rangle\vert^{2}}{\|\pmb{v}\|^{2}}+\|\pmb{w}\|^{2}\ge\frac{\vert \langle\pmb{u},\pmb{v}\rangle\vert^{2}}{\|\pmb{v}\|^{2}}
+    $$
+
+    其中第二个等号成立是由于上面范数的第二个性质。然后再移项取平方根即得该不等式。从上式知等号成立当且仅当$$\pmb{w}=\pmb{0}$$，而由6.5知这成立当且仅当$$\pmb{u}$$和$$\pmb{v}$$的一个是另一个的标量倍。证毕。
 
 # Helpers
 
@@ -43,4 +81,3 @@ v       v1-vn: (\pmb{v}_{1},\cdots,\pmb{v}_{n})
 w       w1-wm: (\pmb{w}_{1},\cdots,\pmb{w}_{m})
 
 ```
-
