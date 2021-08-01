@@ -80,6 +80,29 @@ tags:
 ## 规范正交基
 
 - 规范正交性：若一个向量组中的向量两两正交，并且每个向量的范数都是1，则称这个向量组是规范正交的。
+- 6.15：如果$$V$$中的向量组$$(\pmb{e}_{1},\cdots,\pmb{e}_{m})$$是规范正交的，那么$$\|a_{1}\pmb{e}_{1}+\cdots+a_{m}\pmb{e}_{m}\|^{2}=\vert a_{1}\vert^{2}+\cdots+\vert a_{m}\vert^{2}$$，其中$$a_{1},\cdots,a_{m}\in\mathbf{F}$$。证明：反复使用勾股定理6.3以及上述范数的第二个性质即得。
+- 6.16：推论：每个规范正交向量组都是线性无关的。证明：用线性无关的定义（若存在一组标量使该规范正交向量组和这组标量对应项的积的和为0，那么这组标量全为0），根据6.15即得。
+- 6.17：定理：设$$(\pmb{e}_{1},\cdots,\pmb{e}_{n})$$是$$V$$的规范正交基，则对每个$$\pmb{v}\in V$$都有：
+  - 6.18：$$\pmb{v}=\langle\pmb{v},\pmb{e}_{1}\rangle\pmb{e}_{1}+\cdots+\langle\pmb{v},\pmb{e}_{n}\rangle\pmb{e}_{n}$$，而且
+  - 6.19：$$\|\pmb{v}\|^{2}=\vert \langle\pmb{v},\pmb{e}_{1}\rangle\vert^{2}+\cdots+\vert \langle\pmb{v},\pmb{e}_{n}\rangle\vert^{2}$$
+  - 证明：对等式$$\pmb{v}=a_{1}\pmb{e}_{1}+\cdots+a_{n}\pmb{e}_{n}$$两端都与$$\pmb{e}_{j}$$做内积，即得$$\langle\pmb{v},\pmb{e}_{j}\rangle=a_{j}$$，即6.18成立。又由6.15即得6.19。
+- 6.20：格拉姆-施密特过程（Gram-Schmidt procedure）：如果$$(\pmb{v}_{1},\cdots,\pmb{v}_{m})$$是$$V$$中的线性无关向量组，则$$V$$有规范正交向量组$$(\pmb{e}_{1},\cdots,\pmb{e}_{m})$$使得：
+
+  $$
+  \text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{j})=\text{span}(\pmb{e}_{1},\cdots,\pmb{e}_{j}), j=1,\cdots, m
+  $$
+
+  - 证明：首先令$$\pmb{e}_{1}=\pmb{v}_{1}/\|\pmb{v}_{1}\|$$，这满足$$j=1$$的情况。然后归纳地选取$$\pmb{e}_{1},\cdots,\pmb{e}_{m}$$。假设$$j>1$$并且已经选取了规范正交组$$(\pmb{e}_{1},\cdots,\pmb{e}_{j-1})$$使得$$\text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{j-1})=\text{span}(\pmb{e}_{1},\cdots,\pmb{e}_{j-1})$$。现在令
+
+    $$
+    \pmb{e}_{j}=\frac{\pmb{v}_{j}-\langle\pmb{v}_{j},\pmb{e}_{1}\rangle\pmb{e}_{1}-\cdots-\langle\pmb{v}_{j},\pmb{e}_{j-1}\rangle\pmb{e}_{j-1}}{\|\pmb{v}_{j}-\langle\pmb{v}_{j},\pmb{e}_{1}\rangle\pmb{e}_{1}-\cdots-\langle\pmb{v}_{j},\pmb{e}_{j-1}\rangle\pmb{e}_{j-1}\|}
+    $$
+
+    易知$$\pmb{v}_{j}\notin\text{span}(\pmb{e}_{1},\cdots,\pmb{e}_{j-1})$$，因此上式良定义（分母不为0）且$$\|\pmb{e}_{j}\|=1$$。设$$1\le k\le j$$，用上式将$$\langle\pmb{e}_{j},\pmb{e}_{k}\rangle$$展开即得其值为0，因此$$(\pmb{e}_{1},\cdots,\pmb{e}_{j})$$是规范正交组。由上式知$$\pmb{v}_{j}\in\text{span}(\pmb{e}_{1},\cdots,\pmb{e}_{j})$$，再根据归纳假设即得$$\text{span}(\pmb{v}_{1},\cdots,\pmb{v}_{j})\subset\text{span}(\pmb{e}_{1},\cdots,\pmb{e}_{j})$$，而由于这两个组都是线性无关的（后者根据6.16得到），因此上面两个子空间的维数都是$$j$$，从而一定相等。
+- 6.24：推论：每个有限维内积空间都有规范正交基。证明：直接对该空间的一组基应用格拉姆-施密特过程。因为该空间是有限维的，因此过程会停止并会得到一个规范正交组，根据6.16即得。
+- 6.25：推论：$$V$$中的每个规范正交向量组都可以扩充为$$V$$的规范正交基。证明：先根据2.12将该向量组扩充为$$V$$的基，然后应用格拉姆-施密特过程即得。
+- 6.27：推论：设$$T\in\mathcal{L}(V)$$，如果$$T$$关于$$V$$的某个基具有上三角矩阵，那么$$T$$关于$$V$$的某个规范正交基也具有上三角矩阵。证明：对该具有上三角矩阵的基应用格拉姆-施密特过程得到一组规范正交基，根据5.12(C)知$$T$$关于该组基具有上三角矩阵。
+- 6.28：推论：设$$V$$是复向量空间，并且$$T\in\mathcal{L}(V)$$，则$$T$$关于$$V$$的某个规范正交基具有上三角矩阵。证明：由5.13和6.27即得。
 
 
 # Helpers
