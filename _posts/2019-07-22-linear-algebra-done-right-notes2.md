@@ -104,6 +104,36 @@ tags:
 - 6.27：推论：设$$T\in\mathcal{L}(V)$$，如果$$T$$关于$$V$$的某个基具有上三角矩阵，那么$$T$$关于$$V$$的某个规范正交基也具有上三角矩阵。证明：对该具有上三角矩阵的基应用格拉姆-施密特过程得到一组规范正交基，根据5.12(C)知$$T$$关于该组基具有上三角矩阵。
 - 6.28：推论：设$$V$$是复向量空间，并且$$T\in\mathcal{L}(V)$$，则$$T$$关于$$V$$的某个规范正交基具有上三角矩阵。证明：由5.13和6.27即得。
 
+## 正交投影与极小化问题
+
+- 正交补：如果$$U$$是$$V$$的子集，那么$$U$$的正交补（orthogonal complement）为：
+
+  $$
+  U^{\bot}=\{\pmb{v}\in V:\langle\pmb{v},\pmb{u}\rangle=0, u\in U\}
+  $$
+
+  性质：
+  - $$U^{\bot}$$总是$$V$$的子空间
+  - $$V^{\bot}=\{\pmb{0}\}$$
+  - $$\{\pmb{0}\}^{\bot}=V$$
+- 6.29：定理：如果$$U$$是$$V$$的子空间，那么$$V=U\oplus U^{\bot}$$
+  - 证明：先证$$V=U+U^{\bot}$$，为此设$$\pmb{v}\in V$$且$$(\pmb{e}_{1},\cdots,\pmb{e}_{m})$$是$$U$$的一个规范正交基，则有
+
+    $$
+    \pmb{v}=\underbrace{\langle\pmb{v},\pmb{e}_{1}\rangle\pmb{e}_{1}+\cdots+\langle\pmb{v},\pmb{e}_{m}\rangle\pmb{e}_{m}}_{\pmb{u}}+\underbrace{\pmb{v}-\langle\pmb{v},\pmb{e}_{1}\rangle\pmb{e}_{1}-\cdots-\langle\pmb{v},\pmb{e}_{m}\rangle\pmb{e}_{m}}_{\pmb{w}}
+    $$
+
+    显然$$\pmb{u}\in U$$，易证对每个$$j$$都有$$\langle\pmb{w},\pmb{e}_{j}\rangle=0$$，因此$$\pmb{w}\in U^{\bot}$$，证得。再证该和是直和，为此只需证$$U\cap U^{\bot}=\{\pmb{0}\}$$，为此设$$\pmb{v}$$属于该交集，则它（包含于$$U$$）正交于$$U$$中的每个向量（包括$$\pmb{v}$$本身），从而$$\langle\pmb{v},\pmb{v}\rangle=0$$即$$\pmb{v}=\pmb{0}$$，即得。
+- 6.33：推论：如果$$U$$是$$V$$的子空间，那么$$U=(U^{\bot})^{\bot}$$
+  - 证明：采用证明集合相等的一般方法，即每个属于其中一个集合的元素都属于另一个。设$$\pmb{u}\in U$$，根据定义很容易证明$$\pmb{u}\in (U^{\bot})^{\bot}$$。要证另一个方向，设$$\pmb{v}\in(U^{\bot})^{\bot}$$，根据6.29可得$$\pmb{v}=\pmb{u}+\pmb{w},\pmb{u}\in U,\pmb{w}\in U^{\bot}$$，从而$$\pmb{v}-\pmb{u}\in U^{\bot}$$；又因为$$\pmb{v}\in(U^{\bot})^{\bot}$$，而根据上述另一个方向的证明有$$\pmb{u}\in(U^{\bot})^{\bot}$$，因此$$\pmb{v}-\pmb{u}\in(U^{\bot})^{\bot}$$，因此$$\pmb{v}-\pmb{u}\in U^{\bot}\cap(U^{\bot})^{\bot}$$，故$$\pmb{v}=\pmb{u}$$，于是$$\pmb{v}\in U$$，证毕。
+- 根据6.29，每个$$\pmb{v}\in V$$都可以唯一写成$$\pmb{v}=\pmb{u}+\pmb{w},\pmb{u}\in U,\pmb{w}\in U^{\bot}$$。定义$$V$$上的算子$$P_{U}$$，称为$$V$$到$$U$$上的正交投影：对$$\pmb{v}\in V$$，定义$$P_{U}\pmb{v}$$为前述分解中的$$\pmb{u}$$。易证：
+  - $$P_{U}\in\mathcal{L}(V)$$；
+  - $$\text{range}P_{U}=U$$；
+  - $$\text{null}P_{U}=U^{\bot}$$；
+  - 对每个$$\pmb{v}\in V$$都有$$\pmb{v}-P_{U}\pmb{v}\in U^{\bot}$$
+  - $$P_{U}^{2}=P_{U}$$；
+  - 对每个$$\pmb{v}\in V$$都有$$\|P_{U}\pmb{v}\|\le\|\pmb{v}\|$$
+- 6.36：命题：设$$U$$是$$V$$的子空间并且$$\pmb{v}\in V$$，则$$\|\pmb{v}-P_{U}\pmb{v}\|\le\|\pmb{v}-\pmb{u}\|,\pmb{u}\in U$$。进一步，若上面等号成立，则$$\pmb{u}=P_{U}\pmb{v}$$
 
 # Helpers
 
