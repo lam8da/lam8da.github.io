@@ -133,7 +133,23 @@ tags:
   - 对每个$$\pmb{v}\in V$$都有$$\pmb{v}-P_{U}\pmb{v}\in U^{\bot}$$
   - $$P_{U}^{2}=P_{U}$$；
   - 对每个$$\pmb{v}\in V$$都有$$\|P_{U}\pmb{v}\|\le\|\pmb{v}\|$$
+- 6.35：根据6.29的证明所用的分解可知，如果$$(\pmb{e}_{1},\cdots,\pmb{e}_{m})$$是$$U$$的规范正交基，那么对于每个$$\pmb{v}\in V$$都有$$P_{U}\pmb{v}=\langle\pmb{v},\pmb{e}_{1}\rangle\pmb{e}_{1}+\cdots+\langle\pmb{v},\pmb{e}_{m}\rangle\pmb{e}_{m}$$
 - 6.36：命题：设$$U$$是$$V$$的子空间并且$$\pmb{v}\in V$$，则$$\|\pmb{v}-P_{U}\pmb{v}\|\le\|\pmb{v}-\pmb{u}\|,\pmb{u}\in U$$。进一步，若上面等号成立，则$$\pmb{u}=P_{U}\pmb{v}$$
+  - 证明：
+
+    $$
+    \|\pmb{v}-P_{U}\pmb{v}\|^{2}\le\|\pmb{v}-P_{U}\pmb{v}\|^{2}+\|P_{U}\pmb{v}-\pmb{u}\|^{2}=\|(\pmb{v}-P_{U}\pmb{v})+(P_{U}\pmb{v}-\pmb{u})\|^{2}=\|\pmb{v}-\pmb{u}\|^{2}
+    $$
+
+    其中第一个等号是根据勾股定理。即得。
+  - 例子：如何找到一个次数不超过5的实系数多项式$$\pmb{u}$$使其在区间$$[-\pi,\pi]$$上尽量好地逼近$$\sin x$$，即$$\int_{-\pi}^{\pi}\vert\sin x-\pmb{u}(x)\vert^{2}\mathrm{d}x$$最小
+    - 解：令$$C[-\pi,\pi]$$表示由$$[-\pi,\pi]$$上的连续实值函数组成的实向量空间（注意这个空间不是有限维的），并取内积为：
+
+      $$
+      \langle f,g\rangle=\int_{-\pi}^{\pi}f(x)g(x)\mathrm{d}x
+      $$
+
+      设$$\pmb{v}\in C[-\pi,\pi]$$是由$$\pmb{v}(x)=\sin x$$定义的函数，令$$U$$表示由次数不超过5的实系数多项式组成的$$C[-\pi,\pi]$$的子空间，则问题可以重述为：求$$\pmb{u}\in U$$使得$$\|\pmb{v}-\pmb{u}\|$$最小。根据6.36要求的$$\pmb{u}$$就是$$P_{U}\pmb{v}$$，而这可以先找$$U$$的一组规范正交基然后根据6.35来求，而规范正交基可以对$$U$$的基$$(1,x,x^{2},x^{3},x^{4},x^{5})$$应用格拉姆-施密特过程得到。
 
 # Helpers
 
