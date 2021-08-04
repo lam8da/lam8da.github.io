@@ -150,6 +150,24 @@ tags:
       $$
 
       设$$\pmb{v}\in C[-\pi,\pi]$$是由$$\pmb{v}(x)=\sin x$$定义的函数，令$$U$$表示由次数不超过5的实系数多项式组成的$$C[-\pi,\pi]$$的子空间，则问题可以重述为：求$$\pmb{u}\in U$$使得$$\|\pmb{v}-\pmb{u}\|$$最小。根据6.36要求的$$\pmb{u}$$就是$$P_{U}\pmb{v}$$，而这可以先找$$U$$的一组规范正交基然后根据6.35来求，而规范正交基可以对$$U$$的基$$(1,x,x^{2},x^{3},x^{4},x^{5})$$应用格拉姆-施密特过程得到。
+  - 通过6.29的证明知，其只用到$$U$$的维数的有限性，而无论$$V$$维数是否有限证明都成立。对$$P_{U}$$的定义和性质（包括6.35），以及6.36也是一样的。因此可知：无论$$V$$是否为有限维的，只要$$U$$是有限维的，就可以用上面讨论的过程来寻找$$\pmb{u}\in U$$使得$$\|\pmb{v}-\pmb{u}\|$$最小。
+
+## 线性泛函与伴随
+
+- $$V$$上的线性泛函（linear functional）是从$$V$$到$$\mathbf{F}$$的线性映射。
+- 6.45：定理：设$$\varphi$$是$$V$$上的线性泛函，则存在唯一一个向量$$\pmb{v}\in V$$使得$$\varphi(\pmb{u})=\langle\pmb{u},\pmb{v}\rangle,\pmb{u}\in V$$
+  - 证明：首先证明存在向量$$\pmb{v}\in V$$使得对每个$$\pmb{u}\in V$$都有$$\varphi(\pmb{u})=\langle\pmb{u},\pmb{v}\rangle$$。设$$(\pmb{e}_{1},\cdots,\pmb{e}_{n})$$是$$V$$的规范正交基，则对每个$$\pmb{u}\in V$$都有：
+
+    $$
+    \begin{array}{l}
+      \varphi(\pmb{u})&=\varphi\left(\langle\pmb{u},\pmb{e}_{1}\rangle\pmb{e}_{1}+\cdots+\langle\pmb{u},\pmb{e}_{n}\rangle\pmb{e}_{n}\right) \\
+      &=\langle\pmb{u},\pmb{e}_{1}\rangle\varphi(\pmb{e}_{1})+\cdots+\langle\pmb{u},\pmb{e}_{n}\rangle\varphi(\pmb{e}_{n}) \\
+      &=\langle\pmb{u},\overline{\varphi(\pmb{e}_{1})}\pmb{e}_{1}+\cdots+\overline{\varphi(\pmb{e}_{n})}\pmb{e}_{n}\rangle \\
+      &=\langle\pmb{u},\pmb{v}\rangle
+    \end{array}
+    $$
+
+    现在来证明这样的$$\pmb{v}$$只有一个，否则假设$$\pmb{v}_{1},\pmb{v}_{2}$$对任意的$$\pmb{u}$$均满足条件，则取$$\pmb{u}=\pmb{v}_{1}-\pmb{v}_{2}$$，易证$$\pmb{v}_{1}=\pmb{v}_{2}$$。
 
 # Helpers
 
