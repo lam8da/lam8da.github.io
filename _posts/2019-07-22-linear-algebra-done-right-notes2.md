@@ -168,6 +168,16 @@ tags:
     $$
 
     现在来证明这样的$$\pmb{v}$$只有一个，否则假设$$\pmb{v}_{1},\pmb{v}_{2}$$对任意的$$\pmb{u}$$均满足条件，则取$$\pmb{u}=\pmb{v}_{1}-\pmb{v}_{2}$$，易证$$\pmb{v}_{1}=\pmb{v}_{2}$$。
+- 伴随（adjoint）的定义：设$$V,W$$是$$\mathbf{F}$$上的有限维非零内积空间，设$$T\in\mathcal{L}(V,W)$$。给定$$\pmb{w}\in W$$，考虑$$V$$上将$$\pmb{v}\in V$$映成$$\langle T\pmb{v},\pmb{w}\rangle$$的线性泛函（易证这个线性泛函满足线性映射的定义，因此是良定义的），则$$T$$的伴随$$T^{*}$$是使得如下性质成立的从$$W$$到$$V$$的函数：$$T^{*}w$$是$$V$$中唯一一个满足条件$$\langle T\pmb{v},\pmb{w}\rangle=\langle\pmb{v},T^{*}\pmb{w}\rangle,\pmb{v}\in V$$的向量
+- 伴随是线性映射：若$$T\in\mathcal{L}(V,W)$$，则$$T^{*}\in\mathcal{L}(V,W)$$。证明：根据线性映射的定义需要证明加性和齐性。
+  - 加性：$$\langle\pmb{v},T^{*}(\pmb{w}_{1}+\pmb{w}_{2})\rangle=\langle T\pmb{v},\pmb{w}_{1}+\pmb{w}_{2}\rangle=\langle T\pmb{v},\pmb{w}_{1}\rangle+\langle T\pmb{v},\pmb{w}_{2}\rangle=\langle\pmb{v},T^{*}\pmb{w}_{1}\rangle+\langle\pmb{v},T^{*}\pmb{w}_{2}\rangle=\langle\pmb{v},T^{*}\pmb{w}_{1}+T^{*}\pmb{w}_{2}\rangle$$
+  - 齐性可以类似地证明。
+- 函数$$T\mapsto T^{*}$$具有如下性质（以下设$$S,T\in\mathcal{L}(V,W)$$）
+  - 加性：$$(S+T)^{*}=S^{*}+T^{*}$$。为证此性质需要证明$$(S+T)^{*}(\pmb{w})=S^{*}\pmb{w}+T^{*}\pmb{w},\pmb{w}\in W$$，为此需要证明$$\langle\pmb{v},(S+T)^{*}\pmb{w}\rangle=\langle\pmb{v},S^{*}\pmb{w}+T^{*}\pmb{w}\rangle$$，而这通过伴随定义的式子、内积的性质以及线性变换的性质就能证得。
+  - 共轭齐性：$$(aT)^{*}=\overline{a}T^{*}$$。证明思路同上。
+  - 伴随的伴随：$$(T^{*})^{*}=T$$。证明思路同上，要用到内积的共轭对称性。
+  - 恒等算子：$$I^{*}=I$$
+  - 乘积：$$(ST)^{*}=T^{*}S^{*}$$。证明思路同上，要把$$S$$和$$T$$通过伴随的定义式做两次变换。
 
 # Helpers
 
