@@ -393,7 +393,7 @@ tags:
 
    $$\int_{AB} P(x,y)\mathrm{d}x+Q(x,y)\mathrm{d}y$$
 
-   。常简写为$$\int_L P\mathrm{d}x+Q\mathrm{d}y$$或$$\int_{AB}P\mathrm{d}x+Q\mathrm{d}y$$。若$$L$$为封闭的有向曲线，则记为$$\oint P\mathrm{d}x+Q\mathrm{d}y$$。若记$$\pmb{F}(x,y)=\big(P(x,y),Q(x,y)\big),\mathrm{d}\pmb{s}=(\mathrm{d}x,\mathrm{d}y)$$，则该积分又可写成向量形式$$\int_L\pmb{F}\cdot\mathrm{d}\pmb{s}$$或$$\int_{AB}\pmb{F}\cdot\mathrm{d}\pmb{s}$$，于是力$$\pmb{F}(x,y)=\big(P(x,y),Q(x,y)\big)$$沿有向曲线$$L:\overparen{AB}$$对质点所作的功为$$W=\int_L P(x,y)\mathrm{d}x+Q(x,y)\mathrm{d}y$$
+   。常简写为$$\int_L P\mathrm{d}x+Q\mathrm{d}y$$或$$\int_{AB}P\mathrm{d}x+Q\mathrm{d}y$$。若$$L$$为封闭的有向曲线，则记为$$\oint P\mathrm{d}x+Q\mathrm{d}y$$。若记$$\boldsymbol{F}(x,y)=\big(P(x,y),Q(x,y)\big),\mathrm{d}\boldsymbol{s}=(\mathrm{d}x,\mathrm{d}y)$$，则该积分又可写成向量形式$$\int_L\boldsymbol{F}\cdot\mathrm{d}\boldsymbol{s}$$或$$\int_{AB}\boldsymbol{F}\cdot\mathrm{d}\boldsymbol{s}$$，于是力$$\boldsymbol{F}(x,y)=\big(P(x,y),Q(x,y)\big)$$沿有向曲线$$L:\overparen{AB}$$对质点所作的功为$$W=\int_L P(x,y)\mathrm{d}x+Q(x,y)\mathrm{d}y$$
 1. 性质：
    - 不同积分的线性组合那些常数因子可以放进积分号后（里）面，积分值不变
    - 首尾相接的有向曲线拼接而成的有向曲线的第二型曲线积分等于各个曲线上的第二型曲线积分的和
