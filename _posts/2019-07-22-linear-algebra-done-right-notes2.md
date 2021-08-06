@@ -178,6 +178,36 @@ tags:
   - 伴随的伴随：$$(T^{*})^{*}=T$$。证明思路同上，要用到内积的共轭对称性。
   - 恒等算子：$$I^{*}=I$$
   - 乘积：$$(ST)^{*}=T^{*}S^{*}$$。证明思路同上，要把$$S$$和$$T$$通过伴随的定义式做两次变换。
+- 6.46：命题：设$$T\in\mathcal{L}(V,W)$$，则
+  - (a)$$\text{null}T^{*}=(\text{range}T)^{\bot}$$
+  - (b)$$\text{range}T^{*}=(\text{null}T)^{\bot}$$
+  - (c)$$\text{null}T=(\text{range}T^{*})^{\bot}$$
+  - (d)$$\text{range}T=(\text{null}T^{*})^{\bot}$$
+  - 证明：对于(a)，设$$\pmb{w}\in W$$，则：
+
+    $$
+    \begin{array}{l}
+    \pmb{w}\in\text{null}T^{*}&\iff T^{*}\pmb{w}=\pmb{0} \\
+    &\iff \langle\pmb{v},T^{*}\pmb{w}\rangle=0,\pmb{v}\in V \\
+    &\iff \langle T\pmb{v},\pmb{w}\rangle=0,\pmb{v}\in V \\
+    &\iff \pmb{w}\in (\text{range}T)^{\bot}
+    \end{array}
+    $$
+
+    (a)的两端取正交补即得(d)（用到了6.33）。通过把这两式中的$$T$$和$$T^{*}$$互换即得另外两式。
+- 6.47：命题：设$$T\in\mathcal{L}(V,W)$$，如果$$(\pmb{e}_{1},\cdots,\pmb{e}_{n})$$是$$V$$的规范正交基，且$$(\pmb{f}_{1},\cdots,\pmb{f}_{m})$$是$$W$$的规范正交基，那么
+
+  $$
+  \mathcal{M}(T^{*},(\pmb{f}_{1},\cdots,\pmb{f}_{m}),(\pmb{e}_{1},\cdots,\pmb{e}_{n}))
+  $$
+
+  是
+
+  $$
+  \mathcal{M}(T,(\pmb{e}_{1},\cdots,\pmb{e}_{n}),(\pmb{f}_{1},\cdots,\pmb{f}_{m}))
+  $$
+
+  的共轭装置。
 
 # Helpers
 
