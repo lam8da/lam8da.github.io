@@ -207,7 +207,26 @@ tags:
   \mathcal{M}(T,(\boldsymbol{e}_{1},\cdots,\boldsymbol{e}_{n}),(\boldsymbol{f}_{1},\cdots,\boldsymbol{f}_{m}))
   $$
 
-  的共轭装置。
+  的共轭转置。
+  - 证明：设$$(\boldsymbol{e}_{1},\cdots,\boldsymbol{e}_{n}),(\boldsymbol{f}_{1},\cdots,\boldsymbol{f}_{m})$$分别是$$V,W$$的规范正交基。我们知道，把$$T\boldsymbol{e}_{k}$$写成这些$$\boldsymbol{f}_{j}$$的线性组合可以得到$$\mathcal{M}(T)$$的第$$k$$列，而根据6.17有：
+
+    $$
+    T\boldsymbol{e}_{k}=\langle T\boldsymbol{e}_{k},\boldsymbol{f}_{1}\rangle\boldsymbol{f}_{1}+\cdots+\langle T\boldsymbol{e}_{k},\boldsymbol{f}_{m}\rangle\boldsymbol{f}_{m}
+    $$
+
+    因此$$\mathcal{M}(T)$$中第$$j$$行第$$k$$列的元素是$$\langle T\boldsymbol{e}_{k},\boldsymbol{f}_{j}\rangle$$。类似地$$\mathcal{M}(T^{*})$$中第$$j$$行第$$k$$列的元素是$$\langle T^{*}\boldsymbol{f}_{k},\boldsymbol{e}_{j}\rangle$$，而我们有：
+
+    $$
+    \langle T^{*}\boldsymbol{f}_{k},\boldsymbol{e}_{j}\rangle=\langle\boldsymbol{f}_{k},T\boldsymbol{e}_{j}\rangle=\overline{\langle T\boldsymbol{e}_{j},\boldsymbol{f}_{k}\rangle}
+    $$
+
+    而这最后这值又等于$$\mathcal{M}(T)$$中第$$k$$行第$$j$$列元素的复共轭。证毕。
+- 习题28：设$$T\in \mathcal{L}(V),\lambda\in\mathbf{F}$$。证明$$\lambda$$是$$T$$的本征值当且仅当$$\overline{\lambda}$$是$$T^{*}$$的本征值。
+  > 如何证明？
+    {: .lambda_question}
+- 习题32：设$$\boldsymbol{A}$$为$$m\times n$$实矩阵。证明$$\boldsymbol{A}$$的所有列（在$$\mathbf{R}^{m}$$中）所张成的子空间的维数等于$$\boldsymbol{A}$$的所有行（在$$\mathbf{R}^{n}$$中）所张成的子空间的维数（即，行秩=列秩）。
+  > 如何证明？
+    {: .lambda_question}
 
 # Helpers
 
@@ -223,28 +242,30 @@ v       v1-vn: (\boldsymbol{v}_{1},\cdots,\boldsymbol{v}_{n})
 w       w1-wm: (\boldsymbol{w}_{1},\cdots,\boldsymbol{w}_{m})
 ```
 
-`\mathbb is `$$\mathbb{abcdeABCDEwxyzWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`plain text: `$$abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega$$ 
 
-`\mathbf is `$$\mathbf{abcdeABCDEwxyzWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\mathbb is: `$$\mathbb{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
 
-`\mathcal is `$$\mathcal{abcdeABCDEwxyzWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\mathbf is: `$$\mathbf{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
 
-`\mathfrak is `$$\mathfrak{abcdeABCDEwxyzWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\mathcal is: `$$\mathcal{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
 
-`\mathit is `$$\mathit{abcdeABCDEwxyzWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\mathfrak is: `$$\mathfrak{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
 
-`\mathrm is `$$\mathrm{abcdeABCDEwxyzWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\mathit is: `$$\mathit{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
 
-`\mathscr is `$$\mathscr{abcdeABCDEwxyzWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\mathrm is: `$$\mathrm{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
 
-`\mathsf is `$$\mathsf{abcdeABCDEwxyzWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\mathscr is: `$$\mathscr{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
 
-`\mathtt is `$$\mathtt{abcdeABCDEwxyzWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\mathsf is: `$$\mathsf{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
 
-`\text is `$$\text{abcdeABCDEwxyzWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\mathtt is: `$$\mathtt{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
 
-`\textbf is `$$\textbf{abcdeABCDEwxyzWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\text is: `$$\text{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
 
-`\pmb is `$$\pmb{abcdeABCDEwxyzWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\textbf is: `$$\textbf{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
 
-`\boldsymbol is `$$\boldsymbol{abcdeABCDEwxyzWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\pmb is: `$$\pmb{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+
+`\boldsymbol is: `$$\boldsymbol{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
