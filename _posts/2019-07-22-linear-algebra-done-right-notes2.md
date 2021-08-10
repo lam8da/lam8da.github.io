@@ -16,7 +16,7 @@ tags:
 * TOC
 {:toc}
 
-# 内积空间
+# 第六章 内积空间
 
 向量空间研究的主要是空间的线性结构（加法和标量乘法），而内积空间则加上了对应于二维空间和三维空间中长度和角度的概念。
 
@@ -228,6 +228,38 @@ tags:
   > 如何证明？
     {: .lambda_question}
 
+# 第七章 内积空间上的算子
+
+- 本章只讨论有限维非零内积空间
+- 自伴（self-adjoint）算子：算子$$T\in\mathcal{L}(V)$$称为自伴的，如果$$T=T^{*}$$。易证：
+  - 两个自伴算子的和是自伴的
+  - 一个实数和一个自伴算子的乘积是自伴的
+- 一些概念的梳理：
+  - $$\mathcal{L}(V,W)$$ => $$\mathcal{L}(V)$$
+  - 线性映射 => 算子
+  - 伴随 => 自伴
+- 重要的类比：伴随在$$\mathcal{L}(V)$$上所起的作用犹如复共轭在$$\mathbf{C}$$上所起的作用。复数$$z$$是实的当且仅当$$z=\overline{z}$$，因而自伴算子（$$T=T^{*}$$）可与实数类比。
+- 7.1：命题：自伴算子的特征值都是实的。证明：思路就是证明$$\lambda=\overline{\lambda}$$：
+
+  $$
+  \begin{array}{l}
+  \lambda\|\boldsymbol{v}\|^{2}=\langle\lambda\boldsymbol{v},\boldsymbol{v}\rangle=\langle T\boldsymbol{v},\boldsymbol{v}\rangle=\langle\boldsymbol{v},T\boldsymbol{v}\rangle=\langle\boldsymbol{v},\lambda\boldsymbol{v}\rangle=\overline{\lambda}\|\boldsymbol{v}\|^{2}
+  \end{array}
+  $$
+- 7.2：命题：若$$V$$是复内积空间，$$T$$是$$V$$上的算子，使得对所有$$\boldsymbol{v}\in V$$都有$$\langle T\boldsymbol{v},\boldsymbol{v}\rangle=0$$，则$$T=0$$
+  - 证明：思路就是用$$\langle T\boldsymbol{v},\boldsymbol{v}\rangle$$的形式来表示$$\langle T\boldsymbol{u},\boldsymbol{w}\rangle$$：
+
+    $$
+    \begin{align}
+      \langle T\boldsymbol{u},\boldsymbol{w}\rangle&=\frac{\langle T(\boldsymbol{u}+\boldsymbol{w}),\boldsymbol{u}+\boldsymbol{w}\rangle-\langle T(\boldsymbol{u}-\boldsymbol{w}),\boldsymbol{u}-\boldsymbol{w}\rangle}{4}+\frac{\langle T(\boldsymbol{u}+i\boldsymbol{w}),\boldsymbol{u}+i\boldsymbol{w}\rangle-\langle T(\boldsymbol{u}-i\boldsymbol{w}),\boldsymbol{u}-i\boldsymbol{w}\rangle}{4}i \\
+      &=0
+    \end{align}
+    $$
+
+    从而$$T=0$$（取$$\boldsymbol{w}=T\boldsymbol{u}$$）。
+  - 注意这个命题对实内积空间不成立，例如考虑算子$$T\in \mathcal{L}(\mathbf{R}^{2}),T((x,y))=(-y,x)$$（绕原点逆时针旋转90度）。
+- 7.3：推论：设$$V$$是复内积空间，$$T\in\mathcal{L}(V)$$，则$$T$$是自伴的当且仅当对每个$$\boldsymbol{v}\in V$$都有$$\langle T\boldsymbol{v},\boldsymbol{v}\rangle\in \mathbf{R}$$
+
 # Helpers
 
 ```
@@ -242,30 +274,30 @@ v       v1-vn: (\boldsymbol{v}_{1},\cdots,\boldsymbol{v}_{n})
 w       w1-wm: (\boldsymbol{w}_{1},\cdots,\boldsymbol{w}_{m})
 ```
 
-`plain text: `$$abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega$$ 
+`plain text: `$$abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\lambda\sigma\omega\Gamma\Pi\Phi\Theta\Lambda\Sigma\Omega$$ 
 
-`\mathbb is: `$$\mathbb{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\mathbb is: `$$\mathbb{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\lambda\sigma\omega\Gamma\Pi\Phi\Theta\Lambda\Sigma\Omega}$$
 
-`\mathbf is: `$$\mathbf{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\mathbf is: `$$\mathbf{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\lambda\sigma\omega\Gamma\Pi\Phi\Theta\Lambda\Sigma\Omega}$$
 
-`\mathcal is: `$$\mathcal{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\mathcal is: `$$\mathcal{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\lambda\sigma\omega\Gamma\Pi\Phi\Theta\Lambda\Sigma\Omega}$$
 
-`\mathfrak is: `$$\mathfrak{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\mathfrak is: `$$\mathfrak{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\lambda\sigma\omega\Gamma\Pi\Phi\Theta\Lambda\Sigma\Omega}$$
 
-`\mathit is: `$$\mathit{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\mathit is: `$$\mathit{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\lambda\sigma\omega\Gamma\Pi\Phi\Theta\Lambda\Sigma\Omega}$$
 
-`\mathrm is: `$$\mathrm{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\mathrm is: `$$\mathrm{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\lambda\sigma\omega\Gamma\Pi\Phi\Theta\Lambda\Sigma\Omega}$$
 
-`\mathscr is: `$$\mathscr{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\mathscr is: `$$\mathscr{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\lambda\sigma\omega\Gamma\Pi\Phi\Theta\Lambda\Sigma\Omega}$$
 
-`\mathsf is: `$$\mathsf{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\mathsf is: `$$\mathsf{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\lambda\sigma\omega\Gamma\Pi\Phi\Theta\Lambda\Sigma\Omega}$$
 
-`\mathtt is: `$$\mathtt{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\mathtt is: `$$\mathtt{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\lambda\sigma\omega\Gamma\Pi\Phi\Theta\Lambda\Sigma\Omega}$$
 
-`\text is: `$$\text{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\text is: `$$\text{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\lambda\sigma\omega\Gamma\Pi\Phi\Theta\Lambda\Sigma\Omega}$$
 
-`\textbf is: `$$\textbf{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\textbf is: `$$\textbf{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\lambda\sigma\omega\Gamma\Pi\Phi\Theta\Lambda\Sigma\Omega}$$
 
-`\pmb is: `$$\pmb{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\pmb is: `$$\pmb{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\lambda\sigma\omega\Gamma\Pi\Phi\Theta\Lambda\Sigma\Omega}$$
 
-`\boldsymbol is: `$$\boldsymbol{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\Gamma\Pi\Phi\omega\Sigma\sigma\omega}$$
+`\boldsymbol is: `$$\boldsymbol{abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890\alpha\beta\gamma\pi\phi\theta\lambda\sigma\omega\Gamma\Pi\Phi\Theta\Lambda\Sigma\Omega}$$
