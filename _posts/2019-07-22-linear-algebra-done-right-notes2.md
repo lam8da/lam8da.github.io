@@ -168,7 +168,8 @@ tags:
     $$
 
     现在来证明这样的$$\boldsymbol{v}$$只有一个，否则假设$$\boldsymbol{v}_{1},\boldsymbol{v}_{2}$$对任意的$$\boldsymbol{u}$$均满足条件，则取$$\boldsymbol{u}=\boldsymbol{v}_{1}-\boldsymbol{v}_{2}$$，易证$$\boldsymbol{v}_{1}=\boldsymbol{v}_{2}$$。
-- 伴随（adjoint）的定义：设$$V,W$$是$$\mathbf{F}$$上的有限维非零内积空间，设$$T\in\mathcal{L}(V,W)$$。给定$$\boldsymbol{w}\in W$$，考虑$$V$$上将$$\boldsymbol{v}\in V$$映成$$\langle T\boldsymbol{v},\boldsymbol{w}\rangle$$的线性泛函（易证这个线性泛函满足线性映射的定义，因此是良定义的），则$$T$$的伴随$$T^{*}$$是使得如下性质成立的从$$W$$到$$V$$的函数：$$T^{*}w$$是$$V$$中唯一一个满足条件$$\langle T\boldsymbol{v},\boldsymbol{w}\rangle=\langle\boldsymbol{v},T^{*}\boldsymbol{w}\rangle,\boldsymbol{v}\in V$$的向量
+- 伴随（adjoint）的定义：设$$V,W$$是$$\mathbf{F}$$上的有限维非零内积空间，设$$T\in\mathcal{L}(V,W)$$。给定$$\boldsymbol{w}\in W$$，考虑$$V$$上将$$\boldsymbol{v}\in V$$映成$$\langle T\boldsymbol{v},\boldsymbol{w}\rangle$$的线性泛函$$\varphi_{\boldsymbol{w}}$$（易证这个线性泛函满足线性映射的定义，因此是良定义的），则$$T$$的伴随$$T^{*}$$是使得如下性质成立的从$$W$$到$$V$$的函数：$$T^{*}w$$是$$V$$中唯一一个满足条件$$\langle T\boldsymbol{v},\boldsymbol{w}\rangle=\langle\boldsymbol{v},T^{*}\boldsymbol{w}\rangle,\boldsymbol{v}\in V$$的向量（该向量的存在性和唯一性由6.45得到）
+  - 注意：伴随是一个函数，其定义域为$$W$$，而上述描述定义了它在每个$$\boldsymbol{w}\in W$$上的值，该值满足：对任何$$\boldsymbol{v}\in V$$成立等式$$\langle T\boldsymbol{v},\boldsymbol{w}\rangle=\langle\boldsymbol{v},T^{*}\boldsymbol{w}\rangle$$
 - 伴随是线性映射：若$$T\in\mathcal{L}(V,W)$$，则$$T^{*}\in\mathcal{L}(V,W)$$。证明：根据线性映射的定义需要证明加性和齐性。
   - 加性：$$\langle\boldsymbol{v},T^{*}(\boldsymbol{w}_{1}+\boldsymbol{w}_{2})\rangle=\langle T\boldsymbol{v},\boldsymbol{w}_{1}+\boldsymbol{w}_{2}\rangle=\langle T\boldsymbol{v},\boldsymbol{w}_{1}\rangle+\langle T\boldsymbol{v},\boldsymbol{w}_{2}\rangle=\langle\boldsymbol{v},T^{*}\boldsymbol{w}_{1}\rangle+\langle\boldsymbol{v},T^{*}\boldsymbol{w}_{2}\rangle=\langle\boldsymbol{v},T^{*}\boldsymbol{w}_{1}+T^{*}\boldsymbol{w}_{2}\rangle$$
   - 齐性可以类似地证明。
@@ -251,7 +252,8 @@ tags:
 
     $$
     \begin{align}
-      \langle T\boldsymbol{u},\boldsymbol{w}\rangle&=\frac{\langle T(\boldsymbol{u}+\boldsymbol{w}),\boldsymbol{u}+\boldsymbol{w}\rangle-\langle T(\boldsymbol{u}-\boldsymbol{w}),\boldsymbol{u}-\boldsymbol{w}\rangle}{4}+\frac{\langle T(\boldsymbol{u}+i\boldsymbol{w}),\boldsymbol{u}+i\boldsymbol{w}\rangle-\langle T(\boldsymbol{u}-i\boldsymbol{w}),\boldsymbol{u}-i\boldsymbol{w}\rangle}{4}i \\
+      \langle T\boldsymbol{u},\boldsymbol{w}\rangle &=\frac{2\langle T\boldsymbol{u},\boldsymbol{w}\rangle+2\langle T\boldsymbol{w},\boldsymbol{u}\rangle}{4} + \frac{2\langle T\boldsymbol{u},i\boldsymbol{w}\rangle+2\langle T(i\boldsymbol{w}),\boldsymbol{u}\rangle}{4}i \\
+      &=\frac{\langle T(\boldsymbol{u}+\boldsymbol{w}),\boldsymbol{u}+\boldsymbol{w}\rangle-\langle T(\boldsymbol{u}-\boldsymbol{w}),\boldsymbol{u}-\boldsymbol{w}\rangle}{4}+\frac{\langle T(\boldsymbol{u}+i\boldsymbol{w}),\boldsymbol{u}+i\boldsymbol{w}\rangle-\langle T(\boldsymbol{u}-i\boldsymbol{w}),\boldsymbol{u}-i\boldsymbol{w}\rangle}{4}i \\
       &=0
     \end{align}
     $$
@@ -259,6 +261,32 @@ tags:
     从而$$T=0$$（取$$\boldsymbol{w}=T\boldsymbol{u}$$）。
   - 注意这个命题对实内积空间不成立，例如考虑算子$$T\in \mathcal{L}(\mathbf{R}^{2}),T((x,y))=(-y,x)$$（绕原点逆时针旋转90度）。
 - 7.3：推论：设$$V$$是复内积空间，$$T\in\mathcal{L}(V)$$，则$$T$$是自伴的当且仅当对每个$$\boldsymbol{v}\in V$$都有$$\langle T\boldsymbol{v},\boldsymbol{v}\rangle\in \mathbf{R}$$
+  - 证明：
+
+    $$
+    \begin{align}
+      \langle T\boldsymbol{v},\boldsymbol{v}\rangle-\overline{\langle T\boldsymbol{v},\boldsymbol{v}\rangle}&=\langle T\boldsymbol{v},\boldsymbol{v}\rangle-\langle\boldsymbol{v}, T\boldsymbol{v}\rangle \\
+      &=\langle T\boldsymbol{v},\boldsymbol{v}\rangle-\langle T^{*}\boldsymbol{v},\boldsymbol{v}\rangle \\
+      &=\langle(T-T^{*})\boldsymbol{v},\boldsymbol{v}\rangle
+    \end{align}
+    $$
+
+    - =>方向：若$$T$$是自伴的，则上式右端为0，从而左端的两者相等，即两者都为实数。
+    - <=方向：若左端第一项为实数则左端为0，根据7.2知$$T-T^{*}=0$$，因此$$T$$是自伴的。
+- 7.4：命题：若$$T$$是$$V$$上的自伴算子使得对所有$$\boldsymbol{v}\in V$$都有$$\langle T\boldsymbol{v},\boldsymbol{v}\rangle=0$$，则$$T=0$$
+  - 证明：7.2已经证明了$$V$$是复内积空间的情况（且没有$$T$$是自伴的的假设），因此这里只需处理实内积空间的情况，这时有$$\langle T\boldsymbol{w},\boldsymbol{u}\rangle=\langle\boldsymbol{w},T\boldsymbol{u}\rangle=\langle T\boldsymbol{u},\boldsymbol{w}\rangle$$，而据此可得：
+
+    $$
+    \begin{align}
+      \langle T\boldsymbol{u},\boldsymbol{w}\rangle &=\frac{2\langle T\boldsymbol{u},\boldsymbol{w}\rangle+2\langle T\boldsymbol{w},\boldsymbol{u}\rangle}{4} \\
+      &=\frac{\langle T(\boldsymbol{u}+\boldsymbol{w}),\boldsymbol{u}+\boldsymbol{w}\rangle-\langle T(\boldsymbol{u}-\boldsymbol{w}),\boldsymbol{u}-\boldsymbol{w}\rangle}{4} \\
+      &=0
+    \end{align}
+    $$
+
+    从而$$T=0$$（取$$\boldsymbol{w}=T\boldsymbol{u}$$）。
+- 正规的（normal）：内积空间$$V$$上的算子$$T\in\mathcal{L}(V)$$称为正规的，如果$$TT^{*}=T^{*}T$$。
+  - 自伴算子显然是正规的，反之不然。
 
 # Helpers
 
