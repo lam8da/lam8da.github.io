@@ -10,17 +10,23 @@
     <link rel="stylesheet" href="/media/css/highlight.css">
     <link rel="stylesheet" href="/media/css/highlighter-rouge.css">
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        "HTML-CSS": { scale: 80 },
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
-          processEscapes: true
-        }
-      });
+    <script>
+    window.MathJax = {
+      chtml: {
+        scale: 0.8
+      },
+      tex: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
+        processEscapes: true
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      }
+    };
     </script>
-    <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
   </head>
   <body>
     <div id="container">
