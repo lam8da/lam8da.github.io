@@ -114,8 +114,8 @@ tags:
 
   性质：
   - $$U^{\bot}$$总是$$V$$的子空间
-  - $$V^{\bot}=\{\boldsymbol{0}\}$$
-  - $$\{\boldsymbol{0}\}^{\bot}=V$$
+  - $$V^{\bot}=\{\boldsymbol{0}\}$$。
+  - $$\{\boldsymbol{0}\}^{\bot}=V$$。
 - 6.29：定理：如果$$U$$是$$V$$的子空间，那么$$V=U\oplus U^{\bot}$$
   - 证明：先证$$V=U+U^{\bot}$$，为此设$$\boldsymbol{v}\in V$$且$$(\boldsymbol{e}_{1},\cdots,\boldsymbol{e}_{m})$$是$$U$$的一个规范正交基，则有
 
