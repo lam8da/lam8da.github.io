@@ -38,50 +38,22 @@ tags:
 - 交叉熵：
 
   $$H(p,q)=-\sum_{i=1}^{n}p(x_i)\log(q(x_i))=D_{KL}(p\vert\vert q)+H(p(x))$$
+- [最大似然估计和最大后验概率估计的区别](https://blog.csdn.net/u011508640/article/details/72815981)
 - [从最大似然到EM算法：一致的理解方式](https://kexue.fm/archives/5239)
   > 待看
     {: .lambda_question}
+- [机器学习中正则化项L1和L2的直观理解](https://blog.csdn.net/jinping_shi/article/details/52433975)
+  > 待看
+    {: .lambda_question}
 
-# Convolutional Neural Networks (by Andrew Ng)
+# 各种技术
 
-- 视频链接在[这里](https://www.youtube.com/playlist?list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF)
-- 例子：边缘检测：通过用conv2d并设置特定的filter/kernel的值可以用该filter/kernel做边缘检测（横的或者竖的或者斜的或其他）
-- LeNet：最原始用于手写数字识别的网络，只有几层
-- AlexNet: Hinton等人发明的识别一般图像的网络，有大约十来层？感觉每一层都是hand-tuned的
-- VGG-16：避免hand-tuned：统一采用相同规格的block例如3x3的conv2d，证明也能达到好的效果
-- ResNet: 增加了short-cut，可以使网络通过学习自动选取究竟是否应用新的一层。例如如果新的层会导致精度更差，训练过程能够学习到这个结果从而通过自动调参来增大short-cut的权重从而降低其认为影响了精度的block的权重（让该block变为大约相当于identity的功能，从而大程度上禁止了该block的功能）。而普通的deep network没有这种选择所以有可能会在很deep的时候反而精度更差。
-- Inception: 与其决定每个block用1x1conv还是3x3conv还是别的，干脆全都用然后将结果concat起来作为下一层输入。block内用到的层有：1x1conv+3x3conv，1x1conv+5x5conv，1x1conv，maxpool等。
-- Transfer learning
-  - 可以下载已经train好的如ResNet50的model，然后把最后的softmax层替换掉，将其他层的参数freeze，只重新train最后softmax层的参数（用新的数据）
-  - 或者可以任意选择freeze前面N层而只重新train后面那些层（当然还是要先把softmax换为适合新应用的类别个数的softmax）
-  - 可以预处理：把所有新数据的前N层的结果预先求出，避免之后重复计算
-- 数据预处理/增强技术：mirroring，random cropping，rotation，color shifting，等
-- Object Detection
-  - 基本思想：slicing window
-  - 如何避免真正的slicing window并为每个window算一遍是否里面有某个object：直接用conv处理原图，filter的strides设为slicing window的stride
-  - anchor boxes和Yolo algorithm：没太懂？
-  - R-CNN vs. Fast R-CNN vs. Faster R-CNN
-- 人脸识别
-  - Triplet loss：每次的输入是一个triple：一个人脸图，一个和第一个图是同一个人的人脸图，一个其他人的人脸图。目标是最大化(前两图的相似性-第一和第三张图的相似性)。缺点是：需要显式定义相似性度量函数例如用余弦相似性，而这很可能不是最好的度量
-  - 另一种种方法是，把相似性度量改为一个network module（黑箱）而让其输出0（不是同一个人）或1（是同一个人），这样能学习到好的但不能显式表示的度量函数。再一次，这里可以通过freeze整个network的前大半部分，而precompute特征向量，只train这个黑箱，来加速网络的训练
-- Neural Style Transfer
-  - 如何visualize一个conv net的每一层到底detect了什么：可以选出使该层的某些activation unit的值达到最大值的输入图片来get some sense
-  - Neural Style Transfer的关键就是定义一个cost function，由两部分组成：content cost和style cost。content cost评价结果图片和content image的“相似”程度，style cost评价结果哦图片和style image的style的“相似”程度。
-  - 计算这两种cost的方法都是：选择某个层，对content/style input image和结果图片分别计算该层的输出，然后在该层上定义content/style的相似性，然后对所有层的content/style相似性加权求和便得到最终的content/style相似性。唯一的区别是content/style的相似性的定义：对于content相似性直接用对应层的值求差和平方和即可，对于style相似性要先计算该层上C个channel间的correlation得到一个CxC的矩阵然后再用两个图片的这个矩阵求差和平方和得到（为啥是这样呢？correlation可以这样理解：correlate的意思是，对应于两个不同channel的两个特征要么同时出现要么同时不出现）
-  - 对于每层在最终相似性中的权重，可以通过第一步的visualization得到一些sense。
+## 术语
 
-# 各种网络技巧
-
-## Terminologies
-
-- CNN: convolutional neural network
 - R-CNN: regional convolutional neural network
 - FCN: fully convolutional networks
 - RPN: region proposal network
 - FPN: feature pyramid networks
-- AE: autoencoder
-- VAE: variational autoencoder
-- GAN: generative adversarial networks
 
 ## Faster R-CNN
 
@@ -102,7 +74,7 @@ tags:
 - [R-FCN: Object Detection via Region-based Fully Convolutional Networks](https://arxiv.org/abs/1605.06409)
 - [论文笔记 R-FCN: Object Detection via Region-based Fully Convolutional Networks](https://blog.csdn.net/u012905422/article/details/53242183)
 - [深度学习目标检测模型全面综述：Faster R-CNN、R-FCN和SSD](https://zhuanlan.zhihu.com/p/29434605)
-- 比Faster R-CNN更快，但是能达到差不多（精度稍微差一点）的效果。怎么做到的：Faster R-CNN对卷积层做了共享，但是经过RoI pooling后，却没有共享，例如如果一副图片有500个region proposal，那么就得分别进行500次卷积，这样就太浪费时间了。R-FCN的思路是，能不能把RoI后面的几层建立共享卷积，只对一个feature map进行一次卷积。但与Faster R-CNN相同，其最后的输出是object的分类和BB回归。我的理解是，两者都用了海量anchor来propose ROI，不同的是Faster R-CNN在propose之后要对修正后的每个anchor单独做Roi Pooling和分类，而R-FPN不用再用一个单独分类网络而是直接用计算好的score maps来pool一下再加个softmax就搞定
+- 比Faster R-CNN更快，但是能达到差不多（精度稍微差一点）的效果。怎么做到的：Faster R-CNN对卷积层做了共享，但是经过RoI pooling后，却没有共享，例如如果一副图片有500个region proposal，那么就得分别进行500次卷积，这样就太浪费时间了。R-FCN的思路是，能不能把RoI后面的几层建立共享卷积，只对一个feature map进行一次卷积。但与Faster R-CNN相同，其最后的输出是object的分类和BB回归。我的理解是，两者都用了海量anchor来propose ROI，不同的是Faster R-CNN在propose之后要对修正后的每个anchor单独做Roi Pooling和分类，而R-FCN不用再用一个单独分类网络而是直接用计算好的score maps来pool一下再加个softmax就搞定
 - [目标检测-R-FCN-论文笔记](https://arleyzhang.github.io/articles/7e6bc4a/) 这篇文章写的非常好，特别是说明了为什么简单的直接在ResNet上（出来单个feature map）接一个FCN用来做检测的方案不work（文中图6和图2的对比）而需要用$$k^2$$组feature map（成为score maps）。最后那个R-CNN/Faster R-CNN/R-FCN的直观比较的图很赞。
 
 ## U-Net
@@ -117,9 +89,40 @@ tags:
   - 多尺度特征融合：特征逐点相加/特征channel维度拼接
   - 获得像素级别的segement map：对每一个像素点进行判断类别
 
+## Transformer
+
+- 各种降低attention复杂度的方法
+  - [2020年9月谷歌研究给出的综述“Efficient Transformers: A Survey”](https://zhuanlan.zhihu.com/p/316865623)
+    > 未看
+      {: .lambda_question}
+  - [这六大方法，如何让 Transformer 轻松应对高难度长文本序列？](https://blog.csdn.net/weixin_42137700/article/details/106616447)
+    > 未看
+      {: .lambda_question}
+
+## ViT
+
+- [Vision Transformer , Vision MLP超详细解读 (原理分析+代码解读) (目录)](https://zhuanlan.zhihu.com/p/348593638)
+  > 未看
+    {: .lambda_question}
+
 ## GAN
 
 - [互怼的艺术：从零直达WGAN-GP](https://kexue.fm/archives/4439)。关键在于，cross-entropy loss（KL距离或JS距离）在这里不能用，因为该loss是用来衡量两个概率分布的相似度的，因此需要在每个bucket上的概率作为输入，这对于一般的分类任务（只有O(10)个类别/bucket）没问题，但是对于生成的图片，即使是28x28黑白像素的生成的数字图片也会有$$2^{784}$$个bucket，不切实际而且很多bucket都是稀疏的（大部分情况下都是0或者都是1）。所以就自己搞了一个距离，用网络来学习这个距离，而关键在于判别器对距离函数所做的约束要使得：如果输入很相似则输出也很相似，即梯度很小（即导数值很小！！）。实现在[这里](https://github.com/bojone/gan/blob/master/mnist_gangp.py)
+- [深度学习中的Lipschitz约束：泛化与生成模型](https://kexue.fm/archives/6051)
+  > 待看
+    {: .lambda_question}
+- [O-GAN：简单修改，让GAN的判别器变成一个编码器！](https://kexue.fm/archives/6409)
+  > 待看
+    {: .lambda_question}
+- [从DCGAN到SELF-MOD：GAN的模型架构发展一览](https://kexue.fm/archives/6549)
+  > 待看
+    {: .lambda_question}
+- [AlphaTree：一张RoadMap，四个层次，十个方向百份源码，带你详细了解Gan发展历程](https://zhuanlan.zhihu.com/p/77149999)
+  > 待看
+    {: .lambda_question}
+- [GAN介绍 - 生成式模型是如何工作的? GAN与其他模型有什么区别？](https://blog.csdn.net/sean2100/article/details/83907062)
+  > 待看
+    {: .lambda_question}
 
 ## Auto Encoder (AE)
 
@@ -129,6 +132,7 @@ tags:
     - ![自动编码器作为特征提取]({{ site.url }}/assets/2019-03-23-deep-learning-notes/自动编码器作为特征提取.jpeg)
   - 作为无监督学习模型，自动编码器还可以用于生成与训练样本不同的新数据，这样自动编码器（变分自动编码器，Variational Autoencoders）就是生成式模型。
 - [VQ-VAE的简明介绍：量子化自编码器](https://kexue.fm/archives/6760) VQ-VAE其实跟VAE没什么关系，其实是一个AE
+- [深入解析CogView、DALLE、VAE、GAN、GPT的技术原理，原来生成式模型是这么一回事！](https://www.bilibili.com/video/BV1Z64y167iJ/) 先推导VAE再简化成VQ-VAE！所以VQ-VAE是从VAE推导出来的，虽然结果看上去跟VAE没什么关系（见下面的kexue文章）
 - [VQ-VAE解读](https://zhuanlan.zhihu.com/p/91434658)解释了为什么要用PixelCNN/PixelRNN做decoder：
   > VAE的目的是训练完成后，丢掉encoder，在prior上直接采样，加上decoder就能生成。如果我们现在独立地采HxW个$$z$$，然后查表得到维度为HxWxD的$$z_{q}(x)$$，那么生成的图片在空间上的每块区域之间几乎就是独立的。因此我们需要让各个$$z$$之间有关系，因此用PixelCNN，对这些$$z$$建立一个autoregressive model：$$p(z_1,z_2,z_3,\cdots)=p(z_1)p(z_2\vert z_1)p(z_3\vert z_1,z_2)\cdots$$，这样就可以进行ancestral sampling，得到一个互相之间有关联的HxW的整数矩阵；$$p(z_1,z_2,z_3,\cdots)$$这个联合概率即为我们想要的prior.
 
@@ -156,9 +160,27 @@ tags:
   > 待看
     {: .lambda_question}
 - 参考：
+  - [Understanding VQ-VAE (DALL-E Explained Pt. 1)](https://ml.berkeley.edu/blog/posts/vq-vae/) 提供了VAE非常好的high-level的推导。
+    > - Latent spaces are compressed representations of data, which often emphasize the most important and semantically interesting features of the data in their representation.
+    > - A learned latent representation can be useful for many downstream algorithms.
+    > - Autoencoders are a method for finding latent spaces that are complicated non-linear functions of the data.
+    > - Variational autoencoders add a prior to the autoencoder latent space. This gives the learned latent space some very nice properties (i.e. we can smoothly interpolate the data distribution through the latents).
+  - [How is it so good ? (DALL-E Explained Pt. 2)](https://ml.berkeley.edu/blog/posts/dalle2/)
+    > 待看
+      {: .lambda_question}
   - [快速推导 VAE 变分自编码器，多种写法，和重要细节 Variational Autoencoder](https://zhuanlan.zhihu.com/p/51589440)
+    > 待看
+      {: .lambda_question}
   - [解耦表征学习 - 变分自编码器解读 (Variational Autoencoder, VAE)](https://zhuanlan.zhihu.com/p/403104014)
+    > 待看
+      {: .lambda_question}
+  - [Tutorial - What is a variational autoencoder?](https://jaan.io/what-is-variational-autoencoder-vae-tutorial/)
+    > 待看
+      {: .lambda_question}
 
+## 流模型
+
+- [细水长flow之NICE：流模型的基本概念与实现](https://kexue.fm/archives/5776) 和VAE（通过关于凸函数即似然函数里的log的Jensen不等式优化下界）以及GAN（通过交替训练的方法绕开求积分）不同，flow模型选择了一条“硬路”：使用狄拉克分布直接把积分算出来，而这样做要满足很多条件，于是flow就自定义了很多种网络结构来满足这些条件，很多层这些网络连起来就形成一个“flow”。
 
 ## 半监督学习（Semi-Supervised Learning）
 
@@ -195,7 +217,77 @@ tags:
   L=\frac{1}{2N}\sum_{k=1}^{N}\left(l(2k-1,2k)+l(2k,2k-1)\right)
   $$
 
-# 我的一些理解
+## 对比学习
+
+- [一文梳理无监督对比学习（MoCo/SimCLR/SwAV/BYOL/SimSiam）](https://zhuanlan.zhihu.com/p/334732028)。问：
+  > 为什么MoCo的双塔要用不同的参数？为什么不用一样的参数？是由于memory bank吗（重新算一次bank里的所有负例的表示太expensive？）？而SimCLR貌似只用了一个encoder（share weights）。
+    {: .lambda_question}
+- [无监督对比学习之MOCO](https://blog.csdn.net/weixin_42764932/article/details/112768710)
+  > 为啥这么搞呢？在优化的过程中，如果key的encoder剧烈变化，key的特征也随着发生较大变化。query的encoder也在训练初期是在剧烈变化，而query的特征在softmax的分子，key在分母，当softmax的分子和分母均有巨大变化的时候，对于无监督的优化可能不是那么友好。因此MoCo限制了key的encoder的剧烈变化，相当于分母项的扰动少了，有助于query的encoder的更新。
+- [SimSiam探索孪生神经网络：请停止你的梯度传递！](https://mp.weixin.qq.com/s/-Vtl_8nND7WCPLdL5bNlMw)
+  > 后半段没看太懂
+    {: .lambda_question}
+- [Understanding self-supervised and contrastive learning with "Bootstrap Your Own Latent" (BYOL)](https://generallyintelligent.ai/blog/2020-08-24-understanding-self-supervised-contrastive-learning/)
+  - 译文在[自监督学习BYOL中魔鬼BN](https://zhuanlan.zhihu.com/p/205636123)
+  > 没看
+    {: .lambda_question}
+- [如何评价Deepmind自监督新作BYOL？](https://www.zhihu.com/question/402452508)
+  > 很多干货，没看
+    {: .lambda_question}
+  
+  
+
+## Few-shot / Zero-shot learning
+
+- 小样本或零样本学习，对于语言模型来说，基本上就是把要预测的结果转化为完形填空，让语言模型去填（MLM）。
+  - [必须要GPT3吗？不，BERT的MLM模型也能小样本学习](https://kexue.fm/archives/7764)
+    > 假如给定句子“这趟北京之旅我感觉很不错。”，那么我们补充个描述，构建如下的完形填空：“______满意。这趟北京之旅我感觉很不错。” 进一步地，我们限制空位处只能填一个“很”或“不”，问题就很清晰了，就是要我们根据上下文一致性判断是否满意，如果“很”的概率大于“不”的概率，说明是正面情感倾向，否则就是负面的，这样我们就将情感分类问题转换为一个完形填空问题了，它可以用MLM模型给出预测结果，而MLM模型的训练可以不需要监督数据，因此理论上这能够实现零样本学习了。
+
+## Reparameterization
+
+- [函数光滑化杂谈：不可导函数的可导逼近](https://kexue.fm/archives/6620)
+  > 待看
+    {: .lambda_question}
+- [漫谈重参数：从正态分布到Gumbel Softmax](https://kexue.fm/archives/6705) 文章谈了为什么要进行重参数以及对离散和连续分布的重参数方法。另外重参数不一定是只对loss有用，有时候遇到一些不可导或者采样的方差很大的函数也需要重参。
+  > 如何理解直接采样没有梯度而重参数之后就有梯度呢？其实很简单，比如我说从$$\mathcal{N}(z;\mu_{\theta},\sigma_{\theta}^{2})$$中采样一个数来，然后你跟我说采样到5，我完全看不出5跟$$\theta$$有什么关系呀（求梯度只能为0）；但是如果先从$$\mathcal{N}(\epsilon;0,1)$$中采样一个数比如0.2，然后计算$$$$，这样我就知道采样出来的结果跟$$\theta$$的关系了（能求出有效的梯度）。
+
+## 各种技术的融合
+
+- VQ-GAN
+  - [Taming Transformers for High-Resolution Image Synthesis](https://arxiv.org/abs/2012.09841)
+  > 待看
+    {: .lambda_question}
+- DALL-E
+  - [Zero-Shot Text-to-Image Generation](https://arxiv.org/abs/2102.12092)
+  > 待看
+    {: .lambda_question}
+- CLIP
+  - [Alien Dreams: An Emerging Art Scene](https://ml.berkeley.edu/blog/posts/clip-art/)展示了如何通过GAN+CLIP来用文字生成图片。这是一个迭代过程：首先生成一个随机latent vector，用GAN生成图片，然后用CLIP和输入的文字做相似度比较，对loss生成梯度来更新那个latent vector。这样就可以生成一个video了。
+    ![How CLIP Generates Art]({{ site.url }}/assets/2019-03-23-deep-learning-notes/CLIP+GAN.gif)
+    > 思考：是否所有视频都可以表示为梯度下降的过程？例如某个物体从状态1（位置，方位等）变换为状态2，可以看成：把该物体的状态encode成一个latent feature，然后让状态1（source）和状态2（target）的latent feature计算相似性然后算出loss，那么这个变换过程就是梯度下降（减少loss）的过程。
+      {: .lambda_question}
+
+## Speech
+
+- [语音识别技术的前世今生](https://www.bilibili.com/video/BV1FA411n7tt?p=2)里面对transducer的解释（建立了输出的语言模型）非常形象易懂，对其与attention的区别的描述也很形象（被动等待下一个有意义的CTC输出 vs 主动根据输入找寻下一个输出）！
+- [自监督预训练（二） 语音部分](https://blog.csdn.net/xmdxcsj/article/details/115787030?spm=1001.2014.3001.5501)
+- [自监督预训练（三）wav2vec 2.0原理剖析](https://blog.csdn.net/xmdxcsj/article/details/115787729)
+- [wav2vec 2.0 | Lecture 76 (Part 3) | Applied Deep Learning](https://www.youtube.com/watch?v=8Kpowre6yyk)讲的很清楚，最神奇的地方是，model中并没有重建原来语音的部分，而只是重建了latent feature
+  > 为什么这样也能学习到语音的特征？可能是因为预测那些mask掉的部分的时候就是需要知道语音特征，而连续的语音特征之间是满足某种条件分布的，因而不是随机的！
+    {: .lambda_question}
+  - 注意其中transformer的输入不是quantized的而是连续的，但是做contrastive loss的target是要跟quantized的feature来比较。文中详细比较了{quantize vs 不quantize}{input vs target}四种情况发现上述方式最好
+    > 为什么？
+      {: .lambda_question}
+    
+- [wav2vec 2.0讲解](https://www.bilibili.com/s/video/BV1CQ4y197Ev)
+
+## 其他
+
+- [Self-Orthogonality Module：一个即插即用的核正交化模块](https://kexue.fm/archives/7169)
+  > 待看
+    {: .lambda_question}
+
+# 一些理解
 
 ## 计算机视觉
 
@@ -214,10 +306,39 @@ tags:
   - 生成模型（decoder）。例如GPT等。
   - 判别模型+生成模型。如GAN是生成器后接判别器，AE和seq2seq是encoder后加decoder，等。
 
+# Convolutional Neural Networks (by Andrew Ng)
+
+- 视频链接在[这里](https://www.youtube.com/playlist?list=PLkDaE6sCZn6Gl29AoE31iwdVwSG-KnDzF)
+- 例子：边缘检测：通过用conv2d并设置特定的filter/kernel的值可以用该filter/kernel做边缘检测（横的或者竖的或者斜的或其他）
+- LeNet：最原始用于手写数字识别的网络，只有几层
+- AlexNet: Hinton等人发明的识别一般图像的网络，有大约十来层？感觉每一层都是hand-tuned的
+- VGG-16：避免hand-tuned：统一采用相同规格的block例如3x3的conv2d，证明也能达到好的效果
+- ResNet: 增加了short-cut，可以使网络通过学习自动选取究竟是否应用新的一层。例如如果新的层会导致精度更差，训练过程能够学习到这个结果从而通过自动调参来增大short-cut的权重从而降低其认为影响了精度的block的权重（让该block变为大约相当于identity的功能，从而大程度上禁止了该block的功能）。而普通的deep network没有这种选择所以有可能会在很deep的时候反而精度更差。
+- Inception: 与其决定每个block用1x1conv还是3x3conv还是别的，干脆全都用然后将结果concat起来作为下一层输入。block内用到的层有：1x1conv+3x3conv，1x1conv+5x5conv，1x1conv，maxpool等。
+- Transfer learning
+  - 可以下载已经train好的如ResNet50的model，然后把最后的softmax层替换掉，将其他层的参数freeze，只重新train最后softmax层的参数（用新的数据）
+  - 或者可以任意选择freeze前面N层而只重新train后面那些层（当然还是要先把softmax换为适合新应用的类别个数的softmax）
+  - 可以预处理：把所有新数据的前N层的结果预先求出，避免之后重复计算
+- 数据预处理/增强技术：mirroring，random cropping，rotation，color shifting，等
+- Object Detection
+  - 基本思想：slicing window
+  - 如何避免真正的slicing window并为每个window算一遍是否里面有某个object：直接用conv处理原图，filter的strides设为slicing window的stride
+  - anchor boxes和Yolo algorithm：没太懂？
+  - R-CNN vs. Fast R-CNN vs. Faster R-CNN
+- 人脸识别
+  - Triplet loss：每次的输入是一个triple：一个人脸图，一个和第一个图是同一个人的人脸图，一个其他人的人脸图。目标是最大化(前两图的相似性-第一和第三张图的相似性)。缺点是：需要显式定义相似性度量函数例如用余弦相似性，而这很可能不是最好的度量
+  - 另一种种方法是，把相似性度量改为一个network module（黑箱）而让其输出0（不是同一个人）或1（是同一个人），这样能学习到好的但不能显式表示的度量函数。再一次，这里可以通过freeze整个network的前大半部分，而precompute特征向量，只train这个黑箱，来加速网络的训练
+- Neural Style Transfer
+  - 如何visualize一个conv net的每一层到底detect了什么：可以选出使该层的某些activation unit的值达到最大值的输入图片来get some sense
+  - Neural Style Transfer的关键就是定义一个cost function，由两部分组成：content cost和style cost。content cost评价结果图片和content image的“相似”程度，style cost评价结果哦图片和style image的style的“相似”程度。
+  - 计算这两种cost的方法都是：选择某个层，对content/style input image和结果图片分别计算该层的输出，然后在该层上定义content/style的相似性，然后对所有层的content/style相似性加权求和便得到最终的content/style相似性。唯一的区别是content/style的相似性的定义：对于content相似性直接用对应层的值求差和平方和即可，对于style相似性要先计算该层上C个channel间的correlation得到一个CxC的矩阵然后再用两个图片的这个矩阵求差和平方和得到（为啥是这样呢？correlation可以这样理解：correlate的意思是，对应于两个不同channel的两个特征要么同时出现要么同时不出现）
+  - 对于每层在最终相似性中的权重，可以通过第一步的visualization得到一些sense。
+
 # 其他资源
 
 - [MSRA计算机视觉的修炼秘笈](https://www.msra.cn/zh-cn/news/features/book-recommendation-cv)
 - [计算机视觉入门书](https://www.zhihu.com/question/28813777)
+- [松鼠的窝](https://zhuanlan.zhihu.com/maigo)
 - [科学空间](https://kexue.fm/)
 - [计算机视觉实战演练：算法与应用](https://charmve.github.io/computer-vision-in-action/#/README)
   > 待看
