@@ -21,7 +21,7 @@ tags:
 - $$True Positive Rate (TPR)=recall=TP/(TP+FN)$$。
 - $$False Positive Rate (FPR)=FP/(FP+TN)$$。
 - ROC curve：横轴FPR，纵轴TPR，每个值是在某个分类threshold上对应的FPR和TPR的值。例如threshold为0，则全部样例都被归类为positive，没有样例归类为negative，因此FPR和TPR都是1。如果threshold为inf，则没有样例归为positive，因此FPR和TPR都是0。
-- AUC：**A**rea **U**nder the ROC **C**urve
+- AUC：**A**rea **U**nder the ROC **C**urve。具体看[wiki](https://zh.wikipedia.org/wiki/ROC%E6%9B%B2%E7%BA%BF)
 - 信息量：假设$$X$$是一个离散型随机变量，其取值集合为$$\chi$$，概率分布函数$$p(x)=Pr(X=x),x\in\chi$$,则定义事件$$X=x_{0}$$的信息量为：$$I(x_0)=−\log(p(x_0))$$。直观理解：越不可能发生的事情，如果它发生了，信息量就越大。
 - 熵：用来表示所有信息量的期望，即
 

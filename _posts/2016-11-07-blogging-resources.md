@@ -97,6 +97,26 @@ $$ \Large a = b $$
 
 $$\mathop{\underset{\mmlToken{mo}{⎵}}{78\,255\,300,00}}\limits_{10\text{zählende Ziffern}}$$
 
+Use MathJax javascript library to convert the MathML code in a webpage to Tex:
+
+```javascript
+var math_objs = MathJax.startup.document.getMathItemsWithin(document.body);
+math_objs.map(m => m.math);
+var i = 0;
+for (obj of math_objs) {  // Use for..of, not for..in
+  // obj is a MathItem, see this for the details:
+  // https://github.com/mathjax/MathJax-src/blob/a5ae9485cb7441fdd5ea59645cfbd1c12b7d53e1/ts/core/MathItem.ts
+  try {
+    var tex = obj.math.replaceAll('|', '\\vert ');
+    tex = tex.replaceAll('<', '\\le ').replaceAll('>', '\\ge ');
+    obj.start.node.innerHTML = '$$ ' + tex + ' $$';
+  } catch (error) {
+    console.error(i)
+    console.error(error)
+  }
+}
+```
+
 For more info:
 - <https://jekyllrb.com/docs/extras/>
 - <http://www.gastonsanchez.com/visually-enforced/opinion/2014/02/16/Mathjax-with-jekyll/>
