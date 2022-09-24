@@ -108,7 +108,7 @@ for (obj of math_objs) {  // Use for..of, not for..in
   // https://github.com/mathjax/MathJax-src/blob/a5ae9485cb7441fdd5ea59645cfbd1c12b7d53e1/ts/core/MathItem.ts
   try {
     var tex = obj.math.replaceAll('|', '\\vert ');
-    tex = tex.replaceAll('<', '\\le ').replaceAll('>', '\\ge ');
+    tex = tex.replaceAll('<', '\\lt ').replaceAll('>', '\\gt ');
     obj.start.node.innerHTML = '$$ ' + tex + ' $$';
   } catch (error) {
     console.error(i)
