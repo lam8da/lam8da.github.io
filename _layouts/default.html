@@ -18,7 +18,12 @@
       tex: {
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
         displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
-        processEscapes: true
+        processEscapes: true,
+        macros: {
+          NN: "{\\mathbb{N}}",
+          QQ: "{\\mathbb{Q}}",
+          RR: "{\\mathbb{R}}",
+        }
       },
       options: {
         ignoreHtmlClass: 'tex2jax_ignore',

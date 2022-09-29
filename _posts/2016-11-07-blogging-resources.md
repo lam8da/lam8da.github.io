@@ -79,15 +79,30 @@ looks like: `int i = 0;`{:.language-nothing}
 
 # Block inline attribute lists (IAL)
 
-A simple paragraph with an ID attribute.
+A simple paragraph with an ID attribute: [link](#para-one)
 {: #para-one}
+
+Another example:
 
 > A blockquote with a title
 {:title="The blockquote title"}
 {: #myid}
 
-{:.ruby}
-    Some code here
+## Using IAL to generate a code block
+
+```
+{:.python}
+    x = 0  # Initialize
+    for i in range(10):
+      x += func(i)
+```
+
+will look like:
+
+{:.python}
+    x = 0  # Initialize
+    for i in range(10):
+      x += func(i)
 
 # Math equations
 
@@ -97,15 +112,27 @@ $$ \Large a = b $$
 
 $$\mathop{\underset{\mmlToken{mo}{⎵}}{78\,255\,300,00}}\limits_{10\text{zählende Ziffern}}$$
 
-Use MathJax javascript library to convert the MathML code in a webpage to Tex:
+## MathJax macro
+
+Macros are defined in `_layouts/default.html`{:.language-nothing} (see [here](https://docs.mathjax.org/en/latest/input/tex/macros.html) for more info).
+
+```
+$$ \RR $$
+```
+
+will look like:
+
+$$ \RR $$
+
+## MathML webpage conversion
+
+To use MathJax javascript library to convert the MathML code in a webpage to Tex:
 
 ```javascript
 var math_objs = MathJax.startup.document.getMathItemsWithin(document.body);
 math_objs.map(m => m.math);
 var i = 0;
 for (obj of math_objs) {  // Use for..of, not for..in
-  // obj is a MathItem, see this for the details:
-  // https://github.com/mathjax/MathJax-src/blob/a5ae9485cb7441fdd5ea59645cfbd1c12b7d53e1/ts/core/MathItem.ts
   try {
     var tex = obj.math.replaceAll('|', '\\vert ');
     tex = tex.replaceAll('<', '\\lt ').replaceAll('>', '\\gt ');
@@ -117,6 +144,8 @@ for (obj of math_objs) {  // Use for..of, not for..in
 }
 ```
 
+where `math_objs` is a list of `MathItem`s, see [here](https://github.com/mathjax/MathJax-src/blob/a5ae9485cb7441fdd5ea59645cfbd1c12b7d53e1/ts/core/MathItem.ts) for more details.
+
 For more info:
 - <https://jekyllrb.com/docs/extras/>
 - <http://www.gastonsanchez.com/visually-enforced/opinion/2014/02/16/Mathjax-with-jekyll/>
@@ -127,13 +156,28 @@ For more info:
 
 # Tables
 
-Table with header row:
+## With header row
+
+```
+| a | b | c |
+|---+---+---|
+| d | e | f |
+```
+
+will look like:
 
 | a | b | c |
 |---+---+---|
 | d | e | f |
 
-Table without header row:
+## Without header row
+
+```
+| a | b | c |
+| d | e | f |
+```
+
+will look like:
 
 | a | b | c |
 | d | e | f |
@@ -149,15 +193,28 @@ See:
 
 For example:
 
+```
 <img src='https://g.gravizo.com/svg?
  digraph G {
-   main -> parse -> execute;
+   main -> execute;
    main -> init;
    main -> cleanup;
    execute -> make_string;
-   execute -> printf
    init -> make_string;
-   main -> printf;
+   execute -> compare;
+ }
+'/>
+```
+
+will look like:
+
+<img src='https://g.gravizo.com/svg?
+ digraph G {
+   main -> execute;
+   main -> init;
+   main -> cleanup;
+   execute -> make_string;
+   init -> make_string;
    execute -> compare;
  }
 '/>
