@@ -216,18 +216,18 @@ tags:
    1. $$\mathrm{d}[u(x)v(x)]=[u(x)v(x)]'\dx=u'(x)v(x)\dx+u(x)v'(x)\dx=v(x)\du+u(x)\dv$$。其中，**$$\du$$和$$\dv$$都是关于$$x$$和$$\Delta x$$的函数**
    1. 当$$x$$为自变量时$$\mathrm{d}^2x=\mathrm{d}(\dx)=\mathrm{d}\Delta x=0$$。这是因为$$\Delta x$$是与$$x$$不相关的变量，对$$x$$求导时应该视其位常数
    1. 对$$y=f(x)$$（$$x$$为自变量）来说，$$\mathrm{d}^2y=\mathrm{d}(\dy)=\mathrm{d}(f'(x)\dx)=\mathrm{d}(f'(x))\dx+f'(x)\mathrm{d}(\dx)=\mathrm{d}(f'(x))\dx=f''(x)\dx^2$$
-   1. $$y=f(\varphi(t))$$（$$t$$为自变量）来说，$$\dy=[f(\varphi(t))]'\mathrm{d}t=f'(\varphi(t))\varphi'(t)\mathrm{d}t$$，如令$$u=\varphi(t)$$则有$$\dy=f'(u)\du$$，这就是所谓一阶微分形式不变性。但注意：其中$$f'(u)$$是对$$t$$求导（而不是对$$u$$）而且是关于$$t$$的函数（即以$$t$$为自变量，而不是关于$$u$$的），而$$\du$$是关于$$t$$和$$\Delta t$$的函数（而不是关于$$u$$和$$\Delta u$$的）
-   1. 一阶微分的形式不变性的另一种常用表述是$$\frac{\dy}{\mathrm{d}t}=\frac{\dy}{\dx}\cdot\frac{\dx}{\mathrm{d}t}$$。其中$$\mathrm{d}t=\Delta t$$，但是$$\dx=\varphi'(t)\mathrm{d}t$$而不是$$\Delta x$$（两者差一个无穷小量），这是因为$$t$$是自变量！！
+   1. $$y=f(\varphi(t))$$（$$t$$为自变量）来说，$$\dy=[f(\varphi(t))]'\dt=f'(\varphi(t))\varphi'(t)\dt$$，如令$$u=\varphi(t)$$则有$$\dy=f'(u)\du$$，这就是所谓一阶微分形式不变性。但注意：其中$$f'(u)$$是对$$t$$求导（而不是对$$u$$）而且是关于$$t$$的函数（即以$$t$$为自变量，而不是关于$$u$$的），而$$\du$$是关于$$t$$和$$\Delta t$$的函数（而不是关于$$u$$和$$\Delta u$$的）
+   1. 一阶微分的形式不变性的另一种常用表述是$$\frac{\dy}{\dt}=\frac{\dy}{\dx}\cdot\frac{\dx}{\dt}$$。其中$$\dt=\Delta t$$，但是$$\dx=\varphi'(t)\dt$$而不是$$\Delta x$$（两者差一个无穷小量），这是因为$$t$$是自变量！！
    1. 对$$y=f(\varphi(t))$$（$$t$$为自变量）来说，
 
       $$
       \begin{align}
       \mathrm{d}^2y=&\mathrm{d}(\dy)\\
-      =&\mathrm{d}[f'(\varphi(t))\varphi'(t)\mathrm{d}t]\tag{1}\\
-      =&\mathrm{d}[f'(\varphi(t))\varphi'(t)]\mathrm{d}t\tag{2}\\
-      =&[f'(\varphi(t))\varphi'(t)]'\mathrm{d}t^2\tag{3}\\
-      =&[f''(\varphi(t))\varphi'^2(t)+f'(\varphi(t))\varphi''(t)]\mathrm{d}t^2\\
-      =&f''(x)\dx^2+f'(\varphi(t))\varphi''(t)\mathrm{d}t^2\tag{4}
+      =&\mathrm{d}[f'(\varphi(t))\varphi'(t)\dt]\tag{1}\\
+      =&\mathrm{d}[f'(\varphi(t))\varphi'(t)]\dt\tag{2}\\
+      =&[f'(\varphi(t))\varphi'(t)]'\dt^2\tag{3}\\
+      =&[f''(\varphi(t))\varphi'^2(t)+f'(\varphi(t))\varphi''(t)]\dt^2\\
+      =&f''(x)\dx^2+f'(\varphi(t))\varphi''(t)\dt^2\tag{4}
       \end{align}
       $$
 
@@ -240,8 +240,8 @@ tags:
       \mathrm{d}^2y=&\mathrm{d}(\dy)\\
       =&\mathrm{d}[f'(x)\dx]\tag{1}\\
       =&\mathrm{d}(f'(x))\dx+f'(x)\mathrm{d}(\dx)\tag{2}\\
-      =&f''(x)\dx^2+f'(x)\mathrm{d}[\varphi'(t)\mathrm{d}t]\tag{3}\\
-      =&f''(x)\dx^2+f'(x)\varphi''(t)\mathrm{d}t^2\tag{4}
+      =&f''(x)\dx^2+f'(x)\mathrm{d}[\varphi'(t)\dt]\tag{3}\\
+      =&f''(x)\dx^2+f'(x)\varphi''(t)\dt^2\tag{4}
       \end{align}
       $$
 
@@ -370,14 +370,14 @@ tags:
    - 可积函数的绝对值函数也可积，其定积分大于等于原来函数的定积分的绝对值。注意：逆命题不成立，考虑狄利克雷函数的变形（有理点上取值1无理点上取值-1）。
 1. 定理9.7（积分第一中值定理）：若$$f$$在$$[a,b]$$上连续，则至少存在一点$$\xi\in[a,b]$$使得$$\int_{a}^{b}f(x)\dx=f(\xi)(b-a)$$。证明：该定积分介于$$m(b-a)$$和$$M(b-a)$$之间，其中$$m$$和$$M$$分别是$$f$$在$$[a,b]$$上的最小、最大值，然后不等式每项都除以$$b-a$$然后利用连续函数的介值性定理可证得结果。
 1. 定理9.8（推广的积分第一中值定理）：若$$f$$与$$g$$都在$$[a,b]$$上连续，且$$g(x)$$在$$[a,b]$$上不变号，则至少存在一点$$\xi\in[a,b]$$使得$$\int_a^b f(x)g(x)\dx=f(\xi)\int_a^b g(x)\dx$$证明：和定理9.7类似，但是把$$b-a$$换成$$g(x)$$。
-1. 变（上、下）限（的定）积分是一个以$$x$$为自变量的函数，如$$\Phi(x)=\int_a^x f(t)\mathrm{d}t$$
+1. 变（上、下）限（的定）积分是一个以$$x$$为自变量的函数，如$$\Phi(x)=\int_a^x f(t)\dt$$
 1. 定理9.9：在闭区间上可积的函数的变上限定积分在该闭区间上连续。证明：由连续函数的定义以及该函数在该闭区间上的有界性可证。
-1. 定理9.10（原函数存在定理，或微积分学基本定理）：闭区间上的连续函数对应的变上限定积分在该闭区间上处处可导，而且$$\Phi'(x)=\frac{\mathrm{d}}{\dx}\int_a^x f(t)\mathrm{d}t=f(x), x\in[a,b]$$。证明：由积分第一中值定理以及导数的极限定义可证。
+1. 定理9.10（原函数存在定理，或微积分学基本定理）：闭区间上的连续函数对应的变上限定积分在该闭区间上处处可导，而且$$\Phi'(x)=\frac{\mathrm{d}}{\dx}\int_a^x f(t)\dt=f(x), x\in[a,b]$$。证明：由积分第一中值定理以及导数的极限定义可证。
 1. 定理9.11（积分第二中值定理）：设函数$$f$$在$$[a,b]$$上可积，
-   - 若函数$$g$$在$$[a,b]$$上减，且$$g(x)\ge0$$，则存在$$\xi\in[a,b]$$使得$$\int_a^b f(x)g(x)\dx=g(a)\int_a^\xi f(x)\dx$$。证明（类似可证明下面命题）：$$F(x)=\int_a^x f(t)\mathrm{d}t,x\in[a,b]$$在$$[a,b]$$上可导因此连续，因此存在最大值$$M$$和最小值$$m$$，因此只需证明$$m\le\frac{1}{g(a)}\int_a^b f(x)g(x)\dx\le M$$然后利用$$F$$的介值性可立即证得原命题。至于如何证明该式：根据定理9.3'对任意小的正数存在一个分割使得$$g$$的上下和之差小于它，然后把$$\int_a^b f(x)g(x)\dx$$根据积分区间可加性以及该分割写成一系列子积分和来证。
+   - 若函数$$g$$在$$[a,b]$$上减，且$$g(x)\ge0$$，则存在$$\xi\in[a,b]$$使得$$\int_a^b f(x)g(x)\dx=g(a)\int_a^\xi f(x)\dx$$。证明（类似可证明下面命题）：$$F(x)=\int_a^x f(t)\dt,x\in[a,b]$$在$$[a,b]$$上可导因此连续，因此存在最大值$$M$$和最小值$$m$$，因此只需证明$$m\le\frac{1}{g(a)}\int_a^b f(x)g(x)\dx\le M$$然后利用$$F$$的介值性可立即证得原命题。至于如何证明该式：根据定理9.3'对任意小的正数存在一个分割使得$$g$$的上下和之差小于它，然后把$$\int_a^b f(x)g(x)\dx$$根据积分区间可加性以及该分割写成一系列子积分和来证。
    - 若函数$$g$$在$$[a,b]$$上增，且$$g(x)\ge0$$，则存在$$\eta\in[a,b]$$使得$$\int_a^b f(x)g(x)\dx=g(b)\int_\eta^b f(x)\dx$$
 1. 推论：设函数$$f$$在$$[a,b]$$上可积，若$$g$$为单调函数，则存在$$\xi\in[a,b]$$使得$$\int_a^b f(x)g(x)\dx=g(a)\int_a^\xi f(x)\dx+g(b)\int_\xi^b f(x)\dx$$。证明：若$$g$$单调减，则令$$h(x)=g(x)-g(b)$$，由定理9.11可证。
-1. 定理9.12（定积分换元积分法）：若函数$$f$$在$$[a,b]$$上连续，$$\varphi$$在$$[\alpha,\beta]$$上连续可微**且其导函数在$$[a,b]$$上可积**（TMD书上没有这个条件很不严谨啊，会有以下[反例](#nonintegrable_derivative)！[维基](https://en.wikipedia.org/wiki/Integration_by_substitution#Proposition)上都明确指定这个条件）且满足$$\varphi(\alpha)=a,\varphi(\beta)=b,a\le\varphi(t)\le b,t\in[\alpha,\beta]$$，则有$$\int_a^bf(x)\dx=\int_\alpha^\beta f(\varphi(t))\varphi'(t)\mathrm{d}t$$。证明：由微积分学基本定理，两函数的原函数都存在，设$$F$$是$$f$$的原函数，可以证明$$F(\varphi(t))$$是$$f(\varphi(t))\varphi'(t)$$的一个原函数，然后对右端使用牛顿-莱布尼兹公式即得。
+1. 定理9.12（定积分换元积分法）：若函数$$f$$在$$[a,b]$$上连续，$$\varphi$$在$$[\alpha,\beta]$$上连续可微**且其导函数在$$[a,b]$$上可积**（TMD书上没有这个条件很不严谨啊，会有以下[反例](#nonintegrable_derivative)！[维基](https://en.wikipedia.org/wiki/Integration_by_substitution#Proposition)上都明确指定这个条件）且满足$$\varphi(\alpha)=a,\varphi(\beta)=b,a\le\varphi(t)\le b,t\in[\alpha,\beta]$$，则有$$\int_a^bf(x)\dx=\int_\alpha^\beta f(\varphi(t))\varphi'(t)\dt$$。证明：由微积分学基本定理，两函数的原函数都存在，设$$F$$是$$f$$的原函数，可以证明$$F(\varphi(t))$$是$$f(\varphi(t))\varphi'(t)$$的一个原函数，然后对右端使用牛顿-莱布尼兹公式即得。
 
 1. 定理9.13（定积分分部积分法）：$$[a,b]$$上连续可微**且具有可积导函数**（同上，书中缺了这个条件）的函数$$u(x)$$和$$v(x)$$满足$$\int_a^b u(x)v'(x)\dx=u(x)v(x)\big\vert_a^b-\int_a^b u'(x)v(x)\dx$$。证明：首先由微积分学基本定理$$u(x)$$和$$v(x)$$都有原函数，由定理9.4$$u(x)$$和$$v(x)$$在$$[a,b]$$上可积，由于可积函数的积也可积，故$$u(x)v'(x)$$和$$u'(x)v(x)$$可积，然后直接运用可积函数的和也可积这个性质把它们合并求和，最后使用牛顿-莱布尼兹公式即得结果。
 1. 关于$$\pi$$的极限表达式的Wallis公式
@@ -408,8 +408,8 @@ tags:
 
 1. 曲边梯形（由恒不小于零的曲线$$f(x)$$、直线$$x=a$$、$$x=b$$以及$$x$$轴围成）面积的定义（在第九章开头）：把$$[a,b]$$分为多个子区间，得到面积$$S\approx \sum_{i=1}^n f(\xi_i)\Delta x_i$$，其在$$n\to \infty$$且$$\Delta x_i\to 0$$时的极限定义为该曲边梯形的面积。这样的定义其实是可以严格推导出来，见下面对截面面积函数求体积方法的说明。
 1. 由上下两条曲线$$y=f_x(x),y=f_1(x)$$以及两条直线$$x=a,x=b,(a<b)$$所围的平面图形面积为$$\int_a^b\big(f_2(x)-f_1(x)\big)\dx$$
-1. 已知曲线C由参数方程$$x=x(t),y=y(t),t\in[\alpha,\beta]$$给出，在$$[\alpha,\beta]$$上$$y(t)$$连续、$$x(t)$$连续可微且$$x'(t)\ne0$$，于是根据定理6.4$$x(t)$$为严格单调函数故由定理1.2其必有严格单调反函数，因此根据定积分的换元积分法（令$$\varphi$$为$$x(t)$$）曲线C、直线$$x=a$$、$$x=b$$和$$x$$轴围成的图形面积为：$$\int_a^b\abs{y(x^{-1}(x))}\dx=\int_\alpha^\beta\abs{y(x^{-1}(x(t)))x'(t)}\mathrm{d}t=\int_\alpha^\beta\abs{y(t)x'(t)}\mathrm{d}t$$
-1. 如果由上述参数方程表示的曲线是封闭的即$$x(\alpha)=x(\beta),y(\alpha)=y(\beta)$$且在$$(\alpha,\beta)$$内曲线自身不再相交，则由曲线自身围成图形的面积为$$\big\vert\int_\alpha^\beta y(t)x'(t)\mathrm{d}t\big\vert$$。从几何上来理解，该曲线可以根据$$x(t)$$的单调性分为（有限的）几部分，每一部分$$x(t)$$是严格单调的，对每一部分求积分$$\int_{x^{-1}(x_i)}^{x^{-1}(x_{i+1})}y(t)x'(t)\mathrm{d}t$$得到该部分曲线和直线$$x=x_i,x=x_{i+1}$$以及$$x$$轴围成的图形的“面积”，这个面积其实是具有符号的，在$$x$$轴上半部分取正而下半部分取负，因此正负是会抵消的。最后把所有部分的积分加起来求和便得到带符号的曲线围成图形的面积，再取个绝对值就得到一个正的面积值。
+1. 已知曲线C由参数方程$$x=x(t),y=y(t),t\in[\alpha,\beta]$$给出，在$$[\alpha,\beta]$$上$$y(t)$$连续、$$x(t)$$连续可微且$$x'(t)\ne0$$，于是根据定理6.4$$x(t)$$为严格单调函数故由定理1.2其必有严格单调反函数，因此根据定积分的换元积分法（令$$\varphi$$为$$x(t)$$）曲线C、直线$$x=a$$、$$x=b$$和$$x$$轴围成的图形面积为：$$\int_a^b\abs{y(x^{-1}(x))}\dx=\int_\alpha^\beta\abs{y(x^{-1}(x(t)))x'(t)}\dt=\int_\alpha^\beta\abs{y(t)x'(t)}\dt$$
+1. 如果由上述参数方程表示的曲线是封闭的即$$x(\alpha)=x(\beta),y(\alpha)=y(\beta)$$且在$$(\alpha,\beta)$$内曲线自身不再相交，则由曲线自身围成图形的面积为$$\big\vert\int_\alpha^\beta y(t)x'(t)\dt\big\vert$$。从几何上来理解，该曲线可以根据$$x(t)$$的单调性分为（有限的）几部分，每一部分$$x(t)$$是严格单调的，对每一部分求积分$$\int_{x^{-1}(x_i)}^{x^{-1}(x_{i+1})}y(t)x'(t)\dt$$得到该部分曲线和直线$$x=x_i,x=x_{i+1}$$以及$$x$$轴围成的图形的“面积”，这个面积其实是具有符号的，在$$x$$轴上半部分取正而下半部分取负，因此正负是会抵消的。最后把所有部分的积分加起来求和便得到带符号的曲线围成图形的面积，再取个绝对值就得到一个正的面积值。
    - 根据这个公式可求得椭圆面积为$$\pi ab$$其中$$a$$、$$b$$分别为椭圆半长轴和半短轴长。
 1. 曲线C由极坐标方程$$r=r(\theta),\theta\in[\alpha,\beta]$$给出，其中$$r(\theta)$$在$$[\alpha,\beta]$$上连续，$$\beta-\alpha\le2\pi$$，由C与两条射线$$\theta=\alpha,\theta=\beta$$所围的平面图形（称为扇形）面积为$$\frac{1}{2}\int_\alpha^\beta r^2(\theta)\mathrm{d}\theta$$。证明：可以使用定积分的思想，通过对$$[\alpha,\beta]$$进行分割，近似求出各个小的扇形的面积然后求和并取极限。
 1. 三维直角坐标系中由截面面积函数$$A(x)$$以及平面$$x=a,x=b,(a<b)$$确定的立体的体积为$$\int_a^b A(x)\dx$$，其中$$A(x)$$为$$[a,b]$$上的连续函数。可以通过对该区间进行分割，利用不等式：达布下和小于等于所求体积小于等于达布上和，然后根据$$A(x)$$的连续性（因此有可积性），该不等式在分割区间任意小且分割区间数无限多时两边等号成立，因此所求体积为定积分。同理可以对上述的平面图形面积进行类似的逻辑分析。
@@ -421,7 +421,7 @@ tags:
    > - 良定义性：有没可能同一条曲线可以由多个不同的参数方程给出，但是有些可微有些不可以？（目测根据复合函数求导法这不大可能出现，但需要严格证明）
    > - 为什么满足这些条件就叫“光滑”？几何意义是什么？曲线“看起来”是怎么样的？极端例子都有哪些？
      {: .lambda_question}
-1. 定理10.1：光滑曲线是可求长的，弧长为$$s=\int_\alpha^\beta\sqrt{x'^2(t)+y'^2(t)}\mathrm{d}t$$。证明：设曲线的任意分割$$T$$对应的$$[\alpha,\beta]$$上的分割为$$T'$$，目的是证明$$\lim_{\Vert T\Vert\to0}s_T=\lim_{\Vert T'\Vert\to0}\sum_{i=1}^n\sqrt{x'^2(\xi_i)+y'^2(\xi_i)}\Delta t_i$$，为此需要对左端使用微分中值定理，然后证明$$\Vert T\Vert\to0$$等价于$$\Vert T'\Vert\to0$$，从而右端移项到左端后可以把极限算符提出来而证明里面的表达式可以任意小。
+1. 定理10.1：光滑曲线是可求长的，弧长为$$s=\int_\alpha^\beta\sqrt{x'^2(t)+y'^2(t)}\dt$$。证明：设曲线的任意分割$$T$$对应的$$[\alpha,\beta]$$上的分割为$$T'$$，目的是证明$$\lim_{\Vert T\Vert\to0}s_T=\lim_{\Vert T'\Vert\to0}\sum_{i=1}^n\sqrt{x'^2(\xi_i)+y'^2(\xi_i)}\Delta t_i$$，为此需要对左端使用微分中值定理，然后证明$$\Vert T\Vert\to0$$等价于$$\Vert T'\Vert\to0$$，从而右端移项到左端后可以把极限算符提出来而证明里面的表达式可以任意小。
    - 由直角坐标方程$$y=f(x),x\in[a,b]$$表示的曲线可以转化为参数方程表示，而当$$f(x)$$在$$[a,b]$$上连续可微时其弧长为$$s=\int_a^b\sqrt{1+f'^2(x)}\dx$$
    - 同理，由极坐标方程$$r=r(\theta),\theta\in[\alpha,\beta]$$表示的曲线当$$r'(\theta)$$在$$[\alpha,\beta]$$上连续且$$r(\theta)$$与$$r'(\theta)$$不同时为零时弧长为$$s=\int_\alpha^\beta\sqrt{r^2(\theta)+r'^2(\theta)}\mathrm{d}\theta$$。
 1. 弧微分定义$$\ds=\sqrt{\dx^2+\dy^2}$$，微分三角形
@@ -430,7 +430,7 @@ tags:
    - 曲线任意一点处若曲率不为零，则可过该点作一个半径为$$\frac{1}{K}$$使得该圆在该点与该曲线有相同的切线并在该点近旁与该曲线位于该切线同侧。这个圆称为曲率圆，其半径和圆心称为曲率半径和曲率中心。
 1. 旋转曲面的面积可以把每一小段近似地用圆台的侧面积来表示（怎样严格定义曲面的面积？书上说在下册重积分章节，what the fuck?）
    - 直角坐标系方程：$$S=2\pi\int_a^b f(x)\sqrt{1+f'^2(x)}\dx$$
-   - 参数方程：$$S=2\pi\int_\alpha^\beta y(t)\sqrt{x'^2(t)+y'^2(t)}\mathrm{d}t$$
+   - 参数方程：$$S=2\pi\int_\alpha^\beta y(t)\sqrt{x'^2(t)+y'^2(t)}\dt$$
 1. 定积分在物理中的应用
 1. 定积分的近似计算：梯形法、抛物线法。详见数值分析。
 

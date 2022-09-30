@@ -64,7 +64,7 @@ tags:
    \le&\varepsilon(b-a)
    \end{align}
    $$
-1. 定理13.11：设$$\{f_n\}$$为定义在$$[a,b]$$上的函数列，若$$x_0\in[a,b]$$为$$\{f_n\}$$的收敛点，$$\{f_n\}$$的每一项在$$[a,b]$$上有连续的导数，且$$\{f'_n\}$$在$$[a,b]$$上 一致收敛，则$$\frac{\mathrm{d}}{\dx}\lim_{n\to\infty}f_n(x)=\lim_{n\to\infty}\frac{\mathrm{d}}{\dx}f_n(x)$$。证明：设$$\{f'_n\}$$一致收敛于$$g$$，由定理13.9知$$g$$连续。设$$f_n(x_0)$$收敛于$$A$$，根据定积分的牛顿-莱布尼兹公式有$$f_n(x)=f_n(x_0)+\int_{x_0}^{x}f'_n(t)\mathrm{d}t$$，且由于$$n\to\infty$$时右边第一项极限为$$A$$，第二项极限根据定理13.10为$$\int_{x_0}^{x}g(t)\mathrm{d}t$$，因此左边极限存在，记为$$f$$（即$$\{f_n\}$$收敛于$$f$$）。于是$$f(x)=\lim_{n\to\infty}f_n(x)=A+\int_{x_0}^{x}g(t)\mathrm{d}t$$。根据$$g$$的连续性和微积分学基本定理推得$$f'(x)=g(x)$$，证毕。
+1. 定理13.11：设$$\{f_n\}$$为定义在$$[a,b]$$上的函数列，若$$x_0\in[a,b]$$为$$\{f_n\}$$的收敛点，$$\{f_n\}$$的每一项在$$[a,b]$$上有连续的导数，且$$\{f'_n\}$$在$$[a,b]$$上 一致收敛，则$$\frac{\mathrm{d}}{\dx}\lim_{n\to\infty}f_n(x)=\lim_{n\to\infty}\frac{\mathrm{d}}{\dx}f_n(x)$$。证明：设$$\{f'_n\}$$一致收敛于$$g$$，由定理13.9知$$g$$连续。设$$f_n(x_0)$$收敛于$$A$$，根据定积分的牛顿-莱布尼兹公式有$$f_n(x)=f_n(x_0)+\int_{x_0}^{x}f'_n(t)\dt$$，且由于$$n\to\infty$$时右边第一项极限为$$A$$，第二项极限根据定理13.10为$$\int_{x_0}^{x}g(t)\dt$$，因此左边极限存在，记为$$f$$（即$$\{f_n\}$$收敛于$$f$$）。于是$$f(x)=\lim_{n\to\infty}f_n(x)=A+\int_{x_0}^{x}g(t)\dt$$。根据$$g$$的连续性和微积分学基本定理推得$$f'(x)=g(x)$$，证毕。
 1. 在定理13.11的条件下还可以证明$$f_n$$一致收敛于$$f$$。
    > 如何证明？
      {: .lambda_question}
@@ -108,7 +108,7 @@ tags:
 1. 定理14.7：幂级数与其逐项求导/逐项求积后得到的幂级数具有相同的收敛区间。通过比较原则证明逐项求导得到的级数在原幂级数的收敛区间收敛，通过反证法和比较原则证明在原幂级数的发散区间发散。
 1. 定理14.8：设幂级数在收敛区间$$(-R,R)$$上的和函数为$$f$$，若$$x$$为$$(-R,R)$$内任意一点，则
    - $$f$$在$$x$$可导且$$f'(x)=\sum_{n=1}^{\infty}na_n x^{n-1}$$
-   - $$f$$在以$$0$$和$$x$$为端点的区间（$$x$$可以是下端点）上可积且$$\int_0^x f(t)\mathrm{d}t=\sum_{n=1}^{\infty}\frac{a_n}{n+1}x^{n+1}$$
+   - $$f$$在以$$0$$和$$x$$为端点的区间（$$x$$可以是下端点）上可积且$$\int_0^x f(t)\dt=\sum_{n=1}^{\infty}\frac{a_n}{n+1}x^{n+1}$$
 
    根据定理14.7、定理14.4以及十三章的逐项求导和逐项求积定理（即定理13.13和13.14）可证。
 1. 推论：幂级数在收敛区间$$(-R,R)$$内的和函数在$$(-R,R)$$内具有任何阶导数且可逐项求导任何次
@@ -207,7 +207,7 @@ tags:
    $$
 
    证明方法就是把$$x$$和$$y$$的全增量（用$$s$$和$$t$$表示）式子代入$$z$$的全增量表达式，并将其写成微分的增量表示形式。
-1. 多元函数的一阶（全）微分形式不变性：对于复合函数$$z=f(x,y),x=\varphi(s,t),y=\psi(s,t)$$，有$$\dz=\frac{\partial z}{\partial x}\dx+\frac{\partial z}{\partial y}\dy$$，其中$$\dx=\frac{\partial x}{\partial s}\ds+\frac{\partial x}{\partial t}\mathrm{d}t, \dy=\frac{\partial y}{\partial s}\ds+\frac{\partial y}{\partial t}\mathrm{d}t$$
+1. 多元函数的一阶（全）微分形式不变性：对于复合函数$$z=f(x,y),x=\varphi(s,t),y=\psi(s,t)$$，有$$\dz=\frac{\partial z}{\partial x}\dx+\frac{\partial z}{\partial y}\dy$$，其中$$\dx=\frac{\partial x}{\partial s}\ds+\frac{\partial x}{\partial t}\dt, \dy=\frac{\partial y}{\partial s}\ds+\frac{\partial y}{\partial t}\dt$$
 1. 方向导数的定义：即极限$$\lim_{\rho\to 0^+}\frac{f(P)-f(P_0)}{\rho}$$（要求其存在）。其中$$P$$为从$$P_0$$出发所考察方向上的一点，$$\rho$$为$$P$$和$$P_0$$两点间距离
 1. 定理17.6：若**三元**函数$$f$$在点$$P_0(x_0,y_0,z_0)$$可微，则$$f$$在点$$P_0$$处沿任一方向$$l$$的方向导数都存在，且$$f_l(P_0)=f_x(P_0)\cos\alpha+f_y(P_0)\cos\beta+f_z(P_0)\cos\gamma$$，其中$$\cos\alpha,\cos\beta,\cos\gamma$$为方向$$l$$的方向余弦。证明过程就是把全微分的定义式改写成方向导数的定义式。
 1. 梯度的定义：三元函数$$f$$的梯度（向量）为$$\mathrm{grad}\,f=(f_x(P_0),f_y(P_0),f_z(P_0))$$。于是方向导数公式又可以写成$$f_l(P_0)=\abs{\mathrm{grad}\,f(P_0)}\cos\theta$$，因此当$$\theta=0$$时即梯度方向使得$$f$$增长最快，$$\theta=\pi$$时减少最快。
@@ -367,7 +367,7 @@ tags:
    t\in[\alpha,\beta]
    $$，函数$$f(x,y)$$为定义在$$L$$上的连续函数，则
 
-   $$\int_L f(x,y)\ds=\int_{\alpha}^{\beta}f(\varphi(t),\psi(t))\sqrt{\varphi'^2(t)+\psi'^2(t)}\mathrm{d}t$$
+   $$\int_L f(x,y)\ds=\int_{\alpha}^{\beta}f(\varphi(t),\psi(t))\sqrt{\varphi'^2(t)+\psi'^2(t)}\dt$$
 
    证明：由弧长公式、各个函数的连续性和积分中值定理可得
 
@@ -380,7 +380,7 @@ tags:
    然后证明$$\lim_{\Delta t\to0}\sigma=0$$，最后由定积分的定义即得结果。当曲线$$L$$由方程$$y=\psi(x),x\in[a,b]$$表示且$$\psi(x)$$在$$[a,b]$$上有连续的导函数时，第一型曲线积分成为$$\int_L f(x,y)\ds=\int_a^b f(x,\psi(x))\sqrt{1+\psi'^2(x)}\dx$$。
 1. 类似地，由参数方程表示的三维空间曲线的第一型曲线积分为
 
-   $$\int_L f(x,y,z)\ds=\int_{\alpha}^{\beta}f(\varphi(t),\psi(t),\chi(t))\sqrt{\varphi'^2(t)+\psi'^2(t)+\chi'^2(t)}\mathrm{d}t$$
+   $$\int_L f(x,y,z)\ds=\int_{\alpha}^{\beta}f(\varphi(t),\psi(t),\chi(t))\sqrt{\varphi'^2(t)+\psi'^2(t)+\chi'^2(t)}\dt$$
 1. 定义：设函数$$P(x,y)$$与$$Q(x,y)$$定义在平面**有向**可求长度曲线$$L:\overparen{AB}$$上，对$$L$$的任一分割$$T$$，它把$$L$$分成$$n$$个小弧段$$\overparen{M_{i-1}M_i}(i=1,2,\cdots,n)$$，其中$$M_0=A,M_n=B$$。记各小弧段$$\overparen{M_{i-1}M_i}$$的弧长为$$\Delta s_i$$，分割$$T$$的细度$$\Vert T\Vert=\max_{1\le i\le n}\Delta s_i$$。又设$$T$$的分点$$M_i$$的坐标为$$(x_i,y_i)$$，并记$$\Delta x_i=x_i-x_{i-1},\Delta y_i=y_i-y_{i-1}(i=1,2,\cdots,n)$$。在每个小弧段$$\overparen{M_{i-1}M_i}$$上任取一点$$(\xi_i,\eta_i)$$，若极限
 
    $$\lim_{\Vert T\Vert\to0}\sum_{i=1}^n P(\xi_i,\eta_i)\Delta x_i+\lim_{\Vert T\Vert\to0}\sum_{i=1}^n Q(\xi_i,\eta_i)\Delta y_i$$
@@ -406,7 +406,7 @@ tags:
    \end{array}
    \right.
    t\in[\alpha,\beta]
-   $$，其中$$\varphi(t),\psi(t)$$在$$[\alpha,\beta]$$上具有一阶连续导函数，且点$$A$$与$$B$$的坐标分别为$$(\varphi(\alpha),\psi(\alpha))$$与$$(\varphi(\beta),\psi(\beta))$$。又设$$P(x,y)$$与$$Q(x,y)$$为$$L$$上的连续函数，则沿$$L$$从$$A$$到$$B$$的第二型曲线积分$$\int_L P(x,y)\dx+Q(x,y)\dy=\int_{\alpha}^{\beta}\big(P(\varphi(t),\psi(t))\varphi'(t)+Q(\varphi(t),\psi(t))\psi'(t)\big)\mathrm{d}t$$。证明和定理20.1类似。
+   $$，其中$$\varphi(t),\psi(t)$$在$$[\alpha,\beta]$$上具有一阶连续导函数，且点$$A$$与$$B$$的坐标分别为$$(\varphi(\alpha),\psi(\alpha))$$与$$(\varphi(\beta),\psi(\beta))$$。又设$$P(x,y)$$与$$Q(x,y)$$为$$L$$上的连续函数，则沿$$L$$从$$A$$到$$B$$的第二型曲线积分$$\int_L P(x,y)\dx+Q(x,y)\dy=\int_{\alpha}^{\beta}\big(P(\varphi(t),\psi(t))\varphi'(t)+Q(\varphi(t),\psi(t))\psi'(t)\big)\dt$$。证明和定理20.1类似。
 1. 可以通过曲线切线方向和量坐标轴的夹角的余弦建立起第一和第二型曲线积分的关系，即把第二型曲线积分表示为第一型曲线积分的形式（反之不行？），关系式为：
 
    $$
