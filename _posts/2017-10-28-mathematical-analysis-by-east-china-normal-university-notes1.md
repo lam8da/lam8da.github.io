@@ -91,7 +91,7 @@ tags:
 # 第三章 函数极限
 
 1. 定义：函数趋于$$+\infty$$的极限的$$\epsilon-M$$定义
-1. 定义：函数趋于某个点的极限的$$\epsilon-\delta$$定义（假设该函数在空心邻域$$U^\circ(x_0,\delta')$$内有定义，注意不能取到$$x_0$$点，即要求$$0<\vert x-x_0\vert <\delta$$）
+1. 定义：函数趋于某个点的极限的$$\epsilon-\delta$$定义（假设该函数在空心邻域$$U^\circ(x_0,\delta')$$内有定义，注意不能取到$$x_0$$点，即要求$$0<\ABS{ x-x_0} <\delta$$）
 1. 定义：单侧极限
 1. 定理3.1：函数在某个点有极限<=>函数在该点有左极限和右极限且均等于在该点的极限
 1. 定理3.2：函数若在某点有极限则该极限唯一
@@ -443,9 +443,9 @@ tags:
    - $$f$$定义在$$(a,b]$$上且在$$a$$的任一右邻域无界，但在任何闭区间$$[u,b]\subset(a,b]$$上有界且可积。若存在极限$$\lim_{u\to a^+}\int_u^b f(x)\mathrm{d}x=J$$则称此极限为无界函数$$f$$在$$(a,b]$$上的反常积分，记为$$J=\int_a^b f(x)\mathrm{d}x$$并称$$\int_a^b f(x)\mathrm{d}x$$收敛。$$a$$称为瑕点，这种积分也称为瑕积分。
 1. 定理11.1（无穷积分收敛的柯西准则）：无穷积分收敛的充要条件是任给$$\varepsilon>0$$，存在$$G\ge a$$，只要$$u_1,u_2>G$$便有$$\left\vert\int_a^{u_2}f(x)\mathrm{d}x-\int_a^{u_1}f(x)\mathrm{d}x\right\vert=\left\vert\int_{u_1}^{u_2}f(x)\mathrm{d}x\right\vert<\varepsilon$$。证明：通过函数极限的柯西准则。
    - 性质：两收敛的无穷积分的线性组合也收敛，且满足线性运算性质
-   - 若$$f$$在任何有限区间$$[a,u]$$上可积且$$\int_a^{+\infty}\vert f(x)\vert\mathrm{d}x$$收敛，则$$\int_a^{+\infty}f(x)\mathrm{d}x$$也收敛，且有$$\left\vert\int_a^{+\infty}f(x)\mathrm{d}x\right\vert\le\int_a^{+\infty}\vert f(x)\vert\mathrm{d}x$$。当$$\int_a^{+\infty}\vert f(x)\vert\mathrm{d}x$$收敛时，称$$\int_a^{+\infty}f(x)\mathrm{d}x$$为绝对收敛，因此这条性质表明绝对收敛=>收敛。但是反之不成立，例如当$$0<p\le1$$时$$\int_1^{+\infty}\frac{\sin x}{x^p}\mathrm{d}x$$条件收敛。称收敛而不绝对收敛者为条件收敛。
-1. 定理11.2（比较判别法）：若定义在$$[a,+\infty)$$上的两个函数$$f$$和$$g$$都在任何有限区间$$[a,u]$$上可积且满足$$\vert f(x)\vert\le g(x),x\in[a,+\infty)$$，则当$$\int_a^{+\infty}g(x)\mathrm{d}x$$收敛时$$\int_a^{+\infty}\vert f(x)\vert\mathrm{d}x$$必收敛。证明：$$\int_a^{+\infty}\vert f(x)\vert\mathrm{d}x$$关于上界$$u$$是单调递增，而$$\int_a^{+\infty}g(x)\mathrm{d}x$$的收敛性给了它一个上界，于是单调有界定理。
-   - 推论：若$$\vert f(x)\vert$$和$$g(x)$$的比值为一常数，利用此定理通过该常数的大小来判断。
+   - 若$$f$$在任何有限区间$$[a,u]$$上可积且$$\int_a^{+\infty}\ABS{ f(x)}\mathrm{d}x$$收敛，则$$\int_a^{+\infty}f(x)\mathrm{d}x$$也收敛，且有$$\left\vert\int_a^{+\infty}f(x)\mathrm{d}x\right\vert\le\int_a^{+\infty}\ABS{ f(x)}\mathrm{d}x$$。当$$\int_a^{+\infty}\ABS{ f(x)}\mathrm{d}x$$收敛时，称$$\int_a^{+\infty}f(x)\mathrm{d}x$$为绝对收敛，因此这条性质表明绝对收敛=>收敛。但是反之不成立，例如当$$0<p\le1$$时$$\int_1^{+\infty}\frac{\sin x}{x^p}\mathrm{d}x$$条件收敛。称收敛而不绝对收敛者为条件收敛。
+1. 定理11.2（比较判别法）：若定义在$$[a,+\infty)$$上的两个函数$$f$$和$$g$$都在任何有限区间$$[a,u]$$上可积且满足$$\ABS{ f(x)}\le g(x),x\in[a,+\infty)$$，则当$$\int_a^{+\infty}g(x)\mathrm{d}x$$收敛时$$\int_a^{+\infty}\ABS{ f(x)}\mathrm{d}x$$必收敛。证明：$$\int_a^{+\infty}\ABS{ f(x)}\mathrm{d}x$$关于上界$$u$$是单调递增，而$$\int_a^{+\infty}g(x)\mathrm{d}x$$的收敛性给了它一个上界，于是单调有界定理。
+   - 推论：若$$\ABS{ f(x)}$$和$$g(x)$$的比值为一常数，利用此定理通过该常数的大小来判断。
 1. 定理11.3（狄利克雷判别法）：若$$F(u)=\int_a^u f(x)\mathrm{d}x$$在$$[a,+\infty)$$上有界，$$g(x)$$在$$[a,+\infty)$$上当$$x\to+\infty$$时单调趋于0，则$$\int_a^{+\infty}f(x)g(x)\mathrm{d}x$$收敛。证明：积分第二中值定理+柯西准则。
 1. 定理11.4（阿贝尔判别法）：若$$\int_a^{+\infty} f(x)\mathrm{d}x$$收敛，$$g(x)$$在$$[a,+\infty)$$上单调有界，则$$\int_a^{+\infty}f(x)g(x)\mathrm{d}x$$收敛。证明：积分第二中值定理或定理11.3。
 1. 当$$x\to+\infty$$时被积函数即使不趋于零，甚至是无解的，无穷积分仍有可能收敛，例如$$\int_1^{+\infty}x\sin x^4\mathrm{d}x$$。
