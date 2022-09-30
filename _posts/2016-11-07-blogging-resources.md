@@ -146,6 +146,13 @@ for (obj of math_objs) {  // Use for..of, not for..in
 
 where `math_objs` is a list of `MathItem`s, see [here](https://github.com/mathjax/MathJax-src/blob/a5ae9485cb7441fdd5ea59645cfbd1c12b7d53e1/ts/core/MathItem.ts) for more details.
 
+Possible next steps:
+
+- Replace `\vert ... \vert` pairs with macros like `\ABS`
+- Fix punctuations like `,()` -> `，（）`
+- Fix fields like $$N,Q,R$$ -> $$\NN,\QQ,\RR$$
+- Add more macros if necessary
+
 For more info:
 - <https://jekyllrb.com/docs/extras/>
 - <http://www.gastonsanchez.com/visually-enforced/opinion/2014/02/16/Mathjax-with-jekyll/>
