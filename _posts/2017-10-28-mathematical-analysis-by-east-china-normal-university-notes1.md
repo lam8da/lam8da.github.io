@@ -194,54 +194,54 @@ tags:
 
 ## 我的小结
 
-1. 由上述定理有**定义**$$\mathrm{d}y=f'(x_0)\Delta x$$。根据该定义，函数$$i(x)=x$$的微分$$\mathrm{d}i(x)=i'(x)\Delta x=\Delta x$$因此按照定义表示为$$\mathrm{d}x=\Delta x$$，因此我们可以写$$\mathrm{d}y=f'(x_0)\mathrm{d}x$$
+1. 由上述定理有**定义**$$\dy=f'(x_0)\Delta x$$。根据该定义，函数$$i(x)=x$$的微分$$\mathrm{d}i(x)=i'(x)\Delta x=\Delta x$$因此按照定义表示为$$\dx=\Delta x$$，因此我们可以写$$\dy=f'(x_0)\dx$$
    - 我的理解是**自变量为$$x$$的函数$$y$$的微分等于$$f'(x_0)$$和自变量为$$x$$的函数$$i(x)$$的微分的积**。
-   - [微分和导数的关系是什么？ - 马同学的回答](https://www.zhihu.com/question/22199657/answer/115178055)、[为什么自变量x的二阶微分d(dx)等于零？ - 陈老师的回答](https://www.zhihu.com/question/27750522/answer/141475199)以及菲赫金哥尔茨的《微积分教程》都说，**微分是一个函数，不是一个数**。而$$\Delta x$$是一个和$$x$$无关的自变量，因此$$\mathrm{d}(\mathrm{d}x)=\mathrm{d}\Delta x=\mathrm{d}(\mathrm{constant})=0$$。
+   - [微分和导数的关系是什么？ - 马同学的回答](https://www.zhihu.com/question/22199657/answer/115178055)、[为什么自变量x的二阶微分d(dx)等于零？ - 陈老师的回答](https://www.zhihu.com/question/27750522/answer/141475199)以及菲赫金哥尔茨的《微积分教程》都说，**微分是一个函数，不是一个数**。而$$\Delta x$$是一个和$$x$$无关的自变量，因此$$\mathrm{d}(\dx)=\mathrm{d}\Delta x=\mathrm{d}(\mathrm{constant})=0$$。
    - 另外参考[GaoShanze的回答 - 知乎](https://www.zhihu.com/question/22199657/answer/95428294)
    - 根据这个定义直接可以从导数的四则运算法则推导出微分的四则运算法则。
-1. 一阶微分形式的不变性：当$$y$$是复合函数时$$\mathrm{d}y=\mathrm{d}(f\circ g(x))=f'(u)g'(x)\mathrm{d}x=f'(u)\mathrm{d}u$$。这说明无论$$u$$是自变量还是一个函数，对$$y$$微分保持形式不变。
+1. 一阶微分形式的不变性：当$$y$$是复合函数时$$\dy=\mathrm{d}(f\circ g(x))=f'(u)g'(x)\dx=f'(u)\du$$。这说明无论$$u$$是自变量还是一个函数，对$$y$$微分保持形式不变。
 1. 高阶微分。注意区分：
-   - $$\mathrm{d}x^2$$是指$$(\mathrm{d}x)^2$$
+   - $$\dx^2$$是指$$(\dx)^2$$
    - $$\mathrm{d}^2 x$$是$$x$$的二阶微分，其值为0（原因如前所属，书上一笔带过真是无语，非常令人费解）
    - $$\mathrm{d}(x^2)$$表示$$x^2$$的一阶微分
 1. 另外[为什么二阶导数要这么记d^2y/dx^2？ - 郁林成森的回答](https://www.zhihu.com/question/23166546/answer/116169100)说：
-   > 建议不要将二阶微商$$\frac{\mathrm{d}^{2}y}{\mathrm{d}x^{2}}$$看作比例，写成这个样是有历史原因的，强烈建议从下面这个式子理解二阶导数（或高阶导数）：
+   > 建议不要将二阶微商$$\frac{\mathrm{d}^{2}y}{\dx^{2}}$$看作比例，写成这个样是有历史原因的，强烈建议从下面这个式子理解二阶导数（或高阶导数）：
    >
-   > $$\frac{\mathrm{d}^{2}y }{\mathrm{d}x^{2}} =\frac{\mathrm{d}}{\mathrm{d}x} \frac{\mathrm{d}y}{\mathrm{d}x}=\frac{\mathrm{d}(\frac{\mathrm{d}y}{\mathrm{d}x}) }{\mathrm{d}x}=\frac{\frac{\mathrm{d}x\cdot \mathrm{d}^{2}y-\mathrm{d}^{2}x\cdot \mathrm{d}y  }{\mathrm{d}x^{2} } }{\mathrm{d}x }=\frac{\mathrm{d}x\mathrm{d}^{2}y-\mathrm{d}^{2}x\mathrm{d}y  }{\mathrm{d}x^{3} }$$
+   > $$\frac{\mathrm{d}^{2}y }{\dx^{2}} =\frac{\mathrm{d}}{\dx} \frac{\dy}{\dx}=\frac{\mathrm{d}(\frac{\dy}{\dx}) }{\dx}=\frac{\frac{\dx\cdot \mathrm{d}^{2}y-\mathrm{d}^{2}x\cdot \dy  }{\dx^{2} } }{\dx }=\frac{\dx\mathrm{d}^{2}y-\mathrm{d}^{2}x\dy  }{\dx^{3} }$$
    >
-   > 这样无论$$x$$是不是自变量，都能很好地计算出二阶微商$$\frac{\mathrm{d}^{2}y}{\mathrm{d}x^{2}}$$
+   > 这样无论$$x$$是不是自变量，都能很好地计算出二阶微商$$\frac{\mathrm{d}^{2}y}{\dx^{2}}$$
 1. 我的理解：从定义-定理的数学角度来理解微分：
-   1. 对$$y=f(x)$$（$$x$$为自变量）定义$$\mathrm{d}y=f'(x)\Delta x$$为关于$$x$$和$$\Delta x$$两个互不相关变量的**函数**
-   1. 故对$$f(x)=x$$有$$\mathrm{d}x=\Delta x$$，故有$$\mathrm{d}y=f'(x)\mathrm{d}x$$。这应理解为两个函数$$\mathrm{d}y$$和$$f'(x)\mathrm{d}x$$的定义相同
-   1. $$\mathrm{d}[u(x)v(x)]=[u(x)v(x)]'\mathrm{d}x=u'(x)v(x)\mathrm{d}x+u(x)v'(x)\mathrm{d}x=v(x)\mathrm{d}u+u(x)\mathrm{d}v$$。其中，**$$\mathrm{d}u$$和$$\mathrm{d}v$$都是关于$$x$$和$$\Delta x$$的函数**
-   1. 当$$x$$为自变量时$$\mathrm{d}^2x=\mathrm{d}(\mathrm{d}x)=\mathrm{d}\Delta x=0$$。这是因为$$\Delta x$$是与$$x$$不相关的变量，对$$x$$求导时应该视其位常数
-   1. 对$$y=f(x)$$（$$x$$为自变量）来说，$$\mathrm{d}^2y=\mathrm{d}(\mathrm{d}y)=\mathrm{d}(f'(x)\mathrm{d}x)=\mathrm{d}(f'(x))\mathrm{d}x+f'(x)\mathrm{d}(\mathrm{d}x)=\mathrm{d}(f'(x))\mathrm{d}x=f''(x)\mathrm{d}x^2$$
-   1. $$y=f(\varphi(t))$$（$$t$$为自变量）来说，$$\mathrm{d}y=[f(\varphi(t))]'\mathrm{d}t=f'(\varphi(t))\varphi'(t)\mathrm{d}t$$，如令$$u=\varphi(t)$$则有$$\mathrm{d}y=f'(u)\mathrm{d}u$$，这就是所谓一阶微分形式不变性。但注意：其中$$f'(u)$$是对$$t$$求导（而不是对$$u$$）而且是关于$$t$$的函数（即以$$t$$为自变量，而不是关于$$u$$的），而$$\mathrm{d}u$$是关于$$t$$和$$\Delta t$$的函数（而不是关于$$u$$和$$\Delta u$$的）
-   1. 一阶微分的形式不变性的另一种常用表述是$$\frac{\mathrm{d}y}{\mathrm{d}t}=\frac{\mathrm{d}y}{\mathrm{d}x}\cdot\frac{\mathrm{d}x}{\mathrm{d}t}$$。其中$$\mathrm{d}t=\Delta t$$，但是$$\mathrm{d}x=\varphi'(t)\mathrm{d}t$$而不是$$\Delta x$$（两者差一个无穷小量），这是因为$$t$$是自变量！！
+   1. 对$$y=f(x)$$（$$x$$为自变量）定义$$\dy=f'(x)\Delta x$$为关于$$x$$和$$\Delta x$$两个互不相关变量的**函数**
+   1. 故对$$f(x)=x$$有$$\dx=\Delta x$$，故有$$\dy=f'(x)\dx$$。这应理解为两个函数$$\dy$$和$$f'(x)\dx$$的定义相同
+   1. $$\mathrm{d}[u(x)v(x)]=[u(x)v(x)]'\dx=u'(x)v(x)\dx+u(x)v'(x)\dx=v(x)\du+u(x)\dv$$。其中，**$$\du$$和$$\dv$$都是关于$$x$$和$$\Delta x$$的函数**
+   1. 当$$x$$为自变量时$$\mathrm{d}^2x=\mathrm{d}(\dx)=\mathrm{d}\Delta x=0$$。这是因为$$\Delta x$$是与$$x$$不相关的变量，对$$x$$求导时应该视其位常数
+   1. 对$$y=f(x)$$（$$x$$为自变量）来说，$$\mathrm{d}^2y=\mathrm{d}(\dy)=\mathrm{d}(f'(x)\dx)=\mathrm{d}(f'(x))\dx+f'(x)\mathrm{d}(\dx)=\mathrm{d}(f'(x))\dx=f''(x)\dx^2$$
+   1. $$y=f(\varphi(t))$$（$$t$$为自变量）来说，$$\dy=[f(\varphi(t))]'\mathrm{d}t=f'(\varphi(t))\varphi'(t)\mathrm{d}t$$，如令$$u=\varphi(t)$$则有$$\dy=f'(u)\du$$，这就是所谓一阶微分形式不变性。但注意：其中$$f'(u)$$是对$$t$$求导（而不是对$$u$$）而且是关于$$t$$的函数（即以$$t$$为自变量，而不是关于$$u$$的），而$$\du$$是关于$$t$$和$$\Delta t$$的函数（而不是关于$$u$$和$$\Delta u$$的）
+   1. 一阶微分的形式不变性的另一种常用表述是$$\frac{\dy}{\mathrm{d}t}=\frac{\dy}{\dx}\cdot\frac{\dx}{\mathrm{d}t}$$。其中$$\mathrm{d}t=\Delta t$$，但是$$\dx=\varphi'(t)\mathrm{d}t$$而不是$$\Delta x$$（两者差一个无穷小量），这是因为$$t$$是自变量！！
    1. 对$$y=f(\varphi(t))$$（$$t$$为自变量）来说，
 
       $$
       \begin{align}
-      \mathrm{d}^2y=&\mathrm{d}(\mathrm{d}y)\\
+      \mathrm{d}^2y=&\mathrm{d}(\dy)\\
       =&\mathrm{d}[f'(\varphi(t))\varphi'(t)\mathrm{d}t]\tag{1}\\
       =&\mathrm{d}[f'(\varphi(t))\varphi'(t)]\mathrm{d}t\tag{2}\\
       =&[f'(\varphi(t))\varphi'(t)]'\mathrm{d}t^2\tag{3}\\
       =&[f''(\varphi(t))\varphi'^2(t)+f'(\varphi(t))\varphi''(t)]\mathrm{d}t^2\\
-      =&f''(x)\mathrm{d}x^2+f'(\varphi(t))\varphi''(t)\mathrm{d}t^2\tag{4}
+      =&f''(x)\dx^2+f'(\varphi(t))\varphi''(t)\mathrm{d}t^2\tag{4}
       \end{align}
       $$
 
-      其中(1)是由上述第6点，(2)是由第4点，(3)是由定义（第1点），(4)是令$$x=\varphi(t)$$。注意，最后的$$f''(x)$$是关于$$t$$的函数而不是关于$$x$$的，而$$\mathrm{d}x$$是关于$$t$$和$$\Delta t$$的函数而不是关于$$x$$和$$\Delta x$$的。
+      其中(1)是由上述第6点，(2)是由第4点，(3)是由定义（第1点），(4)是令$$x=\varphi(t)$$。注意，最后的$$f''(x)$$是关于$$t$$的函数而不是关于$$x$$的，而$$\dx$$是关于$$t$$和$$\Delta t$$的函数而不是关于$$x$$和$$\Delta x$$的。
  
       另一种方法：
 
       $$
       \begin{align}
-      \mathrm{d}^2y=&\mathrm{d}(\mathrm{d}y)\\
-      =&\mathrm{d}[f'(x)\mathrm{d}x]\tag{1}\\
-      =&\mathrm{d}(f'(x))\mathrm{d}x+f'(x)\mathrm{d}(\mathrm{d}x)\tag{2}\\
-      =&f''(x)\mathrm{d}x^2+f'(x)\mathrm{d}[\varphi'(t)\mathrm{d}t]\tag{3}\\
-      =&f''(x)\mathrm{d}x^2+f'(x)\varphi''(t)\mathrm{d}t^2\tag{4}
+      \mathrm{d}^2y=&\mathrm{d}(\dy)\\
+      =&\mathrm{d}[f'(x)\dx]\tag{1}\\
+      =&\mathrm{d}(f'(x))\dx+f'(x)\mathrm{d}(\dx)\tag{2}\\
+      =&f''(x)\dx^2+f'(x)\mathrm{d}[\varphi'(t)\mathrm{d}t]\tag{3}\\
+      =&f''(x)\dx^2+f'(x)\varphi''(t)\mathrm{d}t^2\tag{4}
       \end{align}
       $$
 
@@ -332,8 +332,8 @@ tags:
 1. 定理8.4（换元积分法）：$$g(u)$$在$$[\alpha,\beta]$$上有定义，$$u=\varphi(x)$$在$$[a,b]$$上可导，且$$\alpha\le\varphi(x)\le\beta,x\in[a,b]$$，并记$$f(x)=g(\varphi(x))\varphi'(x)$$
    - 若$$g(u)$$在$$[\alpha,\beta]$$上存在原函数$$G(u)$$，则$$f(x)$$在$$[a,b]$$上也存在原函数，为$$F(x)=G(\varphi(x))+C$$。这其实就是复合函数求导的逆运算。
    - 又若$$\varphi'(x)\ne 0,x\in[a,b]$$，则上述命题可逆，即当$$f(x)$$在$$[a,b]$$上存在原函数时，若$$g(u)$$在$$[\alpha,\beta]$$上也存在原函数$$G(u)$$，且$$G(u)=F(\varphi^{-1}(u))+C$$。证明：由于$$u=\varphi(x)$$可导，因此它连续（定理5.1），又由$$\varphi'(x)\ne 0$$知$$\varphi(x)$$严格单调（定理6.4的推论），又由定理1.2知其有反函数且也严格单调，再由定理5.8知其导数与其反函数导数的关系，再对$$G(u)$$求导即可证。
-   - 问：怎么理解$$F(x)=\int f(u)\mathrm{d}u=G(u)$$？这和微分的关系是怎样的？答：注意$$u$$不是一个自变量，它表示$$\varphi(x)$$，而$$\mathrm{d}u$$表示$$\varphi'(x)\mathrm{d}x$$！
-1. 定理8.5（分部积分法）：若$$u(x)$$和$$v(x)$$可导，不定积分$$\int u'(x)v(x)\mathrm{d}x$$存在，则$$\int u(x)v'(x)\mathrm{d}x$$也存在，且有则$$\int u(x)v'(x)\mathrm{d}x=u(x)v(x)-\int u'(x)v(x)\mathrm{d}x$$
+   - 问：怎么理解$$F(x)=\int f(u)\du=G(u)$$？这和微分的关系是怎样的？答：注意$$u$$不是一个自变量，它表示$$\varphi(x)$$，而$$\du$$表示$$\varphi'(x)\dx$$！
+1. 定理8.5（分部积分法）：若$$u(x)$$和$$v(x)$$可导，不定积分$$\int u'(x)v(x)\dx$$存在，则$$\int u(x)v'(x)\dx$$也存在，且有则$$\int u(x)v'(x)\dx=u(x)v(x)-\int u'(x)v(x)\dx$$
 1. 定义：有理函数是指由两个多项式函数的商所表示的函数
 1. 有理函数的不定积分
    - 对函数的分母进行因式分解，根据代数基本定理所有实系数多项式都可以分解为次数不超过二次的多项式的乘积
@@ -350,7 +350,7 @@ tags:
 1. 定义：闭区间的分割（分成多个不重叠但它们的并等于原区间的子闭区间），分割的模（有最大长度的子区间的长度）
 1. 定义：函数在闭区间上的积分和（黎曼和）：$$\sum_{i=1}^n f(\xi_i)\Delta x_i$$，其中$$\Delta x_i$$是每个子区间的长度，$$\xi$$是每个子区间上的任意点
 1. 定义：（黎曼）可积的$$\varepsilon-\delta$$定义：对任意$$\varepsilon>0$$总存在某一正数$$\delta$$使得对闭区间的**任何分割**以及其上**任意选取的点集**，只要分割的模小于$$\delta$$，就有黎曼和和某数的差的绝对值小于$$\varepsilon$$。该数称为函数在该闭区间上的定积分或黎曼积分。因此，如果对于两种特定的分割法或选取点集的方法得出的黎曼和的极限不一样，就说明函数不可积，例如狄利克雷函数（选有理点和无理点黎曼和的极限不一样）。
-1. 定理9.1（牛顿-莱布尼兹公式）在某闭区间上连续且存在原函数的函数在该区间上可积，其定积分等于原函数在该区间两端点的值的差（右端点上的函数值减左端点上的函数值），即$$\int_a^b f(x)\mathrm{d}x=F(x)\big\vert_a^b$$。证明：通过黎曼可积的定义把左边写成黎曼和，把右边写成该黎曼和采用的子区间对应的原函数差的和，对每一子区间上原函数的差用拉格朗日中值定理。
+1. 定理9.1（牛顿-莱布尼兹公式）在某闭区间上连续且存在原函数的函数在该区间上可积，其定积分等于原函数在该区间两端点的值的差（右端点上的函数值减左端点上的函数值），即$$\int_a^b f(x)\dx=F(x)\big\vert_a^b$$。证明：通过黎曼可积的定义把左边写成黎曼和，把右边写成该黎曼和采用的子区间对应的原函数差的和，对每一子区间上原函数的差用拉格朗日中值定理。
 1. 定理9.2（可积的必要条件）：在闭区间上可积的函数在该闭区间上必有界。证明：反证法。
 1. 定义：（达布）上/下和：假设函数某闭区间上有界，则该函数在分割的每个子区间也有界，因此有上确界$$M_i=\sup_{x\in\Delta_i}f(x)$$和下确界$$m_i$$，则$$S(T)=\sum_{i=1}^n M_i\Delta x_i$$称为达布上和（其中$$T$$表示该分割），同理有达布下和。区间的振幅定义为该区间的上下确界的差。
 1. 定理9.3（闭区间上函数的可积的充要条件/可积准则）：任给某正数总存在某分割使得对应的上下和的差小于该正数。证明见下面可积性理论。
@@ -361,25 +361,25 @@ tags:
    - 单调函数即使有无限个间断点仍可积。与定理9.5比较：考虑狄利克雷函数
 1. 黎曼函数在$$[0,1]$$上可积。
 1. 定积分的性质：
-   - 可积函数的常数倍可积，$$\int_a^b kf(x)\mathrm{d}x=k\int_a^b f(x)\mathrm{d}x$$
-   - 两可积函数的和/差也可积，$$\int_a^b \bigl(f(x)\pm g(x)\bigr)\mathrm{d}x=\int_a^b f(x)\mathrm{d}x\pm \int_a^b g(x)\mathrm{d}x$$
+   - 可积函数的常数倍可积，$$\int_a^b kf(x)\dx=k\int_a^b f(x)\dx$$
+   - 两可积函数的和/差也可积，$$\int_a^b \bigl(f(x)\pm g(x)\bigr)\dx=\int_a^b f(x)\dx\pm \int_a^b g(x)\dx$$
    - 两可积函数的积也可积，但和加减法不一样，没有简单的乘法规则
    - 可积的另一充要条件：把所考察的闭区间（任意）分为两个子闭区间，函数在该俩子闭区间上也可积。此时，函数在原区间上的定积分等于在两个子区间上的定积分的和（称为关于积分区间的可加性）。
    - 规定：长度为零的闭区间上的定积分为0；若积分端点相反，则积分值取负。
    - 值恒不小于零的函数的定积分不小于零。推论：若一函数的值恒小于等于另一函数，则第一个函数的定积分也小于等于第二个函数
    - 可积函数的绝对值函数也可积，其定积分大于等于原来函数的定积分的绝对值。注意：逆命题不成立，考虑狄利克雷函数的变形（有理点上取值1无理点上取值-1）。
-1. 定理9.7（积分第一中值定理）：若$$f$$在$$[a,b]$$上连续，则至少存在一点$$\xi\in[a,b]$$使得$$\int_{a}^{b}f(x)\mathrm{d}x=f(\xi)(b-a)$$。证明：该定积分介于$$m(b-a)$$和$$M(b-a)$$之间，其中$$m$$和$$M$$分别是$$f$$在$$[a,b]$$上的最小、最大值，然后不等式每项都除以$$b-a$$然后利用连续函数的介值性定理可证得结果。
-1. 定理9.8（推广的积分第一中值定理）：若$$f$$与$$g$$都在$$[a,b]$$上连续，且$$g(x)$$在$$[a,b]$$上不变号，则至少存在一点$$\xi\in[a,b]$$使得$$\int_a^b f(x)g(x)\mathrm{d}x=f(\xi)\int_a^b g(x)\mathrm{d}x$$证明：和定理9.7类似，但是把$$b-a$$换成$$g(x)$$。
+1. 定理9.7（积分第一中值定理）：若$$f$$在$$[a,b]$$上连续，则至少存在一点$$\xi\in[a,b]$$使得$$\int_{a}^{b}f(x)\dx=f(\xi)(b-a)$$。证明：该定积分介于$$m(b-a)$$和$$M(b-a)$$之间，其中$$m$$和$$M$$分别是$$f$$在$$[a,b]$$上的最小、最大值，然后不等式每项都除以$$b-a$$然后利用连续函数的介值性定理可证得结果。
+1. 定理9.8（推广的积分第一中值定理）：若$$f$$与$$g$$都在$$[a,b]$$上连续，且$$g(x)$$在$$[a,b]$$上不变号，则至少存在一点$$\xi\in[a,b]$$使得$$\int_a^b f(x)g(x)\dx=f(\xi)\int_a^b g(x)\dx$$证明：和定理9.7类似，但是把$$b-a$$换成$$g(x)$$。
 1. 变（上、下）限（的定）积分是一个以$$x$$为自变量的函数，如$$\Phi(x)=\int_a^x f(t)\mathrm{d}t$$
 1. 定理9.9：在闭区间上可积的函数的变上限定积分在该闭区间上连续。证明：由连续函数的定义以及该函数在该闭区间上的有界性可证。
-1. 定理9.10（原函数存在定理，或微积分学基本定理）：闭区间上的连续函数对应的变上限定积分在该闭区间上处处可导，而且$$\Phi'(x)=\frac{\mathrm{d}}{\mathrm{d}x}\int_a^x f(t)\mathrm{d}t=f(x), x\in[a,b]$$。证明：由积分第一中值定理以及导数的极限定义可证。
+1. 定理9.10（原函数存在定理，或微积分学基本定理）：闭区间上的连续函数对应的变上限定积分在该闭区间上处处可导，而且$$\Phi'(x)=\frac{\mathrm{d}}{\dx}\int_a^x f(t)\mathrm{d}t=f(x), x\in[a,b]$$。证明：由积分第一中值定理以及导数的极限定义可证。
 1. 定理9.11（积分第二中值定理）：设函数$$f$$在$$[a,b]$$上可积，
-   - 若函数$$g$$在$$[a,b]$$上减，且$$g(x)\ge0$$，则存在$$\xi\in[a,b]$$使得$$\int_a^b f(x)g(x)\mathrm{d}x=g(a)\int_a^\xi f(x)\mathrm{d}x$$。证明（类似可证明下面命题）：$$F(x)=\int_a^x f(t)\mathrm{d}t,x\in[a,b]$$在$$[a,b]$$上可导因此连续，因此存在最大值$$M$$和最小值$$m$$，因此只需证明$$m\le\frac{1}{g(a)}\int_a^b f(x)g(x)\mathrm{d}x\le M$$然后利用$$F$$的介值性可立即证得原命题。至于如何证明该式：根据定理9.3'对任意小的正数存在一个分割使得$$g$$的上下和之差小于它，然后把$$\int_a^b f(x)g(x)\mathrm{d}x$$根据积分区间可加性以及该分割写成一系列子积分和来证。
-   - 若函数$$g$$在$$[a,b]$$上增，且$$g(x)\ge0$$，则存在$$\eta\in[a,b]$$使得$$\int_a^b f(x)g(x)\mathrm{d}x=g(b)\int_\eta^b f(x)\mathrm{d}x$$
-1. 推论：设函数$$f$$在$$[a,b]$$上可积，若$$g$$为单调函数，则存在$$\xi\in[a,b]$$使得$$\int_a^b f(x)g(x)\mathrm{d}x=g(a)\int_a^\xi f(x)\mathrm{d}x+g(b)\int_\xi^b f(x)\mathrm{d}x$$。证明：若$$g$$单调减，则令$$h(x)=g(x)-g(b)$$，由定理9.11可证。
-1. 定理9.12（定积分换元积分法）：若函数$$f$$在$$[a,b]$$上连续，$$\varphi$$在$$[\alpha,\beta]$$上连续可微**且其导函数在$$[a,b]$$上可积**（TMD书上没有这个条件很不严谨啊，会有以下[反例](#nonintegrable_derivative)！[维基](https://en.wikipedia.org/wiki/Integration_by_substitution#Proposition)上都明确指定这个条件）且满足$$\varphi(\alpha)=a,\varphi(\beta)=b,a\le\varphi(t)\le b,t\in[\alpha,\beta]$$，则有$$\int_a^bf(x)\mathrm{d}x=\int_\alpha^\beta f(\varphi(t))\varphi'(t)\mathrm{d}t$$。证明：由微积分学基本定理，两函数的原函数都存在，设$$F$$是$$f$$的原函数，可以证明$$F(\varphi(t))$$是$$f(\varphi(t))\varphi'(t)$$的一个原函数，然后对右端使用牛顿-莱布尼兹公式即得。
+   - 若函数$$g$$在$$[a,b]$$上减，且$$g(x)\ge0$$，则存在$$\xi\in[a,b]$$使得$$\int_a^b f(x)g(x)\dx=g(a)\int_a^\xi f(x)\dx$$。证明（类似可证明下面命题）：$$F(x)=\int_a^x f(t)\mathrm{d}t,x\in[a,b]$$在$$[a,b]$$上可导因此连续，因此存在最大值$$M$$和最小值$$m$$，因此只需证明$$m\le\frac{1}{g(a)}\int_a^b f(x)g(x)\dx\le M$$然后利用$$F$$的介值性可立即证得原命题。至于如何证明该式：根据定理9.3'对任意小的正数存在一个分割使得$$g$$的上下和之差小于它，然后把$$\int_a^b f(x)g(x)\dx$$根据积分区间可加性以及该分割写成一系列子积分和来证。
+   - 若函数$$g$$在$$[a,b]$$上增，且$$g(x)\ge0$$，则存在$$\eta\in[a,b]$$使得$$\int_a^b f(x)g(x)\dx=g(b)\int_\eta^b f(x)\dx$$
+1. 推论：设函数$$f$$在$$[a,b]$$上可积，若$$g$$为单调函数，则存在$$\xi\in[a,b]$$使得$$\int_a^b f(x)g(x)\dx=g(a)\int_a^\xi f(x)\dx+g(b)\int_\xi^b f(x)\dx$$。证明：若$$g$$单调减，则令$$h(x)=g(x)-g(b)$$，由定理9.11可证。
+1. 定理9.12（定积分换元积分法）：若函数$$f$$在$$[a,b]$$上连续，$$\varphi$$在$$[\alpha,\beta]$$上连续可微**且其导函数在$$[a,b]$$上可积**（TMD书上没有这个条件很不严谨啊，会有以下[反例](#nonintegrable_derivative)！[维基](https://en.wikipedia.org/wiki/Integration_by_substitution#Proposition)上都明确指定这个条件）且满足$$\varphi(\alpha)=a,\varphi(\beta)=b,a\le\varphi(t)\le b,t\in[\alpha,\beta]$$，则有$$\int_a^bf(x)\dx=\int_\alpha^\beta f(\varphi(t))\varphi'(t)\mathrm{d}t$$。证明：由微积分学基本定理，两函数的原函数都存在，设$$F$$是$$f$$的原函数，可以证明$$F(\varphi(t))$$是$$f(\varphi(t))\varphi'(t)$$的一个原函数，然后对右端使用牛顿-莱布尼兹公式即得。
 
-1. 定理9.13（定积分分部积分法）：$$[a,b]$$上连续可微**且具有可积导函数**（同上，书中缺了这个条件）的函数$$u(x)$$和$$v(x)$$满足$$\int_a^b u(x)v'(x)\mathrm{d}x=u(x)v(x)\big\vert_a^b-\int_a^b u'(x)v(x)\mathrm{d}x$$。证明：首先由微积分学基本定理$$u(x)$$和$$v(x)$$都有原函数，由定理9.4$$u(x)$$和$$v(x)$$在$$[a,b]$$上可积，由于可积函数的积也可积，故$$u(x)v'(x)$$和$$u'(x)v(x)$$可积，然后直接运用可积函数的和也可积这个性质把它们合并求和，最后使用牛顿-莱布尼兹公式即得结果。
+1. 定理9.13（定积分分部积分法）：$$[a,b]$$上连续可微**且具有可积导函数**（同上，书中缺了这个条件）的函数$$u(x)$$和$$v(x)$$满足$$\int_a^b u(x)v'(x)\dx=u(x)v(x)\big\vert_a^b-\int_a^b u'(x)v(x)\dx$$。证明：首先由微积分学基本定理$$u(x)$$和$$v(x)$$都有原函数，由定理9.4$$u(x)$$和$$v(x)$$在$$[a,b]$$上可积，由于可积函数的积也可积，故$$u(x)v'(x)$$和$$u'(x)v(x)$$可积，然后直接运用可积函数的和也可积这个性质把它们合并求和，最后使用牛顿-莱布尼兹公式即得结果。
 1. 关于$$\pi$$的极限表达式的Wallis公式
 1. 由推广的分部积分公式（关于n+1阶连续导函数）可以得出泰勒公式的积分型余项（进而求得之前的拉格朗日型余项），进一步通过积分第一中值定理可以得出柯西型余项。
 1. 可积性理论：
@@ -407,12 +407,12 @@ tags:
 # 第十章 定积分的应用
 
 1. 曲边梯形（由恒不小于零的曲线$$f(x)$$、直线$$x=a$$、$$x=b$$以及$$x$$轴围成）面积的定义（在第九章开头）：把$$[a,b]$$分为多个子区间，得到面积$$S\approx \sum_{i=1}^n f(\xi_i)\Delta x_i$$，其在$$n\to \infty$$且$$\Delta x_i\to 0$$时的极限定义为该曲边梯形的面积。这样的定义其实是可以严格推导出来，见下面对截面面积函数求体积方法的说明。
-1. 由上下两条曲线$$y=f_x(x),y=f_1(x)$$以及两条直线$$x=a,x=b,(a<b)$$所围的平面图形面积为$$\int_a^b\big(f_2(x)-f_1(x)\big)\mathrm{d}x$$
-1. 已知曲线C由参数方程$$x=x(t),y=y(t),t\in[\alpha,\beta]$$给出，在$$[\alpha,\beta]$$上$$y(t)$$连续、$$x(t)$$连续可微且$$x'(t)\ne0$$，于是根据定理6.4$$x(t)$$为严格单调函数故由定理1.2其必有严格单调反函数，因此根据定积分的换元积分法（令$$\varphi$$为$$x(t)$$）曲线C、直线$$x=a$$、$$x=b$$和$$x$$轴围成的图形面积为：$$\int_a^b\abs{y(x^{-1}(x))}\mathrm{d}x=\int_\alpha^\beta\abs{y(x^{-1}(x(t)))x'(t)}\mathrm{d}t=\int_\alpha^\beta\abs{y(t)x'(t)}\mathrm{d}t$$
+1. 由上下两条曲线$$y=f_x(x),y=f_1(x)$$以及两条直线$$x=a,x=b,(a<b)$$所围的平面图形面积为$$\int_a^b\big(f_2(x)-f_1(x)\big)\dx$$
+1. 已知曲线C由参数方程$$x=x(t),y=y(t),t\in[\alpha,\beta]$$给出，在$$[\alpha,\beta]$$上$$y(t)$$连续、$$x(t)$$连续可微且$$x'(t)\ne0$$，于是根据定理6.4$$x(t)$$为严格单调函数故由定理1.2其必有严格单调反函数，因此根据定积分的换元积分法（令$$\varphi$$为$$x(t)$$）曲线C、直线$$x=a$$、$$x=b$$和$$x$$轴围成的图形面积为：$$\int_a^b\abs{y(x^{-1}(x))}\dx=\int_\alpha^\beta\abs{y(x^{-1}(x(t)))x'(t)}\mathrm{d}t=\int_\alpha^\beta\abs{y(t)x'(t)}\mathrm{d}t$$
 1. 如果由上述参数方程表示的曲线是封闭的即$$x(\alpha)=x(\beta),y(\alpha)=y(\beta)$$且在$$(\alpha,\beta)$$内曲线自身不再相交，则由曲线自身围成图形的面积为$$\big\vert\int_\alpha^\beta y(t)x'(t)\mathrm{d}t\big\vert$$。从几何上来理解，该曲线可以根据$$x(t)$$的单调性分为（有限的）几部分，每一部分$$x(t)$$是严格单调的，对每一部分求积分$$\int_{x^{-1}(x_i)}^{x^{-1}(x_{i+1})}y(t)x'(t)\mathrm{d}t$$得到该部分曲线和直线$$x=x_i,x=x_{i+1}$$以及$$x$$轴围成的图形的“面积”，这个面积其实是具有符号的，在$$x$$轴上半部分取正而下半部分取负，因此正负是会抵消的。最后把所有部分的积分加起来求和便得到带符号的曲线围成图形的面积，再取个绝对值就得到一个正的面积值。
    - 根据这个公式可求得椭圆面积为$$\pi ab$$其中$$a$$、$$b$$分别为椭圆半长轴和半短轴长。
 1. 曲线C由极坐标方程$$r=r(\theta),\theta\in[\alpha,\beta]$$给出，其中$$r(\theta)$$在$$[\alpha,\beta]$$上连续，$$\beta-\alpha\le2\pi$$，由C与两条射线$$\theta=\alpha,\theta=\beta$$所围的平面图形（称为扇形）面积为$$\frac{1}{2}\int_\alpha^\beta r^2(\theta)\mathrm{d}\theta$$。证明：可以使用定积分的思想，通过对$$[\alpha,\beta]$$进行分割，近似求出各个小的扇形的面积然后求和并取极限。
-1. 三维直角坐标系中由截面面积函数$$A(x)$$以及平面$$x=a,x=b,(a<b)$$确定的立体的体积为$$\int_a^b A(x)\mathrm{d}x$$，其中$$A(x)$$为$$[a,b]$$上的连续函数。可以通过对该区间进行分割，利用不等式：达布下和小于等于所求体积小于等于达布上和，然后根据$$A(x)$$的连续性（因此有可积性），该不等式在分割区间任意小且分割区间数无限多时两边等号成立，因此所求体积为定积分。同理可以对上述的平面图形面积进行类似的逻辑分析。
+1. 三维直角坐标系中由截面面积函数$$A(x)$$以及平面$$x=a,x=b,(a<b)$$确定的立体的体积为$$\int_a^b A(x)\dx$$，其中$$A(x)$$为$$[a,b]$$上的连续函数。可以通过对该区间进行分割，利用不等式：达布下和小于等于所求体积小于等于达布上和，然后根据$$A(x)$$的连续性（因此有可积性），该不等式在分割区间任意小且分割区间数无限多时两边等号成立，因此所求体积为定积分。同理可以对上述的平面图形面积进行类似的逻辑分析。
    - 据此可求得椭球体体积公式为$$\frac{3}{4}\pi abc$$，其中$$a$$、$$b$$、$$c$$为椭球的半主轴长。
 1. 平面曲线及其分割$$T$$，最长弦的长度$$\Vert T\Vert=\max_{1\le i\le n}\abs{P_{i-1}P_i}$$，折线总长度$$s_T=\sum_{i=1}^{n}\abs{P_{i-1}P_i}$$
 1. 弧长定义：如果对不论怎样的分割$$T$$都存在有限极限$$\lim_{\Vert T\Vert\to 0}s_T=s$$，则称该曲线是可求长的并把$$s$$称为其弧长。
@@ -422,14 +422,14 @@ tags:
    > - 为什么满足这些条件就叫“光滑”？几何意义是什么？曲线“看起来”是怎么样的？极端例子都有哪些？
      {: .lambda_question}
 1. 定理10.1：光滑曲线是可求长的，弧长为$$s=\int_\alpha^\beta\sqrt{x'^2(t)+y'^2(t)}\mathrm{d}t$$。证明：设曲线的任意分割$$T$$对应的$$[\alpha,\beta]$$上的分割为$$T'$$，目的是证明$$\lim_{\Vert T\Vert\to0}s_T=\lim_{\Vert T'\Vert\to0}\sum_{i=1}^n\sqrt{x'^2(\xi_i)+y'^2(\xi_i)}\Delta t_i$$，为此需要对左端使用微分中值定理，然后证明$$\Vert T\Vert\to0$$等价于$$\Vert T'\Vert\to0$$，从而右端移项到左端后可以把极限算符提出来而证明里面的表达式可以任意小。
-   - 由直角坐标方程$$y=f(x),x\in[a,b]$$表示的曲线可以转化为参数方程表示，而当$$f(x)$$在$$[a,b]$$上连续可微时其弧长为$$s=\int_a^b\sqrt{1+f'^2(x)}\mathrm{d}x$$
+   - 由直角坐标方程$$y=f(x),x\in[a,b]$$表示的曲线可以转化为参数方程表示，而当$$f(x)$$在$$[a,b]$$上连续可微时其弧长为$$s=\int_a^b\sqrt{1+f'^2(x)}\dx$$
    - 同理，由极坐标方程$$r=r(\theta),\theta\in[\alpha,\beta]$$表示的曲线当$$r'(\theta)$$在$$[\alpha,\beta]$$上连续且$$r(\theta)$$与$$r'(\theta)$$不同时为零时弧长为$$s=\int_\alpha^\beta\sqrt{r^2(\theta)+r'^2(\theta)}\mathrm{d}\theta$$。
-1. 弧微分定义$$\mathrm{d}s=\sqrt{\mathrm{d}x^2+\mathrm{d}y^2}$$，微分三角形
-1. 对于一个光滑曲线，平均曲率定义为倾角增量和弧长增量的比即$$\overline{K}=\frac{\Delta\alpha}{\Delta s}$$，曲率则定义为平均曲率的极限即$$K=\big\vert\lim_{\Delta t\to0}\frac{\Delta\alpha}{\Delta s}\big\vert=\big\vert\frac{\mathrm{d}\alpha}{\mathrm{d}s}\big\vert=\frac{\abs{x'(t)y''(t)-x''(t)y'(t)}}{(x'^2(t)+y'^2(t))^{3/2}}$$。
+1. 弧微分定义$$\ds=\sqrt{\dx^2+\dy^2}$$，微分三角形
+1. 对于一个光滑曲线，平均曲率定义为倾角增量和弧长增量的比即$$\overline{K}=\frac{\Delta\alpha}{\Delta s}$$，曲率则定义为平均曲率的极限即$$K=\big\vert\lim_{\Delta t\to0}\frac{\Delta\alpha}{\Delta s}\big\vert=\big\vert\frac{\mathrm{d}\alpha}{\ds}\big\vert=\frac{\abs{x'(t)y''(t)-x''(t)y'(t)}}{(x'^2(t)+y'^2(t))^{3/2}}$$。
    - 可求得圆在圆周上任意一点处的曲率为$$K=\frac{1}{R}$$
    - 曲线任意一点处若曲率不为零，则可过该点作一个半径为$$\frac{1}{K}$$使得该圆在该点与该曲线有相同的切线并在该点近旁与该曲线位于该切线同侧。这个圆称为曲率圆，其半径和圆心称为曲率半径和曲率中心。
 1. 旋转曲面的面积可以把每一小段近似地用圆台的侧面积来表示（怎样严格定义曲面的面积？书上说在下册重积分章节，what the fuck?）
-   - 直角坐标系方程：$$S=2\pi\int_a^b f(x)\sqrt{1+f'^2(x)}\mathrm{d}x$$
+   - 直角坐标系方程：$$S=2\pi\int_a^b f(x)\sqrt{1+f'^2(x)}\dx$$
    - 参数方程：$$S=2\pi\int_\alpha^\beta y(t)\sqrt{x'^2(t)+y'^2(t)}\mathrm{d}t$$
 1. 定积分在物理中的应用
 1. 定积分的近似计算：梯形法、抛物线法。详见数值分析。
@@ -438,17 +438,17 @@ tags:
 
 1. 问题的提出（即应用）：求第二宇宙速度（使得火箭能够克服地球引力无限远离地球）；求盛满水的圆柱形桶通过底下小孔流光所有水所需时间
 1. 定义
-   - $$f$$定义在$$[a,+\infty)$$上且在任何有限区间$$[a,u]$$上可积。若存在极限$$\lim_{u\to+\infty}\int_a^u f(x)\mathrm{d}x=J$$则称此极限为$$f$$在$$[a,+\infty)$$上的无穷限反常积分，记为$$J=\int_a^{+\infty}f(x)\mathrm{d}x$$，并称$$\int_a^{+\infty}f(x)\mathrm{d}x$$收敛。
+   - $$f$$定义在$$[a,+\infty)$$上且在任何有限区间$$[a,u]$$上可积。若存在极限$$\lim_{u\to+\infty}\int_a^u f(x)\dx=J$$则称此极限为$$f$$在$$[a,+\infty)$$上的无穷限反常积分，记为$$J=\int_a^{+\infty}f(x)\dx$$，并称$$\int_a^{+\infty}f(x)\dx$$收敛。
    - $$(-\infty,+\infty)$$上的无穷积分通过上述和对应的另一种单边无穷积分来定义（任取一分割点把两者相加），只有两种单边无穷积分都收敛才收敛，且分割点选取与收敛时的值无关
-   - $$f$$定义在$$(a,b]$$上且在$$a$$的任一右邻域无界，但在任何闭区间$$[u,b]\subset(a,b]$$上有界且可积。若存在极限$$\lim_{u\to a^+}\int_u^b f(x)\mathrm{d}x=J$$则称此极限为无界函数$$f$$在$$(a,b]$$上的反常积分，记为$$J=\int_a^b f(x)\mathrm{d}x$$并称$$\int_a^b f(x)\mathrm{d}x$$收敛。$$a$$称为瑕点，这种积分也称为瑕积分。
-1. 定理11.1（无穷积分收敛的柯西准则）：无穷积分收敛的充要条件是任给$$\varepsilon>0$$，存在$$G\ge a$$，只要$$u_1,u_2>G$$便有$$\left\vert\int_a^{u_2}f(x)\mathrm{d}x-\int_a^{u_1}f(x)\mathrm{d}x\right\vert=\left\vert\int_{u_1}^{u_2}f(x)\mathrm{d}x\right\vert<\varepsilon$$。证明：通过函数极限的柯西准则。
+   - $$f$$定义在$$(a,b]$$上且在$$a$$的任一右邻域无界，但在任何闭区间$$[u,b]\subset(a,b]$$上有界且可积。若存在极限$$\lim_{u\to a^+}\int_u^b f(x)\dx=J$$则称此极限为无界函数$$f$$在$$(a,b]$$上的反常积分，记为$$J=\int_a^b f(x)\dx$$并称$$\int_a^b f(x)\dx$$收敛。$$a$$称为瑕点，这种积分也称为瑕积分。
+1. 定理11.1（无穷积分收敛的柯西准则）：无穷积分收敛的充要条件是任给$$\varepsilon>0$$，存在$$G\ge a$$，只要$$u_1,u_2>G$$便有$$\left\vert\int_a^{u_2}f(x)\dx-\int_a^{u_1}f(x)\dx\right\vert=\left\vert\int_{u_1}^{u_2}f(x)\dx\right\vert<\varepsilon$$。证明：通过函数极限的柯西准则。
    - 性质：两收敛的无穷积分的线性组合也收敛，且满足线性运算性质
-   - 若$$f$$在任何有限区间$$[a,u]$$上可积且$$\int_a^{+\infty}\abs{f(x)}\mathrm{d}x$$收敛，则$$\int_a^{+\infty}f(x)\mathrm{d}x$$也收敛，且有$$\left\vert\int_a^{+\infty}f(x)\mathrm{d}x\right\vert\le\int_a^{+\infty}\abs{f(x)}\mathrm{d}x$$。当$$\int_a^{+\infty}\abs{f(x)}\mathrm{d}x$$收敛时，称$$\int_a^{+\infty}f(x)\mathrm{d}x$$为绝对收敛，因此这条性质表明绝对收敛=>收敛。但是反之不成立，例如当$$0<p\le1$$时$$\int_1^{+\infty}\frac{\sin x}{x^p}\mathrm{d}x$$条件收敛。称收敛而不绝对收敛者为条件收敛。
-1. 定理11.2（比较判别法）：若定义在$$[a,+\infty)$$上的两个函数$$f$$和$$g$$都在任何有限区间$$[a,u]$$上可积且满足$$\abs{f(x)}\le g(x),x\in[a,+\infty)$$，则当$$\int_a^{+\infty}g(x)\mathrm{d}x$$收敛时$$\int_a^{+\infty}\abs{f(x)}\mathrm{d}x$$必收敛。证明：$$\int_a^{+\infty}\abs{f(x)}\mathrm{d}x$$关于上界$$u$$是单调递增，而$$\int_a^{+\infty}g(x)\mathrm{d}x$$的收敛性给了它一个上界，于是单调有界定理。
+   - 若$$f$$在任何有限区间$$[a,u]$$上可积且$$\int_a^{+\infty}\abs{f(x)}\dx$$收敛，则$$\int_a^{+\infty}f(x)\dx$$也收敛，且有$$\left\vert\int_a^{+\infty}f(x)\dx\right\vert\le\int_a^{+\infty}\abs{f(x)}\dx$$。当$$\int_a^{+\infty}\abs{f(x)}\dx$$收敛时，称$$\int_a^{+\infty}f(x)\dx$$为绝对收敛，因此这条性质表明绝对收敛=>收敛。但是反之不成立，例如当$$0<p\le1$$时$$\int_1^{+\infty}\frac{\sin x}{x^p}\dx$$条件收敛。称收敛而不绝对收敛者为条件收敛。
+1. 定理11.2（比较判别法）：若定义在$$[a,+\infty)$$上的两个函数$$f$$和$$g$$都在任何有限区间$$[a,u]$$上可积且满足$$\abs{f(x)}\le g(x),x\in[a,+\infty)$$，则当$$\int_a^{+\infty}g(x)\dx$$收敛时$$\int_a^{+\infty}\abs{f(x)}\dx$$必收敛。证明：$$\int_a^{+\infty}\abs{f(x)}\dx$$关于上界$$u$$是单调递增，而$$\int_a^{+\infty}g(x)\dx$$的收敛性给了它一个上界，于是单调有界定理。
    - 推论：若$$\abs{f(x)}$$和$$g(x)$$的比值为一常数，利用此定理通过该常数的大小来判断。
-1. 定理11.3（狄利克雷判别法）：若$$F(u)=\int_a^u f(x)\mathrm{d}x$$在$$[a,+\infty)$$上有界，$$g(x)$$在$$[a,+\infty)$$上当$$x\to+\infty$$时单调趋于0，则$$\int_a^{+\infty}f(x)g(x)\mathrm{d}x$$收敛。证明：积分第二中值定理+柯西准则。
-1. 定理11.4（阿贝尔判别法）：若$$\int_a^{+\infty} f(x)\mathrm{d}x$$收敛，$$g(x)$$在$$[a,+\infty)$$上单调有界，则$$\int_a^{+\infty}f(x)g(x)\mathrm{d}x$$收敛。证明：积分第二中值定理或定理11.3。
-1. 当$$x\to+\infty$$时被积函数即使不趋于零，甚至是无解的，无穷积分仍有可能收敛，例如$$\int_1^{+\infty}x\sin x^4\mathrm{d}x$$。
+1. 定理11.3（狄利克雷判别法）：若$$F(u)=\int_a^u f(x)\dx$$在$$[a,+\infty)$$上有界，$$g(x)$$在$$[a,+\infty)$$上当$$x\to+\infty$$时单调趋于0，则$$\int_a^{+\infty}f(x)g(x)\dx$$收敛。证明：积分第二中值定理+柯西准则。
+1. 定理11.4（阿贝尔判别法）：若$$\int_a^{+\infty} f(x)\dx$$收敛，$$g(x)$$在$$[a,+\infty)$$上单调有界，则$$\int_a^{+\infty}f(x)g(x)\dx$$收敛。证明：积分第二中值定理或定理11.3。
+1. 当$$x\to+\infty$$时被积函数即使不趋于零，甚至是无解的，无穷积分仍有可能收敛，例如$$\int_1^{+\infty}x\sin x^4\dx$$。
 1. 和无穷积分类似，我们有：
    - 定理11.5（瑕积分收敛的柯西准则）
    - 定理11.6（瑕积分收敛判定的比较法则）
