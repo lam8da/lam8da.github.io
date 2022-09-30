@@ -155,6 +155,14 @@ Possible next steps:
 - Fix fields like $$N,Q,R$$ -> $$\NN,\QQ,\RR$$
 - Add more macros if necessary
 
+Common helpers:
+
+- To extract all Tex commands from a page:
+
+  ```bash
+  grep -o -P '\$\$[\x00-\x7F]+\$\$' my_file.md | sed -r 's/^[^$]*\$\$( ?)//g;s/( ?)\$\$$//g' | sort | uniq -c | sort
+  ```
+
 For more info:
 - <https://jekyllrb.com/docs/extras/>
 - <http://www.gastonsanchez.com/visually-enforced/opinion/2014/02/16/Mathjax-with-jekyll/>

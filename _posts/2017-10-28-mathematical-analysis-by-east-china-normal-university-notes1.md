@@ -186,45 +186,45 @@ tags:
 1. 引理：在某点可导的充要条件是在该点的某邻域内存在一个在该点连续的函数$$H(x)$$使得$$f(x)-f(x_0)=H(x)(x-x_0)$$，从而$$f'(x_0)=H(x_0)$$。证明：把$$H(x)$$构造出来。
 1. 定理5.9（链式法则）：可导函数的复合函数也可导，其导数满足$$(f\circ \varphi)'(x_0)=f'(u_0)\varphi'(x_0)=f'(\varphi(x_0))\varphi'(x_0)$$。证明：通过上述引理。
 1. 链式法则满足结合律：$$(f\circ g\circ h)'(x_0)=((f\circ g)\circ h)'(x_0)=(f\circ (g\circ h))'(x_0)$$。证明：$$((f\circ g)\circ h)'(x_0)=(f\circ g)'(h(x_0))h'(x_0)=f'(g(h(x_0))g'(h(x_0))h'(x_0)=f'((g\circ h)(x_0))(g\circ h)'(x_0)=(f\circ (g\circ h))'(x_0)$$
-1. 参变量函数$$\left\{\begin{align}&x=\varphi(t)\\&y=\phi(t)\end{align}\right.$$的导数为$$\frac{\mathrm{d} y}{\mathrm{d} x}=\frac{\phi'(t)}{\varphi'(t)}$$。因此，由极坐标$$\rho=\rho(\theta)$$表示的曲线（其中$$(\theta,\rho)$$为极坐标）可以先转化为参量方程$$\left\{\begin{align}x=\rho(\theta)\cos \theta\\y=\rho(\theta)\sin\theta\end{align}\right.$$，然后根据前述规则求。
+1. 参变量函数$$\left\{\begin{align}&x=\varphi(t)\\&y=\phi(t)\end{align}\right.$$的导数为$$\frac{\dy}{\dx}=\frac{\phi'(t)}{\varphi'(t)}$$。因此，由极坐标$$\rho=\rho(\theta)$$表示的曲线（其中$$(\theta,\rho)$$为极坐标）可以先转化为参量方程$$\left\{\begin{align}x=\rho(\theta)\cos \theta\\y=\rho(\theta)\sin\theta\end{align}\right.$$，然后根据前述规则求。
 1. 定义：二阶导数，二阶可导，n阶导函数，n阶导数，高阶导数
 1. 莱布尼兹公式：函数的积的n阶导数展开式的系数为二项式系数
-1. 微分的定义：若存在常数$$A$$使得$$\Delta y=f(x_0+\Delta x)-f(x_0)$$可以表示成$$\Delta y=A\Delta x+o(\Delta x)$$。其中$$A\Delta x$$记为$$\mathrm{d} y$$称为$$f$$在点$$x_0$$的微分，当$$A\ne 0$$时也说$$\mathrm{d} y$$是$$\Delta y$$的线性主部。
+1. 微分的定义：若存在常数$$A$$使得$$\Delta y=f(x_0+\Delta x)-f(x_0)$$可以表示成$$\Delta y=A\Delta x+o(\Delta x)$$。其中$$A\Delta x$$记为$$\dy$$称为$$f$$在点$$x_0$$的微分，当$$A\ne 0$$时也说$$\dy$$是$$\Delta y$$的线性主部。
 1. 定理5.10：可微的充要条件是可导，且$$A=f'(x_0)$$。证明：必要性直接对上式取极限，充分性使用有限增量公式。
 
 ## 我的小结
 
-1. 由上述定理有**定义**$$\dy=f'(x_0)\Delta x$$。根据该定义，函数$$i(x)=x$$的微分$$\mathrm{d}i(x)=i'(x)\Delta x=\Delta x$$因此按照定义表示为$$\dx=\Delta x$$，因此我们可以写$$\dy=f'(x_0)\dx$$
+1. 由上述定理有**定义**$$\dy=f'(x_0)\Delta x$$。根据该定义，函数$$i(x)=x$$的微分$$\d i(x)=i'(x)\Delta x=\Delta x$$因此按照定义表示为$$\dx=\Delta x$$，因此我们可以写$$\dy=f'(x_0)\dx$$
    - 我的理解是**自变量为$$x$$的函数$$y$$的微分等于$$f'(x_0)$$和自变量为$$x$$的函数$$i(x)$$的微分的积**。
-   - [微分和导数的关系是什么？ - 马同学的回答](https://www.zhihu.com/question/22199657/answer/115178055)、[为什么自变量x的二阶微分d(dx)等于零？ - 陈老师的回答](https://www.zhihu.com/question/27750522/answer/141475199)以及菲赫金哥尔茨的《微积分教程》都说，**微分是一个函数，不是一个数**。而$$\Delta x$$是一个和$$x$$无关的自变量，因此$$\mathrm{d}(\dx)=\mathrm{d}\Delta x=\mathrm{d}(\mathrm{constant})=0$$。
+   - [微分和导数的关系是什么？ - 马同学的回答](https://www.zhihu.com/question/22199657/answer/115178055)、[为什么自变量x的二阶微分d(dx)等于零？ - 陈老师的回答](https://www.zhihu.com/question/27750522/answer/141475199)以及菲赫金哥尔茨的《微积分教程》都说，**微分是一个函数，不是一个数**。而$$\Delta x$$是一个和$$x$$无关的自变量，因此$$\d (\dx)=\d \Delta x=\d (\mathrm{constant})=0$$。
    - 另外参考[GaoShanze的回答 - 知乎](https://www.zhihu.com/question/22199657/answer/95428294)
    - 根据这个定义直接可以从导数的四则运算法则推导出微分的四则运算法则。
-1. 一阶微分形式的不变性：当$$y$$是复合函数时$$\dy=\mathrm{d}(f\circ g(x))=f'(u)g'(x)\dx=f'(u)\du$$。这说明无论$$u$$是自变量还是一个函数，对$$y$$微分保持形式不变。
+1. 一阶微分形式的不变性：当$$y$$是复合函数时$$\dy=\d (f\circ g(x))=f'(u)g'(x)\dx=f'(u)\du$$。这说明无论$$u$$是自变量还是一个函数，对$$y$$微分保持形式不变。
 1. 高阶微分。注意区分：
    - $$\dx^2$$是指$$(\dx)^2$$
-   - $$\mathrm{d}^2 x$$是$$x$$的二阶微分，其值为0（原因如前所属，书上一笔带过真是无语，非常令人费解）
-   - $$\mathrm{d}(x^2)$$表示$$x^2$$的一阶微分
+   - $$\d ^2 x$$是$$x$$的二阶微分，其值为0（原因如前所属，书上一笔带过真是无语，非常令人费解）
+   - $$\d (x^2)$$表示$$x^2$$的一阶微分
 1. 另外[为什么二阶导数要这么记d^2y/dx^2？ - 郁林成森的回答](https://www.zhihu.com/question/23166546/answer/116169100)说：
-   > 建议不要将二阶微商$$\frac{\mathrm{d}^{2}y}{\dx^{2}}$$看作比例，写成这个样是有历史原因的，强烈建议从下面这个式子理解二阶导数（或高阶导数）：
+   > 建议不要将二阶微商$$\frac{\d ^{2}y}{\dx^{2}}$$看作比例，写成这个样是有历史原因的，强烈建议从下面这个式子理解二阶导数（或高阶导数）：
    >
-   > $$\frac{\mathrm{d}^{2}y }{\dx^{2}} =\frac{\mathrm{d}}{\dx} \frac{\dy}{\dx}=\frac{\mathrm{d}(\frac{\dy}{\dx}) }{\dx}=\frac{\frac{\dx\cdot \mathrm{d}^{2}y-\mathrm{d}^{2}x\cdot \dy  }{\dx^{2} } }{\dx }=\frac{\dx\mathrm{d}^{2}y-\mathrm{d}^{2}x\dy  }{\dx^{3} }$$
+   > $$\frac{\d ^{2}y }{\dx^{2}} =\frac{\d }{\dx} \frac{\dy}{\dx}=\frac{\d (\frac{\dy}{\dx}) }{\dx}=\frac{\frac{\dx\cdot \d ^{2}y-\d ^{2}x\cdot \dy  }{\dx^{2} } }{\dx }=\frac{\dx\d ^{2}y-\d ^{2}x\dy  }{\dx^{3} }$$
    >
-   > 这样无论$$x$$是不是自变量，都能很好地计算出二阶微商$$\frac{\mathrm{d}^{2}y}{\dx^{2}}$$
+   > 这样无论$$x$$是不是自变量，都能很好地计算出二阶微商$$\frac{\d ^{2}y}{\dx^{2}}$$
 1. 我的理解：从定义-定理的数学角度来理解微分：
    1. 对$$y=f(x)$$（$$x$$为自变量）定义$$\dy=f'(x)\Delta x$$为关于$$x$$和$$\Delta x$$两个互不相关变量的**函数**
    1. 故对$$f(x)=x$$有$$\dx=\Delta x$$，故有$$\dy=f'(x)\dx$$。这应理解为两个函数$$\dy$$和$$f'(x)\dx$$的定义相同
-   1. $$\mathrm{d}[u(x)v(x)]=[u(x)v(x)]'\dx=u'(x)v(x)\dx+u(x)v'(x)\dx=v(x)\du+u(x)\dv$$。其中，**$$\du$$和$$\dv$$都是关于$$x$$和$$\Delta x$$的函数**
-   1. 当$$x$$为自变量时$$\mathrm{d}^2x=\mathrm{d}(\dx)=\mathrm{d}\Delta x=0$$。这是因为$$\Delta x$$是与$$x$$不相关的变量，对$$x$$求导时应该视其位常数
-   1. 对$$y=f(x)$$（$$x$$为自变量）来说，$$\mathrm{d}^2y=\mathrm{d}(\dy)=\mathrm{d}(f'(x)\dx)=\mathrm{d}(f'(x))\dx+f'(x)\mathrm{d}(\dx)=\mathrm{d}(f'(x))\dx=f''(x)\dx^2$$
+   1. $$\d [u(x)v(x)]=[u(x)v(x)]'\dx=u'(x)v(x)\dx+u(x)v'(x)\dx=v(x)\du+u(x)\dv$$。其中，**$$\du$$和$$\dv$$都是关于$$x$$和$$\Delta x$$的函数**
+   1. 当$$x$$为自变量时$$\d ^2x=\d (\dx)=\d \Delta x=0$$。这是因为$$\Delta x$$是与$$x$$不相关的变量，对$$x$$求导时应该视其位常数
+   1. 对$$y=f(x)$$（$$x$$为自变量）来说，$$\d ^2y=\d (\dy)=\d (f'(x)\dx)=\d (f'(x))\dx+f'(x)\d (\dx)=\d (f'(x))\dx=f''(x)\dx^2$$
    1. $$y=f(\varphi(t))$$（$$t$$为自变量）来说，$$\dy=[f(\varphi(t))]'\dt=f'(\varphi(t))\varphi'(t)\dt$$，如令$$u=\varphi(t)$$则有$$\dy=f'(u)\du$$，这就是所谓一阶微分形式不变性。但注意：其中$$f'(u)$$是对$$t$$求导（而不是对$$u$$）而且是关于$$t$$的函数（即以$$t$$为自变量，而不是关于$$u$$的），而$$\du$$是关于$$t$$和$$\Delta t$$的函数（而不是关于$$u$$和$$\Delta u$$的）
    1. 一阶微分的形式不变性的另一种常用表述是$$\frac{\dy}{\dt}=\frac{\dy}{\dx}\cdot\frac{\dx}{\dt}$$。其中$$\dt=\Delta t$$，但是$$\dx=\varphi'(t)\dt$$而不是$$\Delta x$$（两者差一个无穷小量），这是因为$$t$$是自变量！！
    1. 对$$y=f(\varphi(t))$$（$$t$$为自变量）来说，
 
       $$
       \begin{align}
-      \mathrm{d}^2y=&\mathrm{d}(\dy)\\
-      =&\mathrm{d}[f'(\varphi(t))\varphi'(t)\dt]\tag{1}\\
-      =&\mathrm{d}[f'(\varphi(t))\varphi'(t)]\dt\tag{2}\\
+      \d ^2y=&\d (\dy)\\
+      =&\d [f'(\varphi(t))\varphi'(t)\dt]\tag{1}\\
+      =&\d [f'(\varphi(t))\varphi'(t)]\dt\tag{2}\\
       =&[f'(\varphi(t))\varphi'(t)]'\dt^2\tag{3}\\
       =&[f''(\varphi(t))\varphi'^2(t)+f'(\varphi(t))\varphi''(t)]\dt^2\\
       =&f''(x)\dx^2+f'(\varphi(t))\varphi''(t)\dt^2\tag{4}
@@ -237,10 +237,10 @@ tags:
 
       $$
       \begin{align}
-      \mathrm{d}^2y=&\mathrm{d}(\dy)\\
-      =&\mathrm{d}[f'(x)\dx]\tag{1}\\
-      =&\mathrm{d}(f'(x))\dx+f'(x)\mathrm{d}(\dx)\tag{2}\\
-      =&f''(x)\dx^2+f'(x)\mathrm{d}[\varphi'(t)\dt]\tag{3}\\
+      \d ^2y=&\d (\dy)\\
+      =&\d [f'(x)\dx]\tag{1}\\
+      =&\d (f'(x))\dx+f'(x)\d (\dx)\tag{2}\\
+      =&f''(x)\dx^2+f'(x)\d [\varphi'(t)\dt]\tag{3}\\
       =&f''(x)\dx^2+f'(x)\varphi''(t)\dt^2\tag{4}
       \end{align}
       $$
@@ -372,7 +372,7 @@ tags:
 1. 定理9.8（推广的积分第一中值定理）：若$$f$$与$$g$$都在$$[a,b]$$上连续，且$$g(x)$$在$$[a,b]$$上不变号，则至少存在一点$$\xi\in[a,b]$$使得$$\int_a^b f(x)g(x)\dx=f(\xi)\int_a^b g(x)\dx$$证明：和定理9.7类似，但是把$$b-a$$换成$$g(x)$$。
 1. 变（上、下）限（的定）积分是一个以$$x$$为自变量的函数，如$$\Phi(x)=\int_a^x f(t)\dt$$
 1. 定理9.9：在闭区间上可积的函数的变上限定积分在该闭区间上连续。证明：由连续函数的定义以及该函数在该闭区间上的有界性可证。
-1. 定理9.10（原函数存在定理，或微积分学基本定理）：闭区间上的连续函数对应的变上限定积分在该闭区间上处处可导，而且$$\Phi'(x)=\frac{\mathrm{d}}{\dx}\int_a^x f(t)\dt=f(x), x\in[a,b]$$。证明：由积分第一中值定理以及导数的极限定义可证。
+1. 定理9.10（原函数存在定理，或微积分学基本定理）：闭区间上的连续函数对应的变上限定积分在该闭区间上处处可导，而且$$\Phi'(x)=\frac{\d }{\dx}\int_a^x f(t)\dt=f(x), x\in[a,b]$$。证明：由积分第一中值定理以及导数的极限定义可证。
 1. 定理9.11（积分第二中值定理）：设函数$$f$$在$$[a,b]$$上可积，
    - 若函数$$g$$在$$[a,b]$$上减，且$$g(x)\ge0$$，则存在$$\xi\in[a,b]$$使得$$\int_a^b f(x)g(x)\dx=g(a)\int_a^\xi f(x)\dx$$。证明（类似可证明下面命题）：$$F(x)=\int_a^x f(t)\dt,x\in[a,b]$$在$$[a,b]$$上可导因此连续，因此存在最大值$$M$$和最小值$$m$$，因此只需证明$$m\le\frac{1}{g(a)}\int_a^b f(x)g(x)\dx\le M$$然后利用$$F$$的介值性可立即证得原命题。至于如何证明该式：根据定理9.3'对任意小的正数存在一个分割使得$$g$$的上下和之差小于它，然后把$$\int_a^b f(x)g(x)\dx$$根据积分区间可加性以及该分割写成一系列子积分和来证。
    - 若函数$$g$$在$$[a,b]$$上增，且$$g(x)\ge0$$，则存在$$\eta\in[a,b]$$使得$$\int_a^b f(x)g(x)\dx=g(b)\int_\eta^b f(x)\dx$$
@@ -411,7 +411,7 @@ tags:
 1. 已知曲线C由参数方程$$x=x(t),y=y(t),t\in[\alpha,\beta]$$给出，在$$[\alpha,\beta]$$上$$y(t)$$连续、$$x(t)$$连续可微且$$x'(t)\ne0$$，于是根据定理6.4$$x(t)$$为严格单调函数故由定理1.2其必有严格单调反函数，因此根据定积分的换元积分法（令$$\varphi$$为$$x(t)$$）曲线C、直线$$x=a$$、$$x=b$$和$$x$$轴围成的图形面积为：$$\int_a^b\abs{y(x^{-1}(x))}\dx=\int_\alpha^\beta\abs{y(x^{-1}(x(t)))x'(t)}\dt=\int_\alpha^\beta\abs{y(t)x'(t)}\dt$$
 1. 如果由上述参数方程表示的曲线是封闭的即$$x(\alpha)=x(\beta),y(\alpha)=y(\beta)$$且在$$(\alpha,\beta)$$内曲线自身不再相交，则由曲线自身围成图形的面积为$$\big\vert\int_\alpha^\beta y(t)x'(t)\dt\big\vert$$。从几何上来理解，该曲线可以根据$$x(t)$$的单调性分为（有限的）几部分，每一部分$$x(t)$$是严格单调的，对每一部分求积分$$\int_{x^{-1}(x_i)}^{x^{-1}(x_{i+1})}y(t)x'(t)\dt$$得到该部分曲线和直线$$x=x_i,x=x_{i+1}$$以及$$x$$轴围成的图形的“面积”，这个面积其实是具有符号的，在$$x$$轴上半部分取正而下半部分取负，因此正负是会抵消的。最后把所有部分的积分加起来求和便得到带符号的曲线围成图形的面积，再取个绝对值就得到一个正的面积值。
    - 根据这个公式可求得椭圆面积为$$\pi ab$$其中$$a$$、$$b$$分别为椭圆半长轴和半短轴长。
-1. 曲线C由极坐标方程$$r=r(\theta),\theta\in[\alpha,\beta]$$给出，其中$$r(\theta)$$在$$[\alpha,\beta]$$上连续，$$\beta-\alpha\le2\pi$$，由C与两条射线$$\theta=\alpha,\theta=\beta$$所围的平面图形（称为扇形）面积为$$\frac{1}{2}\int_\alpha^\beta r^2(\theta)\mathrm{d}\theta$$。证明：可以使用定积分的思想，通过对$$[\alpha,\beta]$$进行分割，近似求出各个小的扇形的面积然后求和并取极限。
+1. 曲线C由极坐标方程$$r=r(\theta),\theta\in[\alpha,\beta]$$给出，其中$$r(\theta)$$在$$[\alpha,\beta]$$上连续，$$\beta-\alpha\le2\pi$$，由C与两条射线$$\theta=\alpha,\theta=\beta$$所围的平面图形（称为扇形）面积为$$\frac{1}{2}\int_\alpha^\beta r^2(\theta)\d \theta$$。证明：可以使用定积分的思想，通过对$$[\alpha,\beta]$$进行分割，近似求出各个小的扇形的面积然后求和并取极限。
 1. 三维直角坐标系中由截面面积函数$$A(x)$$以及平面$$x=a,x=b,(a<b)$$确定的立体的体积为$$\int_a^b A(x)\dx$$，其中$$A(x)$$为$$[a,b]$$上的连续函数。可以通过对该区间进行分割，利用不等式：达布下和小于等于所求体积小于等于达布上和，然后根据$$A(x)$$的连续性（因此有可积性），该不等式在分割区间任意小且分割区间数无限多时两边等号成立，因此所求体积为定积分。同理可以对上述的平面图形面积进行类似的逻辑分析。
    - 据此可求得椭球体体积公式为$$\frac{3}{4}\pi abc$$，其中$$a$$、$$b$$、$$c$$为椭球的半主轴长。
 1. 平面曲线及其分割$$T$$，最长弦的长度$$\Vert T\Vert=\max_{1\le i\le n}\abs{P_{i-1}P_i}$$，折线总长度$$s_T=\sum_{i=1}^{n}\abs{P_{i-1}P_i}$$
@@ -423,9 +423,9 @@ tags:
      {: .lambda_question}
 1. 定理10.1：光滑曲线是可求长的，弧长为$$s=\int_\alpha^\beta\sqrt{x'^2(t)+y'^2(t)}\dt$$。证明：设曲线的任意分割$$T$$对应的$$[\alpha,\beta]$$上的分割为$$T'$$，目的是证明$$\lim_{\Vert T\Vert\to0}s_T=\lim_{\Vert T'\Vert\to0}\sum_{i=1}^n\sqrt{x'^2(\xi_i)+y'^2(\xi_i)}\Delta t_i$$，为此需要对左端使用微分中值定理，然后证明$$\Vert T\Vert\to0$$等价于$$\Vert T'\Vert\to0$$，从而右端移项到左端后可以把极限算符提出来而证明里面的表达式可以任意小。
    - 由直角坐标方程$$y=f(x),x\in[a,b]$$表示的曲线可以转化为参数方程表示，而当$$f(x)$$在$$[a,b]$$上连续可微时其弧长为$$s=\int_a^b\sqrt{1+f'^2(x)}\dx$$
-   - 同理，由极坐标方程$$r=r(\theta),\theta\in[\alpha,\beta]$$表示的曲线当$$r'(\theta)$$在$$[\alpha,\beta]$$上连续且$$r(\theta)$$与$$r'(\theta)$$不同时为零时弧长为$$s=\int_\alpha^\beta\sqrt{r^2(\theta)+r'^2(\theta)}\mathrm{d}\theta$$。
+   - 同理，由极坐标方程$$r=r(\theta),\theta\in[\alpha,\beta]$$表示的曲线当$$r'(\theta)$$在$$[\alpha,\beta]$$上连续且$$r(\theta)$$与$$r'(\theta)$$不同时为零时弧长为$$s=\int_\alpha^\beta\sqrt{r^2(\theta)+r'^2(\theta)}\d \theta$$。
 1. 弧微分定义$$\ds=\sqrt{\dx^2+\dy^2}$$，微分三角形
-1. 对于一个光滑曲线，平均曲率定义为倾角增量和弧长增量的比即$$\overline{K}=\frac{\Delta\alpha}{\Delta s}$$，曲率则定义为平均曲率的极限即$$K=\big\vert\lim_{\Delta t\to0}\frac{\Delta\alpha}{\Delta s}\big\vert=\big\vert\frac{\mathrm{d}\alpha}{\ds}\big\vert=\frac{\abs{x'(t)y''(t)-x''(t)y'(t)}}{(x'^2(t)+y'^2(t))^{3/2}}$$。
+1. 对于一个光滑曲线，平均曲率定义为倾角增量和弧长增量的比即$$\overline{K}=\frac{\Delta\alpha}{\Delta s}$$，曲率则定义为平均曲率的极限即$$K=\big\vert\lim_{\Delta t\to0}\frac{\Delta\alpha}{\Delta s}\big\vert=\big\vert\frac{\d \alpha}{\ds}\big\vert=\frac{\abs{x'(t)y''(t)-x''(t)y'(t)}}{(x'^2(t)+y'^2(t))^{3/2}}$$。
    - 可求得圆在圆周上任意一点处的曲率为$$K=\frac{1}{R}$$
    - 曲线任意一点处若曲率不为零，则可过该点作一个半径为$$\frac{1}{K}$$使得该圆在该点与该曲线有相同的切线并在该点近旁与该曲线位于该切线同侧。这个圆称为曲率圆，其半径和圆心称为曲率半径和曲率中心。
 1. 旋转曲面的面积可以把每一小段近似地用圆台的侧面积来表示（怎样严格定义曲面的面积？书上说在下册重积分章节，what the fuck?）
