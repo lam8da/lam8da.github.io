@@ -91,7 +91,7 @@ tags:
 # 第三章 函数极限
 
 1. 定义：函数趋于$$+\infty$$的极限的$$\epsilon-M$$定义
-1. 定义：函数趋于某个点的极限的$$\epsilon-\delta$$定义（假设该函数在空心邻域$$U^\circ(x_0,\delta')$$内有定义，注意不能取到$$x_0$$点，即要求$$0<\ABS{x-x_0} <\delta$$）
+1. 定义：函数趋于某个点的极限的$$\epsilon-\delta$$定义（假设该函数在空心邻域$$U^\circ(x_0,\delta')$$内有定义，注意不能取到$$x_0$$点，即要求$$0<\abs{x-x_0} <\delta$$）
 1. 定义：单侧极限
 1. 定理3.1：函数在某个点有极限<=>函数在该点有左极限和右极限且均等于在该点的极限
 1. 定理3.2：函数若在某点有极限则该极限唯一
@@ -312,7 +312,7 @@ tags:
    - 证法二：反证法，构造出一个数列使函数值递增，由致密性定理由收敛子列，但根据数列极限的保不等式性得知该子列的极限点在该闭区间里。由连续性定义知该极限点上的函数值是一个确定的有界值，但由数列的选取方法知该函数值趋于无穷，矛盾
 1. 最大、最小值定理（定理4.6）：闭区间上连续函数由最大值和最小值。证明：由上面有界性定理知函数值有界，故有上确界，故只需证明该函数能取得上确界的值，通过反证法构造出一个连续函数并推出其无界得出矛盾。
 1. 介值性定理（定理4.7）：应用区间套定理不断二分该区间，然后反证法并由局部保号性得出矛盾。
-1. 一致连续性定理（定理4.9）：通过致密性定理证明，用反证法，存在$$\varepsilon_0$$，使得对任意的$$\delta$$，都存在$$x'$$和$$x''$$，即使$$\ABS{x'-x''}\lt\delta$$，但有$$\ABS{f(x')-f(x'')}\ge\varepsilon_0$$。令$$\delta=\frac{1}{n}$$，得出数列$$\{x'\}$$与$$\{x''\}$$，根据致密性定理，它们存在收敛子列，可证俩收敛子列收敛于同一点，但根据假设函数在俩子列对应点上的值的差不能小于$$\varepsilon_0$$，这跟$$f$$是连续函数矛盾
+1. 一致连续性定理（定理4.9）：通过致密性定理证明，用反证法，存在$$\varepsilon_0$$，使得对任意的$$\delta$$，都存在$$x'$$和$$x''$$，即使$$\abs{x'-x''}\lt\delta$$，但有$$\abs{f(x')-f(x'')}\ge\varepsilon_0$$。令$$\delta=\frac{1}{n}$$，得出数列$$\{x'\}$$与$$\{x''\}$$，根据致密性定理，它们存在收敛子列，可证俩收敛子列收敛于同一点，但根据假设函数在俩子列对应点上的值的差不能小于$$\varepsilon_0$$，这跟$$f$$是连续函数矛盾
 1. 定义：数列的聚点（不一定是数列的某项）
 1. 定理7.4：有界数列至少有一个聚点，且存在最大聚点和最小聚点。证明类似7.2。
 1. 定义：有界数列的最大聚点称为其上极限。下极限类似
@@ -408,13 +408,13 @@ tags:
 
 1. 曲边梯形（由恒不小于零的曲线$$f(x)$$、直线$$x=a$$、$$x=b$$以及$$x$$轴围成）面积的定义（在第九章开头）：把$$[a,b]$$分为多个子区间，得到面积$$S\approx \sum_{i=1}^n f(\xi_i)\Delta x_i$$，其在$$n\to \infty$$且$$\Delta x_i\to 0$$时的极限定义为该曲边梯形的面积。这样的定义其实是可以严格推导出来，见下面对截面面积函数求体积方法的说明。
 1. 由上下两条曲线$$y=f_x(x),y=f_1(x)$$以及两条直线$$x=a,x=b,(a<b)$$所围的平面图形面积为$$\int_a^b\big(f_2(x)-f_1(x)\big)\mathrm{d}x$$
-1. 已知曲线C由参数方程$$x=x(t),y=y(t),t\in[\alpha,\beta]$$给出，在$$[\alpha,\beta]$$上$$y(t)$$连续、$$x(t)$$连续可微且$$x'(t)\ne0$$，于是根据定理6.4$$x(t)$$为严格单调函数故由定理1.2其必有严格单调反函数，因此根据定积分的换元积分法（令$$\varphi$$为$$x(t)$$）曲线C、直线$$x=a$$、$$x=b$$和$$x$$轴围成的图形面积为：$$\int_a^b\ABS{y(x^{-1}(x))}\mathrm{d}x=\int_\alpha^\beta\ABS{y(x^{-1}(x(t)))x'(t)}\mathrm{d}t=\int_\alpha^\beta\ABS{y(t)x'(t)}\mathrm{d}t$$
+1. 已知曲线C由参数方程$$x=x(t),y=y(t),t\in[\alpha,\beta]$$给出，在$$[\alpha,\beta]$$上$$y(t)$$连续、$$x(t)$$连续可微且$$x'(t)\ne0$$，于是根据定理6.4$$x(t)$$为严格单调函数故由定理1.2其必有严格单调反函数，因此根据定积分的换元积分法（令$$\varphi$$为$$x(t)$$）曲线C、直线$$x=a$$、$$x=b$$和$$x$$轴围成的图形面积为：$$\int_a^b\abs{y(x^{-1}(x))}\mathrm{d}x=\int_\alpha^\beta\abs{y(x^{-1}(x(t)))x'(t)}\mathrm{d}t=\int_\alpha^\beta\abs{y(t)x'(t)}\mathrm{d}t$$
 1. 如果由上述参数方程表示的曲线是封闭的即$$x(\alpha)=x(\beta),y(\alpha)=y(\beta)$$且在$$(\alpha,\beta)$$内曲线自身不再相交，则由曲线自身围成图形的面积为$$\big\vert\int_\alpha^\beta y(t)x'(t)\mathrm{d}t\big\vert$$。从几何上来理解，该曲线可以根据$$x(t)$$的单调性分为（有限的）几部分，每一部分$$x(t)$$是严格单调的，对每一部分求积分$$\int_{x^{-1}(x_i)}^{x^{-1}(x_{i+1})}y(t)x'(t)\mathrm{d}t$$得到该部分曲线和直线$$x=x_i,x=x_{i+1}$$以及$$x$$轴围成的图形的“面积”，这个面积其实是具有符号的，在$$x$$轴上半部分取正而下半部分取负，因此正负是会抵消的。最后把所有部分的积分加起来求和便得到带符号的曲线围成图形的面积，再取个绝对值就得到一个正的面积值。
    - 根据这个公式可求得椭圆面积为$$\pi ab$$其中$$a$$、$$b$$分别为椭圆半长轴和半短轴长。
 1. 曲线C由极坐标方程$$r=r(\theta),\theta\in[\alpha,\beta]$$给出，其中$$r(\theta)$$在$$[\alpha,\beta]$$上连续，$$\beta-\alpha\le2\pi$$，由C与两条射线$$\theta=\alpha,\theta=\beta$$所围的平面图形（称为扇形）面积为$$\frac{1}{2}\int_\alpha^\beta r^2(\theta)\mathrm{d}\theta$$。证明：可以使用定积分的思想，通过对$$[\alpha,\beta]$$进行分割，近似求出各个小的扇形的面积然后求和并取极限。
 1. 三维直角坐标系中由截面面积函数$$A(x)$$以及平面$$x=a,x=b,(a<b)$$确定的立体的体积为$$\int_a^b A(x)\mathrm{d}x$$，其中$$A(x)$$为$$[a,b]$$上的连续函数。可以通过对该区间进行分割，利用不等式：达布下和小于等于所求体积小于等于达布上和，然后根据$$A(x)$$的连续性（因此有可积性），该不等式在分割区间任意小且分割区间数无限多时两边等号成立，因此所求体积为定积分。同理可以对上述的平面图形面积进行类似的逻辑分析。
    - 据此可求得椭球体体积公式为$$\frac{3}{4}\pi abc$$，其中$$a$$、$$b$$、$$c$$为椭球的半主轴长。
-1. 平面曲线及其分割$$T$$，最长弦的长度$$\Vert T\Vert=\max_{1\le i\le n}\ABS{P_{i-1}P_i}$$，折线总长度$$s_T=\sum_{i=1}^{n}\ABS{P_{i-1}P_i}$$
+1. 平面曲线及其分割$$T$$，最长弦的长度$$\Vert T\Vert=\max_{1\le i\le n}\abs{P_{i-1}P_i}$$，折线总长度$$s_T=\sum_{i=1}^{n}\abs{P_{i-1}P_i}$$
 1. 弧长定义：如果对不论怎样的分割$$T$$都存在有限极限$$\lim_{\Vert T\Vert\to 0}s_T=s$$，则称该曲线是可求长的并把$$s$$称为其弧长。
 1. 光滑曲线的定义：由参数方程$$x=x(t),y=y(t),t\in[\alpha,\beta]$$给出，并且$$x(t)$$和$$y(t)$$在$$[\alpha,\beta]$$上连续可微，而且$$x'(t)$$与$$y'(t)$$不同时为零即$$x'^2(t)+y'^2(t)\ne0,t\in[\alpha,\beta]$$。
    > 问：
@@ -425,7 +425,7 @@ tags:
    - 由直角坐标方程$$y=f(x),x\in[a,b]$$表示的曲线可以转化为参数方程表示，而当$$f(x)$$在$$[a,b]$$上连续可微时其弧长为$$s=\int_a^b\sqrt{1+f'^2(x)}\mathrm{d}x$$
    - 同理，由极坐标方程$$r=r(\theta),\theta\in[\alpha,\beta]$$表示的曲线当$$r'(\theta)$$在$$[\alpha,\beta]$$上连续且$$r(\theta)$$与$$r'(\theta)$$不同时为零时弧长为$$s=\int_\alpha^\beta\sqrt{r^2(\theta)+r'^2(\theta)}\mathrm{d}\theta$$。
 1. 弧微分定义$$\mathrm{d}s=\sqrt{\mathrm{d}x^2+\mathrm{d}y^2}$$，微分三角形
-1. 对于一个光滑曲线，平均曲率定义为倾角增量和弧长增量的比即$$\overline{K}=\frac{\Delta\alpha}{\Delta s}$$，曲率则定义为平均曲率的极限即$$K=\big\vert\lim_{\Delta t\to0}\frac{\Delta\alpha}{\Delta s}\big\vert=\big\vert\frac{\mathrm{d}\alpha}{\mathrm{d}s}\big\vert=\frac{\ABS{x'(t)y''(t)-x''(t)y'(t)}}{(x'^2(t)+y'^2(t))^{3/2}}$$。
+1. 对于一个光滑曲线，平均曲率定义为倾角增量和弧长增量的比即$$\overline{K}=\frac{\Delta\alpha}{\Delta s}$$，曲率则定义为平均曲率的极限即$$K=\big\vert\lim_{\Delta t\to0}\frac{\Delta\alpha}{\Delta s}\big\vert=\big\vert\frac{\mathrm{d}\alpha}{\mathrm{d}s}\big\vert=\frac{\abs{x'(t)y''(t)-x''(t)y'(t)}}{(x'^2(t)+y'^2(t))^{3/2}}$$。
    - 可求得圆在圆周上任意一点处的曲率为$$K=\frac{1}{R}$$
    - 曲线任意一点处若曲率不为零，则可过该点作一个半径为$$\frac{1}{K}$$使得该圆在该点与该曲线有相同的切线并在该点近旁与该曲线位于该切线同侧。这个圆称为曲率圆，其半径和圆心称为曲率半径和曲率中心。
 1. 旋转曲面的面积可以把每一小段近似地用圆台的侧面积来表示（怎样严格定义曲面的面积？书上说在下册重积分章节，what the fuck?）
@@ -443,9 +443,9 @@ tags:
    - $$f$$定义在$$(a,b]$$上且在$$a$$的任一右邻域无界，但在任何闭区间$$[u,b]\subset(a,b]$$上有界且可积。若存在极限$$\lim_{u\to a^+}\int_u^b f(x)\mathrm{d}x=J$$则称此极限为无界函数$$f$$在$$(a,b]$$上的反常积分，记为$$J=\int_a^b f(x)\mathrm{d}x$$并称$$\int_a^b f(x)\mathrm{d}x$$收敛。$$a$$称为瑕点，这种积分也称为瑕积分。
 1. 定理11.1（无穷积分收敛的柯西准则）：无穷积分收敛的充要条件是任给$$\varepsilon>0$$，存在$$G\ge a$$，只要$$u_1,u_2>G$$便有$$\left\vert\int_a^{u_2}f(x)\mathrm{d}x-\int_a^{u_1}f(x)\mathrm{d}x\right\vert=\left\vert\int_{u_1}^{u_2}f(x)\mathrm{d}x\right\vert<\varepsilon$$。证明：通过函数极限的柯西准则。
    - 性质：两收敛的无穷积分的线性组合也收敛，且满足线性运算性质
-   - 若$$f$$在任何有限区间$$[a,u]$$上可积且$$\int_a^{+\infty}\ABS{f(x)}\mathrm{d}x$$收敛，则$$\int_a^{+\infty}f(x)\mathrm{d}x$$也收敛，且有$$\left\vert\int_a^{+\infty}f(x)\mathrm{d}x\right\vert\le\int_a^{+\infty}\ABS{f(x)}\mathrm{d}x$$。当$$\int_a^{+\infty}\ABS{f(x)}\mathrm{d}x$$收敛时，称$$\int_a^{+\infty}f(x)\mathrm{d}x$$为绝对收敛，因此这条性质表明绝对收敛=>收敛。但是反之不成立，例如当$$0<p\le1$$时$$\int_1^{+\infty}\frac{\sin x}{x^p}\mathrm{d}x$$条件收敛。称收敛而不绝对收敛者为条件收敛。
-1. 定理11.2（比较判别法）：若定义在$$[a,+\infty)$$上的两个函数$$f$$和$$g$$都在任何有限区间$$[a,u]$$上可积且满足$$\ABS{f(x)}\le g(x),x\in[a,+\infty)$$，则当$$\int_a^{+\infty}g(x)\mathrm{d}x$$收敛时$$\int_a^{+\infty}\ABS{f(x)}\mathrm{d}x$$必收敛。证明：$$\int_a^{+\infty}\ABS{f(x)}\mathrm{d}x$$关于上界$$u$$是单调递增，而$$\int_a^{+\infty}g(x)\mathrm{d}x$$的收敛性给了它一个上界，于是单调有界定理。
-   - 推论：若$$\ABS{f(x)}$$和$$g(x)$$的比值为一常数，利用此定理通过该常数的大小来判断。
+   - 若$$f$$在任何有限区间$$[a,u]$$上可积且$$\int_a^{+\infty}\abs{f(x)}\mathrm{d}x$$收敛，则$$\int_a^{+\infty}f(x)\mathrm{d}x$$也收敛，且有$$\left\vert\int_a^{+\infty}f(x)\mathrm{d}x\right\vert\le\int_a^{+\infty}\abs{f(x)}\mathrm{d}x$$。当$$\int_a^{+\infty}\abs{f(x)}\mathrm{d}x$$收敛时，称$$\int_a^{+\infty}f(x)\mathrm{d}x$$为绝对收敛，因此这条性质表明绝对收敛=>收敛。但是反之不成立，例如当$$0<p\le1$$时$$\int_1^{+\infty}\frac{\sin x}{x^p}\mathrm{d}x$$条件收敛。称收敛而不绝对收敛者为条件收敛。
+1. 定理11.2（比较判别法）：若定义在$$[a,+\infty)$$上的两个函数$$f$$和$$g$$都在任何有限区间$$[a,u]$$上可积且满足$$\abs{f(x)}\le g(x),x\in[a,+\infty)$$，则当$$\int_a^{+\infty}g(x)\mathrm{d}x$$收敛时$$\int_a^{+\infty}\abs{f(x)}\mathrm{d}x$$必收敛。证明：$$\int_a^{+\infty}\abs{f(x)}\mathrm{d}x$$关于上界$$u$$是单调递增，而$$\int_a^{+\infty}g(x)\mathrm{d}x$$的收敛性给了它一个上界，于是单调有界定理。
+   - 推论：若$$\abs{f(x)}$$和$$g(x)$$的比值为一常数，利用此定理通过该常数的大小来判断。
 1. 定理11.3（狄利克雷判别法）：若$$F(u)=\int_a^u f(x)\mathrm{d}x$$在$$[a,+\infty)$$上有界，$$g(x)$$在$$[a,+\infty)$$上当$$x\to+\infty$$时单调趋于0，则$$\int_a^{+\infty}f(x)g(x)\mathrm{d}x$$收敛。证明：积分第二中值定理+柯西准则。
 1. 定理11.4（阿贝尔判别法）：若$$\int_a^{+\infty} f(x)\mathrm{d}x$$收敛，$$g(x)$$在$$[a,+\infty)$$上单调有界，则$$\int_a^{+\infty}f(x)g(x)\mathrm{d}x$$收敛。证明：积分第二中值定理或定理11.3。
 1. 当$$x\to+\infty$$时被积函数即使不趋于零，甚至是无解的，无穷积分仍有可能收敛，例如$$\int_1^{+\infty}x\sin x^4\mathrm{d}x$$。

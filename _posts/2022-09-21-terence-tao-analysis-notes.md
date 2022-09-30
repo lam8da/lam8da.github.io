@@ -475,11 +475,11 @@ $$ a-b=(a-0)+(0-b)=a+(-b) $$，可知我们定义的$$ a-b $$结果就是熟知�
 
 ## 有理数的间隙
 
-回顾高中知识：定义$$ x $$的绝对值$$ \ABS{x} $$，有三角不等式，$$ -y\le x\le y $$当且仅当$$ y\ge \ABS{x} $$，$$ \ABS{xy} =\ABS{x} \ABS{y} $$；距离$$ d(x,y):=\ABS{x-y} $$，距离的三角不等式。
+回顾高中知识：定义$$ x $$的绝对值$$ \abs{x} $$，有三角不等式，$$ -y\le x\le y $$当且仅当$$ y\ge \abs{x} $$，$$ \abs{xy} =\abs{x} \abs{y} $$；距离$$ d(x,y):=\abs{x-y} $$，距离的三角不等式。
 
 - **$$ \varepsilon $$-接近的定义**：有理数$$ x $$和$$ y $$是$$ \varepsilon $$-接近当且仅当$$ d(x,y)\le \varepsilon $$。
 
-有结论（其他结论比较显然，此后直接使用）：若$$ x $$和$$ y $$是$$ \varepsilon $$-接近的，$$ z $$和$$ w $$是$$ \delta $$-接近的，则$$ xz $$和$$ yw $$是$$ \varepsilon \ABS{z} +\delta \ABS{x} +\varepsilon \delta $$接近的。
+有结论（其他结论比较显然，此后直接使用）：若$$ x $$和$$ y $$是$$ \varepsilon $$-接近的，$$ z $$和$$ w $$是$$ \delta $$-接近的，则$$ xz $$和$$ yw $$是$$ \varepsilon \abs{z} +\delta \abs{x} +\varepsilon \delta $$接近的。
 
 - **定理**：设有理数$$ x $$，存在唯一整数$$ n $$满足$$ n\le x\lt n+1 $$，且存在自然数$$ N $$满足$$ N\gt x $$。
 
@@ -513,16 +513,16 @@ $$ a-b=(a-0)+(0-b)=a+(-b) $$，可知我们定义的$$ a-b $$结果就是熟知�
 
 例如，对序列$$ a_n=1/n $$，任取$$ \varepsilon $$，根据有理数间隙的定理，令$$ N $$为大于$$ 1/\varepsilon $$的自然数即可。
 
-- **有界序列的定义**：有限序列$$ a_1,a_2,...,a_n $$以$$ M $$为界当且仅当$$ \ABS{a_i} \le M $$对任意$$ 1\le i\le n $$成立，无限序列$$ (a_n)_{n=m}^{\infty} $$以$$ M $$为界当且仅当$$ \ABS{a_i} \le M $$对任意$$ i\ge m $$成立。一个序列是有界的，当且仅当存在有理数$$ M\ge 0 $$，该序列以$$ M $$为界。
+- **有界序列的定义**：有限序列$$ a_1,a_2,...,a_n $$以$$ M $$为界当且仅当$$ \abs{a_i} \le M $$对任意$$ 1\le i\le n $$成立，无限序列$$ (a_n)_{n=m}^{\infty} $$以$$ M $$为界当且仅当$$ \abs{a_i} \le M $$对任意$$ i\ge m $$成立。一个序列是有界的，当且仅当存在有理数$$ M\ge 0 $$，该序列以$$ M $$为界。
 
 有如下引理：
 
-- **有限序列有界**：归纳证明，每次$$ M $$增加$$ \ABS{a_n} $$即可。
-- **柯西序列有界**：任取$$ \varepsilon\gt 0 $$，可知该序列是最终$$ \varepsilon $$-稳定的，即存在某个自然数$$ N\ge 0 $$使得$$ (a_n)_{n=N}^{\infty} $$是$$ \varepsilon $$-稳定的，那么由于有限序列有界，设$$ a_1,a_2,...,a_N $$以$$ M $$为界，则任取$$ i\ge N $$，有$$ \ABS{a_i} -\ABS{a_N} \le \ABS{a_i-a_N} \le \varepsilon $$，$$ \ABS{a_i} \le M+\varepsilon $$，该序列以$$ M+\varepsilon $$为界。
+- **有限序列有界**：归纳证明，每次$$ M $$增加$$ \abs{a_n} $$即可。
+- **柯西序列有界**：任取$$ \varepsilon\gt 0 $$，可知该序列是最终$$ \varepsilon $$-稳定的，即存在某个自然数$$ N\ge 0 $$使得$$ (a_n)_{n=N}^{\infty} $$是$$ \varepsilon $$-稳定的，那么由于有限序列有界，设$$ a_1,a_2,...,a_N $$以$$ M $$为界，则任取$$ i\ge N $$，有$$ \abs{a_i} -\abs{a_N} \le \abs{a_i-a_N} \le \varepsilon $$，$$ \abs{a_i} \le M+\varepsilon $$，该序列以$$ M+\varepsilon $$为界。
 
 ---
 
-- **$$ \varepsilon $$-接近的定义**：$$ (a_n)_{n=0}^{\infty} $$和$$ (b_n)_{n=0}^{\infty} $$满足对$$ n=0,1,2,... $$均有$$ \ABS{a_n-b_n} \le \varepsilon $$
+- **$$ \varepsilon $$-接近的定义**：$$ (a_n)_{n=0}^{\infty} $$和$$ (b_n)_{n=0}^{\infty} $$满足对$$ n=0,1,2,... $$均有$$ \abs{a_n-b_n} \le \varepsilon $$
 - **最终$$ \varepsilon $$-接近的定义**：存在$$ N\ge 0 $$使得$$ (a_n)_{n=N}^{\infty} $$和$$ (b_n)_{n=N}^{\infty} $$是$$ \varepsilon $$-接近的
 - **等价序列**：对任意有理数$$ \varepsilon\gt 0 $$，两序列都是最终$$ \varepsilon $$-接近的。
 
@@ -551,7 +551,7 @@ $$ a-b=(a-0)+(0-b)=a+(-b) $$，可知我们定义的$$ a-b $$结果就是熟知�
 
 如果想要定义除法还需定义$$ x^{-1} $$，注意到柯西序列$$ 1,0.1,0.01,... $$的逆并不是柯西序列，原因是原来的柯西序列对应的实数是$$ 0 $$。
 
-- **远离0的序列**：有理数序列远离0当且仅当存在有理数$$ c\gt 0 $$满足$$ \ABS{a_n} \ge c $$对任何$$ n\ge 1 $$成立。
+- **远离0的序列**：有理数序列远离0当且仅当存在有理数$$ c\gt 0 $$满足$$ \abs{a_n} \ge c $$对任何$$ n\ge 1 $$成立。
 
 - **引理**：设实数$$ x\ne 0 $$，存在远离0的柯西序列$$ (a_n)_{n=1}^{\infty} $$，满足$$ x=\text{LIM}_{n\to \infty}a_n $$
 
@@ -559,7 +559,7 @@ $$ a-b=(a-0)+(0-b)=a+(-b) $$，可知我们定义的$$ a-b $$结果就是熟知�
 
 - **引理**：$$ (a_n)_{n=1}^{\infty} $$是远离0的，则$$ (a_n^{-1})_{n=1}^{\infty} $$是柯西序列
 
-利用$$ \ABS{a_i} \ge c $$，$$ \ABS{a_n^{-1}-a_m^{-1}} =\ABS{\frac{a_m-a_n}{a_ma_n}} \le \frac{\ABS{a_m-a_n} }{c^2} $$。此时可定义实数的倒数。
+利用$$ \abs{a_i} \ge c $$，$$ \abs{a_n^{-1}-a_m^{-1}} =\abs{\frac{a_m-a_n}{a_ma_n}} \le \frac{\abs{a_m-a_n} }{c^2} $$。此时可定义实数的倒数。
 
 倒数的定义：$$ (a_n)_{n=1}^{\infty} $$是远离0的，实数$$ x=\text{LIM}_{n\to \infty}a_{n} $$，则$$ x^{-1}:=\text{LIM}_{n\to \infty}a_{n}^{-1} $$。
 
@@ -611,7 +611,7 @@ $$ a-b=(a-0)+(0-b)=a+(-b) $$，可知我们定义的$$ a-b $$结果就是熟知�
 
 对每个$$ n $$，找$$ m_n $$满足$$ m_n/n $$是$$ E $$的上界但$$ (m_n-1)/n $$不是：设该有界序列上界为$$ M $$，根据命题2可知存在整数$$ R $$满足$$ R\times 1/n\ge M $$，利用单个选取引理任取$$ x_0\in E $$，再利用命题2知存在整数$$ L $$满足$$ L/n\lt x_0 $$，反证+归纳可知存在$$ L\lt m_n\le R $$满足条件。
 
-要证明$$ (m_n/n)_{n=1}^{\infty} $$是柯西序列，设$$ n $$和$$ n' $$，设最小上界为$$ S $$，由于$$ m_n/n\ge S\gt (m_{n'}-1)/n' $$，可知$$ m_n/n-m_{n'}/n'\ge -1/n' $$，同理可得$$ \ABS{m_n/n-m_{n'}/n'} \le 1/n $$，$$ \forall \varepsilon\gt 0 $$，根据命题2知$$ \exists N\gt 1/\varepsilon $$，$$ n,n'\ge N $$时由上述推导知满足条件。
+要证明$$ (m_n/n)_{n=1}^{\infty} $$是柯西序列，设$$ n $$和$$ n' $$，设最小上界为$$ S $$，由于$$ m_n/n\ge S\gt (m_{n'}-1)/n' $$，可知$$ m_n/n-m_{n'}/n'\ge -1/n' $$，同理可得$$ \abs{m_n/n-m_{n'}/n'} \le 1/n $$，$$ \forall \varepsilon\gt 0 $$，根据命题2知$$ \exists N\gt 1/\varepsilon $$，$$ n,n'\ge N $$时由上述推导知满足条件。
 
 $$ X=\text{LIM}_{n\to \infty}(m_n/n) $$，利用上节习题可知$$ X $$是上界；而$$ X'=\text{LIM}_{n\to \infty}{(m_n-1)/n} $$，任取上界$$ Y $$，由上节习题可知$$ Y\ge (m_n-1)/n $$，因此$$ Y\ge X' $$，又因为$$ X-X'=\text{LIM}_{n\to \infty}(1/n) $$=0，因此$$ Y\ge X $$，$$ X $$是最小上界。
 
@@ -757,9 +757,9 @@ $$ x\lt L^{+} $$可知所有$$ a_n^{+}\gt x $$。这个定理说明了数列有�
 
 根据实数的定义和之前对极限本质的证明，存在$$ q $$；以下还需要证明$$ \lim_{n\to \infty}x^{q_n} $$存在，以及不同的序列$$ q $$会得到相同的极限。
 
-证明存在：根据实数的完备性定理，极限存在等价于其为柯西序列。不妨设$$ q_n\ge q_m $$且$$ x\gt 1 $$，$$ \ABS{x^{q_n}-x^{q_m}} =x^{q_m}(x^{q_n-q_m}-1) $$，而$$ q $$有上界$$ M $$（收敛等价于是柯西序列），且对任一$$ \delta $$存在$$ N $$满足$$ n,m\ge N $$时$$ q_n-q_m\le \delta $$，利用求极限的例3，存在$$ K $$满足$$ x^{1/K}-1\le \delta' $$，令$$ \delta=1/K $$，则$$ \ABS{x^{q_n}-x^{q_m}} \le x^M\delta' $$。可令$$ \delta'=x^{-M}\varepsilon $$得到序列是最终$$ \varepsilon $$-稳定的。
+证明存在：根据实数的完备性定理，极限存在等价于其为柯西序列。不妨设$$ q_n\ge q_m $$且$$ x\gt 1 $$，$$ \abs{x^{q_n}-x^{q_m}} =x^{q_m}(x^{q_n-q_m}-1) $$，而$$ q $$有上界$$ M $$（收敛等价于是柯西序列），且对任一$$ \delta $$存在$$ N $$满足$$ n,m\ge N $$时$$ q_n-q_m\le \delta $$，利用求极限的例3，存在$$ K $$满足$$ x^{1/K}-1\le \delta' $$，令$$ \delta=1/K $$，则$$ \abs{x^{q_n}-x^{q_m}} \le x^M\delta' $$。可令$$ \delta'=x^{-M}\varepsilon $$得到序列是最终$$ \varepsilon $$-稳定的。
 
-证明极限相同：利用极限定理只需证明$$ \lim_{n\to \infty}x^{q_n-{q_n}'}=1 $$。由于$$ q_n-{q_n}' $$是最终接近0的，那么再次利用求极限的例3，存在$$ K $$使得$$ \ABS{x^{-1/K}-1}\le\varepsilon,\ABS{x^{1/K}-1} \le \varepsilon $$，也存在$$ N $$满足$$ n\ge N $$时$$ \ABS{q_n-{q_n}'} \le 1/K $$。
+证明极限相同：利用极限定理只需证明$$ \lim_{n\to \infty}x^{q_n-{q_n}'}=1 $$。由于$$ q_n-{q_n}' $$是最终接近0的，那么再次利用求极限的例3，存在$$ K $$使得$$ \abs{x^{-1/K}-1}\le\varepsilon,\abs{x^{1/K}-1} \le \varepsilon $$，也存在$$ N $$满足$$ n\ge N $$时$$ \abs{q_n-{q_n}'} \le 1/K $$。
 
 ## 子序列
 
@@ -792,7 +792,7 @@ $$ x\lt L^{+} $$可知所有$$ a_n^{+}\gt x $$。这个定理说明了数列有�
 - **有限级数定理2**：对整数$$ m\le n $$和整数$$ k $$，有$$ \sum_{i=m}^{n}a_i=\sum_{i=m+k}^{n+k}a_{j-k} $$
 - **有限级数定理3**：对整数$$ m\le n $$，有$$ \sum_{i=m}^{n}(a_i+b_i)=(\sum_{i=m}^{n}a_i)+(\sum_{i=m}^{n}b_i) $$
 - **有限级数定理4**：对整数$$ m\le n $$，有$$ \sum_{i=m}^{n}(ca_i)=c(\sum_{i=m}^{n}a_i) $$
-- **有限级数定理5**：对整数$$ m\le n $$，有$$ \ABS{\sum_{i=m}^{n}a_i} \le \sum_{i=m}^{n}\ABS{a_i} $$
+- **有限级数定理5**：对整数$$ m\le n $$，有$$ \abs{\sum_{i=m}^{n}a_i} \le \sum_{i=m}^{n}\abs{a_i} $$
 - **有限级数定理6**：对整数$$ m\le n $$，$$ \forall m\le i\le n $$，有$$ a_i\le b_i $$，则$$ \sum_{i=m}^{n}a_i\le \sum_{i=m}^{n}b_i $$
 
 - **有限集求和运算的定义**：设$$ X $$是基数为$$ n $$的有限集，则存在双射$$ g:\{i\in \NN:1\le i\le n\}\to X $$，设$$ f:X\to \RR $$，则$$ \sum_{x\in X}f(x):=\sum_{i=1}^{n}f(g(i)) $$
@@ -823,7 +823,7 @@ $$ x\lt L^{+} $$可知所有$$ a_n^{+}\gt x $$。这个定理说明了数列有�
 
 - **无限级数和无限极数收敛的定义**：无限极数是形如$$ \sum_{n=m}^{\infty}a_n $$的表达式。对任意$$ N\ge m $$，令$$ S_N:=\sum_{n=m}^{N}a_n $$，称无限极数是收敛且收敛于$$ L $$，记做$$ L=\sum_{n=m}^{\infty}a_n $$，当且仅当序列$$ (S_N)_{N=m}^{\infty} $$收敛于极限$$ L $$。
 
-根据这个定义可以得到一个最直接的判定定理：$$ \sum_{n=m}^{\infty}a_n $$收敛当且仅当对任意$$ \varepsilon\gt 0 $$，都存在$$ N\ge m $$，使得对任意$$ p,q\ge N $$满足$$ \ABS{\sum_{n=p}^{q}a_n} \le \varepsilon $$。
+根据这个定义可以得到一个最直接的判定定理：$$ \sum_{n=m}^{\infty}a_n $$收敛当且仅当对任意$$ \varepsilon\gt 0 $$，都存在$$ N\ge m $$，使得对任意$$ p,q\ge N $$满足$$ \abs{\sum_{n=p}^{q}a_n} \le \varepsilon $$。
 
 以下的级数定律可直接转化为$$ S_n $$由极限定理或有限级数定律得到：
 
@@ -835,9 +835,9 @@ $$ x\lt L^{+} $$可知所有$$ a_n^{+}\gt x $$。这个定理说明了数列有�
 
 - **零判别法**：根据上述判定定理，令$$ p=q $$可以得到，若$$ \sum_{n=m}^{\infty}a_n $$收敛则$$ \lim_{n\to \infty}a_n=0 $$
 
-- **绝对收敛的定义**：称级数$$ \sum_{n=m}^{\infty}a_n $$是绝对收敛的，当且仅当级数$$ \sum_{n=m}^{\infty}\ABS{a_n} $$是收敛的。
+- **绝对收敛的定义**：称级数$$ \sum_{n=m}^{\infty}a_n $$是绝对收敛的，当且仅当级数$$ \sum_{n=m}^{\infty}\abs{a_n} $$是收敛的。
 
-- **绝对收敛判别法**：绝对收敛的级数收敛，且满足$$ \ABS{\sum_{n=m}^{\infty}a_n} \le \sum_{n=m}^{\infty}\ABS{a_n} $$
+- **绝对收敛判别法**：绝对收敛的级数收敛，且满足$$ \abs{\sum_{n=m}^{\infty}a_n} \le \sum_{n=m}^{\infty}\abs{a_n} $$
 
 证明：设左侧级数对应数列$$ S_N $$，右侧级数对应数列$$ {S_N}' $$，根据有限级数定理5可知$$ S_N\le {S_N}' $$，再根据比较原理可知极限的大小关系。
 
@@ -849,11 +849,11 @@ $$ x\lt L^{+} $$可知所有$$ a_n^{+}\gt x $$。这个定理说明了数列有�
 
 对于非负实数的形式级数，$$ S_n $$是递增的，根据序列上下确界的命题1可知，级数收敛当且仅当$$ (S_N)_{N=m}^{\infty} $$有上界。利用有限级数定理5和比较原理可以证明以下推论：
 
-- **比较判别法**：对于任意$$ n\ge m $$都有$$ \ABS{a_n} \le b_n $$，那么如果$$ \sum_{n=m}^{\infty}b_n $$收敛，则$$ \sum_{n=m}^{\infty}a_n $$收敛，且$$ \ABS{\sum_{n=m}^{\infty}a_n} \le \sum_{n=m}^{\infty}\ABS{a_n} \le \sum_{n=m}^{\infty}b_n $$。
+- **比较判别法**：对于任意$$ n\ge m $$都有$$ \abs{a_n} \le b_n $$，那么如果$$ \sum_{n=m}^{\infty}b_n $$收敛，则$$ \sum_{n=m}^{\infty}a_n $$收敛，且$$ \abs{\sum_{n=m}^{\infty}a_n} \le \sum_{n=m}^{\infty}\abs{a_n} \le \sum_{n=m}^{\infty}b_n $$。
 
-比较判别法常利用几何级数：$$ \sum_{n=0}^{\infty}x^n $$。如果$$ \ABS{x} \ge 1 $$，则几何级数发散；$$ \ABS{x} \lt 1 $$时，几何级数收敛于$$ 1/(1-x) $$。
+比较判别法常利用几何级数：$$ \sum_{n=0}^{\infty}x^n $$。如果$$ \abs{x} \ge 1 $$，则几何级数发散；$$ \abs{x} \lt 1 $$时，几何级数收敛于$$ 1/(1-x) $$。
 
-当$$ \ABS{x} \ge 1 $$时，利用零判别法的逆否命题可得其发散；$$ \ABS{x} \lt 1 $$时可先归纳证明有限几何级数和公式$$ (1-x^{N+1})/(1-x) $$，再利用极限定理和上下确界的命题2可得。
+当$$ \abs{x} \ge 1 $$时，利用零判别法的逆否命题可得其发散；$$ \abs{x} \lt 1 $$时可先归纳证明有限几何级数和公式$$ (1-x^{N+1})/(1-x) $$，再利用极限定理和上下确界的命题2可得。
 
 - **柯西准则**：如果$$ (a_n)_{n=1}^{\infty} $$是递减非负实数序列，级数$$ \sum_{n=1}^{\infty}a_n $$收敛当且仅当级数$$ \sum_{k=0}^{\infty}2^ka_{2^k} $$收敛
 
@@ -871,15 +871,15 @@ $$ x\lt L^{+} $$可知所有$$ a_n^{+}\gt x $$。这个定理说明了数列有�
 
 - **命题2**：如果$$ \sum_{n=0}^{\infty}a_n $$是绝对收敛的实数级数，$$ f:\NN\to \NN $$是双射，则$$ \sum_{m=0}^{\infty}a_{f(m)} $$也绝对收敛，且收敛于相同的和。
 
-根据命题1可知其绝对收敛。证明收敛于相同的和思路是利用级数收敛的判定定理。令两者的部分和分别是$$ S_N $$和$$ T_M $$，$$ S $$收敛于$$ L $$，对于$$ \varepsilon' $$，可以找到$$ N $$满足$$ p,q\ge N $$时有$$ \sum_{n=p}^{q}\ABS{a_n} \le \varepsilon' $$。$$ S_N $$是$$ \varepsilon' $$-接近$$ L $$的，类似命题1的办法，存在$$ M\ge f^{-1}(n) $$对所有$$ n\le N $$成立，利用有限集求和定理1,2和3有$$ \sum_{m=0}^{M}a_{f(m)}=\sum_{n\in \{f(m):m\in \NN,m\le M\}}a_n=S_N+\sum_{n\in X}a_n $$，其中$$ X=f(M)\setminus \{n\in \NN:n\le N\} $$。$$ X $$有限因此存在上界$$ q $$，$$ X\subseteq \{n\in \NN:N+1\le n\le q\} $$，根据有限级数定理5和有限集求和定理3可得$$ \ABS{\sum_{n\in X}a_n} \le \sum{n\in X}\ABS{a_n} \le \sum_{n=N+1}^{q}\ABS{a_n} \le \varepsilon' $$，因此当$$ M'\ge M $$时$$ T_{M'} $$是$$ \varepsilon' $$-接近于$$ S_N $$的，即$$ T $$是最终$$ 2\varepsilon' $$-接近于$$ L $$的。
+根据命题1可知其绝对收敛。证明收敛于相同的和思路是利用级数收敛的判定定理。令两者的部分和分别是$$ S_N $$和$$ T_M $$，$$ S $$收敛于$$ L $$，对于$$ \varepsilon' $$，可以找到$$ N $$满足$$ p,q\ge N $$时有$$ \sum_{n=p}^{q}\abs{a_n} \le \varepsilon' $$。$$ S_N $$是$$ \varepsilon' $$-接近$$ L $$的，类似命题1的办法，存在$$ M\ge f^{-1}(n) $$对所有$$ n\le N $$成立，利用有限集求和定理1,2和3有$$ \sum_{m=0}^{M}a_{f(m)}=\sum_{n\in \{f(m):m\in \NN,m\le M\}}a_n=S_N+\sum_{n\in X}a_n $$，其中$$ X=f(M)\setminus \{n\in \NN:n\le N\} $$。$$ X $$有限因此存在上界$$ q $$，$$ X\subseteq \{n\in \NN:N+1\le n\le q\} $$，根据有限级数定理5和有限集求和定理3可得$$ \abs{\sum_{n\in X}a_n} \le \sum{n\in X}\abs{a_n} \le \sum_{n=N+1}^{q}\abs{a_n} \le \varepsilon' $$，因此当$$ M'\ge M $$时$$ T_{M'} $$是$$ \varepsilon' $$-接近于$$ S_N $$的，即$$ T $$是最终$$ 2\varepsilon' $$-接近于$$ L $$的。
 
 ## 根值判别法和比值判别法
 
-- **定理（根值判别法）**：$$ \sum_{n=m}^{\infty}a_n $$是实数级数，设$$ \alpha=\limsup_{n\to \infty}\ABS{a_n} ^{1/n} $$。如果$$ \alpha\lt 1 $$，级数绝对收敛；如果$$ \alpha\gt 1 $$，级数不条件收敛。
+- **定理（根值判别法）**：$$ \sum_{n=m}^{\infty}a_n $$是实数级数，设$$ \alpha=\limsup_{n\to \infty}\abs{a_n} ^{1/n} $$。如果$$ \alpha\lt 1 $$，级数绝对收敛；如果$$ \alpha\gt 1 $$，级数不条件收敛。
 
-证明：$$ \alpha\lt 1 $$时，存在$$ \varepsilon $$满足$$ \alpha+\varepsilon\lt 1 $$，利用上下极限定理1，存在$$ N\ge m $$满足对$$ n\ge N $$均有$$ \ABS{a_n} ^{1/n}\le \alpha+\varepsilon $$，$$ \ABS{a_n} \le (\alpha+\varepsilon)^n $$，转化为几何级数，再根据比较判别法可知其绝对收敛；$$ \alpha\gt 1 $$时，利用上下极限定理2，对每个$$ N\ge m $$都存在$$ n\ge N $$满足$$ \ABS{a_n} ^{1/n}\ge 1 $$，因此$$ (a_n)_{n=m}^{\infty} $$不是最终1-接近于0的，不收敛于0，由零判别法可知其不是条件收敛的。
+证明：$$ \alpha\lt 1 $$时，存在$$ \varepsilon $$满足$$ \alpha+\varepsilon\lt 1 $$，利用上下极限定理1，存在$$ N\ge m $$满足对$$ n\ge N $$均有$$ \abs{a_n} ^{1/n}\le \alpha+\varepsilon $$，$$ \abs{a_n} \le (\alpha+\varepsilon)^n $$，转化为几何级数，再根据比较判别法可知其绝对收敛；$$ \alpha\gt 1 $$时，利用上下极限定理2，对每个$$ N\ge m $$都存在$$ n\ge N $$满足$$ \abs{a_n} ^{1/n}\ge 1 $$，因此$$ (a_n)_{n=m}^{\infty} $$不是最终1-接近于0的，不收敛于0，由零判别法可知其不是条件收敛的。
 
-如果$$ \ABS{a_n} ^{1/n} $$收敛，也可利用极限值代替上极限。
+如果$$ \abs{a_n} ^{1/n} $$收敛，也可利用极限值代替上极限。
 
 - **引理**：$$ c_n $$是正数序列，则$$ \liminf_{n\to \infty} c_{n+1}/c_n\le \liminf_{n\to \infty}c_n^{1/n}\le \limsup_{n\to \infty}c_n^{1/n}\le \limsup_{n\to \infty}c_{n+1}/c_n $$。
 
@@ -891,7 +891,7 @@ $$ x\lt L^{+} $$可知所有$$ a_n^{+}\gt x $$。这个定理说明了数列有�
 
 - **推论（比值判别法）**：结合引理和根值判别法得到：对于所有项不为零的级数$$ \sum_{n=m}^{\infty}a_n $$，如果$$ \limsup_{n\to \infty}a_{n+1}/a_n\lt 1 $$，级数绝对收敛；如果$$ \lim \inf_{n\to \infty}c_{n+1}/c_n\gt 1 $$，级数不条件收敛。
 
-注意到，所有几何级数都会导致根值判别法$$ \alpha=1 $$和比值判别法极限为$$ 1 $$，但是$$ \ABS{q} \ge 1 $$时发散，$$ \ABS{q} \lt 1 $$时收敛，可以说明存在两种判别法都无法判断收敛性的情况。
+注意到，所有几何级数都会导致根值判别法$$ \alpha=1 $$和比值判别法极限为$$ 1 $$，但是$$ \abs{q} \ge 1 $$时发散，$$ \abs{q} \lt 1 $$时收敛，可以说明存在两种判别法都无法判断收敛性的情况。
 
 # 第8章 无限集
 
@@ -983,13 +983,13 @@ $$ x\lt L^{+} $$可知所有$$ a_n^{+}\gt x $$。这个定理说明了数列有�
 
 因为不可数集的和无法用序列极限定义，我们尝试使用集合来定义：
 
-- **任意集合上级数的定义**：对于集合$$ X $$，设$$ f:X\to \RR $$，级数$$ \sum_{x\in X}f(x) $$绝对收敛当且仅当$$\sup\{\sum_{x\in A}\ABS{f(x)} :A\subseteq X,A是有限集\} $$不为$$ \infty $$
+- **任意集合上级数的定义**：对于集合$$ X $$，设$$ f:X\to \RR $$，级数$$ \sum_{x\in X}f(x) $$绝对收敛当且仅当$$\sup\{\sum_{x\in A}\abs{f(x)} :A\subseteq X,A是有限集\} $$不为$$ \infty $$
 
-若$$ X $$是至多可数的，$$\sup\{\sum_{x\in A}\ABS{f(x)} :A\subseteq X,A是有限集\}=\sum_{x\in A}f(x) $$(将两边都利用定义展开到$$\sup $$和有限级数即可)，因此这个定义是可行的。
+若$$ X $$是至多可数的，$$\sup\{\sum_{x\in A}\abs{f(x)} :A\subseteq X,A是有限集\}=\sum_{x\in A}f(x) $$(将两边都利用定义展开到$$\sup $$和有限级数即可)，因此这个定义是可行的。
 
 - **引理1**：对集合$$ X $$，设$$ f:X\to \RR $$，级数$$ \sum_{x\in X}f(x) $$绝对收敛，则集合$$ \{x\in X:f(x)\ne 0\} $$是至多可数的。
 
-证明：令实数$$ M=\sup\{\sum_{x\in A}\ABS{f(x)} :A\subseteq X,A是有限集\} $$，对任意正整数$$ n\gt 0 $$，设集合$$ A_n=\{x\in X:\ABS{f(x)} \gt 1/n\} $$，$$ M\ge \sum_{x\in A_n}\ABS{f(x)} \gt \sum_{x\in A_n}1/n $$，因此$$ A_n $$是有限集，利用可数性习题2，可知$$ \bigcup_{n=1}^{\infty}A_n $$是至多可数的，而任意$$ \ABS{f(x)} \gt 0 $$，必有$$ x\in \bigcup_{n=1}^{\infty}A_n $$，因此集合$$ \{x\in X:f(x)\ne 0\} $$与$$ \bigcup_{n=1}^{\infty}A_n $$基数相同。
+证明：令实数$$ M=\sup\{\sum_{x\in A}\abs{f(x)} :A\subseteq X,A是有限集\} $$，对任意正整数$$ n\gt 0 $$，设集合$$ A_n=\{x\in X:\abs{f(x)} \gt 1/n\} $$，$$ M\ge \sum_{x\in A_n}\abs{f(x)} \gt \sum_{x\in A_n}1/n $$，因此$$ A_n $$是有限集，利用可数性习题2，可知$$ \bigcup_{n=1}^{\infty}A_n $$是至多可数的，而任意$$ \abs{f(x)} \gt 0 $$，必有$$ x\in \bigcup_{n=1}^{\infty}A_n $$，因此集合$$ \{x\in X:f(x)\ne 0\} $$与$$ \bigcup_{n=1}^{\infty}A_n $$基数相同。
 
 通过这个引理，我们又定义了不可数集的级数的值：$$ \sum_{x\in X}f(x):=\sum_{x\in X:f(x)\ne 0}f(x) $$。我们可以用这个定义得到无限集的级数定律，包括(a)绝对收敛的级数相加，(b)乘常数，(c)不交集合的并的级数等于集合的级数之和，(d)可以利用双射复合：$$ \sum_{y\in Y}f(\phi(y))=\sum_{x\in X}f(x) $$，其中$$ \phi:Y\to X $$是双射。(d)的可以用重排列命题2来证明。
 
@@ -999,7 +999,7 @@ $$ x\lt L^{+} $$可知所有$$ a_n^{+}\gt x $$。这个定理说明了数列有�
 
 - **定理**：设$$ \sum_{n=0}^{\infty}a_n $$收敛但不绝对收敛，设$$ L $$是任一个实数，存在双射$$ f:\NN\to \NN $$使得$$ \sum_{n=0}^{\infty}a_{f(m)} $$收敛于$$ L $$。
 
-证明：思路是按$$ a $$的正负分成两个集合，当目前的和不超过$$ L $$时就加正的，超过了$$ L $$就加负的。令$$ A_+=\{n\in \NN:a_n\ge 0\} $$，$$ A_-=\{n\in \NN:a_n\lt 0\} $$，如果$$ \sum_{i=0}^{m-1}a_{f(i)}\lt L $$，则$$ f(m):=min\{n\in A_{+}:\forall i\lt m有n\ne n_i\} $$；同理如果$$ \sum_{i=0}^{m-1}a_{f(i)}\ge L $$，$$ f(m):=min\{n\in A_{-}:\forall i\lt m有n\ne n_i\} $$。由引理2知，$$ \sum_{n\in A_{+}}a_n $$和$$ \sum_{n\in A_{-}}a_n $$都不收敛，因此$$ A_{+} $$和$$ A_{-} $$都是无限集，上述构造的$$ f $$存在，并且由于$$ A_+ $$删除任何一个有限子集后都不收敛，两种情况都会无限次出现，$$ f:\NN\to \NN $$是双射。利用零判别法，$$ \lim_{n\to \infty}a_n=0 $$，再根据极限的定义可以得到$$ \lim_{m\to \infty}a_{f(m)}=0 $$。再利用级数收敛的定义，设$$ \varepsilon\gt 0 $$，存在$$ N\ge 0 $$，$$ \forall m\ge N $$有$$ \ABS{a_{f(m)}} \le \varepsilon $$，那么存在$$ N'\ge N $$，$$ \ABS{\sum_{i=0}^{N'}a_{f(i)}-L} \le \varepsilon $$（可利用反证法），再归纳证明，$$ \forall m\ge N' $$有$$ \ABS{\sum_{i=0}^{m}a_{f(i)}-L} \le \varepsilon $$。
+证明：思路是按$$ a $$的正负分成两个集合，当目前的和不超过$$ L $$时就加正的，超过了$$ L $$就加负的。令$$ A_+=\{n\in \NN:a_n\ge 0\} $$，$$ A_-=\{n\in \NN:a_n\lt 0\} $$，如果$$ \sum_{i=0}^{m-1}a_{f(i)}\lt L $$，则$$ f(m):=min\{n\in A_{+}:\forall i\lt m有n\ne n_i\} $$；同理如果$$ \sum_{i=0}^{m-1}a_{f(i)}\ge L $$，$$ f(m):=min\{n\in A_{-}:\forall i\lt m有n\ne n_i\} $$。由引理2知，$$ \sum_{n\in A_{+}}a_n $$和$$ \sum_{n\in A_{-}}a_n $$都不收敛，因此$$ A_{+} $$和$$ A_{-} $$都是无限集，上述构造的$$ f $$存在，并且由于$$ A_+ $$删除任何一个有限子集后都不收敛，两种情况都会无限次出现，$$ f:\NN\to \NN $$是双射。利用零判别法，$$ \lim_{n\to \infty}a_n=0 $$，再根据极限的定义可以得到$$ \lim_{m\to \infty}a_{f(m)}=0 $$。再利用级数收敛的定义，设$$ \varepsilon\gt 0 $$，存在$$ N\ge 0 $$，$$ \forall m\ge N $$有$$ \abs{a_{f(m)}} \le \varepsilon $$，那么存在$$ N'\ge N $$，$$ \abs{\sum_{i=0}^{N'}a_{f(i)}-L} \le \varepsilon $$（可利用反证法），再归纳证明，$$ \forall m\ge N' $$有$$ \abs{\sum_{i=0}^{m}a_{f(i)}-L} \le \varepsilon $$。
 
 也可以通过重排列使得级数发散：取任一个$$ \varepsilon\gt 0 $$，根据收敛序列有界，存在$$ M $$满足所有$$ a_n\ge M $$，设当前部分和为$$ S $$，如果$$ S+M\ge \varepsilon $$，则加入一个负数($$ f(m):=min\{n\in A_{-}:\forall i\lt m有n\ne n_i\} $$)，并令$$ S=0 $$；否则加入一个正数。因为每加入一个负数，总和至少增加$$ \varepsilon $$，最后收敛于正无穷。
 
@@ -1134,7 +1134,7 @@ $$ \NN $$是良序集。我自己发现了一个不可数良序集的例子：�
 
 - **引理**：设$$ X $$是$$ \RR $$的子集，$$ x\in \RR $$，那么$$ x $$是$$ X $$的附着点当且仅当存在一个序列$$ (a_n)_{n=0}^{\infty} $$满足任意对所有$$ n\ge 0 $$有$$ a_n\in X $$，且收敛于$$ x $$。
 
-证明：如果是附着点，类似选择公理的引理的证明思路（利用$$ 1/n $$收敛于0），设$$ S_n=\{x'\in X:\ABS{x'-x} \le 1/n\} $$，再利用选择公理证明$$ a_n\in S_n $$存在；如果存在序列，利用序列收敛的定义即可。
+证明：如果是附着点，类似选择公理的引理的证明思路（利用$$ 1/n $$收敛于0），设$$ S_n=\{x'\in X:\abs{x'-x} \le 1/n\} $$，再利用选择公理证明$$ a_n\in S_n $$存在；如果存在序列，利用序列收敛的定义即可。
 
 - **闭集的定义**：如果$$ \overline{E}=E $$，那么$$ E\subseteq \RR $$是闭的，即$$ E $$的所有附着点都在$$ E $$中。
 
@@ -1159,7 +1159,7 @@ $$ \NN $$是良序集。我自己发现了一个不可数良序集的例子：�
 
 - **海涅-博雷尔定理**：设$$ X $$是$$ \RR $$的一个子集，$$ X $$是闭的且是有界的，当且仅当任一个由$$ X $$中元素构成的序列$$ (a_n)_{n=0}^{\infty} $$存在一个子序列收敛于$$ X $$中的某个数$$ L $$。
 
-证明：对左蕴含右，根据子序列的极限中的波尔查诺-维尔斯特拉斯定理可知存在一个子序列收敛，再利用引理可知收敛于$$ X $$的附着点；对右蕴含左，利用推论可得$$ X $$是闭的，再使用反证法，若$$ X $$无界，令$$ S_n=\{x\in X:\ABS{x} \gt n\} $$，再利用选择公理得到$$ (a_n)_{n=0}^{\infty} $$，它的任一个子序列都不收敛。
+证明：对左蕴含右，根据子序列的极限中的波尔查诺-维尔斯特拉斯定理可知存在一个子序列收敛，再利用引理可知收敛于$$ X $$的附着点；对右蕴含左，利用推论可得$$ X $$是闭的，再使用反证法，若$$ X $$无界，令$$ S_n=\{x\in X:\abs{x} \gt n\} $$，再利用选择公理得到$$ (a_n)_{n=0}^{\infty} $$，它的任一个子序列都不收敛。
 
 - 习题4：$$ \RR $$的任一有限子集都是闭的且是有界的。
 
@@ -1167,7 +1167,7 @@ $$ \NN $$是良序集。我自己发现了一个不可数良序集的例子：�
 
 ## 函数的极限值
 
-- **函数在一点处收敛的定义**：设$$ X $$是$$ \RR $$的一个子集，$$ f:X\to \RR $$，$$ E $$是$$ X $$的一个子集，$$ x_0 $$是$$ E $$的附着点，称$$ f $$在点$$ x_0 $$处沿着$$ E $$收敛于$$ L $$，记做$$ \lim_{x\to x_0;x\in E}f(x)=L $$，当且仅当对任意$$ \varepsilon\gt 0 $$，存在一个$$ \delta\gt 0 $$，满足对任意$$ x\in E $$且$$ \ABS{x-x_0} \lt \delta $$，满足$$ \ABS{f(x)-L} \le \varepsilon $$。
+- **函数在一点处收敛的定义**：设$$ X $$是$$ \RR $$的一个子集，$$ f:X\to \RR $$，$$ E $$是$$ X $$的一个子集，$$ x_0 $$是$$ E $$的附着点，称$$ f $$在点$$ x_0 $$处沿着$$ E $$收敛于$$ L $$，记做$$ \lim_{x\to x_0;x\in E}f(x)=L $$，当且仅当对任意$$ \varepsilon\gt 0 $$，存在一个$$ \delta\gt 0 $$，满足对任意$$ x\in E $$且$$ \abs{x-x_0} \lt \delta $$，满足$$ \abs{f(x)-L} \le \varepsilon $$。
 
 书上先定义了$$ \varepsilon $$-接近的和局部$$ \varepsilon $$-接近的，将这些定义全部展开得到上述定义。我认为这样定义是为了加深对定义的理解，如果展开后可以感受到这个定义的实际意义，那么展开定义更加简洁。
 
@@ -1175,7 +1175,7 @@ $$ \NN $$是良序集。我自己发现了一个不可数良序集的例子：�
 
 - **命题1**：$$ X $$是$$ \RR $$的一个子集，$$ f:X\to \RR $$，$$ E $$是$$ X $$的一个子集，$$ x_0 $$是$$ E $$的附着点，那么$$ f $$在$$ x_0 $$处沿着$$ E $$收敛于$$ L $$，当且仅当对任意由$$ E $$中的元素构成且收敛于$$ x_0 $$的序列$$ (a_n)_{n=0}^{\infty} $$满足$$ (f(a_n))_{n=0}^{\infty} $$收敛于$$ L $$。
 
-证明：左蕴含右，对任意$$ \varepsilon\gt 0 $$，存在$$ \delta\gt 0 $$，而存在$$ N\ge 0 $$满足对任意$$ n\ge N $$有$$ \ABS{a_n-x} \lt \delta $$，那么就对任意$$ n\ge N $$有$$ \ABS{f(a_n)-L} \le \varepsilon $$；右蕴含左很难直接证，因为很难证明$$ \ABS{x-x_0} \lt \delta $$时都成立，使用反证，存在$$ \varepsilon $$，令$$ S_n=\{x\in \RR:\ABS{x-x_0} \lt 1/n且\ABS{f(x)-L} \gt \varepsilon\} $$，利用选择公理得到数列$$ a_n $$。
+证明：左蕴含右，对任意$$ \varepsilon\gt 0 $$，存在$$ \delta\gt 0 $$，而存在$$ N\ge 0 $$满足对任意$$ n\ge N $$有$$ \abs{a_n-x} \lt \delta $$，那么就对任意$$ n\ge N $$有$$ \abs{f(a_n)-L} \le \varepsilon $$；右蕴含左很难直接证，因为很难证明$$ \abs{x-x_0} \lt \delta $$时都成立，使用反证，存在$$ \varepsilon $$，令$$ S_n=\{x\in \RR:\abs{x-x_0} \lt 1/n且\abs{f(x)-L} \gt \varepsilon\} $$，利用选择公理得到数列$$ a_n $$。
 
 利用这个命题和实直线子集的引理（存在一个数列收敛于附着点），再根据序列的极限唯一可得函数在一个附着点处沿着同一集合至多一个极限。
 
@@ -1187,9 +1187,9 @@ $$ \NN $$是良序集。我自己发现了一个不可数良序集的例子：�
 
 类似的命题：对于所有收敛于$$ x_0 $$的序列，都有$$ \limsup_{n\to \infty}f(a_n)\le M $$，且对于任意满足条件的$$ M' $$都有$$ M\le M' $$。$$ L=M $$。
 
-证明：对于$$ M\le L $$，对任意$$ a $$，任意$$ N $$，根据收敛序列有界，存在$$ \delta $$满足$$ n\ge N $$都满足$$ \ABS{a_n-x_0} \lt delta $$，有$$ \limsup_{n\to \infty}f(a_n)\le a_N^+\le L $$，因此$$ M\le L $$；对于$$ L\le M $$，令$$ S_n=\{x\in (x_0-1/n,x_0+1/n):f(x)=\max\{f(x):x\in (x_0-1/n,x_0+1/n)\}\} $$，根据选择公理得到存在序列$$ a_n $$，那么$$ a_N^+\ge a_n\ge L $$，$$ \limsup_{n\to \infty}f(a_n)\ge L $$，$$ M\ge L $$。
+证明：对于$$ M\le L $$，对任意$$ a $$，任意$$ N $$，根据收敛序列有界，存在$$ \delta $$满足$$ n\ge N $$都满足$$ \abs{a_n-x_0} \lt delta $$，有$$ \limsup_{n\to \infty}f(a_n)\le a_N^+\le L $$，因此$$ M\le L $$；对于$$ L\le M $$，令$$ S_n=\{x\in (x_0-1/n,x_0+1/n):f(x)=\max\{f(x):x\in (x_0-1/n,x_0+1/n)\}\} $$，根据选择公理得到存在序列$$ a_n $$，那么$$ a_N^+\ge a_n\ge L $$，$$ \limsup_{n\to \infty}f(a_n)\ge L $$，$$ M\ge L $$。
 
-- 习题2(自己定义极限$$ \limsup_{x\to x_0}f(x)=+\infty $$):任取$$ M $$，存在一个$$ \delta\gt 0 $$，使得任取$$ \ABS{x-x_0} \lt \delta $$满足$$ f(x)\gt M $$。
+- 习题2(自己定义极限$$ \limsup_{x\to x_0}f(x)=+\infty $$):任取$$ M $$，存在一个$$ \delta\gt 0 $$，使得任取$$ \abs{x-x_0} \lt \delta $$满足$$ f(x)\gt M $$。
 
 类似的命题：（先尝试定义序列收敛于正无穷：任取$$ M $$，都存在$$ N\ge 0 $$，满足对任一$$ n\ge N $$都有$$ a_n\ge M $$）对于所有收敛于$$ x_0 $$的序列，都有$$ \lim_{n\to \infty}f(a_n)=+\infty $$
 
@@ -1197,10 +1197,10 @@ $$ \NN $$是良序集。我自己发现了一个不可数良序集的例子：�
 
 - **命题2**：设$$ X $$是$$ \RR $$的一个子集，$$ E $$是$$ X $$的一个子集，$$ x_0 $$是$$ E $$的一个附着点，$$ f:X\to \RR $$，对任意$$ \delta\gt 0 $$，有$$ \lim_{x\to x_0;x\in E}f(x)=L $$当且仅当$$ \lim_{x\to x_0;x\in E\cap (x_0-\delta,x_0+\delta)}f(x)=L $$。
 
-证明：利用命题1，右边的$$ a $$都可作为左边的$$ a $$，左蕴含右；左边的任意个$$ a $$，都存在$$ N $$满足所有$$ n\ge N $$都有$$ \ABS{a_n-x_0} \lt \delta $$，因此$$ (f(a_n))_{n=0}^{\infty} $$与$$ (f(a_n))_{n=N}^{\infty} $$收敛于同一个数，而由右边的命题可知其收敛于$$ L $$。
+证明：利用命题1，右边的$$ a $$都可作为左边的$$ a $$，左蕴含右；左边的任意个$$ a $$，都存在$$ N $$满足所有$$ n\ge N $$都有$$ \abs{a_n-x_0} \lt \delta $$，因此$$ (f(a_n))_{n=0}^{\infty} $$与$$ (f(a_n))_{n=N}^{\infty} $$收敛于同一个数，而由右边的命题可知其收敛于$$ L $$。
 
 - **无限附着点的定义**：$$ X $$是$$ \RR $$的子集，$$ +\infty $$附着于$$ X $$当且仅当对任意$$ M\in \RR $$都存在$$ x\in X $$满足$$ x\gt M $$；$$ -\infty $$附着于$$ X $$当且仅当对任意$$ M\in \RR $$都存在$$ x\in X $$满足$$ x\lt M $$。
-- **无限处极限的定义**：$$ X $$是$$ \RR $$的子集且$$ +\infty $$是$$ X $$的附着点，$$ f:X\to \RR $$，称当$$ x\to \infty $$时$$ f(x) $$沿着$$ X $$收敛于$$ L $$，记做$$ \lim_{x\to +\infty;x\in X}f(x)=L $$，当且仅当对任意$$ \varepsilon $$，都存在$$ M $$使得对所有$$ x\in X $$且$$ x\gt M $$都有$$ \ABS{f(x)-L} \le \varepsilon $$。当$$ x\to -\infty $$同理。
+- **无限处极限的定义**：$$ X $$是$$ \RR $$的子集且$$ +\infty $$是$$ X $$的附着点，$$ f:X\to \RR $$，称当$$ x\to \infty $$时$$ f(x) $$沿着$$ X $$收敛于$$ L $$，记做$$ \lim_{x\to +\infty;x\in X}f(x)=L $$，当且仅当对任意$$ \varepsilon $$，都存在$$ M $$使得对所有$$ x\in X $$且$$ x\gt M $$都有$$ \abs{f(x)-L} \le \varepsilon $$。当$$ x\to -\infty $$同理。
 
 函数的极限定律在无限处也同样适用。
 
@@ -1217,9 +1217,9 @@ $$ \NN $$是良序集。我自己发现了一个不可数良序集的例子：�
 - **定理（算数运算保持连续性）**：设$$ X $$是$$ \RR $$的子集，$$ f:X\to \RR $$，$$ g:X\to \RR $$，设$$ x_0\in X $$，如果$$ f $$和$$ g $$在$$ x_0 $$处都连续那么$$ f\pm g $$，$$ fg $$，$$ \max(f,g) $$都在$$ x_0 $$处连续，如果$$ g $$在$$ X $$上不为$$ 0 $$，则$$ f/g $$也在$$ x_0 $$处连续。
 - **定理（复合运算保持连续性）**：设$$ X $$和$$ Y $$是$$ \RR $$的子集，$$ f:X\to Y $$，$$ g:Y\to \RR $$，设$$ x_0 $$是$$ X $$中的点，如果$$ f $$在$$ x_0 $$处连续，$$ g $$在$$ f(x_0) $$处连续，那么$$ g\circ f:X\to \RR $$在$$ x_0 $$处连续。
 
-那么我们只需要利用$$ \lim_{x\to x_0}c=c $$和$$ \lim_{x\to x_0}x=x_0 $$两个最简单的函数的连续性并结合函数的极限定律就可以证明大量函数的连续性，例如单元多项式函数，绝对值函数$$ \ABS{x} =max(x,-x) $$
+那么我们只需要利用$$ \lim_{x\to x_0}c=c $$和$$ \lim_{x\to x_0}x=x_0 $$两个最简单的函数的连续性并结合函数的极限定律就可以证明大量函数的连续性，例如单元多项式函数，绝对值函数$$ \abs{x} =max(x,-x) $$
 
-指数函数连续的证明($$ y=a^x(a\gt 0) $$）：思路就是转化为证明当$$ \lim_{x\to 0}a^x=1 $$，然后利用$$ \lim_{n\to \infty}x^{1/n}=1 $$。只需考虑$$ a\gt 1 $$的情况。设序列$$ b $$收敛于$$ x_0 $$，对所有$$ \varepsilon\gt 0 $$，要证明存在$$ N\ge 0 $$满足对所有$$ n\ge N $$有$$ \ABS{a^{b_n-x_0}-1} \lt \varepsilon/a^{x_0} $$，利用求极限例3（$$ \lim_{n\to \infty}x^{1/n}=1 $$），令$$ \varepsilon'=\varepsilon/a^{x_0} $$，存在$$ m\gt 0 $$满足$$ 0\lt a^{1/m}-1\lt \varepsilon' $$，那么根据$$ b_n $$收敛于$$ x_0 $$，令$$ N $$就是满足所有$$ n\ge N $$时$$ \ABS{b_n-x_0} \lt 1/m $$的$$ N $$，此时对$$ n\ge N $$若$$ b_n\ge x_0 $$有$$ 0\lt a^{b_n-x_0}-1\lt a^{1/m}-1\lt \varepsilon' $$，若$$ b_n\lt x_0 $$有$$ a^{b_n-x_0}=1/a^{x_0-b_n}\gt 1/(1+\varepsilon')\gt 1-\varepsilon' $$。（用$$ \varepsilon-\delta $$语言的定义来证方法类似）
+指数函数连续的证明($$ y=a^x(a\gt 0) $$）：思路就是转化为证明当$$ \lim_{x\to 0}a^x=1 $$，然后利用$$ \lim_{n\to \infty}x^{1/n}=1 $$。只需考虑$$ a\gt 1 $$的情况。设序列$$ b $$收敛于$$ x_0 $$，对所有$$ \varepsilon\gt 0 $$，要证明存在$$ N\ge 0 $$满足对所有$$ n\ge N $$有$$ \abs{a^{b_n-x_0}-1} \lt \varepsilon/a^{x_0} $$，利用求极限例3（$$ \lim_{n\to \infty}x^{1/n}=1 $$），令$$ \varepsilon'=\varepsilon/a^{x_0} $$，存在$$ m\gt 0 $$满足$$ 0\lt a^{1/m}-1\lt \varepsilon' $$，那么根据$$ b_n $$收敛于$$ x_0 $$，令$$ N $$就是满足所有$$ n\ge N $$时$$ \abs{b_n-x_0} \lt 1/m $$的$$ N $$，此时对$$ n\ge N $$若$$ b_n\ge x_0 $$有$$ 0\lt a^{b_n-x_0}-1\lt a^{1/m}-1\lt \varepsilon' $$，若$$ b_n\lt x_0 $$有$$ a^{b_n-x_0}=1/a^{x_0-b_n}\gt 1/(1+\varepsilon')\gt 1-\varepsilon' $$。（用$$ \varepsilon-\delta $$语言的定义来证方法类似）
 
 幂函数连续的证明($$ y=x^a(x\gt 0) $$)：要证$$ \lim_{x\to x_0}(x/x_0)^a=1 $$，设$$ n $$为正整数，根据函数的极限定律可归纳得到$$ \lim_{x\to x_0}(x/x_0)^n=(\lim_{x\to x_0}(x/x_0))^n=1 $$，易得$$ n $$是整数都成立，再利用夹逼定理（将序列极限的夹逼定理扩展到函数极限）得到$$ a $$是实数的情况也成立。
 
@@ -1233,16 +1233,16 @@ $$ \NN $$是良序集。我自己发现了一个不可数良序集的例子：�
 
 - **跳跃间断点**：$$ f(x_0+) $$和$$ f(x_0-) $$存在且不相等，如$$ sgn(x) $$的$$ 0 $$处
 - **可去间断点**：$$ f(x_0+) $$和$$ f(x_0-) $$存在且相等，但不等于$$ f(x_0) $$，如$$ f(x)=[x\ne 0] $$的$$ 0 $$处
-- **渐进间断点**：利用函数极限值习题2的定义，$$ f(x_0+) $$或$$ f(x_0-) $$收敛于$$ +\infty $$或$$ -\infty $$，如$$ f(x)=\ABS{1/x} $$的$$ 0 $$处
+- **渐进间断点**：利用函数极限值习题2的定义，$$ f(x_0+) $$或$$ f(x_0-) $$收敛于$$ +\infty $$或$$ -\infty $$，如$$ f(x)=\abs{1/x} $$的$$ 0 $$处
 - **振荡间断点**：$$ f(x_0+) $$或$$ f(x_0-) $$不存在且有界，如$$ f(x)=[x\in \QQ] $$的$$ 0 $$处
 
 ## 最大值原理
 
-函数$$ f:X\to \RR $$是有界的定义为存在一个$$ M $$，满足$$ x\in X $$都有$$ \ABS{f(x)} \le M $$。
+函数$$ f:X\to \RR $$是有界的定义为存在一个$$ M $$，满足$$ x\in X $$都有$$ \abs{f(x)} \le M $$。
 
 - **引理**：设$$ a\lt b $$，设$$ f:[a,b]\to \RR $$是$$ [a,b] $$上的连续函数，则$$ f $$是一个有界函数。
 
-证明（巧妙！）：开区间和闭区间最本质的区别在于闭区间的闭包是本身，那么思路就是利用连续函数的定义$$ f(x_0)=\lim_{n\to \infty}f(a_n) $$证明序列$$ f(a_n) $$收敛。反证，令$$ S_n=\{x\in [a,b]:\ABS{f(x)} \ge n\} $$，利用选择公理得到$$ a_n $$或者是利用$$ a_n=\sup(S_n) $$，根据海涅-博雷尔定理得到$$ (a_n)_{n=0}^{\infty} $$存在一个子序列$$ (a_{n_j})_{j=0}^{\infty} $$收敛于$$ [a,b] $$内实数$$ L $$，再根据连续函数的定义得到$$ \lim_{j\to \infty}f(a_{n_j})=f(L) $$，而$$ f(a_{n_j})\ge n_j\ge j $$，因此$$ (f(a_{n_j}))_{j=0}^{\infty} $$发散，矛盾。
+证明（巧妙！）：开区间和闭区间最本质的区别在于闭区间的闭包是本身，那么思路就是利用连续函数的定义$$ f(x_0)=\lim_{n\to \infty}f(a_n) $$证明序列$$ f(a_n) $$收敛。反证，令$$ S_n=\{x\in [a,b]:\abs{f(x)} \ge n\} $$，利用选择公理得到$$ a_n $$或者是利用$$ a_n=\sup(S_n) $$，根据海涅-博雷尔定理得到$$ (a_n)_{n=0}^{\infty} $$存在一个子序列$$ (a_{n_j})_{j=0}^{\infty} $$收敛于$$ [a,b] $$内实数$$ L $$，再根据连续函数的定义得到$$ \lim_{j\to \infty}f(a_{n_j})=f(L) $$，而$$ f(a_{n_j})\ge n_j\ge j $$，因此$$ (f(a_{n_j}))_{j=0}^{\infty} $$发散，矛盾。
 
 这个证明用到两个技巧，通过连续函数的定义将找一个点转化为找一个$$ y $$收敛于这个值且$$ x $$也收敛的点列，利用海涅-博雷尔定理去掉$$ x $$也收敛的限制。
 
@@ -1282,13 +1282,13 @@ $$ \NN $$是良序集。我自己发现了一个不可数良序集的例子：�
 
 ## 一致连续性
 
-- **一致连续的定义**：设$$ X $$是$$ \RR $$的子集，称$$ f:X\to \RR $$是一致连续的，当且仅当对任意$$ \varepsilon\gt 0 $$，都存在$$ \delta\gt 0 $$使得对所有$$ \ABS{x-x_0} \le \delta $$都有$$ \ABS{f(x)-f(x_0)} \le \varepsilon $$。
+- **一致连续的定义**：设$$ X $$是$$ \RR $$的子集，称$$ f:X\to \RR $$是一致连续的，当且仅当对任意$$ \varepsilon\gt 0 $$，都存在$$ \delta\gt 0 $$使得对所有$$ \abs{x-x_0} \le \delta $$都有$$ \abs{f(x)-f(x_0)} \le \varepsilon $$。
 
 $$ f(x)=1/x $$和$$ f(x)=x^2 $$都是连续但不一致连续的例子，而$$ f(x)=ax+b $$和$$ f(x)=\sqrt{x} $$在$$ (1,+\infty) $$上都满足一致连续，我认为一致连续差不多叙述的就是“导函数在任一处（包括无穷大处）极限不为无穷”。
 
 - **命题1**：设$$ X $$是$$ \RR $$的子集，$$ f:X\to \RR $$，则$$ f $$在$$ X $$上一致连续，当且仅当对任意两个由$$ X $$中元素构成的等价序列$$ (x_n)_{n=0}^{\infty} $$和$$ (y_n)_{n=0}^{\infty} $$，序列$$ (f(x_n))_{n=0}^{\infty} $$和$$ (f(y_n))_{n=0}^{\infty} $$也等价。
 
-这里使用了当时定义实数所用的等价序列的概念，不要求序列收敛。证明就直接用$$ \varepsilon-\delta $$定义，左蕴含右只需找到$$ N $$满足$$ n\ge N $$时$$ \ABS{x_n-y_n} \le \delta $$；右蕴含左的反证即对存在的$$ \varepsilon $$，令$$ \delta=1/n $$，存在$$ \ABS{x-x_0} \le 1/n $$且$$ \ABS{f(x)-f(x_0)} \gt \varepsilon $$，令$$ x_n=x $$和$$ y_n=x_0 $$即可。
+这里使用了当时定义实数所用的等价序列的概念，不要求序列收敛。证明就直接用$$ \varepsilon-\delta $$定义，左蕴含右只需找到$$ N $$满足$$ n\ge N $$时$$ \abs{x_n-y_n} \le \delta $$；右蕴含左的反证即对存在的$$ \varepsilon $$，令$$ \delta=1/n $$，存在$$ \abs{x-x_0} \le 1/n $$且$$ \abs{f(x)-f(x_0)} \gt \varepsilon $$，令$$ x_n=x $$和$$ y_n=x_0 $$即可。
 
 令其中一个序列为常数序列就转化成了用序列定义连续的形式。
 
@@ -1306,7 +1306,7 @@ $$ f(x)=1/x $$可利用序列$$ (1/n)_{n=1}^{\infty} $$和$$ (1/2n)_{n=1}^{\inft
 
 - **命题4**：设$$ a\lt b $$都是实数，$$ f:[a,b]\to \RR $$是$$ [a,b] $$上的连续函数，那么$$ f $$也是一致连续的。
 
-证明：反证，用命题1。令$$ E=\{n\in \NN:\ABS{f(x_n)-f(y_n)} \gt \varepsilon\} $$，根据可数性命题1（可数集的子集至多可数）$$ E $$是可数集，并且存在单调递增序列$$ n $$满足$$ \ABS{f(x_{n_j})-f(y_{n_j})} \gt \varepsilon $$，再利用海涅-博雷尔定理找到$$ (x_{n_j})_{j=0}^{\infty} $$收敛于$$ L\in [a,b] $$的子序列$$ (x_{n_{j_k}})_{k=0}^{\infty} $$，再利用连续函数的定义得$$ \lim_{k\to \infty}f(x_{n_{j_k}})=f(L) $$，由等价序列的定义可知$$ \lim_{n\to \infty}(x_n-y_n)=0 $$，再利用子序列定理1（收敛序列的子序列收敛）得到$$ \lim_{n\to \infty}(x_{n_{j_k}}-y_{n_{j_k}})=0 $$，再根据极限定律得到$$ \lim_{k\to \infty}y_{n_{j_k}}=L $$，有$$ \lim_{k\to \infty}f(y_{n_{j_k}})=f(L) $$，再利用极限定律得到$$ \lim_{k\to \infty}(f(x_{n_{j_k}})-f(y_{n_{j_k}}))=0 $$，与$$ n $$序列的定义矛盾。
+证明：反证，用命题1。令$$ E=\{n\in \NN:\abs{f(x_n)-f(y_n)} \gt \varepsilon\} $$，根据可数性命题1（可数集的子集至多可数）$$ E $$是可数集，并且存在单调递增序列$$ n $$满足$$ \abs{f(x_{n_j})-f(y_{n_j})} \gt \varepsilon $$，再利用海涅-博雷尔定理找到$$ (x_{n_j})_{j=0}^{\infty} $$收敛于$$ L\in [a,b] $$的子序列$$ (x_{n_{j_k}})_{k=0}^{\infty} $$，再利用连续函数的定义得$$ \lim_{k\to \infty}f(x_{n_{j_k}})=f(L) $$，由等价序列的定义可知$$ \lim_{n\to \infty}(x_n-y_n)=0 $$，再利用子序列定理1（收敛序列的子序列收敛）得到$$ \lim_{n\to \infty}(x_{n_{j_k}}-y_{n_{j_k}})=0 $$，再根据极限定律得到$$ \lim_{k\to \infty}y_{n_{j_k}}=L $$，有$$ \lim_{k\to \infty}f(y_{n_{j_k}})=f(L) $$，再利用极限定律得到$$ \lim_{k\to \infty}(f(x_{n_{j_k}})-f(y_{n_{j_k}}))=0 $$，与$$ n $$序列的定义矛盾。
 
 # 第10章 函数的微分
 
@@ -1316,17 +1316,17 @@ $$ f(x)=1/x $$可利用序列$$ (1/n)_{n=1}^{\infty} $$和$$ (1/2n)_{n=1}^{\inft
 
 可以直接通过函数的极限定律求一些导数：$$ f(x)=x^2 $$时$$ f'(x)=\lim_{x\to x_0;x\in \RR\setminus\{x_0\}}\frac{x^2-{x_0}^2}{x-x_0}=\lim_{x\to x_0}x+x_0=2x_0 $$
 
-- **牛顿逼近法**：$$ x_0\in X $$是$$ X $$的极限点，对$$ f:X\to \RR $$，$$ f $$在$$ X $$中的$$ x_0 $$处可微且导数是$$ L $$当且仅当：对任意$$ \varepsilon\gt 0 $$都存在$$ \delta\gt 0 $$使得对所有$$ x\in X $$且$$ \ABS{x-x_0} \le \varepsilon $$，那么$$ \ABS{f(x)-(f(x_0)+L(x-x_0)} \le \varepsilon\ABS{x-x_0} $$
+- **牛顿逼近法**：$$ x_0\in X $$是$$ X $$的极限点，对$$ f:X\to \RR $$，$$ f $$在$$ X $$中的$$ x_0 $$处可微且导数是$$ L $$当且仅当：对任意$$ \varepsilon\gt 0 $$都存在$$ \delta\gt 0 $$使得对所有$$ x\in X $$且$$ \abs{x-x_0} \le \varepsilon $$，那么$$ \abs{f(x)-(f(x_0)+L(x-x_0)} \le \varepsilon\abs{x-x_0} $$
 
-证明：$$ x\ne x_0 $$时就是$$ \ABS{\frac{f(x)-f(x_0)}{x-x_0}-L} \le \varepsilon $$，利用函数极限的定义可知。
+证明：$$ x\ne x_0 $$时就是$$ \abs{\frac{f(x)-f(x_0)}{x-x_0}-L} \le \varepsilon $$，利用函数极限的定义可知。
 
 牛顿逼近法的形式就是$$ f(x)\approx f(x_0)+f'(x_0)(x-x_0) $$。牛顿逼近法可以用于求函数零点，令$$ f(x')\approx f(x)+(x'-x)f'(x)=0 $$，$$ x'=x-f(x)/f'(x) $$，例如开根号的算法。
 
-我认为直接通过定义得到的$$ \ABS{f(x)-f(x_0)} \le (\ABS{L} +\varepsilon)(x-x_0) $$也是证明中很好用的形式。
+我认为直接通过定义得到的$$ \abs{f(x)-f(x_0)} \le (\abs{L} +\varepsilon)(x-x_0) $$也是证明中很好用的形式。
 
 - **命题1**：$$ x_0\in X $$是$$ X $$的一个极限点，如果$$ f $$在$$ x_0 $$处是可微的，那么$$ f $$在$$ x_0 $$处也是连续的。
 
-证明：直接使用牛顿逼近法，设$$ f'(x_0)=L\gt 0 $$，对任意$$ \varepsilon'\gt 0 $$，都存在$$ \delta'\gt 0 $$满足对所有$$ \ABS{x-x_0} \le \delta' $$都有$$ \ABS{f(x)-f(x_0)} \le (L+\varepsilon')(x-x_0)\le (L+\varepsilon')\delta' $$。对于$$ \varepsilon\gt 0 $$，任取一个$$ \varepsilon'\gt 0 $$，令$$ \delta=min(\delta',\varepsilon/(L+varepsilon') $$即可得到$$ \ABS{f(x)-f(x_0)} \le varepsilon $$。
+证明：直接使用牛顿逼近法，设$$ f'(x_0)=L\gt 0 $$，对任意$$ \varepsilon'\gt 0 $$，都存在$$ \delta'\gt 0 $$满足对所有$$ \abs{x-x_0} \le \delta' $$都有$$ \abs{f(x)-f(x_0)} \le (L+\varepsilon')(x-x_0)\le (L+\varepsilon')\delta' $$。对于$$ \varepsilon\gt 0 $$，任取一个$$ \varepsilon'\gt 0 $$，令$$ \delta=min(\delta',\varepsilon/(L+varepsilon') $$即可得到$$ \abs{f(x)-f(x_0)} \le varepsilon $$。
 
 $$ f:X\to \RR $$，若$$ f $$在所有$$ x_0\in X $$处都可微，则定义$$ f $$在$$ X $$上可微函数。那么可以得到可微函数是连续函数。
 
@@ -1348,7 +1348,7 @@ $$ x_0\in X $$是$$ X $$的极限点，
 
 - **链式法则**：$$ f:X\to Y $$在$$ x_0 $$处可微,$$ g:Y\to \RR $$在$$ y_0=f(x_0) $$处可微，那么$$ g\circ f:X\to \RR $$在$$ x_0 $$处可微，且$$ (g\circ f)'(x_0)=g'(y_0)f'(x_0) $$。
 
-证明：利用函数极限值命题1，任取序列满足$$ \lim_{n\to \infty}x_n=x_0 $$，有$$ \lim_{n\to \infty}f(x_n)=y_0 $$，那么利用函数极限定律得到$$ \lim_{n\to \infty}\frac{g(f(x_n))-g(y_0)}{x_n-x_0}=\lim_{n\to \infty}\frac{g(f(x_n))-g(y_0)}{f(x_n)-y_0}\frac{f(x_n)-f(x_0)}{x_n-x_0}=g'(y_0)f'(x_0) $$。如果$$ f(x_n)=0 $$会出现问题，注意到如果$$ f'(x_0)\ne 0 $$，利用牛顿逼近法令$$ \varepsilon\lt \ABS{f'(x_0)} $$时有存在$$ \delta $$满足$$ \ABS{x-x_0} \lt \delta $$时$$ f(x)\ne f(x_0) $$，再利用函数的极限值命题2，将极限固定在$$ (x_0-\delta,x_0+\delta) $$内即可；对于$$ f'(x_0)=0 $$的情况，用定义$$ \ABS{g(f(x))-g(f(x_0))} \le (\ABS{g'(f(x_0))} +\varepsilon_2)\ABS{f(x)-f(x_0)} \le (\ABS{g'(f(x_0))} +\varepsilon_2)\varepsilon_1(x-x_0) $$，任取$$ \varepsilon_2 $$，令$$ \varepsilon_1\lt \varepsilon/(\ABS{g'(y_0)} +\varepsilon_2) $$和$$ \delta=\min(\delta_1,\delta_2) $$即可（整个证明直接使用定义并构造$$ \varepsilon_1 $$和$$ \varepsilon_2 $$使得$$ (g'(y_0)+\varepsilon_2)(f'(x_0)+\varepsilon_1)\le g'(y_0)f'(x_0)+\varepsilon $$也可）
+证明：利用函数极限值命题1，任取序列满足$$ \lim_{n\to \infty}x_n=x_0 $$，有$$ \lim_{n\to \infty}f(x_n)=y_0 $$，那么利用函数极限定律得到$$ \lim_{n\to \infty}\frac{g(f(x_n))-g(y_0)}{x_n-x_0}=\lim_{n\to \infty}\frac{g(f(x_n))-g(y_0)}{f(x_n)-y_0}\frac{f(x_n)-f(x_0)}{x_n-x_0}=g'(y_0)f'(x_0) $$。如果$$ f(x_n)=0 $$会出现问题，注意到如果$$ f'(x_0)\ne 0 $$，利用牛顿逼近法令$$ \varepsilon\lt \abs{f'(x_0)} $$时有存在$$ \delta $$满足$$ \abs{x-x_0} \lt \delta $$时$$ f(x)\ne f(x_0) $$，再利用函数的极限值命题2，将极限固定在$$ (x_0-\delta,x_0+\delta) $$内即可；对于$$ f'(x_0)=0 $$的情况，用定义$$ \abs{g(f(x))-g(f(x_0))} \le (\abs{g'(f(x_0))} +\varepsilon_2)\abs{f(x)-f(x_0)} \le (\abs{g'(f(x_0))} +\varepsilon_2)\varepsilon_1(x-x_0) $$，任取$$ \varepsilon_2 $$，令$$ \varepsilon_1\lt \varepsilon/(\abs{g'(y_0)} +\varepsilon_2) $$和$$ \delta=\min(\delta_1,\delta_2) $$即可（整个证明直接使用定义并构造$$ \varepsilon_1 $$和$$ \varepsilon_2 $$使得$$ (g'(y_0)+\varepsilon_2)(f'(x_0)+\varepsilon_1)\le g'(y_0)f'(x_0)+\varepsilon $$也可）
 
 ## 局部极值和函数单调性
 
@@ -1356,7 +1356,7 @@ $$ x_0\in X $$是$$ X $$的极限点，
 
 - **命题1**：实数$$ a\lt b $$，$$ f:(a,b)\to \RR $$，如果$$ x_0\in (a,b) $$时$$ f $$在$$ x_0 $$处可微，且达到局部最值，则$$ f'(x_0)=0 $$。
 
-证明：利用牛顿逼近法，如果$$ f'(x_0)\ne 0 $$，任取$$ \varepsilon $$存在$$ \delta $$满足对$$ x\in (x_0-\delta,x_0+\delta) $$有$$ f(x_0)+(L-\varepsilon)(x-x_0)\le f(x)\le f(x_0)+(L+\varepsilon)(x-x_0) $$，当$$ \varepsilon\lt \ABS{L} $$时有$$ x_0\lt x\lt x_0+\delta $$时与$$ x_0-\delta\lt x\lt x_0 $$时$$ f(x) $$和$$ f(x_0) $$的大小关系不同。
+证明：利用牛顿逼近法，如果$$ f'(x_0)\ne 0 $$，任取$$ \varepsilon $$存在$$ \delta $$满足对$$ x\in (x_0-\delta,x_0+\delta) $$有$$ f(x_0)+(L-\varepsilon)(x-x_0)\le f(x)\le f(x_0)+(L+\varepsilon)(x-x_0) $$，当$$ \varepsilon\lt \abs{L} $$时有$$ x_0\lt x\lt x_0+\delta $$时与$$ x_0-\delta\lt x\lt x_0 $$时$$ f(x) $$和$$ f(x_0) $$的大小关系不同。
 
 如果是闭区间$$ [a,b] $$就不成立了。
 
@@ -1370,7 +1370,7 @@ $$ x_0\in X $$是$$ X $$的极限点，
 
 - 习题：如果$$ f:\RR\to \RR $$是可微函数，且$$ f' $$有界，则$$ f $$一致连续。
 
-证明：设$$ \ABS{f'(x)} \le M $$，则所有$$ x,y $$均满足$$ \ABS{f(x)-f(y)} \le M\ABS{x-y} $$，否则根据平均值原理会得到矛盾（因此满足习题条件的函数称为利普希茨连续函数，$$ M $$称为利普希茨常数）。那么对每个$$ \varepsilon $$，令$$ \delta=\varepsilon/M $$即可。
+证明：设$$ \abs{f'(x)} \le M $$，则所有$$ x,y $$均满足$$ \abs{f(x)-f(y)} \le M\abs{x-y} $$，否则根据平均值原理会得到矛盾（因此满足习题条件的函数称为利普希茨连续函数，$$ M $$称为利普希茨常数）。那么对每个$$ \varepsilon $$，令$$ \delta=\varepsilon/M $$即可。
 
 - **命题2**：若函数$$ f:X\to \RR $$单调递增且在$$ x_0\in X $$处可微，则$$ f'(x_0)\ge 0 $$；如果单调递减且在$$ x_0 $$处可微，则$$ f'(x_0)\le 0 $$。
 
@@ -1430,13 +1430,13 @@ $$ x_0\in X $$是$$ X $$的极限点，
 
 - **推论**：有界区间的交一定是有界区间。先用引理再利用连通的定义即可。
 
-- **区间长度的定义**：如果$$ I $$是有界区间$$ [a,b] $$，$$ [a,b) $$，$$ (a,b] $$，$$ (a,b) $$中的任一个$$ (a\lt b) $$，定义$$ I $$的长度$$ \ABS{I} :=b-a $$。若$$ I $$是单元素集或空集，$$ \ABS{I} :=0 $$。
+- **区间长度的定义**：如果$$ I $$是有界区间$$ [a,b] $$，$$ [a,b) $$，$$ (a,b] $$，$$ (a,b) $$中的任一个$$ (a\lt b) $$，定义$$ I $$的长度$$ \abs{I} :=b-a $$。若$$ I $$是单元素集或空集，$$ \abs{I} :=0 $$。
 
 - **划分的定义**：设$$ I $$是有界区间，$$ I $$的划分定义为有限个包含在$$ I $$中的有界区间构成的集合$$ P $$使得$$ I $$中每个元素$$ x $$恰好属于$$ P $$中一个有界区间$$ J $$。
 
-- **定理**：设$$ I $$是有界区间，$$ P $$是$$ I $$的一个划分，那么$$ \ABS{I} =\sum_{J\in P}\ABS{J} $$。
+- **定理**：设$$ I $$是有界区间，$$ P $$是$$ I $$的一个划分，那么$$ \abs{I} =\sum_{J\in P}\abs{J} $$。
 
-证明可直接对$$ P $$的基数归纳，设$$ I $$的右端点是$$ b $$，$$ P $$中必存在右端点为$$ b $$的区间$$ K $$（反证），由定义可知$$ \ABS{I} =\ABS{I\setminus K}+\ABS{K} $$。
+证明可直接对$$ P $$的基数归纳，设$$ I $$的右端点是$$ b $$，$$ P $$中必存在右端点为$$ b $$的区间$$ K $$（反证），由定义可知$$ \abs{I} =\abs{I\setminus K}+\abs{K} $$。
 
 - **更细的划分的定义**：设$$ I $$是有界区间，$$ P $$和$$ P' $$是$$ I $$的两个划分，如果对$$ P' $$中每个区间$$ J $$都存在$$ P $$的一个区间$$ K $$满足$$ J\subseteq K $$，则$$ P' $$比$$ P $$更细，$$ P $$比$$ P' $$更粗糙。
 
@@ -1456,7 +1456,7 @@ $$ x_0\in X $$是$$ X $$的极限点，
 
 对$$ f $$的划分和$$ g $$的划分进行公共细化得到运算后结果的划分。
 
-- **分段常值积分的定义**：设$$ I $$是有界区间，$$ P $$是$$ I $$的一个划分，$$ f:I\to \RR $$是关于$$ P $$的分段常数函数，定义$$ f $$的分段常数积分$$ p.c.\int_{I}f:=\sum_{J\in P}c_J\ABS{J} $$，其中对任意$$ J\in P $$，$$ c_J $$表示$$ f $$在$$ J $$上的常数值。
+- **分段常值积分的定义**：设$$ I $$是有界区间，$$ P $$是$$ I $$的一个划分，$$ f:I\to \RR $$是关于$$ P $$的分段常数函数，定义$$ f $$的分段常数积分$$ p.c.\int_{I}f:=\sum_{J\in P}c_J\abs{J} $$，其中对任意$$ J\in P $$，$$ c_J $$表示$$ f $$在$$ J $$上的常数值。
 
 - **引理**：对于$$ I $$的不同划分$$ P $$和$$ P' $$，$$ p.c.\int_{I}f $$通过两个划分得到的结果相同。
 
@@ -1467,7 +1467,7 @@ $$ x_0\in X $$是$$ X $$的极限点，
 - **积分定律1**：$$ p.c.\int_{I}(f+g)=p.c.\int_{I}f+p.c.\int_{I}g $$。
 - **积分定律2**：对任意实数$$ c $$，都有$$ p.c.\int_{I}(cf)=c(p.c.\int_{I}f) $$。
 - **积分定律3**：如果对所有$$ x\in I $$都有$$ f(x)\ge 0 $$，则$$ p.c.\int_{I}f\ge 0 $$。
-- **积分定律4**：如果$$ f $$是常数函数$$ f(x)=c $$，则$$ p.c.\int_{I}f=c\ABS{I} $$。
+- **积分定律4**：如果$$ f $$是常数函数$$ f(x)=c $$，则$$ p.c.\int_{I}f=c\abs{I} $$。
 - **积分定律5**：如果$$ {J,K} $$是$$ I $$的一个划分，那么$$ f\vert _{J}:J\to \RR $$和$$ f\vert _{K}:K\to \RR $$分别是$$ J $$和$$ K $$上的分段常数函数，且$$ p.c.\int_{I}f=p.c.\int_{J}f\vert _J+p.c.\int_{K}f\vert _K $$。
 
 积分定律1仍然考虑公共细化，积分定律5先证明若两个有界区间$$ I\subseteq J $$，$$ x\in I $$时$$ F(x)=f(x) $$，$$ x\notin I $$时$$ F(x)=0 $$，若$$ f $$是分段常数函数，$$ F $$也是分段常数函数。
@@ -1478,7 +1478,7 @@ $$ x_0\in X $$是$$ X $$的极限点，
 
 - **上下黎曼积分的定义**：设$$ f:I\to \RR $$是定义在有界区间$$ I $$上的函数，对$$ f: $$定义上黎曼积分$$ \overline{\int_{I}}f:=\inf\{p.c.\int_{I}g:g是从上方控制f的分段常数函数\} $$，下黎曼积分$$ \underline{\int_{I}}f:=\sup\{p.c.\int_{I}g:g是从下方控制f的分段常数函数\} $$。
 
-- **引理**：设$$ f:I\to \RR $$是定义在有界区间$$ I $$上的有界函数，以$$ M $$为界，则$$ -M\ABS{I} \le \underline{\int_{I}}f \le \overline{\int_{I}}f\le M\ABS{I} $$。
+- **引理**：设$$ f:I\to \RR $$是定义在有界区间$$ I $$上的有界函数，以$$ M $$为界，则$$ -M\abs{I} \le \underline{\int_{I}}f \le \overline{\int_{I}}f\le M\abs{I} $$。
 
 利用积分定律3，再两次运用上下确界的定义即可。
 
@@ -1486,7 +1486,7 @@ $$ x_0\in X $$是$$ X $$的极限点，
 
 对于分段常数函数$$ f $$，有$$ \int_{I}f=p.c.\int_{I}f $$。
 
-- **黎曼和的定义**：设$$ f:I\to \RR $$是定义在有界区间$$ I $$上的有界函数，$$ P $$是$$ I $$的一个划分，定义上黎曼和$$ U(f,P)=\sum_{J\in P;J\ne \emptyset}(\sup_{x\in J}f(x))\ABS{J} $$，下黎曼和$$ L(f,P)=\sum_{J\in P;J\ne \emptyset}(\inf_{x\in J}f(x))\ABS{J} $$。
+- **黎曼和的定义**：设$$ f:I\to \RR $$是定义在有界区间$$ I $$上的有界函数，$$ P $$是$$ I $$的一个划分，定义上黎曼和$$ U(f,P)=\sum_{J\in P;J\ne \emptyset}(\sup_{x\in J}f(x))\abs{J} $$，下黎曼和$$ L(f,P)=\sum_{J\in P;J\ne \emptyset}(\inf_{x\in J}f(x))\abs{J} $$。
 
 - **命题**：设$$ f:I\to \RR $$是定义在有界区间$$ I $$上的有界函数，则$$ \overline{\int{I}}f=\inf\{U(f,P):P是I的划分\} $$，$$ \underline{\int{I}}f=\sup\{L(f,P):P是I的划分\} $$。
 
@@ -1500,7 +1500,7 @@ $$ x_0\in X $$是$$ X $$的极限点，
 
 证明：思路是利用定义并取$$ \varepsilon $$证明两数相等。任取$$ \varepsilon $$，存在从下方控制$$ f $$的分段常数函数$$ \underline{f}:I\to \RR $$满足$$ \int_{I}\underline{f}\ge \int_{I}f-\varepsilon $$，从上方控制$$ f $$的分段常数函数$$ \overline{f} $$满足$$ \int_{I}\overline{f}\le \int_{I}f+\varepsilon $$；$$ \underline{g} $$满足$$ \int_{I}\underline{g}\ge \int_{I}f-\varepsilon $$，$$ \overline{g} $$满足$$ \int_{I}\overline{g}\le \int_{I}g+\varepsilon $$。$$ \overline{\int_{I}}\max(f,g)-\underline{\int_{I}}\max(f,g)\le \int_{I}\max(\overline{f},\overline{g})-\int_{I}\max(\underline{f},\underline{g}) $$，而$$ \max(\overline{f},\overline{g})-\max(\underline{f},\underline{g})\le (\overline{f}-\underline{f})+(\overline{g}-\underline{g}) $$，因此$$ \max(f,g)(x) $$的上下黎曼积分差不超过$$ 4\varepsilon $$。
 
-而$$ \ABS{f} =\max(f,-f) $$，绝对值保持黎曼可积性。也可设$$ f_+=max(f,0) $$，$$ f_-=min(f,0) $$，$$ \ABS{f} =f_+-f_- $$。
+而$$ \abs{f} =\max(f,-f) $$，绝对值保持黎曼可积性。也可设$$ f_+=max(f,0) $$，$$ f_-=min(f,0) $$，$$ \abs{f} =f_+-f_- $$。
 
 - **定理2**：设$$ I $$是有界区间，$$ f:I\to \RR $$和$$ g:I\to \RR $$是黎曼可积的，则$$ (fg)(x):I\to \RR $$也是黎曼可积的。
 
@@ -1510,7 +1510,7 @@ $$ x_0\in X $$是$$ X $$的极限点，
 
 - **定理1**：设$$ I $$是有界区间，$$ f $$是$$ I $$上的一致连续的函数，则$$ f $$是黎曼可积的。
 
-证明：利用一致连续的$$ \varepsilon-\delta $$定义，根据实数的序命题2找到整数$$ N\gt 0 $$使得$$ (b-a)/N\lt \delta $$(区间端点为$$ a $$和$$ b $$)，找到一个划分$$ J_1,...,J_N $$使得每个区间长度都为$$ (b-a)/N\lt \delta $$，由于$$ f(x)\lt f(y)+\varepsilon $$对所有$$ x,y\in J_k $$成立，两边分别取上确界和下确界，得到$$ \overline{\int_{J_k}}f-\underline{\int_{J_k}}f\le (\sup_{x\in J_k}f(x)-\inf_{x\in J_k}f(x))\ABS{J_k} \le \varepsilon\ABS{J_k} $$。因此利用黎曼积分的性质(d)上下黎曼积分的差不超过$$ \varepsilon\ABS{b-a} $$。
+证明：利用一致连续的$$ \varepsilon-\delta $$定义，根据实数的序命题2找到整数$$ N\gt 0 $$使得$$ (b-a)/N\lt \delta $$(区间端点为$$ a $$和$$ b $$)，找到一个划分$$ J_1,...,J_N $$使得每个区间长度都为$$ (b-a)/N\lt \delta $$，由于$$ f(x)\lt f(y)+\varepsilon $$对所有$$ x,y\in J_k $$成立，两边分别取上确界和下确界，得到$$ \overline{\int_{J_k}}f-\underline{\int_{J_k}}f\le (\sup_{x\in J_k}f(x)-\inf_{x\in J_k}f(x))\abs{J_k} \le \varepsilon\abs{J_k} $$。因此利用黎曼积分的性质(d)上下黎曼积分的差不超过$$ \varepsilon\abs{b-a} $$。
 
 因为上下黎曼积分分别是用$$ \inf $$和$$ \sup $$定义的，因此构造一对从上方控制和从下方控制的函数即可。
 
@@ -1548,8 +1548,8 @@ $$ x_0\in X $$是$$ X $$的极限点，
 
 这里的限制条件是黎曼可积和在$$ x_0 $$处连续。例如如果$$ f $$是分段函数（且断点处不连续），那么$$ F $$在断点处当然不可导。
 
-$$ F $$的连续性证明：设$$ f $$以$$ M $$为界，则$$ -M(y-x)\le \int_{[x,y]}f\le M(y-x) $$，用连续函数命题1转化为序列，$$ -M\ABS{x_n-x} \le F(x_n)-F(x)\le M\ABS{x_n-x} $$，利用夹逼定理对$$ n $$取极限得到$$ \lim_{n\to \infty}F(x_n)=F(x) $$。
-$$ F'(x_0)=f(x_0) $$的证明：利用连续的$$ \varepsilon-\delta $$定义和牛顿逼近法。取左右极限避免讨论，设$$ x_0\lt x\le x_0+\delta $$，有$$ (f(x_0)-\varepsilon)(x-x_0)\le \int_{[x_0,x]}f\le (f(x_0)+\varepsilon)(x-x_0) $$，即$$ \ABS{F(x)-F(x_0)-f(x_0)(x-x_0)} \le \varepsilon(x-x_0) $$，右极限为$$ f(x_0) $$。
+$$ F $$的连续性证明：设$$ f $$以$$ M $$为界，则$$ -M(y-x)\le \int_{[x,y]}f\le M(y-x) $$，用连续函数命题1转化为序列，$$ -M\abs{x_n-x} \le F(x_n)-F(x)\le M\abs{x_n-x} $$，利用夹逼定理对$$ n $$取极限得到$$ \lim_{n\to \infty}F(x_n)=F(x) $$。
+$$ F'(x_0)=f(x_0) $$的证明：利用连续的$$ \varepsilon-\delta $$定义和牛顿逼近法。取左右极限避免讨论，设$$ x_0\lt x\le x_0+\delta $$，有$$ (f(x_0)-\varepsilon)(x-x_0)\le \int_{[x_0,x]}f\le (f(x_0)+\varepsilon)(x-x_0) $$，即$$ \abs{F(x)-F(x_0)-f(x_0)(x-x_0)} \le \varepsilon(x-x_0) $$，右极限为$$ f(x_0) $$。
 
 - 习题1：考虑单调函数的习题$$ g(q(n))=2^{-n} $$，$$ f(x)=sum_{q\lt x}g(q) $$。$$ f(x) $$在无理数处连续，因此$$ F(x) $$在无理数处可微；$$ f(x) $$在有理数处间断，那么任取一个$$ \delta\gt 0 $$，都有$$ y\in (x,x+\delta] $$上，$$ \int_{[x,y]}f(x)/(y-x)\ge f(x)+g(x) $$，而$$ y\in [x-\delta,x) $$上都有\(\int_{[y,x])f(x)/(x-y)\le f(x)\)，令$$ \varepsilon\lt g(x) $$可得$$ F(x) $$不可微。
 
@@ -1563,7 +1563,7 @@ $$ F'(x_0)=f(x_0) $$的证明：利用连续的$$ \varepsilon-\delta $$定义和
 
 - **微积分第二基本定理**：设$$ a\lt b $$是实数，设$$ f:[a,b]\to \RR $$是黎曼可积的函数，如果$$ F:[a,b]\to \RR $$是$$ f $$的原函数，那么$$ \int_{[a,b]}f=F(b)-F(a) $$。
 
-证明：只需要证明对每个划分$$ P $$，都有$$ U(f,P)\ge F(b)-F(a)\ge L(f,P) $$。对$$ P $$的每个区间$$ J $$，设端点为$$ l_J $$和$$ r_J $$，则$$ F(b)-F(a)=\sum_{J\in P}F(r_J)-F(l_J) $$，要证明$$ \sup{x\in J}f(x)\ABS{J} \ge F(r_J)-F(l_J) $$（右边不等式同理）。由平均值原理知，存在$$ e\in J $$使得$$ F'(e)=(F(r_J)-F(l_J))/(r_J-l_J) $$，即$$ f(e)\ABS{J} =F(r_J)-F(l_J) $$，得证。
+证明：只需要证明对每个划分$$ P $$，都有$$ U(f,P)\ge F(b)-F(a)\ge L(f,P) $$。对$$ P $$的每个区间$$ J $$，设端点为$$ l_J $$和$$ r_J $$，则$$ F(b)-F(a)=\sum_{J\in P}F(r_J)-F(l_J) $$，要证明$$ \sup{x\in J}f(x)\abs{J} \ge F(r_J)-F(l_J) $$（右边不等式同理）。由平均值原理知，存在$$ e\in J $$使得$$ F'(e)=(F(r_J)-F(l_J))/(r_J-l_J) $$，即$$ f(e)\abs{J} =F(r_J)-F(l_J) $$，得证。
 
 - **引理**：设$$ I $$是有界区间，对$$ f:I\to \RR $$，设$$ F:I\to \RR $$和$$ G:I\to \RR $$是$$ f $$的两个原函数，存在实数$$ C $$使得对所有$$ F=G+C $$
 

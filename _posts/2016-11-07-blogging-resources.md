@@ -148,7 +148,7 @@ where `math_objs` is a list of `MathItem`s, see [here](https://github.com/mathja
 
 Possible next steps:
 
-- Replace `\vert ... \vert` pairs with macros like `\ABS`
+- Replace `\vert ... \vert` pairs with macros like `\abs`
 - Fix punctuations like `,()` -> `，（）`
 - Fix fields like $$N,Q,R$$ -> $$\NN,\QQ,\RR$$
 - Add more macros if necessary

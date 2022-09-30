@@ -46,12 +46,12 @@ tags:
 ## 函数列
 
 1. 定义在同一数集上的函数$$\{f_n\}$$称为定义在该数集上的函数列。若**数列**$$\{f_n(x_0)\}$$收敛则称$$x_0$$是该函数列的收敛点。若函数列在定义域的某个子集$$D$$上的每个点都收敛，则由所有收敛点确定的函数称为该函数列的极限函数，__记为__$$\lim_{n\to\infty}f_n(x)=f(x),x\in D$$。
-1. 函数列收敛的$$\varepsilon-N$$定义：对每一固定的$$x\in D$$，任给$$\varepsilon>0$$，都存在正数$$N=N(\varepsilon,x)$$（表示$$N$$可能依赖于$$\varepsilon$$和$$x$$），使得当$$n>N$$时总有$$\ABS{f_n(x)-f(x)}<\varepsilon$$。
-1. 一致收敛的定义：对任给$$\varepsilon>0$$，都存在（不依赖于$$\varepsilon$$和$$x$$的）正数$$N$$，使得当$$n>N$$时，对一切$$x\in D$$都有$$\ABS{f_n(x)-f(x)}<\varepsilon$$。
+1. 函数列收敛的$$\varepsilon-N$$定义：对每一固定的$$x\in D$$，任给$$\varepsilon>0$$，都存在正数$$N=N(\varepsilon,x)$$（表示$$N$$可能依赖于$$\varepsilon$$和$$x$$），使得当$$n>N$$时总有$$\abs{f_n(x)-f(x)}<\varepsilon$$。
+1. 一致收敛的定义：对任给$$\varepsilon>0$$，都存在（不依赖于$$\varepsilon$$和$$x$$的）正数$$N$$，使得当$$n>N$$时，对一切$$x\in D$$都有$$\abs{f_n(x)-f(x)}<\varepsilon$$。
 1. 收敛但不一致收敛的例子：$$\{x^n\}$$在$$(0,1)$$上收敛于$$f(x)=0$$但不一致收敛。
 1. 定理13.1：函数列一致收敛的柯西准则
-1. 定理13.2：一致收敛的充要条件是$$\lim_{n\to\infty}\sup_{x\in D}\ABS{f_n(x)-f(x)}=0$$。（由一致收敛、极限、上确界的定义可证）
-1. 定理13.8：设$$\{f_n\}$$在$$(a,x_0)\cup(x_0,b)$$上一致收敛于$$f(x)$$，且对每个$$n$$，$$\lim_{x\to x_0}f_n(x)=a_n$$，则$$\lim_{n\to\infty}a_n$$和$$\lim_{x\to x_0}f(x)$$均存在且相等。证明：先通过柯西准则以及$$\{a_n\}$$和$$\{f_n(x)\}$$的关系证明$$\{a_n\}$$是收敛数列；设$$\{a_n\}$$收敛于$$A$$，通过该结论、$$\{f_n(x)\}$$的一致收敛性、以及$$\{a_n\}$$和$$\{f_n(x)\}$$的关系，使用放缩法$$\ABS{f(x)-A}\le\ABS{f(x)-f_{N+1}(x)}+\ABS{f_{N+1}(x)-a_{N+1}}+\ABS{a_{N+1}-A}$$证明$$\lim_{x\to x_0}f(x)=A$$。
+1. 定理13.2：一致收敛的充要条件是$$\lim_{n\to\infty}\sup_{x\in D}\abs{f_n(x)-f(x)}=0$$。（由一致收敛、极限、上确界的定义可证）
+1. 定理13.8：设$$\{f_n\}$$在$$(a,x_0)\cup(x_0,b)$$上一致收敛于$$f(x)$$，且对每个$$n$$，$$\lim_{x\to x_0}f_n(x)=a_n$$，则$$\lim_{n\to\infty}a_n$$和$$\lim_{x\to x_0}f(x)$$均存在且相等。证明：先通过柯西准则以及$$\{a_n\}$$和$$\{f_n(x)\}$$的关系证明$$\{a_n\}$$是收敛数列；设$$\{a_n\}$$收敛于$$A$$，通过该结论、$$\{f_n(x)\}$$的一致收敛性、以及$$\{a_n\}$$和$$\{f_n(x)\}$$的关系，使用放缩法$$\abs{f(x)-A}\le\abs{f(x)-f_{N+1}(x)}+\abs{f_{N+1}(x)-a_{N+1}}+\abs{a_{N+1}-A}$$证明$$\lim_{x\to x_0}f(x)=A$$。
 1. 重要推论：上述定理表明，在一致收敛的条件下$$\{f_n(x)\}$$中两个独立变量$$x$$与$$n$$，在分别求极限时其求极限的顺序可以交换，即$$\lim_{x\to x_0}\lim_{n\to\infty}f_n(x)=\lim_{x\to x_0}f(x)=\lim_{n\to\infty}a_n=\lim_{n\to\infty}\lim_{x\to x_0}f_n(x)$$
 1. 定理13.9：一致收敛的函数列若每一项都连续，则其极限函数也连续。直接由定理13.8可证。
 1. 定理13.10：若$$\{f_n\}$$在$$[a,b]$$上一致收敛且每一项都连续，则$$\int_a^b\lim_{n\to\infty}f_n(x)\mathrm{d}x=lim_{n\to\infty}\int_a^bf_n(x)\mathrm{d}x$$。证明：由定理13.9，$$\{f_n\}$$的极限函数在$$[a,b]$$上连续从而可积，则有
@@ -60,7 +60,7 @@ tags:
    \begin{align}
    \bigg\vert\int_a^b f_n(x)\mathrm{d}x-\int_a^b\lim_{n\to\infty}f_n(x)\mathrm{d}x\bigg\vert=&\bigg\vert\int_a^b f_n(x)\mathrm{d}x-\int_a^b f(x)\mathrm{d}x\bigg\vert\\
    =&\bigg\vert\int_a^b\big(f_n(x)-f(x)\big)\mathrm{d}x\bigg\vert\\
-   \le&\int_a^b\ABS{f_n(x)-f(x)}\mathrm{d}x\\
+   \le&\int_a^b\abs{f_n(x)-f(x)}\mathrm{d}x\\
    \le&\varepsilon(b-a)
    \end{align}
    $$
@@ -75,9 +75,9 @@ tags:
 1. 一致收敛的定义：$$\{S_n(x)\}$$在$$D$$上一致收敛于函数$$S(x)$$。
 1. 定理13.3：函数项级数一致收敛的柯西准则（直接由函数列一致收敛的柯西准则可得）
 1. 余项$$R_n(x)=S(x)-S_n(x)$$
-1. 定理13.4：一致收敛的充要条件是$$\lim_{n\to\infty}\sup_{x\in D}\ABS{R_n(x)}=\lim_{n\to\infty}\sup_{x\in D}\ABS{S(x)-S_n(x)}=0$$。（类似定理13.2）
-1. 定理13.5（魏尔斯特拉斯判别法）：$$\sum u_n(x)$$定义在$$D$$上，$$\sum M_n$$为收敛的正项级数，若对一切$$x\in D$$有$$\ABS{u_n(x)}\le M_n, n=1,2,\ldots$$，则函数项级数$$\sum u_n(x)$$在$$D$$上一致收敛。
-1. 定理13.6（阿贝尔判别法）：若$$\sum u_n(x)$$在$$I$$上一致收敛，$$\{v_n(x_0)\}$$是单调数列对于每一个$$x_0\in I$$成立，且$$\{v_n(x)\}$$在$$I$$上一致有界（即对一切$$x\in I$$和正整数$$n$$，存在正数$$M$$使得$$\ABS{v_n(x)}\le M$$），则级数$$\sum u_n(x)v_n(x)$$在$$I$$上一致收敛。
+1. 定理13.4：一致收敛的充要条件是$$\lim_{n\to\infty}\sup_{x\in D}\abs{R_n(x)}=\lim_{n\to\infty}\sup_{x\in D}\abs{S(x)-S_n(x)}=0$$。（类似定理13.2）
+1. 定理13.5（魏尔斯特拉斯判别法）：$$\sum u_n(x)$$定义在$$D$$上，$$\sum M_n$$为收敛的正项级数，若对一切$$x\in D$$有$$\abs{u_n(x)}\le M_n, n=1,2,\ldots$$，则函数项级数$$\sum u_n(x)$$在$$D$$上一致收敛。
+1. 定理13.6（阿贝尔判别法）：若$$\sum u_n(x)$$在$$I$$上一致收敛，$$\{v_n(x_0)\}$$是单调数列对于每一个$$x_0\in I$$成立，且$$\{v_n(x)\}$$在$$I$$上一致有界（即对一切$$x\in I$$和正整数$$n$$，存在正数$$M$$使得$$\abs{v_n(x)}\le M$$），则级数$$\sum u_n(x)v_n(x)$$在$$I$$上一致收敛。
 1. 定理13.7（狄利克雷判别法）：若$$\sum u_n(x)$$的部分和函数列在$$I$$上一致有界，$$\{v_n(x_0)\}$$是单调数列对于每一个$$x_0\in I$$成立，且在$$I$$上$$v_n(x)$$一致收敛于0，则级数$$\sum u_n(x)v_n(x)$$在$$I$$上一致收敛。
 1. 定理13.12：若函数项级数$$\sum u_n(x)$$在区间$$[a,b]$$上一致收敛且每一项都连续，则其和函数在$$[a,b]$$上也连续。这是定理13.9的推论。这个定理表明，在一致收敛条件下，（无限项）求和运算与求极限运算可以交换顺序，即$$\sum\big(\lim_{x\to x_0}u_n(x)\big)=\sum u_n(x_0)=\lim_{x\to x_0}\big(\sum u_n(x)\big)$$。
 1. 定理13.13：若函数项级数$$\sum u_n(x)$$在$$[a,b]$$上一致收敛且每一项$$u_n(x)$$都连续，则
@@ -94,14 +94,14 @@ tags:
 # 第十四章 幂级数
 
 1. 定义：幂级数$$\sum_{n=0}^{\infty}a_n(x-x_0)^n$$，本章只讨论$$x_0=0$$的情况（下文所述幂级数均指这种情况）
-1. 定理14.1（阿贝耳定理）：若幂级数$$\sum_{n=0}^{\infty}a_nx^n$$在$$x=x_0\ne 0$$收敛，则对满足不等式$$\ABS{x}\lt\ABS{x_0}$$的任何$$x$$，该幂级数收敛而且绝对收敛；若该幂级数在$$x=x_0$$时发散，则对满足不等式$$\ABS{x}>\ABS{x_0}$$的任何$$x$$，该幂级数发散。通过比式判别法来证明。由此定理知道该幂级数的收敛域是以原点为中心的区间，若以$$2R$$表示该区间的长度，则称$$R$$为幂级数的收敛半径。
-1. 定理14.2：若$$\lim_{n\to\infty}\sqrt[n]{\ABS{a_n}}=\rho$$，则当
+1. 定理14.1（阿贝耳定理）：若幂级数$$\sum_{n=0}^{\infty}a_nx^n$$在$$x=x_0\ne 0$$收敛，则对满足不等式$$\abs{x}\lt\abs{x_0}$$的任何$$x$$，该幂级数收敛而且绝对收敛；若该幂级数在$$x=x_0$$时发散，则对满足不等式$$\abs{x}>\abs{x_0}$$的任何$$x$$，该幂级数发散。通过比式判别法来证明。由此定理知道该幂级数的收敛域是以原点为中心的区间，若以$$2R$$表示该区间的长度，则称$$R$$为幂级数的收敛半径。
+1. 定理14.2：若$$\lim_{n\to\infty}\sqrt[n]{\abs{a_n}}=\rho$$，则当
    - $$0<\rho<+\infty$$时，幂级数的收敛半径$$R=\frac{1}{\rho}$$
    - $$\rho=0$$时幂级数的收敛半径$$R=+\infty$$
    - $$\rho=+\infty$$时幂级数的收敛半径$$R=0$$
 
    由级数的根式判别法可证。
-1. 定理14. 3（柯西-阿达玛或Cauchy-Hadamard定理）：把定理14.2的条件换为$$\sqrt[n]{\ABS{a_n}}$$的上极限等于$$\rho$$，定理14.2的结论仍然成立。
+1. 定理14. 3（柯西-阿达玛或Cauchy-Hadamard定理）：把定理14.2的条件换为$$\sqrt[n]{\abs{a_n}}$$的上极限等于$$\rho$$，定理14.2的结论仍然成立。
 1. 定理14.4：若幂级数的收敛半径为$$R>0$$，则在它的收敛区间$$(-R,R)$$内任一闭区间$$[a,b]$$上它都一致收敛。通过比较原则证明？
 1. 定理14.5：若幂级数的收敛半径为$$R>0$$且在$$x=R$$（或$$x=-R$$） 时收敛，则幂级数在$$[0,R]$$（或$$[-R,0]$$）上一致收敛。通过阿贝尔判别法即定理13.6证明。
 1. 定理14.6：幂级数的和函数是$$(-R,R)$$内的连续函数；若幂级数在收敛区间的左(右)端点上收敛，则其和函数也在这一端点上右(左)连续。通过定理13.12可证。
@@ -118,7 +118,7 @@ tags:
 1. 定理14.10：俩收敛的幂级数的线性组合和积也收敛且满足。通过和函数的定义以及极限的性质可以证明。关于积的证明要用定理14.8的第二个推论？
 1. 定义：如果函数$$f$$在$$x=x_0$$处存在任意阶的导数，这时称形式为$$\sum_{n=0}^{\infty}\big(\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n\big)$$的级数为函数$$f$$的泰勒级数
 1. 要注意：具有任意阶导数的函数，其泰勒级数并不是都能收敛于函数本身
-1. 定理14.11：设$$f$$在点$$x_0$$具有任意阶导数，那么$$f$$在区间$$(x_0-r,x_0+r)$$内等于它的泰勒级数的和函数的充分条件是：对一切满足不等式$$\ABS{x-x_0}\lt r$$的$$x$$，有$$\lim_{n\to\infty}R_n(x)=0$$，这里$$R_n(x)$$是$$f$$在$$x_0$$的泰勒公式余项。通过定理6.9（泰勒定理，函数可以展开为带有拉格朗日型余项的泰勒公式）来证明。
+1. 定理14.11：设$$f$$在点$$x_0$$具有任意阶导数，那么$$f$$在区间$$(x_0-r,x_0+r)$$内等于它的泰勒级数的和函数的充分条件是：对一切满足不等式$$\abs{x-x_0}\lt r$$的$$x$$，有$$\lim_{n\to\infty}R_n(x)=0$$，这里$$R_n(x)$$是$$f$$在$$x_0$$的泰勒公式余项。通过定理6.9（泰勒定理，函数可以展开为带有拉格朗日型余项的泰勒公式）来证明。
 1. 如果$$f$$能在$$x_0$$的某邻域上等于其泰勒级数的和函数，则称函数$$f$$在$$x_0$$的这一邻域内可以展开成泰勒级数，并称等式$$f(x)=\sum_{n=0}^{\infty}\big(\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n\big)$$的右边为$$f$$在$$x=x_0$$处的泰勒展开式或幂级数展开式。根据定理14.8的推论2可知这个展开式是唯一的。在实际应用上，主要讨论函数在$$x_0=0$$处的展开式，称为麦克劳林级数
 1. 复数项级数及其收敛/绝对收敛的定义，复数项幂级数及其收敛的定义，复变量的指数函数、正弦函数、余弦函数的定义，以及欧拉公式的简述
 1. 生成函数（母函数）就是一个幂级数，所以其收敛性可以用本章的定理来分析
@@ -126,7 +126,7 @@ tags:
 # 第十五章 傅里叶级数
 
 1. 本章研究由三角函数列$$1,\cos x,\sin x,\cos 2x, \sin 2x,\cdots,\cos nx,\sin nx,\cdots$$（书中称为三角函数系(5)）产生的一般形式的三角级数$$\frac{a_0}{2}+\sum_{n=1}^{\infty}(a_n\cos nx+b_n\sin nx)$$，书中称为级数(4)
-1. 定理15.1：若级数$$\frac{\ABS{a_0}}{2}+\sum_{n=1}^{\infty}(\ABS{a_n}+\ABS{b_n})$$收敛，则级数(4)在整个数轴上绝对收敛且一致收敛。由定理13.5（魏尔斯特拉斯判别法）可证。
+1. 定理15.1：若级数$$\frac{\abs{a_0}}{2}+\sum_{n=1}^{\infty}(\abs{a_n}+\abs{b_n})$$收敛，则级数(4)在整个数轴上绝对收敛且一致收敛。由定理13.5（魏尔斯特拉斯判别法）可证。
 1. 在三角函数系(5)中，任何两个不相同的函数的乘积在$$[-\pi,\pi]$$上的 积分都等于零，而(5)中任何一个函数的平方在$$[-\pi,\pi]$$上的积分都不等于零。通常把两个函数在$$[a,b]$$上可积且满足$$\int_a^b \phi(x)\psi(x)\mathrm{d}x=0$$的函数$$\phi$$和$$\psi$$称为在$$[a,b]$$上是正交的。由此我们说三角函数系(5)在$$[-\pi,\pi]$$上具有正交性，或说其是正交函数系。
 1. 定理 15.2：若在整个数轴上$$f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}(a_n\cos nx+b_n\sin nx)$$且等式右边级数一致收敛，则有如下关系式
 
@@ -169,7 +169,7 @@ tags:
 1. 推论：$$\mathbf{R}^2$$中的有界无限点列必存在收敛子列
 1. 定理16.4（有限覆盖定理）：设$$D\subset\mathbf{R}^2$$为一有界闭域，$$\{\Delta_\alpha\}$$为一开域族，它覆盖了$$D$$即$$D\subset\bigcup_\alpha\Delta_\alpha$$，则在$$\{\Delta_\alpha\}$$中必存在有限个开域$$\Delta_1,\Delta_2,\cdots,\Delta_n$$，它们同样覆盖了$$D$$即$$D\subset\bigcup_{i=1}^n\Delta_i$$。类似定理7.3的证明：反证法，不断二分该闭域使得其直径趋于零，必有其中一个子闭域不能被有限覆盖，构成一个闭域套，由闭域套定理推出矛盾
 1. 二元函数和多元函数的定义
-1. 定义：设$$f$$为定义在$$D\subset\mathbf{R}^2$$上的二元函数，$$P_0$$为$$D$$的一个聚点，$$A$$是一个确定的实数。若对任给正数$$\varepsilon$$总存在某正数$$\delta$$，使得当$$P\in U^\circ(P_0;\delta)\cap D$$时，都有$$\ABS{f(P)-A}<\varepsilon$$，则称$$f$$在$$D$$上当$$P\to P_0$$时以$$A$$为极限，记作$$\lim_{P\to P_0,P\in D}f(P)=A$$
+1. 定义：设$$f$$为定义在$$D\subset\mathbf{R}^2$$上的二元函数，$$P_0$$为$$D$$的一个聚点，$$A$$是一个确定的实数。若对任给正数$$\varepsilon$$总存在某正数$$\delta$$，使得当$$P\in U^\circ(P_0;\delta)\cap D$$时，都有$$\abs{f(P)-A}<\varepsilon$$，则称$$f$$在$$D$$上当$$P\to P_0$$时以$$A$$为极限，记作$$\lim_{P\to P_0,P\in D}f(P)=A$$
 1. 定理16.5：$$\lim_{P\to P_0,P\in D}f(P)=A$$的充要条件是，对于$$D$$的任一子集$$E$$，只要$$P_0$$是$$E$$的聚点，就有$$\lim_{P\to P_0,P\in E}f(P)=A$$。证明：类似一元函数的海涅归结原则
 1. 定义：设$$D$$为二元函数$$f$$的定义域，$$P_0$$是$$D$$的一个聚点。若对任给正数$$M$$，总存在点$$P_0$$的一个$$\delta$$邻域，使得当$$P(x,y)\in U^\circ(P_0;\delta)\cap D$$时，都有$$f(P)>M$$，则称$$f$$在$$D$$上当$$P\to P_0$$时，存在非正常极限$$+\infty$$，记作$$\lim_{P\to P_0}f(P)=+\infty$$
 1. 上述两种极限定义中，两个自变量同时以任何方式趋于某一点，这种极限也称为重极限；而两个自变量依一定的先后顺序相继趋于某一点时的极限称为累次极限
@@ -183,7 +183,7 @@ tags:
 1. 定义：全增量和偏增量
 1. 定理16.7（复合函数的连续性）。
 1. 定理16.8（有界性与最大、最小值定理）：若函数$$f$$在有界闭域$$D\subset\mathbf{R}^2$$上连续，则$$f$$在$$D$$上有界，且能取得最大值与最小值。证明：有界性：反证法，若无界，存在一个点列使函数值趋于无穷，但根据聚点定理该点列存在属于$$D$$的聚点，根据连续性，该聚点上的函数值有界，矛盾；能取得最大/最小值：构造连续函数$$F(P)=\frac{1}{\sup f(D)-f(P)}$$，可同样证明$$F$$有界，但这与分母可无限趋于零矛盾。
-1. 定理16.9（一致连续性定理）：若函数$$f$$在有界闭域$$D\subset\mathbf{R}^2$$上连续，则$$f$$在$$D$$上一致连续，即对任何$$\varepsilon>0$$，总存在只依赖于$$\varepsilon$$的正数$$\delta$$，使得对一切点$$P$$、$$Q$$，只要$$\rho(P,Q)\lt\delta$$，就有$$\ABS{f(P)-f(Q)}\lt\varepsilon$$。证明过程使用聚点定理，类似于第七章对于一元函数一致连续性定理的证明（对应的定理为致密性定理）。
+1. 定理16.9（一致连续性定理）：若函数$$f$$在有界闭域$$D\subset\mathbf{R}^2$$上连续，则$$f$$在$$D$$上一致连续，即对任何$$\varepsilon>0$$，总存在只依赖于$$\varepsilon$$的正数$$\delta$$，使得对一切点$$P$$、$$Q$$，只要$$\rho(P,Q)\lt\delta$$，就有$$\abs{f(P)-f(Q)}\lt\varepsilon$$。证明过程使用聚点定理，类似于第七章对于一元函数一致连续性定理的证明（对应的定理为致密性定理）。
 1. 定理16.10（介值性定理）：区域上的连续函数能取遍任意两个函数值之间的所有值（即存在相应的定义域上的点）。书中的证明用的是几何直观的方法，WTF？
 
 # 第十七章 多元函数微分学
@@ -210,17 +210,17 @@ tags:
 1. 多元函数的一阶（全）微分形式不变性：对于复合函数$$z=f(x,y),x=\varphi(s,t),y=\psi(s,t)$$，有$$\mathrm{d}z=\frac{\partial z}{\partial x}\mathrm{d}x+\frac{\partial z}{\partial y}\mathrm{d}y$$，其中$$\mathrm{d}x=\frac{\partial x}{\partial s}\mathrm{d}s+\frac{\partial x}{\partial t}\mathrm{d}t, \mathrm{d}y=\frac{\partial y}{\partial s}\mathrm{d}s+\frac{\partial y}{\partial t}\mathrm{d}t$$
 1. 方向导数的定义：即极限$$\lim_{\rho\to 0^+}\frac{f(P)-f(P_0)}{\rho}$$（要求其存在）。其中$$P$$为从$$P_0$$出发所考察方向上的一点，$$\rho$$为$$P$$和$$P_0$$两点间距离
 1. 定理17.6：若**三元**函数$$f$$在点$$P_0(x_0,y_0,z_0)$$可微，则$$f$$在点$$P_0$$处沿任一方向$$l$$的方向导数都存在，且$$f_l(P_0)=f_x(P_0)\cos\alpha+f_y(P_0)\cos\beta+f_z(P_0)\cos\gamma$$，其中$$\cos\alpha,\cos\beta,\cos\gamma$$为方向$$l$$的方向余弦。证明过程就是把全微分的定义式改写成方向导数的定义式。
-1. 梯度的定义：三元函数$$f$$的梯度（向量）为$$\mathrm{grad}\,f=(f_x(P_0),f_y(P_0),f_z(P_0))$$。于是方向导数公式又可以写成$$f_l(P_0)=\ABS{\mathrm{grad}\,f(P_0)}\cos\theta$$，因此当$$\theta=0$$时即梯度方向使得$$f$$增长最快，$$\theta=\pi$$时减少最快。
+1. 梯度的定义：三元函数$$f$$的梯度（向量）为$$\mathrm{grad}\,f=(f_x(P_0),f_y(P_0),f_z(P_0))$$。于是方向导数公式又可以写成$$f_l(P_0)=\abs{\mathrm{grad}\,f(P_0)}\cos\theta$$，因此当$$\theta=0$$时即梯度方向使得$$f$$增长最快，$$\theta=\pi$$时减少最快。
    - 内积的坐标形式和余弦形式为什么相等：
-     - 如果把坐标形式作为内积的定义，那么这两者相等就是定义，不是定理。定义过程为：内积的定义就是$$x\cdot y=(s_1,b_1)\cdot(s_2,b_2)=s_1s_2+b_1b_2$$，这个时候长度、夹角这些东西都还不存在。有了这个内积之后，才能写长度的定义$$\ABS{\alpha}=\sqrt{\alpha\cdot\alpha}$$。这个时候两个向量才有了夹角余弦$$\cos\theta=\frac{x\cdot y}{\ABS{x}\ABS{y}}$$。具体参见[这里](https://www.zhihu.com/question/29039728/answer/139939836)。
+     - 如果把坐标形式作为内积的定义，那么这两者相等就是定义，不是定理。定义过程为：内积的定义就是$$x\cdot y=(s_1,b_1)\cdot(s_2,b_2)=s_1s_2+b_1b_2$$，这个时候长度、夹角这些东西都还不存在。有了这个内积之后，才能写长度的定义$$\abs{\alpha}=\sqrt{\alpha\cdot\alpha}$$。这个时候两个向量才有了夹角余弦$$\cos\theta=\frac{x\cdot y}{\abs{x}\abs{y}}$$。具体参见[这里](https://www.zhihu.com/question/29039728/answer/139939836)。
      - 如果从引入欧几里得几何、再在平面内引入平面直角坐标系、然后重新定义三角函数、最后用有向线段引入向量、然后用三角函数和模定义内积的高中教学思路，就可以这么证明：
 
        $$
        \begin{align}
-       a\cdot b&=\ABS{a}\ABS{b}\cos\theta\\
-       &=\ABS{a}\ABS{b}(\cos(\theta_1-\theta_2))\\
-       &=\ABS{a}\ABS{b}(\sin\theta_1\sin\theta_2+\cos\theta_1\cos\theta_2)\\
-       &=(\ABS{a}\sin\theta_1)(\ABS{b}\sin\theta_2)+(\ABS{a}\cos\theta_1)(\ABS{b}\cos\theta_2)\\
+       a\cdot b&=\abs{a}\abs{b}\cos\theta\\
+       &=\abs{a}\abs{b}(\cos(\theta_1-\theta_2))\\
+       &=\abs{a}\abs{b}(\sin\theta_1\sin\theta_2+\cos\theta_1\cos\theta_2)\\
+       &=(\abs{a}\sin\theta_1)(\abs{b}\sin\theta_2)+(\abs{a}\cos\theta_1)(\abs{b}\cos\theta_2)\\
        &=a_x b_x+a_y b_y
        \end{align}
        $$
@@ -336,7 +336,7 @@ tags:
 1. 定义：若在区间$$I$$的任一闭子区间上反常积分都一致收敛，则称该反常积分在$$I$$上**内闭一致收敛**
 1. 定理19.3：设$$f(x,y)$$在$$[a,+\infty)\times[c,+\infty)$$上连续。若：
    - (i) $$\int_a^{+\infty}f(x,y)\mathrm{d}x$$关于$$y$$在$$[c,+\infty)$$上内闭一致收敛，$$\int_c^{+infty}f(x,y)\mathrm{d}y$$关于$$x$$在$$[a,+\infty)$$上内闭一致收敛
-   - (ii) 积分$$\int_a^{+\infty}\mathrm{d}x\int_c^{+\infty}\ABS{f(x,y)}\mathrm{d}y$$与$$\int_c^{+\infty}\mathrm{d}y\int_a^{+\infty}\ABS{f(x,y)}\mathrm{d}x$$中有一个收敛
+   - (ii) 积分$$\int_a^{+\infty}\mathrm{d}x\int_c^{+\infty}\abs{f(x,y)}\mathrm{d}y$$与$$\int_c^{+\infty}\mathrm{d}y\int_a^{+\infty}\abs{f(x,y)}\mathrm{d}x$$中有一个收敛
 
    则$$\int_a^{+\infty}\mathrm{d}x\int_c^{+\infty}f(x,y)\mathrm{d}y=\int_c^{+\infty}\mathrm{d}y\int_a^{+\infty}f(x,y)\mathrm{d}x$$，即两个“累次反常积分”相等。主要思路就是证明$$J_d=\big\vert\int_c^d\mathrm{d}y\int_a^{+\infty}f(x,y)\mathrm{d}x-\int_a^{+\infty}\mathrm{d}x\int_c^{+\infty}f(x,y)\mathrm{d}y\big\vert=\big\vert\int_a^{+\infty}\mathrm{d}x\int_d^{+\infty}f(x,y)\mathrm{d}y\big\vert\le\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$$，其中第二个等号由条件(i)和19.12推得，小于等于号由条件(ii)和内一致收敛性推得
 
@@ -506,14 +506,14 @@ f(\xi_i,\eta_i)\Delta\sigma_i$$为函数$$f(x,y)$$在$$D$$上属于分割$$T$$�
    \end{vmatrix}\ne0,(u,v)\in\Delta
    $$
 
-   则区域$$D$$的面积$$\mu(D)=\iint_\Delta \ABS{J(u,v)}\mathrm{d}u\mathrm{d}v$$。证明过程比较复杂而且假设$$y(u,v)$$在$$\Delta$$内具有二阶连续偏导数（不依赖于这个条件的证明在后文）。首先（根据隐函数组定理？）$$uv$$上的闭区域的边界$$L_\Delta$$变换为$$D$$上的闭区域的边界$$L_D$$，然后把$$L_D$$用（通过$$u$$和$$v$$复合的）参数方程表示，然后在$$\Delta$$上用格林公式表示$$\mu(D)$$并化为参数方程，又把$$\oint_{L_\Delta}x(u,v)\big[\frac{\partial y}{\partial u}\mathrm{d}u+\frac{\partial y}{\partial v}\mathrm{d}v\big]$$化为同样的参数方程，因此$$\mu(D)$$的值等于该式，然后将该式用格林公式重写为二重积分形式，根据二阶连续偏导数的条件化为所要证明的式子。
+   则区域$$D$$的面积$$\mu(D)=\iint_\Delta \abs{J(u,v)}\mathrm{d}u\mathrm{d}v$$。证明过程比较复杂而且假设$$y(u,v)$$在$$\Delta$$内具有二阶连续偏导数（不依赖于这个条件的证明在后文）。首先（根据隐函数组定理？）$$uv$$上的闭区域的边界$$L_\Delta$$变换为$$D$$上的闭区域的边界$$L_D$$，然后把$$L_D$$用（通过$$u$$和$$v$$复合的）参数方程表示，然后在$$\Delta$$上用格林公式表示$$\mu(D)$$并化为参数方程，又把$$\oint_{L_\Delta}x(u,v)\big[\frac{\partial y}{\partial u}\mathrm{d}u+\frac{\partial y}{\partial v}\mathrm{d}v\big]$$化为同样的参数方程，因此$$\mu(D)$$的值等于该式，然后将该式用格林公式重写为二重积分形式，根据二阶连续偏导数的条件化为所要证明的式子。
 1. 定理21.13：设$$x,y,u,v$$满足上述引理的所有条件，另外函数$$f(x,y)$$在有界闭区域$$D$$上可积，则
 
    $$
-   \iint_D f(x,y)\mathrm{d}x\mathrm{d}y=\iint_\Delta f(x(u,v),y(u,v))\ABS{J(u,v)}\mathrm{d}u\mathrm{d}v
+   \iint_D f(x,y)\mathrm{d}x\mathrm{d}y=\iint_\Delta f(x(u,v),y(u,v))\abs{J(u,v)}\mathrm{d}u\mathrm{d}v
    $$
 
-   证明：把$$\Delta$$分成多个小区域$$\Delta_i$$，根据上述引理和二重积分中值定理可得到$$\mu(D_i)=\iint_{\Delta_i}\ABS{J(u,v)}\mathrm{d}u\mathrm{d}v=\ABS{J(\overline{u}_i,\overline{v}_i)}\mu(\Delta_i)$$。然后把所求的二重积分写成积分和形式，可以化为包含$$\mu(D_i)$$的关于$$\Delta$$上可积函数$$f(x(u,v),y(u,v))\ABS{J(u,v)}$$的积分和，有连续性得知当$$\Delta$$上的分割细度趋于0时$$D$$的分割细度也趋于0，故。
+   证明：把$$\Delta$$分成多个小区域$$\Delta_i$$，根据上述引理和二重积分中值定理可得到$$\mu(D_i)=\iint_{\Delta_i}\abs{J(u,v)}\mathrm{d}u\mathrm{d}v=\abs{J(\overline{u}_i,\overline{v}_i)}\mu(\Delta_i)$$。然后把所求的二重积分写成积分和形式，可以化为包含$$\mu(D_i)$$的关于$$\Delta$$上可积函数$$f(x(u,v),y(u,v))\abs{J(u,v)}$$的积分和，有连续性得知当$$\Delta$$上的分割细度趋于0时$$D$$的分割细度也趋于0，故。
 1. 定理21.14：设$$f(x,y)$$满足定理21.13的条件且在极坐标变换：
 
    $$
@@ -580,7 +580,7 @@ f(\xi_i,\eta_i)\Delta\sigma_i$$为函数$$f(x,y)$$在$$D$$上属于分割$$T$$�
 1. 和二重积分换元法类似，三重积分有：
 
    $$
-   \iiint_V f(x,y,z)\mathrm{d}x\mathrm{d}y\mathrm{d}z=\iiint_{V'}f(x(u,v,w),y(u,v,w),z(u,v,w))\ABS{J(u,v,w)}\mathrm{d}u\mathrm{d}v\mathrm{d}w
+   \iiint_V f(x,y,z)\mathrm{d}x\mathrm{d}y\mathrm{d}z=\iiint_{V'}f(x(u,v,w),y(u,v,w),z(u,v,w))\abs{J(u,v,w)}\mathrm{d}u\mathrm{d}v\mathrm{d}w
    $$
 
    另外还据此介绍了柱面坐标和球坐标变换，略。
@@ -590,7 +590,7 @@ f(\xi_i,\eta_i)\Delta\sigma_i$$为函数$$f(x,y)$$在$$D$$上属于分割$$T$$�
 1. 由方程$$z=f(x,y),(x,y)\in D$$所确定的曲面面积为：
 
    $$
-   \Delta S=\lim_{\Vert T\Vert\to 0}\sum_{i=1}^{n}\frac{\Delta\sigma_i}{\ABS{\cos\gamma_i}}=\iint_D\frac{\mathrm{d}x\mathrm{d}y}{\ABS{\cos(\widehat{\boldsymbol{n},z})}}=\iint_D\sqrt{1+f_x^2(x,y)+f_y^2(x,y)}\mathrm{d}x\mathrm{d}y
+   \Delta S=\lim_{\Vert T\Vert\to 0}\sum_{i=1}^{n}\frac{\Delta\sigma_i}{\abs{\cos\gamma_i}}=\iint_D\frac{\mathrm{d}x\mathrm{d}y}{\abs{\cos(\widehat{\boldsymbol{n},z})}}=\iint_D\sqrt{1+f_x^2(x,y)+f_y^2(x,y)}\mathrm{d}x\mathrm{d}y
    $$
 
    其中$$\cos(\widehat{\boldsymbol{n},z})$$为曲面法向量与$$z$$轴正向夹角的余弦
@@ -650,7 +650,7 @@ f(\xi_i,\eta_i)\Delta\sigma_i$$为函数$$f(x,y)$$在$$D$$上属于分割$$T$$�
 
    $$
    I=\overbrace{\idotsint\limits_V}^{n\text{ times}}
-   f(x_1(\xi_1,\cdots,\xi_n),x_2(\xi_1,\cdots,\xi_n),\cdots,x_n(\xi_1,\cdots,\xi_n)) \ABS{J }
+   f(x_1(\xi_1,\cdots,\xi_n),x_2(\xi_1,\cdots,\xi_n),\cdots,x_n(\xi_1,\cdots,\xi_n)) \abs{J }
    \mathrm{d}\xi_1 \mathrm{d}\xi_2 \cdots \mathrm{d}\xi_n
    $$
 
@@ -698,7 +698,7 @@ f(\xi_i,\eta_i)\Delta\sigma_i$$为函数$$f(x,y)$$在$$D$$上属于分割$$T$$�
 1. 定义：设$$D$$为无界区域，$$f(x,y)$$为其上定义的二元函数，对平面上任一包围原点的光滑封闭曲线$$\gamma$$，$$f(x,y)$$在$$\gamma$$所围的有界区域$$E_\gamma$$与$$D$$的交集$$E_\gamma\cap D=D_\gamma$$上恒可积。令$$d_\gamma=\min\{\sqrt{x^2+y^2}\vert(x,y)\in\gamma\}$$。若极限$$\lim_{d_\gamma\to \infty}\int_{D_\gamma}f(x,y)\mathrm{d}\sigma$$存在且有限且与$$\gamma$$的取法无关，则称$$f(x,y)$$在$$D$$上的反常二重积分收敛，并将该极限记为该反常二重积分的值。
 1. 定理21.17：反常二重积分收敛的一个充分条件，关于上下确界。
 1. 定理21.18：若无界区域$$D$$上$$f(x,y)\ge0$$，则反常二重积分收敛的充要条件是，在$$D$$的任何有界子区域上$$f(x,y)$$可积，且积分值有上界。
-1. 定理21.19：函数$$f(x,y)$$在无界区域$$D$$上的反常二重积分收敛的充要条件是$$\ABS{f(x,y) }$$在$$D$$上的反常二重积分收敛。充分性很容易证明，必要性书上让看菲赫金哥尔茨的教程WTF？
+1. 定理21.19：函数$$f(x,y)$$在无界区域$$D$$上的反常二重积分收敛的充要条件是$$\abs{f(x,y) }$$在$$D$$上的反常二重积分收敛。充分性很容易证明，必要性书上让看菲赫金哥尔茨的教程WTF？
 1. 定理21.20（柯西判别法）：略
 
 ### 无界函数的二重积分
