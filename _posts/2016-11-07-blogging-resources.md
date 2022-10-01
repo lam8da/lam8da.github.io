@@ -144,7 +144,7 @@ for (obj of math_objs) {  // Use for..of, not for..in
 }
 ```
 
-where `math_objs` is a list of `MathItem`s, see [here](https://github.com/mathjax/MathJax-src/blob/a5ae9485cb7441fdd5ea59645cfbd1c12b7d53e1/ts/core/MathItem.ts) for more details.
+where `math_objs` is a list of `MathItem`s, see [here](https://github.com/mathjax/MathJax-src/blob/a5ae9485cb7441fdd5ea59645cfbd1c12b7d53e1/ts/core/MathItem.ts), [here](https://docs.mathjax.org/en/latest/input/tex/extensions/configmacros.html) and [here](https://www.sqlpac.com/en/documents/mathjax-macros-and-packages-tex-simplified-commands.html) for more details.
 
 Possible next steps:
 
