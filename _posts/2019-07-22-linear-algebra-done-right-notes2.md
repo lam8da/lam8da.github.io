@@ -89,16 +89,16 @@ tags:
 - 6.20：格拉姆-施密特过程（Gram-Schmidt procedure）：如果$$(\vec{v}_{1},\cdots,\vec{v}_{m})$$是$$V$$中的线性无关向量组，则$$V$$有规范正交向量组$$(\vec{e}_{1},\cdots,\vec{e}_{m})$$使得：
 
   $$
-  \text{span}(\vec{v}_{1},\cdots,\vec{v}_{j})=\text{span}(\vec{e}_{1},\cdots,\vec{e}_{j}), j=1,\cdots, m
+  \vspanr{v}{j}=\vspanr{e}{j}, j=1,\cdots, m
   $$
 
-  - 证明：首先令$$\vec{e}_{1}=\vec{v}_{1}/\|\vec{v}_{1}\|$$，这满足$$j=1$$的情况。然后归纳地选取$$\vec{e}_{1},\cdots,\vec{e}_{m}$$。假设$$j>1$$并且已经选取了规范正交组$$(\vec{e}_{1},\cdots,\vec{e}_{j-1})$$使得$$\text{span}(\vec{v}_{1},\cdots,\vec{v}_{j-1})=\text{span}(\vec{e}_{1},\cdots,\vec{e}_{j-1})$$。现在令
+  - 证明：首先令$$\vec{e}_{1}=\vec{v}_{1}/\|\vec{v}_{1}\|$$，这满足$$j=1$$的情况。然后归纳地选取$$\vec{e}_{1},\cdots,\vec{e}_{m}$$。假设$$j>1$$并且已经选取了规范正交组$$(\vec{e}_{1},\cdots,\vec{e}_{j-1})$$使得$$\vspanr{v}{j-1}=\vspanr{e}{j-1}$$。现在令
 
     $$
     \vec{e}_{j}=\frac{\vec{v}_{j}-\langle\vec{v}_{j},\vec{e}_{1}\rangle\vec{e}_{1}-\cdots-\langle\vec{v}_{j},\vec{e}_{j-1}\rangle\vec{e}_{j-1}}{\|\vec{v}_{j}-\langle\vec{v}_{j},\vec{e}_{1}\rangle\vec{e}_{1}-\cdots-\langle\vec{v}_{j},\vec{e}_{j-1}\rangle\vec{e}_{j-1}\|}
     $$
 
-    易知$$\vec{v}_{j}\notin\text{span}(\vec{e}_{1},\cdots,\vec{e}_{j-1})$$，因此上式良定义（分母不为0）且$$\|\vec{e}_{j}\|=1$$。设$$1\le k\le j$$，用上式将$$\langle\vec{e}_{j},\vec{e}_{k}\rangle$$展开即得其值为0，因此$$(\vec{e}_{1},\cdots,\vec{e}_{j})$$是规范正交组。由上式知$$\vec{v}_{j}\in\text{span}(\vec{e}_{1},\cdots,\vec{e}_{j})$$，再根据归纳假设即得$$\text{span}(\vec{v}_{1},\cdots,\vec{v}_{j})\subset\text{span}(\vec{e}_{1},\cdots,\vec{e}_{j})$$，而由于这两个组都是线性无关的（后者根据6.16得到），因此上面两个子空间的维数都是$$j$$，从而一定相等。
+    易知$$\vec{v}_{j}\notin\vspanr{e}{j-1}$$，因此上式良定义（分母不为0）且$$\|\vec{e}_{j}\|=1$$。设$$1\le k\le j$$，用上式将$$\langle\vec{e}_{j},\vec{e}_{k}\rangle$$展开即得其值为0，因此$$(\vec{e}_{1},\cdots,\vec{e}_{j})$$是规范正交组。由上式知$$\vec{v}_{j}\in\vspanr{e}{j}$$，再根据归纳假设即得$$\vspanr{v}{j}\subset\vspanr{e}{j}$$，而由于这两个组都是线性无关的（后者根据6.16得到），因此上面两个子空间的维数都是$$j$$，从而一定相等。
 - 6.24：推论：每个有限维内积空间都有规范正交基。证明：直接对该空间的一组基应用格拉姆-施密特过程。因为该空间是有限维的，因此过程会停止并会得到一个规范正交组，根据6.16即得。
 - 6.25：推论：$$V$$中的每个规范正交向量组都可以扩充为$$V$$的规范正交基。证明：先根据2.12将该向量组扩充为$$V$$的基，然后应用格拉姆-施密特过程即得。
 - 6.27：推论：设$$T\in\mathcal{L}(V)$$，如果$$T$$关于$$V$$的某个基具有上三角矩阵，那么$$T$$关于$$V$$的某个规范正交基也具有上三角矩阵。证明：对该具有上三角矩阵的基应用格拉姆-施密特过程得到一组规范正交基，根据5.12(C)知$$T$$关于该组基具有上三角矩阵。

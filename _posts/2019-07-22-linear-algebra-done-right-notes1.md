@@ -76,16 +76,16 @@ tags:
 
 ## （向量的）张成与线性无关
 
-- $$V$$中的一组向量$$(\vec{v}_{1},\cdots,\vec{v}_{m})$$的所有线性组合构成的集合称为$$(\vec{v}_{1},\cdots,\vec{v}_{m})$$的张成（span），记为$$\text{span}(\vec{v}_{1},\cdots,\vec{v}_{m})=\{a_{1}\vec{v}_{1}+\cdots+a_{m}\vec{v}_{m}:a_{1},\cdots,a_{m}\in\mathbf{F}\}$$
+- $$V$$中的一组向量$$(\vec{v}_{1},\cdots,\vec{v}_{m})$$的所有线性组合构成的集合称为$$(\vec{v}_{1},\cdots,\vec{v}_{m})$$的张成（span），记为$$\vspanr{v}{m}=\{a_{1}\vec{v}_{1}+\cdots+a_{m}\vec{v}_{m}:a_{1},\cdots,a_{m}\in\mathbf{F}\}$$
   - 我们人为地令空组$$()$$的张成等于$$\{\vec{0}\}$$。这样，可以验证，$$V$$的任意一组向量的张成都是$$V$$的子空间，且是包含该组向量的最小子空间
-  - 如果$$V=\text{span}(\vec{v}_{1},\cdots,\vec{v}_{m})$$，则称$$(\vec{v}_{1},\cdots,\vec{v}_{m})$$张成$$V$$。
+  - 如果$$V=\vspanr{v}{m}$$，则称$$(\vec{v}_{1},\cdots,\vec{v}_{m})$$张成$$V$$。
   - 如果一个向量空间可以由它的一组（有限个）向量张成，则称其为有限维的（finite dimensional）（注意这里“有限”并不是指每个向量里的元素个数有限，例如$$\mathbf{F}_{x}^{\infty}=\{(x,x,\cdots),x\in \mathbf{F}\}$$是有限维（一维）的，但$$\mathbf{F}^{\infty}$$不是有限维的）
 - 对于$$V$$中的一组向量$$(\vec{v}_{1},\cdots,\vec{v}_{m})$$，如果使得$$a_{1}\vec{v}_{1}+\cdots+a_{m}\vec{v}_{m}=0$$的$$a_{1},\cdots,a_{m}\in\mathbf{F}$$只有$$a_{1}=\cdots=a_{m}=0$$，则称$$(\vec{v}_{1},\cdots,\vec{v}_{m})$$是线性无关的（linearly independent）
-  - 易证$$(\vec{v}_{1},\cdots,\vec{v}_{m})$$是线性无关的当且仅当$$\text{span}(\vec{v}_{1},\cdots,\vec{v}_{m})$$中的每个向量都可以唯一地表示成$$(\vec{v}_{1},\cdots,\vec{v}_{m})$$的线性组合
+  - 易证$$(\vec{v}_{1},\cdots,\vec{v}_{m})$$是线性无关的当且仅当$$\vspanr{v}{m}$$中的每个向量都可以唯一地表示成$$(\vec{v}_{1},\cdots,\vec{v}_{m})$$的线性组合
   - 我们人为地令空组$$()$$是线性无关的。这样可以证明，如果从一个线性无关向量组中去掉一些向量，那么余下的向量组还是线性无关的。
 - 线性相关引理：如果$$(\vec{v}_{1},\cdots,\vec{v}_{m})$$在$$V$$中是线性相关的，并且$$\vec{v}_{1}\ne\vec{0}$$，则有$$j\in\{2,\cdots,m\}$$使得下列成立：
-  - $$\vec{v}_{j}\in\text{span}(\vec{v}_{1},\cdots,\vec{v}_{m})$$（用张成的定义来证）
-  - 如果从$$(\vec{v}_{1},\cdots,\vec{v}_{m})$$中去掉第$$j$$项，则剩余组的张成等于$$\text{span}(\vec{v}_{1},\cdots,\vec{v}_{m})$$
+  - $$\vec{v}_{j}\in\vspanr{v}{m}$$（用张成的定义来证）
+  - 如果从$$(\vec{v}_{1},\cdots,\vec{v}_{m})$$中去掉第$$j$$项，则剩余组的张成等于$$\vspanr{v}{m}$$
 - 2.6定理：在有限维向量空间中，线性无关向量组的长度小于或等于张成向量组的长度。证明很不优美，要用上面的线性相关引理，从$$(\vec{w}_{1},\cdots,\vec{w}_{n})$$开始，每次往里面添加一个$$\vec{u}_{j}$$，然后根据线性相关引理可以删除一个$$\vec{w}$$，然后归纳法直至添加了所有的$$\vec{u}$$
 - 2.7命题：有限维向量空间的子空间都是有限维的。证明：从$$\{\vec{0}\}$$开始，不断往里面添加不能由已有向量线性组合而成的向量，这个过程一定会停止，因为每次得到的组是一个线性无关组且其长度不会比$$V$$的任何张成组长（定理2.6）。
 
@@ -299,7 +299,7 @@ tags:
   - 注意：同一个本征值可以有多于一个不同的且线性无关的本征向量。如$$I$$的本征值为1，但$$\mathbf{R}^{2}$$上的$$I$$就有两个不同的本征向量$$(0,1)$$和$$(1,0)$$。
   - 例子：对于算子$$T\in\mathcal{L}(\mathbf{F}^{2}),T(\vec{w},\vec{z})=(-\vec{z},\vec{w})$$。若$$\mathbf{F}=\mathbf{R}$$，此算子有很好的几何解释（绕$$\mathbf{R}^{2}$$的原点逆时针转$$90^{\circ}$$，易知$$T$$没有本征值。若$$\mathbf{F}=\mathbf{C}$$，$$i$$和$$-i$$都是$$T$$的本征值。
 - 5.6定理：设$$T\in\mathcal{L}(V)$$，$$\lambda_{1},\cdots,\lambda_{m}$$是$$T$$的互不相同的本征值，$$\vec{v}_{1},\cdots,\vec{v}_{m}$$是相应的非零本征向量，则$$(\vec{v}_{1},\cdots,\vec{v}_{m})$$线性无关。
-  - 证明：反证法，设$$k$$是使$$\vec{v}_{k}\in\text{span}(\vec{v}_{1},\cdots,\vec{v}_{k-1})$$成立的最小正整数（由2.4知道这样的$$k$$一定存在），于是有$$\vec{v}_{k}=a_{1}\vec{v}_{1}+\cdots+a_{k-1}\vec{v}_{k-1}$$，然后用该式两端乘以$$\lambda_{k}$$得到的式子减去把$$T$$作用于该等式两端得到的式子，根据$$(\vec{v}_{1},\cdots,\vec{v}_{k-1})$$的线性无关性易知这些$$a$$都是0，从而$$\vec{v}_{k}$$等于$$\vec{0}$$，与特征向量不为零的假设矛盾。
+  - 证明：反证法，设$$k$$是使$$\vec{v}_{k}\in\vspanr{v}{k-1}$$成立的最小正整数（由2.4知道这样的$$k$$一定存在），于是有$$\vec{v}_{k}=a_{1}\vec{v}_{1}+\cdots+a_{k-1}\vec{v}_{k-1}$$，然后用该式两端乘以$$\lambda_{k}$$得到的式子减去把$$T$$作用于该等式两端得到的式子，根据$$(\vec{v}_{1},\cdots,\vec{v}_{k-1})$$的线性无关性易知这些$$a$$都是0，从而$$\vec{v}_{k}$$等于$$\vec{0}$$，与特征向量不为零的假设矛盾。
 - 5.9推论：$$V$$上的每个算子最多有$$\dim V$$个互不相同的本征值。证明：由5.6即得。
 
 ## 多项式对算子的作用
@@ -316,12 +316,12 @@ tags:
 - 一个矩阵称为上三角的，如果位于对角线下方的元素全为0。注意：对角线上的元素是否为0并没有限制。
 - 5.12命题：设$$T\in\mathcal{L}(V)$$，并且$$(\vec{v}_{1},\cdots,\vec{v}_{n})$$是$$V$$的基，则下列等价：
   - (a)$$T$$关于基$$(\vec{v}_{1},\cdots,\vec{v}_{n})$$的矩阵是上三角的
-  - (b)$$T\vec{v}_{k}\in\text{span}(\vec{v}_{1},\cdots,\vec{v}_{k}),k=1,\cdots,n$$
-  - (c)$$\text{span}(\vec{v}_{1},\cdots,\vec{v}_{k})$$在$$T$$下是不变的，$$k=1,\cdots,n$$
+  - (b)$$T\vec{v}_{k}\in\vspanr{v}{k},k=1,\cdots,n$$
+  - (c)$$\vspanr{v}{k}$$在$$T$$下是不变的，$$k=1,\cdots,n$$
 
   证明：显然。
 - 5.13定理：设$$V$$是复向量空间，并设$$T\in\mathcal{L}(V)$$，则$$T$$关于$$V$$的某个基具有上三角矩阵。
-  - 证明：对$$V$$的维数用归纳法。若$$\dim V=1$$结论显然成立。设$$\dim V>1$$，并设对于**所有**维数比$$V$$小的复向量空间结果都成立。设$$\lambda$$是$$T$$的任意本征值（5.10），设$$U=\text{range}(T-\lambda I)$$，由3.21知$$T-\lambda I$$不是满的，故$$\dim U<\dim V$$。通过$$T\vec{u}=(T-\lambda I)\vec{u}+\lambda\vec{u}$$易证$$U$$在$$T$$下是不变的，因此$$T\vert_{U}$$是$$U$$上的算子。由归纳法假设，$$U$$有基$$(\vec{u}_{1},\cdots,\vec{u}_{m})$$使得$$T\vert_{U}$$关于此基有上三角矩阵，因此根据5.12对每个$$j$$都有$$T\vec{u}_{j}=(T\vert_{U})(\vec{u}_{j})\in\text{span}(\vec{u}_{1},\cdots,\vec{u}_{j})$$。把$$(\vec{u}_{1},\cdots,\vec{u}_{m})$$扩充成$$V$$的基$$(\vec{u}_{1},\cdots,\vec{u}_{m},\vec{v}_{1},\cdots,\vec{v}_{n})$$，则对每个$$k$$都有$$T\vec{v}_{k}=(T-\lambda I)\vec{v}_{k}+\lambda\vec{v}_{k}$$，其中第一项$$\in U=\text{span}(\vec{u}_{1},\cdots,\vec{u}_{m})$$，因此$$T\vec{v}_{k}=\text{span}(\vec{u}_{1},\cdots,\vec{u}_{m},\vec{v}_{1},\cdots,\vec{v}_{n})$$，而由5.12知$$T$$关于基$$(\vec{u}_{1},\cdots,\vec{u}_{m},\vec{v}_{1},\cdots,\vec{v}_{n})$$有上三角矩阵。
+  - 证明：对$$V$$的维数用归纳法。若$$\dim V=1$$结论显然成立。设$$\dim V>1$$，并设对于**所有**维数比$$V$$小的复向量空间结果都成立。设$$\lambda$$是$$T$$的任意本征值（5.10），设$$U=\text{range}(T-\lambda I)$$，由3.21知$$T-\lambda I$$不是满的，故$$\dim U<\dim V$$。通过$$T\vec{u}=(T-\lambda I)\vec{u}+\lambda\vec{u}$$易证$$U$$在$$T$$下是不变的，因此$$T\vert_{U}$$是$$U$$上的算子。由归纳法假设，$$U$$有基$$(\vec{u}_{1},\cdots,\vec{u}_{m})$$使得$$T\vert_{U}$$关于此基有上三角矩阵，因此根据5.12对每个$$j$$都有$$T\vec{u}_{j}=(T\vert_{U})(\vec{u}_{j})\in\vspanr{u}{j}$$。把$$(\vec{u}_{1},\cdots,\vec{u}_{m})$$扩充成$$V$$的基$$(\vec{u}_{1},\cdots,\vec{u}_{m},\vec{v}_{1},\cdots,\vec{v}_{n})$$，则对每个$$k$$都有$$T\vec{v}_{k}=(T-\lambda I)\vec{v}_{k}+\lambda\vec{v}_{k}$$，其中第一项$$\in U=\vspanr{u}{m}$$，因此$$T\vec{v}_{k}=\vspan{\vec{u}_{1},\cdots,\vec{u}_{m},\vec{v}_{1},\cdots,\vec{v}_{n}}$$，而由5.12知$$T$$关于基$$(\vec{u}_{1},\cdots,\vec{u}_{m},\vec{v}_{1},\cdots,\vec{v}_{n})$$有上三角矩阵。
 - 5.16命题：设$$T\in\mathcal{L}(V)$$关于$$V$$的某个基有上三角矩阵，则$$T$$可逆当且仅当这个上三角矩阵对角线上的元素都不是0。
   - 证明：只需证明等价命题：$$T$$不可逆当且仅当某个元素是0。设$$(\vec{v}_{1},\cdots,\vec{v}_{n})$$是$$V$$的基使$$T$$关于此基有上三角矩阵。
 
@@ -336,8 +336,8 @@ tags:
     \right]
     $$
 
-    - <=方向：若$$\lambda_{1}=0$$则$$T\vec{v}_{1}=\vec{0}$$，故$$T$$不可逆。否则设$$\lambda_{k}=0,1\lt k\le n$$，由5.17，$$T\vec{v}_{k}\in\text{span}(\vec{v}_{1},\cdots,\vec{v}_{k-1})$$，根据3.5，存在非零向量$$\vec{v}\in\text{span}(\vec{v}_{1},\cdots,\vec{v}_{k})$$使得$$T\vec{v}=0$$，故$$T$$不可逆。
-    - =>方向：假设$$T$$不可逆，因此它不是单的且有非零向量$$\vec{v}\in V$$使得$$\vec{0}=T\vec{v}=T(a_{1}\vec{v}_{1}+\cdots+a_{k}\vec{v}_{k})=(a_{1}T\vec{v}_{1}+\cdots+a_{k-1}T\vec{v}_{k-1})+a_{k}T\vec{v}_{k};a_{1},\cdots,a_{k}\in\mathbf{F};a_{k}\ne0$$（把$$\vec{v}$$表示成基的线性组合然后取$$k$$是系数不为0的最大下标）。最后那个括号中的向量含于$$\text{span}(\vec{v}_{1},\cdots,\vec{v}_{k-1})$$（因为$$T$$关于该基的矩阵是上三角的，5.12），于是$$a_{k}T\vec{v}_{k}$$从而$$T\vec{v}_{k}$$也含于$$\text{span}(\vec{v}_{1},\cdots,\vec{v}_{k-1})$$，于是若把$$T\vec{v}_{k}$$写成基$$(\vec{v}_{1},\cdots,\vec{v}_{n})$$的线性组合，则$$\vec{v}_{k}$$的系数即$$\lambda_{k}$$是0。
+    - <=方向：若$$\lambda_{1}=0$$则$$T\vec{v}_{1}=\vec{0}$$，故$$T$$不可逆。否则设$$\lambda_{k}=0,1\lt k\le n$$，由5.17，$$T\vec{v}_{k}\in\vspanr{v}{k-1}$$，根据3.5，存在非零向量$$\vec{v}\in\vspanr{v}{k}$$使得$$T\vec{v}=0$$，故$$T$$不可逆。
+    - =>方向：假设$$T$$不可逆，因此它不是单的且有非零向量$$\vec{v}\in V$$使得$$\vec{0}=T\vec{v}=T(a_{1}\vec{v}_{1}+\cdots+a_{k}\vec{v}_{k})=(a_{1}T\vec{v}_{1}+\cdots+a_{k-1}T\vec{v}_{k-1})+a_{k}T\vec{v}_{k};a_{1},\cdots,a_{k}\in\mathbf{F};a_{k}\ne0$$（把$$\vec{v}$$表示成基的线性组合然后取$$k$$是系数不为0的最大下标）。最后那个括号中的向量含于$$\vspanr{v}{k-1}$$（因为$$T$$关于该基的矩阵是上三角的，5.12），于是$$a_{k}T\vec{v}_{k}$$从而$$T\vec{v}_{k}$$也含于$$\vspanr{v}{k-1}$$，于是若把$$T\vec{v}_{k}$$写成基$$(\vec{v}_{1},\cdots,\vec{v}_{n})$$的线性组合，则$$\vec{v}_{k}$$的系数即$$\lambda_{k}$$是0。
 - 5.18命题：设$$T\in\mathcal{L}(V)$$关于$$V$$的某个基有上三角矩阵，则这个上三角矩阵对角线上的元素恰好是$$T$$的所有本征值。
   - 证明：设$$T$$关于某个基有上三角矩阵$$\mathcal{M}(T)$$，设$$\lambda\in\mathbf{F}$$，则矩阵$$\mathcal{M}(T-\lambda I)$$也是一个上三角矩阵且对角线上元素为$$\lambda_{k}-\lambda$$。根据5.16，$$T-\lambda I$$不可逆（即其不是单的，即存在非零向量被其映成零向量）当且仅当$$\lambda$$等于某个$$\lambda_{j}$$，即$$\lambda$$是$$T$$的本征值当且仅当$$\lambda$$等于某个$$\lambda_{j}$$。
 
@@ -354,16 +354,16 @@ tags:
   - (d)$$V=\text{null}(T-\lambda_{1}I)\oplus\cdots\oplus\text{null}(T-\lambda_{m}I)$$
   - (e)$$\dim V=\dim\text{null}(T-\lambda_{1}I)+\cdots+\dim\text{null}(T-\lambda_{m}I)$$
 
-  证明：(a)和(b)等价已在之前说明。(b)=>(c)可令$$U_{j}=\text{span}(\vec{v}_{j})$$，其中$$\vec{v}_{j}$$是$$T$$的其中一个本征向量。(c)=>(b)对每个$$\vec{v}_{j}\in U_{j}$$，它都是$$T$$的本征向量，又由直和的条件易知$$(\vec{v}_{1},\cdots,\vec{v}_{n})$$是$$V$$的基，即得。(b)=>(d)易知$$V$$中每个向量都是$$T$$的本征向量的线性组合，故$$V=\text{null}(T-\lambda_{1}I)+\cdots+\text{null}(T-\lambda_{m}I)$$，现只需证明这个和是直和；对于任意$$\vec{u}_{j}\in\text{null}(T-\lambda_{j}I)$$，要使$$\vec{0}=\vec{u}_{1}+\cdots+\vec{u}_{m}$$成立，它们只能全都等于0（根据5.6），从而前述的和是直和。(d)=>(e)由第二章习题17即得。(e)=>(b)在每个$$\text{null}(T-\lambda_{j}I)$$中取一个基，全部这些基组成$$T$$的一组本征向量$$(\vec{v}_{1},\cdots,\vec{v}_{n})$$，由(e)的条件知道$$n=\dim V$$，现要证它们线性无关，即$$a_{1}\vec{v}_{1}+\cdots+a_{n}\vec{v}_{n}=\vec{0}$$的所有$$a$$都是$$0$$，只需对它们分组然后用5.6知每组都是$$\vec{0}$$，而每组内的$$\vec{v}_{k}$$是$$\text{null}(T-\lambda_{j}I)$$的基从而所有$$a_{k}$$都是0，即得。
+  证明：(a)和(b)等价已在之前说明。(b)=>(c)可令$$U_{j}=\vspan{\vec{v}_{j}}$$，其中$$\vec{v}_{j}$$是$$T$$的其中一个本征向量。(c)=>(b)对每个$$\vec{v}_{j}\in U_{j}$$，它都是$$T$$的本征向量，又由直和的条件易知$$(\vec{v}_{1},\cdots,\vec{v}_{n})$$是$$V$$的基，即得。(b)=>(d)易知$$V$$中每个向量都是$$T$$的本征向量的线性组合，故$$V=\text{null}(T-\lambda_{1}I)+\cdots+\text{null}(T-\lambda_{m}I)$$，现只需证明这个和是直和；对于任意$$\vec{u}_{j}\in\text{null}(T-\lambda_{j}I)$$，要使$$\vec{0}=\vec{u}_{1}+\cdots+\vec{u}_{m}$$成立，它们只能全都等于0（根据5.6），从而前述的和是直和。(d)=>(e)由第二章习题17即得。(e)=>(b)在每个$$\text{null}(T-\lambda_{j}I)$$中取一个基，全部这些基组成$$T$$的一组本征向量$$(\vec{v}_{1},\cdots,\vec{v}_{n})$$，由(e)的条件知道$$n=\dim V$$，现要证它们线性无关，即$$a_{1}\vec{v}_{1}+\cdots+a_{n}\vec{v}_{n}=\vec{0}$$的所有$$a$$都是$$0$$，只需对它们分组然后用5.6知每组都是$$\vec{0}$$，而每组内的$$\vec{v}_{k}$$是$$\text{null}(T-\lambda_{j}I)$$的基从而所有$$a_{k}$$都是0，即得。
 
 ## 实向量空间的不变子空间
 
 - 5.24定理：在有限维非零实向量空间中，每个算子都有1维或2维的不变子空间。
-  - 证明：设$$V$$是$$n>0$$维实向量空间，$$T\in\mathcal{L}(V)$$，取$$\vec{v}\in V,\vec{v}\ne0$$，由$$n+1$$个向量的线性相关性知存在不全为零的实数$$a_{0},\cdots,a_{n}$$使得$$\vec{0}=a_{0}\vec{v}+a_{1}T\vec{v}+\cdots+a_{n}T^{n}\vec{v}$$，根据4.14可以作分解$$\vec{0}=c(T-\lambda_{1}I)\cdots(T-\lambda_{m}I)(T^{2}+\alpha_{1}T+\beta_{1}I)\cdots(T^{2}+\alpha_{M}T+\beta_{M}I)\vec{v}$$，这意味着至少有一个$$j$$使得$$T-\lambda_{j}I$$不是单的或者$$(T^{2}+\alpha_{j}T+\beta_{j}I)$$不是单的。若是前者，则$$T$$有1维不变子空间。若是后者，则存在$$\vec{u}\in V, \vec{u}\ne\vec{0}$$，我们考虑$$\text{span}(\vec{u},T\vec{u})$$的一个典型元素$$a\vec{u}+bT\vec{u};a,b\in\mathbf{R}$$，对其应用$$T$$并且条件$$T^{2}\vec{u}+\alpha_{j}T\vec{u}+\beta_{j}\vec{u}=\vec{0}$$知$$T(a\vec{u}+bT\vec{u})\in\text{span}(\vec{u},T\vec{u})$$，于是$$\text{span}(\vec{u},T\vec{u})$$在$$T$$下不变。
+  - 证明：设$$V$$是$$n>0$$维实向量空间，$$T\in\mathcal{L}(V)$$，取$$\vec{v}\in V,\vec{v}\ne0$$，由$$n+1$$个向量的线性相关性知存在不全为零的实数$$a_{0},\cdots,a_{n}$$使得$$\vec{0}=a_{0}\vec{v}+a_{1}T\vec{v}+\cdots+a_{n}T^{n}\vec{v}$$，根据4.14可以作分解$$\vec{0}=c(T-\lambda_{1}I)\cdots(T-\lambda_{m}I)(T^{2}+\alpha_{1}T+\beta_{1}I)\cdots(T^{2}+\alpha_{M}T+\beta_{M}I)\vec{v}$$，这意味着至少有一个$$j$$使得$$T-\lambda_{j}I$$不是单的或者$$(T^{2}+\alpha_{j}T+\beta_{j}I)$$不是单的。若是前者，则$$T$$有1维不变子空间。若是后者，则存在$$\vec{u}\in V, \vec{u}\ne\vec{0}$$，我们考虑$$\vspan{\vec{u},T\vec{u}}$$的一个典型元素$$a\vec{u}+bT\vec{u};a,b\in\mathbf{R}$$，对其应用$$T$$并且条件$$T^{2}\vec{u}+\alpha_{j}T\vec{u}+\beta_{j}\vec{u}=\vec{0}$$知$$T(a\vec{u}+bT\vec{u})\in\vspan{\vec{u},T\vec{u}}$$，于是$$\vspan{\vec{u},T\vec{u}}$$在$$T$$下不变。
 - 设$$V=U\oplus W$$，则每个$$\vec{v}\in V$$都可表示为$$\vec{v}=\vec{u}+\vec{w};\vec{u}\in U,\vec{w}\in W$$。定义线性映射$$P_{U,W}\in\mathcal{L}(V)$$为：$$P_{U,W}\vec{v}=\vec{u}$$。这和“投影”类似。性质包括：
   - 对每个$$\vec{v}\in V$$都有$$\vec{v}=P_{U,W}\vec{v}+P_{W,U}\vec{v}$$
   - 多次应用，结果不变：$$P^{2}_{U,W}=P_{U,W}$$
   - $\text{range}P_{U,W}=U$
   - $\text{null}P_{U,W}=W$
 - 5.26定理：在奇数维实向量空间上，每个算子都有本征值。
-  - 证明：对维数用归纳法。若维数为1，显然成立。设$$\dim V>1$$是奇数，且结论对$$\dim V-2$$成立。设$$T\in\mathcal{L}(V)$$，若$$T$$由本征值则证明结束，否则由5.24知$$V$$有在$$T$$下不变的2维子空间$$U$$，由2.13知存在$$V$$的子空间$$W$$使得$$V=U\oplus W$$。注意不能直接对$$W$$和$$T\vert W$$用归纳法因为$$W$$可能不是在$$T$$下不变的。定义$$S\in\mathcal{L}(W)$$为$$S\vec{w}=P_{W,U}(T\vec{w}),\vec{w}\in W$$。由归纳法假设$$S$$有一个本征值$$\lambda$$，其对应的非零本征向量为$$\vec{w}\in W$$。如果$$\vec{w}$$是$$T$$的相应于本征值$$\lambda$$的本征向量，则证明结束。否则考虑$$U+\text{span}(\vec{w})$$中的一个典型向量$$\vec{u}+a\vec{w}$$，易得$$(T-\lambda I)(\vec{u}+a\vec{w})=T\vec{u}-\lambda\vec{u}+aP_{U,W}(T\vec{w})\in U$$，因此$$T-\lambda I$$把$$U+\text{span}(\vec{w})$$映到$$U$$内。由于$$U+\text{span}(\vec{w})$$的维数比$$U$$的维数大，故$$(T-\lambda I)\vert_{U+\text{span}(\vec{w})}$$不是单的（3.5），于是$$T$$有本征值。
+  - 证明：对维数用归纳法。若维数为1，显然成立。设$$\dim V>1$$是奇数，且结论对$$\dim V-2$$成立。设$$T\in\mathcal{L}(V)$$，若$$T$$由本征值则证明结束，否则由5.24知$$V$$有在$$T$$下不变的2维子空间$$U$$，由2.13知存在$$V$$的子空间$$W$$使得$$V=U\oplus W$$。注意不能直接对$$W$$和$$T\vert W$$用归纳法因为$$W$$可能不是在$$T$$下不变的。定义$$S\in\mathcal{L}(W)$$为$$S\vec{w}=P_{W,U}(T\vec{w}),\vec{w}\in W$$。由归纳法假设$$S$$有一个本征值$$\lambda$$，其对应的非零本征向量为$$\vec{w}\in W$$。如果$$\vec{w}$$是$$T$$的相应于本征值$$\lambda$$的本征向量，则证明结束。否则考虑$$U+\vspan{\vec{w}}$$中的一个典型向量$$\vec{u}+a\vec{w}$$，易得$$(T-\lambda I)(\vec{u}+a\vec{w})=T\vec{u}-\lambda\vec{u}+aP_{U,W}(T\vec{w})\in U$$，因此$$T-\lambda I$$把$$U+\vspan{\vec{w}}$$映到$$U$$内。由于$$U+\vspan{\vec{w}}$$的维数比$$U$$的维数大，故$$(T-\lambda I)\vert_{U+\vspan{\vec{w}}}$$不是单的（3.5），于是$$T$$有本征值。
