@@ -37,7 +37,11 @@
           du: "{\\mathrm{d}u }",
           dv: "{\\mathrm{d}v }",
           pd: "{\\partial }",
-          xitoj: ["{x_{#1}, \\cdots, x_{#2}}", 2],
+          range: ["{ {#1}_{#2}, \\cdots, {#1}_{#3} }", 3],  // e.g. x1,...,xn
+          dd: ["{\\frac{\\d #1}{\\d #2}}", 2],  // fractional derivatives
+          pdd: ["{\\frac{\\pd #1}{\\pd #2}}", 2],  // fractional partial derivatives
+          vec: ["{\\boldsymbol{#1}}", 1],  // vector
+          vip: ["{\\langle #1\\rangle}", 1],  // vector inner product
         }
       },
       options: {
