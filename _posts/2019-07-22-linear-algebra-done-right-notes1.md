@@ -23,12 +23,12 @@ tags:
   - 乘法逆：由$$(a+bi)(a-bi)=a^{2}+b^{2}$$知道$$a+bi$$的逆为$$\frac{a-bi}{a^{2}+b^{2}}$$
 - 复数$$z=a+bi$$，实部$$\text{Re }z$$，虚部$$\text{Im }z$$
 - 复共轭定义为：$$\overline{z}=\text{Re }z-(\text{Im }z)i$$
-- 绝对值定义为$$\vert z \vert=\sqrt{(\text{Re }z)^{2}+(\text{Im }z)^{2}}$$
+- 绝对值定义为$$\abs{z}=\sqrt{(\text{Re }z)^{2}+(\text{Im }z)^{2}}$$
 - 一些性质：
-  - $z\overline{z}=\vert z \vert^{2}$
+  - $z\overline{z}=\abs{z}^{2}$
   - $\overline{w+z}=\overline{w}+\overline{z}$
   - $\overline{wz}=\overline{w}\text{ }\overline{z}$
-  - $\vert wz \vert=\vert w \vert\vert z \vert$（通过上述第一式和第三式得到）
+  - $\abs{wz}=\abs{w}\abs{z}$（通过上述第一式和第三式得到）
 
 
 # 第一章 向量空间
@@ -278,7 +278,7 @@ tags:
 
 - 4.10命题：设$$p$$是实系数多项式，如果$$\lambda\in\mathbf{C}$$是$$p$$的根，则$$\overline{\lambda}$$也是$$p$$的根。证明：对$$a_{0}+a_{1}\lambda+\cdots+a_{m}\lambda^{m}=0$$两端取复共轭即得（要用到$$\overline{wz}=\overline{w}\text{ }\overline{z}$$）。
 - 4.14定理：如果$$p\in\mathcal{P}(\mathbf{R})$$是非常数多项式，则$$p$$可以唯一（除因子的次序之外）分解成如下形式$$p(x)=c(x-\lambda_{1})\cdots(x-\lambda_{m})(x^{2}+\alpha_{1}x+\beta_{1})\cdots(x^{2}+\alpha_{M}x+\beta_{M})$$，其中$$c,\list{\lambda}{m}\in\mathbf{R},(\alpha_{1},\beta_{1}),\cdots,(\alpha_{M},\beta_{M})\in\mathbf{R}^{2}$$，并且对每个$$j$$都有$$\alpha_{j}^{2}<4\beta_{j}$$
-  - 证明：就是用4.8和4.10。其中要注意的问题是，如果$$\lambda$$是一个非实数的复根，则根据4.10，$$\overline{\lambda}$$也是一个复根，但4.10并未说明这两个根的次数相同。解决办法是由$$p(x)=(x-\lambda)(x-\overline{\lambda})q(x)$$得$$q(x)=\frac{p(x)}{x^{2}-2(\text{Re }\lambda)x+\vert \lambda \vert^{2}}$$，可知对任何$$x\in\mathbf{R}$$都有$$q(x)\in\mathbf{R}$$，这样若把$$q$$写成$$q(x)=a_{0}+a_{1}x+\cdots+a_{n-1}x^{n-1}$$可看到$$0=\text{Im }q(x)=(\text{Im }a_{0})+(\text{Im }a_{1})x+\cdots+(\text{Im }a_{n-2})x^{n-2}$$，然后由4.4证明这些虚部都是0。最后，唯一性用4.8来证。
+  - 证明：就是用4.8和4.10。其中要注意的问题是，如果$$\lambda$$是一个非实数的复根，则根据4.10，$$\overline{\lambda}$$也是一个复根，但4.10并未说明这两个根的次数相同。解决办法是由$$p(x)=(x-\lambda)(x-\overline{\lambda})q(x)$$得$$q(x)=\frac{p(x)}{x^{2}-2(\text{Re }\lambda)x+\abs{\lambda}^{2}}$$，可知对任何$$x\in\mathbf{R}$$都有$$q(x)\in\mathbf{R}$$，这样若把$$q$$写成$$q(x)=a_{0}+a_{1}x+\cdots+a_{n-1}x^{n-1}$$可看到$$0=\text{Im }q(x)=(\text{Im }a_{0})+(\text{Im }a_{1})x+\cdots+(\text{Im }a_{n-2})x^{n-2}$$，然后由4.4证明这些虚部都是0。最后，唯一性用4.8来证。
 
 # 第五章 本征值与本征向量
 

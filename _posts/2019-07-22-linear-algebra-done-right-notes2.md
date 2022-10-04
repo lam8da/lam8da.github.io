@@ -35,13 +35,13 @@ tags:
 - 内积空间是带有内积的向量空间。例子：
   - $$\mathbf{F}^{n}$$，内积定义为$$\iprod{(\list{w}{n})}{(\list{z}{n})}=w_{1}\overline{z_{1}}+\cdots+w_{n}\overline{z_{n}}$$（这称为欧几里得内积）
   - 同样为$$\mathbf{F}^{n}$$，但用另一个内积：若$$\list{c}{n}$$是正数，定义内积$$\iprod{(\list{w}{n})}{(\list{z}{n})}=c_{1}w_{1}\overline{z_{1}}+\cdots+c_{n}w_{n}\overline{z_{n}}$$
-  - 由系数在$$\mathbf{F}$$中次数不超过$$m$$的所有多项式组成的向量空间$$\mathcal{P}_{m}(\mathbf{F})$$，定义内积$$\iprod{ p}{q}=\int_{0}^{1}p(x)\overline{q(x)}\mathrm{d}x$$
+  - 由系数在$$\mathbf{F}$$中次数不超过$$m$$的所有多项式组成的向量空间$$\mathcal{P}_{m}(\mathbf{F})$$，定义内积$$\iprod{ p}{q}=\int_{0}^{1}p(x)\overline{q(x)}\dx$$
 
 ## 范数
 
 - 范数定义为$$\| \vec{v}\|=\sqrt{\viprod{v}{v}}$$。性质：
   - $$\| \vec{v}\|=0$$当且仅当$$\vec{v}=0$$
-  - 对所有$$a\in\mathbf{F}, \vec{v}\in V$$都有$$\| a\vec{v}\|=\vert a\vert\| \vec{v}\|$$（两边平方即可证）
+  - 对所有$$a\in\mathbf{F}, \vec{v}\in V$$都有$$\| a\vec{v}\|=\abs{a}\norm{\vec{v}}$$（两边平方即可证）
 - 对于两个向量$$\vec{u},\vec{v}\in V$$，如果$$\viprod{u}{v}=0$$，则称$$\vec{u}$$和$$\vec{v}$$是正交的
   - 注意次序无关紧要（由共轭对称性）
   - $$\vec{0}$$正交于每个向量，且$$\vec{0}$$是唯一正交于自身的向量。
@@ -55,14 +55,14 @@ tags:
 - 6.6：柯西-施瓦茨不等式（Cauchy-Schwarz Inequality）：若$$\vec{u},\vec{v}\in V$$，则
 
   $$
-  \vert \viprod{u}{v}\vert\le\| \vec{u}\|\| \vec{v}\|
+  \abs{\viprod{u}{v}}\le\| \vec{u}\|\| \vec{v}\|
   $$
 
   而且其中的等号成立当且仅当$$\vec{u},\vec{v}$$之一是另一个的标量倍。
   - 证明：设$$\vec{v}\ne\vec{0}$$（否则等号成立），然后用上述正交分解。令$$\vec{w}$$等于右端第二项，则由勾股定理有：
 
     $$
-    \| \vec{u}\|^{2}=\left\| \frac{\viprod{u}{v}}{\| \vec{v}\|^{2}}\vec{v}\right\|^{2}+\| \vec{w}\|^{2}=\frac{\vert\viprod{u}{v}\vert^{2}}{\|\vec{v}\|^{2}}+\|\vec{w}\|^{2}\ge\frac{\vert \viprod{u}{v}\vert^{2}}{\|\vec{v}\|^{2}}
+    \| \vec{u}\|^{2}=\left\| \frac{\viprod{u}{v}}{\| \vec{v}\|^{2}}\vec{v}\right\|^{2}+\| \vec{w}\|^{2}=\frac{\abs{\viprod{u}{v}}^{2}}{\|\vec{v}\|^{2}}+\|\vec{w}\|^{2}\ge\frac{\abs{\viprod{u}{v}}^{2}}{\|\vec{v}\|^{2}}
     $$
 
     其中第二个等号成立是由于上面范数的第二个性质。然后再移项取平方根即得该不等式。从上式知等号成立当且仅当$$\vec{w}=\vec{0}$$，而由6.5知这成立当且仅当$$\vec{u}$$和$$\vec{v}$$的一个是另一个的标量倍。证毕。
@@ -70,7 +70,7 @@ tags:
   - 证明：展开可得：
 
     $$
-    \|\vec{u}+\vec{v}\|=\|\vec{u}\|^{2}+\|\vec{v}\|^{2}+2\text{Re}\viprod{u}{v}\le \|\vec{u}\|^{2}+\|\vec{v}\|^{2}+2\vert \viprod{u}{v}\vert \le\|\vec{u}\|^{2}+\|\vec{v}\|^{2}+2\|\vec{u}\|\|\vec{v}\|=(\|\vec{u}\|+\|\vec{v}\|)^{2}
+    \|\vec{u}+\vec{v}\|=\|\vec{u}\|^{2}+\|\vec{v}\|^{2}+2\text{Re}\viprod{u}{v}\le \|\vec{u}\|^{2}+\|\vec{v}\|^{2}+2\abs{\viprod{u}{v}} \le\|\vec{u}\|^{2}+\|\vec{v}\|^{2}+2\|\vec{u}\|\|\vec{v}\|=(\|\vec{u}\|+\|\vec{v}\|)^{2}
     $$
 
     根据6.6，第二个小于等于号中的等号成立当且仅当$$\vec{u},\vec{v}$$之一是另一个的标量倍，而当该条件成立时第一个小于等于号中的等号也成立（该条件是充分非必要，就是说第一个小于等于号中的等号成立还可能是由于其他原因，但这已经足够），即得。
@@ -80,11 +80,11 @@ tags:
 ## 规范正交基
 
 - 规范正交性：若一个向量组中的向量两两正交，并且每个向量的范数都是1，则称这个向量组是规范正交的。
-- 6.15：如果$$V$$中的向量组$$(\vlist{e}{m})$$是规范正交的，那么$$\|a_{1}\vec{e}_{1}+\cdots+a_{m}\vec{e}_{m}\|^{2}=\vert a_{1}\vert^{2}+\cdots+\vert a_{m}\vert^{2}$$，其中$$\list{a}{m}\in\mathbf{F}$$。证明：反复使用勾股定理6.3以及上述范数的第二个性质即得。
+- 6.15：如果$$V$$中的向量组$$(\vlist{e}{m})$$是规范正交的，那么$$\|a_{1}\vec{e}_{1}+\cdots+a_{m}\vec{e}_{m}\|^{2}=\abs{a_{1}}^{2}+\cdots+\abs{a_{m}}^{2}$$，其中$$\list{a}{m}\in\mathbf{F}$$。证明：反复使用勾股定理6.3以及上述范数的第二个性质即得。
 - 6.16：推论：每个规范正交向量组都是线性无关的。证明：用线性无关的定义（若存在一组标量使该规范正交向量组和这组标量对应项的积的和为0，那么这组标量全为0），根据6.15即得。
 - 6.17：定理：设$$(\vlist{e}{n})$$是$$V$$的规范正交基，则对每个$$\vec{v}\in V$$都有：
   - 6.18：$$\vec{v}=\iprod{\vec{v}}{\vec{e}_{1}}\vec{e}_{1}+\cdots+\iprod{\vec{v}}{\vec{e}_{n}}\vec{e}_{n}$$，而且
-  - 6.19：$$\|\vec{v}\|^{2}=\vert \iprod{\vec{v}}{\vec{e}_{1}}\vert^{2}+\cdots+\vert \iprod{\vec{v}}{\vec{e}_{n}}\vert^{2}$$
+  - 6.19：$$\|\vec{v}\|^{2}=\abs{\iprod{\vec{v}}{\vec{e}_{1}}}^{2}+\cdots+\abs{\iprod{\vec{v}}{\vec{e}_{n}}}^{2}$$
   - 证明：对等式$$\vec{v}=a_{1}\vec{e}_{1}+\cdots+a_{n}\vec{e}_{n}$$两端都与$$\vec{e}_{j}$$做内积，即得$$\iprod{\vec{v}}{\vec{e}_{j}}=a_{j}$$，即6.18成立。又由6.15即得6.19。
 - 6.20：格拉姆-施密特过程（Gram-Schmidt procedure）：如果$$(\vlist{v}{m})$$是$$V$$中的线性无关向量组，则$$V$$有规范正交向量组$$(\vlist{e}{m})$$使得：
 
@@ -142,11 +142,11 @@ tags:
     $$
 
     其中第一个等号是根据勾股定理。即得。
-  - 例子：如何找到一个次数不超过5的实系数多项式$$\vec{u}$$使其在区间$$[-\pi,\pi]$$上尽量好地逼近$$\sin x$$，即$$\int_{-\pi}^{\pi}\vert\sin x-\vec{u}(x)\vert^{2}\mathrm{d}x$$最小
+  - 例子：如何找到一个次数不超过5的实系数多项式$$\vec{u}$$使其在区间$$[-\pi,\pi]$$上尽量好地逼近$$\sin x$$，即$$\int_{-\pi}^{\pi}\abs{\sin x-\vec{u}(x)}^{2}\dx$$最小
     - 解：令$$C[-\pi,\pi]$$表示由$$[-\pi,\pi]$$上的连续实值函数组成的实向量空间（注意这个空间不是有限维的），并取内积为：
 
       $$
-      \iprod{ f}{g}=\int_{-\pi}^{\pi}f(x)g(x)\mathrm{d}x
+      \iprod{ f}{g}=\int_{-\pi}^{\pi}f(x)g(x)\dx
       $$
 
       设$$\vec{v}\in C[-\pi,\pi]$$是由$$\vec{v}(x)=\sin x$$定义的函数，令$$U$$表示由次数不超过5的实系数多项式组成的$$C[-\pi,\pi]$$的子空间，则问题可以重述为：求$$\vec{u}\in U$$使得$$\|\vec{v}-\vec{u}\|$$最小。根据6.36要求的$$\vec{u}$$就是$$P_{U}\vec{v}$$，而这可以先找$$U$$的一组规范正交基然后根据6.35来求，而规范正交基可以对$$U$$的基$$(1,x,x^{2},x^{3},x^{4},x^{5})$$应用格拉姆-施密特过程得到。
