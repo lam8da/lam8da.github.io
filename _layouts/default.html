@@ -41,8 +41,9 @@
           dd: ["{\\frac{\\d #1}{\\d #2}}", 2],  // fractional derivatives
           pdd: ["{\\frac{\\pd #1}{\\pd #2}}", 2],  // fractional partial derivatives
           vec: ["{\\boldsymbol{#1}}", 1],  // vector
+          inprod: ["{\\langle #1, #2\\rangle}", 2],  // inner product
+          vinprod: ["{ \\inprod{\\vec{#1} }{\\vec{#2} } }", 2],  // vector inner product
           vlist: ["{\\vec{#1}_{1},\\cdots,\\vec{#1}_{2}}", 2],  // a list of vectors
-          vip: ["{\\langle #1\\rangle}", 1],  // vector inner product
           vspan: ["\\text{span}(#1)", 1],  // span of a list of vectors
           vspanr: ["\\vspan{\\vlist{#1}{#2}}", 2],  // span of a list of vectors
         }
