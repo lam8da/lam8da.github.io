@@ -23,11 +23,8 @@
           NN: "{\\mathbb{N}}",
           QQ: "{\\mathbb{Q}}",
           RR: "{\\mathbb{R}}",
-          abs: ["{\\vert #1 \\vert }", 1],
-          absB: ["{\\big\\vert #1 \\big\\vert }", 1],
-          absBB: ["{\\Big\\vert #1 \\Big\\vert }", 1],
-          absBBB: ["{\\bigg\\vert #1 \\bigg\\vert }", 1],
-          absBBBB: ["{\\Bigg\\vert #1 \\Bigg\\vert }", 1],
+          abs: ["{\\left\\lvert #1 \\right\\rvert}", 1],
+          norm: ["{\\left\\lVert #1 \\right\\rVert}", 1],
           d: "{\\mathrm{d} }",
           dx: "{\\d x}",
           dy: "{\\d y}",
@@ -36,13 +33,13 @@
           dt: "{\\d t}",
           du: "{\\d u}",
           dv: "{\\d v}",
-          pd: "{\\partial }",
+          pd: "{\\partial}",
           list: ["{ {#1}_{1},\\cdots,{#1}_{#2} }", 2],  // e.g. x1,...,xn
           dd: ["{\\frac{\\d #1}{\\d #2}}", 2],  // fractional derivatives
           pdd: ["{\\frac{\\pd #1}{\\pd #2}}", 2],  // fractional partial derivatives
           // vector calculus
           vec: ["{\\boldsymbol{#1}}", 1],  // vector
-          iprod: ["{\\langle #1, #2\\rangle}", 2],  // inner product
+          iprod: ["{\\left\\langle #1, #2\\right\\rangle}", 2],  // inner product
           viprod: ["{ \\iprod{\\vec{#1} }{\\vec{#2} } }", 2],  // vector inner product
           vlist: ["{\\vec{#1}_{1},\\cdots,\\vec{#1}_{#2}}", 2],  // a list of vectors
           vspan: ["\\text{span}(#1)", 1],  // linear span
