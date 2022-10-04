@@ -128,39 +128,39 @@ tags:
   > 问：把2D矩阵看成一个向量空间（可证明其具有向量空间定义所需性质），则在其上的Conv2D操作可看成一个线性映射（可证明Conv2D具有线性映射的所需性质）。那么，因此连续两个Conv2D可以合成为另一个单独的线性映射（通过矩阵乘法）？
     {: .lambda_question}
   
-- 从$$V$$到$$W$$的所有线性映射所构成的集合记为$$\mathcal{L}(V,W)$$
+- 从$$V$$到$$W$$的所有线性映射所构成的集合记为$$\lmap(V,W)$$
 - 线性映射的例子：
   - 零：把某个向量空间的每个元素都映成另一个向量空间的加法单位元
   - 恒等映射
   - 微分：把一个可微函数映成其导函数
-  - 定积分：定义$$T\in\mathcal{L}(\mathcal{P}(\mathbf{R}),\mathbf{R})$$为$$T_{\vec{p}}=\int_{0}^{1}\vec{p}(x)\mathrm{d}x$$
-  - 从$$\mathbf{F}^{n}$$到$$\mathbf{F}^{m}$$：设$$m$$和$$n$$都是正整数，$$a_{j,k}\in\mathbf{F},j=1,\cdots,m,k=1,\cdots,n$$，定义$$T\in\mathcal{L}(\mathbf{F}^{n},\mathbf{F}^{m})$$为
+  - 定积分：定义$$T\in\lmap(\mathcal{P}(\mathbf{R}),\mathbf{R})$$为$$T_{\vec{p}}=\int_{0}^{1}\vec{p}(x)\mathrm{d}x$$
+  - 从$$\mathbf{F}^{n}$$到$$\mathbf{F}^{m}$$：设$$m$$和$$n$$都是正整数，$$a_{j,k}\in\mathbf{F},j=1,\cdots,m,k=1,\cdots,n$$，定义$$T\in\lmap(\mathbf{F}^{n},\mathbf{F}^{m})$$为
 
     $$
     T(\list{x}{n})=(a_{1,1}x_{1}+\cdots+a_{1,n}x_{n},\cdots,a_{m,1}x_{1}+\cdots+a_{m,n}x_{n})
     $$
 
     后面会证明从$$\mathbf{F}^{n}$$到$$\mathbf{F}^{m}$$的每个线性映射都是这种形式的。
-- 在$$\mathcal{L}(V,W)$$上定义加法和标量乘法使其成为一个向量空间。对于$$S,T\in\mathcal{L}(V,W)$$，可以定义
+- 在$$\lmap(V,W)$$上定义加法和标量乘法使其成为一个向量空间。对于$$S,T\in\lmap(V,W)$$，可以定义
   - 加法：$$(S+T)\vec{v}=S\vec{v}+T\vec{v},\vec{v}\in V$$
   - 标量乘法：$$(aT)\vec{v}=a(T\vec{v}),\vec{v}\in V$$
   - 通过向量空间的定义可证
-- 设$$U$$是$$\mathbf{F}$$上的向量空间，如果$$T\in\mathcal{L}(U,V),S\in\mathcal{L}(V,W)$$，那么定义$$ST\in\mathcal{L}(U,W)$$为$$(ST)(\vec{v})=S(T\vec{v}),\vec{v}\in U$$。可以验证此时$$ST$$的确是从$$U$$到$$W$$的线性映射。我们称$$ST$$为$$S$$和$$T$$的乘积。可以验证它具有乘积的大多数常见性质（交换性除外）：
+- 设$$U$$是$$\mathbf{F}$$上的向量空间，如果$$T\in\lmap(U,V),S\in\lmap(V,W)$$，那么定义$$ST\in\lmap(U,W)$$为$$(ST)(\vec{v})=S(T\vec{v}),\vec{v}\in U$$。可以验证此时$$ST$$的确是从$$U$$到$$W$$的线性映射。我们称$$ST$$为$$S$$和$$T$$的乘积。可以验证它具有乘积的大多数常见性质（交换性除外）：
   - 结合性：$$(T_{1}T_{2})T_{3}=T_{1}(T_{2}T_{3})$$
   - 恒等映射：$$TI=T,IT=T$$
   - 分配性质：$$(S_{1}+S_{2})T=S_{1}T+S_{2}T,S(T_{1}+T_{2})=ST_{1}+ST_{2}$$
 
 ## 零空间与值域
 
-- 对于$$T\in\mathcal{L}(V,W)$$，$$V$$中被$$T$$映成$$\vec{0}$$的那些向量所组成的子集称为$$T$$的零空间（null space），记为$$\text{null} T$$
-- 3.1命题：若$$T\in\mathcal{L}(V,W)$$，则$$\text{null}T$$是$$V$$的子空间，特别地$$\vec{0}\in\text{null}T$$。证明：用子空间的定义即得。于是，“零空间”这个名字中的“空间”就变得有意义了。
+- 对于$$T\in\lmap(V,W)$$，$$V$$中被$$T$$映成$$\vec{0}$$的那些向量所组成的子集称为$$T$$的零空间（null space），记为$$\text{null} T$$
+- 3.1命题：若$$T\in\lmap(V,W)$$，则$$\text{null}T$$是$$V$$的子空间，特别地$$\vec{0}\in\text{null}T$$。证明：用子空间的定义即得。于是，“零空间”这个名字中的“空间”就变得有意义了。
   - <a name="zero-space">注意</a>：<span style="color: blue">这个命题对于任意的线性映射都成立。而$$\text{null}T$$的元素虽然由$$T$$来确定，但是它作为一个子空间的存在并不依赖于$$T$$！</span>
 - 线性映射称为单的，如果像相同蕴含原像相同。
-- 3.2命题：设$$T\in\mathcal{L}(V,W)$$，则$$T$$是单的当且仅当$$\text{null}T=\{\vec{0}\}$$。由“单”的定义以及零空间的定义即得。
-- 对于$$T\in\mathcal{L}(V,W)$$，由$$W$$中形如$$T\vec{v}(\vec{v}\in V)$$的向量组成的子集称为$$T$$的值域，记为$$\text{range}T=\{T\vec{v}:\vec{v}\in V\}$$。如果值域等于$$W$$则称该线性映射为满的。
-  - 一个非常有用但比较抽象的结论是：对于算子$$T\in\mathcal{L}(V)$$，$$\text{range}(\text{range}T)\subseteq\text{range}T$$。换句话说，若$$\vec{v}\in\text{range}T$$，则$$T\vec{v}\in\text{range}T$$，即$$\text{range}T$$在$$T$$下是不变的
-- 3.3命题：设$$T\in\mathcal{L}(V,W)$$，那么$$\text{range}T$$是$$W$$的子空间。由值域的定义以及子空间的定义即可证。
-- 3.4命题：如果$$V$$是有限维向量空间，并且$$T\in\mathcal{L}(V,W)$$，那么$$\text{range}T$$是$$W$$的有限维子空间，并且$$\dim V=\dim\text{null}T+\dim\text{range}T$$。证明：用$$\text{null}T$$的一组基扩充成$$V$$的基，只需证明扩充出来的部分的像是$$\text{range}T$$的基。
+- 3.2命题：设$$T\in\lmap(V,W)$$，则$$T$$是单的当且仅当$$\text{null}T=\{\vec{0}\}$$。由“单”的定义以及零空间的定义即得。
+- 对于$$T\in\lmap(V,W)$$，由$$W$$中形如$$T\vec{v}(\vec{v}\in V)$$的向量组成的子集称为$$T$$的值域，记为$$\text{range}T=\{T\vec{v}:\vec{v}\in V\}$$。如果值域等于$$W$$则称该线性映射为满的。
+  - 一个非常有用但比较抽象的结论是：对于算子$$T\in\lmap(V)$$，$$\text{range}(\text{range}T)\subseteq\text{range}T$$。换句话说，若$$\vec{v}\in\text{range}T$$，则$$T\vec{v}\in\text{range}T$$，即$$\text{range}T$$在$$T$$下是不变的
+- 3.3命题：设$$T\in\lmap(V,W)$$，那么$$\text{range}T$$是$$W$$的子空间。由值域的定义以及子空间的定义即可证。
+- 3.4命题：如果$$V$$是有限维向量空间，并且$$T\in\lmap(V,W)$$，那么$$\text{range}T$$是$$W$$的有限维子空间，并且$$\dim V=\dim\text{null}T+\dim\text{range}T$$。证明：用$$\text{null}T$$的一组基扩充成$$V$$的基，只需证明扩充出来的部分的像是$$\text{range}T$$的基。
 - 3.5推论：如果$$V$$和$$W$$都是有限维向量空间，且$$\dim V>\dim W$$，那么从$$V$$到$$W$$的线性映射一定不是单的。由3.4和3.2可证。
 - 3.6推论：如果$$V$$和$$W$$都是有限维向量空间，且$$\dim V<\dim W$$，那么从$$V$$到$$W$$的线性映射一定不是满的。由3.4和“满”的定义可证。
 - 令$$T(\list{x}{n})=\big(\sum_{k=1}^{n}a_{1,k}x_{k},\cdots,\sum_{k=1}^{n}a_{m,k}x_{k}\big)$$，利用3.5和3.6可证：
@@ -169,7 +169,7 @@ tags:
 
 ## 线性映射的矩阵
 
-- 设$$T\in\mathcal{L}(V,W)$$，$$(\vlist{v}{n})$$是$$V$$的基，$$\vlist{w}{m}$$是$$W$$的基，那么对于每个$$k=1,\cdots,n$$，$$T\vec{v}_{k}$$都可以唯一地写成这些$$\vec{w}$$的线性组合：$$T\vec{v}_{k}=a_{1,k}\vec{w}_{1}+\cdots+a_{m,k}\vec{w}_{m}$$，其中$$a_{j,k}\in\mathbf{F},j=1,\cdots,m$$。因为线性映射由其在基上的值确定，所以线性映射$$T$$由这些标量$$a_{j,k}$$完全确定。由这些$$a$$构成的$$m\times n$$矩阵：
+- 设$$T\in\lmap(V,W)$$，$$(\vlist{v}{n})$$是$$V$$的基，$$\vlist{w}{m}$$是$$W$$的基，那么对于每个$$k=1,\cdots,n$$，$$T\vec{v}_{k}$$都可以唯一地写成这些$$\vec{w}$$的线性组合：$$T\vec{v}_{k}=a_{1,k}\vec{w}_{1}+\cdots+a_{m,k}\vec{w}_{m}$$，其中$$a_{j,k}\in\mathbf{F},j=1,\cdots,m$$。因为线性映射由其在基上的值确定，所以线性映射$$T$$由这些标量$$a_{j,k}$$完全确定。由这些$$a$$构成的$$m\times n$$矩阵：
 
   $$
   \left[
@@ -214,34 +214,34 @@ tags:
   $$
   \mathcal{M}(\vec{v})=\left[\begin{array}\\b_{1}\\\vdots\\b_{n}\\\end{array}\right]
   $$
-- 3.14命题：设$$T\in\mathcal{L}(V,W)$$，那么对于每个$$\vec{v}\in V$$都有$$\mathcal{M}(T\vec{v})=\mathcal{M}(T)\mathcal{M}(\vec{v})$$（注意这里的$$\mathcal{M}(T\vec{v})$$里的$$T\vec{v}$$是$$W$$上的元素）。按照定义展开即证得。
+- 3.14命题：设$$T\in\lmap(V,W)$$，那么对于每个$$\vec{v}\in V$$都有$$\mathcal{M}(T\vec{v})=\mathcal{M}(T)\mathcal{M}(\vec{v})$$（注意这里的$$\mathcal{M}(T\vec{v})$$里的$$T\vec{v}$$是$$W$$上的元素）。按照定义展开即证得。
 - 小结：到目前为止已涉及的向量空间的类型
   - $$\mathbf{F}^{n}$$，其元素是元组$$(\list{x}{n})$$
   - $$\mathbf{F}^{n}$$到$$\mathbf{F}^{n}$$的线性映射的集合，其元素是单个线性映射（函数）
   - 线性映射的矩阵的集合$$\text{Mat}(m,n,\mathbf{F})$$，其元素是矩阵
-    > 问：这个空间的元素和线性映射的空间的元素是一一对应的吗？目测是，因为在确定了$$V$$和$$W$$的一组基后，$$\mathcal{L}(V,W)$$中的每个变换就确定了一个矩阵，反之亦然。
+    > 问：这个空间的元素和线性映射的空间的元素是一一对应的吗？目测是，因为在确定了$$V$$和$$W$$的一组基后，$$\lmap(V,W)$$中的每个变换就确定了一个矩阵，反之亦然。
       {: .lambda_question}
 
 ## 可逆性
 
-- 线性映射$$T\in\mathcal{L}(V,W)$$称为可逆的，如果存在线性映射$$S\in\mathcal{L}(W,V)$$使得$$ST$$等于$$V$$上的恒等映射，**并且**$$TS$$等于$$W$$上的恒等映射。满足$$ST=I,TS=I$$的线性映射$$S\in\mathcal{L}(W,V)$$称为$$T$$的逆。
-  > 问：是否存在$$S\in\mathcal{L}(W,V)$$使得$$ST$$等于$$V$$上的恒等映射，**但是**$$TS$$**不**等于$$W$$上的恒等映射？习题23解决了$$S\in\mathcal{L}(V)$$的情况，但是否对一般情况也适用？用下面的同构来证？
+- 线性映射$$T\in\lmap(V,W)$$称为可逆的，如果存在线性映射$$S\in\lmap(W,V)$$使得$$ST$$等于$$V$$上的恒等映射，**并且**$$TS$$等于$$W$$上的恒等映射。满足$$ST=I,TS=I$$的线性映射$$S\in\lmap(W,V)$$称为$$T$$的逆。
+  > 问：是否存在$$S\in\lmap(W,V)$$使得$$ST$$等于$$V$$上的恒等映射，**但是**$$TS$$**不**等于$$W$$上的恒等映射？习题23解决了$$S\in\lmap(V)$$的情况，但是否对一般情况也适用？用下面的同构来证？
     {: .lambda_question}
 - 3.17命题：一个线性映射是可逆的当且仅当它既是单的又是满的。证明：=>方向用定义即得。<=方向：对于每个$$\vec{w}\in W$$定义$$S\vec{w}$$是$$V$$中唯一使得$$T(S\vec{w})=\vec{w}$$的那个元素（根据$$T$$既单且满可得此元素的存在性和唯一性）。$$TS$$显然等于$$W$$上的恒等映射。要证明$$ST$$是$$V$$上的恒等映射，有$$T(ST\vec{v})=(TS)(T\vec{v})=I(T\vec{v})=T\vec{v}$$，这表明$$ST\vec{v}=\vec{v}$$（因$$T$$是单的）。除此以外还要证明$$S$$是一个线性映射（齐性+线性），用定义即可。
 - 称两个向量空间是同构的，如果存在从一个到另一个的可逆线性映射。
 - 3.18定理：两个有限维向量空间同构当且仅当它们的维数相等。证明：=>直接用3.4即得。<=用构造法：设$$(\vlist{v}{n})$$和$$(\vlist{w}{n})$$是该两个向量空间的基，定义$$T(a_{1}\vec{v}_{1}+\cdots+a_{n}\vec{v}_{n})=a_{1}\vec{w}_{1}+\cdots+a_{n}\vec{w}_{n}$$，可证明$$T$$既单且满从而该俩向量空间同构。
   - 这个定理表明，每个有限维向量空间都同构于某个$$\mathbf{F}^{n}$$
-- 3.19命题：设$$(\vlist{v}{n})$$和$$(\vlist{w}{m})$$分别是$$V$$和$$W$$的基，那么$$\mathcal{M}$$是$$\mathcal{L}(V,W)$$和$$\text{Mat}(m,n,\mathbf{F})$$之间的可逆线性映射。证明：之前已经定义了矩阵的和以及标量乘法（因此$$\mathcal{M}$$是线性的），现在只需证明其既单且满即可，这很容易，略。
+- 3.19命题：设$$(\vlist{v}{n})$$和$$(\vlist{w}{m})$$分别是$$V$$和$$W$$的基，那么$$\mathcal{M}$$是$$\lmap(V,W)$$和$$\text{Mat}(m,n,\mathbf{F})$$之间的可逆线性映射。证明：之前已经定义了矩阵的和以及标量乘法（因此$$\mathcal{M}$$是线性的），现在只需证明其既单且满即可，这很容易，略。
   - 注意，这里把$$\mathcal{M}$$看成一个函数，其定义域的元素是线性映射（也是函数）和对应的基的元组，值域的元素是矩阵。
   - 易知$$\text{Mat}(m,n,\mathbf{F})$$的维数是$$mn$$。
-- 3.20命题：如果$$V$$和$$W$$都是有限维的，那么$$\mathcal{L}(V,W)$$是有限维的，并且$$\dim\mathcal{L}(V,W)=(\dim V)(\dim W)$$。由上述$$\dim\text{Mat}(m,n,\mathbf{F})=mn$$，3.18以及3.19即得。
-- 一个向量空间到其自身的线性映射称为算子。用$$\mathcal{L}(V)=\mathcal{L}(V,V)$$表示$$V$$上算子的集合。
-- 3.21定理：设$$V$$是有限维的，如果$$T\in\mathcal{L}(V)$$，那么下列等价：（a）$$T$$是可逆的（b）$$T$$是单的（c）$$T$$是满的
+- 3.20命题：如果$$V$$和$$W$$都是有限维的，那么$$\lmap(V,W)$$是有限维的，并且$$\dim\lmap(V,W)=(\dim V)(\dim W)$$。由上述$$\dim\text{Mat}(m,n,\mathbf{F})=mn$$，3.18以及3.19即得。
+- 一个向量空间到其自身的线性映射称为算子。用$$\lmap(V)=\lmap(V,V)$$表示$$V$$上算子的集合。
+- 3.21定理：设$$V$$是有限维的，如果$$T\in\lmap(V)$$，那么下列等价：（a）$$T$$是可逆的（b）$$T$$是单的（c）$$T$$是满的
   - 证明：b=>c和c=>b都是用3.4式。
 
 ## 习题
 
-- 习题22：设$$V$$是有限维的，并且$$S,T\in\mathcal{L}(V)$$，证明$$ST$$可逆当且仅当$$S$$和$$T$$都可逆
+- 习题22：设$$V$$是有限维的，并且$$S,T\in\lmap(V)$$，证明$$ST$$可逆当且仅当$$S$$和$$T$$都可逆
   - <=方向：设$$S$$的逆为$$S'$$，$$T$$的逆为$$T'$$，易证$$ST$$的逆为$$T'S'$$
   - =>方向：设$$ST$$的逆为$$K$$，则$$(ST)K=K(ST)=I$$，现在需证$$TK$$是$$S$$的逆。易证$$S(TK)=(ST)K=I$$，然后有两种方法可证$$(TK)S=I$$：
     - 第一种方法：由下面习题23直接得知！
@@ -249,9 +249,9 @@ tags:
       > 然后怎么证？
         {: .lambda_question}
       
-- 习题23：设$$V$$是有限维的，并且$$S,T\in\mathcal{L}(V)$$，证明$$ST=I$$当且仅当$$TS=I$$
+- 习题23：设$$V$$是有限维的，并且$$S,T\in\lmap(V)$$，证明$$ST=I$$当且仅当$$TS=I$$
   - 证明：先证$$T$$是单的。否则，根据3.2，设$$\vec{v}\ne\vec{0}$$且$$T\vec{v}=\vec{0}$$，由于$$(ST)\vec{v}=I\vec{v}=\vec{v}$$，但$$(ST)\vec{v}=S(T\vec{v})=S\vec{0}=\vec{0}$$，这与$$\vec{v}\ne\vec{0}$$矛盾。故T是单的。根据3.21，$$T$$是可逆的，设其逆为$$T'$$，则有$$T'T=TT'=I$$。现要证$$S=T'$$，有$$T'=IT'=(ST)T'=S(TT')=S$$。
-- 习题24：设$$V$$是有限维的，并且$$T\in\mathcal{L}(V)$$，证明$$T$$是恒等映射的标量倍当且仅当对每个$$S\in\mathcal{L}(V)$$都有$$ST=TS$$。
+- 习题24：设$$V$$是有限维的，并且$$T\in\lmap(V)$$，证明$$T$$是恒等映射的标量倍当且仅当对每个$$S\in\lmap(V)$$都有$$ST=TS$$。
   - =>方向：若$$T=aI$$，则$$ST=S(aI)=aS=aIS=TS$$
   - <=方向：一个非常不优美的方法是用矩阵$$\mathcal{M}(S)$$和$$\mathcal{M}(T)$$的乘积的元素的通项公式来证。有$$\mathcal{M}(S)$$的任意性可证得$$\mathcal{M}(T)$$是对角矩阵且对角线上元素相等。
 
@@ -286,19 +286,19 @@ tags:
 
 ## 不变子空间
 
-- 对于$$T\in\mathcal{L}(V)$$和$$V$$的子空间$$U$$，如果对每个$$\vec{u}\in U$$都有$$T\vec{u}\in U$$，则称$$U$$在$$T$$下是不变的。不变子空间的一些例子：
+- 对于$$T\in\lmap(V)$$和$$V$$的子空间$$U$$，如果对每个$$\vec{u}\in U$$都有$$T\vec{u}\in U$$，则称$$U$$在$$T$$下是不变的。不变子空间的一些例子：
   - $\{\vec{0}\}$
   - $\text{null}T$
   - $\text{range}T$
-- 对于$$T\in\mathcal{L}(V)$$和标量$$\lambda\in\mathbf{F}$$，如果有非零向量$$\vec{u}\in V$$使得$$T\vec{u}=\lambda\vec{u}$$，则称$$\lambda$$为$$T$$的本征值，而$$\vec{u}$$是$$T$$的（相应于$$\lambda$$的）本征向量。
+- 对于$$T\in\lmap(V)$$和标量$$\lambda\in\mathbf{F}$$，如果有非零向量$$\vec{u}\in V$$使得$$T\vec{u}=\lambda\vec{u}$$，则称$$\lambda$$为$$T$$的本征值，而$$\vec{u}$$是$$T$$的（相应于$$\lambda$$的）本征向量。
   - 注意，$$\vec{u}$$必须是非零，但$\lambda$可以是0
   - $$T\vec{u}=\lambda\vec{u}$$等价于$$(T-\lambda I)\vec{u}=\vec{0}$$，因此：
     - $$\lambda$$是$$T$$的本征值当且仅当$$T-\lambda I$$不是单的
     - 对有限维向量空间而言，根据3.21，$$\lambda$$是$$T$$的本征值当且仅当$$T-\lambda I$$不可逆，当且仅当$$T-\lambda I$$不是满的
     - $$T$$的相应于$$\lambda$$的本征向量之集等于$$\text{null}(T-\lambda I)$$，而且是$$V$$的子空间（看[这里](#zero-space)）
   - 注意：同一个本征值可以有多于一个不同的且线性无关的本征向量。如$$I$$的本征值为1，但$$\mathbf{R}^{2}$$上的$$I$$就有两个不同的本征向量$$(0,1)$$和$$(1,0)$$。
-  - 例子：对于算子$$T\in\mathcal{L}(\mathbf{F}^{2}),T(\vec{w},\vec{z})=(-\vec{z},\vec{w})$$。若$$\mathbf{F}=\mathbf{R}$$，此算子有很好的几何解释（绕$$\mathbf{R}^{2}$$的原点逆时针转$$90^{\circ}$$，易知$$T$$没有本征值。若$$\mathbf{F}=\mathbf{C}$$，$$i$$和$$-i$$都是$$T$$的本征值。
-- 5.6定理：设$$T\in\mathcal{L}(V)$$，$$\list{\lambda}{m}$$是$$T$$的互不相同的本征值，$$\vlist{v}{m}$$是相应的非零本征向量，则$$(\vlist{v}{m})$$线性无关。
+  - 例子：对于算子$$T\in\lmap(\mathbf{F}^{2}),T(\vec{w},\vec{z})=(-\vec{z},\vec{w})$$。若$$\mathbf{F}=\mathbf{R}$$，此算子有很好的几何解释（绕$$\mathbf{R}^{2}$$的原点逆时针转$$90^{\circ}$$，易知$$T$$没有本征值。若$$\mathbf{F}=\mathbf{C}$$，$$i$$和$$-i$$都是$$T$$的本征值。
+- 5.6定理：设$$T\in\lmap(V)$$，$$\list{\lambda}{m}$$是$$T$$的互不相同的本征值，$$\vlist{v}{m}$$是相应的非零本征向量，则$$(\vlist{v}{m})$$线性无关。
   - 证明：反证法，设$$k$$是使$$\vec{v}_{k}\in\vspanl{v}{k-1}$$成立的最小正整数（由2.4知道这样的$$k$$一定存在），于是有$$\vec{v}_{k}=a_{1}\vec{v}_{1}+\cdots+a_{k-1}\vec{v}_{k-1}$$，然后用该式两端乘以$$\lambda_{k}$$得到的式子减去把$$T$$作用于该等式两端得到的式子，根据$$(\vlist{v}{k-1})$$的线性无关性易知这些$$a$$都是0，从而$$\vec{v}_{k}$$等于$$\vec{0}$$，与特征向量不为零的假设矛盾。
 - 5.9推论：$$V$$上的每个算子最多有$$\dim V$$个互不相同的本征值。证明：由5.6即得。
 
@@ -306,23 +306,23 @@ tags:
 
 - 定义：算子的幂，$$T^{0}$$定义为恒等算子
 - 定义：$$p(T)=a_{0}I+a_{1}T+a_{2}T^{2}+\cdots+a_{m}T^{m}$$
-  - 容易验证：对于一个固定的算子$$T\in\mathcal{L}(V)$$，由$$p\mapsto p(T)$$所给出的从$$\mathcal{P}(\mathbf{F})$$到$$\mathcal{L}(V)$$的函数是线性的。
+  - 容易验证：对于一个固定的算子$$T\in\lmap(V)$$，由$$p\mapsto p(T)$$所给出的从$$\mathcal{P}(\mathbf{F})$$到$$\lmap(V)$$的函数是线性的。
 - 乘法性质：易证$$p(T)q(T)=q(T)p(T)$$（直接展开然后用$$T$$的交换律即可）
 
 ## 上三角矩阵
 
 - 5.10定理：有限维非零复向量空间上的每个算子都有本征值。
-  - 证明：设$$V$$是$$n>0$$维复向量空间，$$T\in\mathcal{L}(V)$$，取$$\vec{v}\in V$$使得$$\vec{v}\ne\vec{0}$$。因为$$V$$是$$n$$维的，所以$$n+1$$个向量$$(\vec{v},T\vec{v},T^{2}\vec{v},\cdots,T^{n}\vec{v})$$必定线性相关，因此有不全为零的复数$$a_{0},\cdots,a_{n}$$使得$$\mathbf{0}=a_{0}\vec{v}+a_{1}T\vec{v}+\cdots+a_{n}T^{n}\vec{v}$$。对其作多项式分解（4.8）得$$\mathbf{0}=c(T-\lambda_{1}I)\cdots(T-\lambda_{m}I)\vec{v}$$对于某个$$c$$和某个$$0\lt m\le n$$成立，而这意味着存在某个$$j$$使得$$(T-\lambda_{j+1}I)\cdots(T-\lambda_{m}I)\vec{v}\ne\vec{0}$$但$$(T-\lambda_{j}I)\cdots(T-\lambda_{m}I)\vec{v}=\vec{0}$$，因此$$T-\lambda_{j}I$$不是单的，即$$T$$有本征值。
+  - 证明：设$$V$$是$$n>0$$维复向量空间，$$T\in\lmap(V)$$，取$$\vec{v}\in V$$使得$$\vec{v}\ne\vec{0}$$。因为$$V$$是$$n$$维的，所以$$n+1$$个向量$$(\vec{v},T\vec{v},T^{2}\vec{v},\cdots,T^{n}\vec{v})$$必定线性相关，因此有不全为零的复数$$a_{0},\cdots,a_{n}$$使得$$\mathbf{0}=a_{0}\vec{v}+a_{1}T\vec{v}+\cdots+a_{n}T^{n}\vec{v}$$。对其作多项式分解（4.8）得$$\mathbf{0}=c(T-\lambda_{1}I)\cdots(T-\lambda_{m}I)\vec{v}$$对于某个$$c$$和某个$$0\lt m\le n$$成立，而这意味着存在某个$$j$$使得$$(T-\lambda_{j+1}I)\cdots(T-\lambda_{m}I)\vec{v}\ne\vec{0}$$但$$(T-\lambda_{j}I)\cdots(T-\lambda_{m}I)\vec{v}=\vec{0}$$，因此$$T-\lambda_{j}I$$不是单的，即$$T$$有本征值。
 - 一个矩阵称为上三角的，如果位于对角线下方的元素全为0。注意：对角线上的元素是否为0并没有限制。
-- 5.12命题：设$$T\in\mathcal{L}(V)$$，并且$$(\vlist{v}{n})$$是$$V$$的基，则下列等价：
+- 5.12命题：设$$T\in\lmap(V)$$，并且$$(\vlist{v}{n})$$是$$V$$的基，则下列等价：
   - (a)$$T$$关于基$$(\vlist{v}{n})$$的矩阵是上三角的
   - (b)$$T\vec{v}_{k}\in\vspanl{v}{k},k=1,\cdots,n$$
   - (c)$$\vspanl{v}{k}$$在$$T$$下是不变的，$$k=1,\cdots,n$$
 
   证明：显然。
-- 5.13定理：设$$V$$是复向量空间，并设$$T\in\mathcal{L}(V)$$，则$$T$$关于$$V$$的某个基具有上三角矩阵。
+- 5.13定理：设$$V$$是复向量空间，并设$$T\in\lmap(V)$$，则$$T$$关于$$V$$的某个基具有上三角矩阵。
   - 证明：对$$V$$的维数用归纳法。若$$\dim V=1$$结论显然成立。设$$\dim V>1$$，并设对于**所有**维数比$$V$$小的复向量空间结果都成立。设$$\lambda$$是$$T$$的任意本征值（5.10），设$$U=\text{range}(T-\lambda I)$$，由3.21知$$T-\lambda I$$不是满的，故$$\dim U<\dim V$$。通过$$T\vec{u}=(T-\lambda I)\vec{u}+\lambda\vec{u}$$易证$$U$$在$$T$$下是不变的，因此$$T\vert_{U}$$是$$U$$上的算子。由归纳法假设，$$U$$有基$$(\vlist{u}{m})$$使得$$T\vert_{U}$$关于此基有上三角矩阵，因此根据5.12对每个$$j$$都有$$T\vec{u}_{j}=(T\vert_{U})(\vec{u}_{j})\in\vspanl{u}{j}$$。把$$(\vlist{u}{m})$$扩充成$$V$$的基$$(\vlist{u}{m},\vlist{v}{n})$$，则对每个$$k$$都有$$T\vec{v}_{k}=(T-\lambda I)\vec{v}_{k}+\lambda\vec{v}_{k}$$，其中第一项$$\in U=\vspanl{u}{m}$$，因此$$T\vec{v}_{k}=\vspan{\vlist{u}{m},\vlist{v}{n}}$$，而由5.12知$$T$$关于基$$(\vlist{u}{m},\vlist{v}{n})$$有上三角矩阵。
-- 5.16命题：设$$T\in\mathcal{L}(V)$$关于$$V$$的某个基有上三角矩阵，则$$T$$可逆当且仅当这个上三角矩阵对角线上的元素都不是0。
+- 5.16命题：设$$T\in\lmap(V)$$关于$$V$$的某个基有上三角矩阵，则$$T$$可逆当且仅当这个上三角矩阵对角线上的元素都不是0。
   - 证明：只需证明等价命题：$$T$$不可逆当且仅当某个元素是0。设$$(\vlist{v}{n})$$是$$V$$的基使$$T$$关于此基有上三角矩阵。
 
     $$
@@ -338,16 +338,16 @@ tags:
 
     - <=方向：若$$\lambda_{1}=0$$则$$T\vec{v}_{1}=\vec{0}$$，故$$T$$不可逆。否则设$$\lambda_{k}=0,1\lt k\le n$$，由5.17，$$T\vec{v}_{k}\in\vspanl{v}{k-1}$$，根据3.5，存在非零向量$$\vec{v}\in\vspanl{v}{k}$$使得$$T\vec{v}=0$$，故$$T$$不可逆。
     - =>方向：假设$$T$$不可逆，因此它不是单的且有非零向量$$\vec{v}\in V$$使得$$\vec{0}=T\vec{v}=T(a_{1}\vec{v}_{1}+\cdots+a_{k}\vec{v}_{k})=(a_{1}T\vec{v}_{1}+\cdots+a_{k-1}T\vec{v}_{k-1})+a_{k}T\vec{v}_{k};\list{a}{k}\in\mathbf{F};a_{k}\ne0$$（把$$\vec{v}$$表示成基的线性组合然后取$$k$$是系数不为0的最大下标）。最后那个括号中的向量含于$$\vspanl{v}{k-1}$$（因为$$T$$关于该基的矩阵是上三角的，5.12），于是$$a_{k}T\vec{v}_{k}$$从而$$T\vec{v}_{k}$$也含于$$\vspanl{v}{k-1}$$，于是若把$$T\vec{v}_{k}$$写成基$$(\vlist{v}{n})$$的线性组合，则$$\vec{v}_{k}$$的系数即$$\lambda_{k}$$是0。
-- 5.18命题：设$$T\in\mathcal{L}(V)$$关于$$V$$的某个基有上三角矩阵，则这个上三角矩阵对角线上的元素恰好是$$T$$的所有本征值。
+- 5.18命题：设$$T\in\lmap(V)$$关于$$V$$的某个基有上三角矩阵，则这个上三角矩阵对角线上的元素恰好是$$T$$的所有本征值。
   - 证明：设$$T$$关于某个基有上三角矩阵$$\mathcal{M}(T)$$，设$$\lambda\in\mathbf{F}$$，则矩阵$$\mathcal{M}(T-\lambda I)$$也是一个上三角矩阵且对角线上元素为$$\lambda_{k}-\lambda$$。根据5.16，$$T-\lambda I$$不可逆（即其不是单的，即存在非零向量被其映成零向量）当且仅当$$\lambda$$等于某个$$\lambda_{j}$$，即$$\lambda$$是$$T$$的本征值当且仅当$$\lambda$$等于某个$$\lambda_{j}$$。
 
 ## 对角矩阵
 
-- 易知$$T\in\mathcal{L}(V)$$关于$$V$$的某个基有对角矩阵当且仅当$$V$$有一个由$$T$$的本征向量组成的基
-- 5.20命题：若$$T\in\mathcal{L}(V)$$由$$\dim V$$个互不相同的本征值，则$$T$$关于$$V$$的某个基有对角矩阵
+- 易知$$T\in\lmap(V)$$关于$$V$$的某个基有对角矩阵当且仅当$$V$$有一个由$$T$$的本征向量组成的基
+- 5.20命题：若$$T\in\lmap(V)$$由$$\dim V$$个互不相同的本征值，则$$T$$关于$$V$$的某个基有对角矩阵
   - 注意逆命题不成立，某些本征值较少的算子也可能有对角矩阵
-  - 证明：设$$T\in\mathcal{L}(V)$$有$$\dim V$$个互不相同的本征值$$\lambda_{1},\cdots,\lambda_{\dim V}$$，根据5.6，它们对应的非零本征向量线性无关，根据2.17，这些本征向量是$$V$$的基，因此$$T$$关于由这些本征向量组成的基由对角矩阵。
-- 5.21命题：设$$T\in\mathcal{L}(V)$$，并设$$\list{\lambda}{m}$$是$$T$$的所有互不相同的本征值，则下列等价：
+  - 证明：设$$T\in\lmap(V)$$有$$\dim V$$个互不相同的本征值$$\lambda_{1},\cdots,\lambda_{\dim V}$$，根据5.6，它们对应的非零本征向量线性无关，根据2.17，这些本征向量是$$V$$的基，因此$$T$$关于由这些本征向量组成的基由对角矩阵。
+- 5.21命题：设$$T\in\lmap(V)$$，并设$$\list{\lambda}{m}$$是$$T$$的所有互不相同的本征值，则下列等价：
   - (a)$$T$$关于$$V$$的某个基有对角矩阵
   - (b)$$V$$有一个由$$T$$的本征向量组成的基
   - (c)$$V$$有在$$T$$下不变的1维子空间$$\list{U}{n}$$使得$$V=U_{1}\oplus\cdots\oplus U_{n}$$
@@ -359,11 +359,11 @@ tags:
 ## 实向量空间的不变子空间
 
 - 5.24定理：在有限维非零实向量空间中，每个算子都有1维或2维的不变子空间。
-  - 证明：设$$V$$是$$n>0$$维实向量空间，$$T\in\mathcal{L}(V)$$，取$$\vec{v}\in V,\vec{v}\ne0$$，由$$n+1$$个向量的线性相关性知存在不全为零的实数$$a_{0},\cdots,a_{n}$$使得$$\vec{0}=a_{0}\vec{v}+a_{1}T\vec{v}+\cdots+a_{n}T^{n}\vec{v}$$，根据4.14可以作分解$$\vec{0}=c(T-\lambda_{1}I)\cdots(T-\lambda_{m}I)(T^{2}+\alpha_{1}T+\beta_{1}I)\cdots(T^{2}+\alpha_{M}T+\beta_{M}I)\vec{v}$$，这意味着至少有一个$$j$$使得$$T-\lambda_{j}I$$不是单的或者$$(T^{2}+\alpha_{j}T+\beta_{j}I)$$不是单的。若是前者，则$$T$$有1维不变子空间。若是后者，则存在$$\vec{u}\in V, \vec{u}\ne\vec{0}$$，我们考虑$$\vspan{\vec{u},T\vec{u}}$$的一个典型元素$$a\vec{u}+bT\vec{u};a,b\in\mathbf{R}$$，对其应用$$T$$并且条件$$T^{2}\vec{u}+\alpha_{j}T\vec{u}+\beta_{j}\vec{u}=\vec{0}$$知$$T(a\vec{u}+bT\vec{u})\in\vspan{\vec{u},T\vec{u}}$$，于是$$\vspan{\vec{u},T\vec{u}}$$在$$T$$下不变。
-- 设$$V=U\oplus W$$，则每个$$\vec{v}\in V$$都可表示为$$\vec{v}=\vec{u}+\vec{w};\vec{u}\in U,\vec{w}\in W$$。定义线性映射$$P_{U,W}\in\mathcal{L}(V)$$为：$$P_{U,W}\vec{v}=\vec{u}$$。这和“投影”类似。性质包括：
+  - 证明：设$$V$$是$$n>0$$维实向量空间，$$T\in\lmap(V)$$，取$$\vec{v}\in V,\vec{v}\ne0$$，由$$n+1$$个向量的线性相关性知存在不全为零的实数$$a_{0},\cdots,a_{n}$$使得$$\vec{0}=a_{0}\vec{v}+a_{1}T\vec{v}+\cdots+a_{n}T^{n}\vec{v}$$，根据4.14可以作分解$$\vec{0}=c(T-\lambda_{1}I)\cdots(T-\lambda_{m}I)(T^{2}+\alpha_{1}T+\beta_{1}I)\cdots(T^{2}+\alpha_{M}T+\beta_{M}I)\vec{v}$$，这意味着至少有一个$$j$$使得$$T-\lambda_{j}I$$不是单的或者$$(T^{2}+\alpha_{j}T+\beta_{j}I)$$不是单的。若是前者，则$$T$$有1维不变子空间。若是后者，则存在$$\vec{u}\in V, \vec{u}\ne\vec{0}$$，我们考虑$$\vspan{\vec{u},T\vec{u}}$$的一个典型元素$$a\vec{u}+bT\vec{u};a,b\in\mathbf{R}$$，对其应用$$T$$并且条件$$T^{2}\vec{u}+\alpha_{j}T\vec{u}+\beta_{j}\vec{u}=\vec{0}$$知$$T(a\vec{u}+bT\vec{u})\in\vspan{\vec{u},T\vec{u}}$$，于是$$\vspan{\vec{u},T\vec{u}}$$在$$T$$下不变。
+- 设$$V=U\oplus W$$，则每个$$\vec{v}\in V$$都可表示为$$\vec{v}=\vec{u}+\vec{w};\vec{u}\in U,\vec{w}\in W$$。定义线性映射$$P_{U,W}\in\lmap(V)$$为：$$P_{U,W}\vec{v}=\vec{u}$$。这和“投影”类似。性质包括：
   - 对每个$$\vec{v}\in V$$都有$$\vec{v}=P_{U,W}\vec{v}+P_{W,U}\vec{v}$$
   - 多次应用，结果不变：$$P^{2}_{U,W}=P_{U,W}$$
   - $\text{range}P_{U,W}=U$
   - $\text{null}P_{U,W}=W$
 - 5.26定理：在奇数维实向量空间上，每个算子都有本征值。
-  - 证明：对维数用归纳法。若维数为1，显然成立。设$$\dim V>1$$是奇数，且结论对$$\dim V-2$$成立。设$$T\in\mathcal{L}(V)$$，若$$T$$由本征值则证明结束，否则由5.24知$$V$$有在$$T$$下不变的2维子空间$$U$$，由2.13知存在$$V$$的子空间$$W$$使得$$V=U\oplus W$$。注意不能直接对$$W$$和$$T\vert W$$用归纳法因为$$W$$可能不是在$$T$$下不变的。定义$$S\in\mathcal{L}(W)$$为$$S\vec{w}=P_{W,U}(T\vec{w}),\vec{w}\in W$$。由归纳法假设$$S$$有一个本征值$$\lambda$$，其对应的非零本征向量为$$\vec{w}\in W$$。如果$$\vec{w}$$是$$T$$的相应于本征值$$\lambda$$的本征向量，则证明结束。否则考虑$$U+\vspan{\vec{w}}$$中的一个典型向量$$\vec{u}+a\vec{w}$$，易得$$(T-\lambda I)(\vec{u}+a\vec{w})=T\vec{u}-\lambda\vec{u}+aP_{U,W}(T\vec{w})\in U$$，因此$$T-\lambda I$$把$$U+\vspan{\vec{w}}$$映到$$U$$内。由于$$U+\vspan{\vec{w}}$$的维数比$$U$$的维数大，故$$(T-\lambda I)\vert_{U+\vspan{\vec{w}}}$$不是单的（3.5），于是$$T$$有本征值。
+  - 证明：对维数用归纳法。若维数为1，显然成立。设$$\dim V>1$$是奇数，且结论对$$\dim V-2$$成立。设$$T\in\lmap(V)$$，若$$T$$由本征值则证明结束，否则由5.24知$$V$$有在$$T$$下不变的2维子空间$$U$$，由2.13知存在$$V$$的子空间$$W$$使得$$V=U\oplus W$$。注意不能直接对$$W$$和$$T\vert W$$用归纳法因为$$W$$可能不是在$$T$$下不变的。定义$$S\in\lmap(W)$$为$$S\vec{w}=P_{W,U}(T\vec{w}),\vec{w}\in W$$。由归纳法假设$$S$$有一个本征值$$\lambda$$，其对应的非零本征向量为$$\vec{w}\in W$$。如果$$\vec{w}$$是$$T$$的相应于本征值$$\lambda$$的本征向量，则证明结束。否则考虑$$U+\vspan{\vec{w}}$$中的一个典型向量$$\vec{u}+a\vec{w}$$，易得$$(T-\lambda I)(\vec{u}+a\vec{w})=T\vec{u}-\lambda\vec{u}+aP_{U,W}(T\vec{w})\in U$$，因此$$T-\lambda I$$把$$U+\vspan{\vec{w}}$$映到$$U$$内。由于$$U+\vspan{\vec{w}}$$的维数比$$U$$的维数大，故$$(T-\lambda I)\vert_{U+\vspan{\vec{w}}}$$不是单的（3.5），于是$$T$$有本征值。
