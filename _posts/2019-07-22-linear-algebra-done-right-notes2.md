@@ -33,8 +33,8 @@ tags:
   - 共轭对称性：对所有$$\vec{v},\vec{w}\in V$$都有$$\viprod{v}{w}=\overline{\viprod{w}{v}}$$
     - 对实向量空间这等价于$$\viprod{v}{w}=\viprod{w}{v}$$
 - 内积空间是带有内积的向量空间。例子：
-  - $$\mathbf{F}^{n}$$，内积定义为$$\iprod{(w_{1},\cdots,w_{n})}{(z_{1},\cdots,z_{n})}=w_{1}\overline{z_{1}}+\cdots+w_{n}\overline{z_{n}}$$（这称为欧几里得内积）
-  - 同样为$$\mathbf{F}^{n}$$，但用另一个内积：若$$c_{1},\cdots,c_{n}$$是正数，定义内积$$\iprod{(w_{1},\cdots,w_{n})}{(z_{1},\cdots,z_{n})}=c_{1}w_{1}\overline{z_{1}}+\cdots+c_{n}w_{n}\overline{z_{n}}$$
+  - $$\mathbf{F}^{n}$$，内积定义为$$\iprod{(\list{w}{n})}{(\list{z}{n})}=w_{1}\overline{z_{1}}+\cdots+w_{n}\overline{z_{n}}$$（这称为欧几里得内积）
+  - 同样为$$\mathbf{F}^{n}$$，但用另一个内积：若$$\list{c}{n}$$是正数，定义内积$$\iprod{(\list{w}{n})}{(\list{z}{n})}=c_{1}w_{1}\overline{z_{1}}+\cdots+c_{n}w_{n}\overline{z_{n}}$$
   - 由系数在$$\mathbf{F}$$中次数不超过$$m$$的所有多项式组成的向量空间$$\mathcal{P}_{m}(\mathbf{F})$$，定义内积$$\iprod{ p}{q}=\int_{0}^{1}p(x)\overline{q(x)}\mathrm{d}x$$
 
 ## 范数
@@ -80,7 +80,7 @@ tags:
 ## 规范正交基
 
 - 规范正交性：若一个向量组中的向量两两正交，并且每个向量的范数都是1，则称这个向量组是规范正交的。
-- 6.15：如果$$V$$中的向量组$$(\vlist{e}{m})$$是规范正交的，那么$$\|a_{1}\vec{e}_{1}+\cdots+a_{m}\vec{e}_{m}\|^{2}=\vert a_{1}\vert^{2}+\cdots+\vert a_{m}\vert^{2}$$，其中$$a_{1},\cdots,a_{m}\in\mathbf{F}$$。证明：反复使用勾股定理6.3以及上述范数的第二个性质即得。
+- 6.15：如果$$V$$中的向量组$$(\vlist{e}{m})$$是规范正交的，那么$$\|a_{1}\vec{e}_{1}+\cdots+a_{m}\vec{e}_{m}\|^{2}=\vert a_{1}\vert^{2}+\cdots+\vert a_{m}\vert^{2}$$，其中$$\list{a}{m}\in\mathbf{F}$$。证明：反复使用勾股定理6.3以及上述范数的第二个性质即得。
 - 6.16：推论：每个规范正交向量组都是线性无关的。证明：用线性无关的定义（若存在一组标量使该规范正交向量组和这组标量对应项的积的和为0，那么这组标量全为0），根据6.15即得。
 - 6.17：定理：设$$(\vlist{e}{n})$$是$$V$$的规范正交基，则对每个$$\vec{v}\in V$$都有：
   - 6.18：$$\vec{v}=\iprod{\vec{v}}{\vec{e}_{1}}\vec{e}_{1}+\cdots+\iprod{\vec{v}}{\vec{e}_{n}}\vec{e}_{n}$$，而且
@@ -296,7 +296,7 @@ b       <a,b>: \viprod{u}{v}
 e      rangeT: \text{range}T
 f       nullT: \text{null}T
 p            : p(z)=a_{0}+a_{1}z+a_{2}z^{2}+\cdots+a_{m}z^{m}
-l   lambda1-m: \lambda_{1},\cdots,\lambda_{m}
+l   lambda1-m: \list{\lambda}{m}
 u       u1-um: (\vlist{u}{m})
 v       v1-vn: (\vlist{v}{n})
 w       w1-wm: (\vlist{w}{m})

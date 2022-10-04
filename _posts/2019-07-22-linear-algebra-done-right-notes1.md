@@ -39,7 +39,7 @@ tags:
 
 - 注意这里没有乘法交换律，因为这里乘法指标量乘法，而三个量间的乘法在有至少两个量是$$V$$中的元素时是无定义的，而如果有两个量是$$F$$中的元素则显然结果仍在$$V$$中。据此无法定义三个$$V$$中元素的乘法故无交换律。
 - 向量空间的例子：
-  - $$\mathbf{F}^n=\{(x_{1},\cdots,x_{n}): x_{j}\in \mathbf{F},j=1,\cdots,n\}$$；
+  - $$\mathbf{F}^n=\{(\list{x}{n}): x_{j}\in \mathbf{F},j=1,\cdots,n\}$$；
   - $$\mathbf{F}^{\infty}=\{(x_{1},x_{2},\cdots):x_{j}\in F,j=1,2,\cdots\}$$；
   - 系数在$$\mathbf{F}$$中的所有多项式的集合：$$\mathcal{P}(\mathbf{F})$$
   - 系数在$$\mathbf{F}$$中并且次数不超过$$m$$的所有多项式组成的集合：$$\mathcal{P}_{m}(\mathbf{F})$$
@@ -63,11 +63,11 @@ tags:
 
 ## （空间的）和与直和
 
-- 设$$U_{1},\cdots,U_{m}$$都是$$V$$的子空间，则它们的和定义为$$U_{1}+\cdots+U_{m}=\{\vec{u}_{1}+\cdots+\vec{u}_{m}:\vec{u}_{1}\in U_{1},\cdots,\vec{u}_{m}\in U_{m}\}$$
-- 易证该和也是$$V$$的子空间，且是$$V$$中包含$$U_{1},\cdots,U_{m}$$的最小子空间
-- 若$$U_{1},\cdots,U_{m}$$都是$$V$$的子空间且$$V=U_{1}+\cdots+U_{m}$$，而且$$V$$中每个元素都可以**唯一地**写成$$\vec{u}_{1}+\cdots+\vec{u}_{m}$$的形式，则称$$V$$是子空间$$U_{1},\cdots,U_{m}$$的直和（direct sum），记为$$V=U_{1}\oplus\cdots\oplus U_{m}$$
+- 设$$\list{U}{m}$$都是$$V$$的子空间，则它们的和定义为$$U_{1}+\cdots+U_{m}=\{\vec{u}_{1}+\cdots+\vec{u}_{m}:\vec{u}_{1}\in U_{1},\cdots,\vec{u}_{m}\in U_{m}\}$$
+- 易证该和也是$$V$$的子空间，且是$$V$$中包含$$\list{U}{m}$$的最小子空间
+- 若$$\list{U}{m}$$都是$$V$$的子空间且$$V=U_{1}+\cdots+U_{m}$$，而且$$V$$中每个元素都可以**唯一地**写成$$\vec{u}_{1}+\cdots+\vec{u}_{m}$$的形式，则称$$V$$是子空间$$\list{U}{m}$$的直和（direct sum），记为$$V=U_{1}\oplus\cdots\oplus U_{m}$$
 - 注意，如果$$V$$中每个元素都可以表示成$$\vec{u}_{1}+\cdots+\vec{u}_{m}$$的形式但表示方式不唯一，则不是直和
-- 1.8：设$$U_{1},\cdots,U_{m}$$都是$$V$$的子空间，则$$V=U_{1}\oplus\cdots\oplus U_{m}$$当且仅当以下俩条件成立
+- 1.8：设$$\list{U}{m}$$都是$$V$$的子空间，则$$V=U_{1}\oplus\cdots\oplus U_{m}$$当且仅当以下俩条件成立
   - 满足和的条件：$$V=U_{1}+\cdots+U_{m}$$
   - 若$$\vec{0}=\vec{u}_{1}+\cdots+\vec{u}_{m},\vec{u}_{j}\in U_{j}$$，则每个$$\vec{u}_{j}$$都为$$\vec{0}$$
 - 1.9：是$$U$$和$$W$$都是$$V$$的子空间，则$$V=U\oplus W$$当且仅当$$V=U+W$$且$$U\cap W=\{\vec{0}\}$$
@@ -76,11 +76,11 @@ tags:
 
 ## （向量的）张成与线性无关
 
-- $$V$$中的一组向量$$(\vlist{v}{m})$$的所有线性组合构成的集合称为$$(\vlist{v}{m})$$的张成（span），记为$$\vspanl{v}{m}=\{a_{1}\vec{v}_{1}+\cdots+a_{m}\vec{v}_{m}:a_{1},\cdots,a_{m}\in\mathbf{F}\}$$
+- $$V$$中的一组向量$$(\vlist{v}{m})$$的所有线性组合构成的集合称为$$(\vlist{v}{m})$$的张成（span），记为$$\vspanl{v}{m}=\{a_{1}\vec{v}_{1}+\cdots+a_{m}\vec{v}_{m}:\list{a}{m}\in\mathbf{F}\}$$
   - 我们人为地令空组$$()$$的张成等于$$\{\vec{0}\}$$。这样，可以验证，$$V$$的任意一组向量的张成都是$$V$$的子空间，且是包含该组向量的最小子空间
   - 如果$$V=\vspanl{v}{m}$$，则称$$(\vlist{v}{m})$$张成$$V$$。
   - 如果一个向量空间可以由它的一组（有限个）向量张成，则称其为有限维的（finite dimensional）（注意这里“有限”并不是指每个向量里的元素个数有限，例如$$\mathbf{F}_{x}^{\infty}=\{(x,x,\cdots),x\in \mathbf{F}\}$$是有限维（一维）的，但$$\mathbf{F}^{\infty}$$不是有限维的）
-- 对于$$V$$中的一组向量$$(\vlist{v}{m})$$，如果使得$$a_{1}\vec{v}_{1}+\cdots+a_{m}\vec{v}_{m}=0$$的$$a_{1},\cdots,a_{m}\in\mathbf{F}$$只有$$a_{1}=\cdots=a_{m}=0$$，则称$$(\vlist{v}{m})$$是线性无关的（linearly independent）
+- 对于$$V$$中的一组向量$$(\vlist{v}{m})$$，如果使得$$a_{1}\vec{v}_{1}+\cdots+a_{m}\vec{v}_{m}=0$$的$$\list{a}{m}\in\mathbf{F}$$只有$$a_{1}=\cdots=a_{m}=0$$，则称$$(\vlist{v}{m})$$是线性无关的（linearly independent）
   - 易证$$(\vlist{v}{m})$$是线性无关的当且仅当$$\vspanl{v}{m}$$中的每个向量都可以唯一地表示成$$(\vlist{v}{m})$$的线性组合
   - 我们人为地令空组$$()$$是线性无关的。这样可以证明，如果从一个线性无关向量组中去掉一些向量，那么余下的向量组还是线性无关的。
 - 线性相关引理：如果$$(\vlist{v}{m})$$在$$V$$中是线性相关的，并且$$\vec{v}_{1}\ne\vec{0}$$，则有$$j\in\{2,\cdots,m\}$$使得下列成立：
@@ -92,7 +92,7 @@ tags:
 ## 基
 
 - 如果一个向量组既是线性无关的又张成$$V$$，则称之为$$V$$的基（basis）。如$$\mathbf{F}^{n}$$的一组基为$$((1,0,\cdots,0),(0,1,0,\cdots,0),\cdots,(0,\cdots,0,1))$$，称为其标准基（standard basis）
-- 2.8命题：$$V$$中向量组$$(\vlist{v}{m})$$是其基当且仅当每个$$\vec{v}\in V$$都能**唯一地**写成$$\vec{v}=a_{1}\vec{v}_{1}+\cdots+a_{m}\vec{v}_{m}$$，其中$$a_{1},\cdots,a_{m}\in\mathbf{F}$$
+- 2.8命题：$$V$$中向量组$$(\vlist{v}{m})$$是其基当且仅当每个$$\vec{v}\in V$$都能**唯一地**写成$$\vec{v}=a_{1}\vec{v}_{1}+\cdots+a_{m}\vec{v}_{m}$$，其中$$\list{a}{m}\in\mathbf{F}$$
 - 2.10定理：在向量空间中，每个张成组都可以简化成一个基。证明：不断尝试哪个元素可以被删掉而不影响张成，用线性相关引理即得。
 - 2.11推论：每个有限维向量空间都有基。证明：根据上面对有限维的定义，每个有限维的向量空间都有张成组，从而由2.10即得。
 - 2.12定理：在有限维向量空间中，每个线性无关向量组都可以扩充成一个基。证明：用张成该向量空间的任意一组向量的元素来不断填充该线性无关向量组直到成为基。
@@ -107,14 +107,14 @@ tags:
 - 2.17命题：若$$V$$是有限维的，则$$V$$中每个长度为$$\dim V$$的线性无关向量组都是$$V$$的基。证明：由2.12和2.14即得。
 - 2.18定理：如果$$U_{1}$$和$$U_{2}$$是同一个有限维向量空间的两个子空间，那么$$\dim(U_{1}+U_{2})=\dim U_{1}+\dim U_{2}-\dim(U_{1}\cap U_{2})$$。
   - 证明：设$$(\vlist{u}{m})$$是$$U_{1}\cap U_{2}$$的基，它可以扩充为$$U_{1}$$的一个基$$(\vlist{u}{m},\vlist{v}{j})$$，也可以扩充为$$U_{2}$$的一组基$$(\vlist{u}{m},\vlist{w}{k})$$。只需证$$(\vlist{u}{m},\vlist{v}{j},\vlist{w}{k})$$是$$U_{1}+U_{2}$$的一个基，而这只需证明该组是线性无关的，用定义以及$$U_{1}$$和$$U_{2}$$的关系即可证。
-- 2.19命题：设$$V$$是有限维的，并且$$U_{1},\cdots,U_{m}$$是$$V$$的子空间，使得$$V=U_{1}+\cdots+U_{m}$$并且$$\dim V=\dim U_{1}+\cdots+\dim U_{m}$$，则$$V=U_{1}\oplus\cdots\oplus U_{m}$$。
+- 2.19命题：设$$V$$是有限维的，并且$$\list{U}{m}$$是$$V$$的子空间，使得$$V=U_{1}+\cdots+U_{m}$$并且$$\dim V=\dim U_{1}+\cdots+\dim U_{m}$$，则$$V=U_{1}\oplus\cdots\oplus U_{m}$$。
   - 证明：根据假设，可以把每个$$U$$的基concat成一个长为$$\dim V$$的组，而且这个组张成$$V$$，从而是$$V$$的基（2.16）且线性无关。用1.8可以证得。
 
 ## 习题
 
-- 习题16：证明：若$$V$$是有限维向量空间且$$U_{1},\cdots,U_{m}$$都是$$V$$的子空间，则$$\dim(U_{1}+\cdots+U_{m})\le\dim U_{1}+\cdots+\dim U_{m}$$。
+- 习题16：证明：若$$V$$是有限维向量空间且$$\list{U}{m}$$都是$$V$$的子空间，则$$\dim(U_{1}+\cdots+U_{m})\le\dim U_{1}+\cdots+\dim U_{m}$$。
   - 证明：对$$m$$进行归纳。$$m=2$$时由2.18即得。设当$$m=k$$时成立，则当$$m=k+1$$时有$$\dim(U_{1}+\cdots+U_{k}+U_{k+1})\le\dim(U_{1}+\cdots+U_{k})+\dim U_{k+1}\le\dim U_{1}+\cdots+\dim U_{k}+\dim U_{k+1}$$
-- 习题17：设$$V$$是有限维的，证明：如果$$U_{1},\cdots,U_{m}$$是$$V$$的子空间使得$$V=U_{1}\oplus\cdots\oplus U_{m}$$，那么$$\dim V=\dim U_{1}+\cdots+\dim U_{m}$$。
+- 习题17：设$$V$$是有限维的，证明：如果$$\list{U}{m}$$是$$V$$的子空间使得$$V=U_{1}\oplus\cdots\oplus U_{m}$$，那么$$\dim V=\dim U_{1}+\cdots+\dim U_{m}$$。
   - 证明：设$$U_{k}$$的一组基为$$(\vec{v}_{1}^{k},\cdots,\vec{v}_{\dim U_{k}}^{k})$$，易知所有这些$$\vec{v}$$线性无关，否则$$\vec{w}=\sum_{k=1}^{m}\sum_{i=1}^{\dim U_{k}}\vec{v}_{i}^{k}$$就有多于一种的表示法，与直和的定义矛盾。又因为所有这些$$\vec{v}$$都属于$$V$$，因此它们可以扩充成$$V$$的基，故$$\dim V\ge\dim U_{1}+\cdots+\dim U_{m}$$。用习题16可以证明另一个方向，即得。
 
 # 第三章 线性映射
@@ -137,7 +137,7 @@ tags:
   - 从$$\mathbf{F}^{n}$$到$$\mathbf{F}^{m}$$：设$$m$$和$$n$$都是正整数，$$a_{j,k}\in\mathbf{F},j=1,\cdots,m,k=1,\cdots,n$$，定义$$T\in\mathcal{L}(\mathbf{F}^{n},\mathbf{F}^{m})$$为
 
     $$
-    T(x_{1},\cdots,x_{n})=(a_{1,1}x_{1}+\cdots+a_{1,n}x_{n},\cdots,a_{m,1}x_{1}+\cdots+a_{m,n}x_{n})
+    T(\list{x}{n})=(a_{1,1}x_{1}+\cdots+a_{1,n}x_{n},\cdots,a_{m,1}x_{1}+\cdots+a_{m,n}x_{n})
     $$
 
     后面会证明从$$\mathbf{F}^{n}$$到$$\mathbf{F}^{m}$$的每个线性映射都是这种形式的。
@@ -163,7 +163,7 @@ tags:
 - 3.4命题：如果$$V$$是有限维向量空间，并且$$T\in\mathcal{L}(V,W)$$，那么$$\text{range}T$$是$$W$$的有限维子空间，并且$$\dim V=\dim\text{null}T+\dim\text{range}T$$。证明：用$$\text{null}T$$的一组基扩充成$$V$$的基，只需证明扩充出来的部分的像是$$\text{range}T$$的基。
 - 3.5推论：如果$$V$$和$$W$$都是有限维向量空间，且$$\dim V>\dim W$$，那么从$$V$$到$$W$$的线性映射一定不是单的。由3.4和3.2可证。
 - 3.6推论：如果$$V$$和$$W$$都是有限维向量空间，且$$\dim V<\dim W$$，那么从$$V$$到$$W$$的线性映射一定不是满的。由3.4和“满”的定义可证。
-- 令$$T(x_{1},\cdots,x_{n})=\big(\sum_{k=1}^{n}a_{1,k}x_{k},\cdots,\sum_{k=1}^{n}a_{m,k}x_{k}\big)$$，利用3.5和3.6可证：
+- 令$$T(\list{x}{n})=\big(\sum_{k=1}^{n}a_{1,k}x_{k},\cdots,\sum_{k=1}^{n}a_{m,k}x_{k}\big)$$，利用3.5和3.6可证：
   - 当变量多于方程时，齐次线性方程组（即$$T\vec{x}=\vec{0}$$）必有非零解（易知$$\text{null}T$$严格大于$$\{\vec{0}\}$$，由3.5知这意味着$$n>m$$）。
   - 当方程多于变量时，必有一组常数项使得相应的非齐次线性方程组（即$$T\vec{x}=\vec{c}\ne\vec{0}$$）无解（无解意味着$$T$$不是满的，即存在某个$$\vec{c}$$，其不存在原像。由3.6知这意味着$$n< m$$）。
 
@@ -209,14 +209,14 @@ tags:
 - 矩阵的标量乘法定义为该标量乘以矩阵的每个元素。这个定义恰好使得$$\mathcal{M}(cT)=c\mathcal{M}(T)$$成立。
 - 用上述两个定义可以产生一个向量空间：元素在$$\mathbf{F}$$中的所有$$m\times n$$矩阵之集记为$$\text{Mat}(m,n,\mathbf{F})$$。用向量空间的定义可证。
 - 矩阵乘法的定义，恰好使得$$\mathcal{M}(TS)=\mathcal{M}(T)\mathcal{M}(S)$$成立
-- $$\vec{v}$$的矩阵：设$$(\vlist{v}{n})$$是$$V$$的基，如果$$\vec{v}\in V$$，那么存在唯一一组数$$b_{1},\cdots,b_{n}$$使得$$\vec{v}=b_{1}v_{1}+\cdots+b_{n}v_{n}$$。这样，定义$$\vec{v}$$的矩阵为：
+- $$\vec{v}$$的矩阵：设$$(\vlist{v}{n})$$是$$V$$的基，如果$$\vec{v}\in V$$，那么存在唯一一组数$$\list{b}{n}$$使得$$\vec{v}=b_{1}v_{1}+\cdots+b_{n}v_{n}$$。这样，定义$$\vec{v}$$的矩阵为：
 
   $$
   \mathcal{M}(\vec{v})=\left[\begin{array}\\b_{1}\\\vdots\\b_{n}\\\end{array}\right]
   $$
 - 3.14命题：设$$T\in\mathcal{L}(V,W)$$，那么对于每个$$\vec{v}\in V$$都有$$\mathcal{M}(T\vec{v})=\mathcal{M}(T)\mathcal{M}(\vec{v})$$（注意这里的$$\mathcal{M}(T\vec{v})$$里的$$T\vec{v}$$是$$W$$上的元素）。按照定义展开即证得。
 - 小结：到目前为止已涉及的向量空间的类型
-  - $$\mathbf{F}^{n}$$，其元素是元组$$(x_{1},\cdots,x_{n})$$
+  - $$\mathbf{F}^{n}$$，其元素是元组$$(\list{x}{n})$$
   - $$\mathbf{F}^{n}$$到$$\mathbf{F}^{n}$$的线性映射的集合，其元素是单个线性映射（函数）
   - 线性映射的矩阵的集合$$\text{Mat}(m,n,\mathbf{F})$$，其元素是矩阵
     > 问：这个空间的元素和线性映射的空间的元素是一一对应的吗？目测是，因为在确定了$$V$$和$$W$$的一组基后，$$\mathcal{L}(V,W)$$中的每个变换就确定了一个矩阵，反之亦然。
@@ -277,7 +277,7 @@ tags:
 ## 实系数
 
 - 4.10命题：设$$p$$是实系数多项式，如果$$\lambda\in\mathbf{C}$$是$$p$$的根，则$$\overline{\lambda}$$也是$$p$$的根。证明：对$$a_{0}+a_{1}\lambda+\cdots+a_{m}\lambda^{m}=0$$两端取复共轭即得（要用到$$\overline{wz}=\overline{w}\text{ }\overline{z}$$）。
-- 4.14定理：如果$$p\in\mathcal{P}(\mathbf{R})$$是非常数多项式，则$$p$$可以唯一（除因子的次序之外）分解成如下形式$$p(x)=c(x-\lambda_{1})\cdots(x-\lambda_{m})(x^{2}+\alpha_{1}x+\beta_{1})\cdots(x^{2}+\alpha_{M}x+\beta_{M})$$，其中$$c,\lambda_{1},\cdots,\lambda_{m}\in\mathbf{R},(\alpha_{1},\beta_{1}),\cdots,(\alpha_{M},\beta_{M})\in\mathbf{R}^{2}$$，并且对每个$$j$$都有$$\alpha_{j}^{2}<4\beta_{j}$$
+- 4.14定理：如果$$p\in\mathcal{P}(\mathbf{R})$$是非常数多项式，则$$p$$可以唯一（除因子的次序之外）分解成如下形式$$p(x)=c(x-\lambda_{1})\cdots(x-\lambda_{m})(x^{2}+\alpha_{1}x+\beta_{1})\cdots(x^{2}+\alpha_{M}x+\beta_{M})$$，其中$$c,\list{\lambda}{m}\in\mathbf{R},(\alpha_{1},\beta_{1}),\cdots,(\alpha_{M},\beta_{M})\in\mathbf{R}^{2}$$，并且对每个$$j$$都有$$\alpha_{j}^{2}<4\beta_{j}$$
   - 证明：就是用4.8和4.10。其中要注意的问题是，如果$$\lambda$$是一个非实数的复根，则根据4.10，$$\overline{\lambda}$$也是一个复根，但4.10并未说明这两个根的次数相同。解决办法是由$$p(x)=(x-\lambda)(x-\overline{\lambda})q(x)$$得$$q(x)=\frac{p(x)}{x^{2}-2(\text{Re }\lambda)x+\vert \lambda \vert^{2}}$$，可知对任何$$x\in\mathbf{R}$$都有$$q(x)\in\mathbf{R}$$，这样若把$$q$$写成$$q(x)=a_{0}+a_{1}x+\cdots+a_{n-1}x^{n-1}$$可看到$$0=\text{Im }q(x)=(\text{Im }a_{0})+(\text{Im }a_{1})x+\cdots+(\text{Im }a_{n-2})x^{n-2}$$，然后由4.4证明这些虚部都是0。最后，唯一性用4.8来证。
 
 # 第五章 本征值与本征向量
@@ -298,7 +298,7 @@ tags:
     - $$T$$的相应于$$\lambda$$的本征向量之集等于$$\text{null}(T-\lambda I)$$，而且是$$V$$的子空间（看[这里](#zero-space)）
   - 注意：同一个本征值可以有多于一个不同的且线性无关的本征向量。如$$I$$的本征值为1，但$$\mathbf{R}^{2}$$上的$$I$$就有两个不同的本征向量$$(0,1)$$和$$(1,0)$$。
   - 例子：对于算子$$T\in\mathcal{L}(\mathbf{F}^{2}),T(\vec{w},\vec{z})=(-\vec{z},\vec{w})$$。若$$\mathbf{F}=\mathbf{R}$$，此算子有很好的几何解释（绕$$\mathbf{R}^{2}$$的原点逆时针转$$90^{\circ}$$，易知$$T$$没有本征值。若$$\mathbf{F}=\mathbf{C}$$，$$i$$和$$-i$$都是$$T$$的本征值。
-- 5.6定理：设$$T\in\mathcal{L}(V)$$，$$\lambda_{1},\cdots,\lambda_{m}$$是$$T$$的互不相同的本征值，$$\vlist{v}{m}$$是相应的非零本征向量，则$$(\vlist{v}{m})$$线性无关。
+- 5.6定理：设$$T\in\mathcal{L}(V)$$，$$\list{\lambda}{m}$$是$$T$$的互不相同的本征值，$$\vlist{v}{m}$$是相应的非零本征向量，则$$(\vlist{v}{m})$$线性无关。
   - 证明：反证法，设$$k$$是使$$\vec{v}_{k}\in\vspanl{v}{k-1}$$成立的最小正整数（由2.4知道这样的$$k$$一定存在），于是有$$\vec{v}_{k}=a_{1}\vec{v}_{1}+\cdots+a_{k-1}\vec{v}_{k-1}$$，然后用该式两端乘以$$\lambda_{k}$$得到的式子减去把$$T$$作用于该等式两端得到的式子，根据$$(\vlist{v}{k-1})$$的线性无关性易知这些$$a$$都是0，从而$$\vec{v}_{k}$$等于$$\vec{0}$$，与特征向量不为零的假设矛盾。
 - 5.9推论：$$V$$上的每个算子最多有$$\dim V$$个互不相同的本征值。证明：由5.6即得。
 
@@ -337,7 +337,7 @@ tags:
     $$
 
     - <=方向：若$$\lambda_{1}=0$$则$$T\vec{v}_{1}=\vec{0}$$，故$$T$$不可逆。否则设$$\lambda_{k}=0,1\lt k\le n$$，由5.17，$$T\vec{v}_{k}\in\vspanl{v}{k-1}$$，根据3.5，存在非零向量$$\vec{v}\in\vspanl{v}{k}$$使得$$T\vec{v}=0$$，故$$T$$不可逆。
-    - =>方向：假设$$T$$不可逆，因此它不是单的且有非零向量$$\vec{v}\in V$$使得$$\vec{0}=T\vec{v}=T(a_{1}\vec{v}_{1}+\cdots+a_{k}\vec{v}_{k})=(a_{1}T\vec{v}_{1}+\cdots+a_{k-1}T\vec{v}_{k-1})+a_{k}T\vec{v}_{k};a_{1},\cdots,a_{k}\in\mathbf{F};a_{k}\ne0$$（把$$\vec{v}$$表示成基的线性组合然后取$$k$$是系数不为0的最大下标）。最后那个括号中的向量含于$$\vspanl{v}{k-1}$$（因为$$T$$关于该基的矩阵是上三角的，5.12），于是$$a_{k}T\vec{v}_{k}$$从而$$T\vec{v}_{k}$$也含于$$\vspanl{v}{k-1}$$，于是若把$$T\vec{v}_{k}$$写成基$$(\vlist{v}{n})$$的线性组合，则$$\vec{v}_{k}$$的系数即$$\lambda_{k}$$是0。
+    - =>方向：假设$$T$$不可逆，因此它不是单的且有非零向量$$\vec{v}\in V$$使得$$\vec{0}=T\vec{v}=T(a_{1}\vec{v}_{1}+\cdots+a_{k}\vec{v}_{k})=(a_{1}T\vec{v}_{1}+\cdots+a_{k-1}T\vec{v}_{k-1})+a_{k}T\vec{v}_{k};\list{a}{k}\in\mathbf{F};a_{k}\ne0$$（把$$\vec{v}$$表示成基的线性组合然后取$$k$$是系数不为0的最大下标）。最后那个括号中的向量含于$$\vspanl{v}{k-1}$$（因为$$T$$关于该基的矩阵是上三角的，5.12），于是$$a_{k}T\vec{v}_{k}$$从而$$T\vec{v}_{k}$$也含于$$\vspanl{v}{k-1}$$，于是若把$$T\vec{v}_{k}$$写成基$$(\vlist{v}{n})$$的线性组合，则$$\vec{v}_{k}$$的系数即$$\lambda_{k}$$是0。
 - 5.18命题：设$$T\in\mathcal{L}(V)$$关于$$V$$的某个基有上三角矩阵，则这个上三角矩阵对角线上的元素恰好是$$T$$的所有本征值。
   - 证明：设$$T$$关于某个基有上三角矩阵$$\mathcal{M}(T)$$，设$$\lambda\in\mathbf{F}$$，则矩阵$$\mathcal{M}(T-\lambda I)$$也是一个上三角矩阵且对角线上元素为$$\lambda_{k}-\lambda$$。根据5.16，$$T-\lambda I$$不可逆（即其不是单的，即存在非零向量被其映成零向量）当且仅当$$\lambda$$等于某个$$\lambda_{j}$$，即$$\lambda$$是$$T$$的本征值当且仅当$$\lambda$$等于某个$$\lambda_{j}$$。
 
@@ -347,10 +347,10 @@ tags:
 - 5.20命题：若$$T\in\mathcal{L}(V)$$由$$\dim V$$个互不相同的本征值，则$$T$$关于$$V$$的某个基有对角矩阵
   - 注意逆命题不成立，某些本征值较少的算子也可能有对角矩阵
   - 证明：设$$T\in\mathcal{L}(V)$$有$$\dim V$$个互不相同的本征值$$\lambda_{1},\cdots,\lambda_{\dim V}$$，根据5.6，它们对应的非零本征向量线性无关，根据2.17，这些本征向量是$$V$$的基，因此$$T$$关于由这些本征向量组成的基由对角矩阵。
-- 5.21命题：设$$T\in\mathcal{L}(V)$$，并设$$\lambda_{1},\cdots,\lambda_{m}$$是$$T$$的所有互不相同的本征值，则下列等价：
+- 5.21命题：设$$T\in\mathcal{L}(V)$$，并设$$\list{\lambda}{m}$$是$$T$$的所有互不相同的本征值，则下列等价：
   - (a)$$T$$关于$$V$$的某个基有对角矩阵
   - (b)$$V$$有一个由$$T$$的本征向量组成的基
-  - (c)$$V$$有在$$T$$下不变的1维子空间$$U_{1},\cdots,U_{n}$$使得$$V=U_{1}\oplus\cdots\oplus U_{n}$$
+  - (c)$$V$$有在$$T$$下不变的1维子空间$$\list{U}{n}$$使得$$V=U_{1}\oplus\cdots\oplus U_{n}$$
   - (d)$$V=\text{null}(T-\lambda_{1}I)\oplus\cdots\oplus\text{null}(T-\lambda_{m}I)$$
   - (e)$$\dim V=\dim\text{null}(T-\lambda_{1}I)+\cdots+\dim\text{null}(T-\lambda_{m}I)$$
 
