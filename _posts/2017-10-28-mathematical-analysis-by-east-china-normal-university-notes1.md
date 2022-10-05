@@ -425,7 +425,7 @@ tags:
    - 由直角坐标方程$$y=f(x),x\in[a,b]$$表示的曲线可以转化为参数方程表示，而当$$f(x)$$在$$[a,b]$$上连续可微时其弧长为$$s=\int_a^b\sqrt{1+f'^2(x)}\dx$$
    - 同理，由极坐标方程$$r=r(\theta),\theta\in[\alpha,\beta]$$表示的曲线当$$r'(\theta)$$在$$[\alpha,\beta]$$上连续且$$r(\theta)$$与$$r'(\theta)$$不同时为零时弧长为$$s=\int_\alpha^\beta\sqrt{r^2(\theta)+r'^2(\theta)}\d \theta$$。
 1. 弧微分定义$$\ds=\sqrt{\dx^2+\dy^2}$$，微分三角形
-1. 对于一个光滑曲线，平均曲率定义为倾角增量和弧长增量的比即$$\overline{K}=\frac{\Delta\alpha}{\Delta s}$$，曲率则定义为平均曲率的极限即$$K=\abs{\lim_{\Delta t\to0}\frac{\Delta\alpha}{\Delta s}}=\abs{\frac{\d \alpha}{\ds}}=\frac{\abs{x'(t)y''(t)-x''(t)y'(t)}}{(x'^2(t)+y'^2(t))^{3/2}}$$。
+1. 对于一个光滑曲线，平均曲率定义为倾角增量和弧长增量的比即$$\overline{K}=\frac{\Delta\alpha}{\Delta s}$$，曲率则定义为平均曲率的极限即$$K=\abs{\lim_{\Delta t\to0}\frac{\Delta\alpha}{\Delta s}}=\abs{\dd{\alpha}{s}}=\frac{\abs{x'(t)y''(t)-x''(t)y'(t)}}{(x'^2(t)+y'^2(t))^{3/2}}$$。
    - 可求得圆在圆周上任意一点处的曲率为$$K=\frac{1}{R}$$
    - 曲线任意一点处若曲率不为零，则可过该点作一个半径为$$\frac{1}{K}$$使得该圆在该点与该曲线有相同的切线并在该点近旁与该曲线位于该切线同侧。这个圆称为曲率圆，其半径和圆心称为曲率半径和曲率中心。
 1. 旋转曲面的面积可以把每一小段近似地用圆台的侧面积来表示（怎样严格定义曲面的面积？书上说在下册重积分章节，what the fuck?）
