@@ -58,8 +58,8 @@ tags:
 
    $$
    \begin{align}
-   \bigg\vert\int_a^b f_n(x)\dx-\int_a^b\lim_{n\to\infty}f_n(x)\dx\bigg\vert=&\bigg\vert\int_a^b f_n(x)\dx-\int_a^b f(x)\dx\bigg\vert\\
-   =&\bigg\vert\int_a^b\big(f_n(x)-f(x)\big)\dx\bigg\vert\\
+   \abs{\int_a^b f_n(x)\dx-\int_a^b\lim_{n\to\infty}f_n(x)\dx}=&\abs{\int_a^b f_n(x)\dx-\int_a^b f(x)\dx}\\
+   =&\abs{\int_a^b\big(f_n(x)-f(x)\big)\dx}\\
    \le&\int_a^b\abs{f_n(x)-f(x)}\dx\\
    \le&\varepsilon(b-a)
    \end{align}
@@ -201,8 +201,8 @@ tags:
 
    $$
    \begin{align}
-   \frac{\pd z}{\pd s}\Big\vert_{(s,t)}=\frac{\pd z}{\pd x}\Big\vert_{(x,y)}\frac{\pd x}{\pd s}\Big\vert_{(s,t)}+\frac{\pd z}{\pd y}\Big\vert_{(x,y)}\frac{\pd y}{\pd s}\Big\vert_{(s,t)}\\
-   \frac{\pd z}{\pd t}\Big\vert_{(s,t)}=\frac{\pd z}{\pd x}\Big\vert_{(x,y)}\frac{\pd x}{\pd t}\Big\vert_{(s,t)}+\frac{\pd z}{\pd y}\Big\vert_{(x,y)}\frac{\pd y}{\pd t}\Big\vert_{(s,t)}
+   \cond{\pdd{z}{s}}_{(s,t)}=\cond{\pdd{z}{x}}_{(x,y)}\cond{\pdd{x}{s}}_{(s,t)}+\cond{\pdd{z}{y}}_{(x,y)}\cond{\pdd{y}{s}}_{(s,t)}\\
+   \cond{\pdd{z}{t}}_{(s,t)}=\cond{\pdd{z}{x}}_{(x,y)}\cond{\pdd{x}{t}}_{(s,t)}+\cond{\pdd{z}{y}}_{(x,y)}\cond{\pdd{y}{t}}_{(s,t)}
    \end{align}
    $$
 
@@ -314,7 +314,7 @@ tags:
 1. 定理19.1（连续性）：若$$f(x,y)$$在$$[a,b]\times[c,d]$$上连续则$$\varphi(x)=\int_c^d f(x,y)\dy$$在$$[a,b]$$上连续。证明：用连续性定义，考虑$$\varphi(x+\Delta x)-\varphi(x)=\int_c^d \big(f(x+\Delta x,y)-f(x,y)\big)\dy$$。
 1. 推论：对于满足上述定理的任何$$x_0\in[a,b]$$都有$$\lim_{x\to x_0}\int_c^d f(x,y)\dy=\int_c^d\lim_{x\to x_0}f(x,y)\dy$$。
 1. 定理19.2（连续性）：若$$f(x,y)$$在$$\{(x,y)\vert c(x)\le y\le d(x),a\le x\le b\}$$上连续，其中$$c(x)$$和$$d(x)$$均为$$[a,b]$$上的连续函数，则函数$$F(x)=\int_{c(x)}^{d(x)}f(x,y)\dy$$在$$[a,b]$$上连续。证明：令$$y=c(x)+t\big(d(x)-c(x)\big),t\in[0,1]$$并对该$$F(x)$$使用换元积分法，可以得到定理19.1的形式。
-1. 定理19.3（可微性）：若$$f(x,y)$$与其偏导数$$\frac{\pd}{\pd x}f(x,y)$$都在矩形区域$$[a,b]\times[c,d]$$上连续，则$$\varphi(x)=\int_c^d f(x,y)\dy$$在$$[a,b]$$上可微，且$$\frac{\d }{\dx}\int_c^d f(x,y)\dy=\int_c^d\frac{\pd}{\pd x}f(x,y)\dy$$。证明：实际上就是证明$$\big\vert\frac{\Delta\varphi}{\Delta x}-\int_c^d f_x(x,y)\dy\big\vert$$在$$\Delta x$$足够小时可以任意小，通过拉格朗日中值定理和连续性（从而有一致连续性）以及放缩法可证。
+1. 定理19.3（可微性）：若$$f(x,y)$$与其偏导数$$\frac{\pd}{\pd x}f(x,y)$$都在矩形区域$$[a,b]\times[c,d]$$上连续，则$$\varphi(x)=\int_c^d f(x,y)\dy$$在$$[a,b]$$上可微，且$$\frac{\d }{\dx}\int_c^d f(x,y)\dy=\int_c^d\frac{\pd}{\pd x}f(x,y)\dy$$。证明：实际上就是证明$$\abs{\frac{\Delta\varphi}{\Delta x}-\int_c^d f_x(x,y)\dy}$$在$$\Delta x$$足够小时可以任意小，通过拉格朗日中值定理和连续性（从而有一致连续性）以及放缩法可证。
 1. 定理19.4（可微性）：设$$f(x,y)$$，$$f_x(x,y)$$在$$[a,b]\times[p,q]$$上连续，$$c(x)$$，$$d(x)$$为定义在$$[a,b]$$上其值含于$$[p,q]$$内的可微函数，则$$F(x)=\int_{c(x)}^{d(x)}f(x,y)\dy$$在$$[a,b]$$上可微，且$$F'(x)=\int_{c(x)}^{d(x)}f_x(x,y)\dy+f(x,d(x))d'(x)-f(x,c(x))c'(x)$$。证明：把$$F(x)$$看作复合函数$$F(x)=H(x,c,d)=\int_c^d f(x,y)\dy,c=c(x),d=d(x)$$，由复合函数求导法则、变上（下）限积分求导法则以及定理19.3可证。
 1. 定理19.5（可积性）：若$$f(x,y)$$在$$[a,b]\times[c,d]$$上连续，则$$\varphi(x)$$和$$\psi(y)$$分别在$$[a,b]$$和$$[c,d]$$上可积。分别记作$$\int_a^b\dx\int_c^d f(x,y)\dy$$和$$\int_c^d\dy\int_a^b f(x,y)\dx$$，称为累次积分或二次积分。由定理19.1和定理19.2连续性即可证。
 1. 定理19.6：若$$f(x,y)$$在$$[a,b]\times[c,d]$$上连续则上述两个二次积分相等。证明：把固定上限$$b$$变为可变上限$$u$$，对左右两边分别对$$u$$求导，结果均为$$\varphi(u)$$（其中右边需要用定理19.3才能把偏导符号和积分符号交换）。
@@ -322,9 +322,9 @@ tags:
 ## 含参量（反常）积分
 
 1. 含参量$$x$$的无穷限反常积分（简称含参量反常积分）：$$\Phi(x)=\int_c^{+\infty}f(x,y)\dy,x\in[a,b]$$，要求对每个固定的$$x$$它都收敛
-1. 一致收敛的定义：若对任给$$\epsilon\gt0$$，总存在实数$$N>c>0$$，使得当$$M>N$$时对一切$$x\in[a,b]$$都有$$\big\vert\int_c^M f(x,y)\dy-\Phi(x)\big\vert\lt\epsilon$$则称该反常积分在定义域上一致收敛于$$\Phi(x)$$
-1. 定理19.7（一致收敛的柯西准则）：对任给$$\epsilon\gt0$$，总存在实数$$M>c$$，使得当$$A_1,A_2\gt M$$时对一切$$x\in[a,b]$$都有$$\big\vert\int_{A_1}^{A_2}f(x,y)\dy\big\vert\lt\epsilon$$
-1. 定理19.8：$$\Phi(x)$$一致收敛的充要条件是$$\lim_{A\to+\infty}F(A)=0$$，其中$$F(A)=\sup_{x\in[a,b]}\big\vert\int_A^{+\infty}f(x,y)\dy\big\vert$$。由定义即得。
+1. 一致收敛的定义：若对任给$$\epsilon\gt0$$，总存在实数$$N>c>0$$，使得当$$M>N$$时对一切$$x\in[a,b]$$都有$$\abs{\int_c^M f(x,y)\dy-\Phi(x)}\lt\epsilon$$则称该反常积分在定义域上一致收敛于$$\Phi(x)$$
+1. 定理19.7（一致收敛的柯西准则）：对任给$$\epsilon\gt0$$，总存在实数$$M>c$$，使得当$$A_1,A_2\gt M$$时对一切$$x\in[a,b]$$都有$$\abs{\int_{A_1}^{A_2}f(x,y)\dy}\lt\epsilon$$
+1. 定理19.8：$$\Phi(x)$$一致收敛的充要条件是$$\lim_{A\to+\infty}F(A)=0$$，其中$$F(A)=\sup_{x\in[a,b]}\abs{\int_A^{+\infty}f(x,y)\dy}$$。由定义即得。
 1. 定理19.9：$$\Phi(x)$$一致收敛的充要条件是，对任一趋于正无穷的递增数列$$\{A_n\}$$（其中$$A_1=c$$），函数项级数$$\sum_{n=1}^{\infty}\int_{A_n}^{A_{n+1}}f(x,y)\dy=\sum_{n=1}^{\infty}u_n(x)$$在$$[a,b]$$上一致收敛。必要性显然，充分性用反证法。
 1. 含参量反常积分的一致收敛性判别法（证明从略，因与函数项级数相应的判别法相仿）
    - 魏尔斯特拉斯M判别法
@@ -338,7 +338,7 @@ tags:
    - (i) $$\int_a^{+\infty}f(x,y)\dx$$关于$$y$$在$$[c,+\infty)$$上内闭一致收敛，$$\int_c^{+infty}f(x,y)\dy$$关于$$x$$在$$[a,+\infty)$$上内闭一致收敛
    - (ii) 积分$$\int_a^{+\infty}\dx\int_c^{+\infty}\abs{f(x,y)}\dy$$与$$\int_c^{+\infty}\dy\int_a^{+\infty}\abs{f(x,y)}\dx$$中有一个收敛
 
-   则$$\int_a^{+\infty}\dx\int_c^{+\infty}f(x,y)\dy=\int_c^{+\infty}\dy\int_a^{+\infty}f(x,y)\dx$$，即两个“累次反常积分”相等。主要思路就是证明$$J_d=\big\vert\int_c^d\dy\int_a^{+\infty}f(x,y)\dx-\int_a^{+\infty}\dx\int_c^{+\infty}f(x,y)\dy\big\vert=\big\vert\int_a^{+\infty}\dx\int_d^{+\infty}f(x,y)\dy\big\vert\le\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$$，其中第二个等号由条件(i)和19.12推得，小于等于号由条件(ii)和内一致收敛性推得
+   则$$\int_a^{+\infty}\dx\int_c^{+\infty}f(x,y)\dy=\int_c^{+\infty}\dy\int_a^{+\infty}f(x,y)\dx$$，即两个“累次反常积分”相等。主要思路就是证明$$J_d=\abs{\int_c^d\dy\int_a^{+\infty}f(x,y)\dx-\int_a^{+\infty}\dx\int_c^{+\infty}f(x,y)\dy}=\abs{\int_a^{+\infty}\dx\int_d^{+\infty}f(x,y)\dy}\le\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$$，其中第二个等号由条件(i)和19.12推得，小于等于号由条件(ii)和内一致收敛性推得
 
 ## 欧拉积分
 
