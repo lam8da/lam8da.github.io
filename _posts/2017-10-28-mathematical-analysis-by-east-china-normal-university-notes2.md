@@ -64,7 +64,7 @@ tags:
    \le&\vae(b-a)
    \end{align}
    $$
-1. 定理13.11：设$$\{f_n\}$$为定义在$$[a,b]$$上的函数列，若$$x_0\in[a,b]$$为$$\{f_n\}$$的收敛点，$$\{f_n\}$$的每一项在$$[a,b]$$上有连续的导数，且$$\{f'_n\}$$在$$[a,b]$$上 一致收敛，则$$\frac{\d }{\dx}\lim_{n\to\infty}f_n(x)=\lim_{n\to\infty}\frac{\d }{\dx}f_n(x)$$。证明：设$$\{f'_n\}$$一致收敛于$$g$$，由定理13.9知$$g$$连续。设$$f_n(x_0)$$收敛于$$A$$，根据定积分的牛顿-莱布尼兹公式有$$f_n(x)=f_n(x_0)+\int_{x_0}^{x}f'_n(t)\dt$$，且由于$$n\to\infty$$时右边第一项极限为$$A$$，第二项极限根据定理13.10为$$\int_{x_0}^{x}g(t)\dt$$，因此左边极限存在，记为$$f$$（即$$\{f_n\}$$收敛于$$f$$）。于是$$f(x)=\lim_{n\to\infty}f_n(x)=A+\int_{x_0}^{x}g(t)\dt$$。根据$$g$$的连续性和微积分学基本定理推得$$f'(x)=g(x)$$，证毕。
+1. 定理13.11：设$$\{f_n\}$$为定义在$$[a,b]$$上的函数列，若$$x_0\in[a,b]$$为$$\{f_n\}$$的收敛点，$$\{f_n\}$$的每一项在$$[a,b]$$上有连续的导数，且$$\{f'_n\}$$在$$[a,b]$$上 一致收敛，则$$\dd{ }{x}\lim_{n\to\infty}f_n(x)=\lim_{n\to\infty}\dd{ }{x}f_n(x)$$。证明：设$$\{f'_n\}$$一致收敛于$$g$$，由定理13.9知$$g$$连续。设$$f_n(x_0)$$收敛于$$A$$，根据定积分的牛顿-莱布尼兹公式有$$f_n(x)=f_n(x_0)+\int_{x_0}^{x}f'_n(t)\dt$$，且由于$$n\to\infty$$时右边第一项极限为$$A$$，第二项极限根据定理13.10为$$\int_{x_0}^{x}g(t)\dt$$，因此左边极限存在，记为$$f$$（即$$\{f_n\}$$收敛于$$f$$）。于是$$f(x)=\lim_{n\to\infty}f_n(x)=A+\int_{x_0}^{x}g(t)\dt$$。根据$$g$$的连续性和微积分学基本定理推得$$f'(x)=g(x)$$，证毕。
 1. 在定理13.11的条件下还可以证明$$f_n$$一致收敛于$$f$$。
    > 如何证明？
      {: .lambda_question}
@@ -87,7 +87,7 @@ tags:
    。这是定理13.10的推论，其中等式左边第二项是根据和函数的定义对第一项的展开式，第三项是在第二项上使用黎曼积分的性质，第四项是第三项使用定理13.10把极限符号和积分符号交换并且把极限求和按照定义简写成和函数的形式。
 1. 定理13.14：若函数项级数$$\sum u_n(x)$$在$$[a,b]$$上每一项都有连续的导函数，$$x_0\in[a,b]$$为$$\sum u_n(x)$$的收敛点且$$\sum u′_n(x)$$在$$[a,b]$$上一致收敛，则有
 
-   $$\sum\frac{\d }{\dx}u_n(x)=\lim_{n\to\infty}\p{\sum_{k=1}^n\p{\frac{\d }{\dx}u_k(x)}}=\lim_{n\to\infty}\p{\frac{\d }{\dx}\p{\sum_{k=1}^n u_k(x)}}=\frac{\d }{\dx}\p{\lim_{n\to\infty}\p{\sum_{k=1}^n u_k(x)}}=\frac{\d }{\dx}\p{\sum u_n(x)}$$
+   $$\sum\dd{ }{x}u_n(x)=\lim_{n\to\infty}\p{\sum_{k=1}^n\p{\dd{ }{x}u_k(x)}}=\lim_{n\to\infty}\p{\dd{ }{x}\p{\sum_{k=1}^n u_k(x)}}=\dd{ }{x}\p{\lim_{n\to\infty}\p{\sum_{k=1}^n u_k(x)}}=\dd{ }{x}\p{\sum u_n(x)}$$
 
    。这是定理13.11的推论，和上面类似，第二第三步分别把和函数按定义展开并利用导数的四则运算法则，第四步使用了定理13.11。
 
@@ -189,7 +189,7 @@ tags:
 # 第十七章 多元函数微分学
 
 1. 定义：若函数$$f$$在点$$P_0$$处的全增量$$\Delta z=f(x_0+\Delta x,y_0+\Delta y)-f(x_0,y_0)$$可表示为$$A\Delta x+B\Delta y+o(\rho)$$，其中$$\rho=\Delta x^2+\Delta y^2$$，$$o(\rho)$$是较$$\rho$$高阶的无穷小量，则称函数$$f$$在$$(x_0,y_0)$$可微，并称$$A\Delta x+B\Delta y$$为$$f$$在$$(x_0,y_0)$$的全微分，记作$$\dz\vert_{P_{0}}=\d f(x_{0},y_{0})=A\Delta x+B\Delta y$$
-1. 偏导数的定义：当极限$$\lim_{\Delta x\to0}\frac{\Delta_xf(x_0,y_0)}{\Delta x}=\lim_{\Delta x\to0}\frac{f(x_0+\Delta_x,y_0)-f(x_0,y_0)}{\Delta x}$$存在时该极限称为$$f$$在点$$(x_0,y_0)$$关于$$x$$偏导数，记作$$f_x(x_0,y_0)$$或$$\frac{\pd f}{\pd x}\Big\vert_{(x_0,y_0)}$$
+1. 偏导数的定义：当极限$$\lim_{\Delta x\to0}\frac{\Delta_xf(x_0,y_0)}{\Delta x}=\lim_{\Delta x\to0}\frac{f(x_0+\Delta_x,y_0)-f(x_0,y_0)}{\Delta x}$$存在时该极限称为$$f$$在点$$(x_0,y_0)$$关于$$x$$偏导数，记作$$f_x(x_0,y_0)$$或$$\pdd{f}{x}\Big\vert_{(x_0,y_0)}$$
 1. 定理17.1（可微的必要条件）：可微=>关于每个自变量的偏导数都存在，且$$\d f\vert_{(x_0,y_0)}=f_x(x_0,y_0)\Delta x+f_y(x_0,y_0)\Delta y=f_x(x_0,y_0)\dx+f_y(x_0,y_0)\dy$$。根据全微分和偏导数的定义（令全微分式子中的$$\Delta x$$或$$\Delta y$$为0然后求极限得到$$A$$和$$B$$等于两个偏导数）直接可得此结论。具体参见上册书笔记我对一元函数微分的理解。
 1. 定理17.2（可微的充分条件）：若偏导数在所考察点的某邻域内存在且俩偏导数在所考察点处连续，则函数所考察点可微。证明：改写$$\Delta z=\p{f(x_0+\Delta x,y_0+\Delta y)-f(x_0,y_0+\Delta y)}+\p{f(x_0,y_0+\Delta y)-f(x_0,y_0)}$$，右端两个减式分别使用一元函数的拉格朗日中值定理，再利用偏导连续的条件把式子怎么地写成$$A\Delta x+B\Delta y+o(\rho)$$的形式即可。
 1. 偏导数连续并不是函数可微的必要条件。但若可微且偏导数也连续，就称为连续可微
@@ -207,7 +207,7 @@ tags:
    $$
 
    证明方法就是把$$x$$和$$y$$的全增量（用$$s$$和$$t$$表示）式子代入$$z$$的全增量表达式，并将其写成微分的增量表示形式。
-1. 多元函数的一阶（全）微分形式不变性：对于复合函数$$z=f(x,y),x=\varphi(s,t),y=\psi(s,t)$$，有$$\dz=\frac{\pd z}{\pd x}\dx+\frac{\pd z}{\pd y}\dy$$，其中$$\dx=\frac{\pd x}{\pd s}\ds+\frac{\pd x}{\pd t}\dt, \dy=\frac{\pd y}{\pd s}\ds+\frac{\pd y}{\pd t}\dt$$
+1. 多元函数的一阶（全）微分形式不变性：对于复合函数$$z=f(x,y),x=\varphi(s,t),y=\psi(s,t)$$，有$$\dz=\pdd{z}{x}\dx+\pdd{z}{y}\dy$$，其中$$\dx=\pdd{x}{s}\ds+\pdd{x}{t}\dt, \dy=\pdd{y}{s}\ds+\pdd{y}{t}\dt$$
 1. 方向导数的定义：即极限$$\lim_{\rho\to 0^+}\frac{f(P)-f(P_0)}{\rho}$$（要求其存在）。其中$$P$$为从$$P_0$$出发所考察方向上的一点，$$\rho$$为$$P$$和$$P_0$$两点间距离
 1. 定理17.6：若**三元**函数$$f$$在点$$P_0(x_0,y_0,z_0)$$可微，则$$f$$在点$$P_0$$处沿任一方向$$l$$的方向导数都存在，且$$f_l(P_0)=f_x(P_0)\cos\alpha+f_y(P_0)\cos\beta+f_z(P_0)\cos\gamma$$，其中$$\cos\alpha,\cos\beta,\cos\gamma$$为方向$$l$$的方向余弦。证明过程就是把全微分的定义式改写成方向导数的定义式。
 1. 梯度的定义：三元函数$$f$$的梯度（向量）为$$\mathrm{grad}\,f=(f_x(P_0),f_y(P_0),f_z(P_0))$$。于是方向导数公式又可以写成$$f_l(P_0)=\abs{\mathrm{grad}\,f(P_0)}\cos\theta$$，因此当$$\theta=0$$时即梯度方向使得$$f$$增长最快，$$\theta=\pi$$时减少最快。
@@ -314,7 +314,7 @@ tags:
 1. 定理19.1（连续性）：若$$f(x,y)$$在$$[a,b]\times[c,d]$$上连续则$$\varphi(x)=\int_c^d f(x,y)\dy$$在$$[a,b]$$上连续。证明：用连续性定义，考虑$$\varphi(x+\Delta x)-\varphi(x)=\int_c^d \p{f(x+\Delta x,y)-f(x,y)}\dy$$。
 1. 推论：对于满足上述定理的任何$$x_0\in[a,b]$$都有$$\lim_{x\to x_0}\int_c^d f(x,y)\dy=\int_c^d\lim_{x\to x_0}f(x,y)\dy$$。
 1. 定理19.2（连续性）：若$$f(x,y)$$在$$\{(x,y)\vert c(x)\le y\le d(x),a\le x\le b\}$$上连续，其中$$c(x)$$和$$d(x)$$均为$$[a,b]$$上的连续函数，则函数$$F(x)=\int_{c(x)}^{d(x)}f(x,y)\dy$$在$$[a,b]$$上连续。证明：令$$y=c(x)+t\p{d(x)-c(x)},t\in[0,1]$$并对该$$F(x)$$使用换元积分法，可以得到定理19.1的形式。
-1. 定理19.3（可微性）：若$$f(x,y)$$与其偏导数$$\frac{\pd}{\pd x}f(x,y)$$都在矩形区域$$[a,b]\times[c,d]$$上连续，则$$\varphi(x)=\int_c^d f(x,y)\dy$$在$$[a,b]$$上可微，且$$\frac{\d }{\dx}\int_c^d f(x,y)\dy=\int_c^d\frac{\pd}{\pd x}f(x,y)\dy$$。证明：实际上就是证明$$\abs{\frac{\Delta\varphi}{\Delta x}-\int_c^d f_x(x,y)\dy}$$在$$\Delta x$$足够小时可以任意小，通过拉格朗日中值定理和连续性（从而有一致连续性）以及放缩法可证。
+1. 定理19.3（可微性）：若$$f(x,y)$$与其偏导数$$\frac{\pd}{\pd x}f(x,y)$$都在矩形区域$$[a,b]\times[c,d]$$上连续，则$$\varphi(x)=\int_c^d f(x,y)\dy$$在$$[a,b]$$上可微，且$$\dd{ }{x}\int_c^d f(x,y)\dy=\int_c^d\frac{\pd}{\pd x}f(x,y)\dy$$。证明：实际上就是证明$$\abs{\frac{\Delta\varphi}{\Delta x}-\int_c^d f_x(x,y)\dy}$$在$$\Delta x$$足够小时可以任意小，通过拉格朗日中值定理和连续性（从而有一致连续性）以及放缩法可证。
 1. 定理19.4（可微性）：设$$f(x,y)$$，$$f_x(x,y)$$在$$[a,b]\times[p,q]$$上连续，$$c(x)$$，$$d(x)$$为定义在$$[a,b]$$上其值含于$$[p,q]$$内的可微函数，则$$F(x)=\int_{c(x)}^{d(x)}f(x,y)\dy$$在$$[a,b]$$上可微，且$$F'(x)=\int_{c(x)}^{d(x)}f_x(x,y)\dy+f(x,d(x))d'(x)-f(x,c(x))c'(x)$$。证明：把$$F(x)$$看作复合函数$$F(x)=H(x,c,d)=\int_c^d f(x,y)\dy,c=c(x),d=d(x)$$，由复合函数求导法则、变上（下）限积分求导法则以及定理19.3可证。
 1. 定理19.5（可积性）：若$$f(x,y)$$在$$[a,b]\times[c,d]$$上连续，则$$\varphi(x)$$和$$\psi(y)$$分别在$$[a,b]$$和$$[c,d]$$上可积。分别记作$$\int_a^b\dx\int_c^d f(x,y)\dy$$和$$\int_c^d\dy\int_a^b f(x,y)\dx$$，称为累次积分或二次积分。由定理19.1和定理19.2连续性即可证。
 1. 定理19.6：若$$f(x,y)$$在$$[a,b]\times[c,d]$$上连续则上述两个二次积分相等。证明：把固定上限$$b$$变为可变上限$$u$$，对左右两边分别对$$u$$求导，结果均为$$\varphi(u)$$（其中右边需要用定理19.3才能把偏导符号和积分符号交换）。
@@ -331,7 +331,7 @@ tags:
    - 狄利克雷判别法
    - 阿贝尔判别法
 1. 定理19.10（连续性）：设$$f(x,y)$$在$$[a,b]\times[c,+\infty)$$上连续，若$$\Phi(x)=\int_c^{+\infty}f(x,y)\dy$$在$$[a,b]$$上一致收敛，则$$\Phi(x)$$在$$[a,b]$$上连续。证明：通过定理19.9，对应的函数项级数一致收敛，而由定理19.2每一项函数都连续，根据函数项级数的连续性定理$$\Phi(x)$$连续。这个定理表明，在一致收敛的条件下，极限运算与积分运算可以交换：$$\lim_{x\to x_0}\int_c^{+\infty}f(x,y)\dy=\int_c^{+\infty}\lim_{x\to x_0}f(x,y)\dy$$
-1. 定理19.11（可微性）：设$$f(x,y)$$和$$f_x(x,y)$$在$$I\times[c,+\infty)$$上连续，若$$\Phi(x)=\int_c^{+\infty}f(x,y)\dy$$在$$I$$上收敛，$$\int_c^{+\infty}f_x(x,y)\dy$$在$$I$$上一致收敛，则$$\Phi(x)$$在$$I$$上可微且$$\Phi'(x)=\int_c^{+\infty}f_x(x,y)\dy$$。证明：同样的，拆为函数项级数，每项由定理19.3均可微，而由19.9知该函数项级数一致收敛，最后由函数项级数的逐项求导定理即得。这个定理表明求导和积分符号可交换：$$\frac{\d }{\dx}\int_c^{+infty}f(x,y)\dy=\int_c^{+\infty}\frac{\pd}{\pd x}f(x,y)\dy$$
+1. 定理19.11（可微性）：设$$f(x,y)$$和$$f_x(x,y)$$在$$I\times[c,+\infty)$$上连续，若$$\Phi(x)=\int_c^{+\infty}f(x,y)\dy$$在$$I$$上收敛，$$\int_c^{+\infty}f_x(x,y)\dy$$在$$I$$上一致收敛，则$$\Phi(x)$$在$$I$$上可微且$$\Phi'(x)=\int_c^{+\infty}f_x(x,y)\dy$$。证明：同样的，拆为函数项级数，每项由定理19.3均可微，而由19.9知该函数项级数一致收敛，最后由函数项级数的逐项求导定理即得。这个定理表明求导和积分符号可交换：$$\dd{ }{x}\int_c^{+infty}f(x,y)\dy=\int_c^{+\infty}\frac{\pd}{\pd x}f(x,y)\dy$$
 1. 定理19.12（可积性）：若$$f(x,y)$$在$$[a,b]\times[c,+\infty)$$上连续，若$$\Phi(x)$$在$$[a,b]$$上一致收敛，则$$\Phi(x)$$在$$[a,b]$$上可积，且$$\int_a^b\dx\int_c^{+\infty}f(x,y)\dy=\int_c^{+\infty}\dy\int_a^b f(x,y)\dx$$。证明：19.10说明$$\Phi(x)$$连续故可积，而从19.10的证明中应用函数项级数的逐项求积定理即得。
 1. 定义：若在区间$$I$$的任一闭子区间上反常积分都一致收敛，则称该反常积分在$$I$$上**内闭一致收敛**
 1. 定理19.3：设$$f(x,y)$$在$$[a,+\infty)\times[c,+\infty)$$上连续。若：
@@ -459,7 +459,7 @@ f(\xi_i,\eta_i)\Delta\sigma_i$$为函数$$f(x,y)$$在$$D$$上属于分割$$T$$�
 1. 定理21.11（格林公式，二重积分和边界曲线上的第二型曲线积分的关系）：若$$P(x,y),Q(x,y)$$在有界闭区域$$D$$上连续且有连续的一阶偏导数，则有
 
    $$
-   \iint_D\p{\frac{\pd Q}{\pd x}-\frac{\pd P}{\pd y}}\d \sigma=\oint_L P\dx+Q\dy
+   \iint_D\p{\pdd{Q}{x}-\pdd{P}{y}}\d \sigma=\oint_L P\dx+Q\dy
    $$
 
    ，这里$$L$$为$$D$$的边界曲线，并取正方向（人沿边界走时$$D$$总在其左边，这样的人走的方向为正方向）。证明思路：把区域分割为这样一些简单区域的并，使得平行于坐标轴的直线和$$L$$至多交于两点，然后求在每个简单区域上的二重积分：先化为累次积分，然后用牛顿-莱布尼兹公式把对导数的积分转换为原函数的减法，然后将减法合并为闭合曲线的第二型曲线积分即可（期间还要用到定理21.8、21.9以及其推论）。最后把所有这些区域上的二重积分加起来即可，区域的边界上的第二型曲线积分会互相抵消。
@@ -468,14 +468,14 @@ f(\xi_i,\eta_i)\Delta\sigma_i$$为函数$$f(x,y)$$在$$D$$上属于分割$$T$$�
    - 一个精辟的观察是：任意的路径边界上的功，等于路径围成的区域内的所有微分矩形（即把该区域按照网格切分称很多小区域）的边界上的功之和，即
 
      $$
-     \oint_{L^+}\overrightarrow{F}\cdot\d \overrightarrow{r}=\oint_{L^+}P\dx+Q\dy=\iint_D\p{\frac{\pd Q}{\pd x}-\frac{\pd P}{\pd y}}\d \sigma
+     \oint_{L^+}\overrightarrow{F}\cdot\d \overrightarrow{r}=\oint_{L^+}P\dx+Q\dy=\iint_D\p{\pdd{Q}{x}-\pdd{P}{y}}\d \sigma
      $$
 
      其中$$\d \overrightarrow{r}$$是曲线的切向量，$$\overrightarrow{F}\cdot\d \overrightarrow{r}$$表示力在运动方向做的功。
    - 如果令$$\overrightarrow{F}$$表示流速或者电流密度，$$\d \overrightarrow{n}$$表示边界曲线法向量，则$$\overrightarrow{F}\d \overrightarrow{n}$$在流体力学、电磁学中就称为通量。按照类似上述格林公式的方法可以证得：
 
      $$
-     \oint_{L^+}\overrightarrow{F}\cdot\d \overrightarrow{n}=\oint_{L^+}P\dy-Q\dx=\iint_D\p{\frac{\pd P}{\pd x}+\frac{\pd Q}{\pd y}}\d \sigma
+     \oint_{L^+}\overrightarrow{F}\cdot\d \overrightarrow{n}=\oint_{L^+}P\dy-Q\dx=\iint_D\p{\pdd{P}{x}+\pdd{Q}{y}}\d \sigma
      $$
 
    - 感觉有点异曲同工：就像牛顿莱布尼兹公式中定积分值和两端值有关，格林公式中区域二重积分和边界曲线积分有关。知乎上说“其实这些都是流形上的斯托克斯公式”？
@@ -487,12 +487,12 @@ f(\xi_i,\eta_i)\Delta\sigma_i$$为函数$$f(x,y)$$在$$D$$上属于分割$$T$$�
    - 沿$$D$$内任一按段光滑封闭曲线$$L$$有$$\oint_L P\dx+Q\dy=0$$ 
    - 对$$D$$中任一按段光滑曲线$$L$$，曲线积分$$\int_L P\dx+Q\dy$$与路线无关，只与$$L$$的起点及终点有关 
    - $$P\dx+Q\dy$$是$$D$$内某一函数$$u(x,y)$$的全微分，即在$$D$$内有$$\du=P\dx+Q\dy$$
-   - 在$$D$$内处处成立$$\frac{\pd P}{\pd y}=\frac{\pd Q}{\pd x}$$
+   - 在$$D$$内处处成立$$\pdd{P}{y}=\pdd{Q}{x}$$
 
    证明：
    - 第一点到第二点显然。
-   - 第二点到第三点：设$$A(x_0,y_0)$$为$$D$$内某一定点，$$B(x,y)$$为$$D$$内任意一点，令$$u(x,y)=\int_{AB}P\dx+Q\dy$$（注意这个函数的良定义性：$$u(x,y)$$必是$$B$$点的函数，因此只有两个变量$$x$$和$$y$$），根据第二点证得$$\frac{\pd u}{\pd x}=P(x,y)$$和$$\frac{\pd u}{\pd y}=Q(x,y)$$，于是有$$\du=P\dx+Q\dy$$。这个函数$$u$$与一元函数的原函数相仿，所以也称$$u$$为$$P\dx+Q\dy$$的一个原函数。
-   - 第三点到第四点：由定理17.7可证$$\frac{\pd P}{\pd y}=\frac{\pd^2 u}{\pd x\pd y}=\frac{\pd^2 u}{\pd y\pd x}=\frac{\pd Q}{\pd x}$$。
+   - 第二点到第三点：设$$A(x_0,y_0)$$为$$D$$内某一定点，$$B(x,y)$$为$$D$$内任意一点，令$$u(x,y)=\int_{AB}P\dx+Q\dy$$（注意这个函数的良定义性：$$u(x,y)$$必是$$B$$点的函数，因此只有两个变量$$x$$和$$y$$），根据第二点证得$$\pdd{u}{x}=P(x,y)$$和$$\pdd{u}{y}=Q(x,y)$$，于是有$$\du=P\dx+Q\dy$$。这个函数$$u$$与一元函数的原函数相仿，所以也称$$u$$为$$P\dx+Q\dy$$的一个原函数。
+   - 第三点到第四点：由定理17.7可证$$\pdd{P}{y}=\frac{\pd^2 u}{\pd x\pd y}=\frac{\pd^2 u}{\pd y\pd x}=\pdd{Q}{x}$$。
    - 第四点到第一点直接由格林公式可得。这里用到了“单连通区域”这个条件：如果$$D$$不是单连通的，不能保证其上的任一封闭曲线围成的区域都在$$D$$内，故对于不在$$D$$内的部分不能使用第四点的性质。
 
 ## 二重积分的变量变换
@@ -506,7 +506,7 @@ f(\xi_i,\eta_i)\Delta\sigma_i$$为函数$$f(x,y)$$在$$D$$上属于分割$$T$$�
    \end{vmatrix}\ne0,(u,v)\in\Delta
    $$
 
-   则区域$$D$$的面积$$\mu(D)=\iint_\Delta \abs{J(u,v)}\du\dv$$。证明过程比较复杂而且假设$$y(u,v)$$在$$\Delta$$内具有二阶连续偏导数（不依赖于这个条件的证明在后文）。首先（根据隐函数组定理？）$$uv$$上的闭区域的边界$$L_\Delta$$变换为$$D$$上的闭区域的边界$$L_D$$，然后把$$L_D$$用（通过$$u$$和$$v$$复合的）参数方程表示，然后在$$\Delta$$上用格林公式表示$$\mu(D)$$并化为参数方程，又把$$\oint_{L_\Delta}x(u,v)\bk{\frac{\pd y}{\pd u}\du+\frac{\pd y}{\pd v}\dv}$$化为同样的参数方程，因此$$\mu(D)$$的值等于该式，然后将该式用格林公式重写为二重积分形式，根据二阶连续偏导数的条件化为所要证明的式子。
+   则区域$$D$$的面积$$\mu(D)=\iint_\Delta \abs{J(u,v)}\du\dv$$。证明过程比较复杂而且假设$$y(u,v)$$在$$\Delta$$内具有二阶连续偏导数（不依赖于这个条件的证明在后文）。首先（根据隐函数组定理？）$$uv$$上的闭区域的边界$$L_\Delta$$变换为$$D$$上的闭区域的边界$$L_D$$，然后把$$L_D$$用（通过$$u$$和$$v$$复合的）参数方程表示，然后在$$\Delta$$上用格林公式表示$$\mu(D)$$并化为参数方程，又把$$\oint_{L_\Delta}x(u,v)\bk{\pdd{y}{u}\du+\pdd{y}{v}\dv}$$化为同样的参数方程，因此$$\mu(D)$$的值等于该式，然后将该式用格林公式重写为二重积分形式，根据二阶连续偏导数的条件化为所要证明的式子。
 1. 定理21.13：设$$x,y,u,v$$满足上述引理的所有条件，另外函数$$f(x,y)$$在有界闭区域$$D$$上可积，则
 
    $$
@@ -789,15 +789,15 @@ f(\xi_i,\eta_i)\Delta\sigma_i$$为函数$$f(x,y)$$在$$D$$上属于分割$$T$$�
 1. 定理22.5（高斯公式）：设空间区域$$V$$由分片光滑的双侧封闭曲面$$S$$围成（$$S$$取外侧为正侧），若函数$$P,Q,R$$在$$V$$上连续且有一阶连续偏导数，则
 
    $$
-   \iiint\limits_V\p{ \frac{\pd P}{\pd x} + \frac{\pd Q}{\pd y} + \frac{\pd R}{\pd z} } \dx\dy\dz = \unicode{x222F}_S P\dy\dz + Q\dz\dx + R\dx\dy
+   \iiint\limits_V\p{ \pdd{P}{x} + \pdd{Q}{y} + \pdd{R}{z} } \dx\dy\dz = \unicode{x222F}_S P\dy\dz + Q\dz\dx + R\dx\dy
    $$
 
-   证明：只证$$\iiint_V \frac{\pd R}{\pd z} \dx\dy\dz=\unicode{x222F}_S R\dx\dy$$，余下部分类似。先设$$V$$是一个$$xy$$型区域（如果不是，和格林公式证明过程类似可以将其分解为若干个$$xy$$型区域来讨论），即其边界曲面$$S$$由曲面$$S_2:z=z_2(x,y),(x,y)\in D_{xy},S_1:z=z_1(x,y),(x,y)\in D_{xy}$$以及垂直于$$D_{xy}$$的边界的柱面$$S_3$$组成，其中$$z_1(x,y)\le z_2(x,y)$$。于是有：
+   证明：只证$$\iiint_V \pdd{R}{z} \dx\dy\dz=\unicode{x222F}_S R\dx\dy$$，余下部分类似。先设$$V$$是一个$$xy$$型区域（如果不是，和格林公式证明过程类似可以将其分解为若干个$$xy$$型区域来讨论），即其边界曲面$$S$$由曲面$$S_2:z=z_2(x,y),(x,y)\in D_{xy},S_1:z=z_1(x,y),(x,y)\in D_{xy}$$以及垂直于$$D_{xy}$$的边界的柱面$$S_3$$组成，其中$$z_1(x,y)\le z_2(x,y)$$。于是有：
 
    $$
    \begin{align}
-     \iiint_V \frac{\pd R}{\pd z} \dx\dy\dz&=
-     \iint_{D_{xy}}\dx\dy \int_{z_1(x,y)}^{z_2(x,y)} \frac{\pd R}{\pd z}\dz\\
+     \iiint_V \pdd{R}{z} \dx\dy\dz&=
+     \iint_{D_{xy}}\dx\dy \int_{z_1(x,y)}^{z_2(x,y)} \pdd{R}{z}\dz\\
      &=\iint_{D_{xy}}\p{ R(x,y,z_2(x,y))-R(x,y,z_1(x,y)) } \dx\dy\\
      &=\iint_{S_2} R(x,y,z) \dx\dy - \iint_{S_1} R(x,y,z) \dx\dy\\
      &=\iint_{S_2} R(x,y,z) \dx\dy + \iint_{-S_1} R(x,y,z) \dx\dy
@@ -809,19 +809,19 @@ f(\xi_i,\eta_i)\Delta\sigma_i$$为函数$$f(x,y)$$在$$D$$上属于分割$$T$$�
 
    $$
    \iint_S
-   \p{ \frac{\pd R}{\pd y} - \frac{\pd Q}{\pd z} \dy\dz } +
-   \p{ \frac{\pd P}{\pd z} - \frac{\pd R}{\pd x} \dz\dx } +
-   \p{ \frac{\pd Q}{\pd x} - \frac{\pd P}{\pd y} \dx\dy } =
+   \p{ \pdd{R}{y} - \pdd{Q}{z} \dy\dz } +
+   \p{ \pdd{P}{z} - \pdd{R}{x} \dz\dx } +
+   \p{ \pdd{Q}{x} - \pdd{P}{y} \dx\dy } =
    \oint_L P\dx + Q\dy + R\dz
    $$
 
-   只证$$\iint_S \frac{\pd P}{\pd z} \dz\dx - \frac{\pd P}{\pd y} \dx\dy = \oint_L P\dx$$，另外两部分类似。假设$$S$$由方程$$z=z(x,y)$$确定，根据第二型曲线积分定义右边等于$$\oint_\Gamma P(x,y,z(x,y)) \dx$$，其中$$\Gamma$$是$$L$$在$$xy$$平面上的投影曲线。然后用格林公式展开，把偏导数写成余弦的比值（所以用了解析几何？），然后把余弦化掉，把$$\dx\dy$$变为$$\d S$$再和对应的余弦值相乘得到$$\dz\dx$$和$$\dx\dy$$即得。
+   只证$$\iint_S \pdd{P}{z} \dz\dx - \pdd{P}{y} \dx\dy = \oint_L P\dx$$，另外两部分类似。假设$$S$$由方程$$z=z(x,y)$$确定，根据第二型曲线积分定义右边等于$$\oint_\Gamma P(x,y,z(x,y)) \dx$$，其中$$\Gamma$$是$$L$$在$$xy$$平面上的投影曲线。然后用格林公式展开，把偏导数写成余弦的比值（所以用了解析几何？），然后把余弦化掉，把$$\dx\dy$$变为$$\d S$$再和对应的余弦值相乘得到$$\dz\dx$$和$$\dx\dy$$即得。
 1. 定义：$$V$$是单连通区域$$\Leftrightarrow$$$$V$$内任一封闭曲线皆可以不经过$$V$$以外的点连续收缩于属于$$V$$的一点。
 1. 定理22.7：设$$\Omega\subset\mathbf{R}^3$$为空间单连通区域，若函数$$P,Q,R$$在$$\Omega$$上连续且有一阶连续偏导数，则以下四个条件等价：
    - 对于$$\Omega$$内任一按段光滑的**封闭**曲线$$L$$有$$\oint_L P\dx+Q\dy+R\dz=0$$
    - 对于$$\Omega$$内任一按段光滑的曲线$$L$$，曲线积分$$\int_L P\dx+Q\dy+R\dz$$与路线无关
    - $$P\dx+Q\dy+R\dz$$是$$\Omega$$内某一函数$$u$$的全微分，即$$\du=P\dx+Q\dy+R\dz$$
-   - $$\frac{\pd P}{\pd y}=\frac{\pd Q}{\pd x}, \frac{\pd Q}{\pd z}=\frac{\pd R}{\pd y}, \frac{\pd R}{\pd x}=\frac{\pd P}{\pd z}$$
+   - $$\pdd{P}{y}=\pdd{Q}{x}, \pdd{Q}{z}=\pdd{R}{y}, \pdd{R}{x}=\pdd{P}{z}$$
    证明与定理21.12相仿。
 1. 最后一节介绍了场论初步，介绍梯度、散度、旋度、管量场和有势场。
 

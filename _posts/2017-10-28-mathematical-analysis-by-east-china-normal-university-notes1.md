@@ -186,7 +186,7 @@ tags:
 1. 引理：在某点可导的充要条件是在该点的某邻域内存在一个在该点连续的函数$$H(x)$$使得$$f(x)-f(x_0)=H(x)(x-x_0)$$，从而$$f'(x_0)=H(x_0)$$。证明：把$$H(x)$$构造出来。
 1. 定理5.9（链式法则）：可导函数的复合函数也可导，其导数满足$$(f\circ \varphi)'(x_0)=f'(u_0)\varphi'(x_0)=f'(\varphi(x_0))\varphi'(x_0)$$。证明：通过上述引理。
 1. 链式法则满足结合律：$$(f\circ g\circ h)'(x_0)=((f\circ g)\circ h)'(x_0)=(f\circ (g\circ h))'(x_0)$$。证明：$$((f\circ g)\circ h)'(x_0)=(f\circ g)'(h(x_0))h'(x_0)=f'(g(h(x_0))g'(h(x_0))h'(x_0)=f'((g\circ h)(x_0))(g\circ h)'(x_0)=(f\circ (g\circ h))'(x_0)$$
-1. 参变量函数$$\left\{\begin{align}&x=\varphi(t)\\&y=\phi(t)\end{align}\right.$$的导数为$$\frac{\dy}{\dx}=\frac{\phi'(t)}{\varphi'(t)}$$。因此，由极坐标$$\rho=\rho(\theta)$$表示的曲线（其中$$(\theta,\rho)$$为极坐标）可以先转化为参量方程$$\left\{\begin{align}x=\rho(\theta)\cos \theta\\y=\rho(\theta)\sin\theta\end{align}\right.$$，然后根据前述规则求。
+1. 参变量函数$$\left\{\begin{align}&x=\varphi(t)\\&y=\phi(t)\end{align}\right.$$的导数为$$\dd{y}{x}=\frac{\phi'(t)}{\varphi'(t)}$$。因此，由极坐标$$\rho=\rho(\theta)$$表示的曲线（其中$$(\theta,\rho)$$为极坐标）可以先转化为参量方程$$\left\{\begin{align}x=\rho(\theta)\cos \theta\\y=\rho(\theta)\sin\theta\end{align}\right.$$，然后根据前述规则求。
 1. 定义：二阶导数，二阶可导，n阶导函数，n阶导数，高阶导数
 1. 莱布尼兹公式：函数的积的n阶导数展开式的系数为二项式系数
 1. 微分的定义：若存在常数$$A$$使得$$\Delta y=f(x_0+\Delta x)-f(x_0)$$可以表示成$$\Delta y=A\Delta x+o(\Delta x)$$。其中$$A\Delta x$$记为$$\dy$$称为$$f$$在点$$x_0$$的微分，当$$A\ne 0$$时也说$$\dy$$是$$\Delta y$$的线性主部。
@@ -207,7 +207,7 @@ tags:
 1. 另外[为什么二阶导数要这么记d^2y/dx^2？ - 郁林成森的回答](https://www.zhihu.com/question/23166546/answer/116169100)说：
    > 建议不要将二阶微商$$\frac{\d ^{2}y}{\dx^{2}}$$看作比例，写成这个样是有历史原因的，强烈建议从下面这个式子理解二阶导数（或高阶导数）：
    >
-   > $$\frac{\d ^{2}y }{\dx^{2}} =\frac{\d }{\dx} \frac{\dy}{\dx}=\frac{\d (\frac{\dy}{\dx}) }{\dx}=\frac{\frac{\dx\cdot \d ^{2}y-\d ^{2}x\cdot \dy  }{\dx^{2} } }{\dx }=\frac{\dx\d ^{2}y-\d ^{2}x\dy  }{\dx^{3} }$$
+   > $$\frac{\d ^{2}y }{\dx^{2}} =\dd{ }{x} \dd{y}{x}=\frac{\d (\dd{y}{x}) }{\dx}=\frac{\frac{\dx\cdot \d ^{2}y-\d ^{2}x\cdot \dy  }{\dx^{2} } }{\dx }=\frac{\dx\d ^{2}y-\d ^{2}x\dy  }{\dx^{3} }$$
    >
    > 这样无论$$x$$是不是自变量，都能很好地计算出二阶微商$$\frac{\d ^{2}y}{\dx^{2}}$$
 1. 我的理解：从定义-定理的数学角度来理解微分：
@@ -217,7 +217,7 @@ tags:
    1. 当$$x$$为自变量时$$\d ^2x=\d (\dx)=\d \Delta x=0$$。这是因为$$\Delta x$$是与$$x$$不相关的变量，对$$x$$求导时应该视其位常数
    1. 对$$y=f(x)$$（$$x$$为自变量）来说，$$\d ^2y=\d (\dy)=\d (f'(x)\dx)=\d (f'(x))\dx+f'(x)\d (\dx)=\d (f'(x))\dx=f''(x)\dx^2$$
    1. $$y=f(\varphi(t))$$（$$t$$为自变量）来说，$$\dy=[f(\varphi(t))]'\dt=f'(\varphi(t))\varphi'(t)\dt$$，如令$$u=\varphi(t)$$则有$$\dy=f'(u)\du$$，这就是所谓一阶微分形式不变性。但注意：其中$$f'(u)$$是对$$t$$求导（而不是对$$u$$）而且是关于$$t$$的函数（即以$$t$$为自变量，而不是关于$$u$$的），而$$\du$$是关于$$t$$和$$\Delta t$$的函数（而不是关于$$u$$和$$\Delta u$$的）
-   1. 一阶微分的形式不变性的另一种常用表述是$$\frac{\dy}{\dt}=\frac{\dy}{\dx}\cdot\frac{\dx}{\dt}$$。其中$$\dt=\Delta t$$，但是$$\dx=\varphi'(t)\dt$$而不是$$\Delta x$$（两者差一个无穷小量），这是因为$$t$$是自变量！！
+   1. 一阶微分的形式不变性的另一种常用表述是$$\dd{y}{t}=\dd{y}{x}\cdot\dd{x}{t}$$。其中$$\dt=\Delta t$$，但是$$\dx=\varphi'(t)\dt$$而不是$$\Delta x$$（两者差一个无穷小量），这是因为$$t$$是自变量！！
    1. 对$$y=f(\varphi(t))$$（$$t$$为自变量）来说，
 
       $$
@@ -372,7 +372,7 @@ tags:
 1. 定理9.8（推广的积分第一中值定理）：若$$f$$与$$g$$都在$$[a,b]$$上连续，且$$g(x)$$在$$[a,b]$$上不变号，则至少存在一点$$\xi\in[a,b]$$使得$$\int_a^b f(x)g(x)\dx=f(\xi)\int_a^b g(x)\dx$$证明：和定理9.7类似，但是把$$b-a$$换成$$g(x)$$。
 1. 变（上、下）限（的定）积分是一个以$$x$$为自变量的函数，如$$\Phi(x)=\int_a^x f(t)\dt$$
 1. 定理9.9：在闭区间上可积的函数的变上限定积分在该闭区间上连续。证明：由连续函数的定义以及该函数在该闭区间上的有界性可证。
-1. 定理9.10（原函数存在定理，或微积分学基本定理）：闭区间上的连续函数对应的变上限定积分在该闭区间上处处可导，而且$$\Phi'(x)=\frac{\d }{\dx}\int_a^x f(t)\dt=f(x), x\in[a,b]$$。证明：由积分第一中值定理以及导数的极限定义可证。
+1. 定理9.10（原函数存在定理，或微积分学基本定理）：闭区间上的连续函数对应的变上限定积分在该闭区间上处处可导，而且$$\Phi'(x)=\dd{ }{x}\int_a^x f(t)\dt=f(x), x\in[a,b]$$。证明：由积分第一中值定理以及导数的极限定义可证。
 1. 定理9.11（积分第二中值定理）：设函数$$f$$在$$[a,b]$$上可积，
    - 若函数$$g$$在$$[a,b]$$上减，且$$g(x)\ge0$$，则存在$$\xi\in[a,b]$$使得$$\int_a^b f(x)g(x)\dx=g(a)\int_a^\xi f(x)\dx$$。证明（类似可证明下面命题）：$$F(x)=\int_a^x f(t)\dt,x\in[a,b]$$在$$[a,b]$$上可导因此连续，因此存在最大值$$M$$和最小值$$m$$，因此只需证明$$m\le\frac{1}{g(a)}\int_a^b f(x)g(x)\dx\le M$$然后利用$$F$$的介值性可立即证得原命题。至于如何证明该式：根据定理9.3'对任意小的正数存在一个分割使得$$g$$的上下和之差小于它，然后把$$\int_a^b f(x)g(x)\dx$$根据积分区间可加性以及该分割写成一系列子积分和来证。
    - 若函数$$g$$在$$[a,b]$$上增，且$$g(x)\ge0$$，则存在$$\eta\in[a,b]$$使得$$\int_a^b f(x)g(x)\dx=g(b)\int_\eta^b f(x)\dx$$
