@@ -16,6 +16,11 @@ tags:
 * TOC
 {:toc}
 
+$$
+\def\nspace{\text{null }}
+\def\range{\text{range }}
+$$
+
 # 第六章 内积空间
 
 向量空间研究的主要是空间的线性结构（加法和标量乘法），而内积空间则加上了对应于二维空间和三维空间中长度和角度的概念。
@@ -128,8 +133,8 @@ tags:
   - 证明：采用证明集合相等的一般方法，即每个属于其中一个集合的元素都属于另一个。设$$\vec{u}\in U$$，根据定义很容易证明$$\vec{u}\in (U^{\bot})^{\bot}$$。要证另一个方向，设$$\vec{v}\in(U^{\bot})^{\bot}$$，根据6.29可得$$\vec{v}=\vec{u}+\vec{w},\vec{u}\in U,\vec{w}\in U^{\bot}$$，从而$$\vec{v}-\vec{u}\in U^{\bot}$$；又因为$$\vec{v}\in(U^{\bot})^{\bot}$$，而根据上述另一个方向的证明有$$\vec{u}\in(U^{\bot})^{\bot}$$，因此$$\vec{v}-\vec{u}\in(U^{\bot})^{\bot}$$，因此$$\vec{v}-\vec{u}\in U^{\bot}\cap(U^{\bot})^{\bot}$$，故$$\vec{v}=\vec{u}$$，于是$$\vec{v}\in U$$，证毕。
 - 根据6.29，每个$$\vec{v}\in V$$都可以唯一写成$$\vec{v}=\vec{u}+\vec{w},\vec{u}\in U,\vec{w}\in U^{\bot}$$。定义$$V$$上的算子$$P_{U}$$，称为$$V$$到$$U$$上的正交投影：对$$\vec{v}\in V$$，定义$$P_{U}\vec{v}$$为前述分解中的$$\vec{u}$$。易证：
   - $$P_{U}\in\lmap(V)$$；
-  - $$\text{range}P_{U}=U$$；
-  - $$\text{null}P_{U}=U^{\bot}$$；
+  - $$\range P_{U}=U$$；
+  - $$\nspace P_{U}=U^{\bot}$$；
   - 对每个$$\vec{v}\in V$$都有$$\vec{v}-P_{U}\vec{v}\in U^{\bot}$$
   - $$P_{U}^{2}=P_{U}$$；
   - 对每个$$\vec{v}\in V$$都有$$\|P_{U}\vec{v}\|\le\|\vec{v}\|$$
@@ -180,18 +185,18 @@ tags:
   - 恒等算子：$$I^{*}=I$$
   - 乘积：$$(ST)^{*}=T^{*}S^{*}$$。证明思路同上，要把$$S$$和$$T$$通过伴随的定义式做两次变换。
 - 6.46：命题：设$$T\in\lmap(V,W)$$，则
-  - (a)$$\text{null}T^{*}=(\text{range}T)^{\bot}$$
-  - (b)$$\text{range}T^{*}=(\text{null}T)^{\bot}$$
-  - (c)$$\text{null}T=(\text{range}T^{*})^{\bot}$$
-  - (d)$$\text{range}T=(\text{null}T^{*})^{\bot}$$
+  - (a)$$\nspace T^{*}=(\range T)^{\bot}$$
+  - (b)$$\range T^{*}=(\nspace T)^{\bot}$$
+  - (c)$$\nspace T=(\range T^{*})^{\bot}$$
+  - (d)$$\range T=(\nspace T^{*})^{\bot}$$
   - 证明：对于(a)，设$$\vec{w}\in W$$，则：
 
     $$
     \begin{array}{l}
-    \vec{w}\in\text{null}T^{*}&\iff T^{*}\vec{w}=\vec{0} \\
+    \vec{w}\in\nspace T^{*}&\iff T^{*}\vec{w}=\vec{0} \\
     &\iff \iprod{\vec{v}}{T^{*}\vec{w}}=0,\vec{v}\in V \\
     &\iff \iprod{ T\vec{v}}{\vec{w}}=0,\vec{v}\in V \\
-    &\iff \vec{w}\in (\text{range}T)^{\bot}
+    &\iff \vec{w}\in (\range T)^{\bot}
     \end{array}
     $$
 
@@ -293,8 +298,8 @@ tags:
 ```
 a T in L(V,W): T\in\lmap(V)
 b       <a,b>: \viprod{u}{v}
-e      rangeT: \text{range}T
-f       nullT: \text{null}T
+e      rangeT: \range T
+f       nullT: \nspace T
 p            : p(z)=a_{0}+a_{1}z+a_{2}z^{2}+\cdots+a_{m}z^{m}
 l   lambda1-m: \list{\lambda}{m}
 u       u1-um: (\vlist{u}{m})

@@ -15,6 +15,11 @@ tags:
 * TOC
 {:toc}
 
+$$
+\def\nspace{\text{null }}
+\def\range{\text{range }}
+$$
+
 # 复数的一些性质
 
 这里打乱顺序把关于复数的一些基本定义和性质单独列出，主要来自第一章和第四章第三节。
@@ -152,19 +157,19 @@ tags:
 
 ## 零空间与值域
 
-- 对于$$T\in\lmap(V,W)$$，$$V$$中被$$T$$映成$$\vec{0}$$的那些向量所组成的子集称为$$T$$的零空间（null space），记为$$\text{null} T$$
-- 3.1命题：若$$T\in\lmap(V,W)$$，则$$\text{null}T$$是$$V$$的子空间，特别地$$\vec{0}\in\text{null}T$$。证明：用子空间的定义即得。于是，“零空间”这个名字中的“空间”就变得有意义了。
-  - <a name="zero-space">注意</a>：<span style="color: blue">这个命题对于任意的线性映射都成立。而$$\text{null}T$$的元素虽然由$$T$$来确定，但是它作为一个子空间的存在并不依赖于$$T$$！</span>
+- 对于$$T\in\lmap(V,W)$$，$$V$$中被$$T$$映成$$\vec{0}$$的那些向量所组成的子集称为$$T$$的零空间（null space），记为$$\nspace T$$
+- 3.1命题：若$$T\in\lmap(V,W)$$，则$$\nspace T$$是$$V$$的子空间，特别地$$\vec{0}\in\nspace T$$。证明：用子空间的定义即得。于是，“零空间”这个名字中的“空间”就变得有意义了。
+  - <a name="zero-space">注意</a>：<span style="color: blue">这个命题对于任意的线性映射都成立。而$$\nspace T$$的元素虽然由$$T$$来确定，但是它作为一个子空间的存在并不依赖于$$T$$！</span>
 - 线性映射称为单的，如果像相同蕴含原像相同。
-- 3.2命题：设$$T\in\lmap(V,W)$$，则$$T$$是单的当且仅当$$\text{null}T=\{\vec{0}\}$$。由“单”的定义以及零空间的定义即得。
-- 对于$$T\in\lmap(V,W)$$，由$$W$$中形如$$T\vec{v}(\vec{v}\in V)$$的向量组成的子集称为$$T$$的值域，记为$$\text{range}T=\{T\vec{v}:\vec{v}\in V\}$$。如果值域等于$$W$$则称该线性映射为满的。
-  - 一个非常有用但比较抽象的结论是：对于算子$$T\in\lmap(V)$$，$$\text{range}(\text{range}T)\subseteq\text{range}T$$。换句话说，若$$\vec{v}\in\text{range}T$$，则$$T\vec{v}\in\text{range}T$$，即$$\text{range}T$$在$$T$$下是不变的
-- 3.3命题：设$$T\in\lmap(V,W)$$，那么$$\text{range}T$$是$$W$$的子空间。由值域的定义以及子空间的定义即可证。
-- 3.4命题：如果$$V$$是有限维向量空间，并且$$T\in\lmap(V,W)$$，那么$$\text{range}T$$是$$W$$的有限维子空间，并且$$\dim V=\dim\text{null}T+\dim\text{range}T$$。证明：用$$\text{null}T$$的一组基扩充成$$V$$的基，只需证明扩充出来的部分的像是$$\text{range}T$$的基。
+- 3.2命题：设$$T\in\lmap(V,W)$$，则$$T$$是单的当且仅当$$\nspace T=\{\vec{0}\}$$。由“单”的定义以及零空间的定义即得。
+- 对于$$T\in\lmap(V,W)$$，由$$W$$中形如$$T\vec{v}(\vec{v}\in V)$$的向量组成的子集称为$$T$$的值域，记为$$\range T=\{T\vec{v}:\vec{v}\in V\}$$。如果值域等于$$W$$则称该线性映射为满的。
+  - 一个非常有用但比较抽象的结论是：对于算子$$T\in\lmap(V)$$，$$\range (\range T)\subseteq\range T$$。换句话说，若$$\vec{v}\in\range T$$，则$$T\vec{v}\in\range T$$，即$$\range T$$在$$T$$下是不变的
+- 3.3命题：设$$T\in\lmap(V,W)$$，那么$$\range T$$是$$W$$的子空间。由值域的定义以及子空间的定义即可证。
+- 3.4命题：如果$$V$$是有限维向量空间，并且$$T\in\lmap(V,W)$$，那么$$\range T$$是$$W$$的有限维子空间，并且$$\dim V=\dim\nspace T+\dim\range T$$。证明：用$$\nspace T$$的一组基扩充成$$V$$的基，只需证明扩充出来的部分的像是$$\range T$$的基。
 - 3.5推论：如果$$V$$和$$W$$都是有限维向量空间，且$$\dim V>\dim W$$，那么从$$V$$到$$W$$的线性映射一定不是单的。由3.4和3.2可证。
 - 3.6推论：如果$$V$$和$$W$$都是有限维向量空间，且$$\dim V<\dim W$$，那么从$$V$$到$$W$$的线性映射一定不是满的。由3.4和“满”的定义可证。
 - 令$$T(\list{x}{n})=\p{\sum_{k=1}^{n}a_{1,k}x_{k},\cdots,\sum_{k=1}^{n}a_{m,k}x_{k}}$$，利用3.5和3.6可证：
-  - 当变量多于方程时，齐次线性方程组（即$$T\vec{x}=\vec{0}$$）必有非零解（易知$$\text{null}T$$严格大于$$\{\vec{0}\}$$，由3.5知这意味着$$n>m$$）。
+  - 当变量多于方程时，齐次线性方程组（即$$T\vec{x}=\vec{0}$$）必有非零解（易知$$\nspace T$$严格大于$$\{\vec{0}\}$$，由3.5知这意味着$$n>m$$）。
   - 当方程多于变量时，必有一组常数项使得相应的非齐次线性方程组（即$$T\vec{x}=\vec{c}\ne\vec{0}$$）无解（无解意味着$$T$$不是满的，即存在某个$$\vec{c}$$，其不存在原像。由3.6知这意味着$$n< m$$）。
 
 ## 线性映射的矩阵
@@ -288,14 +293,14 @@ tags:
 
 - 对于$$T\in\lmap(V)$$和$$V$$的子空间$$U$$，如果对每个$$\vec{u}\in U$$都有$$T\vec{u}\in U$$，则称$$U$$在$$T$$下是不变的。不变子空间的一些例子：
   - $\{\vec{0}\}$
-  - $\text{null}T$
-  - $\text{range}T$
+  - $\nspace T$
+  - $\range T$
 - 对于$$T\in\lmap(V)$$和标量$$\lambda\in\mathbf{F}$$，如果有非零向量$$\vec{u}\in V$$使得$$T\vec{u}=\lambda\vec{u}$$，则称$$\lambda$$为$$T$$的本征值，而$$\vec{u}$$是$$T$$的（相应于$$\lambda$$的）本征向量。
   - 注意，$$\vec{u}$$必须是非零，但$\lambda$可以是0
   - $$T\vec{u}=\lambda\vec{u}$$等价于$$(T-\lambda I)\vec{u}=\vec{0}$$，因此：
     - $$\lambda$$是$$T$$的本征值当且仅当$$T-\lambda I$$不是单的
     - 对有限维向量空间而言，根据3.21，$$\lambda$$是$$T$$的本征值当且仅当$$T-\lambda I$$不可逆，当且仅当$$T-\lambda I$$不是满的
-    - $$T$$的相应于$$\lambda$$的本征向量之集等于$$\text{null}(T-\lambda I)$$，而且是$$V$$的子空间（看[这里](#zero-space)）
+    - $$T$$的相应于$$\lambda$$的本征向量之集等于$$\nspace (T-\lambda I)$$，而且是$$V$$的子空间（看[这里](#zero-space)）
   - 注意：同一个本征值可以有多于一个不同的且线性无关的本征向量。如$$I$$的本征值为1，但$$\mathbf{R}^{2}$$上的$$I$$就有两个不同的本征向量$$(0,1)$$和$$(1,0)$$。
   - 例子：对于算子$$T\in\lmap(\mathbf{F}^{2}),T(\vec{w},\vec{z})=(-\vec{z},\vec{w})$$。若$$\mathbf{F}=\mathbf{R}$$，此算子有很好的几何解释（绕$$\mathbf{R}^{2}$$的原点逆时针转$$90^{\circ}$$，易知$$T$$没有本征值。若$$\mathbf{F}=\mathbf{C}$$，$$i$$和$$-i$$都是$$T$$的本征值。
 - 5.6定理：设$$T\in\lmap(V)$$，$$\list{\lambda}{m}$$是$$T$$的互不相同的本征值，$$\vlist{v}{m}$$是相应的非零本征向量，则$$(\vlist{v}{m})$$线性无关。
@@ -321,7 +326,7 @@ tags:
 
   证明：显然。
 - 5.13定理：设$$V$$是复向量空间，并设$$T\in\lmap(V)$$，则$$T$$关于$$V$$的某个基具有上三角矩阵。
-  - 证明：对$$V$$的维数用归纳法。若$$\dim V=1$$结论显然成立。设$$\dim V>1$$，并设对于**所有**维数比$$V$$小的复向量空间结果都成立。设$$\lambda$$是$$T$$的任意本征值（5.10），设$$U=\text{range}(T-\lambda I)$$，由3.21知$$T-\lambda I$$不是满的，故$$\dim U<\dim V$$。通过$$T\vec{u}=(T-\lambda I)\vec{u}+\lambda\vec{u}$$易证$$U$$在$$T$$下是不变的，因此$$T\vert_{U}$$是$$U$$上的算子。由归纳法假设，$$U$$有基$$(\vlist{u}{m})$$使得$$T\vert_{U}$$关于此基有上三角矩阵，因此根据5.12对每个$$j$$都有$$T\vec{u}_{j}=(T\vert_{U})(\vec{u}_{j})\in\vspanl{u}{j}$$。把$$(\vlist{u}{m})$$扩充成$$V$$的基$$(\vlist{u}{m},\vlist{v}{n})$$，则对每个$$k$$都有$$T\vec{v}_{k}=(T-\lambda I)\vec{v}_{k}+\lambda\vec{v}_{k}$$，其中第一项$$\in U=\vspanl{u}{m}$$，因此$$T\vec{v}_{k}=\vspan{\vlist{u}{m},\vlist{v}{n}}$$，而由5.12知$$T$$关于基$$(\vlist{u}{m},\vlist{v}{n})$$有上三角矩阵。
+  - 证明：对$$V$$的维数用归纳法。若$$\dim V=1$$结论显然成立。设$$\dim V>1$$，并设对于**所有**维数比$$V$$小的复向量空间结果都成立。设$$\lambda$$是$$T$$的任意本征值（5.10），设$$U=\range (T-\lambda I)$$，由3.21知$$T-\lambda I$$不是满的，故$$\dim U<\dim V$$。通过$$T\vec{u}=(T-\lambda I)\vec{u}+\lambda\vec{u}$$易证$$U$$在$$T$$下是不变的，因此$$T\vert_{U}$$是$$U$$上的算子。由归纳法假设，$$U$$有基$$(\vlist{u}{m})$$使得$$T\vert_{U}$$关于此基有上三角矩阵，因此根据5.12对每个$$j$$都有$$T\vec{u}_{j}=(T\vert_{U})(\vec{u}_{j})\in\vspanl{u}{j}$$。把$$(\vlist{u}{m})$$扩充成$$V$$的基$$(\vlist{u}{m},\vlist{v}{n})$$，则对每个$$k$$都有$$T\vec{v}_{k}=(T-\lambda I)\vec{v}_{k}+\lambda\vec{v}_{k}$$，其中第一项$$\in U=\vspanl{u}{m}$$，因此$$T\vec{v}_{k}=\vspan{\vlist{u}{m},\vlist{v}{n}}$$，而由5.12知$$T$$关于基$$(\vlist{u}{m},\vlist{v}{n})$$有上三角矩阵。
 - 5.16命题：设$$T\in\lmap(V)$$关于$$V$$的某个基有上三角矩阵，则$$T$$可逆当且仅当这个上三角矩阵对角线上的元素都不是0。
   - 证明：只需证明等价命题：$$T$$不可逆当且仅当某个元素是0。设$$(\vlist{v}{n})$$是$$V$$的基使$$T$$关于此基有上三角矩阵。
 
@@ -351,10 +356,10 @@ tags:
   - (a)$$T$$关于$$V$$的某个基有对角矩阵
   - (b)$$V$$有一个由$$T$$的本征向量组成的基
   - (c)$$V$$有在$$T$$下不变的1维子空间$$\list{U}{n}$$使得$$V=U_{1}\oplus\cdots\oplus U_{n}$$
-  - (d)$$V=\text{null}(T-\lambda_{1}I)\oplus\cdots\oplus\text{null}(T-\lambda_{m}I)$$
-  - (e)$$\dim V=\dim\text{null}(T-\lambda_{1}I)+\cdots+\dim\text{null}(T-\lambda_{m}I)$$
+  - (d)$$V=\nspace (T-\lambda_{1}I)\oplus\cdots\oplus\nspace (T-\lambda_{m}I)$$
+  - (e)$$\dim V=\dim\nspace (T-\lambda_{1}I)+\cdots+\dim\nspace (T-\lambda_{m}I)$$
 
-  证明：(a)和(b)等价已在之前说明。(b)=>(c)可令$$U_{j}=\vspan{\vec{v}_{j}}$$，其中$$\vec{v}_{j}$$是$$T$$的其中一个本征向量。(c)=>(b)对每个$$\vec{v}_{j}\in U_{j}$$，它都是$$T$$的本征向量，又由直和的条件易知$$(\vlist{v}{n})$$是$$V$$的基，即得。(b)=>(d)易知$$V$$中每个向量都是$$T$$的本征向量的线性组合，故$$V=\text{null}(T-\lambda_{1}I)+\cdots+\text{null}(T-\lambda_{m}I)$$，现只需证明这个和是直和；对于任意$$\vec{u}_{j}\in\text{null}(T-\lambda_{j}I)$$，要使$$\vec{0}=\vec{u}_{1}+\cdots+\vec{u}_{m}$$成立，它们只能全都等于0（根据5.6），从而前述的和是直和。(d)=>(e)由第二章习题17即得。(e)=>(b)在每个$$\text{null}(T-\lambda_{j}I)$$中取一个基，全部这些基组成$$T$$的一组本征向量$$(\vlist{v}{n})$$，由(e)的条件知道$$n=\dim V$$，现要证它们线性无关，即$$a_{1}\vec{v}_{1}+\cdots+a_{n}\vec{v}_{n}=\vec{0}$$的所有$$a$$都是$$0$$，只需对它们分组然后用5.6知每组都是$$\vec{0}$$，而每组内的$$\vec{v}_{k}$$是$$\text{null}(T-\lambda_{j}I)$$的基从而所有$$a_{k}$$都是0，即得。
+  证明：(a)和(b)等价已在之前说明。(b)=>(c)可令$$U_{j}=\vspan{\vec{v}_{j}}$$，其中$$\vec{v}_{j}$$是$$T$$的其中一个本征向量。(c)=>(b)对每个$$\vec{v}_{j}\in U_{j}$$，它都是$$T$$的本征向量，又由直和的条件易知$$(\vlist{v}{n})$$是$$V$$的基，即得。(b)=>(d)易知$$V$$中每个向量都是$$T$$的本征向量的线性组合，故$$V=\nspace (T-\lambda_{1}I)+\cdots+\nspace (T-\lambda_{m}I)$$，现只需证明这个和是直和；对于任意$$\vec{u}_{j}\in\nspace (T-\lambda_{j}I)$$，要使$$\vec{0}=\vec{u}_{1}+\cdots+\vec{u}_{m}$$成立，它们只能全都等于0（根据5.6），从而前述的和是直和。(d)=>(e)由第二章习题17即得。(e)=>(b)在每个$$\nspace (T-\lambda_{j}I)$$中取一个基，全部这些基组成$$T$$的一组本征向量$$(\vlist{v}{n})$$，由(e)的条件知道$$n=\dim V$$，现要证它们线性无关，即$$a_{1}\vec{v}_{1}+\cdots+a_{n}\vec{v}_{n}=\vec{0}$$的所有$$a$$都是$$0$$，只需对它们分组然后用5.6知每组都是$$\vec{0}$$，而每组内的$$\vec{v}_{k}$$是$$\nspace (T-\lambda_{j}I)$$的基从而所有$$a_{k}$$都是0，即得。
 
 ## 实向量空间的不变子空间
 
@@ -363,7 +368,7 @@ tags:
 - 设$$V=U\oplus W$$，则每个$$\vec{v}\in V$$都可表示为$$\vec{v}=\vec{u}+\vec{w};\vec{u}\in U,\vec{w}\in W$$。定义线性映射$$P_{U,W}\in\lmap(V)$$为：$$P_{U,W}\vec{v}=\vec{u}$$。这和“投影”类似。性质包括：
   - 对每个$$\vec{v}\in V$$都有$$\vec{v}=P_{U,W}\vec{v}+P_{W,U}\vec{v}$$
   - 多次应用，结果不变：$$P^{2}_{U,W}=P_{U,W}$$
-  - $\text{range}P_{U,W}=U$
-  - $\text{null}P_{U,W}=W$
+  - $\range P_{U,W}=U$
+  - $\nspace P_{U,W}=W$
 - 5.26定理：在奇数维实向量空间上，每个算子都有本征值。
   - 证明：对维数用归纳法。若维数为1，显然成立。设$$\dim V>1$$是奇数，且结论对$$\dim V-2$$成立。设$$T\in\lmap(V)$$，若$$T$$由本征值则证明结束，否则由5.24知$$V$$有在$$T$$下不变的2维子空间$$U$$，由2.13知存在$$V$$的子空间$$W$$使得$$V=U\oplus W$$。注意不能直接对$$W$$和$$T\vert W$$用归纳法因为$$W$$可能不是在$$T$$下不变的。定义$$S\in\lmap(W)$$为$$S\vec{w}=P_{W,U}(T\vec{w}),\vec{w}\in W$$。由归纳法假设$$S$$有一个本征值$$\lambda$$，其对应的非零本征向量为$$\vec{w}\in W$$。如果$$\vec{w}$$是$$T$$的相应于本征值$$\lambda$$的本征向量，则证明结束。否则考虑$$U+\vspan{\vec{w}}$$中的一个典型向量$$\vec{u}+a\vec{w}$$，易得$$(T-\lambda I)(\vec{u}+a\vec{w})=T\vec{u}-\lambda\vec{u}+aP_{U,W}(T\vec{w})\in U$$，因此$$T-\lambda I$$把$$U+\vspan{\vec{w}}$$映到$$U$$内。由于$$U+\vspan{\vec{w}}$$的维数比$$U$$的维数大，故$$(T-\lambda I)\vert_{U+\vspan{\vec{w}}}$$不是单的（3.5），于是$$T$$有本征值。
