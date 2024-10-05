@@ -18,9 +18,9 @@ gem "minima", "~> 2.5.1"
 group :jekyll_plugins do
   # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
   # uncomment the line below. To upgrade, run `bundle update github-pages`.
-  gem "github-pages", "~> 213"
+  gem "github-pages", "~> 228"
 
-  gem "jekyll-feed", "~> 0.15.0"
+  gem "jekyll-feed", "~> 0.15.1"
 end
 
 gem "webrick", "~> 1.7"
